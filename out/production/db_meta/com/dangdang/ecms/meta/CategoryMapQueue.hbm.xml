@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.CategoryMapQueue" table="category_map_queue" catalog="ecmst">
+        <composite-id name="id" class="com.dangdang.ecms.meta.CategoryMapQueueId">
+            <key-property name="productId" type="string">
+                <column name="product_id" />
+            </key-property>
+            <key-property name="categoryId" type="string">
+                <column name="category_id" />
+            </key-property>
+            <key-property name="categoryMapId" type="string">
+                <column name="category_map_id" />
+            </key-property>
+            <key-property name="opSourceId" type="string">
+                <column name="op_source_id" />
+            </key-property>
+            <key-property name="creationDate" type="string">
+                <column name="creation_date" />
+            </key-property>
+            <key-property name="isMainCategory" type="string">
+                <column name="is_main_category" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

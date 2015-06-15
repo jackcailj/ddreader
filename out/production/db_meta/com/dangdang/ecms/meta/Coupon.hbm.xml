@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.Coupon" table="coupon" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="number" type="string">
+            <column name="NUMBER" length="50" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="50" />
+        </property>
+        <property name="money" type="string">
+            <column name="MONEY" length="10" />
+        </property>
+        <property name="type" type="string">
+            <column name="TYPE" length="2" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="creater" type="string">
+            <column name="CREATER" length="50" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" />
+        </property>
+        <property name="bindTime" type="timestamp">
+            <column name="BIND_TIME" length="19" />
+        </property>
+        <property name="expireTime" type="timestamp">
+            <column name="EXPIRE_TIME" length="19" />
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="CUST_ID" />
+        </property>
+        <property name="custName" type="string">
+            <column name="CUST_NAME" length="50" />
+        </property>
+        <property name="custEmail" type="string">
+            <column name="CUST_EMAIL" length="50" />
+        </property>
+        <property name="promotionId" type="java.lang.Long">
+            <column name="PROMOTION_ID" />
+        </property>
+        <property name="orderNo" type="string">
+            <column name="ORDER_NO" length="50" />
+        </property>
+        <property name="fromPlatform" type="java.lang.Integer">
+            <column name="FROM_PLATFORM" />
+        </property>
+        <property name="orderSource" type="string">
+            <column name="ORDER_SOURCE" length="50" />
+        </property>
+        <property name="error" type="string">
+            <column name="ERROR" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

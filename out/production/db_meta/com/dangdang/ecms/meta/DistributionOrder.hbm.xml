@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.DistributionOrder" table="distribution_order" catalog="ecmst">
+        <id name="distributionOrderId" type="java.lang.Long">
+            <column name="distribution_order_id" />
+            <generator class="identity" />
+        </id>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="400" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#182;&#169;&#181;&#165;&#215;&#180;&#204;&#172;,0&#206;&#222;&#208;&#167;&#163;&#172;1&#211;&#208;&#208;&#167;</comment>
+            </column>
+        </property>
+        <property name="distributionOrderNo" type="string">
+            <column name="distribution_order_no" length="200">
+                <comment>&#183;&#214;&#207;&#250;&#201;&#204;&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="orderType" type="java.lang.Integer">
+            <column name="order_type">
+                <comment>&#182;&#169;&#181;&#165;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="distributionEbookId" type="java.lang.Long">
+            <column name="distribution_ebook_id">
+                <comment>&#185;&#216;&#193;&#170;distribution_ebook&#214;&#247;&#188;&#252;</comment>
+            </column>
+        </property>
+        <property name="platType" type="java.lang.Integer">
+            <column name="plat_type">
+                <comment>&#198;&#189;&#204;&#168;&#192;&#224;&#208;&#205;&#163;&#168;0&#176;&#178;&#215;&#191;&#163;&#172;1ios&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price">
+                <comment>&#205;&#188;&#202;&#233;&#182;&#168;&#188;&#219;</comment>
+            </column>
+        </property>
+        <property name="platShare" type="big_decimal">
+            <column name="plat_share" precision="5" scale="3" />
+        </property>
+        <property name="distributionId" type="java.lang.Long">
+            <column name="distribution_id">
+                <comment>&#183;&#214;&#207;&#250;&#201;&#204;ID</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="100">
+                <comment>&#202;&#233;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="realPrice" type="java.lang.Integer">
+            <column name="real_price">
+                <comment>&#181;&#177;&#181;&#177;&#202;&#181;&#202;&#213;&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

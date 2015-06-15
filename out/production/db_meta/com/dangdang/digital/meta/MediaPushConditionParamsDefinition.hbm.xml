@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaPushConditionParamsDefinition"
+           table="media_push_condition_params_definition" schema="" catalog="digital">
+        <id name="pushConditionParamsDefinitionId" column="push_condition_params_definition_id"/>
+        <property name="conditionId" column="condition_id"/>
+        <property name="keyType" column="key_type"/>
+        <property name="keyName" column="key_name"/>
+        <property name="keyInputName" column="key_input_name"/>
+    </class>
+</hibernate-mapping>

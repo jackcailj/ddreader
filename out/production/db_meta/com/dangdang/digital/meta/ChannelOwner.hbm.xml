@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.ChannelOwner" table="channel_owner" schema="" catalog="digital">
+        <id name="ownerId" column="owner_id"/>
+        <property name="custId" column="cust_id"/>
+        <property name="userAccout" column="user_accout"/>
+        <property name="name" column="name"/>
+        <property name="idNumber" column="id_number"/>
+        <property name="idBackPath" column="id_back_path"/>
+        <property name="idFrontPath" column="id_front_path"/>
+        <property name="company" column="company"/>
+        <property name="bankSubbranch" column="bank_subbranch"/>
+        <property name="bankName" column="bank_name"/>
+        <property name="employeeCardPath" column="employee_card_path"/>
+        <property name="bankArea" column="bank_area"/>
+        <property name="bankCity" column="bank_city"/>
+        <property name="bankProvince" column="bank_province"/>
+        <property name="bankOwnerName" column="bank_owner_name"/>
+        <property name="bankCardNumber" column="bank_card_number"/>
+        <property name="phone" column="phone"/>
+        <property name="verificationCode" column="verification_code"/>
+        <property name="type" column="type"/>
+        <property name="introduction" column="introduction"/>
+        <property name="introductionPicPath" column="introduction_pic_path"/>
+        <property name="companyName" column="company_name"/>
+        <property name="licenseNumber" column="license_number"/>
+        <property name="licensePicPath" column="license_pic_path"/>
+        <property name="createDate" column="create_date"/>
+        <property name="modifyDate" column="modify_date"/>
+        <property name="auditDate" column="audit_date"/>
+        <property name="auditor" column="auditor"/>
+        <property name="status" column="status"/>
+        <property name="failMsg" column="fail_msg"/>
+        <property name="applyTimes" column="apply_times"/>
+        <property name="modifyTimes" column="modify_times"/>
+        <property name="recordId" column="record_id"/>
+        <property name="isRead" column="is_read"/>
+    </class>
+</hibernate-mapping>

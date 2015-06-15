@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.ExperienceInfo" table="experience_info" catalog="ecmst">
+        <id name="experienceId" type="java.lang.Long">
+            <column name="experience_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" />
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="product_id" />
+        </property>
+        <property name="recordTime" type="java.lang.Long">
+            <column name="record_time">
+                <comment>&#188;&#199;&#194;&#188;&#202;&#177;&#188;&#228;(&#181;&#165;&#206;&#187;&#163;&#186;ms)</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Short">
+            <column name="type">
+                <comment>1.&#212;&#196;&#182;&#193;&#205;&#188;&#202;&#233; 2.&#182;&#193;&#205;&#234;&#202;&#233;&#188;&#174; 3.&#183;&#214;&#207;&#237;&#205;&#188;&#202;&#233;
+                4.&#183;&#214;&#207;&#237;&#196;&#218;&#200;&#221; 5.&#187;&#174;&#207;&#223; 6.&#177;&#202;&#188;&#199; 7.&#198;&#192;&#194;&#219; 8.&#185;&#186;&#194;&#242;
+                9.&#189;&#232;&#212;&#196;</comment>
+            </column>
+        </property>
+        <property name="remarks" type="string">
+            <column name="remarks" length="1024" />
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="16">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

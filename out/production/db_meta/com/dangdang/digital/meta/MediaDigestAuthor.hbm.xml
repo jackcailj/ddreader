@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaDigestAuthor" table="media_digest_author" schema="" catalog="digital">
+        <id name="id" column="id"/>
+        <property name="digestId" column="digest_id"/>
+        <property name="authorId" column="author_id"/>
+    </class>
+</hibernate-mapping>

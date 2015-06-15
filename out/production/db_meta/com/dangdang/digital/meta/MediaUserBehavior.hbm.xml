@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaUserBehavior" table="media_user_behavior" schema="" catalog="digital">
+        <id name="id" column="id"/>
+        <property name="saleId" column="saleId"/>
+        <property name="mediaId" column="mediaId"/>
+        <property name="behaviorType" column="behavior_type"/>
+        <property name="times" column="times"/>
+        <property name="custId" column="custId"/>
+        <property name="createTime" column="create_time"/>
+        <property name="platform" column="platform"/>
+    </class>
+</hibernate-mapping>

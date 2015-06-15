@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.VspContract" table="vsp_contract" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="vendorId" type="long">
+            <column name="VENDOR_ID" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="200" not-null="true" />
+        </property>
+        <property name="recordDate" type="date">
+            <column name="RECORD_DATE" length="10" />
+        </property>
+        <property name="startDate" type="date">
+            <column name="START_DATE" length="10" />
+        </property>
+        <property name="expireDate" type="date">
+            <column name="EXPIRE_DATE" length="10" />
+        </property>
+        <property name="sharingRatio" type="string">
+            <column name="SHARING_RATIO" length="100" />
+        </property>
+        <property name="billingCycle" type="string">
+            <column name="BILLING_CYCLE" length="100" />
+        </property>
+        <property name="fullAuthorization" type="java.lang.Boolean">
+            <column name="FULL_AUTHORIZATION" />
+        </property>
+        <property name="probationAuthorization" type="java.lang.Boolean">
+            <column name="PROBATION_AUTHORIZATION" />
+        </property>
+        <property name="probationRatio" type="string">
+            <column name="PROBATION_RATIO" length="100" />
+        </property>
+        <property name="channelProbation" type="java.lang.Boolean">
+            <column name="CHANNEL_PROBATION" />
+        </property>
+        <property name="exclusive" type="java.lang.Boolean">
+            <column name="EXCLUSIVE" />
+        </property>
+        <property name="invoiceType" type="string">
+            <column name="INVOICE_TYPE" length="100" />
+        </property>
+        <property name="sharingNote" type="string">
+            <column name="SHARING_NOTE" length="100" />
+        </property>
+        <property name="paperProtocol" type="java.lang.Boolean">
+            <column name="PAPER_PROTOCOL" />
+        </property>
+        <property name="electronicProtocol" type="java.lang.Boolean">
+            <column name="ELECTRONIC_PROTOCOL" />
+        </property>
+        <property name="provider" type="string">
+            <column name="PROVIDER" length="100" />
+        </property>
+        <property name="authorizationListName" type="string">
+            <column name="AUTHORIZATION_LIST_NAME" length="400" />
+        </property>
+        <property name="contractNo" type="string">
+            <column name="CONTRACT_NO" length="100" />
+        </property>
+        <property name="archiveFile" type="string">
+            <column name="ARCHIVE_FILE" length="400" />
+        </property>
+        <property name="vendorContactPerson" type="string">
+            <column name="VENDOR_CONTACT_PERSON" length="100" />
+        </property>
+        <property name="vendorContact" type="string">
+            <column name="VENDOR_CONTACT" length="400" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" not-null="true" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" not-null="true" />
+        </property>
+        <property name="updator" type="string">
+            <column name="UPDATOR" length="50" />
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="UPDATED" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

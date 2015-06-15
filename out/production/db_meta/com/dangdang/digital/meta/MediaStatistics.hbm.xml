@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaStatistics" table="media_statistics" schema="" catalog="digital">
+        <id name="sId" column="s_id"/>
+        <property name="saleId" column="sale_id"/>
+        <property name="mediaId" column="media_id"/>
+        <property name="mediaTitle" column="media_title"/>
+        <property name="mediaAuthorPenname" column="media_author_penname"/>
+        <property name="mediaCover" column="media_cover"/>
+        <property name="mediaIntroduce" column="media_introduce"/>
+        <property name="mediaCategoryIds" column="media_category_ids"/>
+        <property name="statisticsDay" column="statistics_day"/>
+        <property name="saleCount" column="sale_count"/>
+        <property name="prizeCount" column="prize_count"/>
+        <property name="rewardsCount" column="rewards_count"/>
+        <property name="starCount" column="star_count"/>
+        <property name="playCount" column="play_count"/>
+        <property name="searchCount" column="search_count"/>
+        <property name="downloadCount" column="download_count"/>
+        <property name="commentCount" column="comment_count"/>
+        <property name="mediaChapterChangeDate" column="media_chapter_change_date"/>
+        <property name="mediaCreationDate" column="media_creation_date"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaDiscovery" table="media_discovery" schema="" catalog="digital">
+        <id name="id" column="id"/>
+        <property name="author" column="author"/>
+        <property name="mediaId" column="media_id"/>
+        <property name="mediaName" column="media_name"/>
+        <property name="firstCatetoryId" column="first_catetory_id"/>
+        <property name="firstCatetoryName" column="first_catetory_name"/>
+        <property name="content" column="content"/>
+        <property name="type" column="type"/>
+        <property name="columnId" column="column_id"/>
+        <property name="columnName" column="column_name"/>
+        <property name="stars" column="stars"/>
+        <property name="reviewCnt" column="review_cnt"/>
+        <property name="collectCnt" column="collect_cnt"/>
+        <property name="topOrder" column="top_order"/>
+        <property name="operator" column="operator"/>
+        <property name="shareCnt" column="share_cnt"/>
+        <property name="signName" column="sign_name"/>
+        <property name="secondCatetoryId" column="second_catetory_id"/>
+        <property name="secondCatetoryName" column="second_catetory_name"/>
+        <property name="topCnt" column="top_cnt"/>
+        <property name="discardCnt" column="discard_cnt"/>
+        <property name="cardTitle" column="card_title"/>
+        <property name="cardRemark" column="card_remark"/>
+        <property name="pic1Path" column="pic1_path"/>
+        <property name="pic2Path" column="pic2_path"/>
+        <property name="pic3Path" column="pic3_path"/>
+        <property name="cardType" column="card_type"/>
+        <property name="showStartDate" column="show_start_date"/>
+        <property name="showEndDate" column="show_end_date"/>
+        <property name="title" column="title"/>
+        <property name="isShow" column="is_show"/>
+        <property name="signId" column="sign_id"/>
+    </class>
+</hibernate-mapping>

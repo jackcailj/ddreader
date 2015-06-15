@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaImportTask" table="media_import_task" schema="" catalog="digital">
+        <id name="taskId" column="task_id"/>
+        <property name="path" column="path"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="finishDate" column="finish_date"/>
+        <property name="status" column="status"/>
+        <property name="error" column="error"/>
+        <property name="batchId" column="batch_id"/>
+        <property name="title" column="title"/>
+        <property name="author" column="author"/>
+        <property name="mediaId" column="media_id"/>
+        <property name="chapterId" column="chapter_id"/>
+        <property name="chapterName" column="chapter_name"/>
+        <property name="mediaName" column="media_name"/>
+        <property name="volumeName" column="volume_name"/>
+        <property name="volumeId" column="volume_id"/>
+        <property name="uid" column="uid"/>
+        <property name="cpMediaPullId" column="cp_media_pull_id"/>
+        <property name="cpChapterPullId" column="cp_chapter_pull_id"/>
+        <property name="indexOrder" column="index_order"/>
+    </class>
+</hibernate-mapping>

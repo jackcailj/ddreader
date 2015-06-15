@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaIosDepositFail" table="media_ios_deposit_fail" schema=""
+           catalog="digital">
+        <id name="iosDepositFailId" column="ios_deposit_fail_id"/>
+        <property name="custId" column="cust_id"/>
+        <property name="userName" column="user_name"/>
+        <property name="depositOrderNo" column="deposit_order_no"/>
+        <property name="payment" column="payment"/>
+        <property name="relationProductId" column="relation_product_id"/>
+        <property name="money" column="money"/>
+        <property name="mainGold" column="main_gold"/>
+        <property name="giveMainGold" column="give_main_gold"/>
+        <property name="subGold" column="sub_gold"/>
+        <property name="deviceType" column="device_type"/>
+        <property name="payTime" column="pay_time"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="fromPaltform" column="from_paltform"/>
+        <property name="productCount" column="product_count"/>
+        <property name="receiptData" column="receipt_data"/>
+        <property name="status" column="status"/>
+        <property name="operateCount" column="operate_count"/>
+    </class>
+</hibernate-mapping>

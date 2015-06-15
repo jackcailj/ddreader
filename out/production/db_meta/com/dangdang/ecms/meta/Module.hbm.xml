@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.Module" table="module" catalog="ecmst">
+        <id name="moduleId" type="java.lang.Long">
+            <column name="module_id" />
+            <generator class="identity" />
+        </id>
+        <version name="version" type="java.lang.Integer">
+            <column name="version">
+                <comment>&#188;&#199;&#194;&#188;&#176;&#230;&#177;&#190;&#186;&#197;</comment>
+            </column>
+        </version>
+        <property name="moduleCode" type="string">
+            <column name="module_code" length="20" not-null="true">
+                <comment>&#196;&#163;&#191;&#233;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="moduleName" type="string">
+            <column name="module_name" length="40" not-null="true">
+                <comment>&#196;&#163;&#191;&#233;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="isAlwaysValid" type="string">
+            <column name="is_always_valid" length="1" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#211;&#192;&#190;&#195;&#211;&#208;&#208;&#167; 0-&#183;&#241; 1-&#202;&#199;</comment>
+            </column>
+        </property>
+        <property name="beginTime" type="timestamp">
+            <column name="begin_time" length="19">
+                <comment>&#196;&#163;&#191;&#233;&#201;&#250;&#208;&#167;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19">
+                <comment>&#196;&#163;&#191;&#233;&#202;&#167;&#208;&#167;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="moduleStatus" type="string">
+            <column name="module_status" length="1">
+                <comment>&#196;&#163;&#191;&#233;&#215;&#180;&#204;&#172; 0-&#206;&#180;&#191;&#170;&#202;&#188; 1-&#189;&#248;&#208;&#208;&#214;&#208;
+                2-&#210;&#209;&#189;&#225;&#202;&#248;</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" length="20" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="creationTime" type="timestamp">
+            <column name="creation_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier" length="20">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="lastModifyedTime" type="timestamp">
+            <column name="last_modifyed_time" length="19">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

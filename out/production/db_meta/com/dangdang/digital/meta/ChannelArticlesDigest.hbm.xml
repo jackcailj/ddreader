@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.ChannelArticlesDigest" table="channel_articles_digest" schema=""
+           catalog="digital">
+        <id name="id" column="id"/>
+        <property name="digestId" column="digest_id"/>
+        <property name="articlesId" column="articles_id"/>
+        <property name="indexNum" column="index_num"/>
+        <property name="isPublish" column="is_publish"/>
+        <property name="status" column="status"/>
+    </class>
+</hibernate-mapping>

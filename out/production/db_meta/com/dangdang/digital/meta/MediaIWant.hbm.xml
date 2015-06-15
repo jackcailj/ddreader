@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaIWant" table="media_i_want" schema="" catalog="digital">
+        <id name="id" column="ID"/>
+        <property name="custId" column="CUST_ID"/>
+        <property name="createTime" column="CREATE_TIME"/>
+        <property name="title" column="TITLE"/>
+        <property name="author" column="AUTHOR"/>
+        <property name="speaker" column="SPEAKER"/>
+        <property name="contactInfo" column="CONTACT_INFO"/>
+        <property name="platform" column="PLATFORM"/>
+    </class>
+</hibernate-mapping>

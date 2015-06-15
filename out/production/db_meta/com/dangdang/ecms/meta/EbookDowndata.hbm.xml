@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.EbookDowndata" table="ebook_downdata" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="productId" type="int">
+            <column name="PRODUCT_ID" not-null="true" />
+        </property>
+        <property name="downdate" type="date">
+            <column name="DOWNDATE" length="10" not-null="true" />
+        </property>
+        <property name="fullSize" type="int">
+            <column name="FULL_SIZE" not-null="true" />
+        </property>
+        <property name="freeSize" type="int">
+            <column name="FREE_SIZE" not-null="true" />
+        </property>
+        <property name="totalSize" type="int">
+            <column name="TOTAL_SIZE" not-null="true" />
+        </property>
+        <property name="deviceType" type="string">
+            <column name="DEVICE_TYPE" length="50" not-null="true" />
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="CREATE_DATE" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

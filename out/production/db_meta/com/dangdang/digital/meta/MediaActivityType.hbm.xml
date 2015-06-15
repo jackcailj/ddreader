@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaActivityType" table="media_activity_type" schema="" catalog="digital">
+        <id name="activityTypeId" column="activity_type_id"/>
+        <property name="activityTypeName" column="activity_type_name"/>
+        <property name="status" column="status"/>
+        <property name="activityTypeCode" column="activity_type_code"/>
+        <property name="creator" column="creator"/>
+        <property name="modifier" column="modifier"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="lastChangedDate" column="last_changed_date"/>
+        <property name="isPromptlyToAccount" column="is_promptly_to_account"/>
+    </class>
+</hibernate-mapping>

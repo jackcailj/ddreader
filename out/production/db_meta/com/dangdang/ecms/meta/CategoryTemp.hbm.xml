@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.CategoryTemp" table="category_temp" catalog="ecmst">
+        <composite-id name="id" class="com.dangdang.ecms.meta.CategoryTempId">
+            <key-property name="catid" type="int">
+                <column name="catid" />
+            </key-property>
+            <key-property name="pid" type="int">
+                <column name="pid" />
+            </key-property>
+        </composite-id>
+        <property name="name" type="string">
+            <column name="name" length="40" not-null="true">
+                <comment>&#183;&#214;&#192;&#224;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="visible" type="short">
+            <column name="visible" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#191;&#201;&#188;&#251;&#163;&#186;0 &#202;&#199;&#201;&#190;&#179;&#253; 1&#202;&#199;&#207;&#212;&#202;&#190;
+                3&#202;&#199;&#191;&#236;&#189;&#221;&#207;&#212;&#202;&#190;</comment>
+            </column>
+        </property>
+        <property name="fee" type="java.lang.Float">
+            <column name="fee" precision="12" scale="0" />
+        </property>
+        <property name="priority" type="java.lang.Integer">
+            <column name="priority" />
+        </property>
+        <property name="seo" type="string">
+            <column name="seo" length="100" />
+        </property>
+        <property name="template" type="string">
+            <column name="template" length="10" />
+        </property>
+        <property name="style" type="string">
+            <column name="style" length="10" />
+        </property>
+        <property name="aliasid" type="string">
+            <column name="aliasid" />
+        </property>
+        <property name="shopId" type="java.lang.Integer">
+            <column name="shop_id" />
+        </property>
+        <property name="aliasname" type="string">
+            <column name="aliasname" length="40" />
+        </property>
+        <property name="createtime" type="timestamp">
+            <column name="createtime" length="19" not-null="true" />
+        </property>
+        <property name="depth" type="java.lang.Boolean">
+            <column name="depth" />
+        </property>
+        <property name="maxGrade" type="timestamp">
+            <column name="max_grade" length="19" />
+        </property>
+        <property name="catpath" type="string">
+            <column name="catpath" length="20" not-null="true" />
+        </property>
+        <property name="useParent" type="java.lang.Boolean">
+            <column name="use_parent" />
+        </property>
+        <property name="cat0" type="java.lang.Integer">
+            <column name="cat0" />
+        </property>
+        <property name="useBrandModel" type="java.lang.Integer">
+            <column name="use_BrandModel" />
+        </property>
+        <property name="goodsNum" type="java.lang.Integer">
+            <column name="goods_num" />
+        </property>
+        <property name="priceSlice" type="string">
+            <column name="price_slice" length="65535" />
+        </property>
+        <property name="discountSlice" type="string">
+            <column name="discount_slice" length="65535" />
+        </property>
+        <property name="attribCatalog" type="string">
+            <column name="attrib_catalog" length="40" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.ucenter.meta.UserDevice" table="user_device" schema="" catalog="ucenter">
+        <id name="id" column="ID"/>
+        <property name="username" column="USERNAME"/>
+        <property name="deviceNo" column="DEVICE_NO"/>
+        <property name="deviceType" column="DEVICE_TYPE"/>
+        <property name="state" column="STATE"/>
+        <property name="created" column="CREATED"/>
+        <property name="publicKey" column="PUBLIC_KEY"/>
+        <property name="custId" column="CUST_ID"/>
+        <property name="publicKeyPdf" column="PUBLIC_KEY_PDF"/>
+        <property name="loginToken" column="LOGIN_TOKEN"/>
+        <property name="lastLoginTime" column="LAST_LOGIN_TIME"/>
+    </class>
+</hibernate-mapping>

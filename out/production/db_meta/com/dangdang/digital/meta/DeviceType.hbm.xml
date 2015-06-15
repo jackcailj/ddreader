@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.DeviceType" table="device_type" schema="" catalog="digital">
+        <id name="id" column="ID"/>
+        <property name="code" column="CODE"/>
+        <property name="name" column="NAME"/>
+        <property name="descn" column="DESCN"/>
+        <property name="defaultResfileType" column="DEFAULT_RESFILE_TYPE"/>
+        <property name="compatibleServerVersion" column="COMPATIBLE_SERVER_VERSION"/>
+        <property name="binaryValue" column="BINARY_VALUE"/>
+        <property name="sort" column="SORT"/>
+    </class>
+</hibernate-mapping>

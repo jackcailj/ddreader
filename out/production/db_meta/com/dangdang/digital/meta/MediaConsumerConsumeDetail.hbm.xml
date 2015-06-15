@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaConsumerConsumeDetail" table="media_consumer_consume_detail" schema=""
+           catalog="digital">
+        <id name="consumerConsumeDeatilId" column="consumer_consume_deatil_id"/>
+        <property name="consumerConsumeId" column="consumer_consume_id"/>
+        <property name="mediaId" column="media_id"/>
+        <property name="mediaName" column="media_name"/>
+        <property name="mediaConsumeChapterNum" column="media_consume_chapter_num"/>
+        <property name="propId" column="prop_id"/>
+        <property name="propName" column="prop_name"/>
+        <property name="totalPrice" column="total_price"/>
+        <property name="prePrice" column="pre_price"/>
+        <property name="mainGoldPrice" column="main_gold_price"/>
+        <property name="subGoldPrice" column="sub_gold_price"/>
+        <property name="propCount" column="prop_count"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.CnrProgram" table="cnr_program" catalog="ecmst">
+        <id name="id" type="long">
+            <column name="id" />
+            <generator class="assigned" />
+        </id>
+        <property name="ebookId" type="java.lang.Integer">
+            <column name="ebook_id" />
+        </property>
+        <property name="productId" type="java.lang.Integer">
+            <column name="productId" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="100">
+                <comment>&#189;&#218;&#196;&#191;&#181;&#196;&#214;&#247;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="subtitle" type="string">
+            <column name="subtitle" length="200">
+                <comment>&#189;&#218;&#196;&#191;&#181;&#196;&#215;&#211;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="catid" type="java.lang.Integer">
+            <column name="catid">
+                <comment>&#183;&#214;&#192;&#224;id</comment>
+            </column>
+        </property>
+        <property name="thumb" type="string">
+            <column name="thumb" length="100">
+                <comment>&#183;&#226;&#195;&#230;&#205;&#188;url</comment>
+            </column>
+        </property>
+        <property name="thumb1" type="string">
+            <column name="thumb1" length="100" />
+        </property>
+        <property name="thumb2" type="string">
+            <column name="thumb2" length="100" />
+        </property>
+        <property name="thumb3" type="string">
+            <column name="thumb3" length="100" />
+        </property>
+        <property name="thumb4" type="string">
+            <column name="thumb4" length="100" />
+        </property>
+        <property name="desc" type="string">
+            <column name="desc" length="500">
+                <comment>&#189;&#218;&#196;&#191;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="keywords" type="string">
+            <column name="keywords" length="100">
+                <comment>&#189;&#218;&#196;&#191;&#185;&#216;&#188;&#252;&#215;&#214;</comment>
+            </column>
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="50">
+                <comment>&#181;&#177;&#199;&#176;&#189;&#218;&#196;&#191;&#181;&#196;&#214;&#247;&#179;&#214;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="broadcast" type="string">
+            <column name="broadcast" length="20">
+                <comment>&#178;&#165;&#210;&#244;</comment>
+            </column>
+        </property>
+        <property name="duration" type="string">
+            <column name="duration" length="50">
+                <comment>&#215;&#220;&#178;&#165;&#183;&#197;&#202;&#177;&#179;&#164;</comment>
+            </column>
+        </property>
+        <property name="audiocount" type="java.lang.Integer">
+            <column name="audiocount">
+                <comment>&#181;&#177;&#199;&#176;&#189;&#218;&#196;&#191;&#181;&#196;&#210;&#244;&#198;&#181;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="chargename" type="string">
+            <column name="chargename" length="10" />
+        </property>
+        <property name="chargefee" type="java.lang.Integer">
+            <column name="chargefee">
+                <comment>&#202;&#213;&#183;&#209;&#181;&#165;&#188;&#219;</comment>
+            </column>
+        </property>
+        <property name="chargetype" type="java.lang.Integer">
+            <column name="chargetype">
+                <comment>
+                &#202;&#213;&#183;&#209;&#192;&#224;&#208;&#205;&#163;&#172;1&#177;&#237;&#202;&#190;&#202;&#213;&#183;&#209;&#163;&#172;0&#177;&#237;&#202;&#190;&#195;&#226;&#183;&#209;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>0:&#201;&#207;&#188;&#220; 1:&#207;&#194;&#188;&#220;</comment>
+            </column>
+        </property>
+        <property name="pgid" type="string">
+            <column name="pgid" length="50">
+                <comment>&#209;&#235;&#185;&#227;&#178;&#250;&#198;&#183;ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

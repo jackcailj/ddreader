@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.ChannelErrorMsg" table="channel_error_msg" schema="" catalog="digital">
+        <id name="errorId" column="error_id"/>
+        <property name="type" column="type"/>
+        <property name="errorMsg" column="error_msg"/>
+        <property name="fields" column="fields"/>
+        <property name="defaultJson" column="default_json"/>
+        <property name="changer" column="changer"/>
+        <property name="modifyDate" column="modify_date"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.ChannelSubUser" table="channel_sub_user" schema="" catalog="digital">
+        <id name="subId" column="sub_id"/>
+        <property name="channleId" column="channle_id"/>
+        <property name="custId" column="cust_id"/>
+        <property name="userName" column="user_name"/>
+        <property name="createDate" column="create_date"/>
+        <property name="type" column="type"/>
+        <property name="canelDate" column="canel_date"/>
+    </class>
+</hibernate-mapping>

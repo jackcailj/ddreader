@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.EbookBindRecordInfo" table="ebook_bind_record_info" catalog="ecmst">
+        <id name="recordId" type="java.lang.Long">
+            <column name="record_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderId" type="string">
+            <column name="order_id" length="50">
+                <comment>&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="uniqueOperationId" type="java.lang.Long">
+            <column name="unique_operation_id">
+                <comment>&#206;&#168;&#210;&#187;&#178;&#217;&#215;&#247;id</comment>
+            </column>
+        </property>
+        <property name="created" type="timestamp">
+            <column name="created" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="bindType" type="java.lang.Short">
+            <column name="bind_type">
+                <comment>&#176;&#243;&#182;&#168;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="recordInfo" type="string">
+            <column name="record_info" length="5000">
+                <comment>json &#208;&#197;&#207;&#162;</comment>
+            </column>
+        </property>
+        <property name="dealStatus" type="java.lang.Short">
+            <column name="deal_status">
+                <comment>
+                &#180;&#166;&#192;&#237;&#215;&#180;&#204;&#172;&#163;&#168;0&#163;&#186;&#180;&#253;&#180;&#166;&#192;&#237;&#161;&#162;1&#161;&#162;&#180;&#166;&#192;&#237;&#214;&#208;&#161;&#162;2&#161;&#162;&#210;&#209;&#205;&#234;&#179;&#201;&#161;&#162;3&#161;&#162;&#180;&#166;&#192;&#237;&#202;&#167;&#176;&#220;&#163;&#169;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

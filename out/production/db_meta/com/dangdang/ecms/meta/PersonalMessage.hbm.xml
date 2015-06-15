@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.PersonalMessage" table="personal_message" catalog="ecmst">
+        <id name="messageId" type="java.lang.Long">
+            <column name="message_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="info" type="string">
+            <column name="info" length="2048">
+                <comment>&#207;&#251;&#207;&#162;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Short">
+            <column name="type">
+                <comment>&#207;&#251;&#207;&#162;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Short">
+            <column name="status">
+                <comment>&#207;&#251;&#207;&#162;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="createdTime" type="java.lang.Long">
+            <column name="created_time">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="ascription" type="java.lang.Short">
+            <column name="ascription">
+                <comment>&#207;&#251;&#207;&#162;&#185;&#233;&#202;&#244;</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="256">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="parameter" type="string">
+            <column name="parameter" length="1024">
+                <comment>&#207;&#251;&#207;&#162;&#178;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="256">
+                <comment>&#207;&#251;&#207;&#162;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

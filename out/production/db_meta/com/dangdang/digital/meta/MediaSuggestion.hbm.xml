@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaSuggestion" table="media_suggestion" schema="" catalog="digital">
+        <id name="suggestionId" column="suggestion_id"/>
+        <property name="custId" column="cust_id"/>
+        <property name="userName" column="user_name"/>
+        <property name="nickName" column="nick_name"/>
+        <property name="suggestDate" column="suggest_date"/>
+        <property name="advice" column="advice"/>
+        <property name="contactWay" column="contact_way"/>
+        <property name="deviceType" column="device_type"/>
+        <property name="clientOs" column="client_os"/>
+        <property name="clientVersion" column="client_version"/>
+        <property name="platform" column="platform"/>
+    </class>
+</hibernate-mapping>

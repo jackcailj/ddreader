@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.BookReview" table="book_review" catalog="ecmst">
+        <id name="brId" type="java.lang.Integer">
+            <column name="br_id" />
+            <generator class="identity" />
+        </id>
+        <property name="subjectId" type="long">
+            <column name="subject_id" not-null="true">
+                <comment>&#214;&#189;&#214;&#202;&#202;&#233;&#181;&#165;&#198;&#183;id</comment>
+            </column>
+        </property>
+        <property name="customerId" type="long">
+            <column name="customer_id" not-null="true">
+                <comment>&#183;&#162;&#177;&#237;&#202;&#233;&#198;&#192;&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="reviewId" type="long">
+            <column name="review_id" not-null="true" unique="true">
+                <comment>&#202;&#233;&#198;&#192;id</comment>
+            </column>
+        </property>
+        <property name="reviewType" type="boolean">
+            <column name="review_type" not-null="true">
+                <comment>
+                &#202;&#233;&#198;&#192;&#199;&#248;&#183;&#214;&#192;&#224;&#208;&#205;&#163;&#186;0&#163;&#186;&#190;&#171;&#187;&#170;&#163;&#187;1&#163;&#186;&#205;&#198;&#188;&#246;&#163;&#187;2&#163;&#186;&#200;&#200;&#195;&#197;&#163;&#187;3&#163;&#186;&#195;&#251;&#188;&#210;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="500">
+                <comment>&#202;&#233;&#198;&#192;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="comment" type="string">
+            <column name="comment" length="65535">
+                <comment>&#202;&#233;&#198;&#192;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="bookImgUrl" type="string">
+            <column name="book_img_url">
+                <comment>&#205;&#188;&#202;&#233;&#176;&#230;&#195;&#230;&#205;&#188;&#198;&#172;&#193;&#180;&#189;&#211;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#202;&#233;&#198;&#192;&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="replyCount" type="java.lang.Integer">
+            <column name="reply_count">
+                <comment>&#202;&#233;&#198;&#192;&#187;&#216;&#184;&#180;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="praiseCount" type="java.lang.Integer">
+            <column name="praise_count">
+                <comment>&#202;&#233;&#198;&#192;&#212;&#222;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="bookName" type="string">
+            <column name="book_name">
+                <comment>&#202;&#233;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="bookAuthor" type="string">
+            <column name="book_author" length="100">
+                <comment>&#202;&#233;&#215;&#247;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateTime" type="timestamp">
+            <column name="last_update_time" length="19">
+                <comment>&#202;&#233;&#198;&#192;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="bookDesc" type="string">
+            <column name="book_desc" length="65535">
+                <comment>&#202;&#233;&#213;&#170;&#210;&#170;</comment>
+            </column>
+        </property>
+        <property name="auditStatus" type="boolean">
+            <column name="audit_status" not-null="true">
+                <comment>
+                &#202;&#233;&#198;&#192;&#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;0:&#206;&#180;&#201;&#243;&#186;&#203;,1:&#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253;,-1,&#201;&#243;&#186;&#203;&#178;&#187;&#205;&#168;&#185;&#253;</comment>
+            </column>
+        </property>
+        <property name="fromType" type="byte">
+            <column name="from_type" not-null="true">
+                <comment>
+                &#202;&#233;&#198;&#192;&#192;&#180;&#212;&#180;0:PC&#182;&#203;&#181;&#188;&#200;&#235;,1:UGC,-1:&#212;&#203;&#206;&#172;&#181;&#188;&#200;&#235;,-2:&#212;&#173;&#180;&#180;</comment>
+            </column>
+        </property>
+        <property name="score" type="big_decimal">
+            <column name="score" precision="11" scale="1">
+                <comment>&#202;&#233;&#198;&#192;&#208;&#199;&#188;&#182;</comment>
+            </column>
+        </property>
+        <property name="subjectType" type="boolean">
+            <column name="subject_type" not-null="true">
+                <comment>
+                0-&#181;&#231;&#215;&#211;&#187;&#242;&#214;&#189;&#214;&#202;&#202;&#233;&#163;&#172;1-&#212;&#173;&#180;&#180;&#202;&#233;&#163;&#172;2-&#212;&#173;&#180;&#180;&#206;&#196;&#213;&#194;&#163;&#172;3-&#190;&#171;&#198;&#183;&#206;&#196;&#213;&#194;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

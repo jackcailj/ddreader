@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaNotificationApikey" table="media_notification_apikey" schema=""
+           catalog="digital">
+        <id name="notificationApikeyId" column="notification_apikey_id"/>
+        <property name="appid" column="appid"/>
+        <property name="appname" column="appname"/>
+        <property name="apiKey" column="api_key"/>
+        <property name="secret" column="secret"/>
+    </class>
+</hibernate-mapping>

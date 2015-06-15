@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.MobileAccessLog" table="`mobile_access_log-`" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="machine" type="string">
+            <column name="MACHINE" length="50" />
+        </property>
+        <property name="time" type="timestamp">
+            <column name="TIME" length="19" not-null="true" />
+        </property>
+        <property name="ip" type="string">
+            <column name="IP" length="256" />
+        </property>
+        <property name="referUrl" type="string">
+            <column name="REFER_URL" length="4000" />
+        </property>
+        <property name="url" type="string">
+            <column name="URL" length="16777215" />
+        </property>
+        <property name="custId" type="string">
+            <column name="CUST_ID" length="50" />
+        </property>
+        <property name="permanentId" type="string">
+            <column name="PERMANENT_ID" length="50" />
+        </property>
+        <property name="httpUserAgent" type="string">
+            <column name="HTTP_USER_AGENT" length="500" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="500" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="TYPE" />
+        </property>
+        <property name="ctrId" type="string">
+            <column name="CTR_ID" length="80" />
+        </property>
+        <property name="misc" type="string">
+            <column name="MISC" length="4000" />
+        </property>
+        <property name="ref" type="string">
+            <column name="REF" length="100" />
+        </property>
+        <property name="traceId" type="string">
+            <column name="TRACE_ID" length="50" />
+        </property>
+        <property name="toUrl" type="string">
+            <column name="TO_URL" length="4000" />
+        </property>
+        <property name="regionId" type="string">
+            <column name="REGION_ID" length="80" />
+        </property>
+        <property name="adFrom" type="string">
+            <column name="AD_FROM" length="1000" />
+        </property>
+        <property name="visitorPermanentId" type="string">
+            <column name="VISITOR_PERMANENT_ID" length="80" />
+        </property>
+        <property name="visitorCount" type="java.lang.Integer">
+            <column name="VISITOR_COUNT" />
+        </property>
+        <property name="ctrType" type="string">
+            <column name="CTR_TYPE" length="80" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="2000" />
+        </property>
+        <property name="isFirstPv" type="java.lang.Integer">
+            <column name="IS_FIRST_PV" />
+        </property>
+        <property name="orginalUrl" type="string">
+            <column name="ORGINAL_URL" length="65535" />
+        </property>
+    </class>
+</hibernate-mapping>

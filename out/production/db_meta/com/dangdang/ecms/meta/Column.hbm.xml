@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.Column" table="column" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" not-null="true" />
+        </property>
+        <property name="shortName" type="string">
+            <column name="SHORT_NAME" length="50" not-null="true" />
+        </property>
+        <property name="code" type="string">
+            <column name="CODE" not-null="true" />
+        </property>
+        <property name="parentId" type="java.lang.Long">
+            <column name="PARENT_ID" />
+        </property>
+        <property name="rootId" type="java.lang.Long">
+            <column name="ROOT_ID" />
+        </property>
+        <property name="siteId" type="long">
+            <column name="SITE_ID" not-null="true" />
+        </property>
+        <property name="descn" type="string">
+            <column name="DESCN" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" not-null="true" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" not-null="true" />
+        </property>
+        <property name="updator" type="string">
+            <column name="UPDATOR" length="50" />
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="UPDATED" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="SORT" />
+        </property>
+        <property name="modelType" type="java.lang.Integer">
+            <column name="MODEL_TYPE" />
+        </property>
+        <property name="logo" type="string">
+            <column name="LOGO" length="400" />
+        </property>
+        <property name="docType" type="string">
+            <column name="DOC_TYPE" length="100" />
+        </property>
+        <property name="promotionId" type="java.lang.Long">
+            <column name="PROMOTION_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaAuthor" table="media_author" schema="" catalog="digital">
+        <id name="authorId" column="author_id"/>
+        <property name="pseudonym" column="pseudonym"/>
+        <property name="sex" column="sex"/>
+        <property name="birth" column="birth"/>
+        <property name="introduction" column="introduction"/>
+        <property name="sign" column="sign"/>
+        <property name="creator" column="creator"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="modifier" column="modifier"/>
+        <property name="lastModifiedDate" column="last_modified_date"/>
+        <property name="name" column="name"/>
+        <property name="cpType" column="cp_type"/>
+        <property name="cpAuthorId" column="cp_author_id"/>
+        <property name="headPic" column="head_pic"/>
+    </class>
+</hibernate-mapping>

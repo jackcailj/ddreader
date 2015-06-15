@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.CouponDispatchStats" table="coupon_dispatch_stats" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="dispatchDay" type="date">
+            <column name="dispatch_day" length="10" />
+        </property>
+        <property name="couponActId" type="java.lang.Long">
+            <column name="coupon_act_id" />
+        </property>
+        <property name="qualifiedTerminals" type="java.lang.Integer">
+            <column name="qualified_terminals" />
+        </property>
+        <property name="dispatchCount" type="java.lang.Integer">
+            <column name="dispatch_count" />
+        </property>
+        <property name="receiveCount" type="java.lang.Integer">
+            <column name="receive_count" />
+        </property>
+        <property name="remainCount" type="java.lang.Integer">
+            <column name="remain_count" />
+        </property>
+    </class>
+</hibernate-mapping>

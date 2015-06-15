@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.PaperArticle" table="paper_article" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="TITLE" length="1024" />
+        </property>
+        <property name="introtitle" type="string">
+            <column name="INTROTITLE" length="3096" />
+        </property>
+        <property name="subtitle" type="string">
+            <column name="SUBTITLE" length="1024" />
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR" length="2048" />
+        </property>
+        <property name="descn" type="string">
+            <column name="DESCN" />
+        </property>
+        <property name="keywords" type="string">
+            <column name="KEYWORDS" length="400" />
+        </property>
+        <property name="doctype" type="string">
+            <column name="DOCTYPE" length="100" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" />
+        </property>
+        <property name="updated" type="date">
+            <column name="UPDATED" length="10" />
+        </property>
+        <property name="updator" type="string">
+            <column name="UPDATOR" length="50" />
+        </property>
+        <property name="content" type="binary">
+            <column name="CONTENT" />
+        </property>
+        <property name="paperName" type="string">
+            <column name="PAPER_NAME" length="100" />
+        </property>
+        <property name="pubtime" type="date">
+            <column name="PUBTIME" length="10" />
+        </property>
+        <property name="uid" type="string">
+            <column name="UID" length="100" />
+        </property>
+        <property name="paperUid" type="string">
+            <column name="PAPER_UID" length="100" />
+        </property>
+        <property name="periodUid" type="string">
+            <column name="PERIOD_UID" length="500" />
+        </property>
+        <property name="periodDate" type="date">
+            <column name="PERIOD_DATE" length="10" />
+        </property>
+        <property name="pageUid" type="string">
+            <column name="PAGE_UID" length="100" />
+        </property>
+        <property name="pageNumber" type="string">
+            <column name="PAGE_NUMBER" length="50" />
+        </property>
+        <property name="pageName" type="string">
+            <column name="PAGE_NAME" length="200" />
+        </property>
+        <property name="coords" type="string">
+            <column name="coords" length="4000" />
+        </property>
+        <property name="displayorder" type="java.lang.Long">
+            <column name="DISPLAYORDER" precision="10" scale="0" />
+        </property>
+        <property name="pubtype" type="string">
+            <column name="PUBTYPE" length="100" not-null="true" />
+        </property>
+        <property name="xmlurl" type="string">
+            <column name="XMLURL" />
+        </property>
+    </class>
+</hibernate-mapping>

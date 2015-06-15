@@ -1,0 +1,150 @@
+package com.dangdang.ddframework.core;
+
+import java.util.*;
+import java.util.Map.Entry;
+import java.lang.reflect.Method;
+
+import org.apache.log4j.Logger;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.ITestContext;
+import org.testng.annotations.*;
+
+import com.dangdang.ddframework.drivers.HttpDriver;
+import com.dangdang.ddframework.log.Log;
+import com.dangdang.ddframework.util.*;
+
+
+public abstract class TestCaseBase {
+	
+	public String testDataFile = "";
+	Util utils = new Util();
+	Logger log = Log.getLogger(TestCaseBase.class);
+	
+//	@DataProvider(name="dataProvider1")
+//	public Iterator<Object[]> DataProvider(Method method){
+//		if (testDataFile.isEmpty()){
+//			//testDataFile = method.getName();
+//			ExcelData data = new ExcelData("./testData/" + method.getName(), method.getName());
+//			return data;
+//		}
+//		else {
+//			ExcelData data = new ExcelData("./testData/" + testDataFile, method.getName());	
+//			return data;
+//		}
+//	}
+//	
+	@DataProvider(name="dataProvider")
+	public Iterator<Object[]> DataProvider(ITestContext context,Method method){
+		String[] includeGroups=context.getIncludedGroups();
+		String[] excludeGroups=context.getExcludedGroups();
+	
+		String filePath="";
+		if (testDataFile.isEmpty()){
+			filePath="testData/" + method.getName();
+		}
+		else {
+			filePath="testData/" + testDataFile;
+		}
+		
+		ExcelData data = new ExcelData(filePath, method.getName(),includeGroups,excludeGroups);	
+		return data;
+	}
+	
+	public void setDataFile(String path){
+		testDataFile = path;
+	}
+	
+	protected String url = "http://10.255.223.149/media/api.go?";
+	public static Map<String,String> commonParams = new HashMap<String,String>();
+	
+	public String getURL(){
+		return url;
+	}
+	public static Map<String, String> getCommonParams(){
+		commonParams.put("returnType", "json");
+		commonParams.put("deviceType", "YC_Android");
+		commonParams.put("channelId", "40000");
+		commonParams.put("clientVersionNo", "1.0");
+		commonParams.put("serverVersionNo", "1.2.1");
+		commonParams.put("permanentId", "20150110021451227105983711475801861");
+		commonParams.put("deviceSerialNo", "860850026397577");
+		commonParams.put("macAddr", "18:dc:56:36:67:9c");
+		commonParams.put("resolution", "540*960");
+		commonParams.put("clientOs", "4.2.2");
+
+		commonParams.put("platformSource", "DDXS-P");
+//		commonParams.put("token", "");		
+
+		return commonParams;
+	}	
+	
+	@SuppressWarnings("rawtypes")
+	public String sendRequest(String url, Map<String, String> param, String expected){
+		String str = url;
+		String jsonString = "";		
+		jsonString = HttpDriver.doPost(url, param);		
+		Iterator<Entry<String, String>> iter = param.entrySet().iterator();
+		while (iter.hasNext()) {
+			Map.Entry entry = (Map.Entry) iter.next();
+			String key = (String) entry.getKey();
+			String val = (String) entry.getValue();
+			str += key + "=" + val + "&";
+		}			
+		log.info(str);
+		return jsonString;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	public String sendRequest(Map<String, String> param, String expected){
+		String str = url;
+		String jsonString = "";		
+		jsonString = HttpDriver.doPost(url, param);		
+		Iterator<Entry<String, String>> iter = param.entrySet().iterator();
+		while (iter.hasNext()) {
+			Map.Entry entry = (Map.Entry) iter.next();
+			String key = (String) entry.getKey();
+			String val = (String) entry.getValue();
+			str += key + "=" + val + "&";
+		}			
+		log.info(str);
+		return jsonString;
+	}
+	
+	@SuppressWarnings({ "rawtypes", "static-access" })
+	public String sendRequest(String params){	
+		String str = url;
+		String jsonString = "";		
+		Map<String,String> param = utils.generateMap(params);
+		jsonString = HttpDriver.doPost(url, param);		
+		Iterator<Entry<String, String>> iter = param.entrySet().iterator();
+		while (iter.hasNext()) {
+			Map.Entry entry = (Map.Entry) iter.next();
+			String key = (String) entry.getKey();
+			String val = (String) entry.getValue();
+			str += key + "=" + val + "&";
+		}			
+		log.info(str);
+		return jsonString;
+	}
+	
+	/**
+	 * 把从数据库取出的值设置成参数值
+	 * '
+	 * @param results  数据库配置
+	 * @param param  参数
+	 * @param map  <参数，字段>对
+	 * 
+	 */
+	public void putValueToParamFromDB(Map<String, Object> results, Map<String, String> map, Map<String, String> param) {
+		for(String key : map.keySet()){
+			if(("FromDB").equals(param.get(key))) {
+				param.put(key, results.get(map.get(key)).toString());
+			}
+		}
+	}
+	
+	
+	
+	
+}

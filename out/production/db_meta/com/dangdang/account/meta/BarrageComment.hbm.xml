@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.account.meta.BarrageComment" table="barrage_comment" schema="" catalog="account">
+        <id name="barrageCommentId" column="barrage_comment_id"/>
+        <property name="mediaId" column="media_id"/>
+        <property name="custId" column="cust_id"/>
+        <property name="chapterId" column="chapter_id"/>
+        <property name="characterStartIndex" column="character_start_index"/>
+        <property name="characterEndIndex" column="character_end_index"/>
+        <property name="content" column="content"/>
+        <property name="publishDate" column="publish_date"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="lastModifyedDate" column="last_modifyed_date"/>
+        <property name="parentId" column="parent_id"/>
+        <property name="status" column="status"/>
+        <property name="reviewStatus" column="review_status"/>
+        <property name="deviceType" column="device_type"/>
+        <property name="reviewFailReason" column="review_fail_reason"/>
+        <property name="isAnonymous" column="is_anonymous"/>
+    </class>
+</hibernate-mapping>

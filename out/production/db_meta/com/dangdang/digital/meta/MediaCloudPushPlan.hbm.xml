@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaCloudPushPlan" table="media_cloud_push_plan" schema=""
+           catalog="digital">
+        <id name="cloudPushPlanId" column="cloud_push_plan_id"/>
+        <property name="appId" column="app_id"/>
+        <property name="planName" column="plan_name"/>
+        <property name="planType" column="plan_type"/>
+        <property name="pushedNumber" column="pushed_number"/>
+        <property name="openedNumber" column="opened_number"/>
+        <property name="planStatus" column="plan_status"/>
+        <property name="planCondition" column="plan_condition"/>
+        <property name="pushStrategyId" column="push_strategy_id"/>
+        <property name="iosVersionAbove" column="ios_version_above"/>
+        <property name="versionAbove" column="version_above"/>
+        <property name="messageType" column="message_type"/>
+        <property name="messageTitle" column="message_title"/>
+        <property name="messageDescription" column="message_description"/>
+        <property name="deviceTypeAndroid" column="device_type_android"/>
+        <property name="deviceTypeIos" column="device_type_ios"/>
+        <property name="pushScope" column="push_scope"/>
+        <property name="userIds" column="user_ids"/>
+        <property name="sendMode" column="send_mode"/>
+        <property name="sendTime" column="send_time"/>
+        <property name="openType" column="open_type"/>
+        <property name="openUrl" column="open_url"/>
+        <property name="customContent" column="custom_content"/>
+        <property name="customContentIos" column="custom_content_ios"/>
+        <property name="startDate" column="start_date"/>
+        <property name="endDate" column="end_date"/>
+        <property name="sendFrequency" column="send_frequency"/>
+        <property name="sendFrequencyValue" column="send_frequency_value"/>
+        <property name="sendTimeBegin" column="send_time_begin"/>
+        <property name="sendTimeEnd" column="send_time_end"/>
+        <property name="creator" column="creator"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="modifier" column="modifier"/>
+        <property name="lastChangedDate" column="last_changed_date"/>
+    </class>
+</hibernate-mapping>

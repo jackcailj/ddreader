@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaBought" table="media_bought" schema="" catalog="digital">
+        <id name="boughtId" column="bought_id"/>
+        <property name="mediaId" column="media_id"/>
+        <property name="saleId" column="sale_id"/>
+        <property name="mediaTitle" column="media_title"/>
+        <property name="authorPenName" column="author_pen_name"/>
+        <property name="payMainPrice" column="pay_main_price"/>
+        <property name="paySubPrice" column="pay_sub_price"/>
+        <property name="updateTime" column="update_time"/>
+        <property name="custId" column="cust_id"/>
+        <property name="wholeFlag" column="whole_flag"/>
+        <property name="fromPaltform" column="from_paltform"/>
+    </class>
+</hibernate-mapping>

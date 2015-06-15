@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.VspEbookInfo" table="vsp_ebook_info" catalog="ecmst">
+        <id name="productId" type="int">
+            <column name="PRODUCT_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="isbn" type="string">
+            <column name="ISBN" length="20" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="100" not-null="true" />
+        </property>
+        <property name="categoryCode" type="string">
+            <column name="CATEGORY_CODE" length="100" />
+        </property>
+        <property name="categoryName" type="string">
+            <column name="CATEGORY_NAME" />
+        </property>
+        <property name="vendorId" type="long">
+            <column name="VENDOR_ID" not-null="true" />
+        </property>
+        <property name="unloadDate" type="timestamp">
+            <column name="UNLOAD_DATE" length="19" />
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR" length="100" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="PRICE" />
+        </property>
+        <property name="ebookPrice" type="java.lang.Integer">
+            <column name="EBOOK_PRICE" />
+        </property>
+        <property name="shelfStatus" type="java.lang.Integer">
+            <column name="SHELF_STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

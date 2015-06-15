@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.EbookCatalog" table="ebook_catalog" catalog="ecmst">
+        <id name="ecId" type="java.lang.Long">
+            <column name="ec_id" />
+            <generator class="identity" />
+        </id>
+        <property name="productId" type="long">
+            <column name="PRODUCT_ID" not-null="true" />
+        </property>
+        <property name="catalogName" type="string">
+            <column name="CATALOG_NAME" length="200" not-null="true">
+                <comment>&#213;&#194;&#189;&#218;&#195;&#251;&#215;&#214;</comment>
+            </column>
+        </property>
+        <property name="catalogContent" type="string">
+            <column name="CATALOG_CONTENT" length="400" not-null="true">
+                <comment>&#199;&#176;100&#215;&#214;&#183;&#251;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

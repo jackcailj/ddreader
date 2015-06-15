@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaListRanking" table="media_list_ranking" schema="" catalog="digital">
+        <id name="listId" column="list_id"/>
+        <property name="saleId" column="sale_id"/>
+        <property name="mediaId" column="media_id"/>
+        <property name="mediaName" column="media_name"/>
+        <property name="mediaCover" column="media_cover"/>
+        <property name="penName" column="pen_name"/>
+        <property name="mediaIntroduce" column="media_introduce"/>
+        <property name="listType" column="list_type"/>
+        <property name="issue" column="issue"/>
+        <property name="orderOne" column="order_one"/>
+        <property name="counts" column="counts"/>
+        <property name="lastChangeDate" column="last_change_date"/>
+        <property name="appointOrder" column="appoint_order"/>
+        <property name="operator" column="operator"/>
+        <property name="operateTime" column="operate_time"/>
+        <property name="rankDay" column="rank_day"/>
+        <property name="status" column="status"/>
+        <property name="mediaPaths" column="media_paths"/>
+    </class>
+</hibernate-mapping>

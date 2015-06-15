@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaLotteryPrize" table="media_lottery_prize" schema="" catalog="digital">
+        <id name="mediaLotteryPrizeId" column="media_lottery_prize_id"/>
+        <property name="prizeName" column="prize_name"/>
+        <property name="introduce" column="introduce"/>
+        <property name="probability" column="probability"/>
+        <property name="dayLimit" column="day_limit"/>
+        <property name="totalLimit" column="total_limit"/>
+        <property name="prizeType" column="prize_type"/>
+        <property name="prizeId" column="prize_id"/>
+        <property name="amount" column="amount"/>
+        <property name="vestType" column="vest_type"/>
+        <property name="startDate" column="start_date"/>
+        <property name="endDate" column="end_date"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="lastModifiedDate" column="last_modified_date"/>
+        <property name="creator" column="creator"/>
+        <property name="modifier" column="modifier"/>
+        <property name="channel" column="channel"/>
+    </class>
+</hibernate-mapping>

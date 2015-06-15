@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.ApiDeviceConfig" table="api_device_config" catalog="ecmst">
+        <composite-id name="id" class="com.dangdang.ecms.meta.ApiDeviceConfigId">
+            <key-property name="theApi" type="string">
+                <column name="THE_API" length="100" />
+            </key-property>
+            <key-property name="deviceType" type="string">
+                <column name="DEVICE_TYPE" length="100" />
+            </key-property>
+        </composite-id>
+        <property name="serveStatus" type="int">
+            <column name="SERVE_STATUS" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

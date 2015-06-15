@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.EbookEncryptkey" table="ebook_encryptkey" catalog="ecmst">
+        <id name="ebookId" type="long">
+            <column name="EBOOK_ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="fullKey" type="string">
+            <column name="FULL_KEY" length="100" />
+        </property>
+        <property name="freeKey" type="string">
+            <column name="FREE_KEY" length="100" />
+        </property>
+        <property name="pdfFullKey" type="string">
+            <column name="PDF_FULL_KEY" length="100" />
+        </property>
+        <property name="pdfFreeKey" type="string">
+            <column name="PDF_FREE_KEY" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

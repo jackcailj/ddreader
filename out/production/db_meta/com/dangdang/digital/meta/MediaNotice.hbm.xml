@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaNotice" table="media_notice" schema="" catalog="digital">
+        <id name="noticeId" column="notice_id"/>
+        <property name="title" column="title"/>
+        <property name="type" column="type"/>
+        <property name="creator" column="creator"/>
+        <property name="createTime" column="create_time"/>
+        <property name="startTime" column="start_time"/>
+        <property name="endTime" column="end_time"/>
+        <property name="url" column="url"/>
+        <property name="parameter" column="parameter"/>
+        <property name="lastChangeTime" column="last_change_time"/>
+        <property name="modifer" column="modifer"/>
+        <property name="channelType" column="channel_type"/>
+    </class>
+</hibernate-mapping>

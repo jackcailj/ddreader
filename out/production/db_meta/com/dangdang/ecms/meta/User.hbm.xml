@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.User" table="user" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="organizationId" type="long">
+            <column name="ORGANIZATION_ID" not-null="true" />
+        </property>
+        <property name="username" type="string">
+            <column name="USERNAME" length="30" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="100" />
+        </property>
+        <property name="usbKey" type="string">
+            <column name="USB_KEY" length="30" />
+        </property>
+        <property name="pic" type="string">
+            <column name="PIC" length="400" />
+        </property>
+        <property name="birthday" type="string">
+            <column name="BIRTHDAY" length="20" />
+        </property>
+        <property name="phone" type="string">
+            <column name="PHONE" length="12" not-null="true" />
+        </property>
+        <property name="job" type="string">
+            <column name="JOB" length="100" />
+        </property>
+        <property name="company" type="string">
+            <column name="COMPANY" length="100" />
+        </property>
+        <property name="mobilephone" type="string">
+            <column name="MOBILEPHONE" length="11" />
+        </property>
+        <property name="address" type="string">
+            <column name="ADDRESS" length="100" />
+        </property>
+        <property name="email" type="string">
+            <column name="EMAIL" length="30" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="30" />
+        </property>
+        <property name="sex" type="string">
+            <column name="SEX" length="2" />
+        </property>
+        <property name="msn" type="string">
+            <column name="MSN" length="30" />
+        </property>
+        <property name="qq" type="string">
+            <column name="QQ" length="20" />
+        </property>
+        <property name="role" type="java.lang.Integer">
+            <column name="ROLE" />
+        </property>
+        <property name="signature" type="string">
+            <column name="SIGNATURE" length="400" />
+        </property>
+        <property name="district" type="string">
+            <column name="DISTRICT" length="30" />
+        </property>
+        <property name="province" type="string">
+            <column name="PROVINCE" length="30" />
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" length="30" />
+        </property>
+        <property name="ipRange" type="string">
+            <column name="IP_RANGE" length="65535" />
+        </property>
+        <property name="extra" type="string">
+            <column name="EXTRA" length="65535" />
+        </property>
+        <property name="siteId" type="java.lang.Long">
+            <column name="SITE_ID" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="30" />
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="UPDATED" length="19" />
+        </property>
+        <property name="updator" type="string">
+            <column name="UPDATOR" length="30" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

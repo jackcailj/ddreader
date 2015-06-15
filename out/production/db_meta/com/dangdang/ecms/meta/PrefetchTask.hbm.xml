@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.PrefetchTask" table="prefetch_task" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" />
+        </property>
+        <property name="finishTime" type="timestamp">
+            <column name="FINISH_TIME" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="error" type="string">
+            <column name="ERROR" length="65535" />
+        </property>
+        <property name="bookId" type="java.lang.Long">
+            <column name="BOOK_ID">
+                <comment>&#202;&#233;&#177;&#190;&#177;&#234;&#202;&#182;</comment>
+            </column>
+        </property>
+        <property name="pageNo1" type="java.lang.Long">
+            <column name="PAGE_NO1">
+                <comment>&#191;&#170;&#202;&#188;&#210;&#179;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="pageNo2" type="java.lang.Long">
+            <column name="PAGE_NO2">
+                <comment>&#189;&#225;&#202;&#248;&#210;&#179;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="currentPage" type="java.lang.Long">
+            <column name="CURRENT_PAGE">
+                <comment>&#213;&#253;&#212;&#218;&#179;&#233;&#200;&#161;&#181;&#196;&#210;&#179;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="REMARK" length="65535">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

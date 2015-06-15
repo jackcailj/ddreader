@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.BarrageComment" table="barrage_comment" catalog="ecmst">
+        <id name="barrageCommentId" type="java.lang.Long">
+            <column name="barrage_comment_id" />
+            <generator class="identity" />
+        </id>
+        <property name="productId" type="java.lang.Long">
+            <column name="product_id">
+                <comment>&#178;&#250;&#198;&#183;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="chaptersIndex" type="java.lang.Integer">
+            <column name="chapters_index">
+                <comment>&#213;&#194;&#189;&#218;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="characterStartIndex" type="java.lang.Long">
+            <column name="character_start_index">
+                <comment>&#215;&#214;&#183;&#251;&#198;&#240;&#202;&#188;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="characterEndIndex" type="java.lang.Long">
+            <column name="character_end_index">
+                <comment>&#215;&#214;&#183;&#251;&#189;&#225;&#202;&#248;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="600">
+                <comment>&#198;&#192;&#194;&#219;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="publishDate" type="java.lang.Long">
+            <column name="publish_date">
+                <comment>&#183;&#162;&#178;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifyedDate" type="timestamp">
+            <column name="last_modifyed_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="parentId" type="java.lang.Long">
+            <column name="parent_id">
+                <comment>&#184;&#184;&#188;&#182;&#177;&#234;&#202;&#182;</comment>
+            </column>
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="1">
+                <comment>
+                &#198;&#192;&#194;&#219;&#215;&#180;&#204;&#172;(0-&#201;&#190;&#179;&#253;&#163;&#187;1-&#213;&#253;&#179;&#163;&#163;&#187;2-&#176;&#252;&#186;&#172;&#195;&#244;&#184;&#208;&#180;&#202;)</comment>
+            </column>
+        </property>
+        <property name="reviewStatus" type="string">
+            <column name="review_status" length="1">
+                <comment>
+                &#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;(1-&#206;&#180;&#201;&#243;&#186;&#203;&#163;&#187;2-&#201;&#243;&#186;&#203;&#214;&#208;&#163;&#187;3-&#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253;&#163;&#187;4-&#201;&#243;&#186;&#203;&#178;&#187;&#205;&#168;&#185;&#253;)</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="16">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="reviewFailReason" type="string">
+            <column name="review_fail_reason" length="40">
+                <comment>&#201;&#243;&#186;&#203;&#202;&#167;&#176;&#220;&#212;&#173;&#210;&#242;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-27 18:02:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.OrderItem" table="order_item" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="100" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="PRICE" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="TYPE" />
+        </property>
+        <property name="duration" type="java.lang.Integer">
+            <column name="DURATION" />
+        </property>
+        <property name="activeTime" type="timestamp">
+            <column name="ACTIVE_TIME" length="19" />
+        </property>
+        <property name="expireTime" type="timestamp">
+            <column name="EXPIRE_TIME" length="19" />
+        </property>
+        <property name="itemId" type="java.lang.Long">
+            <column name="ITEM_ID" />
+        </property>
+        <property name="orderNo" type="string">
+            <column name="ORDER_NO" length="100" />
+        </property>
+        <property name="extra" type="string">
+            <column name="EXTRA" />
+        </property>
+        <property name="barginPrice" type="java.lang.Integer">
+            <column name="BARGIN_PRICE" />
+        </property>
+        <property name="count" type="java.lang.Integer">
+            <column name="COUNT" />
+        </property>
+        <property name="coupon" type="java.lang.Integer">
+            <column name="COUPON" />
+        </property>
+        <property name="ddMoney" type="java.lang.Integer">
+            <column name="DD_MONEY" />
+        </property>
+        <property name="balance" type="java.lang.Integer">
+            <column name="BALANCE" />
+        </property>
+        <property name="reducePrice" type="java.lang.Integer">
+            <column name="REDUCE_PRICE" />
+        </property>
+        <property name="vspPrice" type="java.lang.Integer">
+            <column name="VSP_PRICE" />
+        </property>
+        <property name="custPointUsed" type="java.lang.Integer">
+            <column name="CUST_POINT_USED">
+                <comment>&#202;&#185;&#211;&#195;&#187;&#253;&#183;&#214;</comment>
+            </column>
+        </property>
+        <property name="activityFee" type="java.lang.Integer">
+            <column name="ACTIVITY_FEE">
+                <comment>&#187;&#238;&#182;&#175;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="deductPrice" type="java.lang.Integer">
+            <column name="DEDUCT_PRICE">
+                <comment>&#210;&#248;&#208;&#208;&#194;&#250;&#188;&#245;</comment>
+            </column>
+        </property>
+        <property name="pointDeductionAmount" type="java.lang.Integer">
+            <column name="POINT_DEDUCTION_AMOUNT">
+                <comment>&#187;&#253;&#183;&#214;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="payableAmount" type="java.lang.Integer">
+            <column name="PAYABLE_AMOUNT">
+                <comment>&#205;&#248;&#201;&#207;&#214;&#167;&#184;&#182;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

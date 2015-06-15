@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory >
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">cms</property>
+        <property name="hibernate.connection.url">jdbc:mysql://10.255.223.243:3306/ecmst</property>
+        <property name="hibernate.connection.username">cmsuser</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+         
+      <property name="hibernate.c3p0.max_size">100</property>  
+    <property name="hibernate.c3p0.min_size">5</property>  
+    <property name="hibernate.c3p0.timeout">50000</property>  
+    <property name="hibernate.c3p0.max_statements">100</property>  
+    <property name="hibernate.c3p0.idle_test_period">3000</property>  
+    <!-- 当连接池耗尽并接到获得连接的请求，则新增加连接的数量 -->  
+    <property name="hibernate.c3p0.acquire_increment">2</property>  
+    <!-- 是否验证，检查连接 -->  
+    <property name="hibernate.c3p0.validate">false</property> 
+    
+     <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>   
+     
+     <mapping resource="com/dangdang/ecms/meta/Ebook.hbm.xml"/>   
+     <mapping resource="com/dangdang/ecms/meta/UserEbook.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

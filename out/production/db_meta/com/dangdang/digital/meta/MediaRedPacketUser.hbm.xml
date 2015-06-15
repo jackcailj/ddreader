@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaRedPacketUser" table="media_red_packet_user" schema=""
+           catalog="digital">
+        <id name="mediaRedPacketUserId" column="media_red_packet_user_id"/>
+        <property name="custId" column="cust_id"/>
+        <property name="prizeId" column="prize_id"/>
+        <property name="amount" column="amount"/>
+        <property name="putCons" column="put_cons"/>
+        <property name="leftAmount" column="left_amount"/>
+        <property name="creationDate" column="creation_date"/>
+    </class>
+</hibernate-mapping>

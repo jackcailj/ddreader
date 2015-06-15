@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.account.meta.MasterAccount" table="master_account" schema="" catalog="account">
+        <id name="masterAccountId" column="master_account_id"/>
+        <property name="userName" column="user_name"/>
+        <property name="custId" column="cust_id"/>
+        <property name="masterAccountMoney" column="master_account_money"/>
+        <property name="masterAccountMoneyIos" column="master_account_money_ios"/>
+        <property name="masterModifiedVersion" column="master_modified_version"/>
+        <property name="lastModifiedDate" column="last_modified_date"/>
+        <property name="lastModifiedSource" column="last_modified_source"/>
+    </class>
+</hibernate-mapping>

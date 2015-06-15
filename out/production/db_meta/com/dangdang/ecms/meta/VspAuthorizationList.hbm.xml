@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.VspAuthorizationList" table="vsp_authorization_list" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="contractId" type="long">
+            <column name="CONTRACT_ID" not-null="true" />
+        </property>
+        <property name="authorizationId" type="long">
+            <column name="AUTHORIZATION_ID" not-null="true" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="100" />
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR" length="100" />
+        </property>
+        <property name="isbn" type="string">
+            <column name="ISBN" length="20" />
+        </property>
+        <property name="publishDate" type="string">
+            <column name="PUBLISH_DATE" length="10" />
+        </property>
+        <property name="publisher" type="string">
+            <column name="PUBLISHER" length="400" />
+        </property>
+        <property name="copyrightCompany" type="string">
+            <column name="COPYRIGHT_COMPANY" length="100" />
+        </property>
+        <property name="copyrightContactPerson" type="string">
+            <column name="COPYRIGHT_CONTACT_PERSON" length="100" />
+        </property>
+        <property name="copyrightContact" type="string">
+            <column name="COPYRIGHT_CONTACT" length="100" />
+        </property>
+        <property name="authorizationEbookRatio" type="string">
+            <column name="AUTHORIZATION_EBOOK_RATIO" length="100" />
+        </property>
+        <property name="authorizationPaperbookRatio" type="string">
+            <column name="AUTHORIZATION_PAPERBOOK_RATIO" length="100" />
+        </property>
+        <property name="authorizationDate" type="date">
+            <column name="AUTHORIZATION_DATE" length="10" />
+        </property>
+        <property name="paperbookPrice" type="java.lang.Integer">
+            <column name="PAPERBOOK_PRICE" />
+        </property>
+        <property name="ebookPrice" type="java.lang.Integer">
+            <column name="EBOOK_PRICE" />
+        </property>
+        <property name="expireDate" type="date">
+            <column name="EXPIRE_DATE" length="10" />
+        </property>
+        <property name="chargePerson" type="string">
+            <column name="CHARGE_PERSON" length="100" />
+        </property>
+        <property name="archiveNo" type="string">
+            <column name="ARCHIVE_NO" length="100" />
+        </property>
+        <property name="archiveFile" type="string">
+            <column name="ARCHIVE_FILE" length="400" />
+        </property>
+        <property name="homemade" type="java.lang.Boolean">
+            <column name="HOMEMADE" />
+        </property>
+        <property name="sharingRatio" type="string">
+            <column name="SHARING_RATIO" length="100" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" not-null="true" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" not-null="true" />
+        </property>
+        <property name="updator" type="string">
+            <column name="UPDATOR" length="50" />
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="UPDATED" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

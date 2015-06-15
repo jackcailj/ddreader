@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.BookReviewReply" table="book_review_reply" catalog="ecmst">
+        <id name="brrId" type="java.lang.Long">
+            <column name="brr_id" />
+            <generator class="identity" />
+        </id>
+        <property name="reviewId" type="long">
+            <column name="review_id" not-null="true">
+                <comment>&#202;&#233;&#198;&#192;id</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#187;&#216;&#184;&#180;&#202;&#233;&#198;&#192;&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="custNickname" type="string">
+            <column name="cust_nickname" length="100">
+                <comment>&#187;&#216;&#184;&#180;&#202;&#233;&#198;&#192;&#211;&#195;&#187;&#167;&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="displayId" type="string">
+            <column name="display_id" length="50">
+                <comment>&#187;&#216;&#184;&#180;&#202;&#233;&#198;&#192;&#201;&#250;&#179;&#201;&#205;&#183;&#207;&#241;displayid</comment>
+            </column>
+        </property>
+        <property name="replyContent" type="string">
+            <column name="reply_content" length="600">
+                <comment>&#202;&#233;&#198;&#192;&#187;&#216;&#184;&#180;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="auditStatus" type="java.lang.Short">
+            <column name="audit_status">
+                <comment>
+                &#187;&#216;&#184;&#180;&#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;0:&#206;&#180;&#201;&#243;&#186;&#203;,1:&#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253;,2,&#201;&#243;&#186;&#203;&#178;&#187;&#205;&#168;&#185;&#253;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#202;&#233;&#198;&#192;&#187;&#216;&#184;&#180;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

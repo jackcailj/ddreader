@@ -1,0 +1,20 @@
+package com.dangdang.reader.functional.reponse;
+
+import java.util.Date;
+import java.util.List;
+
+import com.dangdang.ecms.ExperienceInfoEx;
+import com.dangdang.ecms.meta.ExperienceInfo;
+
+public class GetExperienceInfoListReponse {
+	List<ExperienceInfoEx> experienceInfoList;
+
+	public List<ExperienceInfoEx> getExperienceInfoList() {
+		return experienceInfoList;
+	}
+
+	public void setExperienceInfoList(List<ExperienceInfoEx> experienceInfoList) {
+		this.experienceInfoList = experienceInfoList;
+	}
+	
+}

@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.VspDailySale" table="vsp_daily_sale" catalog="ecmst">
+        <composite-id name="id" class="com.dangdang.ecms.meta.VspDailySaleId">
+            <key-property name="productId" type="int">
+                <column name="PRODUCT_ID" />
+            </key-property>
+            <key-property name="payDate" type="date">
+                <column name="PAY_DATE" length="10" />
+            </key-property>
+        </composite-id>
+        <property name="count" type="int">
+            <column name="COUNT" not-null="true" />
+        </property>
+        <property name="amount" type="long">
+            <column name="AMOUNT" not-null="true" />
+        </property>
+        <property name="vspPrice" type="java.lang.Long">
+            <column name="VSP_PRICE">
+                <comment>&#185;&#169;&#211;&#166;&#201;&#204;&#178;&#206;&#211;&#235;&#183;&#214;&#179;&#201;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="vspCount" type="java.lang.Integer">
+            <column name="VSP_COUNT">
+                <comment>&#185;&#169;&#211;&#166;&#201;&#204;&#178;&#206;&#211;&#235;&#183;&#214;&#179;&#201;&#201;&#204;&#198;&#183;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

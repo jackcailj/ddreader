@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaProp" table="media_prop" schema="" catalog="digital">
+        <id name="propId" column="prop_id"/>
+        <property name="propName" column="prop_name"/>
+        <property name="propMainGoldPrice" column="prop_main_gold_price"/>
+        <property name="propSubGoldPrice" column="prop_sub_gold_price"/>
+        <property name="propPurposeId" column="prop_purpose_id"/>
+        <property name="propPurposeDesc" column="prop_purpose_desc"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="creator" column="creator"/>
+        <property name="lastModifiedDate" column="last_modified_date"/>
+        <property name="modifier" column="modifier"/>
+        <property name="coverPic" column="cover_pic"/>
+    </class>
+</hibernate-mapping>

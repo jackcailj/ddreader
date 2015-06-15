@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.StarUser" table="star_user" catalog="ecmst">
+        <id name="suId" type="java.lang.Long">
+            <column name="su_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true" unique="true">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="custName" type="string">
+            <column name="cust_name" length="100">
+                <comment>&#211;&#195;&#187;&#167;&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="realName" type="string">
+            <column name="real_name" length="100" not-null="true">
+                <comment>&#200;&#207;&#214;&#164;&#204;&#238;&#208;&#180;&#213;&#230;&#202;&#181;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="mobileNum" type="string">
+            <column name="mobile_num" length="20" not-null="true">
+                <comment>&#202;&#214;&#187;&#250;&#186;&#197;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true">
+                <comment>&#181;&#231;&#215;&#211;&#211;&#202;&#207;&#228;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="300" not-null="true">
+                <comment>&#214;&#176;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="applyReason" type="string">
+            <column name="apply_reason" length="500">
+                <comment>&#200;&#207;&#214;&#164;&#192;&#237;&#211;&#201;</comment>
+            </column>
+        </property>
+        <property name="status" type="boolean">
+            <column name="status" not-null="true">
+                <comment>&#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;: 0:&#178;&#187;&#205;&#168;&#185;&#253;,1:&#205;&#168;&#185;&#253;</comment>
+            </column>
+        </property>
+        <property name="suaId" type="long">
+            <column name="sua_id" not-null="true">
+                <comment>&#185;&#216;&#193;&#170;&#201;&#243;&#186;&#203;&#201;&#234;&#199;&#235;&#188;&#199;&#194;&#188;id</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Boolean">
+            <column name="type">
+                <comment>&#211;&#195;&#187;&#167;&#192;&#224;&#208;&#205;,&#192;&#169;&#213;&#185;&#215;&#214;&#182;&#206;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

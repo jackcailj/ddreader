@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaList" table="media_list" schema="" catalog="digital">
+        <id name="id" column="ID"/>
+        <property name="name" column="NAME"/>
+        <property name="fileName" column="FILE_NAME"/>
+        <property name="processingResult" column="PROCESSING_RESULT"/>
+        <property name="hasError" column="HAS_ERROR"/>
+        <property name="creator" column="CREATOR"/>
+        <property name="created" column="CREATED"/>
+        <property name="updator" column="UPDATOR"/>
+        <property name="updated" column="UPDATED"/>
+        <property name="typeId" column="TYPE_ID"/>
+        <property name="category" column="CATEGORY"/>
+    </class>
+</hibernate-mapping>

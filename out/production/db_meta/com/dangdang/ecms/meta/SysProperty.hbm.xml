@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.SysProperty" table="sys_property" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="key" type="string">
+            <column name="key" length="100" unique="true" />
+        </property>
+        <property name="value" type="string">
+            <column name="VALUE" length="4000" />
+        </property>
+    </class>
+</hibernate-mapping>

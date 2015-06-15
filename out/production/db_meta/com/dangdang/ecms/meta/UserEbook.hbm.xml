@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.UserEbook" table="user_ebook" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="USERNAME" length="50" />
+        </property>
+        <property name="ebookId" type="java.lang.Long">
+            <column name="EBOOK_ID" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="TYPE" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property>
+        <property name="start" type="timestamp">
+            <column name="START" length="19" />
+        </property>
+        <property name="end" type="timestamp">
+            <column name="END" length="19" />
+        </property>
+        <property name="custId" type="long">
+            <column name="CUST_ID" not-null="true" />
+        </property>
+        <property name="relationType" type="string">
+            <column name="relation_type" length="10" />
+        </property>
+        <property name="readingCardId" type="java.lang.Long">
+            <column name="READING_CARD_ID" />
+        </property>
+        <property name="uid" type="string">
+            <column name="uid" length="21" />
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="productId" />
+        </property>
+        <property name="orderId" type="long">
+            <column name="order_id" not-null="true">
+                <comment>&#182;&#169;&#181;&#165;id</comment>
+            </column>
+        </property>
+        <property name="orderItemId" type="long">
+            <column name="order_item_id" not-null="true">
+                <comment>&#182;&#169;&#181;&#165;&#207;&#238;id</comment>
+            </column>
+        </property>
+        <property name="promotionId" type="java.lang.Long">
+            <column name="PROMOTION_ID" />
+        </property>
+        <property name="chapterLimits" type="string">
+            <column name="chapter_limits" length="256" />
+        </property>
+        <property name="isReturnBook" type="java.lang.Short">
+            <column name="is_return_book" />
+        </property>
+        <property name="deadline" type="java.lang.Long">
+            <column name="deadline" />
+        </property>
+        <property name="commentOrderno" type="string">
+            <column name="comment_orderno" length="200">
+                <comment>&#183;&#162;&#202;&#233;&#198;&#192;&#208;&#233;&#196;&#226;&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

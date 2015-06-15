@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.BookReviewUser" table="book_review_user" catalog="ecmst">
+        <id name="bruId" type="java.lang.Long">
+            <column name="bru_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" unique="true">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="custNickname" type="string">
+            <column name="cust_nickname" length="100">
+                <comment>&#211;&#195;&#187;&#167;&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="userIdentity" type="java.lang.Short">
+            <column name="user_identity">
+                <comment>&#211;&#195;&#187;&#167;&#201;&#237;&#183;&#221;:1 &#198;&#213;&#205;&#168;&#211;&#195;&#187;&#167;,2 &#176;&#215;&#195;&#251;&#181;&#165;,3
+                &#186;&#218;&#195;&#251;&#181;&#165;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifler" type="string">
+            <column name="last_modifler" length="128">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" length="128">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="replyContent" type="string">
+            <column name="reply_content" length="600">
+                <comment>&#198;&#192;&#194;&#219;&#187;&#242;&#187;&#216;&#184;&#180;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="replyTime" type="timestamp">
+            <column name="reply_time" length="19">
+                <comment>&#187;&#216;&#184;&#180;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

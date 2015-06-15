@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaActivityUser" table="media_activity_user" schema="" catalog="digital">
+        <id name="mediaActivityUserId" column="media_activity_user_id"/>
+        <property name="username" column="username"/>
+        <property name="custId" column="cust_id"/>
+        <property name="lotTimes" column="lot_times"/>
+        <property name="lottedTimes" column="lotted_times"/>
+        <property name="shareTimes" column="share_times"/>
+        <property name="worshipedTimes" column="worshiped_times"/>
+        <property name="worshipTimes" column="worship_times"/>
+        <property name="rewardCons" column="reward_cons"/>
+        <property name="dayTopRank" column="day_top_rank"/>
+        <property name="weekTopRank" column="week_top_rank"/>
+        <property name="mouthTopRank" column="mouth_top_rank"/>
+        <property name="totalTopRank" column="total_top_rank"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="lastModifiedDate" column="last_modified_date"/>
+    </class>
+</hibernate-mapping>

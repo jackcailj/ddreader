@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.Paper" table="paper" catalog="ecmst">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="TITLE" />
+        </property>
+        <property name="introTitle" type="string">
+            <column name="introTitle" />
+        </property>
+        <property name="subTitle" type="string">
+            <column name="subTitle" />
+        </property>
+        <property name="descn" type="string">
+            <column name="DESCN" />
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR" length="400" />
+        </property>
+        <property name="keywords" type="string">
+            <column name="KEYWORDS" length="400" />
+        </property>
+        <property name="docType" type="string">
+            <column name="docType" length="10" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" />
+        </property>
+        <property name="created" type="date">
+            <column name="CREATED" length="10" />
+        </property>
+        <property name="updated" type="date">
+            <column name="UPDATED" length="10" />
+        </property>
+        <property name="updator" type="string">
+            <column name="UPDATOR" length="50" />
+        </property>
+        <property name="uid" type="string">
+            <column name="UID" />
+        </property>
+        <property name="shortName" type="string">
+            <column name="SHORT_NAME" length="100" />
+        </property>
+        <property name="displayOrder" type="string">
+            <column name="DISPLAY_ORDER" length="16777215" />
+        </property>
+        <property name="logo" type="string">
+            <column name="LOGO" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

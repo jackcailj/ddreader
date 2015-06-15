@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaStoreup" table="media_storeup" schema="" catalog="digital">
+        <id name="storeId" column="store_id"/>
+        <property name="type" column="type"/>
+        <property name="targetId" column="target_id"/>
+        <property name="storeDate" column="store_date"/>
+        <property name="custId" column="cust_id"/>
+        <property name="userName" column="user_name"/>
+        <property name="nickName" column="nick_name"/>
+        <property name="platform" column="platform"/>
+    </class>
+</hibernate-mapping>

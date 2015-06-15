@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.DocType" table="doc_type" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="code" type="string">
+            <column name="CODE" length="100" not-null="true" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" not-null="true" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" not-null="true" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" not-null="true" />
+        </property>
+        <property name="tableName" type="string">
+            <column name="TABLE_NAME" length="100" not-null="true" />
+        </property>
+        <property name="sqlmapNamespace" type="string">
+            <column name="SQLMAP_NAMESPACE" length="100" />
+        </property>
+        <property name="versionSqlmapNamespace" type="string">
+            <column name="VERSION_SQLMAP_NAMESPACE" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

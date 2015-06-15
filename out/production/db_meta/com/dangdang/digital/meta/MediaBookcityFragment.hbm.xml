@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaBookcityFragment" table="media_bookcity_fragment" schema=""
+           catalog="digital">
+        <id name="bookcityFragmentId" column="bookcity_fragment_id"/>
+        <property name="fragmentName" column="fragment_name"/>
+        <property name="fragmentType" column="fragment_type"/>
+        <property name="fragmentSubtype" column="fragment_subtype"/>
+        <property name="fragmentHtml" column="fragment_html"/>
+        <property name="hasTitle" column="has_title"/>
+        <property name="title" column="title"/>
+        <property name="hasMoreText" column="has_more_text"/>
+        <property name="moreText" column="more_text"/>
+        <property name="status" column="status"/>
+        <property name="creator" column="creator"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="modifier" column="modifier"/>
+        <property name="lastChangedDate" column="last_changed_date"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.ReadingCard" table="reading_card" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="makerId" type="long">
+            <column name="MAKER_ID" not-null="true" />
+        </property>
+        <property name="cardno" type="string">
+            <column name="CARDNO" length="20" not-null="true" unique="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="PASSWORD" length="10" not-null="true" />
+        </property>
+        <property name="activeTime" type="timestamp">
+            <column name="ACTIVE_TIME" length="19" />
+        </property>
+        <property name="status" type="java.lang.Byte">
+            <column name="STATUS" />
+        </property>
+        <property name="validTime" type="date">
+            <column name="VALID_TIME" length="10" not-null="true" />
+        </property>
+        <property name="userid" type="java.lang.Long">
+            <column name="USERID" />
+        </property>
+        <property name="orderNo" type="string">
+            <column name="ORDER_NO" length="400" />
+        </property>
+        <property name="productId" type="java.lang.Integer">
+            <column name="PRODUCT_ID" />
+        </property>
+        <property name="username" type="string">
+            <column name="USERNAME" length="50">
+                <comment>&#176;&#243;&#182;&#168;&#213;&#223;&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CREATE_TIME" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaContentProvider" table="media_content_provider" schema=""
+           catalog="digital">
+        <id name="cpId" column="cp_id"/>
+        <property name="cnName" column="cn_name"/>
+        <property name="organizationCode" column="organization_code"/>
+        <property name="hasBranch" column="has_branch"/>
+        <property name="company" column="company"/>
+        <property name="legalPerson" column="legal_person"/>
+        <property name="legalPersonCardNo" column="legal_person_card_no"/>
+        <property name="legalPersonCardType" column="legal_person_card_type"/>
+        <property name="registeredMoneyType" column="registered_money_type"/>
+        <property name="registeredMoney" column="registered_money"/>
+        <property name="registeredOtherType" column="registered_other_type"/>
+        <property name="foreignCapitalRatio" column="foreign_capital_ratio"/>
+        <property name="companyType" column="company_type"/>
+        <property name="listedType" column="listed_type"/>
+        <property name="companyIntroduction" column="company_introduction"/>
+        <property name="organizationCodeAttach" column="organization_code_attach"/>
+        <property name="constitutionAttach" column="constitution_attach"/>
+        <property name="bankNo" column="bank_no"/>
+        <property name="bankName" column="bank_name"/>
+        <property name="contractor" column="contractor"/>
+        <property name="telphone" column="telphone"/>
+        <property name="mobilephone" column="mobilephone"/>
+        <property name="level" column="level"/>
+        <property name="loginCode" column="login_code"/>
+        <property name="loginAccount" column="login_account"/>
+        <property name="creator" column="creator"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="modifier" column="modifier"/>
+        <property name="lastChangeDate" column="last_change_date"/>
+        <property name="address" column="address"/>
+        <property name="type" column="type"/>
+        <property name="code" column="code"/>
+        <property name="shortName" column="short_name"/>
+        <property name="paltform" column="paltform"/>
+        <property name="identifier" column="identifier"/>
+    </class>
+</hibernate-mapping>

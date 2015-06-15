@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaAnthology" table="media_anthology" schema="" catalog="digital">
+        <id name="anthologyId" column="anthology_id"/>
+        <property name="anthologyName" column="anthology_name"/>
+        <property name="anthologyPic" column="anthology_pic"/>
+        <property name="custId" column="cust_id"/>
+        <property name="custName" column="cust_name"/>
+        <property name="createDate" column="create_date"/>
+        <property name="platform" column="platform"/>
+    </class>
+</hibernate-mapping>

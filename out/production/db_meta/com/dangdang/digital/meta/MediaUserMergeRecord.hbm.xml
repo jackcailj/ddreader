@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaUserMergeRecord" table="media_user_merge_record" schema=""
+           catalog="digital">
+        <id name="userMergeId" column="user_merge_id"/>
+        <property name="oldCustId" column="old_cust_id"/>
+        <property name="newCustId" column="new_cust_id"/>
+        <property name="consumerDepositId" column="consumer_deposit_id"/>
+        <property name="boughtId" column="bought_id"/>
+        <property name="lastUpdateTime" column="last_update_time"/>
+        <property name="createTime" column="create_time"/>
+    </class>
+</hibernate-mapping>

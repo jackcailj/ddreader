@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaProductDetail" table="media_product_detail" schema=""
+           catalog="digital">
+        <id name="id" column="ID"/>
+        <property name="productionTaskId" column="PRODUCTION_TASK_ID"/>
+        <property name="uid" column="UID"/>
+        <property name="paparBookId" column="PAPAR_BOOK_ID"/>
+        <property name="title" column="TITLE"/>
+        <property name="isbn" column="ISBN"/>
+        <property name="author" column="AUTHOR"/>
+        <property name="publisher" column="PUBLISHER"/>
+        <property name="publishDate" column="PUBLISH_DATE"/>
+        <property name="copyrightCompany" column="COPYRIGHT_COMPANY"/>
+        <property name="paperBookPrice" column="PAPER_BOOK_PRICE"/>
+        <property name="ebookPrice" column="EBOOK_PRICE"/>
+        <property name="inputFile" column="INPUT_FILE"/>
+        <property name="outputPdf" column="OUTPUT_PDF"/>
+        <property name="outputEpub" column="OUTPUT_EPUB"/>
+        <property name="problem1" column="PROBLEM1"/>
+        <property name="problem2" column="PROBLEM2"/>
+        <property name="problem3" column="PROBLEM3"/>
+        <property name="problem4" column="PROBLEM4"/>
+        <property name="problem5" column="PROBLEM5"/>
+        <property name="problem6" column="PROBLEM6"/>
+        <property name="problem7" column="PROBLEM7"/>
+        <property name="problem8" column="PROBLEM8"/>
+        <property name="problem9" column="PROBLEM9"/>
+        <property name="problem10" column="PROBLEM10"/>
+        <property name="processingResult" column="PROCESSING_RESULT"/>
+        <property name="trialPercentage" column="TRIAL_PERCENTAGE"/>
+        <property name="status" column="STATUS"/>
+        <property name="paperBookStatus" column="PAPER_BOOK_STATUS"/>
+        <property name="paperBookFetchType" column="PAPER_BOOK_FETCH_TYPE"/>
+        <property name="creator" column="CREATOR"/>
+        <property name="created" column="CREATED"/>
+        <property name="updator" column="UPDATOR"/>
+        <property name="updated" column="UPDATED"/>
+        <property name="providerId" column="provider_ID"/>
+        <property name="paperBookFetchName" column="PAPER_BOOK_FETCH_NAME"/>
+        <property name="paperBookFetchPrice" column="PAPER_BOOK_FETCH_PRICE"/>
+        <property name="productId" column="product_id"/>
+        <property name="otherPaperBookids" column="OTHER_PAPER_BOOKIDS"/>
+    </class>
+</hibernate-mapping>

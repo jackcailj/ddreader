@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.DocColumn" table="doc_column" catalog="ecmst">
+        <composite-id name="id" class="com.dangdang.ecms.meta.DocColumnId">
+            <key-property name="docId" type="long">
+                <column name="DOC_ID" />
+            </key-property>
+            <key-property name="columnId" type="long">
+                <column name="COLUMN_ID" />
+            </key-property>
+            <key-property name="siteId" type="long">
+                <column name="SITE_ID" />
+            </key-property>
+        </composite-id>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="sort" type="float">
+            <column name="SORT" precision="12" scale="0" not-null="true" />
+        </property>
+        <property name="published" type="timestamp">
+            <column name="PUBLISHED" length="19" />
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="START_TIME" length="19" />
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="END_TIME" length="19" />
+        </property>
+        <property name="isNeverValid" type="java.lang.Short">
+            <column name="IS_NEVER_VALID" />
+        </property>
+    </class>
+</hibernate-mapping>

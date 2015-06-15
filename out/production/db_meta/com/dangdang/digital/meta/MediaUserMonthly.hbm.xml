@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaUserMonthly" table="media_user_monthly" schema="" catalog="digital">
+        <id name="userMonthlyId" column="user_monthly_id"/>
+        <property name="custId" column="cust_id"/>
+        <property name="monthlyPaymentRelation" column="monthly_payment_relation"/>
+        <property name="monthlyType" column="monthly_type"/>
+        <property name="monthlyStartTime" column="monthly_start_time"/>
+        <property name="monthlyEndTime" column="monthly_end_time"/>
+        <property name="firstLoginGiving" column="first_login_giving"/>
+        <property name="firstShareGiving" column="first_share_giving"/>
+        <property name="firstLoginGivingDays" column="first_login_giving_days"/>
+        <property name="firstShareGivingDays" column="first_share_giving_days"/>
+        <property name="shareGivingTime" column="share_giving_time"/>
+        <property name="operateVersion" column="operate_version"/>
+    </class>
+</hibernate-mapping>

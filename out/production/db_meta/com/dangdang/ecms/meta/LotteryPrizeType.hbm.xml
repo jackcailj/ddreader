@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.LotteryPrizeType" table="lottery_prize_type" catalog="ecmst">
+        <id name="typeId" type="java.lang.Long">
+            <column name="type_id" />
+            <generator class="identity" />
+        </id>
+        <property name="description" type="string">
+            <column name="description" length="100" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="100" not-null="true" />
+        </property>
+        <property name="weight" type="big_decimal">
+            <column name="weight" precision="3" scale="1" not-null="true">
+                <comment>?</comment>
+            </column>
+        </property>
+        <property name="isDel" type="int">
+            <column name="is_del" not-null="true" />
+        </property>
+        <property name="creator" type="java.lang.Long">
+            <column name="creator" />
+        </property>
+        <property name="editor" type="java.lang.Long">
+            <column name="editor" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" not-null="true" />
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

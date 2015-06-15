@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaListCategory" table="media_list_category" schema="" catalog="digital">
+        <id name="categoryId" column="category_id"/>
+        <property name="categoryName" column="category_name"/>
+        <property name="categoryCode" column="category_code"/>
+        <property name="parentId" column="parent_id"/>
+        <property name="listCode" column="list_code"/>
+        <property name="path" column="path"/>
+        <property name="channel" column="channel"/>
+        <property name="minRecords" column="min_records"/>
+        <property name="maxRecords" column="max_records"/>
+        <property name="days" column="days"/>
+        <property name="creator" column="creator"/>
+        <property name="createDate" column="create_date"/>
+        <property name="modifer" column="modifer"/>
+        <property name="lastChangeDate" column="last_change_date"/>
+        <property name="orederDimension" column="oreder_dimension"/>
+        <property name="lastRecordId" column="last_record_id"/>
+        <property name="lastListIssue" column="last_list_issue"/>
+        <property name="lastScheduleStartTime" column="last_schedule_start_time"/>
+        <property name="lastScheduleEndTime" column="last_schedule_end_time"/>
+    </class>
+</hibernate-mapping>

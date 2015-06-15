@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaUsercmsRole" table="media_usercms_role" schema="" catalog="digital">
+        <id name="usercmsRoleId" column="usercms_role_id"/>
+        <property name="usercmsId" column="usercms_id"/>
+        <property name="roleId" column="role_id"/>
+        <property name="roleName" column="role_name"/>
+        <property name="creator" column="creator"/>
+        <property name="creationDate" column="creation_date"/>
+    </class>
+</hibernate-mapping>

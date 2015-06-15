@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.CardMakerEbook" table="card_maker_ebook" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="makerId" type="long">
+            <column name="MAKER_ID" not-null="true" />
+        </property>
+        <property name="ebookId" type="long">
+            <column name="EBOOK_ID" not-null="true" />
+        </property>
+        <property name="ebookUid" type="string">
+            <column name="EBOOK_UID" length="21" />
+        </property>
+        <property name="ebookProductid" type="java.lang.Long">
+            <column name="EBOOK_PRODUCTID" />
+        </property>
+    </class>
+</hibernate-mapping>

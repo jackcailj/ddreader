@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.EbookOnline" table="ebook_online" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="100" />
+        </property>
+        <property name="introTitle" type="string">
+            <column name="introTitle" length="100" />
+        </property>
+        <property name="subTitle" type="string">
+            <column name="subTitle" length="100" />
+        </property>
+        <property name="descn" type="string">
+            <column name="descn" length="65535" />
+        </property>
+        <property name="author" type="string">
+            <column name="author" length="100" />
+        </property>
+        <property name="keywords" type="string">
+            <column name="keywords" length="100" />
+        </property>
+        <property name="docType" type="string">
+            <column name="docType" length="10" />
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" length="50" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="created" length="19" />
+        </property>
+        <property name="updator" type="string">
+            <column name="updator" length="50" />
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="updated" length="19" />
+        </property>
+        <property name="seriesBook" type="string">
+            <column name="seriesBook" length="100" />
+        </property>
+        <property name="seriesBookId" type="java.lang.Long">
+            <column name="seriesBookId" />
+        </property>
+        <property name="paperBookId" type="java.lang.Long">
+            <column name="paperBookId" />
+        </property>
+        <property name="readBookId" type="java.lang.Long">
+            <column name="readBookId" />
+        </property>
+        <property name="isbn" type="string">
+            <column name="isbn" length="20" />
+        </property>
+        <property name="edition" type="java.lang.Integer">
+            <column name="edition" />
+        </property>
+        <property name="printNo" type="java.lang.Integer">
+            <column name="printNo" />
+        </property>
+        <property name="pageNum" type="java.lang.Integer">
+            <column name="pageNum" />
+        </property>
+        <property name="bookSize" type="string">
+            <column name="bookSize" length="10" />
+        </property>
+        <property name="wordsNum" type="string">
+            <column name="wordsNum" length="11" />
+        </property>
+        <property name="printNum" type="string">
+            <column name="printNum" length="11" />
+        </property>
+        <property name="publisher" type="string">
+            <column name="publisher" length="400" />
+        </property>
+        <property name="publishLocation" type="string">
+            <column name="publishLocation" length="400" />
+        </property>
+        <property name="publishDate" type="timestamp">
+            <column name="publishDate" length="19" />
+        </property>
+        <property name="paperBookPrice" type="java.lang.Integer">
+            <column name="paperBookPrice" />
+        </property>
+        <property name="paperBookOverseaPrice" type="java.lang.Integer">
+            <column name="paperBookOverseaPrice" />
+        </property>
+        <property name="paperBookCategory" type="string">
+            <column name="paperBookCategory" length="100" />
+        </property>
+        <property name="language" type="string">
+            <column name="language" length="50" />
+        </property>
+        <property name="translator" type="string">
+            <column name="translator" length="100" />
+        </property>
+        <property name="authorIntroduce" type="string">
+            <column name="authorIntroduce" length="65535" />
+        </property>
+        <property name="editorRecommend" type="string">
+            <column name="editorRecommend" length="65535" />
+        </property>
+        <property name="massmediaRecommend" type="string">
+            <column name="massmediaRecommend" length="65535" />
+        </property>
+        <property name="coverPic" type="string">
+            <column name="coverPic" length="400" />
+        </property>
+        <property name="metadataFile" type="string">
+            <column name="metadataFile" length="100" />
+        </property>
+        <property name="pdfFile" type="string">
+            <column name="pdfFile" length="100" />
+        </property>
+        <property name="catalog" type="string">
+            <column name="catalog" />
+        </property>
+        <property name="srcFile" type="string">
+            <column name="srcFile" length="100" />
+        </property>
+        <property name="uid" type="string">
+            <column name="uid" length="21" unique="true" />
+        </property>
+        <property name="paperBookOverseaPriceUnit" type="string">
+            <column name="paperBookOverseaPriceUnit" length="10" />
+        </property>
+        <property name="copyrightCompany" type="string">
+            <column name="copyrightCompany" length="100" />
+        </property>
+        <property name="shelfStatus" type="java.lang.Integer">
+            <column name="shelfStatus" />
+        </property>
+        <property name="ebookPrice" type="java.lang.Integer">
+            <column name="eBookPrice" />
+        </property>
+        <property name="pdfPageNumber" type="java.lang.Integer">
+            <column name="pdfPageNumber" />
+        </property>
+        <property name="productId" type="java.lang.Integer">
+            <column name="productId" unique="true" />
+        </property>
+        <property name="probationProportion" type="java.lang.Integer">
+            <column name="probationProportion" />
+        </property>
+        <property name="isFullbook" type="java.lang.Integer">
+            <column name="isFullbook" />
+        </property>
+        <property name="backgroundUpdate" type="java.lang.Integer">
+            <column name="backgroundUpdate">
+                <comment>0: &#206;&#180;&#208;&#222;&#184;&#196;; 1: &#186;&#243;&#204;&#168;&#184;&#252;&#208;&#194;</comment>
+            </column>
+        </property>
+        <property name="readShelfStatus" type="java.lang.Integer">
+            <column name="readShelfStatus" />
+        </property>
+        <property name="swfsize" type="string">
+            <column name="swfsize" length="64" />
+        </property>
+        <property name="priceStatus" type="java.lang.Integer">
+            <column name="priceStatus" />
+        </property>
+        <property name="epubFile" type="string">
+            <column name="epubFile" length="100" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="2" />
+        </property>
+        <property name="taskName" type="string">
+            <column name="taskName" length="100" />
+        </property>
+        <property name="batchId" type="java.lang.Long">
+            <column name="batchId" />
+        </property>
+        <property name="otherPaperBookId" type="string">
+            <column name="otherPaperBookId" length="200" />
+        </property>
+        <property name="thirdPartyPermission" type="java.lang.Integer">
+            <column name="thirdPartyPermission" />
+        </property>
+        <property name="vendorId" type="long">
+            <column name="vendorId" not-null="true" />
+        </property>
+        <property name="unloadDate" type="timestamp">
+            <column name="unloadDate" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

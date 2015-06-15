@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaUsercmsFunctionality" table="media_usercms_functionality" schema=""
+           catalog="digital">
+        <id name="usercmsFunctionalityId" column="usercms_functionality_id"/>
+        <property name="usercmsId" column="usercms_id"/>
+        <property name="funcId" column="func_id"/>
+        <property name="creator" column="creator"/>
+        <property name="creationDate" column="creation_date"/>
+    </class>
+</hibernate-mapping>

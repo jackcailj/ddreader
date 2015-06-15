@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="933" started-at="2015-05-08T03:21:08Z" finished-at="2015-05-08T03:21:09Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="933" started-at="2015-05-08T03:21:08Z" finished-at="2015-05-08T03:21:09Z">
+      <class name="com.dangdang.reader.testcases.PersonCenterTest">
+        <test-method status="PASS" signature="GetPersonalMessageInfoListTest(java.lang.String, java.util.Map, java.lang.String)[pri:0, instance:com.dangdang.reader.testcases.PersonCenterTest@25786286]" name="GetPersonalMessageInfoListTest" duration-ms="765" started-at="2015-05-08T11:21:08Z" data-provider="dataProvider" finished-at="2015-05-08T11:21:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[获取个人消息列表，正常流程]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[{action=getPersonalMessageInfoList, activityId=0, channelId=30000, clientOs=4.2.2, clientVersionNo=4.7.3, deviceSerialNo=863151026834264, deviceType=Android, macAddr=18:dc:56:36:67:9c, pageNo=0, pageSize=10, permanentId=20150110021451227105983711475801861, resolution=1280*720, returnType=json, serverVersionNo=1.2.1, token=7d3e1cb7d3c6c9e975364cf976bf6045, type=1}]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetPersonalMessageInfoListTest -->
+      </class> <!-- com.dangdang.reader.testcases.PersonCenterTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

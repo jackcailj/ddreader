@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaNotification" table="media_notification" schema="" catalog="digital">
+        <id name="notificationId" column="notification_id"/>
+        <property name="appId" column="app_id"/>
+        <property name="appClientVersion" column="app_client_version"/>
+        <property name="deviceNo" column="device_no"/>
+        <property name="deviceType" column="device_type"/>
+        <property name="custId" column="cust_id"/>
+        <property name="extUserId" column="ext_user_id"/>
+        <property name="extChannelId" column="ext_channel_id"/>
+        <property name="channelId" column="channel_id"/>
+        <property name="status" column="status"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="lastChangedDate" column="last_changed_date"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.SuperSql" table="super_sql" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="descn" type="string">
+            <column name="DESCN" length="4000" />
+        </property>
+        <property name="theSql" type="string">
+            <column name="THE_SQL" length="4000" />
+        </property>
+        <property name="param1" type="string">
+            <column name="PARAM1" length="16777215" />
+        </property>
+        <property name="param2" type="string">
+            <column name="PARAM2" length="16777215" />
+        </property>
+        <property name="param3" type="string">
+            <column name="PARAM3" length="16777215" />
+        </property>
+        <property name="needsData" type="int">
+            <column name="NEEDS_DATA" not-null="true" />
+        </property>
+        <property name="simpleDataFile" type="string">
+            <column name="SIMPLE_DATA_FILE" length="1000" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

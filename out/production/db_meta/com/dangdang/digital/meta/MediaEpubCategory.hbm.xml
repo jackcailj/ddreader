@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaEpubCategory" table="media_epub_category" schema="" catalog="digital">
+        <id name="id" column="ID"/>
+        <property name="name" column="NAME"/>
+        <property name="code" column="CODE"/>
+        <property name="parentId" column="PARENT_ID"/>
+        <property name="catTypeId" column="CAT_TYPE_ID"/>
+        <property name="abbreviation" column="ABBREVIATION"/>
+        <property name="categoryCode" column="CATEGORY_CODE"/>
+        <property name="displayorder" column="DISPLAYORDER"/>
+        <property name="status" column="status"/>
+        <property name="visiable" column="visiable"/>
+        <property name="cat0" column="cat0"/>
+    </class>
+</hibernate-mapping>

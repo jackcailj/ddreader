@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.StarUserApply" table="star_user_apply" catalog="ecmst">
+        <id name="suaId" type="java.lang.Long">
+            <column name="sua_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#181;&#199;&#194;&#188;&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="custName" type="string">
+            <column name="cust_name" length="100">
+                <comment>&#181;&#199;&#194;&#188;&#211;&#195;&#187;&#167;&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="realName" type="string">
+            <column name="real_name" length="100" not-null="true">
+                <comment>&#200;&#207;&#214;&#164;&#201;&#234;&#199;&#235;&#213;&#230;&#202;&#181;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="mobileNum" type="string">
+            <column name="mobile_num" length="20" not-null="true">
+                <comment>&#202;&#214;&#187;&#250;&#186;&#197;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="100" not-null="true">
+                <comment>&#181;&#231;&#215;&#211;&#211;&#202;&#207;&#228;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="300" not-null="true">
+                <comment>&#214;&#176;&#210;&#181;&#187;&#242;&#213;&#223;&#214;&#176;&#206;&#187;</comment>
+            </column>
+        </property>
+        <property name="applyReason" type="string">
+            <column name="apply_reason" length="500">
+                <comment>&#200;&#207;&#214;&#164;&#192;&#237;&#211;&#201;</comment>
+            </column>
+        </property>
+        <property name="auditStatus" type="boolean">
+            <column name="audit_status" not-null="true">
+                <comment>
+                &#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;&#163;&#186;0-&#201;&#243;&#186;&#203;&#214;&#208;;1-&#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253;;2-&#201;&#243;&#186;&#203;&#178;&#181;&#187;&#216;;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="auditorId" type="java.lang.Long">
+            <column name="auditor_id">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#203;id</comment>
+            </column>
+        </property>
+        <property name="auditorName" type="string">
+            <column name="auditor_name" length="100">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#203;&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="auditDate" type="timestamp">
+            <column name="audit_date" length="19">
+                <comment>&#201;&#243;&#186;&#203;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="rejectedReason" type="string">
+            <column name="rejected_reason" length="500">
+                <comment>&#178;&#181;&#187;&#216;&#212;&#173;&#210;&#242;</comment>
+            </column>
+        </property>
+        <property name="attachPath" type="string">
+            <column name="attach_path" length="300">
+                <comment>&#184;&#189;&#188;&#254;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="checkCode" type="string">
+            <column name="check_code" length="20">
+                <comment>&#209;&#233;&#214;&#164;&#194;&#235;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

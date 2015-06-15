@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaLabel" table="media_label" schema="" catalog="digital">
+        <id name="lableId" column="lable_id"/>
+        <property name="type" column="type"/>
+        <property name="name" column="name"/>
+        <property name="isEnabled" column="isEnabled"/>
+    </class>
+</hibernate-mapping>

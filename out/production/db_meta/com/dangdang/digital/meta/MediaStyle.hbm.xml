@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaStyle" table="media_style" schema="" catalog="digital">
+        <id name="styleId" column="style_id"/>
+        <property name="name" column="name"/>
+        <property name="code" column="code"/>
+        <property name="descs" column="descs"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="price" column="price"/>
+        <property name="status" column="status"/>
+    </class>
+</hibernate-mapping>

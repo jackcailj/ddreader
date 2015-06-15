@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.ThirdpartyOrder" table="thirdparty_order" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" not-null="true" />
+        </property>
+        <property name="orderNo" type="string">
+            <column name="ORDER_NO" length="400" not-null="true" />
+        </property>
+        <property name="thirdpartyId" type="long">
+            <column name="THIRDPARTY_ID" not-null="true" />
+        </property>
+        <property name="thirdpartyCode" type="string">
+            <column name="THIRDPARTY_CODE" length="100" not-null="true" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS">
+                <comment>0: &#206;&#180;&#180;&#166;&#192;&#237;; 1: &#210;&#209;&#180;&#166;&#192;&#237;</comment>
+            </column>
+        </property>
+        <property name="dealCode" type="string">
+            <column name="DEAL_CODE" length="100" />
+        </property>
+        <property name="dealTime" type="timestamp">
+            <column name="DEAL_TIME" length="19" />
+        </property>
+        <property name="callBackUrl" type="string">
+            <column name="CALL_BACK_URL" length="200" not-null="true" />
+        </property>
+        <property name="orderInfo" type="string">
+            <column name="ORDER_INFO" length="4000" />
+        </property>
+        <property name="failedCount" type="java.lang.Integer">
+            <column name="FAILED_COUNT" />
+        </property>
+    </class>
+</hibernate-mapping>

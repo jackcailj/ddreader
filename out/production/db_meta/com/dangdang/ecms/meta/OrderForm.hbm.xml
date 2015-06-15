@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-27 18:02:55 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.OrderForm" table="order_form" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" />
+        </property>
+        <property name="username" type="string">
+            <column name="USERNAME" length="400" />
+        </property>
+        <property name="price" type="big_decimal">
+            <column name="PRICE" precision="8" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property>
+        <property name="effectTime" type="timestamp">
+            <column name="EFFECT_TIME" length="19" />
+        </property>
+        <property name="validTime" type="timestamp">
+            <column name="VALID_TIME" length="19" />
+        </property>
+        <property name="orderNo" type="string">
+            <column name="ORDER_NO" length="400" />
+        </property>
+        <property name="orderType" type="string">
+            <column name="ORDER_TYPE" length="400" />
+        </property>
+        <property name="payType" type="string">
+            <column name="PAY_TYPE" length="400" />
+        </property>
+        <property name="payState" type="java.lang.Integer">
+            <column name="PAY_STATE" />
+        </property>
+        <property name="payTime" type="timestamp">
+            <column name="PAY_TIME" length="19" />
+        </property>
+        <property name="custId" type="long">
+            <column name="CUST_ID" not-null="true" />
+        </property>
+        <property name="receiverProvinceId" type="java.lang.Long">
+            <column name="RECEIVER_PROVINCE_ID" />
+        </property>
+        <property name="receiverCityId" type="java.lang.Long">
+            <column name="RECEIVER_CITY_ID" />
+        </property>
+        <property name="receiverMobileTel" type="string">
+            <column name="RECEIVER_MOBILE_TEL" length="100">
+                <comment>&#202;&#213;&#188;&#254;&#200;&#203;&#210;&#198;&#182;&#175;&#181;&#231;&#187;&#176;</comment>
+            </column>
+        </property>
+        <property name="custEmail" type="string">
+            <column name="CUST_EMAIL" length="100">
+                <comment>&#211;&#195;&#187;&#167;&#211;&#202;&#207;&#228;</comment>
+            </column>
+        </property>
+        <property name="receipt" type="string">
+            <column name="RECEIPT" length="4000" />
+        </property>
+        <property name="fromPlatform" type="java.lang.Integer">
+            <column name="FROM_PLATFORM" />
+        </property>
+        <property name="orderSource" type="string">
+            <column name="ORDER_SOURCE" length="200" />
+        </property>
+        <property name="payTypeSub" type="java.lang.Integer">
+            <column name="pay_type_sub">
+                <comment>
+                &#208;&#233;&#196;&#226;&#214;&#167;&#184;&#182;&#183;&#189;&#202;&#189;&#163;&#168;1&#163;&#186;&#179;&#228;&#214;&#181;&#163;&#172;2&#163;&#186;&#207;&#251;&#183;&#209;&#163;&#169;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.EbooklistItem" table="ebooklist_item" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="ebooklistId" type="long">
+            <column name="EBOOKLIST_ID" not-null="true" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="100" not-null="true" />
+        </property>
+        <property name="isbn" type="string">
+            <column name="ISBN" length="20" />
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR" length="100" not-null="true" />
+        </property>
+        <property name="publisher" type="string">
+            <column name="PUBLISHER" length="400" />
+        </property>
+        <property name="publishDate" type="timestamp">
+            <column name="PUBLISH_DATE" length="19" />
+        </property>
+        <property name="copyrightCompany" type="string">
+            <column name="COPYRIGHT_COMPANY" length="400" />
+        </property>
+        <property name="paperBookPrice" type="java.lang.Integer">
+            <column name="PAPER_BOOK_PRICE" />
+        </property>
+        <property name="ebookPrice" type="java.lang.Integer">
+            <column name="EBOOK_PRICE" />
+        </property>
+        <property name="inputFile" type="string">
+            <column name="INPUT_FILE" length="400" />
+        </property>
+        <property name="outputPdf" type="string">
+            <column name="OUTPUT_PDF" length="1" />
+        </property>
+        <property name="outputEpub" type="string">
+            <column name="OUTPUT_EPUB" length="1" />
+        </property>
+        <property name="problem1" type="string">
+            <column name="PROBLEM1" length="400" />
+        </property>
+        <property name="problem2" type="string">
+            <column name="PROBLEM2" length="400" />
+        </property>
+        <property name="problem3" type="string">
+            <column name="PROBLEM3" length="400" />
+        </property>
+        <property name="problem4" type="string">
+            <column name="PROBLEM4" length="400" />
+        </property>
+        <property name="problem5" type="string">
+            <column name="PROBLEM5" length="400" />
+        </property>
+        <property name="problem6" type="string">
+            <column name="PROBLEM6" length="400" />
+        </property>
+        <property name="problem7" type="string">
+            <column name="PROBLEM7" length="400" />
+        </property>
+        <property name="problem8" type="string">
+            <column name="PROBLEM8" length="400" />
+        </property>
+        <property name="problem9" type="string">
+            <column name="PROBLEM9" length="400" />
+        </property>
+        <property name="problem10" type="string">
+            <column name="PROBLEM10" length="400" />
+        </property>
+        <property name="mark" type="string">
+            <column name="MARK" length="1" not-null="true" />
+        </property>
+        <property name="uid" type="string">
+            <column name="UID" length="21" />
+        </property>
+        <property name="vendorId" type="java.lang.Long">
+            <column name="VENDOR_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

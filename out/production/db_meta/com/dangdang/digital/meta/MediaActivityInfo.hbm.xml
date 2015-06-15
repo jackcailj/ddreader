@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaActivityInfo" table="media_activity_info" schema="" catalog="digital">
+        <id name="activityId" column="activity_id"/>
+        <property name="activityName" column="activity_name"/>
+        <property name="startTime" column="start_time"/>
+        <property name="endTime" column="end_time"/>
+        <property name="activityTypeId" column="activity_type_id"/>
+        <property name="activityTypeCode" column="activity_type_code"/>
+        <property name="isFirstDeposit" column="is_first_deposit"/>
+        <property name="isPreviousNumber" column="is_previous_number"/>
+        <property name="giveScale" column="give_scale"/>
+        <property name="consumeSatisfy" column="consume_satisfy"/>
+        <property name="originalLevel" column="original_level"/>
+        <property name="newLevel" column="new_level"/>
+        <property name="giveGoldPiece" column="give_gold_piece"/>
+        <property name="dayWorshipLimit" column="day_worship_limit"/>
+        <property name="lowestGoldPiece" column="lowest_gold_piece"/>
+        <property name="highestGoldPiece" column="highest_gold_piece"/>
+        <property name="isWholeMedia" column="is_whole_media"/>
+        <property name="consumeChapter" column="consume_chapter"/>
+        <property name="discount" column="discount"/>
+        <property name="isMonthlyPayment" column="is_monthly_payment"/>
+        <property name="monthlyPaymentType" column="monthly_payment_type"/>
+        <property name="monthlyBuyOrGive" column="monthly_buy_or_give"/>
+        <property name="monthlyPaymentOriginalPrice" column="monthly_payment_original_price"/>
+        <property name="monthlyPaymentPrice" column="monthly_payment_price"/>
+        <property name="monthlyPaymentDiscount" column="monthly_payment_discount"/>
+        <property name="monthlyPaymentRelation" column="monthly_payment_relation"/>
+        <property name="monthlyBuyDays" column="monthly_buy_days"/>
+        <property name="monthlyGiveDays" column="monthly_give_days"/>
+        <property name="isFixedPrice" column="is_fixed_price"/>
+        <property name="fixedPrice" column="fixed_price"/>
+        <property name="prizeQuantity" column="prize_quantity"/>
+        <property name="prizePrice" column="prize_price"/>
+        <property name="depositMoney" column="deposit_money"/>
+        <property name="depositReadPrice" column="deposit_read_price"/>
+        <property name="depositGiftGoldPrice" column="deposit_gift_gold_price"/>
+        <property name="depositGiftReadPrice" column="deposit_gift_read_price"/>
+        <property name="relationProductId" column="relation_product_id"/>
+        <property name="creator" column="creator"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="modifier" column="modifier"/>
+        <property name="lastChangedDate" column="last_changed_date"/>
+        <property name="status" column="status"/>
+        <property name="fromPaltform" column="from_paltform"/>
+        <property name="depositCode" column="deposit_code"/>
+    </class>
+</hibernate-mapping>

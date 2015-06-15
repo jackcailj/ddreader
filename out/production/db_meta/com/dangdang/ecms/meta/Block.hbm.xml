@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.Block" table="block" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="siteId" type="long">
+            <column name="SITE_ID" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="250" not-null="true" />
+        </property>
+        <property name="code" type="string">
+            <column name="CODE" length="100" not-null="true" />
+        </property>
+        <property name="content" type="string">
+            <column name="CONTENT" length="65535" />
+        </property>
+        <property name="defaultContent" type="string">
+            <column name="DEFAULT_CONTENT" length="200" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="STATUS" />
+        </property>
+        <property name="groupId" type="java.lang.Long">
+            <column name="GROUP_ID" />
+        </property>
+        <property name="excelFile" type="string">
+            <column name="EXCEL_FILE" length="100" />
+        </property>
+        <property name="type" type="int">
+            <column name="TYPE" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

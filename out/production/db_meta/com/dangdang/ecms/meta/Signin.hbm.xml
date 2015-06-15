@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.Signin" table="signin" catalog="ecmst">
+        <id name="signinId" type="java.lang.Long">
+            <column name="signin_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="firstSigninDate" type="date">
+            <column name="first_signin_date" length="10" not-null="true">
+                <comment>&#202;&#215;&#180;&#206;&#199;&#169;&#181;&#189;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="lastResignDate" type="date">
+            <column name="last_resign_date" length="10">
+                <comment>&#215;&#238;&#186;&#243;&#178;&#185;&#199;&#169;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="lastSigninDate" type="date">
+            <column name="last_signin_date" length="10" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#199;&#169;&#181;&#189;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="lastModifyedTime" type="timestamp">
+            <column name="last_modifyed_time" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

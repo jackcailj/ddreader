@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.BookReadingProgress" table="book_reading_progress" catalog="ecmst">
+        <id name="progressId" type="java.lang.Long">
+            <column name="progress_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="product_id">
+                <comment>&#178;&#250;&#198;&#183;</comment>
+            </column>
+        </property>
+        <property name="chaptersIndex" type="java.lang.Integer">
+            <column name="chapters_index">
+                <comment>&#213;&#194;&#189;&#218;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="characterIndex" type="java.lang.Integer">
+            <column name="character_index">
+                <comment>&#215;&#214;&#183;&#251;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="clientOperateTime" type="java.lang.Long">
+            <column name="client_operate_time">
+                <comment>&#191;&#205;&#187;&#167;&#182;&#203;&#178;&#217;&#215;&#247;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="memo" type="string">
+            <column name="memo" length="100">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="startTime" type="java.lang.Long">
+            <column name="start_time" />
+        </property>
+        <property name="endTime" type="java.lang.Long">
+            <column name="end_time" />
+        </property>
+    </class>
+</hibernate-mapping>

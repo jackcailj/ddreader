@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaCpPullMedia" table="media_cp_pull_media" schema="" catalog="digital">
+        <id name="id" column="id"/>
+        <property name="lastModifyDate" column="last_modify_date"/>
+        <property name="cpMediaId" column="cp_media_id"/>
+        <property name="ddMediaId" column="dd_media_id"/>
+        <property name="content" column="content"/>
+        <property name="isFull" column="is_full"/>
+        <property name="cpCode" column="cp_code"/>
+        <property name="batchId" column="batch_id"/>
+        <property name="mediaName" column="media_name"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="status" column="status"/>
+    </class>
+</hibernate-mapping>

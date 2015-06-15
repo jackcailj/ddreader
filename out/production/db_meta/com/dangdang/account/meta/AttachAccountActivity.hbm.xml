@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.account.meta.AttachAccountActivity" table="attach_account_activity" schema=""
+           catalog="account">
+        <id name="attachAccountActivityId" column="attach_account_activity_id"/>
+        <property name="activityCode" column="activity_code"/>
+        <property name="activityName" column="activity_name"/>
+        <property name="versionNo" column="version_no"/>
+        <property name="channelId" column="channel_id"/>
+        <property name="activityStatus" column="activity_status"/>
+        <property name="emails" column="emails"/>
+        <property name="mobiles" column="mobiles"/>
+        <property name="activityStartDate" column="activity_start_date"/>
+        <property name="activityEffectiveDate" column="activity_effective_date"/>
+        <property name="itemType" column="item_type"/>
+        <property name="lastModifiedDate" column="last_modified_date"/>
+        <property name="lastModifiedUser" column="last_modified_user"/>
+    </class>
+</hibernate-mapping>

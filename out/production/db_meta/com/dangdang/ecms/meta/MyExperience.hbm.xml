@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.MyExperience" table="my_experience" catalog="ecmst">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="CUST_ID" unique="true" />
+        </property>
+        <property name="readComplete" type="java.lang.Integer">
+            <column name="READ_COMPLETE" />
+        </property>
+        <property name="readTime" type="java.lang.Long">
+            <column name="READ_TIME" />
+        </property>
+        <property name="readPids" type="string">
+            <column name="READ_PIDS" length="6000" />
+        </property>
+        <property name="bookComment" type="java.lang.Integer">
+            <column name="BOOK_COMMENT" />
+        </property>
+        <property name="bookShare" type="java.lang.Integer">
+            <column name="BOOK_SHARE" />
+        </property>
+        <property name="bookCategory" type="string">
+            <column name="BOOK_CATEGORY" length="6000" />
+        </property>
+        <property name="timeSpread" type="string">
+            <column name="TIME_SPREAD" length="6000" />
+        </property>
+        <property name="score" type="java.lang.Integer">
+            <column name="SCORE" />
+        </property>
+        <property name="beatOthers" type="java.lang.Float">
+            <column name="BEAT_OTHERS" precision="4" scale="3" />
+        </property>
+    </class>
+</hibernate-mapping>

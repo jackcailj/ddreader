@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.Template" table="template" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" not-null="true" />
+        </property>
+        <property name="path" type="string">
+            <column name="PATH" length="400" />
+        </property>
+        <property name="state" type="int">
+            <column name="STATE" not-null="true" />
+        </property>
+        <property name="typeId" type="int">
+            <column name="TYPE_ID" not-null="true" />
+        </property>
+        <property name="groupId" type="long">
+            <column name="GROUP_ID" not-null="true" />
+        </property>
+        <property name="docTypeId" type="java.lang.Long">
+            <column name="DOC_TYPE_ID" />
+        </property>
+        <property name="backup" type="string">
+            <column name="BACKUP" />
+        </property>
+    </class>
+</hibernate-mapping>

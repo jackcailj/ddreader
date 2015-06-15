@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.LetvOrder" table="letv_order" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="albumId" type="long">
+            <column name="album_id" not-null="true" />
+        </property>
+        <property name="ebookId" type="java.lang.Long">
+            <column name="ebook_id" />
+        </property>
+        <property name="orderId" type="java.lang.Long">
+            <column name="order_id" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>0: &#206;&#180;&#201;&#207;&#180;&#171;; 1: &#210;&#209;&#201;&#207;&#180;&#171;</comment>
+            </column>
+        </property>
+        <property name="dataCheckStatus" type="java.lang.Integer">
+            <column name="dataCheckStatus">
+                <comment>0: &#213;&#253;&#179;&#163;; 1: &#183;&#199;&#183;&#168;</comment>
+            </column>
+        </property>
+        <property name="dataCheckInfo" type="string">
+            <column name="dataCheckInfo" length="65535">
+                <comment>&#208;&#163;&#209;&#233;&#179;&#246;&#180;&#237;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="created" type="timestamp">
+            <column name="created" length="19" />
+        </property>
+        <property name="paytime" type="timestamp">
+            <column name="paytime" length="19" />
+        </property>
+        <property name="dealcode" type="java.lang.Integer">
+            <column name="dealcode">
+                <comment>&#192;&#214;&#202;&#211;&#183;&#181;&#187;&#216;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="dealtime" type="timestamp">
+            <column name="dealtime" length="19">
+                <comment>&#192;&#214;&#202;&#211;&#180;&#166;&#192;&#237;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="orderItemId" type="java.lang.Long">
+            <column name="ORDER_ITEM_ID" />
+        </property>
+    </class>
+</hibernate-mapping>

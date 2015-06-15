@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.CouponActivity" table="coupon_activity" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="128" />
+        </property>
+        <property name="activityType" type="java.lang.Integer">
+            <column name="activity_type">
+                <comment>&#187;&#238;&#182;&#175;&#192;&#224;&#208;&#205; 1 &#176;&#180;&#199;&#254;&#181;&#192;&#197;&#201;&#200;&#175;</comment>
+            </column>
+        </property>
+        <property name="tips" type="string">
+            <column name="tips" length="128">
+                <comment>&#197;&#201;&#200;&#175;&#204;&#225;&#202;&#190;&#208;&#197;&#207;&#162;</comment>
+            </column>
+        </property>
+        <property name="imgPath" type="string">
+            <column name="img_path" length="256">
+                <comment>&#200;&#175;&#205;&#188;&#198;&#172;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="channelId" type="string">
+            <column name="channel_id" length="128">
+                <comment>&#199;&#254;&#181;&#192;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="dispatchType" type="java.lang.Integer">
+            <column name="dispatch_type">
+                <comment>&#197;&#201;&#200;&#175;&#192;&#224;&#208;&#205;&#163;&#172;&#202;&#214;&#182;&#175; 0 &#215;&#212;&#182;&#175; 1</comment>
+            </column>
+        </property>
+        <property name="userType" type="java.lang.Integer">
+            <column name="user_type">
+                <comment>&#211;&#195;&#187;&#167;&#192;&#224;&#208;&#205; 0 &#200;&#171;&#178;&#191;&#211;&#195;&#187;&#167; 1
+                &#178;&#191;&#183;&#214;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="usersPath" type="string">
+            <column name="users_path" length="256">
+                <comment>&#178;&#191;&#183;&#214;&#211;&#195;&#187;&#167;&#181;&#196;csv&#206;&#196;&#188;&#254;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#215;&#180;&#204;&#172; 0 &#208;&#194;&#189;&#168; 1 &#214;&#180;&#208;&#208;&#214;&#208; 2 &#205;&#163;&#214;&#185;</comment>
+            </column>
+        </property>
+        <property name="couponPoolId" type="java.lang.Long">
+            <column name="coupon_pool_id">
+                <comment>&#200;&#175;&#179;&#216;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="limitedNum" type="java.lang.Integer">
+            <column name="limited_num">
+                <comment>&#207;&#222;&#211;&#195;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="start_date" length="19" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="end_date" length="19" />
+        </property>
+        <property name="notLoginPop" type="java.lang.Integer">
+            <column name="not_login_pop" />
+        </property>
+    </class>
+</hibernate-mapping>

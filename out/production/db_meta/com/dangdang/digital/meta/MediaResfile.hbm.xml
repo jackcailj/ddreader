@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaResfile" table="media_resfile" schema="" catalog="digital">
+        <id name="id" column="ID"/>
+        <property name="mediaId" column="MEDIA_ID"/>
+        <property name="resfileId" column="RESFILE_ID"/>
+        <property name="resfileType" column="RESFILE_TYPE"/>
+        <property name="resfilePath" column="RESFILE_PATH"/>
+        <property name="resfileSize" column="RESFILE_SIZE"/>
+        <property name="deviceTypeId" column="DEVICE_TYPE_ID"/>
+        <property name="deviceTypeCode" column="DEVICE_TYPE_CODE"/>
+        <property name="deviceTypeName" column="DEVICE_TYPE_NAME"/>
+        <property name="created" column="CREATED"/>
+        <property name="resfileWidth" column="RESFILE_WIDTH"/>
+        <property name="resfileHeight" column="RESFILE_HEIGHT"/>
+        <property name="resfilePageNum" column="RESFILE_PAGE_NUM"/>
+        <property name="resfilePicNum" column="RESFILE_PIC_NUM"/>
+    </class>
+</hibernate-mapping>

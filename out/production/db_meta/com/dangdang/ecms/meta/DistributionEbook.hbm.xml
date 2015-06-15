@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.DistributionEbook" table="distribution_ebook" catalog="ecmst">
+        <id name="distributionEbookId" type="java.lang.Long">
+            <column name="distribution_ebook_id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="100">
+                <comment>&#202;&#233;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="ebookId" type="java.lang.Long">
+            <column name="ebook_id">
+                <comment>&#185;&#216;&#193;&#170;ebook&#214;&#247;&#188;&#252;</comment>
+            </column>
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="product_id">
+                <comment>product_id</comment>
+            </column>
+        </property>
+        <property name="uid" type="string">
+            <column name="uid" length="21" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="100" />
+        </property>
+        <property name="distributionId" type="java.lang.Long">
+            <column name="distribution_id">
+                <comment>&#185;&#216;&#193;&#170;distrubution&#214;&#247;&#188;&#252;</comment>
+            </column>
+        </property>
+        <property name="distributionName" type="string">
+            <column name="distribution_name" length="100">
+                <comment>&#183;&#214;&#207;&#250;&#201;&#204;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="error" type="string">
+            <column name="error" length="65535">
+                <comment>&#177;&#168;&#180;&#237;&#208;&#197;&#207;&#162;</comment>
+            </column>
+        </property>
+        <property name="path" type="string">
+            <column name="path" length="200" />
+        </property>
+        <property name="createUser" type="string">
+            <column name="create_user" length="50">
+                <comment>&#180;&#180;&#189;&#168;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="batchId" type="string">
+            <column name="batch_id" length="400">
+                <comment>&#181;&#188;&#200;&#235;&#197;&#250;&#180;&#206;</comment>
+            </column>
+        </property>
+        <property name="ebookPrice" type="java.lang.Integer">
+            <column name="ebook_price">
+                <comment>&#181;&#231;&#215;&#211;&#202;&#233;&#182;&#168;&#188;&#219;</comment>
+            </column>
+        </property>
+        <property name="platShare" type="big_decimal">
+            <column name="plat_share" precision="5" scale="3" />
+        </property>
+        <property name="iosPrice" type="java.lang.Integer">
+            <column name="ios_price">
+                <comment>&#198;&#187;&#185;&#251;iap&#182;&#168;&#188;&#219;</comment>
+            </column>
+        </property>
+        <property name="iosShare" type="big_decimal">
+            <column name="ios_share" precision="5" />
+        </property>
+        <property name="importTime" type="timestamp">
+            <column name="import_time" length="19">
+                <comment>&#200;&#235;&#191;&#226;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="ebookKey" type="string">
+            <column name="ebook_key" length="100">
+                <comment>&#200;&#171;&#177;&#190;&#195;&#216;&#212;&#191;</comment>
+            </column>
+        </property>
+        <property name="probationKey" type="string">
+            <column name="probation_key" length="100" />
+        </property>
+        <property name="ebookSize" type="java.lang.Integer">
+            <column name="ebook_size" />
+        </property>
+        <property name="probationSize" type="java.lang.Integer">
+            <column name="probation_size" />
+        </property>
+    </class>
+</hibernate-mapping>

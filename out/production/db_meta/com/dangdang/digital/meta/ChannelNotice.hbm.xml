@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.ChannelNotice" table="channel_notice" schema="" catalog="digital">
+        <id name="noticeId" column="notice_id"/>
+        <property name="title" column="title"/>
+        <property name="content" column="content"/>
+        <property name="activeTime" column="active_time"/>
+        <property name="creator" column="creator"/>
+        <property name="createDate" column="create_date"/>
+        <property name="changer" column="changer"/>
+        <property name="modifyDate" column="modify_date"/>
+        <property name="status" column="status"/>
+        <property name="tags" column="tags"/>
+    </class>
+</hibernate-mapping>

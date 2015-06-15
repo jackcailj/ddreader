@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.EbookRankingDetail" table="ebook_ranking_detail" catalog="ecmst">
+        <id name="rkDtId" type="java.lang.Long">
+            <column name="rk_dt_id" />
+            <generator class="identity" />
+        </id>
+        <property name="rkId" type="java.lang.Long">
+            <column name="rk_id">
+                <comment>&#197;&#197;&#208;&#208;&#176;&#241;ID</comment>
+            </column>
+        </property>
+        <property name="rankNo" type="string">
+            <column name="rank_no" length="50">
+                <comment>&#197;&#197;&#208;&#208;&#176;&#241;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="categoryCode" type="string">
+            <column name="category_code" length="50">
+                <comment>&#183;&#214;&#192;&#224;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="period" type="java.lang.Integer">
+            <column name="period">
+                <comment>&#198;&#218;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="product_id">
+                <comment>&#181;&#231;&#215;&#211;&#202;&#233;product_id</comment>
+            </column>
+        </property>
+        <property name="ebookTitle" type="string">
+            <column name="ebook_title" length="100">
+                <comment>&#181;&#231;&#215;&#211;&#202;&#233;&#202;&#233;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="ebookAuthor" type="string">
+            <column name="ebook_author" length="100">
+                <comment>&#181;&#231;&#215;&#211;&#202;&#233;&#215;&#247;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="ebookPrice" type="java.lang.Integer">
+            <column name="ebook_price">
+                <comment>&#181;&#231;&#215;&#211;&#202;&#233;&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+        <property name="paperBookPrice" type="java.lang.Integer">
+            <column name="paper_book_price">
+                <comment>&#214;&#189;&#202;&#233;&#182;&#168;&#188;&#219;</comment>
+            </column>
+        </property>
+        <property name="operator" type="string">
+            <column name="operator" length="100">
+                <comment>&#178;&#217;&#215;&#247;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="salesVolume" type="java.lang.Long">
+            <column name="sales_volume">
+                <comment>&#207;&#250;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="isValid" type="java.lang.Short">
+            <column name="is_valid">
+                <comment>&#202;&#199;&#183;&#241;&#211;&#208;&#208;&#167;&#163;&#187;
+                1&#163;&#186;&#211;&#208;&#208;&#167;&#163;&#168;&#184;&#252;&#208;&#194;&#202;&#177;&#187;&#225;&#184;&#252;&#208;&#194;&#202;&#253;&#190;&#221;&#163;&#169;
+                2&#163;&#186;&#210;&#187;&#214;&#177;&#211;&#208;&#208;&#167;&#163;&#168;&#200;&#203;&#185;&#164;&#184;&#201;&#212;&#164;&#202;&#253;&#190;&#221;&#163;&#172;&#178;&#187;&#212;&#217;&#184;&#252;&#208;&#194;&#163;&#169;
+                0&#163;&#186;&#210;&#187;&#214;&#177;&#206;&#222;&#208;&#167;&#163;&#168;&#200;&#203;&#185;&#164;&#184;&#201;&#212;&#164;&#202;&#253;&#190;&#221;&#163;&#172;&#178;&#187;&#212;&#217;&#184;&#252;&#208;&#194;&#163;&#169;
+                &#184;&#195;&#214;&#181;&#191;&#201;&#212;&#218;&#186;&#243;&#204;&#168;&#206;&#172;&#187;&#164;</comment>
+            </column>
+        </property>
+        <property name="created" type="timestamp">
+            <column name="created" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="memberDealDate" type="timestamp">
+            <column name="member_deal_date" length="19">
+                <comment>&#200;&#203;&#185;&#164;&#184;&#201;&#212;&#164;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="coverPic" type="string">
+            <column name="coverPic" length="400">
+                <comment>&#183;&#226;&#195;&#230;&#205;&#188;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

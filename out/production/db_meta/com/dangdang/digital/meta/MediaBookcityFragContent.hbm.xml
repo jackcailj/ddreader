@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaBookcityFragContent" table="media_bookcity_frag_content" schema=""
+           catalog="digital">
+        <id name="bookcityFragContentId" column="bookcity_frag_content_id"/>
+        <property name="fragmentId" column="fragment_id"/>
+        <property name="contentHtml" column="content_html"/>
+        <property name="contentHtmlEditing" column="content_html_editing"/>
+        <property name="creator" column="creator"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="modifier" column="modifier"/>
+        <property name="lastChangedDate" column="last_changed_date"/>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.ZsOrder" table="zs_order" catalog="ecmst">
+        <id name="id" type="java.lang.Integer">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="ebookId" type="java.lang.Long">
+            <column name="ebook_id" />
+        </property>
+        <property name="orderId" type="java.lang.Long">
+            <column name="order_id" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="created" length="19" />
+        </property>
+        <property name="paytime" type="timestamp">
+            <column name="paytime" length="19" />
+        </property>
+        <property name="orderItemId" type="java.lang.Integer">
+            <column name="order_item_id" />
+        </property>
+        <property name="custId" type="java.lang.Integer">
+            <column name="cust_id" />
+        </property>
+    </class>
+</hibernate-mapping>

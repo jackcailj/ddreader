@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.LotteryPrizeRecord" table="lottery_prize_record" catalog="ecmst">
+        <id name="recordId" type="java.lang.Long">
+            <column name="record_id" />
+            <generator class="identity" />
+        </id>
+        <property name="deviceNo" type="string">
+            <column name="device_no" length="100" />
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="100" />
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" />
+        </property>
+        <property name="typeId" type="java.lang.Long">
+            <column name="type_id" />
+        </property>
+        <property name="itemId" type="java.lang.Long">
+            <column name="item_id" />
+        </property>
+        <property name="value" type="string">
+            <column name="value" length="20" />
+        </property>
+        <property name="couponNo" type="java.lang.Long">
+            <column name="coupon_no" />
+        </property>
+        <property name="state" type="int">
+            <column name="state" not-null="true" />
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true">
+                <comment>0&#166;&#196;</comment>
+            </column>
+        </property>
+        <property name="isDel" type="int">
+            <column name="is_del" not-null="true" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" not-null="true" />
+        </property>
+        <property name="receivedDate" type="timestamp">
+            <column name="received_date" length="19" />
+        </property>
+        <property name="cancelDate" type="timestamp">
+            <column name="cancel_date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

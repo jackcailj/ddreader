@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.digital.meta.MediaCpTaxinfo" table="media_cp_taxinfo" schema="" catalog="digital">
+        <id name="taxId" column="tax_id"/>
+        <property name="cpId" column="cp_id"/>
+        <property name="taxNo" column="tax_no"/>
+        <property name="type" column="type"/>
+        <property name="taxpayerType" column="taxpayer_type"/>
+        <property name="issueDate" column="issue_date"/>
+        <property name="busiScope" column="busi_scope"/>
+        <property name="certificationAttach" column="certification_attach"/>
+    </class>
+</hibernate-mapping>

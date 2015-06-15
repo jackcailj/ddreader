@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.dangdang.account.meta.AttachAccountItems" table="attach_account_items" schema=""
+           catalog="account">
+        <id name="attachAccountItemsId" column="attach_account_items_id"/>
+        <property name="custId" column="cust_id"/>
+        <property name="faceValue" column="face_value"/>
+        <property name="surplusMoney" column="surplus_money"/>
+        <property name="consumeSource" column="consume_source"/>
+        <property name="modifiedVersion" column="modified_version"/>
+        <property name="effectiveDate" column="effective_date"/>
+        <property name="effectiveDateMsec" column="effective_date_msec"/>
+        <property name="platformNo" column="platform_no"/>
+        <property name="status" column="status"/>
+        <property name="activityCode" column="activity_code"/>
+        <property name="creationDate" column="creation_date"/>
+        <property name="lastModifiedDate" column="last_modified_date"/>
+        <property name="deviceType" column="device_type"/>
+        <property name="isShow" column="is_show"/>
+        <property name="activityName" column="activity_name"/>
+    </class>
+</hibernate-mapping>

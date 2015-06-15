@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-18 14:01:28 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ecms.meta.CmsOperateLog" table="cms_operate_log" catalog="ecmst">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="created" type="timestamp">
+            <column name="created" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="updated" length="19">
+                <comment>&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#178;&#217;&#215;&#247;&#189;&#225;&#185;&#251;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="operationResult" type="string">
+            <column name="operation_result" length="2000">
+                <comment>&#178;&#217;&#215;&#247;&#189;&#225;&#185;&#251;&#208;&#197;&#207;&#162;</comment>
+            </column>
+        </property>
+        <property name="entityId" type="string">
+            <column name="entity_id" length="200">
+                <comment>&#178;&#217;&#215;&#247;&#202;&#181;&#204;&#229;ID</comment>
+            </column>
+        </property>
+        <property name="operationParams" type="string">
+            <column name="operation_params" length="2000" />
+        </property>
+        <property name="operationType" type="java.lang.Integer">
+            <column name="operation_type">
+                <comment>&#178;&#217;&#215;&#247;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="memo" type="string">
+            <column name="memo" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>
