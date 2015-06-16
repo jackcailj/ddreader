@@ -31,11 +31,11 @@
 	<classpathentry kind="lib" path="lib/logkit-2.0.jar"/>
 	<classpathentry kind="lib" path="lib/mybatis-3.0.6.jar"/>
 	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.34-bin.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ddFramework"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ecms_meta"/>
 	<classpathentry kind="lib" path="lib/mchange-commons-java-0.2.3.4.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/yc_meta"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/org.apache.commons.collections_3.2.0.v2013030210310.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/db_meta"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ddframework"/>
+	<classpathentry kind="lib" path="lib/fitnesse-standalone.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
