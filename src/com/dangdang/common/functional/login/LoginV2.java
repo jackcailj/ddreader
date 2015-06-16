@@ -7,4 +7,8 @@ import com.dangdang.autotest.common.FixtureBase;
  */
 public class LoginV2 extends FixtureBase{
 
+    public  void  LoginV2(){
+
+    }
+
 }

@@ -1,6 +1,0 @@
-!***> '''CLASSPATH'''
-
-!path bin
-!path lib/*.jar
-
-*!
