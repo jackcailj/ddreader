@@ -43,14 +43,7 @@ public class FixtureBase extends InterfaceBase{
 		handleParam();
 	}
 	
-	/**
-	 * 接收FitNesse上ddt表的参数形式
-	 * @param name
-	 * @param value
-	 */
-	public void set(String name, String value){
-		paramMap.put(name, value);
-	}
+
 	
 	/**
 	 * @param actionName
@@ -118,5 +111,39 @@ public class FixtureBase extends InterfaceBase{
 	public void jsonToClass(){
 		
 	}
+
+
+	/*============================与fitnesse DynamicDecisionTable集成相关函数=================================*/
+	/**
+	 * 接收FitNesse上ddt表的参数形式
+	 * @param name
+	 * @param value
+	 */
+	public void set(String name, String value){
+		paramMap.put(name, value);
+	}
+
+	public String get(String columnName){
+		if(columnName.equals("result")){
+			if(getDataVerifyResult()){
+				return "成功";
+			}
+			else {
+				return "失败";
+			}
+		}
+		return paramMap.get(columnName);
+	}
+
+	/*
+    执行DynamicDecisionTable的每一行
+     */
+	public void execute() throws Exception {
+
+		doWorkAndVerify();
+
+	}
+
+    /*============================fitnesse DynamicDecisionTable设置列值函数=================================*/
 	
 }
