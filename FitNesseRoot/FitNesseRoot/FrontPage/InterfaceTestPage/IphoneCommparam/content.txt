@@ -1,0 +1,18 @@
+!*> '''iPhone客户端公共参数'''
+!define activityId {0}
+!define osVersionNo {iOS}
+!define mobileType {iPhone}
+!define resolution {480*854}
+!define returnType {json}
+!define channelId {10020}
+!define serverVersionNo {1.3.0}
+!define permanentId {20150124154742351116807875249950073}
+!define macAddr {020000000000}
+!define clientOs {iPhone OS7.0.3}
+# deviceSerialNo {iOS_201F32A5-E68F-4CA1-9AFD-638392D5D812}在下面script中直接赋值
+!define clientVersionNo {4.4.0}
+!define deviceType {iphone}
+
+|script|Config|
+|setCommParam|!{activityId:${activityId},osVersionNo:${osVersionNo},mobileType:${mobileType},resolution:${resolution},returnType:${returnType},channelId:${channelId},serverVersionNo:${serverVersionNo},permanentId:${permanentId},macAddr:${macAddr},clientOs:${clientOs},deviceSerialNo:!-iOS_201F32A5-E68F-4CA1-9AFD-638392D5D812-!,clientVersionNo:${clientVersionNo},deviceType:${deviceType}}|
+*!

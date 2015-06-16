@@ -1,0 +1,280 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20150114</FitNesseVersion>
+  <rootPath>FrontPage.InterfaceTestPage.SuiteSetUp</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>7</exceptions>
+    </counts>
+    <runTimeInMillis>226</runTimeInMillis>
+    <content>&lt;center&gt;&lt;span class="meta"&gt;Last modified by test on 六月 13, 2015 at 01:07:50 上午&lt;/span&gt;&lt;/center&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="FrontPage.InterfaceTestPage.ClassPath"&gt;.FrontPage.InterfaceTestPage.ClassPath&lt;/a&gt; &lt;a href="FrontPage.InterfaceTestPage.ClassPath?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;&lt;b&gt;CLASSPATH&lt;/b&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;span class="meta"&gt;classpath: E:\fixtures\ddFramework\bin&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: E:\fixtures\ddreader\bin&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: E:\fixtures\yc_meta\bin&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: E:\fixtures\ecms_meta\bin&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: E:\fixtures\ddreader\lib/*.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: E:\fixtures\ddFramework\lib/*.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: E:\fixtures\ecms_meta\lib/*.jar&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: E:\fixtures\yc_meta\lib/*.jar&lt;/span&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="FrontPage.InterfaceTestPage.TestingConfig"&gt;.FrontPage.InterfaceTestPage.TestingConfig&lt;/a&gt; &lt;a href="FrontPage.InterfaceTestPage.TestingConfig?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;&lt;b&gt;测试环境配置信息&lt;/b&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.dangdang.config&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td colspan="4"&gt;Config &lt;span class="error"&gt;Could not invoke constructor for Config[0]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;environment&lt;/td&gt;
+		&lt;td&gt;base url&lt;/td&gt;
+		&lt;td&gt;login url&lt;/td&gt;
+		&lt;td&gt;temp url&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;testing &lt;span class="error"&gt;The instance decisionTable_1.setEnvironment. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;http://10.255.223.149/media/api.go &lt;span class="error"&gt;The instance decisionTable_1.setBaseUrl. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;http://10.255.223.131/mobile/api2.do &lt;span class="error"&gt;The instance decisionTable_1.setLoginUrl. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;http://10.255.223.149/media/api.go &lt;span class="error"&gt;The instance decisionTable_1.setTempUrl. does not exist&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="FrontPage.InterfaceTestPage.AndroidCommparam"&gt;.FrontPage.InterfaceTestPage.AndroidCommparam&lt;/a&gt; &lt;a href="FrontPage.InterfaceTestPage.AndroidCommparam?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;&lt;b&gt;Android公共参数&lt;/b&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;span class="meta"&gt;variable defined: returnType=json&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: deviceType=Android&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: channelId=30000&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: clientVersionNo=4.8.2&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: serverVersionNo=1.2.1&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: activityId=0&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: permanentId=20150110021451227105983711475801861&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: deviceSerialNo=863151026834264&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: resolution=1280*720&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: clientOs=4.2.2&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: type=1&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;script&lt;/td&gt;
+		&lt;td&gt;Config &lt;span class="error"&gt;Could not invoke constructor for Config[0]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;setCommParam &lt;span class="error"&gt;The instance scriptTableActor.setCommParam. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;returnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;json&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;deviceType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;Android&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;channelId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;30000&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;clientVersionNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;4.8.2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;serverVersionNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1.2.1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;activityId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;permanentId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;20150110021451227105983711475801861&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;deviceSerialNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;863151026834264&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;macAddr&lt;/td&gt;
+		&lt;td class="hash_value"&gt;18:dc:56:36:67:9c&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;resolution&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1280*720&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;clientOs&lt;/td&gt;
+		&lt;td class="hash_value"&gt;4.2.2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;type&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <relativePageName>SuiteSetUp</relativePageName>
+        <tags>运行环境配置</tags>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.dangdang.config'}</instruction>
+        <slimResult>pass(com.dangdang.config)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.dangdang.config</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='Config', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                        <evaluationMessage>Could not invoke constructor for Config[0]</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setEnvironment', args=[testing]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_4</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_1.setEnvironment. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_5', instruction='call', instanceName='decisionTable_1', methodName='setBaseUrl', args=[http://10.255.223.149/media/api.go]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_5</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_1.setBaseUrl. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_6', instruction='call', instanceName='decisionTable_1', methodName='setLoginUrl', args=[http://10.255.223.131/mobile/api2.do]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_6</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_1.setLoginUrl. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_7', instruction='call', instanceName='decisionTable_1', methodName='setTempUrl', args=[http://10.255.223.149/media/api.go]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_7</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_1.setTempUrl. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_2_0', instruction='make', instanceName='scriptTableActor', className='Config', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_2_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                        <evaluationMessage>Could not invoke constructor for Config[0]</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_2_1', instruction='call', instanceName='scriptTableActor', methodName='setCommParam', args=[&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;returnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;json&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;deviceType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;Android&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;channelId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;30000&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;clientVersionNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;4.8.2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;serverVersionNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1.2.1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;activityId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;permanentId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;20150110021451227105983711475801861&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;deviceSerialNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;863151026834264&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;macAddr&lt;/td&gt;
+		&lt;td class="hash_value"&gt;18:dc:56:36:67:9c&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;resolution&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1280*720&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;clientOs&lt;/td&gt;
+		&lt;td class="hash_value"&gt;4.2.2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;type&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_2_1</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.setCommParam. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+      <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>227</totalRunTimeInMillis>
+  
+</testResults>
+

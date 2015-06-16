@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<suiteResults>
+  <FitNesseVersion>v20150114</FitNesseVersion>
+  <rootPath>FrontPage.InterfaceTestPage.TestScript</rootPath>
+    <pageHistoryReference>
+    <name>FrontPage.InterfaceTestPage.SuiteSetUp</name>
+    <date>06/15/2015 18:55:33</date>
+    <pageHistoryLink>FrontPage.InterfaceTestPage.SuiteSetUp?pageHistory&amp;resultDate=20150615185533</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>7</exceptions>
+    </counts>
+    <runTimeInMillis>336</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnInterface</name>
+    <date>06/15/2015 18:55:33</date>
+    <pageHistoryLink>FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnInterface?pageHistory&amp;resultDate=20150615185533</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>10</exceptions>
+    </counts>
+    <runTimeInMillis>219</runTimeInMillis>
+  </pageHistoryReference>
+    <pageHistoryReference>
+    <name>FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnTesting</name>
+    <date>06/15/2015 18:55:34</date>
+    <pageHistoryLink>FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnTesting?pageHistory&amp;resultDate=20150615185534</pageHistoryLink>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>5</exceptions>
+    </counts>
+    <runTimeInMillis>72</runTimeInMillis>
+  </pageHistoryReference>
+    <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>3</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>1238</totalRunTimeInMillis>
+
+</suiteResults>
+

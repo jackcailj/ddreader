@@ -1,0 +1,8 @@
+!define TEST_SYSTEM {slim}
+!include .FrontPage.InterfaceTestPage.ClassPath
+!include .FrontPage.InterfaceTestPage.TestingConfig
+#!include .FrontPage.InterfaceTestPage.StagingConfig
+#!include .FrontPage.InterfaceTestPage.OnlineConfig
+!include .FrontPage.InterfaceTestPage.AndroidCommparam
+#!include .FrontPage.InterfaceTestPage.IphoneCommparam
+#!include .FrontPage.InterfaceTestPage.IpadCommparam

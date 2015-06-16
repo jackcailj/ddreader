@@ -1,0 +1,18 @@
+!define TEST_SYSTEM {slim}
+!*> setUp
+|Import|
+|com.dangdang.readerV5.bookstore|
+
+定义scenario checkColumn: 调用column接口并检查结果
+| scenario | checkColumn| columnType||start||end||isFull||setParameters||doGet|
+| setParameters |!{columnType:@columnType,start:@start,end:@end,isFull:@isFull}|
+|doGet|column||0|
+|ensure|get result1|
+*!
+|script|Column|
+|show|getSubColumn|当当读书||all|
+
+
+|checkColumn|
+|#栏目名称|columnType|start|end|isFull|
+|#原创-男神力荐|np_nslj|0|3|1|

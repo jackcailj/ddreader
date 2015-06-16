@@ -1,0 +1,8 @@
+
+!3 !-slim:fitnesse.slim.SlimService-!
+|'''Date: '''| 6:56:52 下午 (CST) on 星期一, 六月 15, 2015 |
+|'''Test Page: '''|.FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnInterface|
+|'''Command: '''| !-/usr/local/jdk7/bin/java -cp fitnesse-standalone.jar:E:\fixtures\ddFramework\bin:E:\fixtures\ddreader\bin:E:\fixtures\yc_meta\bin:E:\fixtures\ecms_meta\bin:E:\fixtures\ddreader\lib/*.jar:E:\fixtures\ddFramework\lib/*.jar:E:\fixtures\ecms_meta\lib/*.jar:E:\fixtures\yc_meta\lib/*.jar fitnesse.slim.SlimService 8087-! |
+|'''Exit code: '''| 0 |
+|'''Time elapsed: '''| 0.798 seconds |
+

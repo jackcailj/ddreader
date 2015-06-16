@@ -1,0 +1,8 @@
+!*> '''测试环境配置信息'''
+|Import|
+|com.dangdang.config|
+
+|Config|
+|environment|base url|login url|temp url|
+|testing|!-http://10.255.223.149/media/api.go-!|!-http://10.255.223.131/mobile/api2.do-!|!-http://10.255.223.149/media/api.go-!|
+*!

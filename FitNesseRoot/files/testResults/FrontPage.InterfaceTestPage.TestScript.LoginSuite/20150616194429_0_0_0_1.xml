@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20150114</FitNesseVersion>
+  <rootPath>FrontPage.InterfaceTestPage.TestScript.LoginSuite</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>13</exceptions>
+    </counts>
+    <runTimeInMillis>219</runTimeInMillis>
+    <content>&lt;center&gt;&lt;span class="meta"&gt;Last modified by test on 六月 13, 2015 at 01:07:50 上午&lt;/span&gt;&lt;/center&gt;
+&lt;br/&gt;&lt;h3&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;&lt;/h3&gt;
+&lt;h3&gt;一、接口wiki地址：&lt;/h3&gt;
+接口描述及接口返回code见&lt;a href="http://10.255.223.6/wiki/pages/viewpage.action?pageId=4359523"&gt;http://10.255.223.6/wiki/pages/viewpage.action?pageId=4359523&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;&lt;h3&gt;二、接口描述：&lt;/h3&gt;
+1、登录失败5次后才出现验证码输入框&lt;br/&gt;&lt;br/&gt;2、登录失败的验证规则为：按设备号判断 3、接口支持 当当读书;当读小说;翻片儿;天天;听书客户端 4、支持两种登录方式：email、phone&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.dangdang.autotest.common&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;h3&gt;三、测试用例:&lt;/h3&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;ddt:loginV2 &lt;span class="error"&gt;Could not invoke constructor for loginV2[1]&lt;/span&gt;&lt;/td&gt;
+		&lt;td colspan="7"&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;#用例名称&lt;/td&gt;
+		&lt;td&gt;passWord&lt;/td&gt;
+		&lt;td&gt;loginClient&lt;/td&gt;
+		&lt;td&gt;code&lt;/td&gt;
+		&lt;td&gt;loginType&lt;/td&gt;
+		&lt;td&gt;pdfkey&lt;/td&gt;
+		&lt;td&gt;期望？&lt;/td&gt;
+		&lt;td&gt;result？&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;登录，正常流程&lt;/td&gt;
+		&lt;td&gt;ddtest &lt;span class="error"&gt;The instance dynamicDecisionTable_1.set. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;0 &lt;span class="error"&gt;The instance dynamicDecisionTable_1.set. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt; &lt;span class="error"&gt;The instance dynamicDecisionTable_1.set. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;phone &lt;span class="error"&gt;The instance dynamicDecisionTable_1.set. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt; &lt;span class="error"&gt;The instance dynamicDecisionTable_1.set. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;0 &lt;span class="error"&gt;The instance dynamicDecisionTable_1.set. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;成功 &lt;span class="error"&gt;The instance dynamicDecisionTable_1.set. does not exist&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;h3&gt;&lt;/h3&gt;
+&lt;h3&gt;四、脚本&lt;/h3&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt; &lt;span class="error"&gt;Could not invoke constructor for [1]&lt;/span&gt;&lt;/td&gt;
+		&lt;td colspan="3"&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;发送请求并进行数据验证&lt;/td&gt;
+		&lt;td&gt;&lt;pre&gt;doWorkAndVerify&lt;/pre&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;检查数据验证结果是否正确 &lt;span class="error"&gt;The instance decisionTable_2.set发送请求并进行数据验证. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;check &lt;span class="error"&gt;The instance decisionTable_2.setPreDoWorkAndVerifyPre. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;pre&gt;getDataVerifyResult&lt;/pre&gt; &lt;span class="error"&gt;The instance decisionTable_2.set. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;true &lt;span class="error"&gt;The instance decisionTable_2.set. does not exist&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&amp;lt;test page&amp;gt;&lt;br/&gt;</content>
+    <relativePageName>LoginSuite</relativePageName>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.dangdang.autotest.common'}</instruction>
+        <slimResult>pass(com.dangdang.autotest.common)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.dangdang.autotest.common</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='dynamicDecisionTable_1_0', instruction='make', instanceName='dynamicDecisionTable_1', className='loginV2', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>dynamicDecisionTable_1_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                        <evaluationMessage>Could not invoke constructor for loginV2[1]</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='dynamicDecisionTable_1_4', instruction='call', instanceName='dynamicDecisionTable_1', methodName='set', args=[passWord, ddtest]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>dynamicDecisionTable_1_4</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance dynamicDecisionTable_1.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='dynamicDecisionTable_1_5', instruction='call', instanceName='dynamicDecisionTable_1', methodName='set', args=[loginClient, 0]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>dynamicDecisionTable_1_5</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance dynamicDecisionTable_1.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='dynamicDecisionTable_1_6', instruction='call', instanceName='dynamicDecisionTable_1', methodName='set', args=[code, ]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>dynamicDecisionTable_1_6</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance dynamicDecisionTable_1.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='dynamicDecisionTable_1_7', instruction='call', instanceName='dynamicDecisionTable_1', methodName='set', args=[loginType, phone]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>dynamicDecisionTable_1_7</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance dynamicDecisionTable_1.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='dynamicDecisionTable_1_8', instruction='call', instanceName='dynamicDecisionTable_1', methodName='set', args=[pdfkey, ]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>dynamicDecisionTable_1_8</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance dynamicDecisionTable_1.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='dynamicDecisionTable_1_9', instruction='call', instanceName='dynamicDecisionTable_1', methodName='set', args=[期望？, 0]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>dynamicDecisionTable_1_9</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance dynamicDecisionTable_1.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='dynamicDecisionTable_1_10', instruction='call', instanceName='dynamicDecisionTable_1', methodName='set', args=[result？, 成功]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>dynamicDecisionTable_1_10</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance dynamicDecisionTable_1.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_0', instruction='make', instanceName='decisionTable_2', className='', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                        <evaluationMessage>Could not invoke constructor for [1]</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_4', instruction='call', instanceName='decisionTable_2', methodName='set发送请求并进行数据验证', args=[检查数据验证结果是否正确]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_4</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_2.set发送请求并进行数据验证. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_5', instruction='call', instanceName='decisionTable_2', methodName='setPreDoWorkAndVerifyPre', args=[check]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_5</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_2.setPreDoWorkAndVerifyPre. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_6', instruction='call', instanceName='decisionTable_2', methodName='set', args=[&lt;pre&gt;getDataVerifyResult&lt;/pre&gt;]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_6</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_2.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_2_7', instruction='call', instanceName='decisionTable_2', methodName='set', args=[true]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_2_7</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_2.set. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+      <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>219</totalRunTimeInMillis>
+  
+</testResults>
+

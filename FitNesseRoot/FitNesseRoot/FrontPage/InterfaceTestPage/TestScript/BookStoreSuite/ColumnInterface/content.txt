@@ -1,0 +1,34 @@
+!define TEST_SYSTEM {slim}
+!* '''测试用例'''
+接口定义：http://10.255.223.6/wiki/pages/viewpage.action?pageId=3933440
+相关表：media_column
+|Comment|
+|用例编号|前提条件|测试点|用例描述|预期结果|测试类型|
+|columnTest001|||获取正常栏目下数据||等价类|
+|columnTest002||后台操作|后台添加作品后，获取栏目下数据|可以获取到新添加的作品|业务逻辑|
+|columnTest003||后台操作|后台排序后，获取栏目下数据||业务逻辑|
+|columnTest004||后台操作|后台删除后，获取栏目下数据||业务逻辑|
+|columnTest005||后台操作|后台设置有效期后，获取栏目下数据||业务逻辑|
+|columnTest006||后台操作|后台更改状态后，获取栏目下数据||业务逻辑|
+|columnTest007||后台操作|书下架后，获取栏目下数据||业务逻辑|
+|columnTest008||后台操作|下架的书上架后，获取栏目下数据||业务逻辑|
+|columnTest009||后台操作|后台新增栏目并装书，获取栏目下数据||业务逻辑|
+*!
+!*> setUp
+|Import|
+|com.dangdang.readerV5.bookstore|
+*!
+!* columnTest001
+!include .FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnTesting
+*!
+!* columnTest002
+|script|Column|
+|setParameters|!{columnType:np_nslj,start:0,end:3,isFull:1}|
+|note|后台添加作品|
+|show|getSubColumn|原创||all|
+|doGet|column|
+|ensure|get result1|
+*!
+
+!contents
+

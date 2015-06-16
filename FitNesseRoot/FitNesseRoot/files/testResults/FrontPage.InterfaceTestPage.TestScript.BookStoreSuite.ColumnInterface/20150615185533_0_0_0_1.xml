@@ -1,0 +1,491 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20150114</FitNesseVersion>
+  <rootPath>FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnInterface</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>10</exceptions>
+    </counts>
+    <runTimeInMillis>219</runTimeInMillis>
+    <content>&lt;center&gt;&lt;span class="meta"&gt;Last modified by test on 六月 13, 2015 at 01:07:50 上午&lt;/span&gt;&lt;/center&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;&lt;b&gt;测试用例&lt;/b&gt;&lt;/p&gt;
+	&lt;div&gt;接口定义：&lt;a href="http://10.255.223.6/wiki/pages/viewpage.action?pageId=3933440"&gt;http://10.255.223.6/wiki/pages/viewpage.action?pageId=3933440&lt;/a&gt;&lt;br/&gt;相关表：media_column&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td colspan="6"&gt;Comment&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;用例编号&lt;/td&gt;
+		&lt;td&gt;前提条件&lt;/td&gt;
+		&lt;td&gt;测试点&lt;/td&gt;
+		&lt;td&gt;用例描述&lt;/td&gt;
+		&lt;td&gt;预期结果&lt;/td&gt;
+		&lt;td&gt;测试类型&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest001&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;获取正常栏目下数据&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;等价类&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest002&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;后台操作&lt;/td&gt;
+		&lt;td&gt;后台添加作品后，获取栏目下数据&lt;/td&gt;
+		&lt;td&gt;可以获取到新添加的作品&lt;/td&gt;
+		&lt;td&gt;业务逻辑&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest003&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;后台操作&lt;/td&gt;
+		&lt;td&gt;后台排序后，获取栏目下数据&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;业务逻辑&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest004&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;后台操作&lt;/td&gt;
+		&lt;td&gt;后台删除后，获取栏目下数据&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;业务逻辑&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest005&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;后台操作&lt;/td&gt;
+		&lt;td&gt;后台设置有效期后，获取栏目下数据&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;业务逻辑&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest006&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;后台操作&lt;/td&gt;
+		&lt;td&gt;后台更改状态后，获取栏目下数据&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;业务逻辑&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest007&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;后台操作&lt;/td&gt;
+		&lt;td&gt;书下架后，获取栏目下数据&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;业务逻辑&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest008&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;后台操作&lt;/td&gt;
+		&lt;td&gt;下架的书上架后，获取栏目下数据&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;业务逻辑&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;columnTest009&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;后台操作&lt;/td&gt;
+		&lt;td&gt;后台新增栏目并装书，获取栏目下数据&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;业务逻辑&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;setUp&lt;/p&gt;
+	&lt;div&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.dangdang.readerV5.bookstore&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;columnTest001&lt;/p&gt;
+	&lt;div&gt;&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnTesting"&gt;.FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnTesting&lt;/a&gt; &lt;a href="FrontPage.InterfaceTestPage.TestScript.BookStoreSuite.ColumnTesting?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;setUp&lt;/p&gt;
+	&lt;div&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.dangdang.readerV5.bookstore&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;定义scenario checkColumn: 调用column接口并检查结果&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;scenario&lt;/td&gt;
+		&lt;td&gt;checkColumn&lt;/td&gt;
+		&lt;td&gt;columnType&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;start&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;end&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;isFull&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;setParameters&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;doGet&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;setParameters&lt;/td&gt;
+		&lt;td colspan="12"&gt;&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;columnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;@columnType&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;start&lt;/td&gt;
+		&lt;td class="hash_value"&gt;@start&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;end&lt;/td&gt;
+		&lt;td class="hash_value"&gt;@end&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;isFull&lt;/td&gt;
+		&lt;td class="hash_value"&gt;@isFull&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;doGet&lt;/td&gt;
+		&lt;td&gt;column&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td colspan="10"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;ensure&lt;/td&gt;
+		&lt;td colspan="12"&gt;get result1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;script&lt;/td&gt;
+		&lt;td colspan="4"&gt;Column &lt;span class="error"&gt;Could not invoke constructor for Column[0]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;show &lt;span class="error"&gt;The instance scriptTableActor.getSubColumn. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;getSubColumn&lt;/td&gt;
+		&lt;td&gt;当当读书&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;all&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td colspan="5"&gt;checkColumn&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;#栏目名称&lt;/td&gt;
+		&lt;td&gt;columnType&lt;/td&gt;
+		&lt;td&gt;start&lt;/td&gt;
+		&lt;td&gt;end&lt;/td&gt;
+		&lt;td&gt;isFull&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="scenario closed"&gt;
+		&lt;td class="error"&gt;#原创-男神力荐&lt;/td&gt;
+		&lt;td class="error"&gt;np_nslj&lt;/td&gt;
+		&lt;td class="error"&gt;0&lt;/td&gt;
+		&lt;td class="error"&gt;3&lt;/td&gt;
+		&lt;td class="error"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="scenario-detail closed-detail"&gt;&lt;td colspan="5"&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;scenario&lt;/td&gt;
+		&lt;td&gt;checkColumn&lt;/td&gt;
+		&lt;td&gt;columnType&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;start&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;end&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;isFull&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;setParameters&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;doGet&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;setParameters &lt;span class="error"&gt;The instance scriptTableActor.setParameters. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td colspan="12"&gt;&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;columnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;np_nslj&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;start&lt;/td&gt;
+		&lt;td class="hash_value"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;end&lt;/td&gt;
+		&lt;td class="hash_value"&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;isFull&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;doGet &lt;span class="error"&gt;The instance scriptTableActor.doGet. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;column&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td colspan="10"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;ensure &lt;span class="error"&gt;The instance scriptTableActor.getResult1. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td colspan="12"&gt;get result1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;columnTest002&lt;/p&gt;
+	&lt;div&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;script&lt;/td&gt;
+		&lt;td colspan="4"&gt;Column &lt;span class="error"&gt;Could not invoke constructor for Column[0]&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;setParameters &lt;span class="error"&gt;The instance scriptTableActor.setParameters. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td colspan="4"&gt;&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;columnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;np_nslj&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;start&lt;/td&gt;
+		&lt;td class="hash_value"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;end&lt;/td&gt;
+		&lt;td class="hash_value"&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;isFull&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;note&lt;/td&gt;
+		&lt;td colspan="4"&gt;后台添加作品&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;show &lt;span class="error"&gt;The instance scriptTableActor.getSubColumn. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;getSubColumn&lt;/td&gt;
+		&lt;td&gt;原创&lt;/td&gt;
+		&lt;td&gt;&lt;/td&gt;
+		&lt;td&gt;all&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;doGet &lt;span class="error"&gt;The instance scriptTableActor.doGet. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td colspan="4"&gt;column&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;ensure &lt;span class="error"&gt;The instance scriptTableActor.getResult1. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td colspan="4"&gt;get result1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;div class="contents"&gt;
+	&lt;b&gt;Contents:&lt;/b&gt;
+	&lt;ul class="toc1"/&gt;&lt;ul class="toc1"/&gt;
+&lt;/div&gt;
+&lt;br/&gt;&lt;br/&gt;</content>
+    <relativePageName>ColumnInterface</relativePageName>
+        <tags>testing</tags>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.dangdang.readerV5.bookstore'}</instruction>
+        <slimResult>pass(com.dangdang.readerV5.bookstore)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.dangdang.readerV5.bookstore</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='import_1_0', instruction='import', path='com.dangdang.readerV5.bookstore'}</instruction>
+        <slimResult>pass(com.dangdang.readerV5.bookstore)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_1_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.dangdang.readerV5.bookstore</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_3_0', instruction='make', instanceName='scriptTableActor', className='Column', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_3_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                        <evaluationMessage>Could not invoke constructor for Column[0]</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_3_1', instruction='call', instanceName='scriptTableActor', methodName='getSubColumn', args=[当当读书, all]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_3_1</instructionId>
+                              <type>ShowActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.getSubColumn. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_4_0/scriptTable_2_0', instruction='call', instanceName='scriptTableActor', methodName='setParameters', args=[&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;columnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;np_nslj&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;start&lt;/td&gt;
+		&lt;td class="hash_value"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;end&lt;/td&gt;
+		&lt;td class="hash_value"&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;isFull&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_4_0/scriptTable_2_0</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.setParameters. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_4_0/scriptTable_2_1', instruction='call', instanceName='scriptTableActor', methodName='doGet', args=[column, 0]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_4_0/scriptTable_2_1</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.doGet. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_4_0/scriptTable_2_2', instruction='call', instanceName='scriptTableActor', methodName='getResult1', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_4_0/scriptTable_2_2</instructionId>
+                              <type>EnsureActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.getResult1. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_5_0', instruction='make', instanceName='scriptTableActor', className='Column', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_5_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                        <evaluationMessage>Could not invoke constructor for Column[0]</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_5_1', instruction='call', instanceName='scriptTableActor', methodName='setParameters', args=[&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;columnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;np_nslj&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;start&lt;/td&gt;
+		&lt;td class="hash_value"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;end&lt;/td&gt;
+		&lt;td class="hash_value"&gt;3&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;isFull&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_5_1</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.setParameters. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_5_2', instruction='call', instanceName='scriptTableActor', methodName='getSubColumn', args=[原创, all]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_5_2</instructionId>
+                              <type>ShowActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.getSubColumn. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_5_3', instruction='call', instanceName='scriptTableActor', methodName='doGet', args=[column]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_5_3</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.doGet. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_5_4', instruction='call', instanceName='scriptTableActor', methodName='getResult1', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_5_4</instructionId>
+                              <type>EnsureActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.getResult1. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+      <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>219</totalRunTimeInMillis>
+  
+</testResults>
+

@@ -1,0 +1,8 @@
+!*> '''online环境配置信息'''
+|Import|
+|com.dangdang.config|
+
+|Config|
+|environment|base url|login url|temp url|
+|online|!-http://e.dangdang.com/mobile/api2.do-!|!-http://e.dangdang.com/mobile/api2.do-!|!-http://e.dangdang.com/media/api.go-!|
+*!

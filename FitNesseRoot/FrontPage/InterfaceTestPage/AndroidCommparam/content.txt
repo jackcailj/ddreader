@@ -1,0 +1,17 @@
+!*> '''Android公共参数'''
+!define returnType {json}
+!define deviceType {Android}
+!define channelId {30000}
+!define clientVersionNo {4.8.2}
+!define serverVersionNo {1.2.1}
+!define activityId {0}
+!define permanentId {20150110021451227105983711475801861}
+!define deviceSerialNo {863151026834264}
+#macAddr {18:dc:56:36:67:9c}在下面的script中直接赋值
+!define resolution {1280*720}
+!define clientOs {4.2.2}
+!define type {1}
+
+|script|Config|
+|setCommParam|!{returnType:${returnType},deviceType:${deviceType},channelId:${channelId},clientVersionNo:${clientVersionNo},serverVersionNo:${serverVersionNo},activityId:${activityId},permanentId:${permanentId},deviceSerialNo:${deviceSerialNo},macAddr:!-18:dc:56:36:67:9c-!,resolution:${resolution},clientOs:${clientOs},type:${type}}|
+*!

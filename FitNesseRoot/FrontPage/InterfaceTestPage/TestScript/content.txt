@@ -1,0 +1,29 @@
+!*> '''登录'''
+!see .FrontPage.InterfaceTestPage.TestScript.LoginSuite
+*!
+!*> '''书城'''
+!see .FrontPage.InterfaceTestPage.TestScript.BookStoreSuite
+*!
+!*> '''购买流程'''
+!see .FrontPage.InterfaceTestPage.TestScript.PurchaseSuite
+*!
+!*> '''频道''' 
+!see .FrontPage.InterfaceTestPage.TestScript.ChannelSuite
+*!
+!*> '''发现''' 
+!see .FrontPage.InterfaceTestPage.TestScript.DiscoverSuite
+*!
+!*> '''评论''' 
+!see .FrontPage.InterfaceTestPage.TestScript.ReviewSuite
+*!
+!*> '''我的''' 
+!see .FrontPage.InterfaceTestPage.TestScript.MySuite
+*!
+!*> '''IM''' 
+!see .FrontPage.InterfaceTestPage.TestScript.ImSuite
+*!
+!*> '''阅读器''' 
+!see .FrontPage.InterfaceTestPage.TestScript.ReaderSuite
+*!
+
+#!contents

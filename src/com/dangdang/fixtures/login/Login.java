@@ -73,12 +73,19 @@ public class Login extends FixtureBase{
 	}
 	
 	String n="0";
-	public String get(String s) throws Exception{
-		bindAndLogin("login");
-		if (s.contains("custID")){
-			return getCustId();
-		}else
-			return getToken();
+    @Override
+	public String get(String s) {
+		try {
+			bindAndLogin("login");
+			if (s.contains("custID")) {
+				return getCustId();
+			} else
+				return getToken();
+		}catch (Exception e){
+
+		}
+
+        return null;
 	}
 	
 

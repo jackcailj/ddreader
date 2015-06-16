@@ -1,0 +1,424 @@
+<?xml version="1.0"?>
+<testResults>
+  <FitNesseVersion>v20150114</FitNesseVersion>
+  <rootPath>FrontPage.InterfaceTestPage.SuiteSetUp</rootPath>
+    <result>
+    <counts>
+      <right>0</right>
+      <wrong>0</wrong>
+      <ignores>0</ignores>
+      <exceptions>7</exceptions>
+    </counts>
+    <runTimeInMillis>53</runTimeInMillis>
+    <content>&lt;center&gt;&lt;span class="meta"&gt;Last modified by test on 六月 13, 2015 at 01:07:50 上午&lt;/span&gt;&lt;/center&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: TEST_SYSTEM=slim&lt;/span&gt;
+&lt;br/&gt;&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="FrontPage.InterfaceTestPage.ClassPath"&gt;.FrontPage.InterfaceTestPage.ClassPath&lt;/a&gt; &lt;a href="FrontPage.InterfaceTestPage.ClassPath?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;&lt;b&gt;CLASSPATH&lt;/b&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: bin&lt;/span&gt;&lt;br/&gt;&lt;span class="meta"&gt;classpath: lib/*.jar&lt;/span&gt;&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="FrontPage.InterfaceTestPage.TestingConfig"&gt;.FrontPage.InterfaceTestPage.TestingConfig&lt;/a&gt; &lt;a href="FrontPage.InterfaceTestPage.TestingConfig?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;&lt;b&gt;测试环境配置信息&lt;/b&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;table&gt;
+	&lt;tr&gt;
+		&lt;td&gt;Import&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;&lt;span class="pass"&gt;com.dangdang.config&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="exception closed"&gt;
+		&lt;td colspan="4" class="error"&gt;Config&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="4"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: com/dangdang/ddframework/core/ConfigCore
+	at java.lang.ClassLoader.defineClass1(Native Method) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:760) [rt.jar:1.8.0_45]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362) [rt.jar:1.8.0_45]
+	at java.security.AccessController.doPrivileged(Native Method) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) [rt.jar:1.8.0_45]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) [rt.jar:1.8.0_45]
+	at java.lang.Class.forName0(Native Method) [rt.jar:1.8.0_45]
+	at java.lang.Class.forName(Class.java:264) [rt.jar:1.8.0_45]
+	at fitnesse.slim.SlimExecutionContext.getClass(SlimExecutionContext.java:128) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.searchPathsForClass(SlimExecutionContext.java:118) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.createInstanceOfConstructor(SlimExecutionContext.java:89) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.create(SlimExecutionContext.java:43) [fitnesse-standalone.jar]
+	at fitnesse.slim.StatementExecutor.create(StatementExecutor.java:77) [fitnesse-standalone.jar]
+	at fitnesse.slim.instructions.MakeInstruction.executeInternal(MakeInstruction.java:26) [fitnesse-standalone.jar]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:30) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:83) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:107) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.processTheInstructions(SlimServer.java:94) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:69) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:55) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:41) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.handle(SlimService.java:168) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:176) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.accept(SlimService.java:138) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:66) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.main(SlimService.java:52) [fitnesse-standalone.jar]
+Caused by: java.lang.ClassNotFoundException: com.dangdang.ddframework.core.ConfigCore
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) [rt.jar:1.8.0_45]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.defineClass1(Native Method) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:760) [rt.jar:1.8.0_45]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362) [rt.jar:1.8.0_45]
+	at java.security.AccessController.doPrivileged(Native Method) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) [rt.jar:1.8.0_45]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) [rt.jar:1.8.0_45]
+	at java.lang.Class.forName0(Native Method) [rt.jar:1.8.0_45]
+	at java.lang.Class.forName(Class.java:264) [rt.jar:1.8.0_45]
+	at fitnesse.slim.SlimExecutionContext.getClass(SlimExecutionContext.java:128) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.searchPathsForClass(SlimExecutionContext.java:118) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.createInstanceOfConstructor(SlimExecutionContext.java:89) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.create(SlimExecutionContext.java:43) [fitnesse-standalone.jar]
+	at fitnesse.slim.StatementExecutor.create(StatementExecutor.java:77) [fitnesse-standalone.jar]
+	at fitnesse.slim.instructions.MakeInstruction.executeInternal(MakeInstruction.java:26) [fitnesse-standalone.jar]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:30) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:83) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:107) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.processTheInstructions(SlimServer.java:94) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:69) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:55) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:41) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.handle(SlimService.java:168) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:176) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.accept(SlimService.java:138) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:66) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.main(SlimService.java:52) [fitnesse-standalone.jar]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;environment&lt;/td&gt;
+		&lt;td&gt;base url&lt;/td&gt;
+		&lt;td&gt;login url&lt;/td&gt;
+		&lt;td&gt;temp url&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;testing &lt;span class="error"&gt;The instance decisionTable_1.setEnvironment. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;http://10.255.223.149/media/api.go &lt;span class="error"&gt;The instance decisionTable_1.setBaseUrl. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;http://10.255.223.131/mobile/api2.do &lt;span class="error"&gt;The instance decisionTable_1.setLoginUrl. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;http://10.255.223.149/media/api.go &lt;span class="error"&gt;The instance decisionTable_1.setTempUrl. does not exist&lt;/span&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="collapsible"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;Included page: &lt;a href="FrontPage.InterfaceTestPage.AndroidCommparam"&gt;.FrontPage.InterfaceTestPage.AndroidCommparam&lt;/a&gt; &lt;a href="FrontPage.InterfaceTestPage.AndroidCommparam?edit&amp;amp;redirectToReferer=true&amp;amp;redirectAction=" class="edit"&gt;(edit)&lt;/a&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;div class="collapsible closed"&gt;&lt;ul&gt;&lt;li&gt;&lt;a href='#' class='expandall'&gt;Expand&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href='#' class='collapseall'&gt;Collapse&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;
+	&lt;p class="title"&gt;&lt;b&gt;Android公共参数&lt;/b&gt;&lt;/p&gt;
+	&lt;div&gt;&lt;span class="meta"&gt;variable defined: returnType=json&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: deviceType=Android&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: channelId=30000&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: clientVersionNo=4.8.2&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: serverVersionNo=1.2.1&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: activityId=0&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: permanentId=20150110021451227105983711475801861&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: deviceSerialNo=863151026834264&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: resolution=1280*720&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: clientOs=4.2.2&lt;/span&gt;
+&lt;br/&gt;&lt;span class="meta"&gt;variable defined: type=1&lt;/span&gt;
+&lt;br/&gt;&lt;br/&gt;&lt;table&gt;
+	&lt;tr class="exception closed"&gt;
+		&lt;td class="error"&gt;script&lt;/td&gt;
+		&lt;td class="error"&gt;Config&lt;/td&gt;
+	&lt;/tr&gt;&lt;tr class="exception-detail closed-detail"&gt;&lt;td colspan="2"&gt;&lt;pre&gt;__EXCEPTION__:java.lang.NoClassDefFoundError: com/dangdang/ddframework/core/ConfigCore
+	at java.lang.ClassLoader.defineClass1(Native Method) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:760) [rt.jar:1.8.0_45]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362) [rt.jar:1.8.0_45]
+	at java.security.AccessController.doPrivileged(Native Method) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) [rt.jar:1.8.0_45]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) [rt.jar:1.8.0_45]
+	at java.lang.Class.forName0(Native Method) [rt.jar:1.8.0_45]
+	at java.lang.Class.forName(Class.java:264) [rt.jar:1.8.0_45]
+	at fitnesse.slim.SlimExecutionContext.getClass(SlimExecutionContext.java:128) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.searchPathsForClass(SlimExecutionContext.java:118) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.createInstanceOfConstructor(SlimExecutionContext.java:89) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.create(SlimExecutionContext.java:43) [fitnesse-standalone.jar]
+	at fitnesse.slim.StatementExecutor.create(StatementExecutor.java:77) [fitnesse-standalone.jar]
+	at fitnesse.slim.instructions.MakeInstruction.executeInternal(MakeInstruction.java:26) [fitnesse-standalone.jar]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:30) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:83) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:107) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.processTheInstructions(SlimServer.java:94) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:69) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:55) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:41) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.handle(SlimService.java:168) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:176) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.accept(SlimService.java:138) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:66) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.main(SlimService.java:52) [fitnesse-standalone.jar]
+Caused by: java.lang.ClassNotFoundException: com.dangdang.ddframework.core.ConfigCore
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) [rt.jar:1.8.0_45]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.defineClass1(Native Method) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.defineClass(ClassLoader.java:760) [rt.jar:1.8.0_45]
+	at java.security.SecureClassLoader.defineClass(SecureClassLoader.java:142) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.defineClass(URLClassLoader.java:467) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.access$100(URLClassLoader.java:73) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:368) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:362) [rt.jar:1.8.0_45]
+	at java.security.AccessController.doPrivileged(Native Method) [rt.jar:1.8.0_45]
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:361) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) [rt.jar:1.8.0_45]
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:331) [rt.jar:1.8.0_45]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) [rt.jar:1.8.0_45]
+	at java.lang.Class.forName0(Native Method) [rt.jar:1.8.0_45]
+	at java.lang.Class.forName(Class.java:264) [rt.jar:1.8.0_45]
+	at fitnesse.slim.SlimExecutionContext.getClass(SlimExecutionContext.java:128) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.searchPathsForClass(SlimExecutionContext.java:118) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.createInstanceOfConstructor(SlimExecutionContext.java:89) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimExecutionContext.create(SlimExecutionContext.java:43) [fitnesse-standalone.jar]
+	at fitnesse.slim.StatementExecutor.create(StatementExecutor.java:77) [fitnesse-standalone.jar]
+	at fitnesse.slim.instructions.MakeInstruction.executeInternal(MakeInstruction.java:26) [fitnesse-standalone.jar]
+	at fitnesse.slim.instructions.Instruction.execute(Instruction.java:30) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor$Executive.executeStatement(ListExecutor.java:49) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor$Executive.executeStatements(ListExecutor.java:43) [fitnesse-standalone.jar]
+	at fitnesse.slim.ListExecutor.execute(ListExecutor.java:83) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.executeInstructions(SlimServer.java:107) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.processTheInstructions(SlimServer.java:94) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.processOneSetOfInstructions(SlimServer.java:69) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.tryProcessInstructions(SlimServer.java:55) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimServer.serve(SlimServer.java:41) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.handle(SlimService.java:168) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.acceptOne(SlimService.java:176) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.accept(SlimService.java:138) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.startWithFactory(SlimService.java:66) [fitnesse-standalone.jar]
+	at fitnesse.slim.SlimService.main(SlimService.java:52) [fitnesse-standalone.jar]&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;
+	&lt;tr&gt;
+		&lt;td&gt;setCommParam &lt;span class="error"&gt;The instance scriptTableActor.setCommParam. does not exist&lt;/span&gt;&lt;/td&gt;
+		&lt;td&gt;&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;returnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;json&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;deviceType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;Android&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;channelId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;30000&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;clientVersionNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;4.8.2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;serverVersionNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1.2.1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;activityId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;permanentId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;20150110021451227105983711475801861&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;deviceSerialNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;863151026834264&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;macAddr&lt;/td&gt;
+		&lt;td class="hash_value"&gt;18:dc:56:36:67:9c&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;resolution&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1280*720&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;clientOs&lt;/td&gt;
+		&lt;td class="hash_value"&gt;4.2.2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;type&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+</content>
+    <relativePageName>SuiteSetUp</relativePageName>
+        <tags>运行环境配置</tags>
+            <instructions>
+            <instructionResult>
+        <instruction>{id='import_0_0', instruction='import', path='com.dangdang.config'}</instruction>
+        <slimResult>pass(com.dangdang.config)</slimResult>
+                <expectation>
+                    <status>pass</status>
+                    <instructionId>import_0_0</instructionId>
+                    <col>0</col>
+                              <row>1</row>
+                    <type>ImportExpectation</type>
+                                        <evaluationMessage>com.dangdang.config</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_0', instruction='make', instanceName='decisionTable_1', className='Config', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_4', instruction='call', instanceName='decisionTable_1', methodName='setEnvironment', args=[testing]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_4</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_1.setEnvironment. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_5', instruction='call', instanceName='decisionTable_1', methodName='setBaseUrl', args=[http://10.255.223.149/media/api.go]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_5</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_1.setBaseUrl. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_6', instruction='call', instanceName='decisionTable_1', methodName='setLoginUrl', args=[http://10.255.223.131/mobile/api2.do]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_6</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_1.setLoginUrl. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='decisionTable_1_7', instruction='call', instanceName='decisionTable_1', methodName='setTempUrl', args=[http://10.255.223.149/media/api.go]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>decisionTable_1_7</instructionId>
+                              <type>VoidReturnExpectation</type>
+                                        <evaluationMessage>The instance decisionTable_1.setTempUrl. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_2_0', instruction='make', instanceName='scriptTableActor', className='Config', args=[]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_2_0</instructionId>
+                              <type>ConstructionExpectation</type>
+                                      </expectation>
+              </instructionResult>
+            <instructionResult>
+        <instruction>{id='scriptTable_2_1', instruction='call', instanceName='scriptTableActor', methodName='setCommParam', args=[&lt;table class="hash_table"&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;returnType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;json&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;deviceType&lt;/td&gt;
+		&lt;td class="hash_value"&gt;Android&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;channelId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;30000&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;clientVersionNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;4.8.2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;serverVersionNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1.2.1&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;activityId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;0&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;permanentId&lt;/td&gt;
+		&lt;td class="hash_value"&gt;20150110021451227105983711475801861&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;deviceSerialNo&lt;/td&gt;
+		&lt;td class="hash_value"&gt;863151026834264&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;macAddr&lt;/td&gt;
+		&lt;td class="hash_value"&gt;18:dc:56:36:67:9c&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;resolution&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1280*720&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;clientOs&lt;/td&gt;
+		&lt;td class="hash_value"&gt;4.2.2&lt;/td&gt;
+	&lt;/tr&gt;
+	&lt;tr class="hash_row"&gt;
+		&lt;td class="hash_key"&gt;type&lt;/td&gt;
+		&lt;td class="hash_value"&gt;1&lt;/td&gt;
+	&lt;/tr&gt;
+&lt;/table&gt;]}</instruction>
+        <slimResult></slimResult>
+                <expectation>
+                    <status>error</status>
+                    <instructionId>scriptTable_2_1</instructionId>
+                              <type>ScriptActionExpectation</type>
+                                        <evaluationMessage>The instance scriptTableActor.setCommParam. does not exist</evaluationMessage>
+                  </expectation>
+              </instructionResult>
+          </instructions>
+      </result>
+      <finalCounts>
+    <right>0</right>
+    <wrong>0</wrong>
+    <ignores>0</ignores>
+    <exceptions>1</exceptions>
+  </finalCounts>
+  <totalRunTimeInMillis>53</totalRunTimeInMillis>
+  
+</testResults>
+

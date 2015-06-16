@@ -1,0 +1,16 @@
+!***> '''CLASSPATH'''
+
+!path /usr/local/fitnesse/
+!path E:\work\github\ddFramework\bin
+!path E:\work\github\ddreader\bin
+#!path E:\fixtures\yc_meta\bin
+
+#!path E:\fixtures\ecms_meta\bin
+
+!path E:\work\github\ddreader\lib/*.jar
+!path E:\work\github\ddFramework\lib/*.jar
+#!path E:\fixtures\ecms_meta\lib/*.jar
+
+#!path E:\fixtures\yc_meta\lib/*.jar
+
+*!

@@ -1,0 +1,8 @@
+!*> '''staging环境配置信息'''
+|Import|
+|com.dangdang.config|
+
+|Config|
+|environment|base url|login url|temp url|
+|staging|!-http://http://172.16.248.28/mobile/api2.do-!|!-http://172.16.248.28/mobile/api2.do-!|!-http://172.16.248.121:8082/media/api.go-!|
+*!
