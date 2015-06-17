@@ -36,14 +36,16 @@ public class FixtureBase extends InterfaceBase{
 	 * @throws Exception 
 	 */
 	public void setParameters(Map<String, String> params) throws Exception{
-		ParseResult parseResult=ParseParamUtil.parseParam(params);
+		parseParameters(params);
+	}
+	
+	public void parseParameters(Map<String, String> params) throws Exception{
+		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		paramMap =  params;
 		paramMap.putAll(Config.getCommonParam());
 		login = parseResult.getLogin();
 		handleParam();
 	}
-	
-
 	
 	/**
 	 * @param actionName
