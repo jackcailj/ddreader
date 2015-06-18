@@ -39,14 +39,14 @@ public class Config extends ConfigCore{
 		PropertyConfigurator.configure(ResourceLoader.loadCurrentPropertyFile("conf/log4j.properties"));
 		try{
 			if(getEnvironment() == TestEnvironment.TESTING){
-				YCDBConfig="conf/yc_db.cfg.xml";
-				ECMSDBConfig="conf/ecmstdb.cfg.xml";
-				ACCOUNTDBConfig="conf/accountdb.cfg.xml";	
+				YCDBConfig="conf/db/yc_db.cfg.xml";
+				ECMSDBConfig="conf/db/ecmstdb.cfg.xml";
+				ACCOUNTDBConfig="conf/db/accountdb.cfg.xml";	
 			}
 			else {
-				YCDBConfig="conf/websql_yc.properties";
-				ECMSDBConfig="conf/websql_ddreader.properties";
-				ACCOUNTDBConfig="conf/websql_account.properties";
+				YCDBConfig="conf/db/websql_yc.properties";
+				ECMSDBConfig="conf/db/websql_ddreader.properties";
+				ACCOUNTDBConfig="conf/db/websql_account.properties";
 			}					
 
 		}
