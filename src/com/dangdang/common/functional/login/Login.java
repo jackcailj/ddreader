@@ -16,7 +16,7 @@ import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
 import com.dangdang.reader.functional.reponse.LoginReponse;
 
-public class Login extends FunctionalBaseEx{
+public class Login  extends FunctionalBaseEx implements ILogin{
 
 	LoginInfo	loginInfo;
 	ReponseV2<LoginReponse> reponseResult;
@@ -37,6 +37,8 @@ public class Login extends FunctionalBaseEx{
 		init(loginInfo);
 		
 	}
+
+
 	
 	public Login(LoginInfo loginInfoArg){
 		loginInfo =loginInfoArg;
@@ -72,6 +74,7 @@ public class Login extends FunctionalBaseEx{
 	/*
 	 *获取token
 	 */
+
 	public String getToken(){
 		if(reponseResult.getStatus().getCode()==0){
 			return reponseResult.getData().getToken();
@@ -94,7 +97,7 @@ public class Login extends FunctionalBaseEx{
 	/*
 	 * 已登录用户获取custid只获取一次
 	 */
-	public String getCustId() throws NumberFormatException, Exception{
+	public String getCustId() throws Exception {
 		if(custId==null){
 			custId =Long.parseLong(getCusId(loginInfo.getUserName()));
 		}

@@ -4,17 +4,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.common.functional.login.Login;
-import com.dangdang.ddframework.core.TestDevice;
-import com.dangdang.ddframework.dataverify.MapVerify;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ecms.meta.OrderForm;
 import com.dangdang.ecms.meta.OrderItem;
-import com.dangdang.reader.functional.bookstore.BookList;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
-import com.dangdang.reader.functional.reponse.MobileEbookInfo;
 import com.dangdang.reader.functional.reponse.SaveSmsOrderReponse;
 import com.dangdang.digital.meta.MediaActivityInfo;
 import org.apache.commons.lang3.StringUtils;
@@ -48,7 +44,7 @@ public class SaveSmsOrder extends FunctionalBaseEx{
         addAction("saveSmsOrder");
     }
 
-    public SaveSmsOrder(Login login){
+    public SaveSmsOrder(ILogin login){
         addAction("saveSmsOrder");
         setLogin(login);
         paramMap.put("token", login.getToken());

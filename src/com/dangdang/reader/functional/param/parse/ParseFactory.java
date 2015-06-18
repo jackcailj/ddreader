@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
 import org.apache.log4j.Logger;
 
 
@@ -14,7 +18,7 @@ import org.apache.log4j.Logger;
  *
  */
 public class ParseFactory {
-	Logger log = Logger.getLogger(ParseFactory.class);	
+	static  Logger log = Logger.getLogger(ParseFactory.class);
 	List<String> keyList = new ArrayList<String>();
 	
 	/**
@@ -22,13 +26,50 @@ public class ParseFactory {
 	 * @param keyList  Excel中的字段值
 	 * @param paramMap Excel传入的Map值
 	 */
-	public void createParse(Map<String, String> paramMap){
+	public  void createParse(Map<String, String> paramMap){
 		getKeyList(paramMap);
 //		if(keyList.contains("".precondition)){
 //			PreconditionParse pre = new PreconditionParse();
 //			pre.parse(paramMap);
 //		}
 	}
+
+	public static Object CreateParse(String parseMethod) throws IllegalAccessException, InstantiationException {
+		String className = "com.dangdang.reader.functional.param.parse."+parseMethod.replaceFirst(parseMethod.substring(0,1),parseMethod.substring(0,1).toUpperCase())+"Parse";
+		Class c = null;
+		try {
+			c = Class.forName(className);
+			log.info("创建解析类： " + c);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+
+		return c.newInstance();
+	}
+
+    /*
+    authro:cailj
+    date:2015-6-18
+    解析参数，根据参数指定的方法对参数进行解析，参数格式  method:param
+    循环查询参数列表是否存在指定格式字符传，如果存在，生成类并进行解析
+     */
+	public  static void Parse(Map<String, String> paramMap) throws Exception {
+		//循环查询参数
+        for(Map.Entry<String,String> entry:paramMap.entrySet()){
+            //检查是否有符合解析规则的值
+			Matcher matcher = Pattern.compile("#(.+)#(.*)").matcher(entry.getValue());
+			if(matcher.find()){
+                //获取解析类名
+				String parseMethod = matcher.group(1);
+                //创建解析类，并进行解析
+				IParamParse object = (IParamParse) CreateParse(parseMethod.trim());
+				Object result=object.parse(matcher.group(2));
+                //解析完成，替换字段的值
+                entry.setValue(result.toString());
+			}
+		}
+	}
+
 	
 	public Object createParse(Map<String, String> paramMap, String key){
 		getKeyList(paramMap);

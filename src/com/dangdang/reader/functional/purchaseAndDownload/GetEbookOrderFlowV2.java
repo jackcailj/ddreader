@@ -4,23 +4,20 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.dangdang.common.functional.login.ILogin;
 import org.apache.commons.lang3.StringUtils;
-import org.hibernate.metamodel.source.annotations.entity.ConfiguredClassType;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.common.PlatForm;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.core.TestDevice;
 import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dataverify.ListVerify;
-import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ecms.EcmsUtil;
 import com.dangdang.ecms.meta.Ebook;
-import com.dangdang.reader.functional.account.GetAccount;
 import com.dangdang.reader.functional.bookstore.BookList;
 import com.dangdang.reader.functional.param.model.ParseResult;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
@@ -39,7 +36,7 @@ public class GetEbookOrderFlowV2 extends FunctionalBaseEx {
 		addAction("getEbookOrderFlowV2");
 	}
 	
-	public GetEbookOrderFlowV2(Login login,String productIds)
+	public GetEbookOrderFlowV2(ILogin login,String productIds)
 	{
 		paramMap.put("token",login.getToken());
 		paramMap.put("productIds", productIds);

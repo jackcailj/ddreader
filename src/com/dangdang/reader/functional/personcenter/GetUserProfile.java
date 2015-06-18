@@ -3,6 +3,7 @@ package com.dangdang.reader.functional.personcenter;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
@@ -23,7 +24,7 @@ public class GetUserProfile extends FunctionalBaseEx {
         addAction("getUserProfile");
     }
 
-    public GetUserProfile(Login login){
+    public GetUserProfile(ILogin login){
         setLogin(login);
         paramMap.put("token",login.getToken());
         paramMap.put("keyword ","introduct");

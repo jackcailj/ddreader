@@ -44,4 +44,9 @@ public class ProductIdParse implements IParamParse{
 			
 		return returnObject;
 	}
+
+	@Override
+	public Object parse(String param) throws Exception {
+		return null;
+	}
 }

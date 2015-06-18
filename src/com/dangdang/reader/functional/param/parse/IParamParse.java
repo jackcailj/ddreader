@@ -11,4 +11,5 @@ import com.dangdang.common.functional.login.Login;
  */
 public interface IParamParse {
 	public Object parse(Map<String, String> param) throws Exception;
+	public Object parse(String param) throws Exception;
 }

@@ -24,12 +24,7 @@
      <property name="hibernate.show_sql">true</property><!-- 配置显示sql语句 -->
   	 <property name="format_sql">true</property><!-- 让输出的sql语句格式化 -->
      
-     <mapping resource="com/dangdang/yc/digital/meta/MediaUserMonthly.hbm.xml"/>
-     <mapping resource="com/dangdang/yc/digital/meta/MediaActivityInfo.hbm.xml"/>
-     <mapping resource="com/dangdang/yc/digital/meta/MediaConsumerConsume.hbm.xml"/>
-     <mapping resource="com/dangdang/yc/digital/meta/MediaConsumerConsumeDetail.hbm.xml"/>
-     <mapping resource="com/dangdang/yc/digital/meta/MediaSuggestion.hbm.xml"/>
-     <mapping resource="com/dangdang/yc/digital/meta/MediaActivityUser.hbm.xml"/>
+
      
     </session-factory>
     

@@ -4,7 +4,7 @@
     <data-source name="MySQL - @10.255.223.243" uuid="586824df-3492-4fdb-95b0-bd46c9d854ed">
       <secret-storage>master_key</secret-storage>
       <user-name>cmsuser</user-name>
-      <schema-pattern>ecmst.*</schema-pattern>
+      <schema-pattern>digital.*</schema-pattern>
       <default-schemas>account.* digital.* ecmst.* read_1.* ucenter.*</default-schemas>
     </data-source>
   </component>

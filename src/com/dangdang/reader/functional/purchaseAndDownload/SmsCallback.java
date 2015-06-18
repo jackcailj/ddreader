@@ -1,14 +1,12 @@
 package com.dangdang.reader.functional.purchaseAndDownload;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.common.functional.login.Login;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.RecordVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
-import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ecms.meta.OrderForm;
 import com.dangdang.ecms.meta.OrderItem;
@@ -16,13 +14,10 @@ import com.dangdang.reader.functional.account.GetAccount;
 import com.dangdang.reader.functional.param.model.SmsCallbackParam;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.Account;
-import com.dangdang.reader.functional.reponse.Data;
 import com.dangdang.reader.functional.reponse.SaveSmsOrderReponse;
 import com.dangdang.digital.meta.MediaActivityInfo;
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.lang3.StringUtils;
 
-import javax.xml.ws.handler.LogicalHandler;
 import java.util.Date;
 import java.util.Map;
 import java.util.SortedMap;
@@ -45,7 +40,7 @@ public class SmsCallback extends FunctionalBaseEx{
         addAction("smsCallback");
     }
 
-    public SmsCallback(Login login,int status){
+    public SmsCallback(ILogin login,int status){
         setLogin(login);
         paramObject  = new SmsCallbackParam();
         paramObject.setSign("auto");
@@ -65,7 +60,7 @@ public class SmsCallback extends FunctionalBaseEx{
     }
 
     @Override
-    public void beforeParam() {
+    public void beforeParseParam() {
         //不添加公共参数
     }
 

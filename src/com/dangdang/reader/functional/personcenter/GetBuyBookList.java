@@ -7,6 +7,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
@@ -21,7 +22,7 @@ public class GetBuyBookList  extends FunctionalBaseEx{
 		addAction("getBuyBookList");
 	}
 	
-	public GetBuyBookList(Login login) {
+	public GetBuyBookList(ILogin login) {
 		// TODO Auto-generated constructor stub
 		paramMap.put("token", login.getToken());
 		paramMap.put("pageNum","1");

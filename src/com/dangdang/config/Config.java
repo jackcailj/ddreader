@@ -19,6 +19,7 @@ public class Config extends ConfigCore{
 	public static String YCDBConfig="";
 	public static String ECMSDBConfig="";
 	public static String ACCOUNTDBConfig="";
+    public static String UCENTERDBConfig="";
 	
 	protected static Map<String, String> CommonParam =new HashMap<String, String>();
 		
@@ -39,9 +40,10 @@ public class Config extends ConfigCore{
 		PropertyConfigurator.configure(ResourceLoader.loadCurrentPropertyFile("conf/log4j.properties"));
 		try{
 			if(getEnvironment() == TestEnvironment.TESTING){
-				YCDBConfig="conf/yc_db.cfg.xml";
-				ECMSDBConfig="conf/ecmstdb.cfg.xml";
-				ACCOUNTDBConfig="conf/accountdb.cfg.xml";	
+				YCDBConfig="conf/db/yc_db.cfg.xml";
+				ECMSDBConfig="conf/db/ecmstdb.cfg.xml";
+				ACCOUNTDBConfig="conf/db/accountdb.cfg.xml";
+                UCENTERDBConfig="conf/db/ucenterdb.cfg.xml";
 			}
 			else {
 				YCDBConfig="conf/websql_yc.properties";

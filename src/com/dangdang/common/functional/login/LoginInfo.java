@@ -5,7 +5,24 @@ public class LoginInfo {
 	String userName;
 	String passWord;
 	String loginType;
-	
+    String loginClient="0";
+	String key="testkey";
+
+	public String getKey() {
+		return key;
+	}
+
+	public void setKey(String key) {
+		this.key = key;
+	}
+
+    public String getLoginClient() {
+        return loginClient;
+    }
+
+    public void setLoginClient(String loginClient) {
+        this.loginClient = loginClient;
+    }
 	
 	public String getAction() {
 		return action;

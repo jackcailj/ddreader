@@ -4,12 +4,8 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+import com.dangdang.common.functional.login.*;
 import org.apache.commons.lang3.StringUtils;
-
-import com.dangdang.common.functional.login.BindDevice;
-import com.dangdang.common.functional.login.BindInfo;
-import com.dangdang.common.functional.login.Login;
-
 
 
 /*
@@ -21,20 +17,20 @@ import com.dangdang.common.functional.login.Login;
 public class LoginParamParse implements IParamParse{
 
 	
-	public Login parse(Map<String, String> param) throws Exception {
+	public ILogin parse(Map<String, String> param) throws Exception {
 		// TODO Auto-generated method stub
 		/*
 		 *1、自动登录
 		 *2、如果字段为空，代表不传此字段
 		 */
 		// TODO Auto-generated method stub
-		Login login =null;
+		ILogin login =null;
 		if((param.get("userName")!=null && StringUtils.isNotBlank(param.get("userName").toString())
 				&& (param.get("token")==null ||(param.get("token")!=null && StringUtils.isBlank(param.get("token").toString()))))){
 			//BindDevice bind = new BindDevice(param);
 			//bind.doWork();
 			//绑定设备代码放到Login.getLogin中，保证每次只执行一次。
-			login=Login.getLogin(param);
+			login= LoginManager.getLogin(param);
 			//Login login =new Login(param);
 			//login.doWork();
 			param.put("token", login.getToken());
@@ -45,6 +41,11 @@ public class LoginParamParse implements IParamParse{
 		param.remove("loginType");
 		
 		return login;
+	}
+
+	@Override
+	public Object parse(String param) throws Exception {
+		return null;
 	}
 
 }

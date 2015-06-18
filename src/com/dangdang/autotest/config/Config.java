@@ -32,6 +32,7 @@ public class Config extends ConfigCore {
 	public static String YCDBConfig="";
 	public static String ECMSDBConfig="";
 	public static String ACCOUNTDBConfig="";
+	public static String UCENTERDBConfig="";
 	
 	//接口地址
 		static{
@@ -60,7 +61,8 @@ public class Config extends ConfigCore {
 			if(environment == TestEnvironment.TESTING){
 				YCDBConfig=proConfig.getProperty("yc_db");
 				ECMSDBConfig=proConfig.getProperty("ecmst_db");
-				ACCOUNTDBConfig=proConfig.getProperty("account_db");	
+				ACCOUNTDBConfig=proConfig.getProperty("account_db");
+				UCENTERDBConfig="conf/db/ucenterdb.cfg.xml";
 			}
 			else {
 				YCDBConfig= "conf/db/websql_yc.properties";

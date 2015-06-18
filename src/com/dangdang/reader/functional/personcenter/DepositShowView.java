@@ -4,20 +4,16 @@ import java.util.List;
 import java.util.Map;
 
 import com.dangdang.ecms.EcmsUtil;
-import org.apache.commons.lang3.StringUtils;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.common.PlatForm;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.common.functional.login.LoginInfo;
 import com.dangdang.ddframework.core.TestDevice;
-import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
-import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.ActivityInfoListReponse;
 import com.dangdang.ddframework.reponse.ReponseV2;

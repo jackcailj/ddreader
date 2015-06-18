@@ -37,8 +37,8 @@ public class purchaseEbookVirtualPayment2 extends FunctionalBaseEx{
 	}
 	
 	@Override
-	public void beforeParam(){
-		super.beforeParam();
+	public void beforeParseParam() throws Exception {
+		super.beforeParseParam();
 	}
 	
 	@Override

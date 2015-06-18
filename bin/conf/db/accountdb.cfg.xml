@@ -21,7 +21,6 @@
     
      <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>    
         
-      <mapping resource="com\dangdang\yc\account\meta\MasterAccount.hbm.xml"/>
-     <mapping resource="com\dangdang\yc\account\meta\AttachAccount.hbm.xml"/>
+
     </session-factory>
 </hibernate-configuration>

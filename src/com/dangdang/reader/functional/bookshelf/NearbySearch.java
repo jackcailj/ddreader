@@ -4,21 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.common.functional.login.BindDevice;
-import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ecms.meta.BookshelfBook;
 import com.dangdang.reader.functional.param.model.ParseResult;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
-import com.dangdang.reader.functional.reponse.BuyBookListResponse;
 import com.dangdang.reader.functional.reponse.NearbyList;
 import com.dangdang.reader.functional.reponse.NearbySearchResponse;
 import com.dangdang.digital.meta.MediaActivityInfo;

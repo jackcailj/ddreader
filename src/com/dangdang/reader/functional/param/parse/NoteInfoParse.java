@@ -24,4 +24,9 @@ public class NoteInfoParse implements IParamParse{
 		return null;
 	}
 
+	@Override
+	public Object parse(String param) throws Exception {
+		return null;
+	}
+
 }

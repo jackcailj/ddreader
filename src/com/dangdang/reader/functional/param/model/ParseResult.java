@@ -1,15 +1,16 @@
 package com.dangdang.reader.functional.param.model;
 
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.Login;
 
 public class ParseResult {
-	Login login;
+	ILogin login;
 
-	public Login getLogin() {
+	public ILogin getLogin() {
 		return login;
 	}
 
-	public void setLogin(Login login) {
+	public void setLogin(ILogin login) {
 		this.login = login;
 	}
 }

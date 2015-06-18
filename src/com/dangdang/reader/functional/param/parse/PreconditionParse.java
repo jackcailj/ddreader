@@ -21,4 +21,9 @@ public class PreconditionParse implements IParamParse{
 		
 	}
 
+	@Override
+	public Object parse(String param) throws Exception {
+		return null;
+	}
+
 }

@@ -3,6 +3,7 @@ package com.dangdang.reader.functional.personcenter;
 import java.util.Date;
 import java.util.Map;
 
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.TestDevice;
 
 import org.apache.commons.codec.digest.DigestUtils;
@@ -12,7 +13,6 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.common.PlatForm;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.reader.functional.account.GetAccount;
@@ -20,8 +20,6 @@ import com.dangdang.reader.functional.account.GetAccount;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 
 import com.dangdang.reader.functional.reponse.Account;
-import com.dangdang.account.meta.AttachAccount;
-import com.dangdang.account.meta.MasterAccount;
 import com.dangdang.digital.meta.MediaActivityInfo;
 
 public class ConsumerDeposit extends FunctionalBaseEx{
@@ -53,7 +51,7 @@ public class ConsumerDeposit extends FunctionalBaseEx{
 	 * 		money：充值的金额，必须与客户端充值金额一致，目前为5、10，50，100
 	 * 		fromPaltform：平台来源
 	 */
-	public ConsumerDeposit(Login login,Integer money,PlatForm fromPaltform) throws Exception {
+	public ConsumerDeposit(ILogin login,Integer money,PlatForm fromPaltform) throws Exception {
 		// TODO Auto-generated constructor stub
 		paramMap.put("token", login.getToken());
 		originalParamMap.put("userName", "test");
@@ -80,7 +78,7 @@ public class ConsumerDeposit extends FunctionalBaseEx{
 	 * 		money：充值的金额，必须与客户端充值金额一致，目前为5、10，50，100
 	 * 		fromPaltform：平台来源
 	 */
-	public ConsumerDeposit(Login login,String relationProductId,Integer money,PlatForm fromPaltform) throws Exception {
+	public ConsumerDeposit(ILogin  login,String relationProductId,Integer money,PlatForm fromPaltform) throws Exception {
 		// TODO Auto-generated constructor stub
 		paramMap.put("token", login.getToken());
 		//paramMap.put("userName", login.getLoginInfo().getUserName());

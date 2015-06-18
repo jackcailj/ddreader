@@ -2,7 +2,10 @@ package com.dangdang.reader.functional.param.parse;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.reader.functional.param.model.ParseResult;
 
@@ -27,15 +30,14 @@ public class ParseParamUtil {
 	public static ParseResult parseParam(Map<String, String> param) throws Exception{
 		ParseResult parseResult = new ParseResult();
 		
-		Login login = loginParamParse.parse(param);
+		ILogin login = loginParamParse.parse(param);
 		removeBlankParamParse.parse(param);
 		
 		parseResult.setLogin(login);
-		
 		return parseResult;
 	}
 	
-	public static Login parseLogin(Map<String, String> param) throws Exception{
+	public static ILogin parseLogin(Map<String, String> param) throws Exception{
 		return loginParamParse.parse(param);
 	}
 	
@@ -52,7 +54,16 @@ public class ParseParamUtil {
 	public static void parseExcelField(Map<String, String> param){
 		parseFactory.createParse(param);
 	}
-	
+
+    /*
+    author:cailj
+    date:2015-6-18
+    解析列表中的代操作的参数
+     */
+	public static void parseOperateParam(Map<String,String> param) throws Exception {
+        ParseFactory.Parse(param);
+	}
+
 	public static void removeBlackParam(Map<String, String> param) throws Exception{
 
 	}
@@ -62,11 +73,13 @@ public class ParseParamUtil {
 		map.put("userName", "z16@123.com");
 		map.put("passWord", "111111");
 		map.put("loginType", "email");
-		map.put("token", "");
+		map.put("token", "GetCustIdByName:cailj_ddtest@126.com");
 		map.put("sign","购买");
-		Login login = ParseParamUtil.parseLogin(map);
-		ParseParamUtil.parseExcelField(map, "sign");
-		
+		//ILogin login = ParseParamUtil.parseLogin(map);
+        //ParseParamUtil.parseExcelField(map, "sign");
+        ParseParamUtil.parseOperateParam(map);
+
+		System.out.println(map);
 	}
 	
 	

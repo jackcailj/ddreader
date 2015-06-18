@@ -5,6 +5,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.reader.functional.param.model.ParseResult;
@@ -24,7 +25,7 @@ public class BookList extends FunctionalBaseEx{
 		addAction("bookList");
 	}
 	
-	public BookList(Login login, String columnCode) {
+	public BookList(ILogin login, String columnCode) {
 		this.login =login;
 		paramMap.put("columnCode", columnCode);
 		paramMap.put("ebookReturnFields", "imgUrl,salePrice,saleQutity,desc,freeBook,isBorrow,editorRecommend,paperBookPrice,translator");

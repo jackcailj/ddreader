@@ -6,6 +6,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
@@ -32,7 +33,7 @@ public class GetAccount extends FunctionalBaseEx{
 	}
 	
 	
-	public GetAccount(Login login,String deviceType) {
+	public GetAccount(ILogin login,String deviceType) {
 		// TODO Auto-generated constructor stub
 		paramMap.put("token", login.getToken());
 		paramMap.put("deviceType", deviceType);

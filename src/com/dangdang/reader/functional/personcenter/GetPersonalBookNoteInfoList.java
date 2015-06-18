@@ -5,6 +5,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
@@ -24,7 +25,7 @@ public class GetPersonalBookNoteInfoList extends FunctionalBaseEx{
 		addAction("getPersonalBookNoteInfoList");
 	}
 	
-	public GetPersonalBookNoteInfoList(Login login) {
+	public GetPersonalBookNoteInfoList(ILogin login) {
 		// TODO Auto-generated constructor stub
 		
 		setLogin(login);
