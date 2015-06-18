@@ -37,9 +37,33 @@ public class ParseParamUtil {
 		return parseResult;
 	}
 	
+
 	public static ILogin parseLogin(Map<String, String> param) throws Exception{
-		return loginParamParse.parse(param);
+        return loginParamParse.parse(param);
+
+    }
+
+	/*
+	 * 解析管理类，如果有多个公共解析，放到此处统一处理
+	 * 参数：
+	 * 		param：读取用户数据生成的测试用例数据
+	 * 返回：
+	 * 		ParseResult，返回解析结果，增加此结果用来扩展，可以返回多个对象，需要返回多个对象时，在ParseResult类中增加
+	 * 					登录失败Login为null;
+	 */
+	public static ParseResult parseParameter(Map<String, String> param) throws Exception{
+		ParseResult parseResult = new ParseResult();
+		
+		ILogin login = loginParamParse.parse(param);
+		removeBlankParamParse.parseNotPassParam(param);
+		
+		parseResult.setLogin(login);
+		
+		return parseResult;
 	}
+	
+
+
 	
 	/**
 	 * 解析Excel中的key字段

@@ -46,9 +46,9 @@ public class Config extends ConfigCore{
                 UCENTERDBConfig="conf/db/ucenterdb.cfg.xml";
 			}
 			else {
-				YCDBConfig="conf/websql_yc.properties";
-				ECMSDBConfig="conf/websql_ddreader.properties";
-				ACCOUNTDBConfig="conf/websql_account.properties";
+				YCDBConfig="conf/db/websql_yc.properties";
+				ECMSDBConfig="conf/db/websql_ddreader.properties";
+				ACCOUNTDBConfig="conf/db/websql_account.properties";
 			}					
 
 		}

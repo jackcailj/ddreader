@@ -2,59 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b84d7b89-e60d-4100-a33a-dab3f618f261" name="Default" comment="">
-      <change type="DELETED" beforePath="E:\work\github\ddreader\src\com\dangdang\common\functional\login\LoginV2.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.ids" afterPath="$PROJECT_DIR$/.idea/dataSources.ids" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/reponse/ActivityInfoListReponse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/reponse/ActivityInfoListReponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/bookstore/BookList.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/bookstore/BookList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/autotest/config/Config.java" afterPath="$PROJECT_DIR$/src/com/dangdang/autotest/config/Config.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/AuthorList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/DigestDetail.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/DigestDetailData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/DigestList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/DigestListData.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/EbookInfo.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/SignList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/testData/test.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.classpath" afterPath="$PROJECT_DIR$/.classpath" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/config/Config.java" afterPath="$PROJECT_DIR$/src/com/dangdang/config/Config.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/ConsumerDeposit.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/ConsumerDeposit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/ConsumerDepositRecord.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/ConsumerDepositRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/DepositShowView.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/DepositShowView.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/autotest/common/FixtureBase.java" afterPath="$PROJECT_DIR$/src/com/dangdang/autotest/common/FixtureBase.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/autotest/common/FunctionalBaseEx.java" afterPath="$PROJECT_DIR$/src/com/dangdang/autotest/common/FunctionalBaseEx.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/account/GetAccount.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/account/GetAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/GetBuyBookList.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/GetBuyBookList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/GetEbookOrderFlowV2.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/GetEbookOrderFlowV2.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/GetPersonalBookNoteInfoList.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/GetPersonalBookNoteInfoList.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/GetUserProfile.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/GetUserProfile.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/IParamParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/IParamParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/LastTimePayment.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/personcenter/LastTimePayment.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/common/functional/login/Login.java" afterPath="$PROJECT_DIR$/src/com/dangdang/common/functional/login/Login.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/common/functional/login/LoginInfo.java" afterPath="$PROJECT_DIR$/src/com/dangdang/common/functional/login/LoginInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/LoginParamParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/LoginParamParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/reponse/LoginReponse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/reponse/LoginReponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/bookshelf/NearbySearch.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/bookshelf/NearbySearch.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NoteInfoParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NoteInfoParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/ParseResult.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/ParseResult.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/PreconditionParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/PreconditionParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdsParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdsParse.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/RemoveBlankParamParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/RemoveBlankParamParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/SaveSmsOrder.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/SaveSmsOrder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/SignParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/SignParse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/SmsCallback.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/SmsCallback.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Test.java" afterPath="$PROJECT_DIR$/src/test/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/conf/db/accountdb.cfg.xml" afterPath="$PROJECT_DIR$/bin/conf/db/accountdb.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conf/db/accountdb.cfg.xml" afterPath="$PROJECT_DIR$/src/conf/db/accountdb.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/conf/readerV5/config-testing.properties" afterPath="$PROJECT_DIR$/bin/conf/readerV5/config-testing.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conf/readerV5/config-testing.properties" afterPath="$PROJECT_DIR$/src/conf/readerV5/config-testing.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/conf/db/ecmstdb.cfg.xml" afterPath="$PROJECT_DIR$/bin/conf/db/ecmstdb.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conf/db/ecmstdb.cfg.xml" afterPath="$PROJECT_DIR$/src/conf/db/ecmstdb.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/example_log.txt" afterPath="$PROJECT_DIR$/logs/example_log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/log4j.properties" afterPath="$PROJECT_DIR$/bin/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/conf/log4j.properties" afterPath="$PROJECT_DIR$/bin/conf/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/log4j.properties" afterPath="$PROJECT_DIR$/src/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conf/log4j.properties" afterPath="$PROJECT_DIR$/src/conf/log4j.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/purchaseEbookVirtualPayment2.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/purchaseEbookVirtualPayment2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/conf/db/yc_db.cfg.xml" afterPath="$PROJECT_DIR$/bin/conf/db/yc_db.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conf/db/yc_db.cfg.xml" afterPath="$PROJECT_DIR$/src/conf/db/yc_db.cfg.xml" />
     </list>
     <ignored path="ddreader.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -96,11 +59,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ParseParamUtil.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ParseParamUtil.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.7111756">
+              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,11 +81,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Config.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Config.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dangdang/autotest/config/Config.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.65312046">
+            <state vertical-scroll-proportion="0.0">
               <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="yc_db.cfg.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/conf/db/yc_db.cfg.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-17.0">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -156,7 +129,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/dangdang/config/Config.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+              <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -209,7 +182,6 @@
         <option value="$PROJECT_DIR$/src/test/Test.java" />
         <option value="$PROJECT_DIR$/src/conf/db/accountdb.cfg.xml" />
         <option value="$PROJECT_DIR$/src/conf/db/ecmstdb.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/conf/db/yc_db.cfg.xml" />
         <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetCaptcha.java" />
         <option value="$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/core/ConfigCore.java" />
         <option value="$PROJECT_DIR$/src/conf/log4j.properties" />
@@ -233,7 +205,6 @@
         <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/LoginParamParse.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetCustIdByNameParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/autotest/common/FunctionalBaseEx.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/autotest/common/FixtureBase.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/purchaseEbookVirtualPayment2.java" />
@@ -243,8 +214,10 @@
         <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByNameParse.java" />
         <option value="$PROJECT_DIR$/src/conf/readerV5/config-testing.properties" />
         <option value="$PROJECT_DIR$/src/conf/db/ucenterdb.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/config/Config.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/autotest/config/Config.java" />
+        <option value="$PROJECT_DIR$/src/conf/db/yc_db.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/config/Config.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java" />
       </list>
     </option>
   </component>
@@ -389,6 +362,102 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="readerV5" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.dangdang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.dangdang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functional" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.dangdang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functional" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="param" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="parse" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ddreader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com.dangdang" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="reader" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="functional" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="param" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -609,6 +678,22 @@
     <property name="restartRequiresConfirmation" value="true" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="178" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="185" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="185" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="978" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="178" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="185" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="185" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="978" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -904,9 +989,6 @@
       <listeners />
       <method />
     </configuration>
-    <configuration default="true" type="Unknown" factoryName="Unknown">
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
@@ -936,8 +1018,8 @@
       <method />
     </configuration>
     <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Application.Test" />
-      <item index="1" class="java.lang.String" itemvalue="Remote.test" />
+      <item index="0" class="java.lang.String" itemvalue="Remote.test" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Test" />
       <item index="2" class="java.lang.String" itemvalue="Application.ParseParamUtil" />
     </list>
     <recent_temporary>
@@ -959,15 +1041,15 @@
       <updated>1434356898918</updated>
       <workItem from="1434356902253" duration="836000" />
       <workItem from="1434357763406" duration="3881000" />
-      <workItem from="1434362487954" duration="52817000" />
+      <workItem from="1434362487954" duration="53546000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57534000" />
+    <option name="totallyTimeSpent" value="58263000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -978,7 +1060,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5612813" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24293059" sideWeight="0.51532036" order="2" side_tool="true" content_ui="tabs" />
@@ -1054,14 +1136,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../db_meta/src/com/dangdang/digital/meta/MediaActivitySale.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../db_meta/src/com/dangdang/digital/meta/MediaBlock.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1509,14 +1583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="23" selection-start-line="63" selection-start-column="23" selection-end-line="63" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/conf/db/ucenterdb.cfg.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5268595">
@@ -1558,13 +1624,9 @@
         <state vertical-scroll-proportion="1.2357564">
           <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
           <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#853#854#0" expanded="true" />
-            <element signature="e#881#882#0" expanded="true" />
-            <element signature="e#2586#2587#0" expanded="true" />
-            <element signature="e#2612#2613#0" expanded="true" />
-            <element signature="e#2711#2712#0" expanded="true" />
-            <element signature="e#2747#2748#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#853#854#0" expanded="false" />
+            <element signature="e#881#882#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1587,18 +1649,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/config/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/autotest/config/Config.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
+          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/autotest/config/Config.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/config/Config.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65312046">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/conf/db/yc_db.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-17.0">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7111756">
+          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
           <folding />
         </state>
       </provider>
