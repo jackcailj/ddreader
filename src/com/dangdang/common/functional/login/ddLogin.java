@@ -34,7 +34,7 @@ public class ddLogin extends FixtureBase implements ILogin{
 
     @Override
     public String getCustId() throws Exception{
-        return null;
+        return getReponseResult().getData().getUser().getId().toString();
     }
 
 

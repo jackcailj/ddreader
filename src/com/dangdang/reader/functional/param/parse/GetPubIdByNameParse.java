@@ -1,6 +1,7 @@
 package com.dangdang.reader.functional.param.parse;
 
-import com.dangdang.ucenter.UserIdSql;
+import com.dangdang.readerV5.reponse.UserInfo;
+import com.dangdang.ucenter.UserInfoSql;
 
 import java.util.Map;
 
@@ -16,6 +17,6 @@ public class GetPubIdByNameParse implements  IParamParse{
 
     @Override
     public Object parse(String param) throws Exception {
-        return UserIdSql.GetPubIdByName(param);
+        return UserInfoSql.GetPubIdByName(param);
     }
 }

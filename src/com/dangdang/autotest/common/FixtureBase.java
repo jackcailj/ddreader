@@ -22,9 +22,9 @@ import com.dangdang.reader.functional.param.parse.ParseParamUtil;
  *
  */
 public class FixtureBase extends InterfaceBase{
-	Logger log = Logger.getLogger(FixtureBase.class);
-	boolean verifyResult;
-	ILogin login;
+	protected static Logger log = Logger.getLogger(FixtureBase.class);
+	protected boolean verifyResult;
+	protected ILogin login;
 
     ReponseV2Base reponseV2Base;
 	
@@ -153,7 +153,7 @@ public class FixtureBase extends InterfaceBase{
     增加此方法，防止将null值赋值给login
      */
     public void setLogin(ILogin loginObject){
-        if(login!=null){
+        if(loginObject!=null){
             login=loginObject;
         }
     }
@@ -204,6 +204,18 @@ public class FixtureBase extends InterfaceBase{
 		doWorkAndVerify();
 
 	}
+
+    /*
+    每次执行前清除上次运行的数据
+    */
+    public void reset(){
+        dataVerifyManager.clear();
+        String action=paramMap.get("action");
+        paramMap.clear();
+        addAction(action);
+        originalParamMap.clear();
+        login=null;
+    }
 
     /*============================fitnesse DynamicDecisionTable设置列值函数=================================*/
 	
