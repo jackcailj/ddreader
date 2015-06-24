@@ -2,385 +2,35 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b84d7b89-e60d-4100-a33a-dab3f618f261" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/account/AccountInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/account/AccountUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ChangeIntroduct.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ChangeNickName.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetAccountInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetNoteList.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/GetNoteListReponse.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/NoteSimpleInfo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/common/functional/reponse/ddLoginReponseUser.java" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\account\meta\AccountConsumeItems.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\account\meta\AttachAccount.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\account\meta\AttachAccountActivity.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\account\meta\AttachAccountActivityItems.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\account\meta\AttachAccountItems.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\account\meta\BarrageComment.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\account\meta\MasterAccount.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\account\meta\TempUser.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\BookshelfBook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\BookshelfCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\Channel.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelArticles.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelArticlesDigest.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelAuditRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelBooklist.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelErrorMsg.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelNotice.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelOwner.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelOwnerAuditRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\ChannelSubUser.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\DeviceType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\DsPayProduct.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\Media.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaActivityInfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaActivityInfoCopy.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaActivityRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaActivitySale.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaActivityType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaActivityUser.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaAnthology.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaAppidRelation.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaAuthor.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBlock.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBlockGroup.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBookCatetory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBookcityFragContent.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBookcityFragment.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBookcityFragmentType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBookcityModel.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBookcityModelVersion.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBooklist.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBooklistDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBought.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBoughtChapter.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaBoughtDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCardTemplate.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCatalog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCatetory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaChapter.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCloudPushCondition.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCloudPushData.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCloudPushPlan.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCloudPushPlanStatus.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCloudPushPreparedData.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCloudPushStatistics.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCloudPushStrategy.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCloudPushStrategyParams.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaColumn.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaColumnContent.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaConsumerConsume.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaConsumerConsumeDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaConsumerDeposit.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaContentProvider.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCpContract.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCpPullChapter.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCpPullLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCpPullMedia.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCpShareinfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCpTaxinfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCustomerDeviceStatus.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCustomerGiftRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCustomerSubscription.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaCustomerSubscriptionNotificationRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaDdCpCatetoryMap.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaDeviceConfig.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaDeviceType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaDigest.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaDigestAnthology.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaDigestAuthor.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaDigestLable.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaDiscovery.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaEbookConsRanklist.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaEbookConsRanklistCopy.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaEbookConsRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaEbookConsRecordCopy.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaEbookType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaEpubCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaEpubImage.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaEpubImport.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaFunctionality.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaGoodarticleSign.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaIWant.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaIllegal.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaIllegalWord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaImUser.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaImportTask.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaIosDepositFail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaLabel.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaList.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaListCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaListItem.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaListRanking.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaLotteryPrize.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaManagerOperateLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaMessage.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaNotice.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaNoticeType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaNotification.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaNotificationApikey.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaOrderDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaOrderDetailChapter.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaOrderMain.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaProductDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaProductTask.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaProp.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaPushConditionParams.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaPushConditionParamsDefinition.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaPushConditionVariable.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaRedPacketUser.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaRelation.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaReport.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaResfile.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaResource.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaResourceDirectory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaRole.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaRoleFunctionality.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaSale.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaSign.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaSpecialTopic.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaSpecialTopicCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaStatistics.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaStoreup.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaStyle.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaSuggestion.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaSysProperties.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUserAuthority.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUserAuthorityDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUserBehavior.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUserMergeRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUserMonthly.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUsercms.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUsercmsCopy.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUsercmsFunctionality.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaUsercmsRole.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaVolume.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaWorshipRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MediaWorshipRecordCopy.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\Mediaview.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MeidaAnnouncementsCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\MeidaAnnouncementsContent.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\Test.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\VspContentProvider.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\VspContentProviderCopy.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\VspCpContract.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\digital\meta\VspCpContractCopy.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\AccessStatistics.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Admin.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\AdminRole.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\AdminSite.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Announce.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ApiConfig.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ApiDeviceConfig.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\AppLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ApplyToBookshelf.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Article.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ArticleImg.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BarrageComment.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Block.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BlockGroup.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookNote.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookOperateLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookReadingProgress.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookReview.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookReviewIdSequence.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookReviewOrderno.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookReviewPriase.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookReviewReply.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookReviewStar.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookReviewUser.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Bookmark.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookshelfBook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\BookshelfCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CardMaker.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CardMakerEbook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CatType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Category.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CategoryMapQueue.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CategoryTemp.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CmsOperateLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CmsSequence.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CnrCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CnrOrder.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CnrProgram.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Column.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Coupon.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CouponActivity.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CouponDispatchStats.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CouponGroup.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CouponGroupRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\CouponPool.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DeviceImageUpload.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DeviceType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Distribution.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DistributionEbook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DistributionEbookResfile.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DistributionOrder.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DlEbook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DocAdvice.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DocCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DocColumn.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DocType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\DocTypeField.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Ebook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookBindCondition.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookBindLinkOperation.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookBindOrder.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookBindRecordInfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookBindSmsRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookCatalog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookDowndata.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookEncryptkey.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookOnline.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookRanking.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookRankingDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookReadtimeAver.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookResfile.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookSequence.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbookType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Ebooklist.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EbooklistItem.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\EpubStyle.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ExperienceInfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\FreeEbook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\GfenglishOrder.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\IapOrderForm.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\IapPricePayid.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ImportBatch.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ImportTask.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LetvAlbum.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LetvCategory.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LetvOrder.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Link.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LocationColumn.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LotteryConfig.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LotteryPrizeRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LotteryPrizeType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LotteryRemind.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LotteryTypeWeightItem.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\LotteryUserRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Minid.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\MobileAccessLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\MobileOperateLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Module.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\MyExperience.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\NotifyByChannel.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\OperationLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\OrderForm.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\OrderItem.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Organization.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Orgebook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Page.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Paper.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\PaperArticle.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Paperinfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Period.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\PersonalMessage.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\PrefetchTask.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ProductDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ProductionTask.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Promotion.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ReadProgress.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ReadingCard.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\RecommendCustid.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\RecommendedInfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Resfile.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\RewardConfig.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Role.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\SeriesBook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Shelf.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ShelfBook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ShoppingCart.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ShoppingCartDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Signin.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\SigninDetail.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Site.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\SoftChannel.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\StarUser.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\StarUserApply.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Students.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\SuperSql.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\SuperSqlLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Survey.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\SurveyData.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\SysProperty.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Teachers.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Template.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\TemplateColumn.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\TemplateGroup.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\TemplateType.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Testbook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Thirdparty.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ThirdpartyCustId.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ThirdpartyItem.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ThirdpartyOrder.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Tmp.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UpdateOrder.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\User.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UserCoupon.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UserDevice.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UserEbook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UserEbookStatus.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UserFirstLoginInfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UserPromotion.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UserShelf.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\UserTrialEbook.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\Version.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspAuthorization.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspAuthorizationList.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspContract.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspDailySale.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspEbookInfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspMonthlySale.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspRole.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspSysProperty.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspUser.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspUserRole.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspUserVendor.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\VspVendor.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ecms\meta\ZsOrder.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ucenter\meta\ApiConfig.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ucenter\meta\LoginRecord.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ucenter\meta\MobileOperateLog.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ucenter\meta\SysProperty.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ucenter\meta\ThirdpartyCustId.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ucenter\meta\TouristLoginInfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ucenter\meta\UserDevice.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\db_meta\bin\com\dangdang\ucenter\meta\UserFirstLoginInfo.hbm.xml" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\ddreader\bin\.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="E:\work\github\ddreader\bin\testData\test.groovy" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/testData/readerV4/GetAccountTest.xls" afterPath="$PROJECT_DIR$/bin/testData/readerV4/GetAccountTest.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/testData/readerV4/GetAccountTest.xls" afterPath="$PROJECT_DIR$/src/testData/readerV4/GetAccountTest.xls" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/ApiConfig.hbm.xml" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/ApiConfig.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/ApiConfig.java" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/ApiConfig.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/autotest/common/FixtureBase.java" afterPath="$PROJECT_DIR$/src/com/dangdang/autotest/common/FixtureBase.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ActivateDdMoneyV2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/BindCouponV3.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/CheckSmsVcode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetDdMoneyList.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetValidCouponV2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/LoginOutV2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/RegisterV2.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/SendSmsVcode.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ThridLoginV2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/DesUtils.java" afterPath="$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/DesUtils.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetCustIdByNameParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetCustIdByNameParse.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByNameParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByNameParse.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetUser.java" afterPath="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetUser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/LoginRecord.hbm.xml" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/LoginRecord.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/LoginRecord.java" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/LoginRecord.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/reponse/LoginReponse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/reponse/LoginReponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/MobileOperateLog.hbm.xml" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/MobileOperateLog.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/MobileOperateLog.java" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/MobileOperateLog.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/SysProperty.hbm.xml" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/SysProperty.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/SysProperty.java" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/SysProperty.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/IParamParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/IParamParse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/LoginParamParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/LoginParamParse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NoteInfoParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NoteInfoParse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/PreconditionParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/PreconditionParse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdParse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdsParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdsParse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/RemoveBlankParamParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/RemoveBlankParamParse.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/SignParse.java" afterPath="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/SignParse.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/Test.java" afterPath="$PROJECT_DIR$/src/test/Test.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/ThirdpartyCustId.hbm.xml" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/ThirdpartyCustId.hbm.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/ThirdpartyCustId.java" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/ThirdpartyCustId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/TouristLoginInfo.hbm.xml" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/TouristLoginInfo.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/TouristLoginInfo.java" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/TouristLoginInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/UserDevice.hbm.xml" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/UserDevice.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/UserDevice.java" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/UserDevice.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/UserFirstLoginInfo.hbm.xml" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/UserFirstLoginInfo.hbm.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/UserFirstLoginInfo.java" afterPath="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/UserFirstLoginInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/common/functional/login/ddLogin.java" afterPath="$PROJECT_DIR$/src/com/dangdang/common/functional/login/ddLogin.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/dangdang/ucenter/UserInfoSql.java" afterPath="$PROJECT_DIR$/src/com/dangdang/ucenter/UserInfoSql.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/logs/example_log.txt" afterPath="$PROJECT_DIR$/logs/example_log.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../db_meta/conf/hibernate-ucenter.cfg.xml" afterPath="$PROJECT_DIR$/../db_meta/conf/hibernate-ucenter.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bin/conf/db/ucenterdb.cfg.xml" afterPath="$PROJECT_DIR$/bin/conf/db/ucenterdb.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/conf/db/ucenterdb.cfg.xml" afterPath="$PROJECT_DIR$/src/conf/db/ucenterdb.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="E:\work\github\ddreader\src\com\dangdang\ucenter\UserIdSql.java" afterPath="$PROJECT_DIR$/src/com/dangdang/ucenter/UserInfoSql.java" />
     </list>
     <ignored path="ddreader.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -422,21 +72,27 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ParseParamUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="GetUser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetUser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="0" selection-start-line="28" selection-start-column="3" selection-end-line="33" selection-end-column="0" />
+              <caret line="69" column="77" selection-start-line="69" selection-start-column="77" selection-end-line="69" selection-end-column="77" />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#782#783#0" expanded="false" />
+                <element signature="e#818#819#0" expanded="false" />
+                <element signature="e#1055#1056#0" expanded="false" />
+                <element signature="e#1091#1092#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DesUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/DesUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -444,35 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GetNoteList.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetNoteList.java">
+      <file leaf-file-name="GetPubIdByNameParse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByNameParse.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="50" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#790#791#0" expanded="true" />
-                <element signature="e#826#827#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GetAccountInfo.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetAccountInfo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FixtureBase.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dangdang/autotest/common/FixtureBase.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7363421">
-              <caret line="161" column="43" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="43" />
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -482,9 +114,79 @@
         <entry file="file://$PROJECT_DIR$/src/test/Test.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
+              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LoginOutV2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/LoginOutV2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivateDdMoneyV2.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ActivateDdMoneyV2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BindCouponV3.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/BindCouponV3.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetDdMoneyList.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetDdMoneyList.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThridLoginV2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ThridLoginV2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.3029703">
+              <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GetCustIdByNameParse.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetCustIdByNameParse.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -512,37 +214,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetCaptcha.java" />
-        <option value="$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/core/ConfigCore.java" />
-        <option value="$PROJECT_DIR$/src/conf/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/common/functional/login/LoginInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/common/functional/login/LoginManager.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/GetUserReponse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/UserInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/PostInfo.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/GetPostListReponse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetPostList.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/IParamParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdsParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/RemoveBlankParamParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/SignParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/PreconditionParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NoteInfoParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/LoginParamParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetCustIdByNameParse.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/autotest/common/FunctionalBaseEx.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/purchaseEbookVirtualPayment2.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByName.java" />
         <option value="$PROJECT_DIR$/src/conf/readerV5/config-testing.properties" />
         <option value="$PROJECT_DIR$/src/com/dangdang/autotest/config/Config.java" />
         <option value="$PROJECT_DIR$/src/conf/db/yc_db.cfg.xml" />
         <option value="$PROJECT_DIR$/src/com/dangdang/config/Config.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/ucenter/UserIdSql.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByNameParse.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/struct/UserBaseInfo.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/account/AccountInfo.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/account/AccountUtils.java" />
@@ -554,15 +231,40 @@
         <option value="$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/LoginRecord.hbm.xml" />
         <option value="$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/dataverify/DataVerifyManager.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/autotest/common/FixtureBase.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetUser.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/NoteSimpleInfo.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/GetNoteListReponse.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetNoteList.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ChangeNickName.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ChangeIntroduct.java" />
-        <option value="$PROJECT_DIR$/src/test/Test.java" />
-        <option value="$PROJECT_DIR$/src/com/dangdang/ucenter/UserInfoSql.java" />
         <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetAccountInfo.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/SendSmsVcode.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/CheckSmsVcode.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/RegisterV2.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NotPass.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/LoginParamParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/IParamParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/SignParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/RemoveBlankParamParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdsParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/PreconditionParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NotPassParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NoteInfoParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/ucenter/UserInfoSql.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetCustIdByNameParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByNameParse.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetUser.java" />
+        <option value="$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/DesUtils.java" />
+        <option value="$PROJECT_DIR$/src/test/Test.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/LoginOutV2.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ActivateDdMoneyV2.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/BindCouponV3.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetDdMoneyList.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetValidCouponV2.java" />
+        <option value="$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ThridLoginV2.java" />
       </list>
     </option>
   </component>
@@ -648,38 +350,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="com.dangdang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
@@ -738,7 +408,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
+              <option name="myItemId" value="reader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -746,122 +416,11 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="ddreader" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.dangdang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functional" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="reponse" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.dangdang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="functional" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="login" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.dangdang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="account" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db_meta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db_meta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.dangdang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ucenter.meta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ddreader" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="db_meta" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageViewModuleNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="com.dangdang" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PackageElementNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -883,7 +442,6 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -896,7 +454,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../db_meta/lib/mysql-connector-java-5.1.34-bin.jar!/" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="dynamic.classpath" value="false" />
@@ -1273,12 +831,14 @@
       <updated>1434356898918</updated>
       <workItem from="1434356902253" duration="836000" />
       <workItem from="1434357763406" duration="3881000" />
-      <workItem from="1434362487954" duration="71905000" />
+      <workItem from="1434362487954" duration="75528000" />
+      <workItem from="1435026294807" duration="11439000" />
+      <workItem from="1435047992085" duration="13929000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76622000" />
+    <option name="totallyTimeSpent" value="105613000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
@@ -1286,57 +846,32 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32729805" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5612813" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32969153" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5612813" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24293059" sideWeight="0.51532036" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24293059" sideWeight="0.51532036" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24293059" sideWeight="0.48467967" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31940874" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Problems" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31940874" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24293059" sideWeight="0.5100671" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37325907" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24293059" sideWeight="0.5100671" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2562674" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.49530202" order="3" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32969153" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.504698" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
     <option name="RECENTLY_FILTERED_USER_GROUPS">
@@ -1351,7 +886,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="20" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java</url>
+          <line>75</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="25" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1360,292 +903,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetCustIdByNameParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75514406">
-          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/SessionUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="14" selection-start-line="55" selection-start-column="14" selection-end-line="55" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conf/readerV5/config-online.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conf/readerV5/config-staging.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/RemoveBlankParamParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6995885">
-          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.66366905">
-          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/purchaseAndDownload/purchaseEbookVirtualPayment2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36330935">
-          <caret line="41" column="5" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conf/readerV5/config-testing.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20039293">
-          <caret line="6" column="34" selection-start-line="6" selection-start-column="34" selection-end-line="6" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByNameParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04934688">
-          <caret line="2" column="46" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conf/db/yc_db.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64006025">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/autotest/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.65312046">
-          <caret line="73" column="8" selection-start-line="73" selection-start-column="8" selection-end-line="73" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/config/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5428157">
-          <caret line="49" column="66" selection-start-line="49" selection-start-column="66" selection-end-line="49" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetPostList.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4934688">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30478954">
-          <caret line="65" column="34" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/reponse/UserInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.09869376">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../db_meta/src/com/dangdang/account/meta/MasterAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="37" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../db_meta/src/com/dangdang/account/meta/AttachAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/account/AccountUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44412193">
-          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/dataverify/ValueVerify.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33236575">
-          <caret line="35" column="11" selection-start-line="35" selection-start-column="11" selection-end-line="35" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/account/AccountInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48022598">
-          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-          <folding>
-            <element signature="e#595#596#0" expanded="false" />
-            <element signature="e#631#632#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/lib/fitnesse-standalone.jar!/fitnesse/slim/MethodExecutor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61702126">
-          <caret line="60" column="40" selection-start-line="60" selection-start-column="40" selection-end-line="60" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/common/functional/login/Login.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04934688">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/autotest/common/FunctionalBaseEx.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95500726">
-          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/reponse/LoginReponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="20" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding>
-            <element signature="e#514#515#0" expanded="false" />
-            <element signature="e#541#542#0" expanded="false" />
-            <element signature="e#593#594#0" expanded="false" />
-            <element signature="e#625#626#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/common/functional/reponse/ddLoginReponseUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="31" />
-          <folding>
-            <element signature="e#174#175#0" expanded="false" />
-            <element signature="e#199#200#0" expanded="false" />
-            <element signature="e#236#237#0" expanded="false" />
-            <element signature="e#264#265#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/common/functional/login/ILogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3361582">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="7" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/common/functional/login/ddLogin.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="44" selection-start-line="33" selection-start-column="44" selection-end-line="33" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/conf/db/ucenterdb.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39104477">
-          <caret line="8" column="115" selection-start-line="8" selection-start-column="91" selection-end-line="8" selection-end-column="115" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/LoginRecord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.55">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="e#3352#3353#0" expanded="false" />
-            <element signature="e#3391#3392#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../db_meta/src/com/dangdang/ucenter/meta/LoginRecord.hbm.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="55" selection-start-line="66" selection-start-column="48" selection-end-line="66" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/dataverify/DataVerifyManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.66853935">
           <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-          <folding>
-            <element signature="e#733#734#0" expanded="false" />
-            <element signature="e#757#758#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1653,7 +914,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6152019">
           <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1669,15 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NoteInfoParse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64608073">
-          <caret line="28" column="8" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1685,7 +936,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1693,7 +943,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.08076009">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1701,7 +950,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36342043">
           <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1709,7 +957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.040380046">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1717,40 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16152018">
           <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-          <folding>
-            <element signature="e#323#324#0" expanded="false" />
-            <element signature="e#356#357#0" expanded="false" />
-            <element signature="e#408#409#0" expanded="false" />
-            <element signature="e#452#453#0" expanded="false" />
-            <element signature="e#489#490#0" expanded="false" />
-            <element signature="e#522#523#0" expanded="false" />
-            <element signature="e#574#575#0" expanded="false" />
-            <element signature="e#618#619#0" expanded="false" />
-            <element signature="e#653#654#0" expanded="false" />
-            <element signature="e#684#685#0" expanded="false" />
-            <element signature="e#732#733#0" expanded="false" />
-            <element signature="e#772#773#0" expanded="false" />
-            <element signature="e#807#808#0" expanded="false" />
-            <element signature="e#840#841#0" expanded="false" />
-            <element signature="e#890#891#0" expanded="false" />
-            <element signature="e#934#935#0" expanded="false" />
-            <element signature="e#968#969#0" expanded="false" />
-            <element signature="e#997#998#0" expanded="false" />
-            <element signature="e#1042#1043#0" expanded="false" />
-            <element signature="e#1078#1079#0" expanded="false" />
-            <element signature="e#1113#1114#0" expanded="false" />
-            <element signature="e#1144#1145#0" expanded="false" />
-            <element signature="e#1192#1193#0" expanded="false" />
-            <element signature="e#1232#1233#0" expanded="false" />
-            <element signature="e#1269#1270#0" expanded="false" />
-            <element signature="e#1301#1302#0" expanded="false" />
-            <element signature="e#1352#1353#0" expanded="false" />
-            <element signature="e#1394#1395#0" expanded="false" />
-            <element signature="e#1427#1428#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1498#1499#0" expanded="false" />
-            <element signature="e#1532#1533#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1758,30 +971,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.41944847">
           <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="e#227#228#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#360#361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="50" selection-start-line="16" selection-start-column="50" selection-end-line="16" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/ucenter/UserInfoSql.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60570073">
-          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1789,9 +978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.807601">
           <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1799,9 +985,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6864608">
           <caret line="17" column="5" selection-start-line="13" selection-start-column="3" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1809,36 +992,314 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="50" selection-start-line="20" selection-start-column="8" selection-end-line="21" selection-end-column="50" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#790#791#0" expanded="true" />
-            <element signature="e#826#827#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetUser.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/SendSmsVcode.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="0" selection-start-line="28" selection-start-column="3" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.64608073">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetAccountInfo.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="41" selection-start-line="2" selection-start-column="41" selection-end-line="2" selection-end-column="41" />
-          <folding />
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/CheckSmsVcode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/RegisterV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/common/functional/login/ddLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="13" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dangdang/autotest/common/FixtureBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7363421">
-          <caret line="161" column="43" selection-start-line="161" selection-start-column="23" selection-end-line="161" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="138" column="35" selection-start-line="138" selection-start-column="35" selection-end-line="138" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/model/LoginParamParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.990099">
+          <caret line="46" column="8" selection-start-line="46" selection-start-column="8" selection-end-line="46" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/SignParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseParamUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="87" column="24" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/PreconditionParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.616836">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/NoteInfoParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7402032">
+          <caret line="30" column="5" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/LoginParamParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.777939">
+          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8328313">
+          <caret line="52" column="5" selection-start-line="49" selection-start-column="0" selection-end-line="52" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ProductIdsParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.82728595">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/fitnesse-standalone.jar!/fitnesse/slim/instructions/CallInstruction.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39841688">
+          <caret line="40" column="48" selection-start-line="40" selection-start-column="47" selection-end-line="40" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/fitnesse-standalone.jar!/fitnesse/slim/StatementExecutor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33245382">
+          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/fitnesse-standalone.jar!/fitnesse/slim/FixtureMethodExecutor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6622691">
+          <caret line="27" column="0" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/lib/fitnesse-standalone.jar!/fitnesse/slim/MethodExecutor.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5963061">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_43/src.zip!/java/util/Iterator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.00990099">
+          <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/IParamParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.46287128">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/RemoveBlankParamParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.3267326">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/ParseFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="76" column="65" selection-start-line="76" selection-start-column="53" selection-end-line="76" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/ucenter/UserInfoSql.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetCustIdByNameParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="27" column="9" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/reader/functional/param/parse/GetPubIdByNameParse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="77" selection-start-line="69" selection-start-column="77" selection-end-line="69" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#782#783#0" expanded="false" />
+            <element signature="e#818#819#0" expanded="false" />
+            <element signature="e#1055#1056#0" expanded="false" />
+            <element signature="e#1091#1092#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/security/Base64Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="168" column="0" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.6.0_43/src.zip!/java/security/Key.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33236575">
+          <caret line="85" column="17" selection-start-line="85" selection-start-column="17" selection-end-line="85" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/security/RsaUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="32" selection-end-line="25" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/security/SignUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="12.229591">
+          <caret line="361" column="39" selection-start-line="361" selection-start-column="39" selection-end-line="361" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../ddframework/src/com/dangdang/ddframework/util/DesUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/LoginOutV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ActivateDdMoneyV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/BindCouponV3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="54" selection-start-line="11" selection-start-column="54" selection-end-line="11" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetValidCouponV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47128713">
+          <caret line="14" column="54" selection-start-line="14" selection-start-column="54" selection-end-line="14" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/GetDdMoneyList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dangdang/readerV5/personal_center/ThridLoginV2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3029703">
+          <caret line="9" column="4" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="53" />
           <folding />
         </state>
       </provider>

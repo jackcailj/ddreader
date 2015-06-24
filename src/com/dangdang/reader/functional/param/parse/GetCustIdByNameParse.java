@@ -3,6 +3,7 @@ package com.dangdang.reader.functional.param.parse;
 import com.dangdang.common.functional.login.Login;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -15,12 +16,15 @@ public class GetCustIdByNameParse implements IParamParse{
         return null;
     }
 
-    @Override
-    public Object parse(String param) throws Exception {
-        if(StringUtils.isNotBlank(param)) {
-            return Login.getCusId(param);
-        }
 
-        throw new Exception("GetCustIdByName异常，用户名为空");
+    @Override
+    public void parse(Map<String, String> paramMap,String key,String param) throws Exception {
+        if(StringUtils.isNotBlank(param)) {
+            String custId= Login.getCusId(param);
+            paramMap.put(key,custId);
+        }
+        else {
+            throw new Exception("GetCustIdByName异常，用户名为空");
+        }
     }
 }

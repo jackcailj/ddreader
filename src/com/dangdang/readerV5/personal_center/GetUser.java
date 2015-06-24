@@ -55,7 +55,7 @@ public class GetUser extends FixtureBase{
             }
 
             //获取基本信息
-            LoginRecord loginRecord=UserInfoSql.GetUserInfoByCustId(login.getCustId());
+            LoginRecord loginRecord=UserInfoSql.getUserInfoByCustId(custId);
             UserInfo userInfo = new UserInfo();
             userInfo.setCustId(loginRecord.getCustId());
             userInfo.setCustImg(loginRecord.getCustImg());
@@ -63,7 +63,7 @@ public class GetUser extends FixtureBase{
             userInfo.setGender(loginRecord.getGender());
             userInfo.setNickName(loginRecord.getCustNickname());
             //获取账户信息
-            AccountInfo accountInfo = AccountUtils.getAccountInfo(login.getCustId());
+            AccountInfo accountInfo = AccountUtils.getAccountInfo(custId);
             userInfo.setGoldNum(accountInfo.getMasterAccountMoney());
             userInfo.setGoldNumIos(accountInfo.getMasterAccountMoneyIos());
             userInfo.setSilverNum(accountInfo.getAttachAccountMoney());

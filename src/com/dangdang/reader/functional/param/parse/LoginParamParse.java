@@ -44,8 +44,7 @@ public class LoginParamParse implements IParamParse{
 	}
 
 	@Override
-	public Object parse(String param) throws Exception {
-		return null;
-	}
+	public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
 
+	}
 }

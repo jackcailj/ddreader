@@ -308,3 +308,17 @@ LEFT JOIN attach_account  a on m.cust_id=a.cust_id where m.cust_id=50099362
 2015-06-19 14:17:14  [ main:746 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
 2015-06-19 14:17:14  [ main:875 ] - [ INFO ]  执行SQL：SELECT CUST_ID from thirdparty_cust_id where id=25873346
 2015-06-19 14:17:14  [ main:875 ] - [ INFO ]  执行结果：[{CUST_ID=1113}]
+2015-06-23 16:39:36  [ main:1 ] - [ ERROR ]  得到公钥失败！
+java.security.spec.InvalidKeySpecException: java.security.InvalidKeyException: IOException: DerInputStream.getLength(): lengthTag=127, too big.
+	at sun.security.rsa.RSAKeyFactory.engineGeneratePublic(RSAKeyFactory.java:188)
+	at java.security.KeyFactory.generatePublic(KeyFactory.java:304)
+	at com.dangdang.ddframework.util.security.RsaUtils.getPublicKey(RsaUtils.java:85)
+	at com.dangdang.ddframework.util.security.RsaUtils.encryptByPublicKey(RsaUtils.java:143)
+	at test.Test.main(Test.java:19)
+Caused by: java.security.InvalidKeyException: IOException: DerInputStream.getLength(): lengthTag=127, too big.
+	at sun.security.x509.X509Key.decode(X509Key.java:380)
+	at sun.security.x509.X509Key.decode(X509Key.java:386)
+	at sun.security.rsa.RSAPublicKeyImpl.<init>(RSAPublicKeyImpl.java:66)
+	at sun.security.rsa.RSAKeyFactory.generatePublic(RSAKeyFactory.java:281)
+	at sun.security.rsa.RSAKeyFactory.engineGeneratePublic(RSAKeyFactory.java:184)
+	... 4 more

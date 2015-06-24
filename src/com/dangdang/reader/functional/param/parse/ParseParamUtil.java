@@ -89,7 +89,7 @@ public class ParseParamUtil {
 	}
 
 	public static void removeBlackParam(Map<String, String> param) throws Exception{
-
+		removeBlankParamParse.parse(param);
 	}
 	
 	public static void main(String[] args) throws Exception{

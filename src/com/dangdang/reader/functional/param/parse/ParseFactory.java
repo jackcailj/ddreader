@@ -10,6 +10,7 @@ import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 
+import javax.print.DocFlavor;
 
 
 /**
@@ -41,7 +42,7 @@ public class ParseFactory {
 			c = Class.forName(className);
 			log.info("创建解析类： " + c);
 		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
+			log.info(e);
 		}
 
 		return c.newInstance();
@@ -55,17 +56,27 @@ public class ParseFactory {
      */
 	public  static void Parse(Map<String, String> paramMap) throws Exception {
 		//循环查询参数
-        for(Map.Entry<String,String> entry:paramMap.entrySet()){
+
+        Iterator<Map.Entry<String, String>> it = paramMap.entrySet().iterator();
+        while(it.hasNext()){
             //检查是否有符合解析规则的值
+            Map.Entry<String,String> entry = it.next();
 			Matcher matcher = Pattern.compile("#(.+)#(.*)").matcher(entry.getValue());
 			if(matcher.find()){
                 //获取解析类名
 				String parseMethod = matcher.group(1);
+
+                //处理不方便用类模式处理的情况，比如删除某个字段
+                if(parseMethod.trim().equals("NotPass")){
+                    it.remove();
+                    continue;
+                }
+
                 //创建解析类，并进行解析
 				IParamParse object = (IParamParse) CreateParse(parseMethod.trim());
-				Object result=object.parse(matcher.group(2));
+				object.parse(paramMap,entry.getKey(),matcher.group(2));
                 //解析完成，替换字段的值
-                entry.setValue(result.toString());
+                //entry.setValue(result.toString());
 			}
 		}
 	}

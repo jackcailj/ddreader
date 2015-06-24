@@ -1,5 +1,6 @@
 package com.dangdang.reader.functional.param.parse;
 
+import java.util.Iterator;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -22,8 +23,8 @@ public class PreconditionParse implements IParamParse{
 	}
 
 	@Override
-	public Object parse(String param) throws Exception {
-		return null;
+	public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
+
 	}
 
 }

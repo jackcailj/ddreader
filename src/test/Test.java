@@ -2,8 +2,11 @@ package test;
 
 import java.util.List;
 
+import com.dangdang.ddframework.util.DesUtils;
+import com.dangdang.ddframework.util.security.RsaUtils;
 import com.dangdang.ucenter.UserInfoSql;
 import com.dangdang.ucenter.meta.LoginRecord;
+import org.apache.commons.codec.digest.DigestUtils;
 
 
 public class Test {
@@ -14,6 +17,5 @@ public class Test {
 		Date date1 = df1.parse("2016-03-29");
 		System.out.println(date1.getTime());*/
 
-        System.out.println( UserInfoSql.getCustIdByPubId("25873346"));
 	}
 }

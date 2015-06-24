@@ -1,5 +1,6 @@
 package com.dangdang.reader.functional.param.parse;
 
+import java.util.Iterator;
 import java.util.Map;
 import com.dangdang.ddframework.util.security.SignUtils;
 import com.dangdang.ecms.BookStoreCommSQL;
@@ -36,8 +37,8 @@ public class SignParse implements IParamParse{
 	}
 
 	@Override
-	public Object parse(String param) throws Exception {
-		return null;
+	public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
+
 	}
 
 
