@@ -1,7 +1,12 @@
 package com.dangdang.account;
 
+import com.dangdang.account.meta.AccountConsumeItems;
+import com.dangdang.account.meta.AttachAccountItems;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.core.TestDevice;
 import com.dangdang.ddframework.dbutil.DbUtil;
+
+import java.util.List;
 
 /**
  * Created by cailianjie on 2015-6-18.
@@ -15,5 +20,29 @@ public class AccountUtils {
 
         AccountInfo info = DbUtil.selectOne(Config.ACCOUNTDBConfig,selectString,AccountInfo.class);
         return info;
+    }
+
+    /*
+    获取用户铃铛主账户详情
+    参数：
+        custid：用户custid
+        device：设备类型
+    return：List<AccountConsumeItems>，没有值时返回空列表
+
+     */
+    public  static List<AccountConsumeItems> getMasterLingDangDetail(String custid,TestDevice device) throws Exception {
+        return DbUtil.selectList(Config.ACCOUNTDBConfig,"select * from account_consume_items where  consume_source='"+device.toString()+"' and consume_type = 1000 and cust_id="+custid+" and account_type='"+AccountType.MASTER+"' ORDER BY consume_item_id desc ",AccountConsumeItems.class);
+    }
+
+    /*
+    获取用户铃铛详情副账户列表
+    参数：
+        custid：用户custid
+        device：设备类型
+    return：List<AccountConsumeItems>，没有值时返回空列表
+
+     */
+    public  static List<AttachAccountItems> getAttachLingDangDetail(String custid,TestDevice device) throws Exception {
+        return DbUtil.selectList(Config.ACCOUNTDBConfig,"select * from attach_account_items where cust_id="+custid+" and consume_source='"+device+"' and `status`=1 order by attach_account_items_id desc ",AttachAccountItems.class);
     }
 }
