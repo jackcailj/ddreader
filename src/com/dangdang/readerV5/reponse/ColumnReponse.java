@@ -15,6 +15,17 @@ public class ColumnReponse {
 	String systemDate;
 	String tips;
 	Integer total;
+	
+	//频道
+	List<ChannelList> channelList;
+	
+	public List<ChannelList> getChannelList() {
+		return channelList;
+	}
+	public void setChannelList(List<ChannelList> channelList) {
+		this.channelList = channelList;
+	}
+	
 	public String getColumnCode() {
 		return columnCode;
 	}
