@@ -33,6 +33,12 @@ public class UserInfoSql {
         return ""+result.get("CUST_ID");
     }
 
+    public  static String getCustIdByName(String userName) throws Exception {
+        String selectSql="SELECT CUST_ID from user_device where username='"+userName+"' limit 1";
+        Map<String,Object> result = DbUtil.selectOne(Config.UCENTERDBConfig,selectSql);
+        return ""+result.get("CUST_ID");
+    }
+
     public  static LoginRecord getUserInfoByCustId(String custid) throws Exception {
         String selectSql="select lr_id,cust_id,cust_nickname,cust_img,device_no,device_type,login_token,create_date,last_update_date,introduct,login_platform,login_client,gender*1 as gender,bind_phone_num, display_id from login_record where cust_id="+custid;
         LoginRecord result = DbUtil.selectOne(Config.UCENTERDBConfig,selectSql,LoginRecord.class);

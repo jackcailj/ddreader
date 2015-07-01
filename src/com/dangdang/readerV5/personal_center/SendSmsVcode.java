@@ -10,9 +10,4 @@ public class SendSmsVcode extends FixtureBase{
 
     public  SendSmsVcode(){addAction("sendSmsVcode");}
 
-    @Override
-    protected void parseParam() throws Exception {
-        setLogin(ParseParamUtil.parseLogin(paramMap));
-        ParseParamUtil.removeBlackParam(paramMap);
-    }
 }
