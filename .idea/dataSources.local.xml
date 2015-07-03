@@ -7,5 +7,12 @@
       <schema-pattern>digital.*</schema-pattern>
       <default-schemas>account.* digital.* ecmst.* read_1.* ucenter.*</default-schemas>
     </data-source>
+    <data-source name="SQL Server - @10.255.254.185" uuid="ae88ce93-c49a-4bd7-8844-cc35967ca175">
+      <secret-storage>master_key</secret-storage>
+      <first-sync>true</first-sync>
+      <user-name>writeuser</user-name>
+      <schema-pattern>Cart0.*</schema-pattern>
+      <default-schemas>Cart0.*</default-schemas>
+    </data-source>
   </component>
 </project>
