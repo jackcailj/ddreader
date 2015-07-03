@@ -27,7 +27,7 @@ public class CreateBar  extends FixtureBase {
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);
 
-		String rBarName = Util.getRandomString(8)+"careatebar"+((new Random()).nextInt());
+		String rBarName = "careatebar"+Util.getRandomString(3)+((new Random()).nextInt());
 		if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("Random")){
 			paramMap.put("barName", rBarName);
 		}
