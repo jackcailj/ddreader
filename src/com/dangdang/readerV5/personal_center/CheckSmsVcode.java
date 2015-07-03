@@ -10,9 +10,5 @@ public class CheckSmsVcode extends FixtureBase{
 
     public CheckSmsVcode(){addAction("checkSmsVcode");}
 
-    @Override
-    protected void parseParam() throws Exception {
-        setLogin(ParseParamUtil.parseLogin(paramMap));
-        ParseParamUtil.removeBlackParam(paramMap);
-    }
+
 }
