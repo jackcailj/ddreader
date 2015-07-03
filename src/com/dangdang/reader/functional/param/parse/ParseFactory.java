@@ -61,6 +61,10 @@ public class ParseFactory {
         while(it.hasNext()){
             //检查是否有符合解析规则的值
             Map.Entry<String,String> entry = it.next();
+			if(entry.getValue()==null){
+				continue;
+			}
+
 			Matcher matcher = Pattern.compile("#(.+)#(.*)").matcher(entry.getValue());
 			if(matcher.find()){
                 //获取解析类名

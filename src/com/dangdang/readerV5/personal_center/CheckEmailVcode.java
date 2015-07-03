@@ -5,7 +5,7 @@ import com.dangdang.autotest.common.FixtureBase;
 /**
  * Created by cailianjie on 2015-7-2.
  */
-public class UploadHeadPhoto extends FixtureBase{
+public class CheckEmailVcode extends FixtureBase{
 
-    public UploadHeadPhoto(){addAction("uploadHeadPhoto");}
+    public CheckEmailVcode(){addAction("checkEmailVcode");}
 }
