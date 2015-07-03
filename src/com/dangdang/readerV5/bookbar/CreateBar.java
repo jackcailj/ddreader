@@ -27,7 +27,7 @@ public class CreateBar  extends FixtureBase {
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);
 
-		String rBarName = "careatebar"+Util.getRandomString(3)+((new Random()).nextInt());
+		String rBarName = "建吧-"+((new Random()).nextInt());
 		if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("Random")){
 			paramMap.put("barName", rBarName);
 		}
@@ -67,9 +67,10 @@ public class CreateBar  extends FixtureBase {
 			list2.add(map.get("bar_name").toString());
 			list1.add(paramMap.get("barDesc"));
 			list2.add(map.get("bar_desc").toString());
-			list1.add(paramMap.get("barImgUrl"));
-			list2.add(map.get("bar_img_url").toString());
-			
+			if(paramMap.get("barImgUrl")!=null){
+				list1.add(paramMap.get("barImgUrl"));
+				list2.add(map.get("bar_img_url").toString());
+			}			
 			dataVerifyManager.add(new ValueVerify<List<String>>(list1, list2));
 			super.dataVerify();
 		}	
