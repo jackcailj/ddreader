@@ -1,6 +1,7 @@
 package com.dangdang.reader.functional.param.parse;
 
 import com.dangdang.common.functional.login.Login;
+import com.dangdang.ucenter.UserInfoSql;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Iterator;
@@ -20,7 +21,7 @@ public class GetCustIdByNameParse implements IParamParse{
     @Override
     public void parse(Map<String, String> paramMap,String key,String param) throws Exception {
         if(StringUtils.isNotBlank(param)) {
-            String custId= Login.getCusId(param);
+            String custId= UserInfoSql.getCustIdByName(param);
             paramMap.put(key,custId);
         }
         else {

@@ -108,7 +108,21 @@ public class FixtureBase extends InterfaceBase{
 	public boolean getVerifyResult(){
 		return verifyResult;
 	}
+
+	public String verifyResult(){
+		if(verifyResult){
+			return "pass";
+		}
+		else 
+			return "fail";
+	}
 	
+	/**
+	 * 
+	 */
+	public void jsonToClass(){
+		
+	}
 
     public ReponseV2Base getReponseStatus(){
         return reponseV2Base;
@@ -213,4 +227,13 @@ public class FixtureBase extends InterfaceBase{
 
     /*============================fitnesse DynamicDecisionTable设置列值函数=================================*/
 	
+    public boolean tearDown(){
+    	try{
+    		reset();
+            return true;
+    	}
+    	catch(Exception e){
+    		return false;
+    	}
+    }
 }

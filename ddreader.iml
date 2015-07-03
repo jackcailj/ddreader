@@ -345,5 +345,6 @@
     </orderEntry>
     <orderEntry type="library" name="groovy-2.4.3" level="application" />
     <orderEntry type="module" module-name="db_meta" />
+    <orderEntry type="library" name="sqljdbc4-4.0.2206.100" level="project" />
   </component>
 </module>
