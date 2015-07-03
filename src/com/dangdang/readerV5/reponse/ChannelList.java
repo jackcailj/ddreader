@@ -6,30 +6,7 @@ public class ChannelList {
 	String icon;
 	Integer subNumber;
 	String title;
-	
-	//频道数据库中表字段
-	Integer sale_id; //sale_id与channelId对应
-	String sale_name; //sale_name与title对应
-	Integer sub_number; //sub_number与subNumber对应
-	public Integer getSale_id() {
-		return sale_id;
-	}
-	public void setSale_id(Integer sale_id) {
-		this.sale_id = sale_id;
-	}
-	public String getSale_name() {
-		return sale_name;
-	}
-	public void setSale_name(String sale_name) {
-		this.sale_name = sale_name;
-	}
-	public Integer getSub_number() {
-		return sub_number;
-	}
-	public void setSub_number(Integer sub_number) {
-		this.sub_number = sub_number;
-	}
-	
+		
 	public Integer getChannelId() {
 		return channelId;
 	}

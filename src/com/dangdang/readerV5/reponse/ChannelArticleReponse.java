@@ -4,24 +4,24 @@ import java.util.List;
 
 public class ChannelArticleReponse {
 	List<ArticlePackageList> articlePackageList;
-	Integer articlePackageListNum;
-	Integer total;
+	String articlePackageListNum;
+	String total;
 	public List<ArticlePackageList> getArticlePackageList() {
 		return articlePackageList;
 	}
 	public void setArticlePackageList(List<ArticlePackageList> articlePackageList) {
 		this.articlePackageList = articlePackageList;
 	}
-	public Integer getArticlePackageListNum() {
+	public String getArticlePackageListNum() {
 		return articlePackageListNum;
 	}
-	public void setArticlePackageListNum(Integer articlePackageListNum) {
+	public void setArticlePackageListNum(String articlePackageListNum) {
 		this.articlePackageListNum = articlePackageListNum;
 	}
-	public Integer getTotal() {
+	public String getTotal() {
 		return total;
 	}
-	public void setTotal(Integer total) {
+	public void setTotal(String total) {
 		this.total = total;
 	}
 }

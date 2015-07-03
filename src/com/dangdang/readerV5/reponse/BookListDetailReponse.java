@@ -3,19 +3,19 @@ package com.dangdang.readerV5.reponse;
 import java.util.List;
 
 public class BookListDetailReponse {
-	List<MediaList> mediaList;
-	Integer total;
+	List<ChannelMediaList> mediaList;
+	String total;
 
-	public List<MediaList> getMediaList() {
+	public List<ChannelMediaList> getMediaList() {
 		return mediaList;
 	}
-	public void setMediaList(List<MediaList> mediaList) {
+	public void setMediaList(List<ChannelMediaList> mediaList) {
 		this.mediaList = mediaList;
 	}
-	public Integer getTotal() {
+	public String getTotal() {
 		return total;
 	}
-	public void setTotal(Integer total) {
+	public void setTotal(String total) {
 		this.total = total;
 	}
 }

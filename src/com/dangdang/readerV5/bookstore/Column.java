@@ -39,7 +39,7 @@ public class Column extends FixtureBase{
 			//验证json中返回字段
 			log.info("验证频道栏目下的频道列表");	
 			ColumnReponse dbResponse = ChannelSQL.getChannelColumn(paramMap.get("columnType"));
-			dataVerifyManager.add(new ResponseVerify(reponseResult, dbResponse));
+			dataVerifyManager.add(new ResponseVerify(reponseResult.getData(), dbResponse));
 			
 			//验证返回的订阅数是否正确
 			log.info("验证订阅数");

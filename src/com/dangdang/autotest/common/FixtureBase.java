@@ -53,30 +53,31 @@ public class FixtureBase extends InterfaceBase{
 	 * @param actionName
 	 * @throws Exception
 	 */
-	public boolean doGet(String actionName) throws Exception{
-		return doGet(actionName, 0);
-	}
+//	public boolean doGet() throws Exception{
+//		return doGet(0);
+//	}
 	
 	/**
 	 * @param actionName
 	 * @param exceptedCode 鎺ュ彛杩斿洖鐨刢ode鍊�
 	 * @throws Exception
 	 */
-	public boolean doGet(String actionName, int exceptedCode) throws Exception {
-		boolean flag = false;
-		paramMap.put("action", actionName);
-		//paramMap.putAll(Config.getCommonParam());
+	boolean statusCode = false;
+	public boolean getStatusCode() {
+		return statusCode;
+	}
+
+	public boolean doGet(int exceptedCode) throws Exception {
+		genrateVerifyData();
 		result=HttpDriver.doGet(URL, paramMap, bHttps);
 		
 		if(result.toString().contains("\"code\":"+exceptedCode)){
-			flag = true;
+			statusCode = true;
 			log.info(result.toString());
 		}
-		if(flag&&exceptedCode==0){
-			jsonToClass();
-		}
-		return flag;
+		return statusCode;
 	}
+	
 	
 	public void doGet() throws Exception{
 		paramMap.put("action", "column");
@@ -108,13 +109,6 @@ public class FixtureBase extends InterfaceBase{
 		return verifyResult;
 	}
 	
-	
-	/**
-	 * 
-	 */
-	public void jsonToClass(){
-		
-	}
 
     public ReponseV2Base getReponseStatus(){
         return reponseV2Base;

@@ -2,14 +2,14 @@ package com.dangdang.readerV5.reponse;
 
 public class ArticlePackage {
 
-	Integer articleId;
+	String articleId;
 	String description;
 	String icon;
 	String title;
-	public Integer getArticleId() {
+	public String getArticleId() {
 		return articleId;
 	}
-	public void setArticleId(Integer articleId) {
+	public void setArticleId(String articleId) {
 		this.articleId = articleId;
 	}
 	public String getDescription() {

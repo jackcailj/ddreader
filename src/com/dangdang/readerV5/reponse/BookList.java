@@ -1,7 +1,6 @@
 package com.dangdang.readerV5.reponse;
 
 public class BookList {	
-	//json中返回的字段名称
 	Integer bookNum;
 	Integer booklistId;
 	Integer changeNum;
@@ -13,60 +12,8 @@ public class BookList {
 	String name;
 	Integer owner;
 	Integer status;
-	Integer storeNum;
+	Integer storeNum;	
 	
-	//数据库表中的字段名称
-	Integer booklist_id;
-	Integer channel_id;
-	Integer is_show;
-	String image_url;
-	Integer book_num;
-	Integer store_num;
-	Integer change_num;
-	
-	
-	public Integer getBooklist_id() {
-		return booklist_id;
-	}
-	public void setBooklist_id(Integer booklist_id) {
-		this.booklist_id = booklist_id;
-	}
-	public Integer getChannel_id() {
-		return channel_id;
-	}
-	public void setChannel_id(Integer channel_id) {
-		this.channel_id = channel_id;
-	}
-	public Integer getIs_show() {
-		return is_show;
-	}
-	public void setIs_show(Integer is_show) {
-		this.is_show = is_show;
-	}
-	public String getImage_url() {
-		return image_url;
-	}
-	public void setImage_url(String image_url) {
-		this.image_url = image_url;
-	}
-	public Integer getBook_num() {
-		return book_num;
-	}
-	public void setBook_num(Integer book_num) {
-		this.book_num = book_num;
-	}
-	public Integer getStore_num() {
-		return store_num;
-	}
-	public void setStore_num(Integer store_num) {
-		this.store_num = store_num;
-	}
-	public Integer getChange_num() {
-		return change_num;
-	}
-	public void setChange_num(Integer change_num) {
-		this.change_num = change_num;
-	}
 	public Integer getBookNum() {
 		return bookNum;
 	}

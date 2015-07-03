@@ -1,7 +1,13 @@
 package com.dangdang.readerV5.reponse;
 
-import java.util.List;
-
 public class BookListReponse {
-	List<BookList> bookList;
+	BookList bookList;
+
+	public BookList getBookList() {
+		return bookList;
+	}
+
+	public void setBookList(BookList bookList) {
+		this.bookList = bookList;
+	}
 }
