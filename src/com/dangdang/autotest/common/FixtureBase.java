@@ -109,7 +109,7 @@ public class FixtureBase extends InterfaceBase{
 		return verifyResult;
 	}
 
-	public String verifyResult(){
+	public String verifiedResult(){
 		if(verifyResult){
 			return "pass";
 		}
