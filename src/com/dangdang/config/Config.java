@@ -21,6 +21,8 @@ public class Config extends ConfigCore{
 	public static String ACCOUNTDBConfig="";
     public static String UCENTERDBConfig="";
     public static String BOOKBARDBConfig="";
+	public static String SQLSERVER185Config="";
+	public static String SQLSERVER187Config="";
 	
 	protected static Map<String, String> CommonParam =new HashMap<String, String>();
 		
@@ -46,6 +48,8 @@ public class Config extends ConfigCore{
 				ACCOUNTDBConfig="conf/db/accountdb.cfg.xml";
                 UCENTERDBConfig="conf/db/ucenterdb.cfg.xml";
                 BOOKBARDBConfig="conf/db/bookbardb.cfg.xml";
+				SQLSERVER185Config="conf/db/sqlServer185.cfg.xml";
+				SQLSERVER187Config="";
 			}
 			else {
 				YCDBConfig="conf/db/websql_yc.properties";

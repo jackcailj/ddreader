@@ -197,7 +197,12 @@ public class FixtureBase extends InterfaceBase{
 			}
 		}
         else if( columnName.contains("status")){
-            return reponseV2Base.getStatus().getCode().toString();
+			if(reponseV2Base==null){//处理下载书籍这种不能返回statusCode的情况，如果httpCode为200，就认为成功。
+				return "0";
+			}
+			else {
+				return reponseV2Base.getStatus().getCode().toString();
+			}
         }
 
         throw  new Exception("没有["+columnName+"]数据");
@@ -216,6 +221,7 @@ public class FixtureBase extends InterfaceBase{
     每次执行前清除上次运行的数据
     */
     public void reset(){
+		reponseV2Base=null;
         dataVerifyManager.clear();
         String action=paramMap.get("action");
         paramMap.clear();
