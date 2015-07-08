@@ -22,7 +22,6 @@ public class Config extends ConfigCore{
     public static String UCENTERDBConfig="";
     public static String BOOKBARDBConfig="";
 	public static String SQLSERVER185Config="";
-	public static String SQLSERVER187Config="";
 	
 	protected static Map<String, String> CommonParam =new HashMap<String, String>();
 		

@@ -322,3 +322,1065 @@ Caused by: java.security.InvalidKeyException: IOException: DerInputStream.getLen
 	at sun.security.rsa.RSAKeyFactory.generatePublic(RSAKeyFactory.java:281)
 	at sun.security.rsa.RSAKeyFactory.engineGeneratePublic(RSAKeyFactory.java:184)
 	... 4 more
+2015-06-30 15:03:06  [ main:0 ] - [ INFO ]  执行SQL：SELECT * FROM media_booklist WHERE booklist_id=63
+2015-06-30 15:03:07  [ main:874 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 15:03:07  [ main:897 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 15:03:07  [ main:911 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-06-30 15:03:07  [ main:913 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-06-30 15:03:07  [ main:953 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-06-30 15:03:07  [ main:953 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-06-30 15:03:07  [ main:1178 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-30 15:03:07  [ main:1221 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-06-30 15:03:07  [ main:1546 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-06-30 15:03:07  [ main:1546 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-06-30 15:03:07  [ main:1546 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-06-30 15:03:08  [ main:1661 ] - [ INFO ]  MLog clients using log4j logging.
+2015-06-30 15:03:08  [ main:2283 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-06-30 15:03:08  [ main:2435 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@52d92432 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@c1c4d6f [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9aio07cf18yel1b|61f0c437, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@a04e3a32 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9aio07cf18yel1b|18ea471b, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9aio07cf18yel1b|666b765a, numHelperThreads -> 3 ]
+2015-06-30 15:03:09  [ main:3033 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-30 15:03:09  [ main:3047 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-06-30 15:03:09  [ main:3116 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 15:03:09  [ main:3149 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 15:03:09  [ main:3525 ] - [ INFO ]  执行结果：[{last_update_time=null, booklist_id=63, status=0, change_num=0, store_num=0, channel_id=55, creator=50232823, creation_date=2015-06-29 12:04:00.0, modifier=null, is_show=1, image_url=http://img61.ddimg.cn/digital/channel/34/7/cc7fd333021e4d1f914df0a17c5ee980.jpg, book_num=4, description=别墅, name=魏嵩的书单, owner=50232823}]
+2015-06-30 15:04:44  [ main:0 ] - [ INFO ]  执行SQL：SELECT * FROM media_booklist WHERE booklist_id=63
+2015-06-30 15:04:45  [ main:142 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 15:04:45  [ main:150 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 15:04:45  [ main:154 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-06-30 15:04:45  [ main:155 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-06-30 15:04:45  [ main:179 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-06-30 15:04:45  [ main:179 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-06-30 15:04:45  [ main:222 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-30 15:04:45  [ main:240 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-06-30 15:04:45  [ main:342 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-06-30 15:04:45  [ main:343 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-06-30 15:04:45  [ main:343 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-06-30 15:04:45  [ main:359 ] - [ INFO ]  MLog clients using log4j logging.
+2015-06-30 15:04:45  [ main:520 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-06-30 15:04:45  [ main:604 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@15fae37 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@4686c9a9 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9aio2a6o1p24029|388165b3, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@4b6cc250 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9aio2a6o1p24029|753d8be3, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9aio2a6o1p24029|17c93216, numHelperThreads -> 3 ]
+2015-06-30 15:04:45  [ main:842 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-30 15:04:45  [ main:850 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-06-30 15:04:45  [ main:885 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 15:04:45  [ main:890 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 15:04:45  [ main:1050 ] - [ INFO ]  执行结果：[{last_update_time=null, booklist_id=63, status=0, change_num=0, store_num=0, channel_id=55, creator=50232823, creation_date=2015-06-29 12:04:00.0, modifier=null, is_show=1, image_url=http://img61.ddimg.cn/digital/channel/34/7/cc7fd333021e4d1f914df0a17c5ee980.jpg, book_num=4, description=别墅, name=魏嵩的书单, owner=50232823}]
+2015-06-30 15:07:35  [ main:0 ] - [ INFO ]  执行SQL：SELECT * FROM media_booklist WHERE booklist_id=63
+2015-06-30 15:07:35  [ main:143 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 15:07:35  [ main:150 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 15:07:35  [ main:154 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-06-30 15:07:35  [ main:156 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-06-30 15:07:35  [ main:177 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-06-30 15:07:35  [ main:177 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-06-30 15:07:35  [ main:221 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-30 15:07:35  [ main:239 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-06-30 15:07:35  [ main:338 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-06-30 15:07:35  [ main:338 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-06-30 15:07:35  [ main:338 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-06-30 15:07:35  [ main:355 ] - [ INFO ]  MLog clients using log4j logging.
+2015-06-30 15:07:35  [ main:515 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-06-30 15:07:35  [ main:599 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@d4f45c1c [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@8e378559 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9aio5xkuj4xaa7|61f0c437, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@7290d70b [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9aio5xkuj4xaa7|3ce24a64, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9aio5xkuj4xaa7|666b765a, numHelperThreads -> 3 ]
+2015-06-30 15:07:36  [ main:843 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-30 15:07:36  [ main:851 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-06-30 15:07:36  [ main:885 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 15:07:36  [ main:889 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 15:07:36  [ main:1052 ] - [ INFO ]  执行结果：[{last_update_time=null, booklist_id=63, status=0, change_num=0, store_num=0, channel_id=55, creator=50232823, creation_date=2015-06-29 12:04:00.0, modifier=null, is_show=1, image_url=http://img61.ddimg.cn/digital/channel/34/7/cc7fd333021e4d1f914df0a17c5ee980.jpg, book_num=4, description=别墅, name=魏嵩的书单, owner=50232823}]
+2015-06-30 15:11:21  [ main:0 ] - [ INFO ]  执行SQL：SELECT * FROM media_booklist WHERE booklist_id=63
+2015-06-30 15:11:21  [ main:140 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-30 15:11:21  [ main:147 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-06-30 15:11:21  [ main:151 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-06-30 15:11:21  [ main:152 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-06-30 15:11:22  [ main:175 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-06-30 15:11:22  [ main:176 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-06-30 15:11:22  [ main:221 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-06-30 15:11:22  [ main:240 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-06-30 15:11:22  [ main:342 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-06-30 15:11:22  [ main:343 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-06-30 15:11:22  [ main:343 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-06-30 15:11:22  [ main:359 ] - [ INFO ]  MLog clients using log4j logging.
+2015-06-30 15:11:22  [ main:520 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-06-30 15:11:22  [ main:604 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@cc638f67 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@915b823a [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9aioasg8o8zn1c|380d8f5c, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@efe80647 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9aioasg8o8zn1c|1df5f9d7, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9aioasg8o8zn1c|77eac9a7, numHelperThreads -> 3 ]
+2015-06-30 15:11:22  [ main:848 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-30 15:11:22  [ main:856 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-06-30 15:11:22  [ main:896 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-30 15:11:22  [ main:901 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-06-30 15:11:22  [ main:1065 ] - [ INFO ]  执行结果：[{last_update_time=null, booklist_id=63, status=0, change_num=0, store_num=0, channel_id=55, creator=50232823, creation_date=2015-06-29 12:04:00.0, modifier=null, is_show=1, image_url=http://img61.ddimg.cn/digital/channel/34/7/cc7fd333021e4d1f914df0a17c5ee980.jpg, book_num=4, description=别墅, name=魏嵩的书单, owner=50232823}]
+2015-07-02 15:52:36  [ main:0 ] - [ INFO ]  参数jsonValue为空！
+2015-07-02 15:52:55  [ main:0 ] - [ INFO ]  参数dbValue为空！
+2015-07-02 15:53:07  [ main:0 ] - [ INFO ]  class java.lang.Integer
+2015-07-02 15:53:07  [ main:0 ] - [ INFO ]  
+
+2015-07-02 15:53:07  [ main:0 ] - [ INFO ]  class java.lang.String
+2015-07-02 15:53:07  [ main:0 ] - [ INFO ]  
+
+2015-07-02 15:53:07  [ main:0 ] - [ INFO ]  开始对比字段name
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  class java.lang.String
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  
+
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  json:address=住址
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  db:address=住址
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  class java.lang.String
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  
+
+2015-07-02 15:53:07  [ main:1 ] - [ INFO ]  开始对比字段email
+2015-07-02 15:53:07  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 15:53:07  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 15:53:07  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 15:53:07  [ main:2 ] - [ INFO ]  java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 15:53:07  [ main:2 ] - [ INFO ]  
+
+2015-07-02 15:53:07  [ main:2 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 15:53:07  [ main:2 ] - [ INFO ]  jsonList size:2
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  dbList size:2
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  对比结果:true
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  ************jsonValcom.dangdang.autotest.common.Course@ccfcd20
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  ************dbValcom.dangdang.autotest.common.Course@ccfcd20
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  ************调用compareObjectValue(jsonval, dbval)
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  class java.lang.String
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  
+
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  开始对比字段courseName
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  json:courseName=c1
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  db:courseName=c1
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  对比结果:true
+2015-07-02 15:53:07  [ main:3 ] - [ INFO ]  ************jsonValcom.dangdang.autotest.common.Course@1e88c615
+2015-07-02 15:53:07  [ main:4 ] - [ INFO ]  ************dbValcom.dangdang.autotest.common.Course@1e88c615
+2015-07-02 15:53:07  [ main:4 ] - [ INFO ]  ************调用compareObjectValue(jsonval, dbval)
+2015-07-02 15:53:07  [ main:4 ] - [ INFO ]  class java.lang.String
+2015-07-02 15:53:07  [ main:4 ] - [ INFO ]  
+
+2015-07-02 15:53:07  [ main:4 ] - [ INFO ]  开始对比字段courseName
+2015-07-02 15:53:07  [ main:4 ] - [ INFO ]  json:courseName=c2
+2015-07-02 15:53:07  [ main:4 ] - [ INFO ]  db:courseName=c2
+2015-07-02 15:53:07  [ main:4 ] - [ INFO ]  对比结果:true
+2015-07-02 15:53:39  [ main:0 ] - [ INFO ]  class [C
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  
+
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  int
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  
+
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  long
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  
+
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  class [Ljava.io.ObjectStreamField;
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  
+
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  java.util.Comparator<java.lang.String>
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  
+
+2015-07-02 15:53:39  [ main:1 ] - [ INFO ]  int
+2015-07-02 15:53:39  [ main:2 ] - [ INFO ]  
+
+2015-07-02 15:53:39  [ main:2 ] - [ INFO ]  int
+2015-07-02 15:53:39  [ main:2 ] - [ INFO ]  
+
+2015-07-02 15:54:29  [ main:0 ] - [ INFO ]  参数jsonValue为空！
+2015-07-02 16:04:29  [ main:0 ] - [ INFO ]  参数jsonValue为空！
+2015-07-02 16:04:41  [ main:0 ] - [ INFO ]  参数dbValue为空！
+2015-07-02 16:04:52  [ main:0 ] - [ INFO ]  参数dbValue为空！
+2015-07-02 16:05:05  [ main:0 ] - [ INFO ]  参数jsonValue为空！
+2015-07-02 16:06:33  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:06:33  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:06:33  [ main:0 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  json:address=住址
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  db:address=住址
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:06:33  [ main:1 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:06:33  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 16:06:33  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 16:06:33  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:06:33  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:06:33  [ main:2 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:06:33  [ main:3 ] - [ INFO ]  jsonList size:2
+2015-07-02 16:06:33  [ main:3 ] - [ INFO ]  dbList size:0
+2015-07-02 16:06:33  [ main:3 ] - [ INFO ]  对比结果:false
+2015-07-02 16:08:20  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:08:20  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:08:20  [ main:0 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  json:address=住址
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  db:address=住址
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  json:email=
+2015-07-02 16:08:20  [ main:1 ] - [ INFO ]  db:email=
+2015-07-02 16:08:20  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:08:20  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:08:20  [ main:2 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:08:20  [ main:2 ] - [ INFO ]  参数dbList为空！
+2015-07-02 16:08:41  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:08:41  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:08:41  [ main:1 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:08:41  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:08:41  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:08:41  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:08:41  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  json:address=住址
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  db:address=住址
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:08:41  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:08:41  [ main:3 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:08:41  [ main:3 ] - [ INFO ]  参数jsonList为空！
+2015-07-02 16:14:49  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:14:49  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:14:49  [ main:1 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:14:49  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:14:49  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:14:49  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:14:49  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  json:address=住址
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  db:address=住址
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:14:49  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:14:49  [ main:3 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:14:49  [ main:3 ] - [ INFO ]  参数jsonList为空！
+2015-07-02 16:14:49  [ main:3 ] - [ INFO ]  参数dbList为空！
+2015-07-02 16:15:12  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:15:12  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:15:12  [ main:1 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:15:12  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:15:12  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:15:12  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:15:12  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:15:12  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  json:address=住址
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  db:address=住址
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:15:12  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:15:12  [ main:3 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:15:12  [ main:3 ] - [ INFO ]  参数dbList为空！
+2015-07-02 16:15:12  [ main:3 ] - [ INFO ]  参数dbList为空！
+2015-07-02 16:16:15  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:16:15  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:16:15  [ main:0 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  json:address=住址
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  db:address=住址
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:16:15  [ main:1 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:16:15  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 16:16:15  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 16:16:15  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:16:15  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:16:15  [ main:2 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:16:15  [ main:2 ] - [ INFO ]  参数jsonList为空！
+2015-07-02 16:16:40  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:16:40  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:16:40  [ main:1 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:16:40  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:16:40  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  json:address=住址
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  db:address=住址
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:16:40  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:16:40  [ main:3 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:17:16  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:17:16  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:17:16  [ main:0 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  json:address=住址
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  db:address=住址
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  json:email=
+2015-07-02 16:17:16  [ main:1 ] - [ INFO ]  db:email=
+2015-07-02 16:17:16  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:17:16  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:17:16  [ main:2 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:17:16  [ main:2 ] - [ INFO ]  jsonList size:1
+2015-07-02 16:17:16  [ main:2 ] - [ INFO ]  dbList size:2
+2015-07-02 16:17:16  [ main:2 ] - [ INFO ]  对比结果:false
+2015-07-02 16:17:16  [ main:2 ] - [ INFO ]  ************jsonValcom.dangdang.autotest.common.Course@141d7417
+2015-07-02 16:17:16  [ main:3 ] - [ INFO ]  ************dbValcom.dangdang.autotest.common.Course@141d7417
+2015-07-02 16:17:16  [ main:3 ] - [ INFO ]  ************调用compareObjectValue(jsonval, dbval)
+2015-07-02 16:17:16  [ main:3 ] - [ INFO ]  
+
+2015-07-02 16:17:16  [ main:3 ] - [ INFO ]  开始对比字段courseName
+2015-07-02 16:17:16  [ main:3 ] - [ INFO ]  json:courseName=c1
+2015-07-02 16:17:16  [ main:3 ] - [ INFO ]  db:courseName=c1
+2015-07-02 16:17:16  [ main:3 ] - [ INFO ]  对比结果:true
+2015-07-02 16:17:56  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:17:56  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:17:56  [ main:0 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  json:address=住址
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  db:address=住址
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:17:56  [ main:1 ] - [ INFO ]  json:email=
+2015-07-02 16:17:56  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 16:17:56  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:17:56  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:17:56  [ main:2 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:17:56  [ main:2 ] - [ INFO ]  jsonList size:2
+2015-07-02 16:17:56  [ main:2 ] - [ INFO ]  dbList size:1
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  对比结果:false
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  ************jsonValcom.dangdang.autotest.common.Course@141d7417
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  ************dbValcom.dangdang.autotest.common.Course@141d7417
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  ************调用compareObjectValue(jsonval, dbval)
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  
+
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  开始对比字段courseName
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  json:courseName=c1
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  db:courseName=c1
+2015-07-02 16:17:56  [ main:3 ] - [ INFO ]  对比结果:true
+2015-07-02 16:19:58  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:19:58  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  json:address=住址
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  db:address=住址
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:19:58  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:19:58  [ main:2 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:19:58  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 16:19:58  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 16:19:58  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:19:58  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:19:58  [ main:2 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:19:58  [ main:2 ] - [ INFO ]  jsonList size:2
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  dbList size:1
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  对比结果:false
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  ************jsonValcom.dangdang.autotest.common.Course@141d7417
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  ************dbValcom.dangdang.autotest.common.Course@141d7417
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  ************调用compareObjectValue(jsonval, dbval)
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  
+
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  开始对比字段courseName
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  json:courseName=c1
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  db:courseName=c1
+2015-07-02 16:19:58  [ main:3 ] - [ INFO ]  对比结果:true
+2015-07-02 16:21:01  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:21:01  [ main:0 ] - [ INFO ]  
+
+2015-07-02 16:21:01  [ main:0 ] - [ INFO ]  开始对比字段name
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  开始对比字段address
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  json:address=住址
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  db:address=住址
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  
+
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  开始对比字段email
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  json:email=
+2015-07-02 16:21:01  [ main:1 ] - [ INFO ]  db:email=
+2015-07-02 16:21:01  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 16:21:01  [ main:2 ] - [ INFO ]  
+
+2015-07-02 16:21:01  [ main:2 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 16:21:01  [ main:2 ] - [ INFO ]  jsonList size:2
+2015-07-02 16:21:01  [ main:2 ] - [ INFO ]  dbList size:1
+2015-07-02 16:21:01  [ main:2 ] - [ INFO ]  对比结果:false
+2015-07-02 16:21:01  [ main:2 ] - [ INFO ]  ************jsonValcom.dangdang.autotest.common.Course@19b09c52
+2015-07-02 16:21:01  [ main:3 ] - [ INFO ]  ************dbValcom.dangdang.autotest.common.Course@19b09c52
+2015-07-02 16:21:01  [ main:3 ] - [ INFO ]  ************调用compareObjectValue(jsonval, dbval)
+2015-07-02 16:21:01  [ main:3 ] - [ INFO ]  
+
+2015-07-02 16:21:01  [ main:3 ] - [ INFO ]  开始对比字段courseName
+2015-07-02 16:21:01  [ main:3 ] - [ INFO ]  json:courseName=c1
+2015-07-02 16:21:01  [ main:3 ] - [ INFO ]  db:courseName=c1
+2015-07-02 16:21:01  [ main:3 ] - [ INFO ]  对比结果:true
+2015-07-02 17:27:30  [ main:0 ] - [ INFO ]  
+
+2015-07-02 17:27:30  [ main:1 ] - [ INFO ]  
+
+2015-07-02 17:27:30  [ main:1 ] - [ INFO ]  开始对比字段name
+2015-07-02 17:27:30  [ main:1 ] - [ INFO ]  json:name=haohao
+2015-07-02 17:27:30  [ main:1 ] - [ INFO ]  db:name=haohao
+2015-07-02 17:27:30  [ main:1 ] - [ INFO ]  对比结果:true
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  
+
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  开始对比字段address
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  json:address=住址
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  db:address=住址
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  
+
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  开始对比字段email
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  json:email=
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  db:email=
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  对比结果:true
+2015-07-02 17:27:30  [ main:2 ] - [ INFO ]  
+
+2015-07-02 17:27:30  [ main:3 ] - [ INFO ]  开始对比字段(List<Class>类型)java.util.List<com.dangdang.autotest.common.Course>
+2015-07-02 17:27:30  [ main:3 ] - [ INFO ]  jsonList size:2
+2015-07-02 17:27:30  [ main:3 ] - [ INFO ]  dbList size:1
+2015-07-02 17:27:30  [ main:3 ] - [ INFO ]  对比结果:false
+2015-07-02 17:27:30  [ main:3 ] - [ INFO ]  ************jsonValcom.dangdang.autotest.common.Course@141d7417
+2015-07-02 17:27:30  [ main:3 ] - [ INFO ]  ************dbValcom.dangdang.autotest.common.Course@141d7417
+2015-07-02 17:27:30  [ main:3 ] - [ INFO ]  ************调用compareObjectValue(jsonval, dbval)
+2015-07-02 17:27:30  [ main:4 ] - [ INFO ]  
+
+2015-07-02 17:27:30  [ main:4 ] - [ INFO ]  开始对比字段courseName
+2015-07-02 17:27:30  [ main:4 ] - [ INFO ]  json:courseName=c1
+2015-07-02 17:27:30  [ main:4 ] - [ INFO ]  db:courseName=c1
+2015-07-02 17:27:30  [ main:4 ] - [ INFO ]  对比结果:true
+2015-07-02 18:24:42  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 18:24:42  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 18:24:42  [ main:11 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 18:24:42  [ main:13 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 18:24:42  [ main:35 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:24:42  [ main:35 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:24:42  [ main:80 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 18:24:42  [ main:99 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 18:24:42  [ main:201 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 18:24:42  [ main:201 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 18:24:42  [ main:201 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 18:24:42  [ main:217 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 18:24:42  [ main:383 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 18:24:42  [ main:468 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@3f083768 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@c44b7c69 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alq34qhhtvuou|7c3b6645, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@9b9d9c93 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alq34qhhtvuou|f212168, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alq34qhhtvuou|6faa85f6, numHelperThreads -> 3 ]
+2015-07-02 18:24:43  [ main:711 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 18:24:43  [ main:719 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 18:24:43  [ main:754 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 18:24:43  [ main:758 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 18:24:43  [ main:909 ] - [ INFO ]  执行SQL：SELECT column_code, is_show_horn, name, tips FROM media_column WHERE column_code='all_interface_test'
+2015-07-02 18:24:43  [ main:909 ] - [ INFO ]  执行结果：[{column_code=all_interface_test, tips=, is_show_horn=false, name=接口测试专用}]
+2015-07-02 18:24:43  [ main:918 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b WHERE a.sale_id=b.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:24:43  [ main:919 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:26:57  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 18:26:57  [ main:7 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 18:26:57  [ main:10 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 18:26:57  [ main:12 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 18:26:57  [ main:35 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:26:57  [ main:35 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:26:57  [ main:78 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 18:26:57  [ main:96 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 18:26:57  [ main:197 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 18:26:57  [ main:198 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 18:26:57  [ main:198 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 18:26:57  [ main:214 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 18:26:57  [ main:375 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 18:26:57  [ main:457 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@dd738f65 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@2631e471 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alq60ru130xq7d|471c4241, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@22813c6e [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alq60ru130xq7d|2eaf7970, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alq60ru130xq7d|2c360dd8, numHelperThreads -> 3 ]
+2015-07-02 18:26:57  [ main:698 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 18:26:57  [ main:706 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 18:26:57  [ main:741 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 18:26:58  [ main:745 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 18:26:58  [ main:903 ] - [ INFO ]  执行SQL：SELECT column_code, is_show_horn, name, tips FROM media_column WHERE column_code='all_interface_test'
+2015-07-02 18:26:58  [ main:903 ] - [ INFO ]  执行结果：[{column_code=all_interface_test, tips=, is_show_horn=false, name=接口测试专用}]
+2015-07-02 18:26:58  [ main:914 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b WHERE a.sale_id=b.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:26:58  [ main:915 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:27:39  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 18:27:39  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 18:27:39  [ main:11 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 18:27:39  [ main:12 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 18:27:39  [ main:34 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:27:39  [ main:34 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:27:39  [ main:77 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 18:27:39  [ main:96 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 18:27:40  [ main:200 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 18:27:40  [ main:200 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 18:27:40  [ main:200 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 18:27:40  [ main:217 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 18:27:40  [ main:377 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 18:27:40  [ main:459 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@fecad2d8 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@840e17d9 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alq6xn9s8m8z6|7c3b6645, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@f461d323 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alq6xn9s8m8z6|f212168, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alq6xn9s8m8z6|6faa85f6, numHelperThreads -> 3 ]
+2015-07-02 18:27:40  [ main:703 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 18:27:40  [ main:711 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 18:27:40  [ main:745 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 18:27:40  [ main:749 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 18:27:40  [ main:907 ] - [ INFO ]  执行SQL：SELECT column_code, is_show_horn, name, tips FROM media_column WHERE column_code='all_interface_test'
+2015-07-02 18:27:40  [ main:908 ] - [ INFO ]  执行结果：[{column_code=all_interface_test, tips=, is_show_horn=false, name=接口测试专用}]
+2015-07-02 18:27:40  [ main:920 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b WHERE a.sale_id=b.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:27:40  [ main:920 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:27:40  [ main:927 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b WHERE a.sale_id=b.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:27:40  [ main:927 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:27:40  [ main:934 ] - [ INFO ]  执行SQL：SELECT count(*) FROM media_booklist WHERE channel_id IN (SELECT a.sale_id FROM media_column_content a, channel b WHERE a.sale_id=b.channel_id AND a.column_code='all_interface_test'AND b.shelf_status=1)
+2015-07-02 18:27:40  [ main:934 ] - [ INFO ]  执行结果：[{count(*)=2}]
+2015-07-02 18:27:40  [ main:942 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b WHERE a.sale_id=b.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:27:40  [ main:942 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:48:23  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 18:48:23  [ main:7 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 18:48:23  [ main:10 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 18:48:23  [ main:12 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 18:48:23  [ main:33 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:48:23  [ main:33 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:48:23  [ main:76 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 18:48:23  [ main:94 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 18:48:23  [ main:200 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 18:48:23  [ main:201 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 18:48:23  [ main:201 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 18:48:23  [ main:217 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 18:48:23  [ main:375 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 18:48:23  [ main:459 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@9d089f78 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@7fa3fdcc [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alqxl9n1tjpa66|54dde531, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@e230c31d [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alqxl9n1tjpa66|d9f8120, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alqxl9n1tjpa66|5825168, numHelperThreads -> 3 ]
+2015-07-02 18:48:24  [ main:701 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 18:48:24  [ main:709 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 18:48:24  [ main:744 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 18:48:24  [ main:748 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 18:48:24  [ main:984 ] - [ INFO ]  执行SQL：SELECT column_code, is_show_horn, name, tips FROM media_column WHERE column_code='all_interface_test'
+2015-07-02 18:48:24  [ main:984 ] - [ INFO ]  执行结果：[{column_code=all_interface_test, tips=, is_show_horn=false, name=接口测试专用}]
+2015-07-02 18:48:24  [ main:995 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b, media_booklist c WHERE a.sale_id=b.channel_id AND b.channel_id = c.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:48:24  [ main:995 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:48:24  [ main:1002 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b, media_booklist c WHERE a.sale_id=b.channel_id AND b.channel_id = c.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:48:24  [ main:1002 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:48:24  [ main:1009 ] - [ INFO ]  执行SQL：SELECT count(*) FROM media_booklist WHERE channel_id IN (SELECT a.sale_id FROM media_column_content a, channel b WHERE a.sale_id=b.channel_id AND a.column_code='all_interface_test'AND b.shelf_status=1)
+2015-07-02 18:48:24  [ main:1009 ] - [ INFO ]  执行结果：[{count(*)=2}]
+2015-07-02 18:48:24  [ main:1016 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b, media_booklist c WHERE a.sale_id=b.channel_id AND b.channel_id = c.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:48:24  [ main:1016 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:50:04  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 18:50:04  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 18:50:04  [ main:11 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 18:50:04  [ main:13 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 18:50:04  [ main:36 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:50:04  [ main:36 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:50:04  [ main:79 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 18:50:04  [ main:97 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 18:50:04  [ main:200 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 18:50:04  [ main:200 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 18:50:04  [ main:200 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 18:50:04  [ main:217 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 18:50:04  [ main:380 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 18:50:04  [ main:464 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@e2939d17 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@72cb6799 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alqzr1ajmfho4|54db16d7, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@75026de1 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alqzr1ajmfho4|38b229f7, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alqzr1ajmfho4|a0c508b, numHelperThreads -> 3 ]
+2015-07-02 18:50:05  [ main:707 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 18:50:05  [ main:714 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 18:50:05  [ main:748 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 18:50:05  [ main:752 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 18:50:05  [ main:910 ] - [ INFO ]  执行SQL：SELECT a.sale_id, a.sale_name, b.description,b.icon,b.sub_number FROM media_column_content a , channel b, media_booklist c WHERE a.sale_id=b.channel_id AND b.channel_id = c.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:50:05  [ main:910 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, sale_name=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, sale_name=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:51:19  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 18:51:19  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 18:51:19  [ main:11 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 18:51:19  [ main:13 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 18:51:19  [ main:34 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:51:19  [ main:34 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:51:19  [ main:77 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 18:51:19  [ main:95 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 18:51:19  [ main:197 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 18:51:19  [ main:197 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 18:51:19  [ main:197 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 18:51:19  [ main:214 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 18:51:19  [ main:372 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 18:51:19  [ main:456 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@4d9621da [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@34f57700 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alr1cpg1h7h2ns|33f21f7e, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@3567f6c6 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alr1cpg1h7h2ns|62d662dc, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alr1cpg1h7h2ns|2eae85ab, numHelperThreads -> 3 ]
+2015-07-02 18:51:19  [ main:697 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 18:51:19  [ main:704 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 18:51:19  [ main:739 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 18:51:19  [ main:743 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 18:51:19  [ main:900 ] - [ INFO ]  执行SQL：SELECT a.sale_id, b.title, b.description,b.icon,b.sub_number FROM media_column_content a , channel b, media_booklist c WHERE a.sale_id=b.channel_id AND b.channel_id = c.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:51:19  [ main:901 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, title=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, title=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 18:51:39  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 18:51:39  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 18:51:39  [ main:11 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 18:51:39  [ main:13 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 18:51:40  [ main:35 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:51:40  [ main:35 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 18:51:40  [ main:79 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 18:51:40  [ main:96 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 18:51:40  [ main:197 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 18:51:40  [ main:197 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 18:51:40  [ main:197 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 18:51:40  [ main:213 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 18:51:40  [ main:373 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 18:51:40  [ main:457 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@547c6292 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@b6a89df2 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alr1sud1yvhzcj|54dde531, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@99a48637 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alr1sud1yvhzcj|d9f8120, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alr1sud1yvhzcj|5825168, numHelperThreads -> 3 ]
+2015-07-02 18:51:40  [ main:696 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 18:51:40  [ main:704 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 18:51:40  [ main:740 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 18:51:40  [ main:744 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 18:51:40  [ main:897 ] - [ INFO ]  执行SQL：SELECT a.sale_id, b.title, b.description,b.icon,b.sub_number FROM media_column_content a , channel b, media_booklist c WHERE a.sale_id=b.channel_id AND b.channel_id = c.channel_id AND b.shelf_status=1 AND column_code='all_interface_test'
+2015-07-02 18:51:40  [ main:898 ] - [ INFO ]  执行结果：[{icon=http://img60.ddimg.cn/digital/channel/32/68/41b2e20d69634eb19d01cfda338bff07.jpg, title=z16动, sub_number=0, description=test, sale_id=17}, {icon=http://img60.ddimg.cn/digital/channel/72/13/ee5ba0bbc5e34e49ba370f26e2918795.jpg, title=徐志摩, sub_number=0, description=3cdcd, sale_id=31}]
+2015-07-02 19:51:19  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 19:51:19  [ main:79 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 19:51:19  [ main:82 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 19:51:19  [ main:83 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 19:51:19  [ main:103 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 19:51:19  [ main:103 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 19:51:19  [ main:148 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 19:51:19  [ main:166 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 19:51:19  [ main:268 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 19:51:19  [ main:268 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 19:51:19  [ main:269 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 19:51:19  [ main:286 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 19:51:20  [ main:448 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 19:51:20  [ main:534 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@d8915633 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@dd30b7b3 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alt6ixj1nev0d|334b4cb, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@22b1e9e5 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alt6ixj1nev0d|7bcf1c23, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alt6ixj1nev0d|44ea0a39, numHelperThreads -> 3 ]
+2015-07-02 19:51:20  [ main:917 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 19:51:20  [ main:926 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 19:51:20  [ main:962 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 19:51:20  [ main:967 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 19:51:20  [ main:1129 ] - [ INFO ]  执行SQL：SELECT channel_id, description, icon, owner_id, sub_number, title FROM `channel` WHERE channel_id=6 AND shelf_status=1
+2015-07-02 19:51:20  [ main:1129 ] - [ INFO ]  执行结果：[{owner_id=14, icon=http://img60.ddimg.cn/digital/channel/44/37/d5fd2f7eecea4c3bb97fbfdeb08156cd.jpg, title=测试一下www, sub_number=6, description=好拽的频道啊, channel_id=6}]
+2015-07-02 19:51:20  [ main:1137 ] - [ INFO ]  执行SQL：SELECT booklist_id FROM media_booklist WHERE channel_id=6
+2015-07-02 19:51:20  [ main:1137 ] - [ INFO ]  执行结果：[{booklist_id=16}]
+2015-07-02 19:51:20  [ main:1144 ] - [ INFO ]  执行SQL：SELECT count(*) FROM `media_booklist` WHERE channel_id=6
+2015-07-02 19:51:20  [ main:1144 ] - [ INFO ]  执行结果：[{count(*)=1}]
+2015-07-02 19:52:23  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-02 19:52:23  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-02 19:52:23  [ main:11 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-02 19:52:24  [ main:13 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-02 19:52:24  [ main:35 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-02 19:52:24  [ main:35 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-02 19:52:24  [ main:78 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-02 19:52:24  [ main:95 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-02 19:52:24  [ main:198 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-02 19:52:24  [ main:198 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-02 19:52:24  [ main:198 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-02 19:52:24  [ main:215 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-02 19:52:24  [ main:381 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-02 19:52:24  [ main:464 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@519f4063 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@4251d64d [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9alt7wl71avts5u|79497d11, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@ce99c0ec [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alt7wl71avts5u|5a407d55, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9alt7wl71avts5u|61454787, numHelperThreads -> 3 ]
+2015-07-02 19:52:24  [ main:705 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-02 19:52:24  [ main:713 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-02 19:52:24  [ main:748 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-02 19:52:24  [ main:752 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-02 19:52:24  [ main:912 ] - [ INFO ]  执行SQL：SELECT channel_id, description, icon, owner_id, sub_number, title FROM `channel` WHERE channel_id=6 AND shelf_status=1
+2015-07-02 19:52:24  [ main:913 ] - [ INFO ]  执行结果：[{owner_id=14, icon=http://img60.ddimg.cn/digital/channel/44/37/d5fd2f7eecea4c3bb97fbfdeb08156cd.jpg, title=测试一下www, sub_number=6, description=好拽的频道啊, channel_id=6}]
+2015-07-02 19:52:24  [ main:921 ] - [ INFO ]  执行SQL：SELECT booklist_id FROM media_booklist WHERE channel_id=6
+2015-07-02 19:52:24  [ main:921 ] - [ INFO ]  执行结果：[{booklist_id=16}]
+2015-07-02 19:52:24  [ main:927 ] - [ INFO ]  执行SQL：SELECT count(*) FROM `media_booklist` WHERE channel_id=6
+2015-07-02 19:52:24  [ main:928 ] - [ INFO ]  执行结果：[{count(*)=1}]
+2015-07-02 19:52:24  [ main:934 ] - [ INFO ]  执行SQL：SELECT type, name, company FROM `channel_owner` WHERE owner_id=14
+2015-07-02 19:52:24  [ main:934 ] - [ INFO ]  执行结果：[{type=1, company=动物园, name=张三3434}]
+2015-07-03 15:32:39  [ main:0 ] - [ INFO ]  执行SQL：SELECT book_num,booklist_id,change_num,channel_id,creator,description,image_url,is_show,modifier,name, owner,status,store_num FROM `media_booklist` WHERE booklist_id=14 AND channel_id=28
+2015-07-03 15:32:39  [ main:147 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 15:32:40  [ main:153 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 15:32:40  [ main:156 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 15:32:40  [ main:157 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 15:32:40  [ main:180 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 15:32:40  [ main:180 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 15:32:40  [ main:223 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 15:32:40  [ main:241 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 15:32:40  [ main:341 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 15:32:40  [ main:341 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 15:32:40  [ main:342 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 15:32:40  [ main:358 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 15:32:40  [ main:516 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 15:32:40  [ main:599 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@1e5aabb7 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@b6738fd9 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9amzdqkcew68c|48c8ba50, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@14bdf539 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9amzdqkcew68c|222ee23f, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9amzdqkcew68c|70ffca64, numHelperThreads -> 3 ]
+2015-07-03 15:32:40  [ main:838 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:32:40  [ main:846 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 15:32:40  [ main:884 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:32:40  [ main:888 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:32:40  [ main:1041 ] - [ INFO ]  执行结果：[]
+2015-07-03 15:33:02  [ main:0 ] - [ INFO ]  执行SQL：SELECT book_num,booklist_id,change_num,channel_id,creator,description,image_url,is_show,modifier,name, owner,status,store_num FROM `media_booklist` WHERE booklist_id=28 AND channel_id=29
+2015-07-03 15:33:02  [ main:135 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 15:33:02  [ main:142 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 15:33:02  [ main:144 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 15:33:02  [ main:146 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 15:33:02  [ main:167 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 15:33:02  [ main:168 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 15:33:02  [ main:211 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 15:33:02  [ main:229 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 15:33:02  [ main:329 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 15:33:02  [ main:329 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 15:33:02  [ main:330 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 15:33:02  [ main:346 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 15:33:02  [ main:506 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 15:33:02  [ main:590 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@83aec3e1 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@7c22c62c [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9amze7wulnkn66|1951ca8c, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@4c9f59b9 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9amze7wulnkn66|2830e58e, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9amze7wulnkn66|65fa3e0, numHelperThreads -> 3 ]
+2015-07-03 15:33:03  [ main:832 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 15:33:03  [ main:840 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 15:33:03  [ main:874 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 15:33:03  [ main:878 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 15:33:03  [ main:1033 ] - [ INFO ]  执行结果：[{modifier=50232705, is_show=1, booklist_id=28, status=0, image_url=http://img60.ddimg.cn/digital/channel/89/24/0d42693333a741cdbb66c6a8d439aca3.jpg, description=旅行，对于有的人是放松自己，有的人是找回自己，有的是是认识自己。对于我的意义，就是美食。, change_num=1, book_num=18, name=世界这么大我想去看看, owner=50232705, store_num=0, channel_id=29, creator=50232705}]
+2015-07-03 16:42:27  [ main:0 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14ORDER BY indexnum)
+2015-07-03 16:42:27  [ main:136 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 16:42:27  [ main:143 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 16:42:27  [ main:145 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 16:42:27  [ main:146 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 16:42:27  [ main:169 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 16:42:27  [ main:169 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 16:42:27  [ main:213 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 16:42:27  [ main:231 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 16:42:27  [ main:333 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 16:42:27  [ main:333 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 16:42:27  [ main:333 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 16:42:27  [ main:350 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 16:42:27  [ main:517 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 16:42:27  [ main:601 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@91968524 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@3c98b0ed [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an1vhg716zdkvx|7582aacf, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@b4ee086f [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an1vhg716zdkvx|6e9d5246, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an1vhg716zdkvx|27abbcda, numHelperThreads -> 3 ]
+2015-07-03 16:42:27  [ main:863 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 16:42:27  [ main:871 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 16:42:27  [ main:909 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 16:42:27  [ main:913 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 16:42:28  [ main:1068 ] - [ WARN ]  SQL Error: 1064, SQLState: 42000
+2015-07-03 16:42:28  [ main:1068 ] - [ ERROR ]  You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'BY indexnum)' at line 1
+2015-07-03 16:42:28  [ main:1069 ] - [ ERROR ]  执行SQL异常：org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2015-07-03 16:42:55  [ main:0 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum)
+2015-07-03 16:42:55  [ main:138 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 16:42:55  [ main:146 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 16:42:55  [ main:148 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 16:42:55  [ main:150 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 16:42:55  [ main:174 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 16:42:55  [ main:174 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 16:42:55  [ main:220 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 16:42:55  [ main:238 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 16:42:55  [ main:340 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 16:42:55  [ main:340 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 16:42:55  [ main:340 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 16:42:55  [ main:357 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 16:42:55  [ main:517 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 16:42:56  [ main:603 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@3bcf92f [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@fddb3a9e [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an1w3bpu50lhs|1951ca8c, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@ce57ce2b [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an1w3bpu50lhs|2830e58e, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an1w3bpu50lhs|65fa3e0, numHelperThreads -> 3 ]
+2015-07-03 16:42:56  [ main:843 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 16:42:56  [ main:851 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 16:42:56  [ main:891 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 16:42:56  [ main:895 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 16:42:56  [ main:1087 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 17:12:23  [ main:0 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 3
+2015-07-03 17:12:23  [ main:137 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 17:12:23  [ main:143 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 17:12:23  [ main:146 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 17:12:23  [ main:147 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 17:12:23  [ main:170 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:12:23  [ main:170 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:12:24  [ main:214 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 17:12:24  [ main:231 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 17:12:24  [ main:332 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 17:12:24  [ main:332 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 17:12:24  [ main:332 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 17:12:24  [ main:349 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 17:12:24  [ main:513 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 17:12:24  [ main:596 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@124ad8ad [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@a0100468 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an2xztdd046af|4abf817e, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@9e4d1dad [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an2xztdd046af|509cd2bb, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an2xztdd046af|1607219a, numHelperThreads -> 3 ]
+2015-07-03 17:12:24  [ main:833 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 17:12:24  [ main:841 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 17:12:24  [ main:877 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 17:12:24  [ main:881 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 17:12:24  [ main:1072 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}]
+2015-07-03 17:12:24  [ main:1187 ] - [ WARN ]  SQL Error: 1054, SQLState: 42S22
+2015-07-03 17:12:24  [ main:1187 ] - [ ERROR ]  Unknown column 'booklist_id14' in 'where clause'
+2015-07-03 17:12:24  [ main:1188 ] - [ ERROR ]  执行SQL异常：org.hibernate.exception.SQLGrammarException: could not extract ResultSet
+2015-07-03 17:14:20  [ main:0 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 3
+2015-07-03 17:14:20  [ main:139 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 17:14:20  [ main:146 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 17:14:20  [ main:149 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 17:14:20  [ main:150 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 17:14:20  [ main:172 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:14:20  [ main:172 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:14:20  [ main:216 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 17:14:20  [ main:233 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 17:14:20  [ main:335 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 17:14:20  [ main:335 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 17:14:20  [ main:335 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 17:14:20  [ main:351 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 17:14:20  [ main:511 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 17:14:20  [ main:594 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@a64d80d5 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@af7b323d [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an30hobre9p3a|30f9168e, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@dfdc59f4 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an30hobre9p3a|3a73a5c0, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an30hobre9p3a|5c73a908, numHelperThreads -> 3 ]
+2015-07-03 17:14:21  [ main:837 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 17:14:21  [ main:845 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 17:14:21  [ main:882 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 17:14:21  [ main:886 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 17:14:21  [ main:1066 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}]
+2015-07-03 17:14:21  [ main:1172 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 17:14:21  [ main:1172 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 17:47:12  [ main:0 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 3
+2015-07-03 17:47:12  [ main:144 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 17:47:12  [ main:151 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 17:47:12  [ main:153 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 17:47:12  [ main:155 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 17:47:12  [ main:178 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:47:12  [ main:178 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:47:12  [ main:221 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 17:47:12  [ main:239 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 17:47:12  [ main:341 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 17:47:12  [ main:341 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 17:47:12  [ main:341 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 17:47:12  [ main:359 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 17:47:13  [ main:521 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 17:47:13  [ main:604 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@51994d74 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@63a61de8 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an46rhk13iizul|3df94d96, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@7a5e8e42 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an46rhk13iizul|59d204cd, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an46rhk13iizul|71d4f78b, numHelperThreads -> 3 ]
+2015-07-03 17:47:13  [ main:846 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 17:47:13  [ main:854 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 17:47:13  [ main:889 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 17:47:13  [ main:893 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 17:47:13  [ main:1068 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}]
+2015-07-03 17:47:13  [ main:1199 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 17:47:13  [ main:1199 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 17:47:38  [ main:0 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 17:47:38  [ main:142 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 17:47:38  [ main:150 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 17:47:38  [ main:152 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 17:47:38  [ main:153 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 17:47:38  [ main:177 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:47:38  [ main:177 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:47:38  [ main:222 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 17:47:38  [ main:241 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 17:47:38  [ main:343 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 17:47:38  [ main:344 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 17:47:38  [ main:344 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 17:47:38  [ main:361 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 17:47:38  [ main:522 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 17:47:38  [ main:607 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@473cdf25 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@2392ccfc [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an47bb614k0yfl|4e04622f, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@22b3dfca [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an47bb614k0yfl|14d19b53, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an47bb614k0yfl|6007a2f0, numHelperThreads -> 3 ]
+2015-07-03 17:47:39  [ main:847 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 17:47:39  [ main:855 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 17:47:39  [ main:891 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 17:47:39  [ main:895 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 17:47:39  [ main:1091 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 17:47:39  [ main:1197 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 17:47:39  [ main:1197 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 17:48:39  [ main:0 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 17:48:40  [ main:133 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 17:48:40  [ main:140 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 17:48:40  [ main:143 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 17:48:40  [ main:144 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 17:48:40  [ main:167 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:48:40  [ main:167 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 17:48:40  [ main:210 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 17:48:40  [ main:228 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 17:48:40  [ main:328 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 17:48:40  [ main:329 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 17:48:40  [ main:329 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 17:48:40  [ main:345 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 17:48:40  [ main:505 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 17:48:40  [ main:588 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@3ad03c74 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@17262a4b [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an48myd1phoavb|4e04622f, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@16473d19 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an48myd1phoavb|14d19b53, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an48myd1phoavb|6007a2f0, numHelperThreads -> 3 ]
+2015-07-03 17:48:40  [ main:909 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 17:48:40  [ main:918 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 17:48:40  [ main:953 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 17:48:40  [ main:957 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 17:48:41  [ main:1153 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 17:48:41  [ main:1265 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 17:48:41  [ main:1265 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 18:04:09  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 18:04:09  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 18:04:09  [ main:10 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 18:04:09  [ main:12 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 18:04:09  [ main:34 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:04:09  [ main:35 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:04:09  [ main:78 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 18:04:09  [ main:96 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 18:04:09  [ main:197 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 18:04:09  [ main:197 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 18:04:09  [ main:197 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 18:04:09  [ main:215 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 18:04:09  [ main:382 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 18:04:09  [ main:466 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@8d4f2188 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@c7bfeefc [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an4sk071qflrh0|544da576, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@74bd8c6e [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4sk071qflrh0|3e78c47c, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4sk071qflrh0|7666b8cd, numHelperThreads -> 3 ]
+2015-07-03 18:04:10  [ main:706 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 18:04:10  [ main:714 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 18:04:10  [ main:748 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 18:04:10  [ main:752 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 18:04:10  [ main:948 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 18:04:10  [ main:948 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 18:04:10  [ main:956 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 18:04:10  [ main:956 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 18:04:55  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 18:04:55  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 18:04:55  [ main:10 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 18:04:55  [ main:12 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 18:04:55  [ main:35 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:04:55  [ main:35 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:04:55  [ main:79 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 18:04:55  [ main:96 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 18:04:55  [ main:198 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 18:04:55  [ main:198 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 18:04:55  [ main:198 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 18:04:55  [ main:215 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 18:04:55  [ main:375 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 18:04:55  [ main:457 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@744dabcc [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@779a1ef3 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an4tjid3flpey|35aa1137, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@283f7698 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4tjid3flpey|6aabc8ee, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4tjid3flpey|51eed775, numHelperThreads -> 3 ]
+2015-07-03 18:04:56  [ main:695 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 18:04:56  [ main:703 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 18:04:56  [ main:738 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 18:04:56  [ main:742 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 18:04:56  [ main:936 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 18:04:56  [ main:936 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 18:04:56  [ main:944 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 18:04:56  [ main:944 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 18:06:05  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 18:06:05  [ main:7 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 18:06:05  [ main:9 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 18:06:05  [ main:11 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 18:06:05  [ main:34 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:06:05  [ main:34 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:06:05  [ main:77 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 18:06:05  [ main:95 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 18:06:05  [ main:198 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 18:06:05  [ main:198 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 18:06:05  [ main:198 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 18:06:05  [ main:215 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 18:06:06  [ main:374 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 18:06:06  [ main:457 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@145d7e92 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@64d7f009 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an4v1s71cenrgv|1041dde0, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@723829bd [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4v1s71cenrgv|24dc002, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4v1s71cenrgv|10c6f695, numHelperThreads -> 3 ]
+2015-07-03 18:06:06  [ main:702 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 18:06:06  [ main:710 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 18:06:06  [ main:748 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 18:06:06  [ main:752 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 18:06:06  [ main:1183 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 18:06:06  [ main:1184 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 18:06:06  [ main:1194 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 18:06:06  [ main:1194 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 18:07:39  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 18:07:39  [ main:7 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 18:07:39  [ main:10 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 18:07:39  [ main:11 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 18:07:39  [ main:33 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:07:39  [ main:34 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:07:39  [ main:76 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 18:07:39  [ main:93 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 18:07:39  [ main:197 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 18:07:39  [ main:197 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 18:07:39  [ main:198 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 18:07:39  [ main:214 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 18:07:40  [ main:371 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 18:07:40  [ main:456 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@9f97df03 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@d0b707ca [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an4x29m923oh1|6809bdf8, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@1e736099 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4x29m923oh1|3c3a157e, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4x29m923oh1|353e531e, numHelperThreads -> 3 ]
+2015-07-03 18:07:40  [ main:702 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 18:07:40  [ main:710 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 18:07:40  [ main:745 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 18:07:40  [ main:749 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 18:07:40  [ main:945 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 18:07:40  [ main:946 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 18:07:40  [ main:955 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 18:07:40  [ main:955 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 18:08:04  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 18:08:04  [ main:7 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 18:08:04  [ main:9 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 18:08:04  [ main:11 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 18:08:04  [ main:34 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:08:04  [ main:34 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:08:04  [ main:77 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 18:08:04  [ main:95 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 18:08:04  [ main:195 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 18:08:04  [ main:195 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 18:08:04  [ main:195 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 18:08:04  [ main:212 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 18:08:04  [ main:370 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 18:08:04  [ main:453 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@29a20ac5 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@6412d839 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an4xlcjy1pa5o|544da576, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@111075ab [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4xlcjy1pa5o|3e78c47c, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an4xlcjy1pa5o|7666b8cd, numHelperThreads -> 3 ]
+2015-07-03 18:08:05  [ main:688 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 18:08:05  [ main:695 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 18:08:05  [ main:729 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 18:08:05  [ main:733 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 18:08:05  [ main:937 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 18:08:05  [ main:938 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 18:08:05  [ main:946 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 18:08:05  [ main:946 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 18:10:33  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 18:10:33  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 18:10:33  [ main:10 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 18:10:33  [ main:12 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 18:10:34  [ main:34 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:10:34  [ main:34 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:10:34  [ main:77 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 18:10:34  [ main:95 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 18:10:34  [ main:195 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 18:10:34  [ main:195 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 18:10:34  [ main:195 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 18:10:34  [ main:212 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 18:10:34  [ main:375 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 18:10:34  [ main:459 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@fe7a0ec4 [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@473863d0 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an50sq98v2j9|471c4241, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@4387bbcd [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an50sq98v2j9|2eaf7970, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an50sq98v2j9|2c360dd8, numHelperThreads -> 3 ]
+2015-07-03 18:10:34  [ main:698 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 18:10:34  [ main:706 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 18:10:34  [ main:740 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 18:10:34  [ main:744 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 18:10:34  [ main:941 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 18:10:34  [ main:942 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 18:10:34  [ main:950 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 18:10:34  [ main:950 ] - [ INFO ]  执行结果：[{channel_id=5}]
+2015-07-03 18:11:05  [ main:0 ] - [ INFO ]  HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-07-03 18:11:05  [ main:8 ] - [ INFO ]  HHH000412: Hibernate Core {4.3.8.Final}
+2015-07-03 18:11:05  [ main:10 ] - [ INFO ]  HHH000206: hibernate.properties not found
+2015-07-03 18:11:05  [ main:12 ] - [ INFO ]  HHH000021: Bytecode provider name : javassist
+2015-07-03 18:11:05  [ main:36 ] - [ INFO ]  HHH000043: Configuring from resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:11:05  [ main:36 ] - [ INFO ]  HHH000040: Configuration resource: conf/db/yc_db.cfg.xml
+2015-07-03 18:11:05  [ main:81 ] - [ WARN ]  HHH000223: Recognized obsolete hibernate namespace http://hibernate.sourceforge.net/. Use namespace http://www.hibernate.org/dtd/ instead. Refer to Hibernate 3.6 Migration Guide!
+2015-07-03 18:11:05  [ main:99 ] - [ INFO ]  HHH000041: Configured SessionFactory: null
+2015-07-03 18:11:06  [ main:201 ] - [ INFO ]  HHH010002: C3P0 using driver: com.mysql.jdbc.Driver at URL: jdbc:mysql://10.255.223.243:3306/digital
+2015-07-03 18:11:06  [ main:201 ] - [ INFO ]  HHH000046: Connection properties: {user=cmsuser, password=****}
+2015-07-03 18:11:06  [ main:202 ] - [ INFO ]  HHH000006: Autocommit mode: false
+2015-07-03 18:11:06  [ main:218 ] - [ INFO ]  MLog clients using log4j logging.
+2015-07-03 18:11:06  [ main:382 ] - [ INFO ]  Initializing c3p0-0.9.2.1 [built 20-March-2013 10:47:27 +0000; debug? true; trace: 10]
+2015-07-03 18:11:06  [ main:465 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.PoolBackedDataSource@7f77ffcb [ connectionPoolDataSource -> com.mchange.v2.c3p0.WrapperConnectionPoolDataSource@82c472f2 [ acquireIncrement -> 2, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, debugUnreturnedConnectionStackTraces -> false, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, identityToken -> 1hgeqzj9an51hdfmgvvr9|35aa1137, idleConnectionTestPeriod -> 3000, initialPoolSize -> 5, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 50000, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 100, maxStatementsPerConnection -> 0, minPoolSize -> 5, nestedDataSource -> com.mchange.v2.c3p0.DriverManagerDataSource@3369ca97 [ description -> null, driverClass -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an51hdfmgvvr9|6aabc8ee, jdbcUrl -> jdbc:mysql://10.255.223.243:3306/digital, properties -> {user=******, password=******} ], preferredTestQuery -> null, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, usesTraditionalReflectiveProxies -> false; userOverrides: {} ], dataSourceName -> null, factoryClassLocation -> null, identityToken -> 1hgeqzj9an51hdfmgvvr9|51eed775, numHelperThreads -> 3 ]
+2015-07-03 18:11:06  [ main:703 ] - [ INFO ]  HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-07-03 18:11:06  [ main:711 ] - [ INFO ]  HHH000424: Disabling contextual LOB creation as createClob() method threw error : java.lang.reflect.InvocationTargetException
+2015-07-03 18:11:06  [ main:745 ] - [ INFO ]  HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-07-03 18:11:06  [ main:749 ] - [ INFO ]  HHH000397: Using ASTQueryTranslatorFactory
+2015-07-03 18:11:06  [ main:936 ] - [ INFO ]  执行SQL：SELECT author_penname, cover_pic, descs, media_id, recommand_words, sale_id, title FROM media WHERE sale_id IN (SELECT sale_id FROM media_booklist_detail WHERE booklist_id=14 ORDER BY indexnum) LIMIT 10
+2015-07-03 18:11:06  [ main:936 ] - [ INFO ]  执行结果：[{media_id=1960249507, title=归去来, recommand_words=null, cover_pic=/00/62/143132187601800062/143132187601800062.jpg, author_penname=goodnight小青, sale_id=1980123525, descs=}, {media_id=1960249510, title=笔冢随录Ⅰ：生事如转蓬, recommand_words=null, cover_pic=/00/64/143132187609600064/143132187609600064.jpg, author_penname=马伯庸, sale_id=1980123528, descs=}, {media_id=1960249513, title=秀逗召唤师, recommand_words=null, cover_pic=/00/76/143132187643800076/143132187643800076.jpg, author_penname=攀峰, sale_id=1980123531, descs=}, {media_id=1960249514, title=仙踪影, recommand_words=null, cover_pic=/00/73/143132187637200073/143132187637200073.jpg, author_penname=笑随风, sale_id=1980123532, descs=}, {media_id=1960249515, title=极品推销员, recommand_words=null, cover_pic=/00/83/143132187653300083/143132187653300083.jpg, author_penname=曾呓, sale_id=1980123533, descs=}, {media_id=1960249516, title=战狱炼魂, recommand_words=null, cover_pic=/00/84/143132187665500084/143132187665500084.jpg, author_penname=百事阿宅, sale_id=1980123534, descs=}, {media_id=1960249518, title=无间狂想曲, recommand_words=null, cover_pic=/00/97/143132187683600097/143132187683600097.jpg, author_penname=陈三, sale_id=1980123536, descs=}, {media_id=1960249520, title=苍穹下的帝国, recommand_words=null, cover_pic=/01/04/143132187695700104/143132187695700104.jpg, author_penname=暴君, sale_id=1980123537, descs=}, {media_id=1960249522, title=微酸侦探社, recommand_words=null, cover_pic=/00/67/143132187623300067/143132187623300067.jpg, author_penname=欧阳杨, sale_id=1980123539, descs=}]
+2015-07-03 18:11:06  [ main:945 ] - [ INFO ]  执行SQL：SELECT channel_id FROM `media_booklist` WHERE booklist_id=14
+2015-07-03 18:11:06  [ main:945 ] - [ INFO ]  执行结果：[{channel_id=5}]

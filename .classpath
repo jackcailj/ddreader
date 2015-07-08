@@ -8,7 +8,6 @@
 	<classpathentry kind="lib" path="lib/commons-lang3-3.3.2.jar"/>
 	<classpathentry kind="lib" path="lib/commons-logging-1.1.3.jar"/>
 	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/fastjson-1.2.4.jar"/>
 	<classpathentry kind="lib" path="lib/fluent-hc-4.3.6.jar"/>
 	<classpathentry kind="lib" path="lib/gson-1.7.jar"/>
 	<classpathentry kind="lib" path="lib/hibernate-c3p0-4.3.8.Final.jar"/>
@@ -34,8 +33,10 @@
 	<classpathentry kind="lib" path="lib/mchange-commons-java-0.2.3.4.jar"/>
 	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
 	<classpathentry kind="lib" path="lib/org.apache.commons.collections_3.2.0.v2013030210310.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/db_meta"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/ddframework"/>
 	<classpathentry kind="lib" path="lib/fitnesse-standalone.jar"/>
+	<classpathentry kind="lib" path="lib/Groovy.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/db_meta"/>
+	<classpathentry kind="lib" path="lib/fastjson-1.2.5.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

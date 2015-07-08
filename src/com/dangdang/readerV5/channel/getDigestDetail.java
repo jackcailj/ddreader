@@ -12,18 +12,19 @@ import com.dangdang.readerV5.reponse.ChannelArticleReponse;
 import fitnesse.slim.SystemUnderTest;
 
 /**
- * 文章列表接口
+ * 文章详情页接口
  * @author guohaiying
  *
  */
-public class ChannelArticle extends FixtureBase{
-	public Logger log = Logger.getLogger(ChannelArticle.class);
+public class getDigestDetail extends FixtureBase{
+
+	public Logger log = Logger.getLogger(getDigestDetail.class);
 	
 	ReponseV2<ChannelArticleReponse> reponseResult;
 	
 	@SystemUnderTest
-	public ChannelSQL sql = new ChannelSQL();
-
+	ChannelSQL sql = new ChannelSQL();
+	
 	//验证结果
 	public boolean verifyResult() throws Exception{
 		dataVerifyManager.setCaseExpectResult(true);

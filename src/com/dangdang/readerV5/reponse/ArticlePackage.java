@@ -1,17 +1,16 @@
 package com.dangdang.readerV5.reponse;
 
-public class ChannelList {
-	Integer channelId;
+public class ArticlePackage {
+
+	String articleId;
 	String description;
 	String icon;
-	Integer subNumber;
 	String title;
-		
-	public Integer getChannelId() {
-		return channelId;
+	public String getArticleId() {
+		return articleId;
 	}
-	public void setChannelId(Integer channelId) {
-		this.channelId = channelId;
+	public void setArticleId(String articleId) {
+		this.articleId = articleId;
 	}
 	public String getDescription() {
 		return description;
@@ -25,18 +24,10 @@ public class ChannelList {
 	public void setIcon(String icon) {
 		this.icon = icon;
 	}
-	public Integer getSubNumber() {
-		return subNumber;
-	}
-	public void setSubNumber(Integer subNumber) {
-		this.subNumber = subNumber;
-	}
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	
-
 }

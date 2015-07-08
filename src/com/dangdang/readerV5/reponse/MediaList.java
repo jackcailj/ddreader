@@ -14,6 +14,30 @@ public class MediaList {
 	Integer saleId;
 	String speaker;
 	String title;
+	
+	//Add by guohaiying  频道返回的字段
+	Integer channelId;
+	Integer isStore;
+	Integer mediaType;
+	public Integer getChannelId() {
+		return channelId;
+	}
+	public void setChannelId(Integer channelId) {
+		this.channelId = channelId;
+	}
+	public Integer getIsStore() {
+		return isStore;
+	}
+	public void setIsStore(Integer isStore) {
+		this.isStore = isStore;
+	}
+	public Integer getMediaType() {
+		return mediaType;
+	}
+	public void setMediaType(Integer mediaType) {
+		this.mediaType = mediaType;
+	}
+	
 	public Integer getAuthorId() {
 		return authorId;
 	}

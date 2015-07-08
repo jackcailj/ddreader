@@ -1,71 +1,57 @@
 package com.dangdang.readerV5.bookstore;
 
-import java.util.HashMap;
-import java.util.Map;
+import org.apache.log4j.Logger;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.config.Config;
+import com.dangdang.autotest.common.ResponseVerify;
+import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.digital.ChannelSQL;
 import com.dangdang.readerV5.reponse.ColumnReponse;
 
 import digital.BookStore5CommSQL;
 import fitnesse.slim.SystemUnderTest;
 
 /**
- * 
+ * 书城栏目接口
+ * 频道列表接口
  * @author guohaiying
  *
  */
 public class Column extends FixtureBase{
+	public Logger log = Logger.getLogger(Column.class);
 
 	ReponseV2<ColumnReponse> reponseResult;
 	
 	@SystemUnderTest
 	public BookStore5CommSQL service = new BookStore5CommSQL();
+	
+	@SystemUnderTest
+	public ChannelSQL sql = new ChannelSQL();
 
-	public Column(){
-		URL = Config.getUrl();
-	}
-	
-	public void jsonToClass(){
-		reponseResult =JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<ColumnReponse>>(){});
-		System.out.println(reponseResult.getData().getSaleList().get(0).getSaleId());
-	}
-	
 	//验证结果
-	@Override
-	public void dataVerify(){
-		//验证扣款是否正确
-		//验证已购列表中是否有此书
-		//验证权限是否下放
-		
-	}
-	
-	public boolean resultVerify(){
-		return true;
-	}
-	
-	public boolean dbVerify(){
-		return true;
-	}
-	
-	public boolean getResult1(){
-		//return reponseResult.getData().getSaleList().get(0).getPrice().toString();
-		return true;
-	}
-	
-	public static void main(String[] args) throws Exception{
-		Config.setBaseUrl("http://10.255.223.149/media/api.go");
-		Map<String, String> map = new HashMap<String, String>();
-		map.put("columnType","np_nslj");
-		map.put("start","0");
-		map.put("end","3");
-		map.put("isFull","1");
-		Column column = new Column();
-		column.setParameters(map);
-		//column.doGet("column");
-	}
-	
+	public boolean verifyResult() throws Exception{
+		dataVerifyManager.setCaseExpectResult(true);
+		reponseResult =JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<ColumnReponse>>(){});
+		if(reponseResult.getStatus().getCode()==0){		
+			//验证json中返回字段
+			log.info("验证频道栏目下的频道列表");	
+			ColumnReponse dbResponse = ChannelSQL.getChannelColumn(paramMap.get("columnType"));
+			dataVerifyManager.add(new ResponseVerify(reponseResult.getData(), dbResponse));
+			
+			//验证返回的订阅数是否正确
+			log.info("验证订阅数");
+			for(int i=0; i<reponseResult.getData().getChannelList().size(); i++){
+				Integer actual = reponseResult.getData().getChannelList().get(i).getSubNumber();
+				Integer expected = ChannelSQL.getChannelSub(reponseResult.getData().getChannelList().get(i).getChannelId());
+				log.info("json中订阅数: " +actual);
+				log.info("预期订阅数: " +expected);
+				dataVerifyManager.add(new ValueVerify<Integer>(actual, expected));							
+			}
+			
+			}
+			return dataVerifyManager.dataVerify();      	
+		}
 }
