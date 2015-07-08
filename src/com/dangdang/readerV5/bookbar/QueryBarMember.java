@@ -15,7 +15,10 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.BarMembers;
 import com.dangdang.readerV5.reponse.BarMembersResponse;
-
+/**
+ * 吧成员列表接口
+ * @author wuhaiyan
+ */
 public class QueryBarMember  extends FixtureBase {	
 	ReponseV2<BarMembersResponse>   reponseResult;
 	String barId = "";

@@ -15,12 +15,21 @@ import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
 import com.dangdang.readerV5.reponse.CreateBarResponse;
 
+import fitnesse.slim.SystemUnderTest;
+/**
+ * 创建吧、修改吧简介、修改吧背景图片接口
+ * @author wuhaiyan
+ */
 public class CreateBar  extends FixtureBase {
 	ReponseV2<CreateBarResponse>   reponseResult;
 	static String barId;
 	
 	public ReponseV2<CreateBarResponse> getResult(){
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<CreateBarResponse>>(){});
+	}
+	
+	public String getBarId(){
+		return barId;
 	}
 	
 	@Override

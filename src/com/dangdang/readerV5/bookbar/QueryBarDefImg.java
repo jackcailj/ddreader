@@ -13,6 +13,10 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.BarDefImgResponse;
 
+/**
+ * 获取吧默认背景图片接口
+ * @author wuhaiyan
+ */
 public class QueryBarDefImg  extends FixtureBase {
 
     ReponseV2<BarDefImgResponse>   reponseResult;
