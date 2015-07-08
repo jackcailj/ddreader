@@ -26,7 +26,7 @@ public class FixtureBase extends InterfaceBase{
 	protected boolean verifyResult;
 	protected ILogin login;
 
-    ReponseV2Base reponseV2Base;
+    protected ReponseV2Base reponseV2Base;
 	
 	public FixtureBase(){
 		URL = Config.getUrl();
