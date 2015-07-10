@@ -79,8 +79,9 @@ public class FixtureBase extends InterfaceBase{
 	}
 	
 	
-	public boolean doGet() throws Exception{
-		return doGet(0);
+	public void doGet() throws Exception{
+		paramMap.put("action", "column");
+		HttpDriver.doGet(URL, paramMap, bHttps);
 	}
 	
 	public String doRequest() throws Exception {
@@ -107,8 +108,10 @@ public class FixtureBase extends InterfaceBase{
 	public boolean getVerifyResult(){
 		return verifyResult;
 	}
-
-	public String verifiedResult(){
+	
+<<<<<<< HEAD
+=======
+	public String verifyResult(){
 		if(verifyResult){
 			return "pass";
 		}
@@ -122,6 +125,7 @@ public class FixtureBase extends InterfaceBase{
 	public void jsonToClass(){
 		
 	}
+>>>>>>> 54fdf3857d0ab105430b1f13eef792ba8b084498
 
     public ReponseV2Base getReponseStatus(){
         return reponseV2Base;
