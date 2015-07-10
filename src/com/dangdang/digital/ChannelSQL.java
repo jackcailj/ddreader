@@ -9,19 +9,19 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.readerV5.reponse.BookList;
 import com.dangdang.readerV5.reponse.Channel;
 import com.dangdang.readerV5.reponse.ChannelBookList;
+import com.dangdang.readerV5.reponse.ChannelColumnReponse;
 import com.dangdang.readerV5.reponse.ChannelList;
 import com.dangdang.readerV5.reponse.ChannelMediaList;
 import com.dangdang.readerV5.reponse.ChannelResponse;
-import com.dangdang.readerV5.reponse.ColumnReponse;
 
 public class ChannelSQL {
 	
 	//获取频道栏目基本信息
-    public static ColumnReponse getChannelColumn(String columnCode) throws Exception {          
+    public static ChannelColumnReponse getChannelColumn(String columnCode) throws Exception {          
     	String selectSQL = "SELECT column_code, is_show_horn, name, tips FROM media_column WHERE column_code='"+columnCode+"'";
 		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
 		Map<String, Object> map = infos.get(0);		
-    	ColumnReponse column = new ColumnReponse();
+		ChannelColumnReponse column = new ChannelColumnReponse();
     	column.setChannelList(getChannelList(columnCode));
     	column.setColumnCode(map.get("column_code").toString());
     	column.setCount(getChannelList(columnCode).size());

@@ -2,8 +2,7 @@ package com.dangdang.readerV5.reponse;
 
 import java.util.List;
 
-public class SaleList {
-	
+public class BorrowSaleList {
 	String isStore;
 	String isSupportFullBuy;
 	List<MediaList> mediaList;
@@ -15,6 +14,12 @@ public class SaleList {
 	}
 	public void setIsStore(String isStore) {
 		this.isStore = isStore;
+	}
+	public String getIsSupportFullBuy() {
+		return isSupportFullBuy;
+	}
+	public void setIsSupportFullBuy(String isSupportFullBuy) {
+		this.isSupportFullBuy = isSupportFullBuy;
 	}
 	public List<MediaList> getMediaList() {
 		return mediaList;
@@ -39,12 +44,6 @@ public class SaleList {
 	}
 	public void setType(String type) {
 		this.type = type;
-	}
-	public String getIsSupportFullBuy() {
-		return isSupportFullBuy;
-	}
-	public void setIsSupportFullBuy(String isSupportFullBuy) {
-		this.isSupportFullBuy = isSupportFullBuy;
 	}
 
 }

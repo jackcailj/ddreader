@@ -1,7 +1,5 @@
 package com.dangdang.readerV5.bookstore;
 
-import org.apache.log4j.Logger;
-
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
@@ -18,7 +16,6 @@ import fitnesse.slim.SystemUnderTest;
  *
  */
 public class Booklist extends FixtureBase{
-	public Logger log = Logger.getLogger(Booklist.class);
 	
 	ReponseV2<BookListReponse> reponseResult;
 	 

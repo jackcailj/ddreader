@@ -1,7 +1,6 @@
 package com.dangdang.autotest.common;
 
 import java.lang.reflect.*;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -44,10 +43,11 @@ public class ResponseVerify extends VerifyBase{
 				Method jsonm=(Method)json.getClass().getMethod("get"+ getMethodName(field.getName()));
 				Method dbm=(Method)db.getClass().getMethod("get"+ getMethodName(field.getName()));
 				String jsonval = (String)jsonm.invoke(json); //调用getter方法获取属性值
-				String dbval = (String)dbm.invoke(db);
+				String dbval = (String)dbm.invoke(db);			
 				log.info("json:"+ field.getName() +"="+ jsonval);
 				log.info("db:"+ field.getName() +"="+ dbval);
-				log.info("对比结果:" +jsonval.equals(dbval));
+				flag = jsonval.equals(dbval);
+				log.info("对比结果:" + flag);
 			}
 			
 			//Integer类型
@@ -59,7 +59,8 @@ public class ResponseVerify extends VerifyBase{
 				Integer dbval = (Integer)dbm.invoke(db);
 				log.info("json:"+ field.getName() +"="+ jsonval);
 				log.info("db:"+ field.getName() +"="+ dbval);
-				log.info("对比结果:" +jsonval.equals(dbval));
+				flag = jsonval.equals(dbval);
+				log.info("对比结果:" + flag);
 			}
 			
 			//Boolean类型
@@ -71,7 +72,8 @@ public class ResponseVerify extends VerifyBase{
 				Boolean dbval = (Boolean)dbm.invoke(db);
 				log.info("json:"+ field.getName() +"="+ jsonval);
 				log.info("db:"+ field.getName() +"="+ dbval);
-				log.info("对比结果:" +jsonval.equals(dbval));
+				flag = jsonval.equals(dbval);
+				log.info("对比结果:" + flag);
 			}
 			
 			//Date类型
@@ -83,7 +85,8 @@ public class ResponseVerify extends VerifyBase{
 				Date dbval = (Date)dbm.invoke(db);
 				log.info("json:"+ field.getName() +"="+ jsonval);
 				log.info("db:"+ field.getName() +"="+ dbval);
-				log.info("对比结果:" +jsonval.equals(dbval));
+				flag = flag = jsonval.equals(dbval);
+				log.info("对比结果:" + flag);
 			}
 
 			if(field.getGenericType().toString().contains("class com")){
@@ -145,38 +148,38 @@ public class ResponseVerify extends VerifyBase{
 			return new String(items);
 		}
 	
-		public static void main(String[] args) throws Exception{
-			User user1 = new User();
-			user1.setAge(3);
-			user1.setName("haohao");
-			user1.setAddress("住址");
-			user1.setEmail("");
-			Course course1 = new Course();
-			course1.setCourseName("c1");
-			Course course3 = new Course();
-			course3.setCourseName("c2");
-			List<Course> course11 = new ArrayList<Course>();
-			course11.add(course1);
-			course11.add(course3);
-			user1.setCourse(course11);
-			//System.out.println(user1.getCourse().get(1).getCourseName());
-
-			User user2 = new User();
-			user2.setAge(5);
-			user2.setName("haohao");
-			user2.setAddress("住址");
-			user2.setEmail("");
-			Course course2 = new Course();
-			course2.setCourseName("c2");	
-			Course course4 = new Course();
-			course4.setCourseName("c1");
-			List<Course> course22 = new ArrayList<Course>();;
-			course22.add(course4);
-			//course22.add(course2);
-			
-			user2.setCourse(course22);
-			//System.out.println(user2.getCourse().get(1).getCourseName());
-			ResponseVerify r = new ResponseVerify(user1, user2);
-			System.out.println(r.dataVerify());
-		}
+//		public static void main(String[] args) throws Exception{
+//			User user1 = new User();
+//			user1.setAge(3);
+//			user1.setName("haohao");
+//			user1.setAddress("住址");
+//			user1.setEmail("");
+//			Course course1 = new Course();
+//			course1.setCourseName("c1");
+//			Course course3 = new Course();
+//			course3.setCourseName("c2");
+//			List<Course> course11 = new ArrayList<Course>();
+//			course11.add(course1);
+//			course11.add(course3);
+//			user1.setCourse(course11);
+//			//System.out.println(user1.getCourse().get(1).getCourseName());
+//
+//			User user2 = new User();
+//			user2.setAge(5);
+//			user2.setName("haohao");
+//			user2.setAddress("住址");
+//			user2.setEmail("");
+//			Course course2 = new Course();
+//			course2.setCourseName("c2");	
+//			Course course4 = new Course();
+//			course4.setCourseName("c1");
+//			List<Course> course22 = new ArrayList<Course>();;
+//			course22.add(course4);
+//			//course22.add(course2);
+//			
+//			user2.setCourse(course22);
+//			//System.out.println(user2.getCourse().get(1).getCourseName());
+//			ResponseVerify r = new ResponseVerify(user1, user2);
+//			System.out.println(r.dataVerify());
+//		}
 }
