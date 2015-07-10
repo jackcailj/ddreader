@@ -2,6 +2,7 @@ package com.dangdang.ecms;
 
 import java.util.List;
 
+import com.dangdang.digital.meta.Media;
 import com.dangdang.digital.meta.MediaActivityInfo;
 import org.apache.commons.lang3.StringUtils;
 
@@ -123,5 +124,15 @@ public class EcmsUtil {
 
 		return results;
 	}
+
+
+	/*
+		获取我的借阅列表
+	 */
+	public  static void getBorrowAuthorityList(String custId){
+
+	}
+
+
 
 }

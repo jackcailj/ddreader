@@ -37,6 +37,11 @@ public class ddLogin extends FixtureBase implements ILogin{
         return getReponseResult().getData().getUser().getId().toString();
     }
 
+    @Override
+    public String getPubId() {
+        return reponseResult.getData().getUserPubId();
+    }
+
 
     @Override
     public String getToken() {

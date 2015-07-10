@@ -104,7 +104,12 @@ public class Login  extends FunctionalBaseEx implements ILogin{
 		
 		return custId.toString();
 	}
-	
+
+	@Override
+	public String getPubId() {
+		return reponseResult.getData().getUserPubId();
+	}
+
 	@Override
 	public void doWork() throws Exception {
 		// TODO Auto-generated method stub

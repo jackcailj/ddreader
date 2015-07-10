@@ -18,6 +18,11 @@ import com.dangdang.ddframework.util.Util;
 import com.dangdang.readerV5.reponse.BarDefImgResponse;
 import com.dangdang.readerV5.reponse.BarListResponse;
 
+
+/**
+ * 书吧搜索接口
+ * @author wuhaiyan
+ */
 public class QueryBarList  extends FixtureBase {
 	 ReponseV2<BarListResponse>   reponseResult;
 	 

@@ -6,6 +6,7 @@ package com.dangdang.common.functional.login;
 public interface ILogin {
 
     public String getCustId() throws Exception;
+    public String getPubId();
     public String getToken();
 
     public LoginInfo getLoginInfo();
