@@ -28,7 +28,7 @@ public class CreateBar  extends FixtureBase {
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<CreateBarResponse>>(){});
 	}
 	
-	public String getBarId(){
+	public static String getBarId(){
 		return barId;
 	}
 	
