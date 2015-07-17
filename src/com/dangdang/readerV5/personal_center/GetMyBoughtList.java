@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.autotest.common.PlatForm;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
@@ -22,7 +23,16 @@ public class GetMyBoughtList extends FixtureBase{
 
     ReponseV2<GetMyBoughtListReponse> reponseResult;
 
-    public  GetMyBoughtList(){addAction("getMyBoughtList");}
+    public  GetMyBoughtList(){}
+
+    public  GetMyBoughtList(ILogin login){
+        setLogin(login);
+        paramMap.put("token", login.getToken());
+        paramMap.put("start", "0");
+        paramMap.put("end","100");
+        paramMap.put("fromPaltform","ds");
+
+    }
 
     @Override
     protected void parseParam() throws Exception {
@@ -43,7 +53,7 @@ public class GetMyBoughtList extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){
-            //fromPaltform=ds返回当当读书和当读小说已购数据,fromPaltform=yc或者为空或者不传返回当杜小说数据
+            //fromPaltform=ds返回当当读书和当读小说已购数据,fromPaltform=yc或者为空或者不传默认返回当读小说数据
             List<MediaBought> boughts=MediaBought.getBoughtList(login.getCustId(), paramMap.get("fromPaltform")==null?PlatForm.YC:PlatForm.valueOf(paramMap.get("fromPaltform").toUpperCase()),
                     paramMap.get("start")==null?0:Integer.parseInt(paramMap.get("start"))
                     ,paramMap.get("end")==null?100000:Integer.parseInt(paramMap.get("end")));

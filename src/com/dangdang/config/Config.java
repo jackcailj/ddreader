@@ -24,6 +24,7 @@ public class Config extends ConfigCore{
 	public static String SQLSERVER185Config="";
 	public static String SQLSERVER187Config="";
 	public static String IMDBConfig="";
+    public static String AUTHORITYConfig="";
 	
 	protected static Map<String, String> CommonParam =new HashMap<String, String>();
 		
@@ -52,6 +53,7 @@ public class Config extends ConfigCore{
 				SQLSERVER185Config="conf/db/sqlServer185.cfg.xml";
 				SQLSERVER187Config="";
 				IMDBConfig="conf/db/im.cfg.xml";
+                AUTHORITYConfig="conf/db/authority.cfg.xml";
 			}
 			else {
 				YCDBConfig="conf/db/websql_yc.properties";

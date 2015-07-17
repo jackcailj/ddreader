@@ -16,6 +16,7 @@ import com.dangdang.reader.functional.param.model.ParseResult;
  */
 public class ParseParamUtil {
 
+
 	private static LoginParamParse loginParamParse = new LoginParamParse();;
 	private static RemoveBlankParamParse removeBlankParamParse = new RemoveBlankParamParse();
 	private static ParseFactory parseFactory = new ParseFactory();

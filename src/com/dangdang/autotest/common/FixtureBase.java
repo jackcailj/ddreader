@@ -5,6 +5,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSON;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -42,11 +43,13 @@ public class FixtureBase extends InterfaceBase{
 	}
 	
 	public void parseParameters(Map<String, String> params) throws Exception{
+
 		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		paramMap =  params;
 		paramMap.putAll(Config.getCommonParam());
 		login = parseResult.getLogin();
 		handleParam();
+
 	}
 	
 	/**
@@ -144,6 +147,15 @@ public class FixtureBase extends InterfaceBase{
      */
     @Override
     protected void beforeParseParam() throws Exception {
+        //Ilogin登录时不需要设置login，否则会死循环
+        if(!(this instanceof ILogin)) {
+            setLogin(ParseParamUtil.parseLogin(paramMap));
+        }
+
+        if(paramMap.get("action")==null) {
+            addAction(lowerFirst(this.getClass().getSimpleName()));
+        }
+
         ParseParamUtil.parseOperateParam(paramMap);
         paramMap.putAll(Config.getCommonParam());
     }
@@ -184,6 +196,16 @@ public class FixtureBase extends InterfaceBase{
             paramMap.put(name, value);
         }
 	}
+
+    /*
+    使首字母小写。
+     */
+    public  String lowerFirst(String name) {
+        name = name.substring(0, 1).toLowerCase() + name.substring(1);
+        return  name;
+
+
+    }
 
     /*
     返回ddt上的带？的值
@@ -229,6 +251,7 @@ public class FixtureBase extends InterfaceBase{
         addAction(action);
         originalParamMap.clear();
         login=null;
+		VariableStore.clear();
     }
 
     /*============================fitnesse DynamicDecisionTable设置列值函数=================================*/

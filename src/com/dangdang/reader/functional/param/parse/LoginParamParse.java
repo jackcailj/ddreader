@@ -5,6 +5,8 @@ import java.util.Iterator;
 import java.util.Map;
 
 import com.dangdang.common.functional.login.*;
+import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.reader.functional.param.parse._enum.VarKey;
 import org.apache.commons.lang3.StringUtils;
 
 
@@ -34,6 +36,8 @@ public class LoginParamParse implements IParamParse{
 			//Login login =new Login(param);
 			//login.doWork();
 			param.put("token", login.getToken());
+
+			VariableStore.add(VarKey.LOGIN.toString(),login);
 		}		
 		
 		param.remove("userName");

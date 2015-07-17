@@ -1,6 +1,6 @@
 package com.dangdang.readerV5.reponse;
 
-import com.dangdang.digital.MediaBought;
+import com.dangdang.digital.meta.MediaBought;
 
 import java.util.List;
 

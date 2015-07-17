@@ -1,15 +1,15 @@
 package com.dangdang.readerV5.reponse;
 
-import com.dangdang.account.meta.AccountConsumeItems;
+import com.dangdang.account.meta.AttachAccountItems;
 
 import java.util.List;
 
 /**
- * Created by cailianjie on 2015-6-25.
+ * Created by cailianjie on 2015-7-16.
  */
-public class GetAccountInfoReponse {
+public class GetAttachAccountInfoReponse {
     Long accountTotal;
-    List<AccountConsumeItems> result;
+    List<AttachAccountItems> result;
 
     public Long getAccountTotal() {
         return accountTotal;
@@ -19,11 +19,11 @@ public class GetAccountInfoReponse {
         this.accountTotal = accountTotal;
     }
 
-    public List<AccountConsumeItems> getResult() {
+    public List<AttachAccountItems> getResult() {
         return result;
     }
 
-    public void setResult(List<AccountConsumeItems> result) {
+    public void setResult(List<AttachAccountItems> result) {
         this.result = result;
     }
 }
