@@ -73,7 +73,7 @@ public class QueryArticleInfo  extends FixtureBase{
 			article.setIsWonderful(map.get("is_wonderful").toString());
 			article.setLastModifiedDateMsec(map.get("last_modified_date_msec").toString());
 			article.setMediaDigestId(mediaDigestId);
-			article.setNickName(userInfo.get("cust_nickname").toString());
+			article.setNickName(userInfo.get("cust_nickname").toString().split("@")[0]);
 			article.setTitle(digest.get("title").toString());
 			int index = reponseResult.getData().getArticle().getHeadPhoto().lastIndexOf("?");
 			String subStr = reponseResult.getData().getArticle().getHeadPhoto().substring(0, index);

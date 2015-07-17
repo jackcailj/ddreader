@@ -1,7 +1,5 @@
 package com.dangdang.readerV5.channel;
 
-import org.apache.log4j.Logger;
-
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
@@ -14,8 +12,6 @@ import fitnesse.slim.SystemUnderTest;
 
 public class Channel extends FixtureBase{
 	
-	public Logger log = Logger.getLogger(Channel.class);
-
 	ReponseV2<ChannelResponse> reponseResult;
 	
 	@SystemUnderTest

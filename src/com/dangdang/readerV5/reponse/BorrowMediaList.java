@@ -1,11 +1,11 @@
 package com.dangdang.readerV5.reponse;
 
-public class MediaList {
+public class BorrowMediaList {
 	String authorId;
 	String authorPenname;
-	//String categoryIds;
-	//String categorys;
-	String chapterCnt;
+	String categoryIds;
+	String categorys;
+	//String chapterCnt;
 	//String coverPic;
 	String descs;
 	String isFull;
@@ -15,20 +15,6 @@ public class MediaList {
 	String recommandWords;
 	String saleId;
 	String title;
-
-	public String getIsStore() {
-		return isStore;
-	}
-	public void setIsStore(String isStore) {
-		this.isStore = isStore;
-	}
-	public String getMediaType() {
-		return mediaType;
-	}
-	public void setMediaType(String mediaType) {
-		this.mediaType = mediaType;
-	}
-	
 	public String getAuthorId() {
 		return authorId;
 	}
@@ -41,23 +27,17 @@ public class MediaList {
 	public void setAuthorPenname(String authorPenname) {
 		this.authorPenname = authorPenname;
 	}
-//	public String getCategoryIds() {
-//		return categoryIds;
-//	}
-//	public void setCategoryIds(String categoryIds) {
-//		this.categoryIds = categoryIds;
-//	}
-//	public String getCategorys() {
-//		return categorys;
-//	}
-//	public void setCategorys(String categorys) {
-//		this.categorys = categorys;
-//	}
-	public String getChapterCnt() {
-		return chapterCnt;
+	public String getCategoryIds() {
+		return categoryIds;
 	}
-	public void setChapterCnt(String chapterCnt) {
-		this.chapterCnt = chapterCnt;
+	public void setCategoryIds(String categoryIds) {
+		this.categoryIds = categoryIds;
+	}
+	public String getCategorys() {
+		return categorys;
+	}
+	public void setCategorys(String categorys) {
+		this.categorys = categorys;
 	}
 //	public String getCoverPic() {
 //		return coverPic;
@@ -77,11 +57,23 @@ public class MediaList {
 	public void setIsFull(String isFull) {
 		this.isFull = isFull;
 	}
+	public String getIsStore() {
+		return isStore;
+	}
+	public void setIsStore(String isStore) {
+		this.isStore = isStore;
+	}
 	public String getMediaId() {
 		return mediaId;
 	}
 	public void setMediaId(String mediaId) {
 		this.mediaId = mediaId;
+	}
+	public String getMediaType() {
+		return mediaType;
+	}
+	public void setMediaType(String mediaType) {
+		this.mediaType = mediaType;
 	}
 	public String getRecommandWords() {
 		return recommandWords;
@@ -95,11 +87,16 @@ public class MediaList {
 	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
-
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
+//	public String getChapterCnt() {
+//		return chapterCnt;
+//	}
+//	public void setChapterCnt(String chapterCnt) {
+//		this.chapterCnt = chapterCnt;
+//	}
 }

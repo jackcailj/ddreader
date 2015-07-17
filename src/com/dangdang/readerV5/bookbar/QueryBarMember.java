@@ -29,7 +29,7 @@ public class QueryBarMember  extends FixtureBase {
 	@Override
 	 public void setParameters(Map<String, String> params) throws Exception {
 			super.setParameters(params);
-			String sql = "select bar_id from bar where member_num > 0 ORDER BY rand() limit 1";
+			String sql = "select bar_id from bar where bar_status!=4 and  member_num > 0 ORDER BY rand() limit 1";
 			barId = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_id").toString();	
 			if(paramMap.get("barId")!=null&&paramMap.get("barId").equals("FromDB")){
 				paramMap.put("barId", barId);

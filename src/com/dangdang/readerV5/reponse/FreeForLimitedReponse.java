@@ -2,13 +2,14 @@ package com.dangdang.readerV5.reponse;
 
 import java.util.List;
 
-public class ColumnReponse {
+public class FreeForLimitedReponse {
 	String columnCode;
 	String count;
 	//String icon;
 	String isShowHorn;
 	String name;
-	List<SaleList> saleList;
+	//String overtime;
+	List<BorrowSaleList> saleList;
 	String tips;
 	String total;
 	public String getColumnCode() {
@@ -23,6 +24,12 @@ public class ColumnReponse {
 	public void setCount(String count) {
 		this.count = count;
 	}
+//	public String getIcon() {
+//		return icon;
+//	}
+//	public void setIcon(String icon) {
+//		this.icon = icon;
+//	}
 	public String getIsShowHorn() {
 		return isShowHorn;
 	}
@@ -35,10 +42,16 @@ public class ColumnReponse {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public List<SaleList> getSaleList() {
+//	public String getOvertime() {
+//		return overtime;
+//	}
+//	public void setOvertime(String overtime) {
+//		this.overtime = overtime;
+//	}
+	public List<BorrowSaleList> getSaleList() {
 		return saleList;
 	}
-	public void setSaleList(List<SaleList> saleList) {
+	public void setSaleList(List<BorrowSaleList> saleList) {
 		this.saleList = saleList;
 	}
 	public String getTips() {
@@ -53,4 +66,5 @@ public class ColumnReponse {
 	public void setTotal(String total) {
 		this.total = total;
 	}
+
 }

@@ -5,7 +5,6 @@ import java.util.Map;
 import com.alibaba.fastjson.JSON;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
-import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -27,7 +26,7 @@ public class FixtureBase extends InterfaceBase{
 	protected boolean verifyResult;
 	protected ILogin login;
 
-    protected ReponseV2Base reponseV2Base;
+    ReponseV2Base reponseV2Base;
 	
 	public FixtureBase(){
 		URL = Config.getUrl();
@@ -43,13 +42,11 @@ public class FixtureBase extends InterfaceBase{
 	}
 	
 	public void parseParameters(Map<String, String> params) throws Exception{
-
 		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		paramMap =  params;
 		paramMap.putAll(Config.getCommonParam());
 		login = parseResult.getLogin();
 		handleParam();
-
 	}
 	
 	/**
@@ -82,8 +79,9 @@ public class FixtureBase extends InterfaceBase{
 	}
 	
 	
-	public boolean doGet() throws Exception{
-		return doGet(0);
+	public void doGet() throws Exception{
+		paramMap.put("action", "column");
+		HttpDriver.doGet(URL, paramMap, bHttps);
 	}
 	
 	public String doRequest() throws Exception {
@@ -110,8 +108,10 @@ public class FixtureBase extends InterfaceBase{
 	public boolean getVerifyResult(){
 		return verifyResult;
 	}
-
-	public String verifiedResult(){
+	
+<<<<<<< HEAD
+=======
+	public String verifyResult(){
 		if(verifyResult){
 			return "pass";
 		}
@@ -125,6 +125,7 @@ public class FixtureBase extends InterfaceBase{
 	public void jsonToClass(){
 		
 	}
+>>>>>>> 54fdf3857d0ab105430b1f13eef792ba8b084498
 
     public ReponseV2Base getReponseStatus(){
         return reponseV2Base;
@@ -146,15 +147,6 @@ public class FixtureBase extends InterfaceBase{
      */
     @Override
     protected void beforeParseParam() throws Exception {
-        //Ilogin登录时不需要设置login，否则会死循环
-        if(!(this instanceof ILogin)) {
-            setLogin(ParseParamUtil.parseLogin(paramMap));
-        }
-
-        if(paramMap.get("action")==null) {
-            addAction(lowerFirst(this.getClass().getSimpleName()));
-        }
-
         ParseParamUtil.parseOperateParam(paramMap);
         paramMap.putAll(Config.getCommonParam());
     }
@@ -197,16 +189,6 @@ public class FixtureBase extends InterfaceBase{
 	}
 
     /*
-    使首字母小写。
-     */
-    public  String lowerFirst(String name) {
-        name = name.substring(0, 1).toLowerCase() + name.substring(1);
-        return  name;
-
-
-    }
-
-    /*
     返回ddt上的带？的值
      */
 	public String get(String columnName) throws Exception {
@@ -219,12 +201,7 @@ public class FixtureBase extends InterfaceBase{
 			}
 		}
         else if( columnName.contains("status")){
-			if(reponseV2Base==null){//处理下载书籍这种不能返回statusCode的情况，如果httpCode为200，就认为成功。
-				return "0";
-			}
-			else {
-				return reponseV2Base.getStatus().getCode().toString();
-			}
+            return reponseV2Base.getStatus().getCode().toString();
         }
 
         throw  new Exception("没有["+columnName+"]数据");
@@ -243,14 +220,12 @@ public class FixtureBase extends InterfaceBase{
     每次执行前清除上次运行的数据
     */
     public void reset(){
-		reponseV2Base=null;
         dataVerifyManager.clear();
         String action=paramMap.get("action");
         paramMap.clear();
         addAction(action);
         originalParamMap.clear();
         login=null;
-		VariableStore.clear();
     }
 
     /*============================fitnesse DynamicDecisionTable设置列值函数=================================*/
