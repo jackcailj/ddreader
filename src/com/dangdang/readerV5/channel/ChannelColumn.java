@@ -6,9 +6,9 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.autotest.common.ResponseVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.digital.BookStoreTestEvnSQL;
 import com.dangdang.digital.ChannelSQL;
 import com.dangdang.readerV5.reponse.ChannelColumnReponse;
-import com.dangdang.readerV5.reponse.ColumnReponse;
 import fitnesse.slim.SystemUnderTest;
 
 /**
@@ -21,7 +21,7 @@ public class ChannelColumn extends FixtureBase{
 	ReponseV2<ChannelColumnReponse> reponseResult;
 		
 	@SystemUnderTest
-	public ChannelSQL sql = new ChannelSQL();
+	public BookStoreTestEvnSQL service = new BookStoreTestEvnSQL();
 
 	//验证结果
 	public boolean verifyResult() throws Exception{
