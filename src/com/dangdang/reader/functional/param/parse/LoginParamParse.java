@@ -28,6 +28,7 @@ public class LoginParamParse implements IParamParse{
 		// TODO Auto-generated method stub
 		ILogin login =null;
 		if((param.get("userName")!=null && StringUtils.isNotBlank(param.get("userName").toString())
+				&&param.get("passWord")!=null
 				&& (param.get("token")==null ||(param.get("token")!=null && StringUtils.isBlank(param.get("token").toString()))))){
 			//BindDevice bind = new BindDevice(param);
 			//bind.doWork();
@@ -38,11 +39,13 @@ public class LoginParamParse implements IParamParse{
 			param.put("token", login.getToken());
 
 			VariableStore.add(VarKey.LOGIN.toString(),login);
+
+			param.remove("userName");
+			param.remove("passWord");
+			param.remove("loginType");
 		}		
 		
-		param.remove("userName");
-		param.remove("passWord");
-		param.remove("loginType");
+
 		
 		return login;
 	}
