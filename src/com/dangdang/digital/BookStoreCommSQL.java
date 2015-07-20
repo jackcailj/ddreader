@@ -10,11 +10,13 @@ import org.apache.log4j.Logger;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaColumn;
-import com.dangdang.readerV5.reponse.BorrowMediaList;
 import com.dangdang.readerV5.reponse.BorrowReponse;
 import com.dangdang.readerV5.reponse.BorrowSaleList;
+import com.dangdang.readerV5.reponse.EbookMediaList;
 import com.dangdang.readerV5.reponse.FreeForLimitedReponse;
+import com.dangdang.readerV5.reponse.GetMediaReponse;
 import com.dangdang.readerV5.reponse.MediaList;
+import com.dangdang.readerV5.reponse.MediaSale;
 import com.dangdang.readerV5.reponse.SaleList;
 import com.dangdang.readerV5.reponse.SpecialTopicHistoryReponse;
 import com.dangdang.readerV5.reponse.SpecialTopicList;
@@ -27,6 +29,14 @@ import com.dangdang.readerV5.reponse.ColumnReponse;
  */
 public class BookStoreCommSQL {
 	static Logger log = Logger.getLogger(BookStoreCommSQL.class);
+	
+	//获取可借阅的书
+	public static String getBorrowBook() throws Exception{
+		String selectSQL = "SELECT ms.sale_id FROM media m, media_sale ms WHERE m.sale_id=ms.sale_id AND ms.shelf_status=1 AND m.shelf_status=1 AND m.borrow_duration IS NOT NULL AND doc_type='EBOOK' LIMIT 1";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		return infos.get(0).get("sale_id").toString();
+	}
+	
 	/**
 	 * 根据栏目name获取栏目数据 
 	 * @param Name 
@@ -313,14 +323,17 @@ public class BookStoreCommSQL {
 	/****************************************** 单品页  ******************************************************/
 	
 	//是否收藏
-	public static boolean isStore(int mediaID, int custID) throws Exception{
-		String selectSQL= "SELECT count(*) FROM `media_storeup` WHERE target_id="+mediaID+" AND cust_id="+custID;
+	public static String isStore(int mediaID, int custID) throws Exception{
+		String selectSQL= "SELECT count(*) " +
+				"FROM `media_storeup` " +
+				"WHERE target_id="+mediaID+" AND cust_id="+custID+
+				" AND platform='DDDS-P'";;//Config.getCommonParam().get("platformSource")
 		List<Map<String, Object>> result = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		int size = Integer.valueOf(result.get(0).get("count(*)").toString());
 		if(size==1) 
-			return true;
+			return "1";
 		else
-			return false;
+			return "0";
 	}
 	
 	/****************************************** 专题  ******************************************************/
@@ -328,15 +341,16 @@ public class BookStoreCommSQL {
 	public static SpecialTopicHistoryReponse getSpecialTopicHistory(String deviceType) throws Exception{
 		String selectSQL = "SELECT name, pic_path, st_id " +
 				"FROM `media_special_topic` " +
-				"WHERE device_type='"+deviceType+"'";
+				"WHERE device_type='"+deviceType+"'" +
+				" AND `status`=1";
 		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-		List<SpecialTopicList> specialTopicList = new ArrayList<SpecialTopicList>();
-		SpecialTopicList tmp = new SpecialTopicList();
+		List<SpecialTopicList> specialTopicList = new ArrayList<SpecialTopicList>();	
 		int size = infos.size();
 		for(int i=0; i<size; i++){
+			SpecialTopicList tmp = new SpecialTopicList();
 			tmp.setName(infos.get(i).get("name").toString());
 			if(infos.get(i).get("pic_path")==null)
-				tmp.setPicPath("");
+				tmp.setPicPath(null);
 			else
 				tmp.setPicPath(infos.get(i).get("pic_path").toString());
 			tmp.setStId(infos.get(i).get("st_id").toString());
@@ -360,13 +374,126 @@ public class BookStoreCommSQL {
 		  return infos.get(0).get("count(*)").toString();
 	}
 	
+	public static GetMediaReponse getMediaReponse(int saleID, int custID)throws Exception{
+		String selectSQL = "SELECT price,sale_id,type FROM `media_sale` WHERE sale_id="+saleID;
+		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		GetMediaReponse  reponse = new GetMediaReponse();
+		MediaSale mediaSale = new MediaSale();
+		//设置isStore
+		mediaSale.setIsStore("0");
+		mediaSale.setMediaList(getMedia(saleID, custID));
+		mediaSale.setPrice(infos.get(0).get("price").toString());
+		mediaSale.setSaleId(infos.get(0).get("sale_id").toString());
+		mediaSale.setType(infos.get(0).get("type").toString());
+		reponse.setMediaSale(mediaSale);
+		return reponse;	
+	}
 	
+	//获取电子书单品页信息
+	public static List<EbookMediaList> getMedia(int saleID, int custID) throws Exception{
+		String selectSQL = "SELECT author_id,author_penname,category,chapter_cnt,cover_pic,descs," +
+				"promotion_id,is_bn,media_id,paper_book_price,paper_book_id,price,publisher,sale_id," +
+				"shelf_status,title,word_cnt,doc_type,borrow_duration " +
+				"FROM `media` " +
+				"WHERE sale_id="+saleID;
+		 List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
+		 List<EbookMediaList> list = new ArrayList<EbookMediaList>();
+		 for(int i=0;i<infos.size(); i++){
+			 int mediaID = Integer.valueOf(infos.get(0).get("media_id").toString());
+			 EbookMediaList ebookMediaList = new EbookMediaList();
+			 ebookMediaList.setAuthorId(infos.get(0).get("author_id").toString());
+			 ebookMediaList.setAuthorPenname(infos.get(0).get("author_penname").toString());		 
+			 //设置canBorrow字段
+			 if(infos.get(0).get("borrow_duration")==null){
+				 ebookMediaList.setCanBorrow("0");
+			 }else{
+				 ebookMediaList.setCanBorrow("1");
+			 }		 
+			 ebookMediaList.setCategory(infos.get(0).get("category").toString());
+			 //设置categoryIds
+			 Map<String, String> map = getCategory(Integer.valueOf(infos.get(0).get("media_id").toString()));
+			 ebookMediaList.setCategoryIds(map.get("code"));
+			 ebookMediaList.setCategorys(map.get("name"));
+			 if(infos.get(0).get("chapter_cnt")==null)
+				 ebookMediaList.setChapterCnt(null);
+			 else
+				 ebookMediaList.setChapterCnt(infos.get(0).get("chapter_cnt").toString());
+			 //ebookMediaList.setCoverPic(infos.get(0).get("cover_pic").toString());
+			 ebookMediaList.setDescs(infos.get(0).get("descs").toString());
+			 //设置fileSize
+			 ebookMediaList.setFileSize(getFileSize(mediaID, "epub"));
+			 //设置freeBook
+			 if(infos.get(0).get("price").toString().equals("0"))
+				 ebookMediaList.setFreeBook("1");
+			 else if(infos.get(0).get("promotion_id") !=null && infos.get(0).get("promotion_id").toString().equals("3"))
+				 ebookMediaList.setFreeBook("1");
+			 else
+				 ebookMediaList.setFreeBook("0");
+			 //设置freeFileSize
+		 
+			 //设置isChannelMonth
+		 
+			 //设置isChapterAuthority
+		 
+			 //设置isStore		
+			 ebookMediaList.setIsStore(isStore(mediaID, custID));
+			 //设置isSupportDevice
+			 ebookMediaList.setIsSupportDevice(isSupportDevice(mediaID));
+			 //设置isWholeAuthority
+		 
+			 ebookMediaList.setIsbn(infos.get(0).get("is_bn").toString());
+			 ebookMediaList.setMediaId(infos.get(0).get("media_id").toString());
+			 //设置mediaType
+			 if(infos.get(0).get("doc_type")==null)
+				 ebookMediaList.setMediaType("1");
+			 else
+				 ebookMediaList.setMediaType("2");
+			 if(infos.get(0).get("paper_book_price")==null)
+				 ebookMediaList.setPaperMediaPrice(null);
+			 else
+				 ebookMediaList.setPaperMediaPrice(infos.get(0).get("paper_book_price").toString());
+			 if(infos.get(0).get("paper_book_id")==null)
+				 ebookMediaList.setPaperMediaProductId(null);
+			 else
+				 ebookMediaList.setPaperMediaProductId(infos.get(0).get("paper_book_id").toString());
+			 ebookMediaList.setPrice(infos.get(0).get("price").toString());
+			 ebookMediaList.setPublisher(infos.get(0).get("publisher").toString());
+			 ebookMediaList.setSaleId(infos.get(0).get("sale_id").toString());		 
+			 //设置score
+		 
+			 ebookMediaList.setShelfStatus(infos.get(0).get("shelf_status").toString());
+			 ebookMediaList.setTitle(infos.get(0).get("title").toString());
+			 ebookMediaList.setWordCnt(infos.get(0).get("word_cnt").toString());
+			 list.add(ebookMediaList);
+		 }
+		 return list;
+	}
+	
+	//获取fileSize
+	public static String getFileSize(int mediaID, String type) throws Exception{
+		String selectSQL = "SELECT SIZE FROM `resfile` WHERE MEDIA_ID="+mediaID+" AND TYPE='"+type+"'";
+		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
+		return infos.get(0).get("SIZE").toString();
+	}
+	
+	//
+	public static String isSupportDevice(int mediaID) throws Exception{
+		String selectSQL = "SELECT DEVICE_TYPE_NAME FROM `media_resfile` WHERE MEDIA_ID="+mediaID;
+		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
+		for(int i=0;i<infos.size(); i++){
+			if(infos.get(i).get("DEVICE_TYPE_NAME").toString().contains(Config.getCommonParam().get("deviceType")))
+				return "1";
+		}
+		return "0";
+	}
 	
 	//查询栏目内容	
 	public static void main(String[] args) throws Exception{
 		//BookStoreCommSQL.getColumnByName("vp_byzq", "vp");
-		//BookStoreCommSQL.getSubColumn("原创","all");
-		System.out.println(BookStoreCommSQL.getMediaList(1980125886).size());
+		SpecialTopicHistoryReponse p = BookStoreCommSQL.getSpecialTopicHistory("DDDS_ALL");
+		//System.out.println(BookStoreCommSQL.getMediaList(1980125886).size());
+		System.out.println(p.getSpecialTopicList().get(0).getStId());
+		System.out.println(p.getSpecialTopicList().get(1).getStId());
 	
 	}
 }

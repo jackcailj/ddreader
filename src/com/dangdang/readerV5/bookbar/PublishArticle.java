@@ -21,8 +21,7 @@ import fitnesse.slim.SystemUnderTest;
 public class PublishArticle extends FixtureBase{
 	ReponseV2<PublishArticleResponse>   reponseResult; 
 	@SystemUnderTest
-	CreateBar bar = new CreateBar();	
-	Logger logger = Logger.getLogger(QueryBarInfo.class);
+	String barId;
 	
 	public ReponseV2<PublishArticleResponse> getResult(){
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<PublishArticleResponse>>(){});
@@ -32,12 +31,12 @@ public class PublishArticle extends FixtureBase{
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);
 		String sql = "select bm.bar_id from bar_member as bm left join bar as b on bm.bar_id=b.bar_id "
-				+ "where bm.cust_id="+login.getCustId()+" and bm.member_status!=4 and b.bar_status!=4 and b.article_num >=0"
+				+ "where bm.cust_id="+login.getCustId()+" and bm.member_status!=4 and b.bar_status!=4 and b.article_num >0"
 				+ " ORDER BY rand() limit 1";
-		String barId = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_id").toString();
+		barId = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_id").toString();
 		//barId = "85";
 		if(paramMap.get("barId")!=null&&paramMap.get("barId").equals("FromDB")){
-			paramMap.put("barId","85");
+			paramMap.put("barId",barId);
 		}
 		String aSql=null;
 		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equals("FromDB")){
@@ -91,6 +90,19 @@ public class PublishArticle extends FixtureBase{
 		}
 		verifyResult(expectedCode);
 	}
+	
+	@Override
+	 public boolean tearDown(){
+		try {
+			DbUtil.executeUpdate(Config.BOOKBARDBConfig, 
+					"update article set is_show=1 and is_del=0 where cust_id="+login.getCustId()+" and bar_id="+barId+" LIMIT 1");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return super.tearDown();		 
+	 }
 	
 	//POST /media/api2.go?action=publishArticle&barId=4901&title=%E5%8F%91%E5%B8%96&content=%E5%91%A8%E4%B8%80&actionType=1 HTTP/1.1
 	//{"data":{"currentDate":"2015-07-13 17:56:11","mediaDigestId":1340,"systemDate":"1436781371263"},"status":{"code":0},"systemDate":1436781371262}
