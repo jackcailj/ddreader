@@ -30,7 +30,7 @@ public class DelArticle extends FixtureBase{
 	static ILogin login;
 	
 	public int precondition() throws Exception{
-		String param = "action=publishArticle&barId=85&title=发个贴&content=测试发帖&actionType=1&token=&userName=whytest@dd.con&passWord=111111&loginType=email";
+		String param = "action=publishArticle&barId=85&title=发个贴&content=测试发帖&cardType=0&actionType=1&token=&userName=whytest@dd.con&passWord=111111&loginType=email";
 		Map<String,String> params = Util.generateMap(param);
 		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		params.putAll(Config.getCommonParam());
