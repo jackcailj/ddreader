@@ -1,19 +1,14 @@
 package com.dangdang.reader.functional.param.parse;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dangdang.authority.AuthorityDb;
-import com.dangdang.authority.MediaAuthority;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.digital.BookStatus;
 import com.dangdang.digital.BookType;
-import com.dangdang.digital.meta.MediaBought;
 import com.dangdang.digital.MediaDb;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.reader.functional.param.parse._enum.VarKey;
-import com.dangdang.readerV5.personal_center.GetMyBoughtList;
-import com.dangdang.readerV5.purchase.ListShoppingCart;
-import com.dangdang.readerV5.reponse.Products;
+import com.dangdang.readerV5.personal_center.bookshelf.GetUserBookList;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -24,7 +19,7 @@ import java.util.Map;
 /**
  * Created by cailianjie on 2015-7-14.
  */
-public class GetUnBuyProductAndSaleIdParse implements IParamParse{
+public class GetCanBorrowBookParse implements IParamParse{
 
 
     @Override
@@ -49,40 +44,25 @@ public class GetUnBuyProductAndSaleIdParse implements IParamParse{
             String[] numberSplit =params[2].split("and");
             Integer number=Integer.parseInt(numberSplit[0].trim());
 
-            //获取购物车中的商品
-            //GetMyBoughtList myBoughtList = new GetMyBoughtList((ILogin) VariableStore.get(VarKey.LOGIN));
-            //myBoughtList.doWork();
-            List<MediaAuthority> mediaAuthorities = AuthorityDb.getUserEbook(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId());
 
-            List<String> productIds = new ArrayList<String>();
+            List<Media> medias = MediaDb.getCanBorrowMedia(bookType,bookStatus,number);
 
-            for (MediaAuthority products : mediaAuthorities) {
-                productIds.add(""+products.getProductId());
-            }
-
-            //查找不在购物车中的prouctid，用来往购物车中添加
-            List<Media> medias=MediaDb.getMedias(bookType, bookStatus, number,productIds);
             List mediaIds = new ArrayList();
-            for(Media media : medias){
+            int nMax=medias.size()>number?number:medias.size();
+            for(int i=0;i<nMax;i++){
                 Map<String,String> mediaMap=new HashMap<String, String>();
-                mediaMap.put("productId",media.getMediaId().toString());
-                mediaMap.put("saleId", media.getSaleId().toString());
+                mediaMap.put("productId", medias.get(i).getMediaId().toString());
+                mediaMap.put("saleId", medias.get(i).getSaleId().toString());
                 mediaIds.add(mediaMap);
-            }
-
-            if(numberSplit.length>1) {
-                Map<String,String> mediaMap=new HashMap<String, String>();
-                mediaMap.put("productId",numberSplit[1].trim());
-                mediaMap.put("saleId", numberSplit[1].trim());
-                mediaIds.add(mediaMap);
+                medias.add(medias.get(i));
             }
 
             paramMap.put(key, JSONObject.toJSONString(mediaIds));
-            VariableStore.add(VarKey.MEDIAS,medias);
+            VariableStore.add(VarKey.MEDIAS, medias);
 
         }
         else{
-            throw new Exception("GetProductAndSaleIdParse参数为空");
+            throw new Exception("GetCanBorrowBookParse参数为空");
         }
 
     }

@@ -1,5 +1,6 @@
 package com.dangdang.autotest.common;
 
+import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
@@ -7,6 +8,7 @@ import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 
@@ -26,6 +28,7 @@ public class FixtureBase extends InterfaceBase{
 	protected static Logger log = Logger.getLogger(FixtureBase.class);
 	protected boolean verifyResult;
 	protected ILogin login;
+    protected String exceptStatusCode;
 
     protected ReponseV2Base reponseV2Base;
 	
@@ -192,7 +195,15 @@ public class FixtureBase extends InterfaceBase{
             if(value.startsWith("\"") && value.endsWith("\"")){
                 value =value.substring(1,value.length()-1);
             }
-            paramMap.put(name, value);
+
+            //
+            if(name.startsWith("status")){
+                paramMap.put(EXPECTED,value);
+                exceptStatusCode=value;
+            }
+            else {
+                paramMap.put(name, value);
+            }
         }
 	}
 
@@ -211,12 +222,26 @@ public class FixtureBase extends InterfaceBase{
      */
 	public String get(String columnName) throws Exception {
 		if(columnName.startsWith("data")){
+
+            String result="";
 			if(getDataVerifyResult()){
-				return "通过";
+                result= "通过";
 			}
 			else {
-				return "失败";
+                result= "数据验证失败";
 			}
+
+
+            if(reponseV2Base==null){//处理下载书籍这种不能返回statusCode的情况，如果httpCode为200，就认为成功。
+
+            }
+            else {
+                if(StringUtils.isNotBlank(exceptStatusCode) && !exceptStatusCode.equals(reponseV2Base.getStatus().getCode().toString())){
+                    result+="  status code【"+reponseV2Base.getStatus().getCode()+"】 与期望【"+exceptStatusCode+"】不符";
+                }
+            }
+
+            return result;
 		}
         else if( columnName.contains("status")){
 			if(reponseV2Base==null){//处理下载书籍这种不能返回statusCode的情况，如果httpCode为200，就认为成功。
@@ -234,12 +259,14 @@ public class FixtureBase extends InterfaceBase{
     执行DynamicDecisionTable的每一行
      */
 	public void execute() throws Exception {
-
+        handleParam();
 		doWorkAndVerify();
 
 	}
 
-    /*
+
+
+	/*
     每次执行前清除上次运行的数据
     */
     public void reset(){
