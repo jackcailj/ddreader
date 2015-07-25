@@ -47,22 +47,22 @@ public class Config extends ConfigCore{
 		PropertyConfigurator.configure(ResourceLoader.loadCurrentPropertyFile("conf/log4j.properties"));
 		try{
 			if(getEnvironment() == TestEnvironment.TESTING){
-				YCDBConfig="conf/db/yc_db.cfg.xml";
-				ECMSDBConfig="conf/db/ecmstdb.cfg.xml";
-				ACCOUNTDBConfig="conf/db/accountdb.cfg.xml";
-                UCENTERDBConfig="conf/db/ucenterdb.cfg.xml";
-                BOOKBARDBConfig="conf/db/bookbardb.cfg.xml";
-				SQLSERVER185Config="conf/db/sqlServer185.cfg.xml";
+				YCDBConfig= "conf/"+testData+"/db/yc_db.cfg.xml";
+				ECMSDBConfig= "conf/"+testData+"/db/ecmstdb.cfg.xml";
+				ACCOUNTDBConfig= "conf/"+testData+"/db/accountdb.cfg.xml";
+                UCENTERDBConfig= "conf/"+testData+"/db/ucenterdb.cfg.xml";
+                BOOKBARDBConfig= "conf/"+testData+"/db/bookbardb.cfg.xml";
+				SQLSERVER185Config= "conf/"+testData+"/db/sqlServer185.cfg.xml";
 				SQLSERVER187Config="";
-				IMDBConfig="conf/db/im.cfg.xml";
-                AUTHORITYConfig="conf/db/authority.cfg.xml";
-				BSAECOMMENT="conf/db/commentdb.cfg.xml";
+				IMDBConfig= "conf/"+testData+"/db/im.cfg.xml";
+                AUTHORITYConfig= "conf/"+testData+"/db/authority.cfg.xml";
+				BSAECOMMENT= "conf/"+testData+"/db/commentdb.cfg.xml";
 
 			}
 			else {
-				YCDBConfig="conf/db/websql_yc.properties";
-				ECMSDBConfig="conf/db/websql_ddreader.properties";
-				ACCOUNTDBConfig="conf/db/websql_account.properties";
+				YCDBConfig= "conf/"+testData+"/db/websql_yc.properties";
+				ECMSDBConfig= "conf/"+testData+"/db/websql_ddreader.properties";
+				ACCOUNTDBConfig= "conf/"+testData+"/db/websql_account.properties";
 			}					
 
 		}

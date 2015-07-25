@@ -1,20 +1,28 @@
 package com.dangdang.readerV5.purchase;
 
+import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.dataverify.RecordExVerify;
+import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
+import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.ddframework.util.StringUtil;
+import com.dangdang.ddframework.util.Util;
 import com.dangdang.ddframework.util.security.SignUtils;
+import com.dangdang.digital.BookType;
+import com.dangdang.digital.MediaDb;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.ecms.meta.OrderForm;
 import com.dangdang.ecms.meta.OrderItem;
 import com.dangdang.ecms.meta.UserEbook;
 import com.dangdang.reader.functional.param.parse._enum.VarKey;
 import com.dangdang.readerV5.personal_center.GetAccountInfo;
+import com.dangdang.readerV5.personal_center.bookshelf.GetUserBookList;
 import com.dangdang.readerV5.reponse.PurchaseEbookVirtualPaymentReponse;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -36,11 +44,12 @@ public class PurchaseEbookVirtualPayment extends FixtureBase{
     @Override
     protected void parseParam() throws Exception {
 
-
-        paramMap.put("timestamp", "" + new Date().getTime());
+        if(paramMap.get("timestamp")!=null && StringUtils.isEmpty(paramMap.get("sign"))) {
+            paramMap.put("timestamp", "" + new Date().getTime());
+        }
 
         //生成sign参数
-        if(paramMap.get("sign")!=null && login!=null){
+        if(paramMap.get("sign")!=null && StringUtils.isEmpty(paramMap.get("sign")) && login!=null){
             List products = JSONObject.parseArray(paramMap.get("productArray"));
             List<String> productIds=new ArrayList<String>();
             if(products!=null) {
@@ -61,6 +70,9 @@ public class PurchaseEbookVirtualPayment extends FixtureBase{
     protected void genrateVerifyData() throws Exception {
         if(login!=null){	//验证主副账户扣款正确，先扣附账户、后扣主账户
             //attachAccount = DbUtil.selectOne(Config.ACCOUNTDBConfig, "select * from attach_account where cust_id="+custid,AttachAccount.class);
+
+            beforeMasterAcount = new GetAccountInfo(login,true);
+            beforeMasterAcount.doWork();
 
             beforeAttachAcount = new GetAccountInfo(login,false);
             beforeAttachAcount.doWork();
@@ -95,16 +107,50 @@ public class PurchaseEbookVirtualPayment extends FixtureBase{
 
     @Override
     protected void dataVerify() throws Exception {
-        if(reponseResult.getStatus().getCode()==0){
 
-            List<Media> medias = (List<Media>) VariableStore.get(VarKey.MEDIAS);
-            int totalCost=0;
+
+
+        int totalCost = 0;
+        /*List<Media> medias = (List<Media>) VariableStore.get(VarKey.MEDIAS);
+        if(medias!=null) {
             List<Long> productIds = new ArrayList<Long>();
-            for(Media media:medias){
-                totalCost+=media.getPrice();
-                productIds.add(media.getProductId());
-            }
+            for (Media media : medias) {
+                if(BookType.SHIDU.isShiDu(media.getUid())){
+                    continue;
+                }
 
+                totalCost += media.getPrice();
+                productIds.add(media.getProductId());
+                dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId",media.getProductId().toString()),getUserBookList.getResult().toString()).setVerifyContent("购买成功，验证["+media.getProductId()+"]是否有权限"));
+            }
+        }
+        else{*/
+        if(paramMap.get("productArray")!=null && login!=null) {
+            GetUserBookList getUserBookList = new GetUserBookList(login);
+            getUserBookList.doWork();
+
+            List products = JSONObject.parseArray(paramMap.get("productArray"));
+            for (Object product : products) {
+                Map<String, String> mapObject = (Map<String, String>) product;
+                Media media = MediaDb.getMedia(mapObject.get("productId"));
+                if (media != null) {
+                    if (BookType.SHIDU.isShiDu(media.getUid())) {
+                        continue;
+                    }
+                    if(!paramMap.get("flag").equals("重复")) {
+                        totalCost += media.getPrice();
+                    }
+                    dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId", media.getProductId().toString()), getUserBookList.getResult().toString()).setVerifyContent("购买成功，验证" + media.getProductId() + "是否有权限"));
+                } else {
+                    String productId = mapObject.get("productId");
+                    dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId", productId), getUserBookList.getResult().toString()).setVerifyContent("购买成功，验证" + productId + "是否有权限"), VerifyResult.FAILED);
+                }
+            }
+        }
+       // }
+
+
+        if(reponseResult.getStatus().getCode()==0){
 
             Long attachAccountMoney = beforeAttachAcount.getReponseAttachResult().getData().getAccountTotal();
             int diff=(int) (totalCost-attachAccountMoney);
@@ -113,9 +159,6 @@ public class PurchaseEbookVirtualPayment extends FixtureBase{
             }
 
 
-            beforeMasterAcount = new GetAccountInfo(login,true);
-            beforeMasterAcount.doWork();
-
             // TODO Auto-generated method stub
             //masterAccount = DbUtil.selectOne(Config.ACCOUNTDBConfig, "select * from master_account where cust_id="+custid, MasterAccount.class);
             if( diff>0){
@@ -123,16 +166,27 @@ public class PurchaseEbookVirtualPayment extends FixtureBase{
             }
 
 
-            GetAccountInfo afterMasterAccountInfo = new GetAccountInfo(login,true);
+        }
+        /*else{
+            //验证权限列表没有这本书
+            if(login!=null){
+                GetUserBookList getUserBookList = new GetUserBookList(login);
+                getUserBookList.doWork();
+
+                dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId"),getUserBookList.getResult().toString()).setVerifyContent("购买失败，验证是没有有权限"), VerifyResult.FAILED);
+            }
+        }*/
+
+        if(login!=null) {
+            GetAccountInfo afterMasterAccountInfo = new GetAccountInfo(login, true);
             afterMasterAccountInfo.doWork();
 
-            dataVerifyManager.add(new ValueVerify<Long>(afterMasterAccountInfo.getReponseMasterResult().getData().getAccountTotal(), beforeMasterAcount.getReponseMasterResult().getData().getAccountTotal()).setVerifyContent("验证主账户金额是否正确"));
+            dataVerifyManager.add(new ValueVerify<Long>(afterMasterAccountInfo.getReponseMasterResult().getData().getAccountTotal(), beforeMasterAcount.getReponseMasterResult().getData().getAccountTotal()).setVerifyContent("验证主账户金额是否正确"), VerifyResult.SUCCESS);
 
-            GetAccountInfo afterAttachAccountInfo = new GetAccountInfo(login,false);
+            GetAccountInfo afterAttachAccountInfo = new GetAccountInfo(login, false);
             afterAttachAccountInfo.doWork();
 
-            dataVerifyManager.add(new ValueVerify<Long>(afterAttachAccountInfo.getReponseAttachResult().getData().getAccountTotal(), beforeAttachAcount.getReponseAttachResult().getData().getAccountTotal()).setVerifyContent("验证副账户金额是否正确"));
-
+            dataVerifyManager.add(new ValueVerify<Long>(afterAttachAccountInfo.getReponseAttachResult().getData().getAccountTotal(), beforeAttachAcount.getReponseAttachResult().getData().getAccountTotal()).setVerifyContent("验证副账户金额是否正确"), VerifyResult.SUCCESS);
         }
         super.dataVerify();
     }
