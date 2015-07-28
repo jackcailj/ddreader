@@ -159,7 +159,12 @@ public class FixtureBase extends InterfaceBase{
         }
 
         ParseParamUtil.parseOperateParam(paramMap);
-        paramMap.putAll(Config.getCommonParam());
+		for(Map.Entry<String,String> entry: Config.getCommonParam().entrySet()){
+			if(!paramMap.containsKey(entry.getKey())){
+				paramMap.put(entry.getKey(),entry.getValue());
+			}
+		}
+        //paramMap.putAll(Config.getCommonParam());
     }
 
     /*
