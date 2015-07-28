@@ -24,6 +24,8 @@ public class GetUserBookList extends FixtureBase{
 
     ReponseV2<GetUserBookListReponse> reponseResult;
 
+    public GetUserBookList(){}
+
     public ReponseV2<GetUserBookListReponse> getReponseResult() {
         return reponseResult;
     }

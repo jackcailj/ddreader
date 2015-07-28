@@ -100,15 +100,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
-      <library name="fastjson-1.2.4.jar">
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/fastjson-1.2.4.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
       <library name="fluent-hc-4.3.6.jar">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/fluent-hc-4.3.6.jar!/" />
@@ -359,6 +350,16 @@
       <library>
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/easemobchat_2.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="com.alibaba:dubbo:2.5.3" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/im-api.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

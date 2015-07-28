@@ -35,4 +35,16 @@ public enum BookType {
 
         return "";
     }
+
+
+    /*
+    检测是否为试读本
+     */
+    public boolean isShiDu(String uid){
+        if(uid.startsWith("br")){
+            return true;
+        }
+
+        return false;
+    }
 }

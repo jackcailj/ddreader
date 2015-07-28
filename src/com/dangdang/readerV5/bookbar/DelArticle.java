@@ -30,7 +30,7 @@ public class DelArticle extends FixtureBase{
 	static ILogin login;
 	
 	public int precondition() throws Exception{
-		String param = "action=publishArticle&barId=85&title=发个贴&content=测试发帖&actionType=1&token=&userName=whytest@dd.con&passWord=111111&loginType=email";
+		String param = "action=publishArticle&barId=&title=发个贴&content=测试发帖&cardType=0&actionType=1&token=&userName=whytest@dd.con&passWord=111111&loginType=email";
 		Map<String,String> params = Util.generateMap(param);
 		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		params.putAll(Config.getCommonParam());
@@ -64,7 +64,8 @@ public class DelArticle extends FixtureBase{
 					"update article set is_show=1 and is_del=1 where cust_id="+login.getCustId()+" and media_digest_id="+mediaDigestId);
 			Thread.sleep(1000);
 		}
-		if(paramMap.get("mediaDigestId")!=null&&!(paramMap.get("mediaDigestId").isEmpty())){
+		if(paramMap.get("mediaDigestId")!=null&&!(paramMap.get("mediaDigestId").isEmpty())
+				&&!(paramMap.get("mediaDigestId").equals("aa"))){
 			paramMap.put("mediaDigestId",Integer.toString(mediaDigestId));
 		}
 		if(paramMap.get("token")!=null&&paramMap.get("token").equalsIgnoreCase("fromLogin")){
@@ -78,15 +79,10 @@ public class DelArticle extends FixtureBase{
 		if(reponseResult.getStatus().getCode() == 0){
 			List<String> list1 = new ArrayList<String>();
 			List<String> list2 = new ArrayList<String>();
-//			String sql = "select * from media_digest where id="+reponseResult.getData().getMediaDigestId();
-//			MediaDigest digest = DbUtil.selectOne(Config.YCDBConfig, sql, MediaDigest.class);
-			
 			String sql = "select * from article where media_digest_id="+reponseResult.getData().getMediaDigestId()
 					+" and cust_id="+login.getCustId();
 			Article article = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Article.class);
-			
-		//	dataVerifyManager.add(new ValueVerify<Boolean>(digest.getIsDel(), true));
-		//	dataVerifyManager.add(new ValueVerify<Long>(Integer.toUnsignedLong(article.getIsDel()), 1l));
+			dataVerifyManager.add(new ValueVerify<Long>(Integer.toUnsignedLong(article.getIsDel()), 1l));
 			super.dataVerify();
 		}
 		else{
@@ -101,12 +97,12 @@ public class DelArticle extends FixtureBase{
 		try {
 			DbUtil.executeUpdate(Config.BOOKBARDBConfig, 
 					"update article set is_show=1 and is_del=0 where cust_id="+login.getCustId()+" and media_digest_id="+mediaDigestId);
-		if(mediaDigestId!=null){
-			mediaDigestId = null;
-		}
-		if(login!=null){
-			login = null;
-		}
+//		if(mediaDigestId!=null){
+//			mediaDigestId = null;
+//		}
+//		if(login!=null){
+//			login = null;
+//		}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

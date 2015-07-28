@@ -70,6 +70,12 @@ public class GetUnBuyProductAndSaleIdParse implements IParamParse{
                 mediaIds.add(mediaMap);
             }
 
+            if(numberSplit.length>1) {
+                Map<String,String> mediaMap=new HashMap<String, String>();
+                mediaMap.put("productId",numberSplit[1].trim());
+                mediaMap.put("saleId", numberSplit[1].trim());
+                mediaIds.add(mediaMap);
+            }
 
             paramMap.put(key, JSONObject.toJSONString(mediaIds));
             VariableStore.add(VarKey.MEDIAS,medias);

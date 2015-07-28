@@ -59,15 +59,15 @@ public class Config extends ConfigCore {
 			tempUrl= (String)proConfig.getProperty("tempUrl");
 			
 			if(environment == TestEnvironment.TESTING){
-				YCDBConfig=proConfig.getProperty("yc_db");
-				ECMSDBConfig=proConfig.getProperty("ecmst_db");
-				ACCOUNTDBConfig=proConfig.getProperty("account_db");
-				UCENTERDBConfig="conf/db/ucenterdb.cfg.xml";
+				YCDBConfig="conf/"+testData+"/db/yc_db.cfg.xml";//proConfig.getProperty("yc_db");
+				ECMSDBConfig="conf/"+testData+"/db/ecmstdb.cfg.xml";//proConfig.getProperty("ecmst_db");
+				ACCOUNTDBConfig="conf/"+testData+"/db/accountdb.cfg.xml";//proConfig.getProperty("account_db");
+				UCENTERDBConfig= "conf/"+testData+"/db/ucenterdb.cfg.xml";
 			}
 			else {
-				YCDBConfig= "conf/db/websql_yc.properties";
-				ECMSDBConfig="conf/db/websql_ddreader.properties";
-				ACCOUNTDBConfig= "conf/db/websql_account.properties";
+				YCDBConfig= "conf/"+testData+"/db/websql_yc.properties";
+				ECMSDBConfig= "conf/"+testData+"/db/websql_ddreader.properties";
+				ACCOUNTDBConfig= "conf/"+testData+"/db/websql_account.properties";
 			}
 			
 			//proConfig.load(new FileInputStream("conf/config.properties"));
