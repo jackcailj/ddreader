@@ -282,6 +282,7 @@ public class FixtureBase extends InterfaceBase{
         addAction(action);
         originalParamMap.clear();
         login=null;
+        result=null;
 		VariableStore.clear();
     }
 
