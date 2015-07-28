@@ -14,8 +14,8 @@ public class Channel extends FixtureBase{
 	
 	ReponseV2<ChannelResponse> reponseResult;
 	
-	@SystemUnderTest
-	public Channelsub channelSub = new Channelsub();
+	//@SystemUnderTest
+	//public Channelsub channelSub = new Channelsub();
 	
 	@SystemUnderTest
 	public ChannelSQL sql = new ChannelSQL();

@@ -86,7 +86,7 @@ public class DelArticle extends FixtureBase{
 			Article article = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Article.class);
 			
 		//	dataVerifyManager.add(new ValueVerify<Boolean>(digest.getIsDel(), true));
-			dataVerifyManager.add(new ValueVerify<Long>(Integer.toUnsignedLong(article.getIsDel()), 1l));
+		//	dataVerifyManager.add(new ValueVerify<Long>(Integer.toUnsignedLong(article.getIsDel()), 1l));
 			super.dataVerify();
 		}
 		else{

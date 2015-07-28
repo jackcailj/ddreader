@@ -3,7 +3,7 @@ package com.dangdang.readerV5.reponse;
 import java.util.List;
 
 /**
- * 频道专用
+ * 频道列表
  * @author guohaiying
  *
  */
@@ -14,7 +14,6 @@ public class ChannelColumnReponse {
 	Integer count;
 	String isShowHorn;
 	String name;
-	//List<SaleList> saleList;
 	String tips; //小喇叭提示内容
 	Integer total;
 
@@ -37,7 +36,6 @@ public class ChannelColumnReponse {
 	public void setCount(Integer count) {
 		this.count = count;
 	}
-
 	public String getIsShowHorn() {
 		return isShowHorn;
 	}

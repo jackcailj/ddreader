@@ -135,38 +135,17 @@ public class BookStoreTestEvnSQL extends BookStoreCommSQL{
 		refreshCache();
 	}
 	
-	public static void insertChannelWithColumncodeAndSize(String columncode, int size) throws Exception{
-		String selectSQL;
-		selectSQL = "SELECT column_id FROM `media_column` WHERE column_code='"+columncode+"'";
-		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-		int columnID = Integer.valueOf(infos.get(0).get("column_id").toString());	
-		
-		selectSQL="SELECT channel_id, title " +
-		"FROM channel " +
-		"WHERE shelf_status=1 " +
-		"LIMIT "+ size;
-		List<Map<String, Object>> result = DbUtil.selectList(Config.YCDBConfig, selectSQL);		
-		String insertSQL = "INSERT INTO media_column_content(column_code, column_id, sale_id, sale_name, creation_date, start_date, end_date, status, order_value) values";
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		for(int i=0; i<result.size(); i++){
-			Map<String, Object> temp = result.get(i);
-			int sale_id = Integer.valueOf(temp.get("channel_id").toString());
-			String name = temp.get("title").toString();
-			if(name.contains("'"))
-				name = name.replace("'","''");
-			list.add(sale_id);
-			insertSQL += "('"+ columncode +"',"+columnID+", "+ sale_id +", '"+ name +"',now(),now(),DATE_ADD(now(),INTERVAL 1 YEAR)"+", 2, "+i+"+1),";
-		}
-		DbUtil.executeUpdate(Config.YCDBConfig, insertSQL.substring(0, insertSQL.lastIndexOf(",")));
-		refreshCache();
-	}
+
 	
 	//下架频道
-	public static void setStatusWithChannel(int channel) throws Exception{	
-		String updateSQL="UPDATE channel SET shelf_status=1 AND apply_times = apply_times+1 AND channel_id=17 ";
+	public static void setStatusWithChannel(int channelId) throws Exception{	
+		String updateSQL="UPDATE channel SET shelf_status=1 AND apply_times = apply_times+1 AND channel_id=" +channelId;
 		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
 		refreshCache();
 	}
+	
+	//上架频道
+	//public static void 
 	
 	
 //	public static int insertColumn() throws Exception{
@@ -726,7 +705,7 @@ public class BookStoreTestEvnSQL extends BookStoreCommSQL{
 		//公告测试
 		//Common.selectNoticeType("url跳转类型");
 		//Common.insertNotice("test单品", 1, "{\"id\":1980003778,\"name\":\"大宋第一盗\"}", "np" );
-		BookStoreTestEvnSQL.insertChannelWithColumncodeAndSize("all_interface_test",3);
+		BookStoreTestEvnSQL.refreshCache();
 				
 	}
      

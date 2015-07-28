@@ -5,7 +5,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSON;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
-import com.dangdang.ddframework.core.VariableStore;
+
 import com.dangdang.ddframework.reponse.ReponseV2Base;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -13,9 +13,11 @@ import org.testng.Assert;
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.core.InterfaceBase;
+import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.drivers.HttpDriver;
 import com.dangdang.reader.functional.param.model.ParseResult;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+
 
 /**
  * 
@@ -52,6 +54,10 @@ public class FixtureBase extends InterfaceBase{
 
 	}
 	
+	public String getCustId() throws Exception{
+		return login.getCustId();
+	}
+	
 	/**
 	 * @param actionName
 	 * @throws Exception
@@ -65,16 +71,25 @@ public class FixtureBase extends InterfaceBase{
 	 * @param exceptedCode 鎺ュ彛杩斿洖鐨刢ode鍊�
 	 * @throws Exception
 	 */
-	boolean statusCode = false;
-	public boolean getStatusCode() {
-		return statusCode;
-	}
-
-	public boolean doGet(int exceptedCode) throws Exception {
+	
+	public boolean doGet(String exceptedCode) throws Exception {
+		boolean statusCode = false;
 		genrateVerifyData();
 		result=HttpDriver.doGet(URL, paramMap, bHttps);
 		
-		if(result.toString().contains("\"code\":"+exceptedCode)){
+		if(result.toString().contains("\"code\":"+exceptedCode)){ 
+			statusCode = true;
+			log.info(result.toString());
+		}
+		return statusCode;
+	}
+	
+	public boolean doPost(String exceptedCode) throws Exception {
+		boolean statusCode = false;
+		genrateVerifyData();
+		result=HttpDriver.doPost(URL,paramMap);
+		
+		if(result.toString().contains("\"code\":"+exceptedCode)){ 
 			statusCode = true;
 			log.info(result.toString());
 		}
@@ -83,7 +98,7 @@ public class FixtureBase extends InterfaceBase{
 	
 	
 	public boolean doGet() throws Exception{
-		return doGet(0);
+		return doGet("0");
 	}
 	
 	public String doRequest() throws Exception {
@@ -264,4 +279,13 @@ public class FixtureBase extends InterfaceBase{
     		return false;
     	}
     }
+    
+    public static void main(String[] args){
+    	String result="\"status\":{\"code\":200,\"message\":\"系统错误200\"}}";
+    	if(result.contains("\"code\":"+12000)){
+    		System.out.println("aaaa");
+    	}else
+    		System.out.println("bbbb");
+    }
+   
 }
