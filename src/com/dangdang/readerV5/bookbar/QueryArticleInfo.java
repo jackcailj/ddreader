@@ -1,6 +1,8 @@
 package com.dangdang.readerV5.bookbar;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
@@ -56,30 +58,65 @@ public class QueryArticleInfo  extends FixtureBase{
 	public void dataVerify(String expectedCode) throws Exception {
 		reponseResult = getResult();
 		if(reponseResult.getStatus().getCode() == 0){
-			Article article = new Article();
+			Article article = reponseResult.getData().getArticle();
 			String sql ="SELECT * FROM `media_digest` where id="+mediaDigestId+" and is_show=1";
 			Map<String,Object> digest = DbUtil.selectOne(Config.YCDBConfig, sql);
-			Map<String, Object> userInfo = DbUtil.selectOne(Config.UCENTERDBConfig, 
-					"select cust_nickname, cust_img from login_record where cust_id="+map.get("cust_id").toString());
-			article.setContent(digest.get("content").toString());
-			// 返回信息里的custid是加密的，为了便于下边比较，做如下设置
-			article.setCustId(reponseResult.getData().getArticle().getCustId());
-			article.setHeadPhoto(userInfo.get("cust_img").toString());
-			// 不登陆, 不知道是哪个用户, 不知道是否点过赞, 都显示0
-			// 登录账号（该账号对该贴点赞过）， 获取详情时，isPraise是1
-			// 另外一个账号登录（没有对该贴点赞过），获取详情时，isPraise是0			
-			article.setIsPraise("0");
-			article.setIsTop(map.get("is_top").toString());
-			article.setIsWonderful(map.get("is_wonderful").toString());
-			article.setLastModifiedDateMsec(map.get("last_modified_date_msec").toString());
-			article.setMediaDigestId(mediaDigestId);
-			article.setNickName(userInfo.get("cust_nickname").toString().split("@")[0]);
-			article.setTitle(digest.get("title").toString());
-			int index = reponseResult.getData().getArticle().getHeadPhoto().lastIndexOf("?");
-			String subStr = reponseResult.getData().getArticle().getHeadPhoto().substring(0, index);
-			reponseResult.getData().getArticle().setHeadPhoto(subStr);
-			dataVerifyManager.add(new ValueVerify(article, reponseResult.getData().getArticle(),true));
-			super.dataVerify();
+			Map<String, Object> userInfo = new HashMap<String, Object>();
+			try{
+				userInfo = DbUtil.selectOne(Config.UCENTERDBConfig, 
+						"select cust_nickname, cust_img from login_record where cust_id="+map.get("cust_id").toString());
+			}
+			catch(Exception e){
+				e.printStackTrace();
+				userInfo = null;
+			}
+			
+			List<String> list1 = new ArrayList<String>();	
+			List<String> list2 = new ArrayList<String>();	
+			list1.add(digest.get("bar_id").toString());
+			list1.add(digest.get("content").toString());
+			list1.add(userInfo!=null?userInfo.get("cust_img").toString():null);
+			list1.add(userInfo!=null?userInfo.get("cust_nickname").toString().split("@")[0]:null);
+			list1.add(mediaDigestId);
+			list1.add(digest.get("title")!=null?digest.get("title").toString():null);
+			
+			try{
+				int commentSize = DbUtil.selectList(Config.BSAECOMMENT, 
+						"SELECT * FROM `comment_target_count` where target_id="+mediaDigestId).size();
+				list1.add(Integer.toString(commentSize));
+			}
+			catch(Exception e){
+				e.printStackTrace();
+				list1.add("0");
+			}
+			try{
+				int praiseSize = DbUtil.selectOne(Config.BSAECOMMENT, 
+						"SELECT * FROM  praise_info where target_id=="+mediaDigestId).size();
+				list1.add(Integer.toString(praiseSize));
+			}
+			catch(Exception e){
+				e.printStackTrace();
+				list1.add("0");
+			}
+			
+			list2.add(article.getBarId());
+			list2.add(article.getContent());
+			if(article.getHeadPhoto()!=null){
+				int index = article.getHeadPhoto().lastIndexOf("?");
+				String subStr = article.getHeadPhoto().substring(0, index);
+				list2.add(subStr);
+			}
+			else{
+				list2.add(null);
+			}			
+			list2.add(article.getNickName()!=null?article.getNickName():null);
+			list2.add(article.getMediaDigestId());
+			list2.add(article.getTitle()!=null?article.getTitle().toString():null);		
+			list2.add(article.getCommentNum());
+			list2.add(article.getPraiseNum());
+						
+			dataVerifyManager.add(new ValueVerify(list1, list2,false));
+			super.dataVerify();			
 		}
 		else{
 			dataVerifyResult = false;
