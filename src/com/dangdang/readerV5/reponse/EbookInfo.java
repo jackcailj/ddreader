@@ -5,6 +5,7 @@ public class EbookInfo {
 	String bookImgUrl;
 	String bookName;
 	String editorRecommend;
+	int isPaperBook;
 	String productId;
 	
 	public String getBookAuthor(){
@@ -18,6 +19,9 @@ public class EbookInfo {
 	}
 	public String getEditorRecommend(){
 		return editorRecommend;
+	}
+	public int getIsPaperBook(){
+		return isPaperBook;
 	}
 	public String getProductId(){
 		return productId;
@@ -33,6 +37,9 @@ public class EbookInfo {
 	}
 	public void setEditorRecommend(String editorRecommend){
 		this.editorRecommend = editorRecommend;
+	}
+	public void setIsPaperBook(int isPaperBook){
+		this.isPaperBook = isPaperBook;
 	}
 	public void setProductId(String productId){
 		this.productId = productId;

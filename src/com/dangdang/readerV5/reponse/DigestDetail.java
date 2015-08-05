@@ -9,6 +9,7 @@ public class DigestDetail extends DigestList{
 	String mood;
 	String pic1Path;
 	String reviewCnt;
+	int isPraise;
 	
 	public String getAlreayMark(){
 		return alreayMark;
@@ -34,7 +35,9 @@ public class DigestDetail extends DigestList{
 	public String getReviewCnt(){
 		return reviewCnt;
 	}
-	
+	public int getIsPraise(){
+		return isPraise;
+	}	
 	public void setAlreayMark(String alreayMark){
 		this.alreayMark = alreayMark;
 	}
@@ -59,5 +62,8 @@ public class DigestDetail extends DigestList{
 	public void setReviewCnt(String reviewCnt){
 		this.reviewCnt = reviewCnt;
 	}
+	public void setIsPraise(int isPraise){
+		this.isPraise = isPraise;
+	}	
 
 }

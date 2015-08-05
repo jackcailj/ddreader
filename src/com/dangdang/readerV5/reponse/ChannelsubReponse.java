@@ -1,13 +1,13 @@
 package com.dangdang.readerV5.reponse;
 
 public class ChannelsubReponse {
-	Integer subNumber;
+	String subNumber;
 
-	public Integer getSubNumber() {
+	public String getSubNumber() {
 		return subNumber;
 	}
 
-	public void setSubNumber(Integer subNumber) {
+	public void setSubNumber(String subNumber) {
 		this.subNumber = subNumber;
 	}
 }

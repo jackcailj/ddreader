@@ -1,25 +1,20 @@
 package com.dangdang.autotest.common;
 
-import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSON;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
-
 import com.dangdang.ddframework.reponse.ReponseV2Base;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.core.InterfaceBase;
-import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.drivers.HttpDriver;
 import com.dangdang.reader.functional.param.model.ParseResult;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
-
 
 /**
  * 
@@ -30,9 +25,8 @@ public class FixtureBase extends InterfaceBase{
 	protected static Logger log = Logger.getLogger(FixtureBase.class);
 	protected boolean verifyResult;
 	protected ILogin login;
-    protected String exceptStatusCode;
 
-    protected ReponseV2Base reponseV2Base;
+    ReponseV2Base reponseV2Base;
 	
 	public FixtureBase(){
 		URL = Config.getUrl();
@@ -48,17 +42,11 @@ public class FixtureBase extends InterfaceBase{
 	}
 	
 	public void parseParameters(Map<String, String> params) throws Exception{
-
 		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		paramMap =  params;
 		paramMap.putAll(Config.getCommonParam());
 		login = parseResult.getLogin();
 		handleParam();
-
-	}
-	
-	public String getCustId() throws Exception{
-		return login.getCustId();
 	}
 	
 	/**
@@ -74,25 +62,16 @@ public class FixtureBase extends InterfaceBase{
 	 * @param exceptedCode 鎺ュ彛杩斿洖鐨刢ode鍊�
 	 * @throws Exception
 	 */
-	
-	public boolean doGet(String exceptedCode) throws Exception {
-		boolean statusCode = false;
+	boolean statusCode = false;
+	public boolean getStatusCode() {
+		return statusCode;
+	}
+
+	public boolean doGet(int exceptedCode) throws Exception {
 		genrateVerifyData();
 		result=HttpDriver.doGet(URL, paramMap, bHttps);
 		
-		if(result.toString().contains("\"code\":"+exceptedCode)){ 
-			statusCode = true;
-			log.info(result.toString());
-		}
-		return statusCode;
-	}
-	
-	public boolean doPost(String exceptedCode) throws Exception {
-		boolean statusCode = false;
-		genrateVerifyData();
-		result=HttpDriver.doPost(URL,paramMap);
-		
-		if(result.toString().contains("\"code\":"+exceptedCode)){ 
+		if(result.toString().contains("\"code\":"+exceptedCode)){
 			statusCode = true;
 			log.info(result.toString());
 		}
@@ -100,8 +79,9 @@ public class FixtureBase extends InterfaceBase{
 	}
 	
 	
-	public boolean doGet() throws Exception{
-		return doGet("0");
+	public void doGet() throws Exception{
+		paramMap.put("action", "column");
+		HttpDriver.doGet(URL, paramMap, bHttps);
 	}
 	
 	public String doRequest() throws Exception {
@@ -128,8 +108,10 @@ public class FixtureBase extends InterfaceBase{
 	public boolean getVerifyResult(){
 		return verifyResult;
 	}
-
-	public String verifiedResult(){
+	
+<<<<<<< HEAD
+=======
+	public String verifyResult(){
 		if(verifyResult){
 			return "pass";
 		}
@@ -143,6 +125,7 @@ public class FixtureBase extends InterfaceBase{
 	public void jsonToClass(){
 		
 	}
+>>>>>>> 54fdf3857d0ab105430b1f13eef792ba8b084498
 
     public ReponseV2Base getReponseStatus(){
         return reponseV2Base;
@@ -164,26 +147,8 @@ public class FixtureBase extends InterfaceBase{
      */
     @Override
     protected void beforeParseParam() throws Exception {
-        //Ilogin登录时不需要设置login，否则会死循环
-        if(!(this instanceof ILogin)) {
-            setLogin(ParseParamUtil.parseLogin(paramMap));
-        }
-
-		//增加action字段
-        if(paramMap.get("action")==null) {
-            addAction(lowerFirst(this.getClass().getSimpleName()));
-        }
-
-		//解析参数
         ParseParamUtil.parseOperateParam(paramMap);
-
-		//添加公共参数
-		for(Map.Entry<String,String> entry: Config.getCommonParam().entrySet()){
-			if(!paramMap.containsKey(entry.getKey())){
-				paramMap.put(entry.getKey(),entry.getValue());
-			}
-		}
-        //paramMap.putAll(Config.getCommonParam());
+        paramMap.putAll(Config.getCommonParam());
     }
 
     /*
@@ -219,61 +184,24 @@ public class FixtureBase extends InterfaceBase{
             if(value.startsWith("\"") && value.endsWith("\"")){
                 value =value.substring(1,value.length()-1);
             }
-
-            //
-            if(name.startsWith("status")){
-                paramMap.put(EXPECTED,value);
-                exceptStatusCode=value;
-            }
-            else {
-                paramMap.put(name, value);
-            }
+            paramMap.put(name, value);
         }
 	}
-
-    /*
-    使首字母小写。
-     */
-    public  String lowerFirst(String name) {
-        name = name.substring(0, 1).toLowerCase() + name.substring(1);
-        return  name;
-
-
-    }
 
     /*
     返回ddt上的带？的值
      */
 	public String get(String columnName) throws Exception {
 		if(columnName.startsWith("data")){
-
-            String result="";
 			if(getDataVerifyResult()){
-                result= "通过";
+				return "通过";
 			}
 			else {
-                result= "数据验证失败";
+				return "失败";
 			}
-
-
-            if(reponseV2Base==null){//处理下载书籍这种不能返回statusCode的情况，如果httpCode为200，就认为成功。
-
-            }
-            else {
-                if(StringUtils.isNotBlank(exceptStatusCode) && !exceptStatusCode.equals(reponseV2Base.getStatus().getCode().toString())){
-                    result+="  status code【"+reponseV2Base.getStatus().getCode()+"】 与期望【"+exceptStatusCode+"】不符";
-                }
-            }
-
-            return result;
 		}
         else if( columnName.contains("status")){
-			if(reponseV2Base==null){//处理下载书籍这种不能返回statusCode的情况，如果httpCode为200，就认为成功。
-				return "0";
-			}
-			else {
-				return reponseV2Base.getStatus().getCode().toString();
-			}
+            return reponseV2Base.getStatus().getCode().toString();
         }
 
         throw  new Exception("没有["+columnName+"]数据");
@@ -283,26 +211,21 @@ public class FixtureBase extends InterfaceBase{
     执行DynamicDecisionTable的每一行
      */
 	public void execute() throws Exception {
-        handleParam();
+
 		doWorkAndVerify();
 
 	}
 
-
-
-	/*
+    /*
     每次执行前清除上次运行的数据
     */
     public void reset(){
-		reponseV2Base=null;
         dataVerifyManager.clear();
         String action=paramMap.get("action");
         paramMap.clear();
         addAction(action);
         originalParamMap.clear();
         login=null;
-        result=null;
-		VariableStore.clear();
     }
 
     /*============================fitnesse DynamicDecisionTable设置列值函数=================================*/
@@ -316,13 +239,4 @@ public class FixtureBase extends InterfaceBase{
     		return false;
     	}
     }
-    
-    public static void main(String[] args){
-    	String result="\"status\":{\"code\":200,\"message\":\"系统错误200\"}}";
-    	if(result.contains("\"code\":"+12000)){
-    		System.out.println("aaaa");
-    	}else
-    		System.out.println("bbbb");
-    }
-   
 }

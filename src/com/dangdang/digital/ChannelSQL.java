@@ -13,14 +13,14 @@ import org.apache.commons.lang3.StringUtils;
 public class ChannelSQL {
 	
 	//获取频道栏目基本信息
-    public static ChannelColumnReponse getChannelColumn(String columnCode) throws Exception {          
+    public static ChannelColumnReponse getChannelColumn(String columnCode, int num) throws Exception {          
     	String selectSQL = "SELECT column_code, is_show_horn, name, tips FROM media_column WHERE column_code='"+columnCode+"'";
 		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
 		Map<String, Object> map = infos.get(0);		
 		ChannelColumnReponse column = new ChannelColumnReponse();
-    	column.setChannelList(getChannelList(columnCode));
+    	column.setChannelList(getChannelList(columnCode,num));
     	column.setColumnCode(map.get("column_code").toString());
-    	column.setCount(getChannelList(columnCode).size());
+    	column.setCount(getChannelList(columnCode,num).size());
     	column.setIsShowHorn(map.get("is_show_horn").toString());   	
     	column.setName(map.get("name").toString());
     	column.setTips(map.get("tips").toString());
@@ -29,19 +29,21 @@ public class ChannelSQL {
     }
     
 	//获取频道栏目下频道列表
-    public static List<ChannelList> getChannelList(String columnCode) throws Exception {
+    public static List<ChannelList> getChannelList(String columnCode, int num) throws Exception {
        
-    	String selectSQL = "SELECT a.sale_id, b.title, b.description,b.icon,b.sub_number " +
-    			"FROM media_column_content a , channel b, media_booklist c" +
-    			" WHERE a.sale_id=b.channel_id " +
-    			"AND b.channel_id = c.channel_id " +
-    			"AND b.shelf_status=1 " +
-    			"AND column_code='"+columnCode+"'";      
+    	String selectSQL = "SELECT channel.channel_id,channel.title,channel.description,channel.icon,channel.sub_number	" +
+    			" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
+				" where column_code ='"+columnCode+"'"+
+				" and channel.shelf_status=1"+
+				" and channel.is_completed=1"+
+				" and  mcc.status in(1,2)"+
+				" and  now() between start_date and end_date"+
+				" order by mcc.status asc , IF(ISNULL(order_value),1,0) asc,order_value desc LIMIT "+num;      
         List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
         List<ChannelList> channelList = new ArrayList<ChannelList>();
         for(int i=0; i<infos.size(); i++){
         	ChannelList tmp = new ChannelList();
-        	tmp.setChannelId(Integer.valueOf(infos.get(i).get("sale_id").toString()));
+        	tmp.setChannelId(Integer.valueOf(infos.get(i).get("channel_id").toString()));
         	tmp.setDescription(infos.get(i).get("description").toString());
         	tmp.setIcon(infos.get(i).get("icon").toString());
         	tmp.setSubNumber(Integer.valueOf(infos.get(i).get("sub_number").toString()));
@@ -114,29 +116,24 @@ public class ChannelSQL {
 		return infos.get(0).get("channel_id").toString();	
     }
     
-    //获取订阅数
-    public static int getChannelSub(int channelID) throws Exception{
-    	String selectSQL="SELECT count(*) FROM channel_sub_user WHERE type=1 AND channel_id=" + channelID;
-		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-		int count = Integer.valueOf(infos.get(0).get("count(*)").toString());	
-    	return count;
-    }
-    
     //用户是否订阅
-    public static int getUserChannelSub(int custID, int channelID) throws Exception{
-    	String selectSQL="SELECT count(*) FROM channel_sub_user WHERE type=1 AND cust_id="+custID+" AND channel_id=" + channelID;
-		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-		int count = Integer.valueOf(infos.get(0).get("count(*)").toString());	
-    	return count;
-    }
+//    public static int getUserChannelSub(int custID, int channelID) throws Exception{
+//    	String selectSQL="SELECT count(*) FROM channel_sub_user WHERE type=1 AND cust_id="+custID+" AND channel_id=" + channelID;
+//		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
+//		int count = Integer.valueOf(infos.get(0).get("count(*)").toString());	
+//    	return count;
+//    }
     
     //获取某个频道栏目下频道总数量（没有书单的频道不计数）
     public static int getTotal(String columnCode) throws Exception{
-    	String selectSQL="SELECT count(*) FROM media_booklist WHERE channel_id IN " +
-    			"(SELECT a.sale_id FROM media_column_content a, channel b " +
-    			"WHERE a.sale_id=b.channel_id " +
-    			"AND a.column_code='"+columnCode+"'" +
-    			"AND b.shelf_status=1)";
+       	String selectSQL = "SELECT count(*)	" +
+       		" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
+       		" where column_code ='"+columnCode+"'"+
+       		" and channel.shelf_status=1"+
+       		" and channel.is_completed=1"+
+       		" and  mcc.status in(1,2)"+
+       		" and  now() between start_date and end_date"+
+       		" order by mcc.status asc , IF(ISNULL(order_value),1,0) asc,order_value desc";   
 		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
 		int count = Integer.valueOf(infos.get(0).get("count(*)").toString());	
     	return count;

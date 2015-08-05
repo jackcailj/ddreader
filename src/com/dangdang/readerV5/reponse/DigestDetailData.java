@@ -4,6 +4,8 @@ public class DigestDetailData {
     String systemDate;
     String currentDate;
     DigestDetail digestDetail;
+    DigestChannel channel;
+    int subscribe;
     
     public String getSystemDate(){
     	return systemDate;
@@ -14,6 +16,12 @@ public class DigestDetailData {
     public DigestDetail getDigestDetail(){
     	return digestDetail;
     }
+    public DigestChannel getChannel(){
+    	return channel;
+    }
+    public int getSubscribe(){
+    	return subscribe;
+    }
     
     public void setSystemDate(String systemDate){
     	this.systemDate = systemDate;
@@ -23,5 +31,11 @@ public class DigestDetailData {
     }
     public void setDigestDetail(DigestDetail digestDetail){
     	this.digestDetail = digestDetail;
+    }
+    public void setChannel(DigestChannel channel){
+    	this.channel = channel;
+    }
+    public void setSubscribe(int subscribe){
+    	this.subscribe = subscribe;
     }
 }

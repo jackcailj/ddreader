@@ -1,21 +1,28 @@
 package com.dangdang.readerV5.reponse;
 
-import com.dangdang.digital.meta.*;
-import com.dangdang.digital.meta.Channel;
 
 import java.util.List;
-
-/**
- * Created by cailianjie on 2015-8-1.
- */
 public class MyChannelListReponse {
-    List<Channel> channelList;
+	List<MyChannelList> channelList;
+	String count;
+	String total;
+	public List<MyChannelList> getChannelList() {
+		return channelList;
+	}
+	public void setChannelList(List<MyChannelList> channelList) {
+		this.channelList = channelList;
+	}
+	public String getCount() {
+		return count;
+	}
+	public void setCount(String count) {
+		this.count = count;
+	}
+	public String getTotal() {
+		return total;
+	}
+	public void setTotal(String total) {
+		this.total = total;
+	}
 
-    public List<Channel> getChannelList() {
-        return channelList;
-    }
-
-    public void setChannelList(List<Channel> channelList) {
-        this.channelList = channelList;
-    }
 }
