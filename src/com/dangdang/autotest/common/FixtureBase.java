@@ -154,11 +154,15 @@ public class FixtureBase extends InterfaceBase{
             setLogin(ParseParamUtil.parseLogin(paramMap));
         }
 
+		//增加action字段
         if(paramMap.get("action")==null) {
             addAction(lowerFirst(this.getClass().getSimpleName()));
         }
 
+		//解析参数
         ParseParamUtil.parseOperateParam(paramMap);
+
+		//添加公共参数
 		for(Map.Entry<String,String> entry: Config.getCommonParam().entrySet()){
 			if(!paramMap.containsKey(entry.getKey())){
 				paramMap.put(entry.getKey(),entry.getValue());

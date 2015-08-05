@@ -23,7 +23,7 @@ public class MediaActivityInfoDb {
                 "when 1015 then 'IPAD充值'"+
                  "end\n" +
                 ") payment\n" +
-                " from media_activity_info where from_paltform='"+platForm.toString()+"' and status=1 and end_time>NOW() GROUP BY activity_type_id order by activity_id";
+                " from media_activity_info where from_paltform='"+platForm.toString()+"' and status=1 and end_time>NOW() GROUP BY activity_type_id order by activity_id desc";
 
         return DbUtil.selectList(Config.YCDBConfig,selectString,PayMent.class);
     }

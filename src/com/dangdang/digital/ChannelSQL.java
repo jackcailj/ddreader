@@ -6,13 +6,9 @@ import java.util.Map;
 
 import com.dangdang.autotest.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.readerV5.reponse.BookList;
-import com.dangdang.readerV5.reponse.Channel;
-import com.dangdang.readerV5.reponse.ChannelBookList;
-import com.dangdang.readerV5.reponse.ChannelColumnReponse;
-import com.dangdang.readerV5.reponse.ChannelList;
-import com.dangdang.readerV5.reponse.ChannelMediaList;
-import com.dangdang.readerV5.reponse.ChannelResponse;
+import com.dangdang.digital.meta.MediaDigest;
+import com.dangdang.readerV5.reponse.*;
+import org.apache.commons.lang3.StringUtils;
 
 public class ChannelSQL {
 	
@@ -154,8 +150,9 @@ public class ChannelSQL {
     	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
         ChannelResponse response = new ChannelResponse();
         //设置channel
-        Channel channel = new Channel();
-        channel.setBookList(getBookIDList(channelID));
+        Channel channel;
+		channel = new Channel();
+		channel.setBookList(getBookIDList(channelID));
        // channel.setChannel(channel);
         channel.setChannelId(infos.get(0).get("channel_id").toString());
         channel.setDescription(infos.get(0).get("description").toString());
@@ -211,11 +208,37 @@ public class ChannelSQL {
     public static void main(String[] args) throws Exception{
 //    	List<BookList> list = new ArrayList<BookList>();
     	//ChannelSQL.getChannelColumn("all_interface_test");
-    	List<ChannelMediaList> list = ChannelSQL.getMediaList(14,10);
+    	List<ChannelMediaList> list = ChannelSQL.getMediaList(14, 10);
    	   System.out.println(list.get(0).getSaleId());
 //    	System.out.println(list.size());
 //    	BookList b = list.get(0);
 //    	System.out.println(b.getBooklist_id());
     }
+
+
+	public static MediaDigest getMediaDigest(StoreUpType storeUpType) throws Exception {
+		String selectString="select * from media_digest where "+(storeUpType.getDigestType()==""?"1=1":" type in("+storeUpType.getDigestType()+")")+" limit 1";
+		MediaDigest mediaDigest = DbUtil.selectOne(com.dangdang.config.Config.YCDBConfig,selectString, MediaDigest.class);
+		return mediaDigest;
+	}
+
+	public static List<MediaDigest> getMediaDigest(StoreUpType storeUpType,BookStatus bookStatus,List<String> DigestIdList,boolean isIn,int number) throws Exception {
+
+		String selectString="select * from media_digest where "+(storeUpType.getDigestType()==""?" 1=1 ":" type in("+storeUpType.getDigestType()+")")+
+				(bookStatus==BookStatus.VALID?" and is_del=0 ":" and is_del=1 ")+
+				(DigestIdList.size()==0?"":" and id "+(isIn?" in ":"not in ")+"("+ StringUtils.join(DigestIdList, ",")+")")+
+				" limit "+number;
+		List<MediaDigest> mediaDigest = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, MediaDigest.class);
+		return mediaDigest;
+	}
+
+	/*
+	获取订阅的频道信息
+	 */
+	public static List<com.dangdang.digital.meta.Channel> getSubChannels(String custId) throws Exception {
+		String selectString="select c.* from channel_sub_user csu left join channel c on csu.channel_id=c.channel_id where csu.cust_id="+custId+" order by create_date desc";
+		List<com.dangdang.digital.meta.Channel> mediaDigest = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, com.dangdang.digital.meta.Channel.class);
+		return mediaDigest;
+	}
 
 }

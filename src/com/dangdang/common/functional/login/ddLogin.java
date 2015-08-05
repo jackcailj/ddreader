@@ -19,6 +19,9 @@ public class ddLogin extends FixtureBase implements ILogin{
 
     ReponseV2<LoginReponse> reponseResult;
 
+    public   ddLogin(){
+    }
+
     public  ddLogin(LoginInfo Info){
         URL= Config.getLoginUrl();
         loginInfo = Info;
@@ -26,10 +29,7 @@ public class ddLogin extends FixtureBase implements ILogin{
         addAction("ddLogin");
     }
 
-    public   ddLogin(){
-        URL= Config.getLoginUrl();
-        addAction("ddLogin");
-    }
+
 
 
     @Override

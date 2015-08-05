@@ -35,4 +35,21 @@ public enum PlatForm {
 			return PlatForm.DDREADER_IOS;
 		}
 	}
+
+	public static PlatForm getPlatForm(String fromPlat ) {
+		if(fromPlat.equals("ds_android")){
+			return DDREADER_ANDROID;
+		}
+		else if(fromPlat.equals("ds_ios")){
+			return DDREADER_IOS;
+		}
+		else if(fromPlat.equals("yc_android")){
+			return YC_ANDROID;
+		}
+		else if(fromPlat.equals("yc_ios")){
+			return YC_IOS;
+		}
+
+		return  null;
+	}
 }

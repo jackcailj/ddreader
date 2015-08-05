@@ -22,16 +22,30 @@ public class GetBookShelfProductIdParse implements IParamParse {
     @Override
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
         int number=1;
-        if(StringUtils.isNotBlank(param)){
-            number=Integer.parseInt(param);
-        }
+
+        String[] splitString =param.split(",");
+
+
+
+        number=Integer.parseInt(splitString[1]);
+
 
         GetUserBookList getUserBookList = new GetUserBookList((ILogin) VariableStore.get(VarKey.LOGIN));
         getUserBookList.doWork();
 
         List<String> productIds=new ArrayList<String>();
-        for(int i=0;i<number;i++){
-            productIds.add(getUserBookList.getReponseResult().getData().getMediaList().get(i).getMediaId().toString());
+        for(int i=0;i<getUserBookList.getReponseResult().getData().getMediaList().size();i++){
+            if(splitString[0].toLowerCase().equals("hidden") && getUserBookList.getReponseResult().getData().getMediaList().get(i).getIsHide()==1){
+                productIds.add(getUserBookList.getReponseResult().getData().getMediaList().get(i).getMediaId().toString());
+            }
+            else if(splitString[0].toLowerCase().equals("unhidden") && getUserBookList.getReponseResult().getData().getMediaList().get(i).getIsHide()==0){
+                productIds.add(getUserBookList.getReponseResult().getData().getMediaList().get(i).getMediaId().toString());
+            }
+
+            if(productIds.size()==number){
+                break;
+            }
+
         }
 
         paramMap.put(key,StringUtils.join(productIds,","));

@@ -6,10 +6,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.core.VariableStore;
-import com.dangdang.ddframework.dataverify.RecordExVerify;
-import com.dangdang.ddframework.dataverify.RegexVerify;
-import com.dangdang.ddframework.dataverify.ValueVerify;
-import com.dangdang.ddframework.dataverify.VerifyResult;
+import com.dangdang.ddframework.dataverify.*;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.StringUtil;
 import com.dangdang.ddframework.util.Util;
@@ -126,24 +123,37 @@ public class PurchaseEbookVirtualPayment extends FixtureBase{
         }
         else{*/
         if(paramMap.get("productArray")!=null && login!=null) {
-            GetUserBookList getUserBookList = new GetUserBookList(login);
-            getUserBookList.doWork();
-
             List products = JSONObject.parseArray(paramMap.get("productArray"));
-            for (Object product : products) {
-                Map<String, String> mapObject = (Map<String, String>) product;
-                Media media = MediaDb.getMedia(mapObject.get("productId"));
-                if (media != null) {
-                    if (BookType.SHIDU.isShiDu(media.getUid())) {
-                        continue;
-                    }
-                    if(!paramMap.get("flag").equals("重复")) {
+            if(paramMap.get("flag").equals("font")){
+                for (Object product : products) {
+                    Map<String, String> mapObject = (Map<String, String>) product;
+                    Media media = MediaDb.getMedia(mapObject.get("productId"));
+                    if (!paramMap.get("flag").equals("重复")) {
                         totalCost += media.getPrice();
                     }
-                    dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId", media.getProductId().toString()), getUserBookList.getResult().toString()).setVerifyContent("购买成功，验证" + media.getProductId() + "是否有权限"));
-                } else {
-                    String productId = mapObject.get("productId");
-                    dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId", productId), getUserBookList.getResult().toString()).setVerifyContent("购买成功，验证" + productId + "是否有权限"), VerifyResult.FAILED);
+                    dataVerifyManager.add(new RecordVerify(Config.AUTHORITYConfig, "select * from media_authority where cust_id = "+login.getCustId()+" and product_id="+mapObject.get("productId")+" and authority_type=3"));
+                }
+            }
+            else {
+                GetUserBookList getUserBookList = new GetUserBookList(login);
+                getUserBookList.doWork();
+
+
+                for (Object product : products) {
+                    Map<String, String> mapObject = (Map<String, String>) product;
+                    Media media = MediaDb.getMedia(mapObject.get("productId"));
+                    if (media != null) {
+                        if (BookType.SHIDU.isShiDu(media.getUid())) {
+                            continue;
+                        }
+                        if (!paramMap.get("flag").equals("重复")) {
+                            totalCost += media.getPrice();
+                        }
+                        dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId", media.getProductId().toString()), getUserBookList.getResult().toString()).setVerifyContent("购买成功，验证" + media.getProductId() + "是否有权限"));
+                    } else {
+                        String productId = mapObject.get("productId");
+                        dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId", productId), getUserBookList.getResult().toString()).setVerifyContent("购买成功，验证" + productId + "是否有权限"), VerifyResult.FAILED);
+                    }
                 }
             }
         }

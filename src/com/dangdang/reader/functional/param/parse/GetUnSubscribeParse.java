@@ -1,19 +1,18 @@
 package com.dangdang.reader.functional.param.parse;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dangdang.authority.AuthorityDb;
 import com.dangdang.authority.MediaAuthority;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
-import com.dangdang.digital.BookStatus;
-import com.dangdang.digital.BookType;
-import com.dangdang.digital.meta.MediaBought;
-import com.dangdang.digital.MediaDb;
+import com.dangdang.digital.*;
 import com.dangdang.digital.meta.Media;
+import com.dangdang.digital.meta.MediaCustomerSubscription;
+import com.dangdang.digital.meta.MediaDigest;
 import com.dangdang.reader.functional.param.parse._enum.VarKey;
-import com.dangdang.readerV5.personal_center.GetMyBoughtList;
-import com.dangdang.readerV5.purchase.ListShoppingCart;
-import com.dangdang.readerV5.reponse.Products;
+import com.dangdang.readerV5.personal_center.DDReaderStoreUpList;
+import com.dangdang.readerV5.reponse.DDReaderStoreUpArticle;
+import com.dangdang.readerV5.reponse.DDReaderStoreUpMedia;
+import com.dangdang.readerV5.reponse.DDReaderStoreUpPost;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ import java.util.Map;
 /**
  * Created by cailianjie on 2015-7-14.
  */
-public class GetUnBuyProductAndSaleIdParse implements IParamParse{
+public class GetUnSubscribeParse implements IParamParse{
 
 
     @Override
@@ -49,35 +48,26 @@ public class GetUnBuyProductAndSaleIdParse implements IParamParse{
             String[] numberSplit =params[2].split("and");
             Integer number=Integer.parseInt(numberSplit[0].trim());
 
-            //获取购物车中的商品
-            //GetMyBoughtList myBoughtList = new GetMyBoughtList((ILogin) VariableStore.get(VarKey.LOGIN));
-            //myBoughtList.doWork();
-            List<MediaAuthority> mediaAuthorities = AuthorityDb.getMediaAuthority(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId());
+            List<MediaCustomerSubscription> subscriptions = CustomerSubscribeDb.getCustomerSubscription(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId(), 1);
 
             List<String> productIds = new ArrayList<String>();
 
-            for (MediaAuthority products : mediaAuthorities) {
-                productIds.add(""+products.getProductId());
+            for (MediaCustomerSubscription products : subscriptions) {
+                productIds.add(""+products.getMediaId());
             }
 
             //查找不在购物车中的prouctid，用来往购物车中添加
             List<Media> medias=MediaDb.getMedias(bookType, bookStatus, number,productIds);
             List mediaIds = new ArrayList();
             for(Media media : medias){
-                Map<String,String> mediaMap=new HashMap<String, String>();
-                mediaMap.put("productId",media.getMediaId().toString());
-                mediaMap.put("saleId", media.getSaleId().toString());
-                mediaIds.add(mediaMap);
+                mediaIds.add(media.getMediaId().toString());
             }
 
             if(numberSplit.length>1) {
-                Map<String,String> mediaMap=new HashMap<String, String>();
-                mediaMap.put("productId",numberSplit[1].trim());
-                mediaMap.put("saleId", numberSplit[1].trim());
-                mediaIds.add(mediaMap);
+                mediaIds.add(numberSplit[1].trim());
             }
 
-            paramMap.put(key, JSONObject.toJSONString(mediaIds));
+            paramMap.put(key, StringUtils.join(mediaIds,"_"));
             VariableStore.add(VarKey.MEDIAS,medias);
 
         }

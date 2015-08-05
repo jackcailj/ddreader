@@ -6,6 +6,7 @@ import com.dangdang.digital.meta.Media;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,7 +30,7 @@ public class MediaDb {
     */
     public  static List<Media> getMedias(BookType bookType,BookStatus bookStatus,int number) throws Exception {
         String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
-        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+" and (m.promotion_id is null or m.promotion_id=0) and mr.ID is not null  and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit "+number;
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  and mr.ID is not null  and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit "+number;
         List<Media> medias = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return medias;
     }
@@ -42,8 +43,8 @@ public class MediaDb {
             notInProductIds：要排除的productId
     */
     public  static List<Media> getMedias(BookType bookType,BookStatus bookStatus,int number,List<String> notInProductIds) throws Exception {
-        String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
-        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+" and (m.promotion_id is null or m.promotion_id=0) and mr.ID is not null  and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' "+(CollectionUtils.isEmpty(notInProductIds)?"": " and m.product_id not in("+StringUtils.join(notInProductIds,",")+")")+" limit "+number;
+        String shelfStatus= bookStatus==BookStatus.VALID?"1":"0";
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  "+(CollectionUtils.isEmpty(notInProductIds)?"": " and m.media_id not in("+StringUtils.join(notInProductIds,",")+")")+" limit "+number;
         List<Media> medias = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return medias;
     }
@@ -57,6 +58,19 @@ public class MediaDb {
     public  static List<Media> getMedias(BookType bookType,BookStatus bookStatus,List<String> notInProductIds) throws Exception {
 
         return getMedias(bookType, bookStatus, Integer.MAX_VALUE, notInProductIds);
+    }
+
+    /*
+    通过productid获取mediaids
+     */
+    public  static List<Media> getMedias(List<String> ProductIds) throws Exception {
+        if(ProductIds==null || ProductIds.size()==0){
+            return new ArrayList<Media>();
+        }
+
+        String selectString="SELECT * from media where product_id in ("+StringUtils.join(ProductIds,",")+") GROUP BY product_id";
+        List<Media> medias = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
+        return medias;
     }
 
     /*
@@ -78,7 +92,7 @@ public class MediaDb {
    */
     public  static String getMediaId(String custid,BookType bookType,BookStatus bookStatus) throws Exception {
         String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
-        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+" and (m.promotion_id is null or m.promotion_id=0) and mr.ID is not null and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit 1";
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  and mr.ID is not null and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit 1";
         Media media = DbUtil.selectOne(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return media.getMediaId().toString();
     }
@@ -100,7 +114,7 @@ public class MediaDb {
     public static List<Media> getCanBorrowMedia(BookType bookType,BookStatus bookStatus,int number) throws Exception {
         String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
         //String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id where ms.price=0 and ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+(bookType==BookType.EBOOK?"doc_type='ebook'":"doc_type is null")+" limit 1";
-        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+" and (m.promotion_id is null or m.promotion_id=0) and borrow_duration is not null and borrow_duration!=0 and mr.ID is not null  and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit "+number;
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  and borrow_duration is not null and borrow_duration!=0 and mr.ID is not null  and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit "+number;
 
         List<Media> media = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return media;
