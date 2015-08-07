@@ -29,7 +29,7 @@ import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 public class FixtureBase extends InterfaceBase{
 	protected static Logger log = Logger.getLogger(FixtureBase.class);
 	protected boolean verifyResult;
-	protected ILogin login;
+	protected ILogin login = null;
     protected String exceptStatusCode;
 
     protected ReponseV2Base reponseV2Base;
@@ -61,6 +61,9 @@ public class FixtureBase extends InterfaceBase{
 		return login.getCustId();
 	}
 	
+	public String getToken() throws Exception{
+		return login.getToken();
+	}
 	/**
 	 * @param actionName
 	 * @throws Exception
@@ -76,6 +79,7 @@ public class FixtureBase extends InterfaceBase{
 	 */
 	
 	public boolean doGet(String exceptedCode) throws Exception {
+		result = null;
 		boolean statusCode = false;
 		genrateVerifyData();
 		result=HttpDriver.doGet(URL, paramMap, bHttps);

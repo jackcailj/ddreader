@@ -1,32 +1,32 @@
 package com.dangdang.readerV5.reponse;
 
 public class ChannelList {
-	Integer channelId;
+	String channelId;
 	String description;
-	String hasBoughtMonthly;
+	Integer hasBoughtMonthly;
 	String icon;
-	String owner;
-	String ownerCustId;
+	//String owner;
+	//String ownerCustId;
 	String ownerType;
-	Integer subNumber;//订阅数
+	String subNumber;//订阅数
 	String title;
 		
-	public String getHasBoughtMonthly() {
+	public Integer getHasBoughtMonthly() {
 		return hasBoughtMonthly;
 	}
-	public void setHasBoughtMonthly(String hasBoughtMonthly) {
+	public void setHasBoughtMonthly(Integer hasBoughtMonthly) {
 		this.hasBoughtMonthly = hasBoughtMonthly;
 	}
-	public String getOwner() {
-		return owner;
-	}
-	public void setOwner(String owner) {
-		this.owner = owner;
-	}
-	public Integer getChannelId() {
+//	public String getOwner() {
+//		return owner;
+//	}
+//	public void setOwner(String owner) {
+//		this.owner = owner;
+//	}
+	public String getChannelId() {
 		return channelId;
 	}
-	public void setChannelId(Integer channelId) {
+	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 	}
 	public String getDescription() {
@@ -41,10 +41,10 @@ public class ChannelList {
 	public void setIcon(String icon) {
 		this.icon = icon;
 	}
-	public Integer getSubNumber() {
+	public String getSubNumber() {
 		return subNumber;
 	}
-	public void setSubNumber(Integer subNumber) {
+	public void setSubNumber(String subNumber) {
 		this.subNumber = subNumber;
 	}
 	public String getTitle() {
@@ -53,12 +53,12 @@ public class ChannelList {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getOwnerCustId() {
-		return ownerCustId;
-	}
-	public void setOwnerCustId(String ownerCustId) {
-		this.ownerCustId = ownerCustId;
-	}
+//	public String getOwnerCustId() {
+//		return ownerCustId;
+//	}
+//	public void setOwnerCustId(String ownerCustId) {
+//		this.ownerCustId = ownerCustId;
+//	}
 	public String getOwnerType() {
 		return ownerType;
 	}

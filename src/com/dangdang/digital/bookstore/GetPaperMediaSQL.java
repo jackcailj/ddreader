@@ -4,46 +4,56 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.dangdang.autotest.config.Config;
+
+import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.readerV5.reponse.Media;
 
 public class GetPaperMediaSQL {
 	
 	//频道书单下添加纸书
-	//public static 
+	public static void insertBookListWithPaperMedia(String channelid) throws Exception{
+		List<String> list = getBookList(channelid);
+		if(list.size()>0) return;
+	}
 	
 	//查询某个频道书单下的纸书id
-	public static List<String> getBookListWithChannelId(String channelid) throws Exception{
+	public static List<String> getBookList(String channelid) throws Exception{
 		int _channelId = Integer.valueOf(channelid);
 		String selectSQL = "SELECT mbd.product_id " +
-				"FROM `media_booklist` mb,media_booklist_detail mbd, channel c " +
-				"WHERE c.channel_id=mb.channel_id " +
-				"AND mb.booklist_id=mbd.booklist_id " +
-				"AND mbd.type=3 " +
-				"AND c.channel_id="+_channelId;
+			"FROM `media_booklist` mb,media_booklist_detail mbd, channel c " +
+			"WHERE c.channel_id=mb.channel_id " +
+			"AND mb.booklist_id=mbd.booklist_id " +
+			"AND mbd.type=3 " +
+			"AND c.channel_id="+_channelId;
+
 		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
 		List<String> list = new ArrayList<String>();
-		for(int i=0; i<list.size(); i++){
+		for(int i=0; i<infos.size(); i++){
 			list.add(infos.get(i).get("product_id").toString());
 		}
 		return list;
 	}
 	
+	public static String getOnePaperMediaWithChannelId(String channelId) throws Exception{
+		List<String> list = getBookList(channelId);
+		return list.get(0);
+	}
+	
 	//获取某个频道书单以外的某本纸书id
-	public static String getOnePaperMedia(String channelId) throws Exception{
-		List<String> poductIdList = getBookListWithChannelId(channelId);
+	public static String getOnePaperMediaWithChannel(String channelId, String size) throws Exception{
+		int _size = Integer.valueOf(size);
+		List<String> poductIdList = getBookList(channelId);
 		String productIdString = "";
 		for(int i=0;i<poductIdList.size(); i++){
 			productIdString += poductIdList.get(i) + ",";
 		}
-		System.out.println(productIdString);
 		String selectSQL = "SELECT product_id " +
 				"FROM `bar_product_info` " +
 				"WHERE type=2 AND product_id NOT IN("+productIdString.substring(0, productIdString.length()-1)+") " +
-						"ORDER BY RAND() LIMIT 1";
+						"ORDER BY RAND() LIMIT " + _size;
 		
-		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
+		List<Map<String, Object>>  infos = DbUtil.selectList(Config.BOOKBARDBConfig, selectSQL);	
 	 	return infos.get(0).get("product_id").toString();
 	}
 	
@@ -54,13 +64,13 @@ public class GetPaperMediaSQL {
 				"FROM `bar_product_info` " +
 				"WHERE product_id="+_productId;
 		Media media = new Media();
-		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
+		List<Map<String, Object>>  infos = DbUtil.selectList(Config.BOOKBARDBConfig, selectSQL);	
 		media.setIsbn(infos.get(0).get("book_isbn").toString());
 		media.setMediaType("3");
-		media.setPrice("book_price");
-		media.setProductId("product_id");
-		media.setPublisher("publisher");
-	 	media.setTitle("product_name");
+		//media.setPrice(infos.get(0).get("book_price").toString());
+		media.setProductId(infos.get(0).get("product_id").toString());
+		media.setPublisher(infos.get(0).get("publisher").toString());
+	 	media.setTitle(infos.get(0).get("product_name").toString());
 	 	return media;
 	}
 	
@@ -76,7 +86,7 @@ public class GetPaperMediaSQL {
 	}
 	
 	public static void main(String[] args) throws Exception{
-		String s = GetPaperMediaSQL.getOnePaperMedia("78");
+		String s = GetPaperMediaSQL.getOnePaperMediaWithChannelId("17");
 		System.out.println(s);
 	}
 

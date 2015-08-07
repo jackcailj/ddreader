@@ -8,7 +8,7 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.autotest.common.ResponseVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.ChannelSQL;
+import com.dangdang.digital.channel.ChannelSQL;
 import com.dangdang.readerV5.reponse.BookListDetailReponse;
 import com.dangdang.readerV5.reponse.ChannelMediaList;
 import com.dangdang.readerV5.reponse.ColumnReponse;

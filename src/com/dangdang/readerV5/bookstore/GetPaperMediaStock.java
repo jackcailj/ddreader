@@ -2,7 +2,6 @@ package com.dangdang.readerV5.bookstore;
 
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.BookStoreTestEvnSQL;
 import com.dangdang.readerV5.reponse.GetPaperMediaStockReponse;
 
 import fitnesse.slim.SystemUnderTest;
@@ -15,6 +14,6 @@ import fitnesse.slim.SystemUnderTest;
 public class GetPaperMediaStock extends FixtureBase{
 	ReponseV2<GetPaperMediaStockReponse> reponseResult;
 	
-	@SystemUnderTest
-	public BookStoreTestEvnSQL service = new BookStoreTestEvnSQL();
+	//@SystemUnderTest
+
 }

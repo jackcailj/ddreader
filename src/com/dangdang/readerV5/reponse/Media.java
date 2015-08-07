@@ -1,19 +1,12 @@
 package com.dangdang.readerV5.reponse;
 
 public class Media {
-	//String channelId;
 	String isbn;
 	String mediaType;
-	String price;
+	//String price;
 	String productId;
 	String publisher;
 	String title;
-//	public String getChannelId() {
-//		return channelId;
-//	}
-//	public void setChannelId(String channelId) {
-//		this.channelId = channelId;
-//	}
 	public String getIsbn() {
 		return isbn;
 	}
@@ -26,12 +19,12 @@ public class Media {
 	public void setMediaType(String mediaType) {
 		this.mediaType = mediaType;
 	}
-	public String getPrice() {
-		return price;
-	}
-	public void setPrice(String price) {
-		this.price = price;
-	}
+//	public String getPrice() {
+//		return price;
+//	}
+//	public void setPrice(String price) {
+//		this.price = price;
+//	}
 	public String getProductId() {
 		return productId;
 	}
