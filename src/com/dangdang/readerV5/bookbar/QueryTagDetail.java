@@ -44,11 +44,10 @@ public class QueryTagDetail extends FixtureBase {
 			}
 			commonParam.remove("deviceType");
 		}
-	//	String sql = "select bar_module_tag_id from bar_module_tag where status=1 ORDER BY RAND() limit 1";
-	//	tagId = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_module_tag_id").toString();
-		tagId ="1";
+		String sql = "select bar_module_tag_id from bar_module_tag where status=1 ORDER BY RAND() limit 1";
+		tagId = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_module_tag_id").toString();
 		if(params.get("moduleTagId")!=null&&params.get("moduleTagId").toString().equalsIgnoreCase("FromDB")){
-			params.put("moduleTagId", "1");
+			params.put("moduleTagId", tagId);
 		}
 		RemoveBlankParamParse removeBlankParamParse = new RemoveBlankParamParse();
 		removeBlankParamParse.parseNotPassParam(params);

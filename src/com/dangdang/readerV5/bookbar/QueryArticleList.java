@@ -79,10 +79,9 @@ public class QueryArticleList extends FixtureBase{
 						+ "and last_modified_date_msec <"+time+" ORDER BY is_top DESC, last_modified_date_msec DESC";
 			}
 			if(paramMap.get("objectId")!=null&&(!paramMap.get("objectId").isEmpty())&&paramMap.get("barId")==null){
-				sql = "select * from article where is_show=1 and is_del=0 and bar_id ="+barId2+" "
-						+ "ORDER BY is_top DESC, create_date DESC";
 				// 单品页最多返回三条
-				defaultSize = 3;
+				sql = "select * from article where is_show=1 and is_del=0 and bar_id ="+barId2+" "
+						+ "ORDER BY is_top DESC, last_modified_date_msec DESC limit 3";
 			}
 			List<Article> article = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Article.class);
 			List<ArticleList> list = reponseResult.getData().getArticleList();
@@ -92,9 +91,9 @@ public class QueryArticleList extends FixtureBase{
 			for(int i=0; i<reponseResult.getData().getArticleList().size(); i++){
 				Map<String,String> map1 = new HashMap<String,String>();
 				Map<String,String> map2 = new HashMap<String,String>();
-				map1.put("articleId", article.get(i).getArticleId().toString());
+				map1.put("mediaDigestId", Long.toString(article.get(i).getMediaDigestId()));
 				map1.put("barId", Long.toString(article.get(i).getBarId()));
-				map2.put("articleId", list.get(i).getArticleId());
+				map2.put("mediaDigestId", list.get(i).getMediaDigestId());
 				map2.put("barId", list.get(i).getBarId());
 				list1.add(map1);
 				list2.add(map2);
@@ -103,7 +102,7 @@ public class QueryArticleList extends FixtureBase{
 			
 			//验证帖子数量
 			if(article.size()>50){				
-				dataVerifyManager.add(new ValueVerify<Integer>(50, list.size(),false));
+				dataVerifyManager.add(new ValueVerify<Integer>(defaultSize, list.size(),false));
 			}
 			else{
 				dataVerifyManager.add(new ValueVerify<Integer>(article.size(), list.size(),false));

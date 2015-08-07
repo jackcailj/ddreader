@@ -8,13 +8,13 @@ import java.util.List;
  * Created by cailianjie on 2015-7-15.
  */
 public class GetUserBookListReponse {
-    List<Media> mediaList;
+    List<UserBookMedia> mediaList;
 
-    public List<Media> getMediaList() {
+    public List<UserBookMedia> getMediaList() {
         return mediaList;
     }
 
-    public void setMediaList(List<Media> mediaList) {
+    public void setMediaList(List<UserBookMedia> mediaList) {
         this.mediaList = mediaList;
     }
 }

@@ -1,15 +1,23 @@
 package com.dangdang.readerV5.reponse;
 
 public class Article {
+	String barHostCustId;
+	String barId;
+	String barName;
+	String commentNum;            
 	String content;
 	String custId;
-	String headPhoto;
-	String isPraise;
+	String headPhoto;	
+	String isDel;	
+	String isPraise;	
+	String isShow;
+	String isStoreUp;    
 	String isTop;
 	String isWonderful;
 	String lastModifiedDateMsec;
 	String mediaDigestId;
 	String nickName;
+	String praiseNum;    
 	String title;
 
 	public String getContent(){
@@ -72,5 +80,52 @@ public class Article {
 	public void setTitle(String title){
 		this.title = title;
 	}
-
+	public String getBarHostCustId(){
+		return barHostCustId;
+	}
+	public String getBarId(){
+		return barId;
+	}
+	public String getBarName(){
+		return barName;
+	}
+	public String getCommentNum(){
+		return commentNum;
+	}
+	public String getIsDel(){
+		return isDel;
+	}
+	public String getIsShow(){
+		return isShow;
+	}
+	public String getIsStoreUp(){
+		return isStoreUp;
+	}
+	public String getPraiseNum(){
+		return praiseNum;
+	}
+	public void setBarHostCustId(String barHostCustId){
+		this.barHostCustId = barHostCustId;
+	}
+	public void setBarId(String barId){
+		this.barId = barId;
+	}
+	public void setBarName(String barName){
+		this.barName = barName;
+	}
+	public void setCommentNum(String commentNum){
+		this.commentNum = commentNum;
+	}
+	public void setIsDel(String isDel){
+		this.isDel = isDel;
+	}
+	public void setIsShow(String isShow){
+		this.isShow = isShow;
+	}
+	public void setIsStoreUp(String isStoreUp){
+		this.isStoreUp = isStoreUp;
+	}
+	public void setPraiseNum(String praiseNum){
+		this.praiseNum = praiseNum;
+	}
 }

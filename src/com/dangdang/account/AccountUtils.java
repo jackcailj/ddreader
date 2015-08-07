@@ -45,4 +45,17 @@ public class AccountUtils {
     public  static List<AttachAccountItems> getAttachLingDangDetail(String custid,TestDevice device) throws Exception {
         return DbUtil.selectList(Config.ACCOUNTDBConfig,"select * from attach_account_items where cust_id="+custid+" and consume_source='"+device+"'  order by effective_date,attach_account_items_id DESC ",AttachAccountItems.class);
     }
+
+
+    /*
+    获取积分类表
+     */
+    public  static List<IntegralItem> getIntegralItems(String custId) throws Exception {
+        String selectString="select aii.action_type as actionType,ati.action_type_desc as actionTypeDesc,aii.creation_date as creationDate, aii.cust_id as custId,aii.device_type as deviceType,\n" +
+                "aii.integral as integral,aii.integral_items_id as integralItemsId, aii.platform_no as platformNo from account_integral_items aii\n" +
+                "LEFT JOIN account_action_type_info ati on aii.action_type=ati.action_type_id\n" +
+                "where aii.cust_id="+custId+" order by aii.creation_date desc";
+        List<IntegralItem> integrals = DbUtil.selectList(Config.ACCOUNTDBConfig,selectString,IntegralItem.class);
+        return integrals;
+    }
 }

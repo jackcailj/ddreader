@@ -5,6 +5,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import com.dangdang.config.Config;
+import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.util.DesUtils;
 import com.dangdang.ddframework.util.security.RsaUtils;
 import com.dangdang.digital.api.IMMsgApi;
@@ -25,10 +27,13 @@ public class Test {
 		System.out.println(date1.getTime());
 */
 
-		ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:conf/readerV5/applicationContext-im.xml");
+		/*ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:conf/readerV5/applicationContext-im.xml");
 
 		IMMsgApi msgApi = (IMMsgApi) factory.getBean("imMsgApi");
-		msgApi.sendIMUpdateMsg(null);
+		msgApi.sendIMUpdateMsg(null);*/
+
+		DbUtil.selectList(Config.YCDBConfig,"select type *1 as type from channel_monthly_strategy");
+
 
 	}
 }

@@ -29,7 +29,7 @@ public class UnRegisterPhoneParse implements IParamParse{
 
         Long phoneNum =new Long("13000000000");
         try{
-            Map<String,Object> result = DbUtil.selectOne(Config.ECMSDBConfig, getMaxPhone);
+            Map<String,Object> result = DbUtil.selectOne(Config.UCENTERDBConfig, getMaxPhone);
             phoneNum=Long.parseLong(result.get("maxPhone").toString());
         }catch (Exception e){
             logger.info("获取未注册手机号异常,将使用默认手机号13000000001："+e);

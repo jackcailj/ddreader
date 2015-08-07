@@ -52,7 +52,7 @@ public class GetUnBuyProductAndSaleIdParse implements IParamParse{
             //获取购物车中的商品
             //GetMyBoughtList myBoughtList = new GetMyBoughtList((ILogin) VariableStore.get(VarKey.LOGIN));
             //myBoughtList.doWork();
-            List<MediaAuthority> mediaAuthorities = AuthorityDb.getUserEbook(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId());
+            List<MediaAuthority> mediaAuthorities = AuthorityDb.getMediaAuthority(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId());
 
             List<String> productIds = new ArrayList<String>();
 
