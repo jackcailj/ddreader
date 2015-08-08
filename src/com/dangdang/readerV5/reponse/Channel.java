@@ -1,13 +1,22 @@
 package com.dangdang.readerV5.reponse;
 
+import java.util.List;
+
+import com.dangdang.digital.model.ChannelMonthlyStrategy;
+
 public class Channel {
 	ChannelBookList bookList;
 	String channelId;
+	//List<ChannelMonthlyStrategy> channelMonthlyStrategy;
 	String description;
 	String hasArtical;
+	String hasBoughtMonthly;
 	String icon;
+	String isAllowMonthly;
 	String isSub;
-	String ownder;
+	//String monthlyType;
+	//String ownder;
+	String ownerType;
 	String subNumber;
 	String title;
 
@@ -49,12 +58,12 @@ public class Channel {
 	public void setIsSub(String isSub) {
 		this.isSub = isSub;
 	}
-	public String getOwnder() {
-		return ownder;
-	}
-	public void setOwnder(String ownder) {
-		this.ownder = ownder;
-	}
+//	public String getOwnder() {
+//		return ownder;
+//	}
+//	public void setOwnder(String ownder) {
+//		this.ownder = ownder;
+//	}
 	public String getSubNumber() {
 		return subNumber;
 	}
@@ -67,4 +76,44 @@ public class Channel {
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
+	public String getHasBoughtMonthly() {
+		return hasBoughtMonthly;
+	}
+
+	public void setHasBoughtMonthly(String hasBoughtMonthly) {
+		this.hasBoughtMonthly = hasBoughtMonthly;
+	}
+
+	public String getIsAllowMonthly() {
+		return isAllowMonthly;
+	}
+
+	public void setIsAllowMonthly(String isAllowMonthly) {
+		this.isAllowMonthly = isAllowMonthly;
+	}
+
+//	public String getMonthlyType() {
+//		return monthlyType;
+//	}
+//	
+//	public void setMonthlyType(String monthlyType) {
+//		this.monthlyType = monthlyType;
+//	}
+
+	public String getOwnerType() {
+		return ownerType;
+	}
+
+	public void setOwnerType(String ownerType) {
+		this.ownerType = ownerType;
+	}
+//	public List<ChannelMonthlyStrategy> getChannelMonthlyStrategy() {
+//		return channelMonthlyStrategy;
+//	}
+//
+//	public void setChannelMonthlyStrategy(
+//			List<ChannelMonthlyStrategy> channelMonthlyStrategy) {
+//		this.channelMonthlyStrategy = channelMonthlyStrategy;
+//	}
 }

@@ -1,11 +1,15 @@
 package com.dangdang.readerV5.discovery;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
@@ -33,14 +37,14 @@ public class GetDigestDetail  extends FixtureBase {
 		channelId = "";
 		if(paramMap.get("digestId")!=null&&paramMap.get("digestId").equals("DigestDB")){
 			String sql = "SELECT id FROM `media_digest` where media_id is not null and "
-					     + "is_show=1 and is_del=0 ORDER BY RAND() limit 1";
+					     + "is_show=1 and is_del=0 and (type=1 or type=2) ORDER BY RAND() limit 1";
 			digestId = DbUtil.selectOne(Config.YCDBConfig, sql).get("id").toString();
 			paramMap.put("digestId", digestId);
 		}
 		if(paramMap.get("digestId")!=null&&paramMap.get("digestId").equals("ChannelDB")){
 			String sql = "SELECT cd.digest_id, cd.channel_id FROM channel_articles_digest as cd left join "
 					     + "`media_digest` as md on md.id=cd.digest_id where md.media_id is not null and "
-					     + "md.is_show=1 and md.is_del=0 and cd.status=1 and (md.type=1 or md.type=2) ORDER BY RAND() limit 1";
+					     + "md.is_show=1 and md.is_del=0 and cd.status=1 ORDER BY RAND() limit 1";
 			Map<String,Object> map = DbUtil.selectOne(Config.YCDBConfig, sql);
 			digestId = map.get("digest_id").toString();
 			paramMap.put("digestId", digestId);
@@ -62,22 +66,51 @@ public class GetDigestDetail  extends FixtureBase {
 			dataVerifyManager.add(new ValueVerify<String>(detail.getCardTitle(), map1.get("card_title").toString()));
 			
 			//验证ebookInfo
-			sql = "select author_penname,cover_pic, title, editor_recommend, product_id "
-					+ "from media where media_id="+map1.get("media_id").toString();
-			Map<String,Object>  map2 = DbUtil.selectOne(Config.YCDBConfig, sql);
-			EbookInfo info = new EbookInfo();
-			info.setBookAuthor(map2.get("author_penname").toString());
-			info.setBookImgUrl(detail.getEbookInfo().getBookImgUrl());
-			info.setBookName(map2.get("title").toString());
-			info.setEditorRecommend(map2.get("editor_recommend")!=null?map2.get("editor_recommend").toString():"");
-			info.setIsPaperBook(Boolean.valueOf(map1.get("is_paper_book").toString())?1:0);
-			info.setProductId(map1.get("media_id").toString());			
-			dataVerifyManager.add(new ValueVerify(info, detail.getEbookInfo(), true));
+			
+			try{
+				Map<String,Object>  map2 = new HashMap<String,Object>();
+				List<String> list1 = new ArrayList<String>();
+				List<String> list2 = new ArrayList<String>();
+				if(map1.get("is_paper_book").toString().equals("false")){
+					sql = "select author_penname,cover_pic, title, editor_recommend, product_id "
+							+ "from media where media_id="+map1.get("media_id").toString();
+					map2 = DbUtil.selectOne(Config.YCDBConfig, sql);
+					list1.add(map2.get("author_penname").toString());
+					list1.add(map2.get("title").toString());
+					list1.add("0");
+					list1.add(map1.get("media_id").toString());
+				//	list1.add(map2.get("cover_pic").toString());
+				//	list1.add(map2.get("editor_recommend")!=null?map2.get("editor_recommend").toString():"");
+				}
+				else{
+					sql = "select book_author, product_name, product_id "
+							+ "from bar_product_info where product_id="+map1.get("media_id").toString();
+					map2 = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
+					list1.add(map2.get("book_author").toString());
+					list1.add(map2.get("product_name").toString());
+					list1.add("1");
+					list1.add(map2.get("product_id").toString());
+				//	list1.add(map2.get("cover_pic").toString());
+				//	list1.add(map2.get("editor_recommend")!=null?map2.get("editor_recommend").toString():"");
+				}
+				list2.add(detail.getEbookInfo().getBookAuthor());
+				list2.add(detail.getEbookInfo().getBookName());
+				list2.add(Integer.toString(detail.getEbookInfo().getIsPaperBook()));
+				list2.add(detail.getEbookInfo().getProductId());
+				//list2.add(detail.getEbookInfo().getBookImgUrl());
+				//list2.add(detail.getEbookInfo().getEditorRecommend());
+				dataVerifyManager.add(new ListVerify(list1, list2, false));				
+			}
+			catch(Exception e){
+				if(e.getMessage().contains("没有返回结果")){
+					dataVerifyManager.add(new ValueVerify(null, detail.getEbookInfo().getProductId(), false));
+				}
+			}			
 			
 			//频道信息
 			if(paramMap.get("ddChannelId")!=null&&!(paramMap.get("ddChannelId").isEmpty())){
 				sql = "select icon,title,description from channel where "
-						+ "channel_id="+map1.get("ddChannelId").toString();
+						+ "channel_id="+paramMap.get("ddChannelId");
 				Map<String,Object>  map3 = DbUtil.selectOne(Config.YCDBConfig, sql);
 				DigestChannel channel = new DigestChannel();
 				channel.setChannelDesc(map3.get("description").toString());
@@ -91,7 +124,7 @@ public class GetDigestDetail  extends FixtureBase {
 				DbUtil.selectOne(Config.BSAECOMMENT, sql);
 				dataVerifyManager.add(new ValueVerify<Integer>(1, reponseResult.getData().getDigestDetail().getIsPraise(), false));
 			}
-			catch(NullPointerException e){
+			catch(Exception e){
 				dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getDigestDetail().getIsPraise(), false));
 			}
 			
@@ -102,7 +135,7 @@ public class GetDigestDetail  extends FixtureBase {
 				dataVerifyManager.add(new ValueVerify<Integer>(Integer.parseInt(map4.get("type").toString()), 
 						                                       reponseResult.getData().getSubscribe(), false));
 			}
-			catch(NullPointerException e){
+			catch(Exception e){
 				dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getSubscribe(), false));
 			}
 			super.dataVerify();
@@ -113,9 +146,6 @@ public class GetDigestDetail  extends FixtureBase {
 		}
 		verifyResult(expectedCode);
 	}
-
-	///media/api2.go?action=getDigestDetail&digestId=1209&token=cc9c1943d250f787a0ff542b42deef5d&returnType=json&deviceType=FP_Android&channelId=61000&clientVersionNo=1.0.0&serverVersionNo=1.0.0&permanentId=20150521110509038381237169605661659&deviceSerialNo=864587026900416&macAddr=c0%3Aee%3Afb%3A04%3A27%3A3e&resolution=1080*1920&clientOs=4.3&platformSource=FP-P&channelType=all&token=cc9c1943d250f787a0ff542b42deef5d 
-	//	{"data":{"currentDate":"2015-05-28 19:45:42","digestDetail":{"alreayMark":false,"authorList":[{"authorId":49545,"name":"王潇"}],"cardRemark":"困在一个节点，眼看时间滴答滴答，不能进，不能退，无法施展，无可奈何。","cardTitle":"当我们困在原地","cardType":2,"cardUrl":"/media/api2.go?action=getDigestContentForH5&digestId=1196","digestId":1196,"ebookInfo":{"bookAuthor":"王潇","bookImgUrl":"http://img30.ddimg.cn/imgother10/13/26/1900302340_cover_k_epub.jpg","bookName":"女人明白要趁早之三观易碎","editorRecommend":"是猛药，不是鸡汤！励志榜样王潇全新力作,献给女性的三观重塑读本!","productId":1900302340},"mediaId":1900302340,"mood":5,"pic1Path":"http://img30.ddimg.cn/imgother10/13/26/1900302340_userUpload_1432725701684.jpg","reviewCnt":4,"signList":[{"id":106,"name":"反鸡汤"}]},"systemDate":"1432813542009"},"status":{"code":0},"systemDate":1432813542009}
 
 }
 

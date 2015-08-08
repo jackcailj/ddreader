@@ -5,7 +5,6 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.ChannelSQL;
 import com.dangdang.digital.channel.ChannelSubSQL;
 import com.dangdang.readerV5.reponse.ChannelsubReponse;
 

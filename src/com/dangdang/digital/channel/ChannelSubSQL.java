@@ -3,7 +3,7 @@ package com.dangdang.digital.channel;
 import java.util.List;
 import java.util.Map;
 
-import com.dangdang.autotest.config.Config;
+import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 
 /**
@@ -89,5 +89,6 @@ public class ChannelSubSQL {
 			updateSQL="UPDATE `channel` SET sub_number="+(sub_number-1)+" WHERE channel_id=" + channelID;
 		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
     }  
+   
     
 }

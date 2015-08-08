@@ -7,7 +7,7 @@ import java.util.Map;
 
 import org.apache.log4j.Logger;
 
-import com.dangdang.autotest.config.Config;
+import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaColumn;
 import com.dangdang.readerV5.reponse.BorrowReponse;
