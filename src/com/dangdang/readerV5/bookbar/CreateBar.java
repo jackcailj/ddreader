@@ -22,7 +22,9 @@ import fitnesse.slim.SystemUnderTest;
  */
 public class CreateBar  extends FixtureBase {
 	ReponseV2<CreateBarResponse>   reponseResult;
+	int createBarGrade = 10;
 	static String barId;
+	static int grade;
 	
 	public ReponseV2<CreateBarResponse> getResult(){
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<CreateBarResponse>>(){});
@@ -35,7 +37,14 @@ public class CreateBar  extends FixtureBase {
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);
-
+		if(login!=null&&login.getCustId()!=null&& grade < createBarGrade){
+			String sql = "SELECT account_grade FROM `attach_account` where cust_id="+login.getCustId();
+			grade = Integer.parseInt(DbUtil.selectOne(Config.ACCOUNTDBConfig, sql).get("account_grade").toString());
+			//用户等级大于等于10时，用户才有权限建吧
+			if(grade < createBarGrade){
+				DbUtil.executeUpdate(Config.ACCOUNTDBConfig, "update attach_account set account_grade="+createBarGrade+" where cust_id="+login.getCustId());
+			}
+		}
 		String rBarName = "建吧-"+((new Random()).nextInt());
 		if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("Random")){
 			paramMap.put("barName", rBarName);
@@ -76,10 +85,8 @@ public class CreateBar  extends FixtureBase {
 			list2.add(map.get("bar_name").toString());
 			list1.add(paramMap.get("barDesc"));
 			list2.add(map.get("bar_desc").toString());
-			if(paramMap.get("barImgUrl")!=null){
-				list1.add(paramMap.get("barImgUrl"));
-				list2.add(map.get("bar_img_url").toString());
-			}			
+		    list1.add(paramMap.get("barImgUrl"));
+			list2.add(map.get("bar_img_url").toString());
 			dataVerifyManager.add(new ValueVerify<List<String>>(list1, list2));
 			super.dataVerify();
 		}	

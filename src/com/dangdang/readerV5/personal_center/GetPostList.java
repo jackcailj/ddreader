@@ -13,7 +13,6 @@ import com.dangdang.digital.meta.MediaDigest;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetPostListReponse;
 import com.dangdang.ucenter.UserInfoSql;
-import javafx.beans.property.adapter.ReadOnlyJavaBeanBooleanProperty;
 
 import java.util.List;
 import java.util.regex.Matcher;

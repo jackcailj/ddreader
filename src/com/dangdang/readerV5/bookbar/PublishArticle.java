@@ -46,7 +46,7 @@ public class PublishArticle extends FixtureBase{
 		//查找被屏蔽的帖子的media digest id		
 		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equals("shield")){
 			DbUtil.executeUpdate(Config.BOOKBARDBConfig, 
-					"update article set is_show=0 and is_del=0 where cust_id="+login.getCustId()+" and bar_id="+barId+" LIMIT 1");
+					"update article set is_show=0,is_del=0 where cust_id="+login.getCustId()+" and bar_id="+barId+" LIMIT 1");
 			Thread.sleep(1000);
 			aSql = "SELECT * FROM `article` where cust_id="+login.getCustId()
 					+ " and is_show=0 and is_del=0 and bar_id="+barId+" ORDER BY RAND() limit 1";
@@ -54,7 +54,7 @@ public class PublishArticle extends FixtureBase{
 		//查找被删除的帖子的media digest id		
 		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equals("deleted")){
 			DbUtil.executeUpdate(Config.BOOKBARDBConfig, 
-					"update article set is_show=1 and is_del=1 where cust_id="+login.getCustId()+" and bar_id="+barId+" LIMIT 1");
+					"update article set is_show=1,is_del=1 where cust_id="+login.getCustId()+" and bar_id="+barId+" LIMIT 1");
 			Thread.sleep(1000);
 			aSql = "SELECT * FROM `article` where cust_id="+login.getCustId()
 					+ " and is_show=1 and is_del=1 and bar_id="+barId+" ORDER BY RAND() limit 1";
@@ -73,9 +73,11 @@ public class PublishArticle extends FixtureBase{
 			List<String> list2 = new ArrayList<String>();
 			String sql = "select * from media_digest where id="+reponseResult.getData().getMediaDigestId();
 			MediaDigest digest = DbUtil.selectOne(Config.YCDBConfig, sql, MediaDigest.class);
-			list1.add(digest.getTitle());
-			list1.add(digest.getCardRemark());
-			list2.add(paramMap.get("title"));
+			if(paramMap.get("title")!=null){
+				list1.add(digest.getTitle());
+				list2.add(paramMap.get("title"));
+			}			
+			list1.add(digest.getCardRemark());			
 			list2.add(paramMap.get("content"));
 			if(paramMap.get("imgUrls")!=null&&!(paramMap.get("imgUrls").isEmpty())){
 				list1.add(digest.getSmallPic1Path());
@@ -90,20 +92,7 @@ public class PublishArticle extends FixtureBase{
 		}
 		verifyResult(expectedCode);
 	}
-	
-	@Override
-	 public boolean tearDown(){
-		try {
-			DbUtil.executeUpdate(Config.BOOKBARDBConfig, 
-					"update article set is_show=1 and is_del=0 where cust_id="+login.getCustId()+" and bar_id="+barId+" LIMIT 1");
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 		
-		return super.tearDown();		 
-	 }
-	
 	//POST /media/api2.go?action=publishArticle&barId=4901&title=%E5%8F%91%E5%B8%96&content=%E5%91%A8%E4%B8%80&actionType=1 HTTP/1.1
 	//{"data":{"currentDate":"2015-07-13 17:56:11","mediaDigestId":1340,"systemDate":"1436781371263"},"status":{"code":0},"systemDate":1436781371262}
 }
