@@ -60,9 +60,14 @@ public class Config extends ConfigCore{
 
 			}
 			else {
-				YCDBConfig= "conf/"+testData+"/db/websql_yc.properties";
-				ECMSDBConfig= "conf/"+testData+"/db/websql_ddreader.properties";
-				ACCOUNTDBConfig= "conf/"+testData+"/db/websql_account.properties";
+				YCDBConfig= "conf/onlinedb/websql_yc.properties";
+				ECMSDBConfig= "conf/onlinedb/websql_ddreader.properties";
+				ACCOUNTDBConfig= "conf/onlinedb/websql_account.properties";
+				UCENTERDBConfig= "conf/onlinedb/websql_ucenter.properties";
+				BOOKBARDBConfig= "conf/onlinedb/websql_bookbar.properties";
+				IMDBConfig= "conf/onlinedb/websql_im.properties";
+				AUTHORITYConfig= "conf/onlinedb/websql_authority.properties";
+				BSAECOMMENT= "conf/onlinedb/websql_base_comment.properties";
 			}					
 
 		}
