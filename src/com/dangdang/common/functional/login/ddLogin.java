@@ -47,9 +47,9 @@ public class ddLogin extends FixtureBase implements ILogin{
     public String getToken() {
         return getReponseResult().getData().getToken();
     }
-    public String get(String param) {
+   /* public String get(String param) {
     	return getReponseResult().getData().getToken();
-    }
+    }*/
 
     @Override
     public LoginInfo getLoginInfo() {

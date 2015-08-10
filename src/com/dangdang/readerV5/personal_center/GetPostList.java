@@ -53,7 +53,7 @@ public class GetPostList extends FixtureBase{
             if(paramMap.get("selfType").equals("0")) {
                 List<MediaDigest> mediaDigests = MediaDigestDb.getMediaDigest(login.getCustId(), StoreUpType.POST);
                 if (mediaDigests.size() == 0) {
-                    dataVerifyManager.add(new ValueVerify<Object>(null, reponseResult.getData().getPostList()), VerifyResult.SUCCESS);
+                    dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getPostList().size()));
                 } else {
                     for(MediaDigest mediaDigest:mediaDigests){
                         Matcher matcher = Pattern.compile("\"bodyContent\">(.*?)</p>", Pattern.DOTALL).matcher(mediaDigest.getContent());
@@ -67,7 +67,10 @@ public class GetPostList extends FixtureBase{
             else {
                 List<MediaDigest> mediaDigests = MediaDigestDb.getMediaDigest(UserInfoSql.getCustIdByPubId(paramMap.get("pubId")), StoreUpType.POST);
                 if (mediaDigests.size() == 0) {
-                    dataVerifyManager.add(new ValueVerify<Object>(null, reponseResult.getData().getPostList()), VerifyResult.SUCCESS);
+                    if(reponseResult.getData().getPostList()!=null) {
+                        dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getPostList().size()));
+                    }
+
                 } else {
                     for(MediaDigest mediaDigest:mediaDigests){
                         Matcher matcher = Pattern.compile("\"bodyContent\">(.*?)</p>", Pattern.DOTALL).matcher(mediaDigest.getContent());

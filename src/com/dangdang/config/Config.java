@@ -38,10 +38,15 @@ public class Config extends ConfigCore{
 		CommonParam=params;
 	}
 	
-	static{
+	/*static{
 		Init();
-	}
-	
+	}*/
+
+
+    public static void setEnvironment(TestEnvironment environment) {
+        ConfigCore.environment = environment;
+        Init();
+    }
 	public static void Init(){
 		
 		PropertyConfigurator.configure(ResourceLoader.loadCurrentPropertyFile("conf/log4j.properties"));
@@ -85,6 +90,8 @@ public class Config extends ConfigCore{
 	public static  String getLoginUrl() {
 		return LoginUrl;
 	}
+
+
 	
 	public static String getBaseUrl() {
 		return BaseUrl;

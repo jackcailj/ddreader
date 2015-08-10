@@ -23,24 +23,23 @@ public class DDReaderStoreUpSave extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){
+            if(!paramMap.get("flag").equals("error_data")) {
+                StoreUpType type = StoreUpType.valueOf(paramMap.get("type").toUpperCase());
+                DDReaderStoreUpList storeUpList = new DDReaderStoreUpList(login, type);
+                storeUpList.doWorkAndVerify();
 
-            StoreUpType type=StoreUpType.valueOf(paramMap.get("type").toUpperCase());
-            DDReaderStoreUpList storeUpList = new DDReaderStoreUpList(login,type );
-            storeUpList.doWorkAndVerify();
+                String[] targetIds = paramMap.get("targetIds").split(",");
 
-            String[] targetIds=paramMap.get("targetIds").split(",");
-
-            if(type==StoreUpType.MEDIA) {
-                for (String targetId : targetIds) {
-                    dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("productId", targetId), storeUpList.getResult().toString()));
+                if (type == StoreUpType.MEDIA) {
+                    for (String targetId : targetIds) {
+                        dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("productId", targetId), storeUpList.getResult().toString()));
+                    }
+                } else {
+                    for (String targetId : targetIds) {
+                        dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("articleId", targetId), storeUpList.getResult().toString()));
+                    }
                 }
             }
-            else{
-                for (String targetId : targetIds) {
-                    dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("articleId", targetId), storeUpList.getResult().toString()));
-                }
-            }
-
         }
         super.dataVerify();
     }

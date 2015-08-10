@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ResourceBundleManager">
+    <file url="file://$PROJECT_DIR$/src/conf/onlinedb/websql.properties" />
+    <file url="file://$PROJECT_DIR$/src/conf/onlinedb/websql_account.properties" />
+    <file url="file://$PROJECT_DIR$/src/conf/onlinedb/websql_base_comment.properties" />
+    <file url="file://$PROJECT_DIR$/src/conf/onlinedb/websql_bookbar.properties" />
+    <file url="file://$PROJECT_DIR$/src/conf/onlinedb/websql_ddreader.properties" />
+    <file url="file://$PROJECT_DIR$/src/conf/onlinedb/websql_im.properties" />
+    <file url="file://$PROJECT_DIR$/src/conf/onlinedb/websql_ucenter.properties" />
+    <file url="file://$PROJECT_DIR$/src/conf/onlinedb/websql_yc.properties" />
+  </component>
+</project>

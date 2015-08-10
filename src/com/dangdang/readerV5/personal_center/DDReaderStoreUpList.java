@@ -89,7 +89,8 @@ public class DDReaderStoreUpList extends FixtureBase{
                             storeUpMedia.setStoreDateLong(mediaStoreup.getStoreDate());
                             for (Media media : medias) {
                                 if (mediaStoreup.getTargetId().equals(media.getProductId())) {
-                                    storeUpMedia.setAuthorName(media.getAuthorPenname());
+                                    //只返回第一个作者
+                                    //storeUpMedia.setAuthorName(media.getAuthorPenname().split(";")[0]);
                                     storeUpMedia.setBookName(media.getTitle());
                                     storeUpMedia.setEditorRecommend(media.getDescs());
                                     storeUpMedia.setProductId(media.getProductId());
@@ -100,16 +101,22 @@ public class DDReaderStoreUpList extends FixtureBase{
 
                         dataVerifyManager.add(new ListVerify(storeList, reponseResultMedia.getData().getStoreUpList(), true).setVerifyContent("验证收藏列表Meida数据是否正确"));
                     } else {
-                        //不必对详细信息，之比对id是否存在
-                        StringBuilder regexArticleId = new StringBuilder();
-                        for (MediaStoreup mediaStoreup : mediaStoreups) {
-                            regexArticleId.append(Util.getJsonRegexString("articleId", mediaStoreup.getTargetId().toString()));
-                            regexArticleId.append(".*?");
+                        if (mediaStoreups.size() > 0) {
+                            //不必对详细信息，之比对id是否存在
+                            StringBuilder regexArticleId = new StringBuilder();
+                            for (MediaStoreup mediaStoreup : mediaStoreups) {
+                                regexArticleId.append(Util.getJsonRegexString("articleId", mediaStoreup.getTargetId().toString()));
+                                regexArticleId.append(".*?");
+                            }
+
+                            //regexArticleId.(regexArticleId.length()-".*?".length(),".*?".length());
+
+                            dataVerifyManager.add(new RegexVerify(regexArticleId.toString(), result.toString()));
+                        }
+                        else{
+                            dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("storeUpList","\\[\\]"), result.toString()));
                         }
 
-                        //regexArticleId.(regexArticleId.length()-".*?".length(),".*?".length());
-
-                        dataVerifyManager.add(new RegexVerify(regexArticleId.toString(), result.toString()));
                     }
                 }
             }
@@ -127,7 +134,7 @@ public class DDReaderStoreUpList extends FixtureBase{
                     regexArticleId.append(".*?");
                 }
                 if(storeups.size()==0){
-                    dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("storeUpList","[]"),result.toString()));
+                    dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("storeUpList","\\[\\]"),result.toString()));
                 }
                 else {
                     dataVerifyManager.add(new RegexVerify(regexArticleId.toString(), result.toString()));
