@@ -43,10 +43,10 @@ public class ChannelSQL {
         List<ChannelList> channelList = new ArrayList<ChannelList>();
         for(int i=0; i<infos.size(); i++){
         	ChannelList tmp = new ChannelList();
-        	tmp.setChannelId(Integer.valueOf(infos.get(i).get("channel_id").toString()));
+        	tmp.setChannelId(infos.get(i).get("channel_id").toString());
         	tmp.setDescription(infos.get(i).get("description").toString());
         	tmp.setIcon(infos.get(i).get("icon").toString());
-        	tmp.setSubNumber(Integer.valueOf(infos.get(i).get("sub_number").toString()));
+        	tmp.setSubNumber(infos.get(i).get("sub_number").toString());
         	tmp.setTitle(infos.get(i).get("title").toString());       	
         	channelList.add(tmp);
         }
@@ -125,7 +125,7 @@ public class ChannelSQL {
 //    }
     
     //获取某个频道栏目下频道总数量（没有书单的频道不计数）
-    public static int getTotal(String columnCode) throws Exception{
+    public static String getTotal(String columnCode) throws Exception{
        	String selectSQL = "SELECT count(*)	" +
        		" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
        		" where column_code ='"+columnCode+"'"+
@@ -135,8 +135,7 @@ public class ChannelSQL {
        		" and  now() between start_date and end_date"+
        		" order by mcc.status asc , IF(ISNULL(order_value),1,0) asc,order_value desc";   
 		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-		int count = Integer.valueOf(infos.get(0).get("count(*)").toString());	
-    	return count;
+		return infos.get(0).get("count(*)").toString();	
     }
     
     //获取频道信息
@@ -165,11 +164,11 @@ public class ChannelSQL {
         //设置owner
         int owner_id = Integer.valueOf(infos.get(0).get("owner_id").toString());
         Map<String, Object> m = getOwner(owner_id);
-        int type = Integer.valueOf(m.get("type").toString());
-        if(type==1)
-        	channel.setOwnder(m.get("company").toString());
-        else
-        	channel.setOwnder(m.get("name").toString());
+//        int type = Integer.valueOf(m.get("type").toString());
+//        if(type==1)
+//        	channel.setOwnder(m.get("company").toString());
+//        else
+//        	channel.setOwnder(m.get("name").toString());
         channel.setSubNumber(infos.get(0).get("sub_number").toString());
         channel.setTitle(infos.get(0).get("title").toString());
         response.setChannel(channel);

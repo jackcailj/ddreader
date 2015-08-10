@@ -41,9 +41,15 @@ public class BookListSQL {
 	   	bookList.setChannelId(infos.get(0).get("channel_id").toString());
 	   	bookList.setCreator(infos.get(0).get("creator").toString());
 	   	bookList.setDescription(infos.get(0).get("description").toString());
-	   	bookList.setImageUrl(infos.get(0).get("image_url").toString());
+	   	if(infos.get(0).get("image_url").equals(null)||infos.get(0).get("image_url")==null)
+	   		bookList.setImageUrl(null);
+	   	else
+	   		bookList.setImageUrl(infos.get(0).get("image_url").toString());
 	   	bookList.setIsShow(infos.get(0).get("is_show").toString());
-	   	bookList.setModifier(infos.get(0).get("modifier").toString());
+	   	if(infos.get(0).get("modifier").equals(null)||infos.get(0).get("modifier")==null)
+	   		bookList.setModifier(null);
+	   	else
+	   		bookList.setModifier(infos.get(0).get("modifier").toString());
 	   	bookList.setName(infos.get(0).get("name").toString());
 	   	bookList.setOwner(infos.get(0).get("owner").toString());
 	   	bookList.setStatus(infos.get(0).get("status").toString());
