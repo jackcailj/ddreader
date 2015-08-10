@@ -24,7 +24,7 @@ public class ChannelSQL {
     	column.setIsShowHorn(map.get("is_show_horn").toString());   	
     	column.setName(map.get("name").toString());
     	column.setTips(map.get("tips").toString());
-    	column.setTotal(getTotal(columnCode));      
+    	column.setTotal(""+getTotal(columnCode));
         return column;
     }
     
@@ -43,10 +43,10 @@ public class ChannelSQL {
         List<ChannelList> channelList = new ArrayList<ChannelList>();
         for(int i=0; i<infos.size(); i++){
         	ChannelList tmp = new ChannelList();
-        	tmp.setChannelId(Integer.valueOf(infos.get(i).get("channel_id").toString()));
+        	tmp.setChannelId(Integer.valueOf(infos.get(i).get("channel_id").toString()).toString());
         	tmp.setDescription(infos.get(i).get("description").toString());
         	tmp.setIcon(infos.get(i).get("icon").toString());
-        	tmp.setSubNumber(Integer.valueOf(infos.get(i).get("sub_number").toString()));
+        	tmp.setSubNumber(Integer.valueOf(infos.get(i).get("sub_number").toString()).toString());
         	tmp.setTitle(infos.get(i).get("title").toString());       	
         	channelList.add(tmp);
         }
@@ -166,10 +166,10 @@ public class ChannelSQL {
         int owner_id = Integer.valueOf(infos.get(0).get("owner_id").toString());
         Map<String, Object> m = getOwner(owner_id);
         int type = Integer.valueOf(m.get("type").toString());
-        if(type==1)
+       /* if(type==1)
         	channel.setOwnder(m.get("company").toString());
         else
-        	channel.setOwnder(m.get("name").toString());
+        	channel.setOwnder(m.get("name").toString());*/
         channel.setSubNumber(infos.get(0).get("sub_number").toString());
         channel.setTitle(infos.get(0).get("title").toString());
         response.setChannel(channel);
