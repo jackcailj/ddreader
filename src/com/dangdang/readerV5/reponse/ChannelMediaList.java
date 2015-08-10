@@ -4,7 +4,7 @@ public class ChannelMediaList {
 
 	String authorPenname;
 	String channelId;
-	String coverPic;
+	//String coverPic;
 	String descs;
 	String isStore;
 	String mediaId;
@@ -24,12 +24,12 @@ public class ChannelMediaList {
 	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 	}
-	public String getCoverPic() {
-		return coverPic;
-	}
-	public void setCoverPic(String coverPic) {
-		this.coverPic = coverPic;
-	}
+//	public String getCoverPic() {
+//		return coverPic;
+//	}
+//	public void setCoverPic(String coverPic) {
+//		this.coverPic = coverPic;
+//	}
 	public String getDescs() {
 		return descs;
 	}

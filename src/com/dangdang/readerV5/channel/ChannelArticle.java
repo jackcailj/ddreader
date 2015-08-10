@@ -4,7 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.ChannelSQL;
+import com.dangdang.digital.channel.ChannelArticleSQL;
+import com.dangdang.digital.channel.ChannelSQL;
 import com.dangdang.readerV5.reponse.ChannelArticleReponse;
 
 import fitnesse.slim.SystemUnderTest;
