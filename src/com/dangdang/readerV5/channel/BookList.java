@@ -30,7 +30,7 @@ public class BookList extends FixtureBase{
 			//验证json中返回字段
 			log.info("验证书单基本信息");	
 			ChannelBookList  bookList = BookListSQL.getBookList(paramMap.get("bookListId"));
-			dataVerifyManager.add(new ValueVerify<ChannelBookList>(reponseResult.getData().getBookList(), bookList, true));	
+			dataVerifyManager.add(new ValueVerify<ChannelBookList>(bookList, reponseResult.getData().getBookList(), true));	
 		}
 		return dataVerifyManager.dataVerify();    
 	 }

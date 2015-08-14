@@ -6,7 +6,7 @@ public class ColumnReponse {
 	String columnCode;
 	String count;
 	//String icon;
-	String isShowHorn;
+	//String isShowHorn;
 	String name;
 	List<SaleList> saleList;
 	String tips;
@@ -23,12 +23,12 @@ public class ColumnReponse {
 	public void setCount(String count) {
 		this.count = count;
 	}
-	public String getIsShowHorn() {
-		return isShowHorn;
-	}
-	public void setIsShowHorn(String isShowHorn) {
-		this.isShowHorn = isShowHorn;
-	}
+//	public String getIsShowHorn() {
+//		return isShowHorn;
+//	}
+//	public void setIsShowHorn(String isShowHorn) {
+//		this.isShowHorn = isShowHorn;
+//	}
 	public String getName() {
 		return name;
 	}

@@ -1,27 +1,33 @@
 package com.dangdang.autotest.common;
 
 import java.lang.reflect.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 import org.apache.log4j.Logger;
 import com.dangdang.ddframework.dataverify.VerifyBase;
+import com.dangdang.ddframework.dataverify.VerifyResult;
 
 public class ResponseVerify extends VerifyBase{
 	protected  Logger log = Logger.getLogger(ResponseVerify.class);
 	Object _json;
 	Object _db;
-	boolean flag = true;
 	
-	public ResponseVerify(Object jsonValue, Object dbValue){
+	
+	public ResponseVerify(Object jsonValue, Object dbValue){		
 		_json = jsonValue;
 		_db = dbValue;
 	}
 	
 	@Override
 	public boolean dataVerify() throws Exception {
+		verifyResult=VerifyResult.SUCCESS;
+		log.info("aaa"+verifyResult);
+		log.info("aaaa"+expectResult);
 		compareObjectValue(_json, _db);
-		return flag;
+		log.info("bbb"+verifyResult);
+		return getVerifyResult();
 	}
 	
 	public void compareObjectValue(Object json, Object db) throws SecurityException, NoSuchMethodException, IllegalArgumentException, IllegalAccessException, InvocationTargetException, InstantiationException, ClassNotFoundException, NoSuchFieldException{
@@ -46,8 +52,11 @@ public class ResponseVerify extends VerifyBase{
 				String dbval = (String)dbm.invoke(db);			
 				log.info("json:"+ field.getName() +"="+ jsonval);
 				log.info("db:"+ field.getName() +"="+ dbval);
-				flag = jsonval.equals(dbval);
-				log.info("对比结果:" + flag);
+				if(!jsonval.equals(dbval)){
+					verifyResult=VerifyResult.FAILED;
+					log.info("false");
+				}
+				log.info("对比结果:" + jsonval.equals(dbval));
 			}
 			
 			//Integer类型
@@ -59,8 +68,11 @@ public class ResponseVerify extends VerifyBase{
 				Integer dbval = (Integer)dbm.invoke(db);
 				log.info("json:"+ field.getName() +"="+ jsonval);
 				log.info("db:"+ field.getName() +"="+ dbval);
-				flag = jsonval.equals(dbval);
-				log.info("对比结果:" + flag);
+				if(!jsonval.equals(dbval)){
+					verifyResult=VerifyResult.FAILED;
+					log.info("false");
+				}
+				log.info("对比结果:" + jsonval.equals(dbval));
 			}
 			
 			//Boolean类型
@@ -72,8 +84,11 @@ public class ResponseVerify extends VerifyBase{
 				Boolean dbval = (Boolean)dbm.invoke(db);
 				log.info("json:"+ field.getName() +"="+ jsonval);
 				log.info("db:"+ field.getName() +"="+ dbval);
-				flag = jsonval.equals(dbval);
-				log.info("对比结果:" + flag);
+				if(!jsonval.equals(dbval)){
+					verifyResult=VerifyResult.FAILED;
+					log.info("false");
+				}
+				log.info("对比结果:" + jsonval.equals(dbval));
 			}
 			
 			//Date类型
@@ -85,8 +100,11 @@ public class ResponseVerify extends VerifyBase{
 				Date dbval = (Date)dbm.invoke(db);
 				log.info("json:"+ field.getName() +"="+ jsonval);
 				log.info("db:"+ field.getName() +"="+ dbval);
-				flag = flag = jsonval.equals(dbval);
-				log.info("对比结果:" + flag);
+				if(!jsonval.equals(dbval)){
+					verifyResult=VerifyResult.FAILED;
+					log.info("false");
+				}
+				log.info("对比结果:" + jsonval.equals(dbval));
 			}
 
 			if(field.getGenericType().toString().contains("class com")){
@@ -99,7 +117,9 @@ public class ResponseVerify extends VerifyBase{
 				//判断 如果jsonval 或dbval为空  不递归调用
 				//如果jsonval为空 dbval不为空，flag=false，不递归调用
 				if(jsonval == null || jsonval.equals("")||dbval==null || dbval.equals("")){
-					if(dbval!=null) flag = false;				
+					if(jsonval!=null) 
+						verifyResult=VerifyResult.FAILED;
+						log.info("对比结果:false");
 				}else{
 					compareObjectValue(jsonval, dbval);
 				}
@@ -112,27 +132,50 @@ public class ResponseVerify extends VerifyBase{
 
 				List jsonList = (List)jsonm.invoke(json);
 				List dbList = (List)dbm.invoke(db);
+				if(jsonList==null || jsonList.equals("") ||dbList==null || dbList.equals("")){
+					if(jsonList==null || jsonList.equals("")){
+						log.info("jsonList为空！");
+					}
+					if(dbList==null || dbList.equals("")){
+						log.info("dbList为空！");
+						log.info(jsonList==null || jsonList.equals(""));
+					}
+					if(jsonList!=null||dbList!=null) {
+						verifyResult=VerifyResult.FAILED;
+						log.info("对比结果:false");
+					}
+					return;
+				}
+				
 				if(jsonList.size()==0||dbList.size()==0){
 					if(dbList.size()!=0) {
-						flag = false;
+						verifyResult=VerifyResult.FAILED;	
+						log.info("false");
 						log.info("参数jsonList为空！");
 					}					
 					if(jsonList.size()!=0) {
-						flag = false;
+						verifyResult=VerifyResult.FAILED;
+						log.info("false");
 						log.info("参数dbList为空！");
 					}
+					log.info("list.size()对比结果:false");
 					
 				}else{
 					log.info("jsonList size:" + jsonList.size());
 					log.info("dbList size:" +  dbList.size());
-					flag = (jsonList.size() == dbList.size());
-					log.info("对比结果:" + flag);
+					boolean _flag = (jsonList.size() == dbList.size());
+					if(!_flag){
+						verifyResult=VerifyResult.FAILED;
+						log.info("false");
+					}
+					log.info("对比结果:" + _flag);
+					
 					int size = jsonList.size()<= dbList.size()?jsonList.size():dbList.size();
 					for(int i=0; i<size; i++){
 						Object jsonval = jsonList.get(i);
 						Object dbval = dbList.get(i);
 						log.info("************jsonVal"+jsonval);
-						log.info("************dbVal"+jsonval);
+						log.info("************dbVal"+dbval);
 						log.info("************调用compareObjectValue(jsonval, dbval)");
 						compareObjectValue(jsonval, dbval);
 					}
@@ -148,7 +191,13 @@ public class ResponseVerify extends VerifyBase{
 			return new String(items);
 		}
 	
-//		public static void main(String[] args) throws Exception{
+		public static void main(String[] args) throws Exception{
+			List list1 = new ArrayList();
+			list1.add("json");
+			List list2 = new ArrayList();
+			ResponseVerify response = new ResponseVerify(list1, list2);
+			response.compareObjectValue(list1, list2);//dataVerify();
+	//		System.out.println(response.flag);
 //			User user1 = new User();
 //			user1.setAge(3);
 //			user1.setName("haohao");
@@ -181,5 +230,5 @@ public class ResponseVerify extends VerifyBase{
 //			//System.out.println(user2.getCourse().get(1).getCourseName());
 //			ResponseVerify r = new ResponseVerify(user1, user2);
 //			System.out.println(r.dataVerify());
-//		}
+		}
 }

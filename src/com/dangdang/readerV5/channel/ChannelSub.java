@@ -24,7 +24,6 @@ public class ChannelSub extends FixtureBase{
 	
 	@Override
 	public boolean doGet(String exceptedCode) throws Exception {		
-		//subTotal= ChannelSubSQL.getSubTotal(paramMap.get("cId"));
 		return super.doGet(exceptedCode);
 	}
 	
@@ -35,15 +34,13 @@ public class ChannelSub extends FixtureBase{
 			//验证json中返回字段
 			log.info("验证订阅/取消订阅是否成功");	
 			String sub = ChannelSubSQL.isSub(login.getCustId(),paramMap.get("cId"),paramMap.get("op"));
-			dataVerifyManager.add(new ValueVerify<String>("1", sub));
+			dataVerifyManager.add(new ValueVerify<String>("1", sub).setVerifyContent("验证订阅/取消订阅是否成功"));
 		
 			//验证订阅总数
 			log.info("验证订阅总数");	
 			String dbTotal = ChannelSubSQL.getSubTotal(paramMap.get("cId"));
 			String actual = reponseResult.getData().getSubNumber();
-			dataVerifyManager.add(new ValueVerify<String>(actual, dbTotal));
-			//dataVerifyManager.add(new ValueVerify<String>(dbTotal, String.valueOf(Integer.valueOf(subTotal)+1)));
-			
+			dataVerifyManager.add(new ValueVerify<String>(actual, dbTotal).setVerifyContent("验证频道订阅总数"));	
 		}
 		return dataVerifyManager.dataVerify();    
 	 }

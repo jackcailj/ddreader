@@ -102,7 +102,7 @@ public class BookStoreCommSQL {
 		//设置count
 		reponse.setCount(String.valueOf(saleList.size()));
 		//reponse.setIcon(result.get(0).get("icon").toString());
-		reponse.setIsShowHorn(result.get(0).get("is_show_horn").toString());
+		//reponse.setIsShowHorn(result.get(0).get("is_show_horn").toString());
 		reponse.setName(result.get(0).get("name").toString());
 		reponse.setSaleList(saleList);
 		reponse.setTips(result.get(0).get("tips").toString());		
@@ -177,21 +177,23 @@ public class BookStoreCommSQL {
 //			Map<String, String> map = getCategory(Integer.valueOf(result.get(i).get("media_id").toString()));
 //			tmp.setCategoryIds(map.get("code"));
 //			tmp.setCategorys(map.get("name"));
-//			if(result.get(i).get("chapter_cnt")==null)
-//				tmp.setChapterCnt(null);
-//			else
-//				tmp.setChapterCnt(result.get(i).get("chapter_cnt").toString());
+			if(result.get(i).get("chapter_cnt")==null)
+				tmp.setChapterCnt(null);
+			else
+				tmp.setChapterCnt(result.get(i).get("chapter_cnt").toString());
 			//tmp.setCoverPic(result.get(i).get("cover_pic").toString());
-			tmp.setDescs(result.get(i).get("descs").toString());
+			String descs = result.get(i).get("descs").toString();
+			tmp.setDescs(descs.replace("?",""));
+			//tmp.setDescs(descs);
 			tmp.setIsFull(result.get(i).get("is_full").toString());
 			//是否收藏
 			tmp.setIsStore("0");
 			tmp.setMediaId(result.get(i).get("media_id").toString());
 			//设置mediaType
-			if(result.get(i).get("doc_type")==null)
-				tmp.setMediaType("1");
-			else
+			if(result.get(i).get("doc_type").equals("DREBOOK"))
 				tmp.setMediaType("2");
+			else 
+				tmp.setMediaType("1");
 				
 			if(result.get(i).get("recommand_words")==null)
 				tmp.setRecommandWords("");

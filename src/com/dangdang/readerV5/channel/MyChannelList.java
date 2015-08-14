@@ -2,7 +2,6 @@ package com.dangdang.readerV5.channel;
 
 import java.net.URLEncoder;
 import java.security.Key;
-import java.util.HashMap;
 import java.util.List;
 
 import javax.crypto.Cipher;
@@ -12,13 +11,11 @@ import javax.crypto.spec.DESKeySpec;
 
 import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.lang3.StringUtils;
-import org.hibernate.mapping.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
-import com.dangdang.ddframework.drivers.HttpDriver;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.channel.MyChannelListSQL;
 import com.dangdang.readerV5.reponse.MyChannelListReponse;
@@ -61,7 +58,7 @@ public class MyChannelList extends FixtureBase{
 			dbReponse.setCount(String.valueOf(myChannelList.size()));
 			dbReponse.setChannelList(myChannelList);
 			dbReponse.setTotal(MyChannelListSQL.getUserChannelListTotal(custId));
-			dataVerifyManager.add(new ValueVerify<MyChannelListReponse>(reponseResult.getData(), dbReponse, true));			
+			dataVerifyManager.add(new ValueVerify<MyChannelListReponse>(dbReponse, reponseResult.getData(), true));			
 		}
 		return dataVerifyManager.dataVerify();
 	}

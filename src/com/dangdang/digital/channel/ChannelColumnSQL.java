@@ -29,7 +29,7 @@ public class ChannelColumnSQL {
     	column.setChannelList(getChannelList(columnCode,custId,num));
     	column.setColumnCode(map.get("column_code").toString());
     	column.setCount(getChannelList(columnCode,custId,num).size());
-    	column.setIsShowHorn(map.get("is_show_horn").toString());   	
+    	//column.setIsShowHorn(map.get("is_show_horn").toString());   	
     	column.setName(map.get("name").toString());
     	column.setTips(map.get("tips").toString());
     	column.setTotal(getTotal(columnCode));      
@@ -49,7 +49,6 @@ public class ChannelColumnSQL {
 				" order by mcc.status asc , IF(ISNULL(order_value),1,0) asc,order_value desc LIMIT "+num;      
         List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
         List<ChannelList> channelList = new ArrayList<ChannelList>();
-      	IChannelApiDubbo dubbo = new IChannelApiDubbo();
         for(int i=0; i<infos.size(); i++){
         	ChannelList tmp = new ChannelList();
         	tmp.setChannelId(infos.get(i).get("channel_id").toString());
@@ -92,8 +91,7 @@ public class ChannelColumnSQL {
        		" and channel.shelf_status=1"+
        		" and channel.is_completed=1"+
        		" and  mcc.status in(1,2)"+
-       		" and  now() between start_date and end_date"+
-       		" order by mcc.status asc , IF(ISNULL(order_value),1,0) asc,order_value desc";   
+       		" and  now() between start_date and end_date";  
 		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
 		return infos.get(0).get("count(*)").toString();	
     }
@@ -109,7 +107,7 @@ public class ChannelColumnSQL {
     		return infos.get(0).get("type").toString();	
     }
     
-    //获取频道订阅数
+    //获取channel_sub_user表中的频道订阅数
     public static String getChannelSub(String channelId) throws Exception{
     	Long _channelId = Long.valueOf(channelId);
     	String selectSQL = "SELECT count(*) " +
@@ -118,6 +116,7 @@ public class ChannelColumnSQL {
      	List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
 		return infos.get(0).get("count(*)").toString();	
     }
+    
     
     /*+++++++++++++++++++++++++++++++++++++++++++++后台-》推荐列表+++++++++++++++++++++++++++++++++++++++++++++++++++++*/
     

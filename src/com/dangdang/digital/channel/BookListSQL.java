@@ -47,7 +47,7 @@ public class BookListSQL {
 	   		bookList.setImageUrl(infos.get(0).get("image_url").toString());
 	   	bookList.setIsShow(infos.get(0).get("is_show").toString());
 	   	if(infos.get(0).get("modifier").equals(null)||infos.get(0).get("modifier")==null)
-	   		bookList.setModifier(null);
+	   		bookList.setModifier("");
 	   	else
 	   		bookList.setModifier(infos.get(0).get("modifier").toString());
 	   	bookList.setName(infos.get(0).get("name").toString());

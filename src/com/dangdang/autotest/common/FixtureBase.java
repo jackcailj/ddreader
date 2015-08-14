@@ -79,7 +79,6 @@ public class FixtureBase extends InterfaceBase{
 	 */
 	
 	public boolean doGet(String exceptedCode) throws Exception {
-		result = null;
 		boolean statusCode = false;
 		genrateVerifyData();
 		result=HttpDriver.doGet(URL, paramMap, bHttps);

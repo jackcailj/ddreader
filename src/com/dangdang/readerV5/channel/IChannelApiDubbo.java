@@ -16,7 +16,6 @@ import com.dangdang.digital.model.ChannelMonthlyStrategy;
 
 import fitnesse.slim.SystemUnderTest;
 
-
 /**
  * 获取频道包月策略信息dubbo
  * @author guohaiying

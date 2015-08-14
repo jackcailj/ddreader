@@ -3,7 +3,6 @@ package com.dangdang.readerV5.channel;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.autotest.common.ResponseVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.channel.ChannelSQL;
@@ -26,12 +25,11 @@ public class Channel extends FixtureBase{
 	public boolean verifyResult() throws Exception{
 		dataVerifyManager.setCaseExpectResult(true);
 		reponseResult =JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<ChannelResponse>>(){});
-		if(reponseResult.getStatus().getCode()==0){	
-		
+		if(reponseResult.getStatus().getCode()==0){			
 			//验证json中返回的字段值
-			log.info("验证json返回的字段值");
+			log.info("验证频道详情结果：");
 			ChannelResponse dbResponse = ChannelSQL.getChannel(login.getCustId(), paramMap.get("cId"));
-		    dataVerifyManager.add(new ValueVerify<ChannelResponse>(reponseResult.getData(), dbResponse, true));
+		    dataVerifyManager.add(new ValueVerify<ChannelResponse>(dbResponse, reponseResult.getData(), true));
 		}
 						
 		return dataVerifyManager.dataVerify();      	
