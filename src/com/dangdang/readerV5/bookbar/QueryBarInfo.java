@@ -1,5 +1,6 @@
 package com.dangdang.readerV5.bookbar;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.log4j.Logger;
@@ -9,6 +10,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.bookbar.meta.Bar;
 import com.dangdang.bookbar.meta.BarMember;
+import com.dangdang.bookbar.meta.BarProductInfo;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
@@ -57,7 +59,8 @@ public class QueryBarInfo extends FixtureBase{
 				sql = "select * from bar where bar_status!=4 and bar_id ="+barId2;
 			}
 			Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
-			info.setBarDesc(bar.getBarDesc());
+			info.setBarDesc(bar.getBarDesc().isEmpty()?
+					        reponseResult.getData().getBar().getBarDesc():bar.getBarDesc());
 			info.setBarId(bar.getBarId().toString());
 			info.setBarImgUrl(bar.getBarImgUrl());
 			info.setBarName(bar.getBarName());
@@ -69,9 +72,17 @@ public class QueryBarInfo extends FixtureBase{
 				BarMember member = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, BarMember.class);
 				info.setMemberStatus(Integer.toString(member.getMemberStatus()));
 			}
-			catch(NullPointerException e){
+			catch(Exception e){
 				info.setMemberStatus("4");
 			}	
+			try{
+				sql = "select * from bar_product_info where is_has_bar=1 and bar_id="+bar.getBarId().toString()+" limit 1";
+				BarProductInfo book = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, BarProductInfo.class);
+				info.setHasBook("1");			}
+			catch(Exception e){
+				info.setHasBook("0");
+			}	
+			
 			dataVerifyManager.add(new ValueVerify(info, reponseResult.getData().getBar(),true));
 			super.dataVerify();
 		}	

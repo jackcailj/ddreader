@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.BaseComment.meta.CommentTargetCount;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dataverify.ListVerify;
@@ -122,7 +123,7 @@ public class GetDigestDetail  extends FixtureBase {
 			try{
 				sql = "SELECT * from praise_info where target_id="+digestId+" and user_id="+login.getCustId();
 				DbUtil.selectOne(Config.BSAECOMMENT, sql);
-				dataVerifyManager.add(new ValueVerify<Integer>(1, reponseResult.getData().getDigestDetail().getIsPraise(), false));
+				dataVerifyManager.add(new ValueVerify<Integer>(1, reponseResult.getData().getDigestDetail().getIsPraise(), false));				
 			}
 			catch(Exception e){
 				dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getDigestDetail().getIsPraise(), false));
@@ -138,6 +139,25 @@ public class GetDigestDetail  extends FixtureBase {
 			catch(Exception e){
 				dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getSubscribe(), false));
 			}
+			
+			//点赞数量，评论数量
+			int topCnt = 0;
+			int reviewCnt = 0;
+			try{
+				sql = "SELECT * from comment_target_count where target_id="+digestId;
+				CommentTargetCount count = DbUtil.selectOne(Config.BSAECOMMENT, sql, CommentTargetCount.class);
+				topCnt = count.getPraiseCount();
+				reviewCnt = count.getCommentCount();				
+			}
+			catch(Exception e){
+				//没有点赞和评论时，得到null，所以catch 空指针异常
+				e.printStackTrace();
+			}	
+			dataVerifyManager.add(new ValueVerify<Integer>(topCnt,
+		              reponseResult.getData().getDigestDetail().getTopCnt(), false));	
+            dataVerifyManager.add(new ValueVerify<Integer>(reviewCnt,
+                    reponseResult.getData().getDigestDetail().getReviewCnt(), false));	
+
 			super.dataVerify();
 		}	
 		else{

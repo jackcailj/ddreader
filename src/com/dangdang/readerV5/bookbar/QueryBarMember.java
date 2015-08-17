@@ -3,6 +3,8 @@ package com.dangdang.readerV5.bookbar;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.testng.Assert;
 
@@ -53,15 +55,25 @@ public class QueryBarMember  extends FixtureBase {
 					member.setBarMemberId(lists.get(i).get("bar_member_id").toString());
 					member.setMemberStatus(lists.get(i).get("member_status").toString());
 					member.setHeadPhoto(map.get("cust_img").toString());
-					member.setNickName(map.get("cust_nickname").toString());
+					//判断nickName是不是手机号，如果是手机号将中间四位设置成*
+					String nickName = map.get("cust_nickname").toString();
+					String pattern = "^1[3|4|5|8][0-9]\\d{4,8}$";
+					Matcher matcher = Pattern.compile(pattern, Pattern.DOTALL).matcher(nickName);
+					if(matcher.find()){
+						nickName = nickName.substring(0, 2) + "****" + nickName.substring(7, 10);
+					}
+					else{
+						nickName = nickName.split("@")[0];
+					}
+					member.setNickName(nickName);
 					//返回信息里的custid是加密的，为了便于下边比较，做如下设置
 					member.setCustId(responseList.get(i).getCustId());
 					memberList.add(member);
 				}
-				for(BarMembers response:responseList){
-					int index = response.getHeadPhoto().lastIndexOf("?");
-					response.setHeadPhoto(response.getHeadPhoto().substring(0, index));
-				}
+//				for(BarMembers response:responseList){
+//					int index = response.getHeadPhoto().lastIndexOf("?");
+//					response.setHeadPhoto(response.getHeadPhoto().substring(0, index));
+//				}
 				if(lists.size() < 1000){
 					Assert.assertEquals(responseList.size(), lists.size(),"接口返回的成员数量不等于数据库中查询到的成员数量");
 				}

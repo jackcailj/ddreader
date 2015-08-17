@@ -5,9 +5,8 @@ public class Book {
 	String bookType;
 	String coverPic;
 	String descs;
-	String mediaId;
+	String productId;
 	String publisher;
-	String saleId;
 	String title;
 	
 	public String getAuthorName(){
@@ -22,14 +21,11 @@ public class Book {
 	public String getDescs(){
 		return descs;
 	}
-	public String getMediaId(){
-		return mediaId;
+	public String getProductId(){
+		return productId;
 	}
 	public String getPublisher(){
 		return publisher;
-	}
-	public String getSaleId(){
-		return saleId;
 	}
 	public String getTitle(){
 		return title;
@@ -47,14 +43,11 @@ public class Book {
 	public void setDescs(String descs){
 		this.descs = descs;
 	}
-	public void setMediaId(String mediaId){
-		this.mediaId = mediaId;
+	public void setProductId(String productId){
+		this.productId = productId;
 	}
 	public void setPublisher(String publisher){
 		this.publisher = publisher;
-	}
-	public void setSaleId(String saleId){
-		this.saleId = saleId;
 	}
 	public void setTitle(String title){
 		this.title = title;

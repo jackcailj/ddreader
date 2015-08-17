@@ -9,6 +9,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.Comment;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
@@ -25,7 +26,7 @@ public class GetCommentList extends FixtureBase{
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);		
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("FromDB")){
-			String sql = "select target_id, comment_id from comment where is_delete=0 and status=1 "
+			String sql = "select target_id, comment_id from comment where status=1 "
 					   + "and target_source="+paramMap.get("targetSource")+" ORDER BY RAND() limit 1";
 			Map<String, Object> map = DbUtil.selectOne(Config.BSAECOMMENT, sql);
 			targetId = map.get("target_id").toString();
@@ -42,36 +43,31 @@ public class GetCommentList extends FixtureBase{
 		ReponseV2<CommentList> reponseResult = getResult();
 		if(reponseResult.getStatus().getCode() == 0){
 			String subSql = (paramMap.get("commentId").equals("0"))?"":" and comment_id<"+commentId;
-			String sql = "select * from comment where is_delete=0 and status=1 "
-					   + "and target_source="+paramMap.get("targetSource")+" and target_id="+targetId
-					   +" and comment_parent_id=0"+subSql+" order by last_modified_date DESC";
+			String sql = "select * from comment where status=1 and target_source="+paramMap.get("targetSource")
+					   +" and target_id="+targetId+" and comment_parent_id=0"+subSql+" order by last_modified_date DESC";
 			List<Comment> comment = DbUtil.selectList(Config.BSAECOMMENT, sql, Comment.class);
-			if(comment.size()<20){
-				dataVerifyManager.add(new ValueVerify<Integer>(comment.size(), reponseResult.getData().getCommentList().size(),false));	
-			}
-			else{
-				//默认一页显示20条一级评论
-				dataVerifyManager.add(new ValueVerify<Integer>(20, reponseResult.getData().getCommentList().size(),false));	
-			}
+		   
 			for(int i=0; i<comment.size(); i++){
+				//把被删除的评论过滤掉
+				if(comment.get(i).getIsDelete()==1){
+					comment.remove(i);
+					continue;
+				}
 				//验证一级评论及每个评论下显示的回复的大小
 				Map<String,Object> map1 = new HashMap<String,Object>();
 				Map<String,Object> map2 = new HashMap<String,Object>();					
-				sql = "select * from comment where is_delete=0 and status=1 "
+				sql = "select * from comment where status=1 "
 						   + "and target_source="+paramMap.get("targetSource")+" and target_id="+targetId
 						   +" and comment_parent_id="+comment.get(i).getCommentId();
-				List<Comment> subComment = DbUtil.selectList(Config.BSAECOMMENT, sql, Comment.class);
-				int size = subComment.size()<10?subComment.size():9;				
-				map1.put("commentId", comment.get(i).getCommentId());
-				map1.put("targetId", comment.get(i).getTargetId());
-				map1.put("size", size);
-				map2.put("commentId", reponseResult.getData().getCommentList().get(i).get(0).getCommentId());
-				map2.put("targetId", reponseResult.getData().getCommentList().get(i).get(0).getTargetId());
-				map2.put("size", reponseResult.getData().getCommentList().get(i).size()-1);
-				dataVerifyManager.add(new ValueVerify(map1, map2, true));
+				List<Comment> subComment = DbUtil.selectList(Config.BSAECOMMENT, sql, Comment.class);			
 				
 				//验证回复
-				for(int j=0; j<size; j++){
+				for(int j=0; j<subComment.size(); j++){
+					//把被删除的回复过滤掉
+					if(subComment.get(j).getIsDelete()==1){
+						subComment.remove(j);
+						continue;
+					}
 					Map<String,Object> map3 = new HashMap<String,Object>();
 					Map<String,Object> map4 = new HashMap<String,Object>();	
 					map3.put("commentId", subComment.get(j).getCommentId());
@@ -80,6 +76,23 @@ public class GetCommentList extends FixtureBase{
 					map4.put("targetId", reponseResult.getData().getCommentList().get(i).get(j+1).getTargetId());
 					dataVerifyManager.add(new ValueVerify(map3, map4, true));
 				}
+				//验证一级评论
+				int size = subComment.size()<10?subComment.size():9;				
+				map1.put("commentId", comment.get(i).getCommentId());
+				map1.put("targetId", comment.get(i).getTargetId());
+				map1.put("size", size);
+				map2.put("commentId", reponseResult.getData().getCommentList().get(i).get(0).getCommentId());
+				map2.put("targetId", reponseResult.getData().getCommentList().get(i).get(0).getTargetId());
+				map2.put("size", reponseResult.getData().getCommentList().get(i).size()-1);
+				dataVerifyManager.add(new ValueVerify(map1, map2, true));
+			}		
+			 
+			if(comment.size()<20){
+				dataVerifyManager.add(new ValueVerify<Integer>(comment.size(), reponseResult.getData().getCommentList().size(),false));	
+			}
+			else{
+				//默认一页显示20条一级评论
+				dataVerifyManager.add(new ValueVerify<Integer>(20, reponseResult.getData().getCommentList().size(),false));	
 			}
 			super.dataVerify();
 		}	

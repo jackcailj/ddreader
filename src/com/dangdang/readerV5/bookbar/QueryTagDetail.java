@@ -34,26 +34,12 @@ public class QueryTagDetail extends FixtureBase {
 	
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
-		Map<String, String> commonParam = Config.getCommonParam();
-		if(params.get("deviceType").equalsIgnoreCase("Default")){
-			params.remove("deviceType");
-		}
-		else{
-			if(params.get("deviceType").equalsIgnoreCase("REMOVE")){
-				params.remove("deviceType");				
-			}
-			commonParam.remove("deviceType");
-		}
 		String sql = "select bar_module_tag_id from bar_module_tag where status=1 ORDER BY RAND() limit 1";
 		tagId = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_module_tag_id").toString();
 		if(params.get("moduleTagId")!=null&&params.get("moduleTagId").toString().equalsIgnoreCase("FromDB")){
 			params.put("moduleTagId", tagId);
 		}
-		RemoveBlankParamParse removeBlankParamParse = new RemoveBlankParamParse();
-		removeBlankParamParse.parseNotPassParam(params);
-		paramMap =  params;
-		paramMap.putAll(commonParam);
-		handleParam();
+		super.setParameters(params);
     }
 	
 	@Override
@@ -81,15 +67,16 @@ public class QueryTagDetail extends FixtureBase {
 					reponseResult.getData().getBarList().get(i).setBarImgUrl(str);
 					content.setBarName(bar.getBarName());
 					content.setMemberNum(Integer.toString(bar.getMemberNum()));
-					content.setRecommendReason(list.get(i).getRecommendReason());
+					content.setRecommendReason(list.get(i).getRecommendReason().isEmpty()?null:list.get(i).getRecommendReason());
 					barList.add(content);
 				}
 				dataVerifyManager.add(new ListVerify(barList, reponseResult.getData().getBarList(), true));
-				super.dataVerify();
 			}
 			else{
+				logger.info("size is 0");
 				Assert.assertEquals(reponseResult.getData().getBarList().size(),0,"吧列表信息为空");
 			}
+			super.dataVerify();
 		}	
 		else{
 			dataVerifyResult = false;

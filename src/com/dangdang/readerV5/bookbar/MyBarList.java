@@ -28,6 +28,7 @@ public class MyBarList extends FixtureBase {
 		reponseResult = getResult();
 		if(reponseResult.getStatus().getCode() == 0){
 			String sql = null;
+			int barSize = 0;
 			if(paramMap.get("type").equals("1")){
 				sql ="select * from bar where bar_id in ("
 						+ "select bar_id from bar_member where 1=1 and "
@@ -54,8 +55,16 @@ public class MyBarList extends FixtureBase {
 			}
 			else{
 				if(Integer.parseInt(paramMap.get("pageNo")) < 2){
-					dataVerifyManager.add(new ValueVerify<Integer>(barList.size(), 
-							reponseResult.getData().getBarList().size(), false));
+					if(reponseResult.getData().getBarList()==null){
+						dataVerifyManager.add(new ValueVerify<Integer>(barList.size(), reponseResult.getData().getBarCnt(), false));
+					}
+					else{
+						dataVerifyManager.add(new ValueVerify<Integer>(barList.size(), 
+								reponseResult.getData().getBarList().size(), false));
+						dataVerifyManager.add(new ValueVerify<Integer>(barList.size(), 
+								reponseResult.getData().getBarCnt(), false));
+					}
+					barSize = barList.size();
 				}
 				else{
 					dataVerifyManager.add(new ValueVerify<Integer>(0, 
@@ -65,7 +74,7 @@ public class MyBarList extends FixtureBase {
 			}
 			List<Map<String,String>> list1 = new ArrayList<Map<String,String>>();
 			List<Map<String,String>> list2 = new ArrayList<Map<String,String>>();
-			for(int i=0; i<reponseResult.getData().getBarList().size(); i++){
+			for(int i=0; i<barSize; i++){
 				Map<String,String> map1 = new HashMap<String,String>();
 				Map<String,String> map2 = new HashMap<String,String>();
 				map1.put("barId", barList.get(i).getBarId().toString());

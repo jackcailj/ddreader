@@ -5,6 +5,7 @@ import java.util.Map;
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dataverify.RecordVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
@@ -19,7 +20,8 @@ public class PraiseComment extends FixtureBase{
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);		
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("FromDB")){
-			String sql = "select target_id from comment where is_delete=0 and status=1 "
+			String sql = "select target_id from comment where "
+					   + ((Config.getEnvironment()== TestEnvironment.TESTING)?"is_delete=0 and ":"")+"status=1 "
 					   + "and target_source="+paramMap.get("targetSource")+ " and target_id not in "
 					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+")"
 					   + "ORDER BY RAND() limit 1";
@@ -27,16 +29,11 @@ public class PraiseComment extends FixtureBase{
 			paramMap.put("targetId",targetId);
 		}
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("repeat")){
-			String sql = "select target_id from comment where is_delete=0 and status=1 "
+			String sql = "select target_id from comment where "
+					   + ((Config.getEnvironment()== TestEnvironment.TESTING)?"is_delete=0 and ":"")+"status=1 "
 					   + "and target_source="+paramMap.get("targetSource")+ " and target_id in "
 					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+")"
 					   + "ORDER BY RAND() limit 1";
-			targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
-			paramMap.put("targetId",targetId);
-		}
-		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("deleted")){
-			String sql = "select target_id from comment where is_delete=1"
-					   + " and target_source="+paramMap.get("targetSource")+" ORDER BY RAND() limit 1";
 			targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
 			paramMap.put("targetId",targetId);
 		}

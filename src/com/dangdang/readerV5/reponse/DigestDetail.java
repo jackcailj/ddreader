@@ -8,7 +8,8 @@ public class DigestDetail extends DigestList{
 	String mediaId;
 	String mood;
 	String pic1Path;
-	String reviewCnt;
+	int reviewCnt;
+	int topCnt;
 	int isPraise;
 	
 	public String getAlreayMark(){
@@ -32,8 +33,11 @@ public class DigestDetail extends DigestList{
 	public String getPic1Path(){
 		return pic1Path;
 	}
-	public String getReviewCnt(){
+	public int getReviewCnt(){
 		return reviewCnt;
+	}
+	public int getTopCnt(){
+		return topCnt;
 	}
 	public int getIsPraise(){
 		return isPraise;
@@ -59,8 +63,11 @@ public class DigestDetail extends DigestList{
 	public void setPic1Path(String pic1Path){
 		this.pic1Path = pic1Path;
 	}
-	public void setReviewCnt(String reviewCnt){
+	public void setReviewCnt(int reviewCnt){
 		this.reviewCnt = reviewCnt;
+	}
+	public void setTopCnt(int topCnt){
+		this.topCnt = topCnt;
 	}
 	public void setIsPraise(int isPraise){
 		this.isPraise = isPraise;

@@ -35,17 +35,18 @@ public class QueryBarList  extends FixtureBase {
 		    String barName="";
 		    String rBarName="";
 			super.setParameters(params);
-			String sql = "SELECT bar_name FROM `bar` where length(bar_name)>4 ORDER BY rand() limit 1";
-			Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);	
+			String sql = "SELECT bar_name FROM bar where length(bar_name)>4 ORDER BY rand() limit 1";
 			if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("Random")){
 				rBarName = Util.getRandomString(8)+"careatebar"+((new Random()).nextInt());
 				paramMap.put("barName", rBarName);
 			}
 			if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("FromDB")){
+				Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);	
 				barName = map.get("bar_name").toString();
 				paramMap.put("barName", barName);
 			}
 			if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("FromDB-sub")){
+				Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);	
 				barName = map.get("bar_name").toString().substring(0, 1);
 				paramMap.put("barName", barName);
 			}

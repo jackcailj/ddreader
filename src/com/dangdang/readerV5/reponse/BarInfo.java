@@ -6,6 +6,7 @@ public class BarInfo {
 	String barImgUrl;
 	String barName;
 	String barType;
+	String hasBook;
 	String memberNum;
 	String memberStatus;
 	
@@ -23,6 +24,9 @@ public class BarInfo {
 	}
 	public String getBarType(){
 		return barType;
+	}
+	public String getHasBook(){
+		return hasBook;
 	}
 	public String getMemberNum(){
 		return memberNum;
@@ -44,6 +48,9 @@ public class BarInfo {
 	}
 	public void setBarType(String barType){
 		this.barType = barType;
+	}
+	public void setHasBook(String hasBook){
+		this.hasBook = hasBook;
 	}
 	public void setMemberNum(String memberNum){
 		this.memberNum = memberNum;

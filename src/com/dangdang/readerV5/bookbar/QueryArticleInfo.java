@@ -7,6 +7,7 @@ import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.BaseComment.meta.CommentTargetCount;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dataverify.ValueVerify;
@@ -75,41 +76,25 @@ public class QueryArticleInfo  extends FixtureBase{
 			List<String> list2 = new ArrayList<String>();	
 			list1.add(digest.get("bar_id").toString());
 			list1.add(digest.get("content").toString());
-			list1.add(userInfo!=null?userInfo.get("cust_img").toString():null);
 			list1.add(userInfo!=null?userInfo.get("cust_nickname").toString().split("@")[0]:null);
 			list1.add(mediaDigestId);
-			list1.add(digest.get("title")!=null?digest.get("title").toString():null);
+			list1.add(!(digest.get("title").toString().isEmpty())?digest.get("title").toString():null);
 			
 			try{
-				int commentSize = DbUtil.selectList(Config.BSAECOMMENT, 
-						"SELECT * FROM `comment_target_count` where target_id="+mediaDigestId).size();
-				list1.add(Integer.toString(commentSize));
+				CommentTargetCount count = DbUtil.selectOne(Config.BSAECOMMENT, 
+						"SELECT * FROM `comment_target_count` where target_id="+mediaDigestId, CommentTargetCount.class);
+				list1.add(Integer.toString(count.getCommentCount()));
+				list1.add(Integer.toString(count.getPraiseCount()));
 			}
 			catch(Exception e){
+				//没有点赞和评论时，得到null，所以catch 空指针异常
 				e.printStackTrace();
 				list1.add("0");
-			}
-			try{
-				int praiseSize = DbUtil.selectOne(Config.BSAECOMMENT, 
-						"SELECT * FROM  praise_info where target_id=="+mediaDigestId).size();
-				list1.add(Integer.toString(praiseSize));
-			}
-			catch(Exception e){
-				e.printStackTrace();
 				list1.add("0");
-			}
-			
+			}			
 			list2.add(article.getBarId());
 			list2.add(article.getContent());
-			if(article.getHeadPhoto()!=null){
-				int index = article.getHeadPhoto().lastIndexOf("?");
-				String subStr = article.getHeadPhoto().substring(0, index);
-				list2.add(subStr);
-			}
-			else{
-				list2.add(null);
-			}			
-			list2.add(article.getNickName()!=null?article.getNickName():null);
+			list2.add(userInfo!=null?article.getNickName():null);
 			list2.add(article.getMediaDigestId());
 			list2.add(article.getTitle()!=null?article.getTitle().toString():null);		
 			list2.add(article.getCommentNum());

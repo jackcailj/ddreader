@@ -9,6 +9,7 @@ import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.BaseComment.meta.CommentTargetCount;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.bookbar.meta.Article;
 import com.dangdang.bookbar.meta.Bar;
@@ -35,27 +36,11 @@ import com.dangdang.readerV5.reponse.TagContent;
 public class SquareTest extends FixtureBase{
 	ReponseV2<SquareInfoData>   reponseResult;
 	DateFormat df = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+	String defaultDesc = "在人生的道路上，当你的希望一个个落空的时候，你也要坚定，要沉着。";
 	 
 	public ReponseV2<SquareInfoData> getResult(){
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<SquareInfoData>>(){});
 	}
-	
-	@Override
-	public void setParameters(Map<String, String> params) throws Exception {
-		Map<String, String> commonParam = Config.getCommonParam();
-		if(params.get("deviceType").equalsIgnoreCase("Default")){
-			params.remove("deviceType");
-		}
-		else{
-			if(params.get("deviceType").equalsIgnoreCase("REMOVE")){
-				params.remove("deviceType");				
-			}
-			commonParam.remove("deviceType");
-		}
-		paramMap =  params;
-		paramMap.putAll(commonParam);
-		handleParam();
-    }
 	
 	@Override
 	public void dataVerify(String expectedCode) throws Exception {
@@ -81,7 +66,7 @@ public class SquareTest extends FixtureBase{
 		//type: 类型（1.吧模块 2.帖子模块 3.标签模块）
 		//status: 状态（1.显示 2.屏蔽 3.已删除）
 		//查找广场显示的模块信息，在客户端会以权重大小为顺序排列，权重最大的排在第一个
-		String sql = "select * from bar_module where status=1 and (type=1 or type=3) ORDER BY module_order DESC";
+		String sql = "select * from bar_module where status=1 and (type=1 or type=3) ORDER BY module_order DESC limit 10";
 		List<BarModule> bModuleList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarModule.class);
 		for(int i=0; i< bModuleList.size(); i++){
 			SquareInfo info = new SquareInfo();
@@ -115,16 +100,18 @@ public class SquareTest extends FixtureBase{
 					List<Bar> barList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class);
 					BarContent bContentOfDB = new BarContent();
 					bContentOfDB.setArticleNum(barList.get(0).getArticleNum().toString());
-					bContentOfDB.setBarDesc(barList.get(0).getBarDesc().toString());
+					bContentOfDB.setBarDesc(barList.get(0).getBarDesc().toString().isEmpty()?
+							defaultDesc:barList.get(0).getBarDesc().toString());
 					bContentOfDB.setBarId(barList.get(0).getBarId().toString());
 					if(barList.get(0).getBarImgUrl()!=null){
-						String str = reponseResult.getData().getSquareInfo().get(i).getBarContent().get(j).getBarImgUrl().replaceAll("[._][a-z]\\.", ".");
+						String str = reponseResult.getData().getSquareInfo().get(i).getBarContent().get(j).getBarImgUrl();
+						str	= str!=null?str.replaceAll("[._][a-z]\\.", "."):null;
 						reponseResult.getData().getSquareInfo().get(i).getBarContent().get(j).setBarImgUrl(str);
 						bContentOfDB.setBarImgUrl(barList.get(0).getBarImgUrl().toString());
 					}
 					bContentOfDB.setBarName(barList.get(0).getBarName().toString());
 					bContentOfDB.setMemberNum(barList.get(0).getMemberNum().toString());
-					if(bCotentList.get(j).getRecommendReason()!=null){
+					if(!bCotentList.get(j).getRecommendReason().isEmpty()){
 						bContentOfDB.setRecommendReason(bCotentList.get(j).getRecommendReason().toString());
 					}
 					bContentListOfDB.add(bContentOfDB);	
@@ -194,26 +181,39 @@ public class SquareTest extends FixtureBase{
 				ArticleContent aContentOfDB = new ArticleContent();
 				sql = "select * from article where media_digest_id ="+bCotentList.get(j).getContentId();
 				Article article = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Article.class);
-				sql = "select * from comment_target_count where target_id=1141";
-				Map<String,Object> comment = DbUtil.selectOne(Config.BSAECOMMENT, sql);
-				aContentOfDB.setCommentNum(comment.get("comment_count").toString());
+							
+				try{
+					sql = "select * from comment_target_count where target_id="+bCotentList.get(j).getContentId();	
+					CommentTargetCount count = DbUtil.selectOne(Config.BSAECOMMENT, sql, CommentTargetCount.class);
+					aContentOfDB.setCommentNum(Integer.toString(count.getCommentCount()));
+					aContentOfDB.setPraiseNum(Integer.toString(count.getPraiseCount()));
+				}
+				catch(Exception e){
+					//没有点赞和评论时，得到null，所以catch 空指针异常
+					e.printStackTrace();
+					aContentOfDB.setCommentNum("0");
+					aContentOfDB.setPraiseNum("0");
+				}	
+				
 				sql ="SELECT * FROM `media_digest` where id="+bCotentList.get(j).getContentId()+" and is_show=1";
 				Map<String,Object> digest = DbUtil.selectOne(Config.YCDBConfig, sql);
-				aContentOfDB.setContent(digest.get("content").toString());
+				aContentOfDB.setContent(digest.get("card_remark").toString());
 				aContentOfDB.setCustId(reponseResult.getData().getSquareInfo().get(i).getArticleContent().get(j).getCustId());
-				int imgSize = reponseResult.getData().getSquareInfo().get(i).getArticleContent().get(j).getImgList().size();
 				List<String> imgList = new ArrayList<String>();
-				for(int k=0; k<imgSize; k++){
-					imgList.add(digest.get("small_pic"+(k+1)+"_path").toString());
+				List<String> img = reponseResult.getData().getSquareInfo().get(i).getArticleContent().get(j).getImgList();
+				if(img!=null){
+					for(int k=1; k<=(img.size()>3?3:img.size()); k++){
+						imgList.add(digest.get("small_pic"+k+"_path").toString());
+					}
 				}
-				aContentOfDB.setImgList(imgList);
+				logger.info("imglist is "+imgList.toString());
+				aContentOfDB.setImgList(imgList.isEmpty()?null:imgList);
 				aContentOfDB.setIsPraise("0");
 				aContentOfDB.setIsTop(article.getIsTop().toString());
 				aContentOfDB.setLastModifiedDateMsec(article.getLastModifiedDateMsec().toString());
 				aContentOfDB.setMediaDigestId(Long.toString(article.getMediaDigestId()));
-				aContentOfDB.setPraiseNum(comment.get("praise_count").toString());
-				aContentOfDB.setTitle(digest.get("title").toString());
-				aContentOfDB.setType("2");
+				aContentOfDB.setTitle(digest.get("title").toString().isEmpty()?null:digest.get("title").toString());
+				aContentOfDB.setType(Integer.toString(article.getType()));
 				aContentListOfDB.add(aContentOfDB);
 			}
 //			info.setModule(moduleOfDB);

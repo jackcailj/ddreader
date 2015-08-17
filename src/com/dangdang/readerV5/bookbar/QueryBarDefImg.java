@@ -6,10 +6,7 @@ import java.util.List;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.bookbar.meta.DefaultImage;
-import com.dangdang.config.Config;
-import com.dangdang.ddframework.dataverify.ListVerify;
-import com.dangdang.ddframework.dbutil.DbUtil;
+import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.BarDefImgResponse;
 
@@ -27,18 +24,14 @@ public class QueryBarDefImg  extends FixtureBase {
 	
 	@Override
 	public void dataVerify(String expectedCode) throws Exception {
-		List<String> list1 = new ArrayList<String>();
-		List<String> list2 = new ArrayList<String>();
 		reponseResult = getResult();
 		if(reponseResult.getStatus().getCode() == 0){
-			String sql = "SELECT * FROM default_image";
-			List<DefaultImage>  list = DbUtil.selectList(Config.BOOKBARDBConfig, sql, DefaultImage.class);
-			for(int i=0; i<list.size(); i++){
-				list1.add(list.get(i).getImgUrl());
+			//String sql = "SELECT * FROM default_image";
+			//List<DefaultImage>  list = DbUtil.selectList(Config.BOOKBARDBConfig, sql, DefaultImage.class);
+			String pattern = "(http|ftp|https)://(img.*)?";		
+			for(int i=0; i<reponseResult.getData().getBarDefImg().size(); i++){
+			    dataVerifyManager.add(new RegexVerify(pattern, reponseResult.getData().getBarDefImg().get(i)));
 			}
-			list2 = reponseResult.getData().getBarDefImg();
-			
-			dataVerifyManager.add(new ListVerify(list1, list2,false));
 			super.dataVerify();
 		}	
 		else{

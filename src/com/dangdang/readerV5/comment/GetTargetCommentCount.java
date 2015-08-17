@@ -7,6 +7,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CommentTargetCount;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
@@ -22,7 +23,7 @@ public class GetTargetCommentCount extends FixtureBase{
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);		
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("FromDB")){
-			String sql = "select target_id from comment where is_delete=0 and status=1 "
+			String sql = "select target_id from comment where "+((Config.getEnvironment()== TestEnvironment.TESTING)?"is_delete=0 and ":"")+"status=1 "
 					   + "and target_source="+paramMap.get("targetSource")+" ORDER BY RAND() limit 1";
 			targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
 			paramMap.put("targetId",targetId);
