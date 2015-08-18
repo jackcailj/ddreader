@@ -30,7 +30,7 @@ public class MediaDb {
     */
     public  static List<Media> getMedias(BookType bookType,BookStatus bookStatus,int number) throws Exception {
         String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
-        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  and mr.ID is not null  and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit "+number;
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"   limit "+number;
         List<Media> medias = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return medias;
     }
@@ -81,7 +81,7 @@ public class MediaDb {
     public  static String getFreeMediaId(BookType bookType,BookStatus bookStatus) throws Exception {
         String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
         //String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id where ms.price=0 and ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+(bookType==BookType.EBOOK?"doc_type='ebook'":"doc_type is null")+" limit 1";
-        String selectString="select * from media_activity_sale mas left join media m on m.sale_id=mas.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where m.shelf_status="+bookStatus+" and  m.promotion_id=3 " +" and "+bookType.getMediaSqlFilter()+" and  mr.ID is not null and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit 1";
+        String selectString="select * from media_activity_sale mas left join media m on m.sale_id=mas.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where m.shelf_status="+bookStatus+" and  m.promotion_id=3 " +" and "+bookType.getMediaSqlFilter()+"  limit 1";
         Media media = DbUtil.selectOne(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return media.getMediaId().toString();
     }
@@ -92,7 +92,7 @@ public class MediaDb {
    */
     public  static String getMediaId(String custid,BookType bookType,BookStatus bookStatus) throws Exception {
         String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
-        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  and mr.ID is not null and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit 1";
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"   limit 1";
         Media media = DbUtil.selectOne(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return media.getMediaId().toString();
     }
@@ -114,7 +114,7 @@ public class MediaDb {
     public static List<Media> getCanBorrowMedia(BookType bookType,BookStatus bookStatus,int number) throws Exception {
         String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
         //String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id where ms.price=0 and ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+(bookType==BookType.EBOOK?"doc_type='ebook'":"doc_type is null")+" limit 1";
-        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  and borrow_duration is not null and borrow_duration!=0 and mr.ID is not null  and mr.DEVICE_TYPE_CODE like '%"+ Config.getDevice().toString()+"%' limit "+number;
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  and borrow_duration is not null and borrow_duration!=0  limit "+number;
 
         List<Media> media = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return media;

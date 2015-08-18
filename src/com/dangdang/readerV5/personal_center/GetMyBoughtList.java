@@ -34,6 +34,15 @@ public class GetMyBoughtList extends FixtureBase{
 
     }
 
+    public  GetMyBoughtList(ILogin login,int number){
+        setLogin(login);
+        paramMap.put("token", login.getToken());
+        paramMap.put("start", "0");
+        paramMap.put("end",""+number);
+        paramMap.put("fromPaltform","ds");
+
+    }
+
     @Override
     protected void parseParam() throws Exception {
         setLogin(ParseParamUtil.parseLogin(paramMap));

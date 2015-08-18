@@ -11,10 +11,13 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.ddframework.util.StringUtil;
+import com.dangdang.digital.MediaActivityInfoDb;
 import com.dangdang.digital.meta.MediaActivityInfo;
 import com.dangdang.ecms.EcmsUtil;
 import com.dangdang.reader.functional.reponse.ActivityInfoListReponse;
 import com.dangdang.readerV5.reponse.GetDepositShowViewReponse;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
@@ -49,46 +52,25 @@ public class GetDepositShowView extends FixtureBase{
 
     @Override
     protected void dataVerify() throws Exception {
-      /*  if(reponseResult.getStatus().getCode()==0){
+        if(reponseResult.getStatus().getCode()==0){
             //操作成功，验证数据正确
-            String fromPaltform="";
-            if(paramMap.get("fromPaltform")==null){
-                fromPaltform= PlatForm.DDREADER_ANDROID.toString();
+            PlatForm fromPaltform;
+            if(StringUtils.isBlank(paramMap.get("fromPaltform"))){
+                fromPaltform= PlatForm.YC_ANDROID;
             }
             else {
-                fromPaltform= Config.getDevice()== TestDevice.ANDROID?paramMap.get("fromPaltform").toString():PlatForm.DDREADER_IOS.toString();
+                fromPaltform=PlatForm.getPlatForm(paramMap.get("fromPaltform"));
             }
-			*//*String selectString="select  deposit_gift_read_price,deposit_money,deposit_read_price,end_time,relation_product_id,start_time"
-							+" from media_activity_info where from_paltform='"+fromPaltform+"' "+(fromPaltform.equals("ds_ios")?" and relation_product_id like '"+Config.getDevice().toString()+"%'":" and activity_name like "+(Config.getEnvironment()==TestEnvironment.ONLINE?"'%支付宝%'":"'%微信%'"))+ " and status=1"
-						    +" ORDER BY  deposit_read_price";*//*
-            List<MediaActivityInfo> infos = EcmsUtil.getDepositShowView(fromPaltform);
+
+            List<MediaActivityInfo> infos = MediaActivityInfoDb.getMediaActivityInfo(fromPaltform, paramMap.get("paymentId"));
             //返回数量不能为0
-            dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getdSDepositPayInfoVo().size(),0), VerifyResult.FAILED);
+            //dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getActivityInfos().size(),0), VerifyResult.FAILED);
             //返回数据与查询数据一致
-            dataVerifyManager.add(new ListVerify(infos, reponseResult.getData().getdSDepositPayInfoVo(), true));
+            dataVerifyManager.add(new ListVerify(infos, reponseResult.getData().getActivityInfos(), true));
         }
         else {
-            //dataVerifyManager.add(new ValueVerify<>(infos, reponseResult.getData(), true));
-        }*//*       //操作成功，验证数据正确
-            String fromPaltform="";
-            if(paramMap.get("fromPaltform")==null){
-                fromPaltform= PlatForm.DDREADER_ANDROID.toString();
-            }
-            else {
-                fromPaltform= Config.getDevice()== TestDevice.ANDROID?paramMap.get("fromPaltform").toString():PlatForm.DDREADER_IOS.toString();
-            }
-			*//*String selectString="select  deposit_gift_read_price,deposit_money,deposit_read_price,end_time,relation_product_id,start_time"
-							+" from media_activity_info where from_paltform='"+fromPaltform+"' "+(fromPaltform.equals("ds_ios")?" and relation_product_id like '"+Config.getDevice().toString()+"%'":" and activity_name like "+(Config.getEnvironment()==TestEnvironment.ONLINE?"'%支付宝%'":"'%微信%'"))+ " and status=1"
-						    +" ORDER BY  deposit_read_price";*//*
-            List<MediaActivityInfo> infos = EcmsUtil.getDepositShowView(fromPaltform);
-            //返回数量不能为0
-            dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getdSDepositPayInfoVo().size(),0), VerifyResult.FAILED);
-            //返回数据与查询数据一致
-            dataVerifyManager.add(new ListVerify(infos, reponseResult.getData().getdSDepositPayInfoVo(), true));
+            dataVerifyManager.add(new ValueVerify<Object>(null, reponseResult.getData().getActivityInfos()),VerifyResult.SUCCESS);
         }
-        else {
-            //dataVerifyManager.add(new ValueVerify<>(infos, reponseResult.getData(), true));
-        }*/
         super.dataVerify();
     }
 }

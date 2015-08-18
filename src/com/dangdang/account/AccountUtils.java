@@ -5,6 +5,7 @@ import com.dangdang.account.meta.AttachAccountItems;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.core.TestDevice;
 import com.dangdang.ddframework.dbutil.DbUtil;
+import com.dangdang.readerV5.reponse.AttachAccountItem;
 
 import java.util.List;
 
@@ -45,6 +46,7 @@ public class AccountUtils {
     public  static List<AttachAccountItems> getAttachLingDangDetail(String custid,TestDevice device) throws Exception {
         return DbUtil.selectList(Config.ACCOUNTDBConfig,"select * from attach_account_items where cust_id="+custid+" and consume_source='"+device+"'  order by effective_date,attach_account_items_id DESC ",AttachAccountItems.class);
     }
+
 
 
     /*

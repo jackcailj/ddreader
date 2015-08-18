@@ -37,7 +37,7 @@ public class DepositShowView extends FunctionalBaseEx{
 		super(param);
 		
 		URL=Config.getTempUrl();
-		addAction("getDSDepositShowView");
+		addAction("getDepositShowView");
 	}
 	
 	public DepositShowView(String token,String fromPaltform) {

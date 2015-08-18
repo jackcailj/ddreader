@@ -57,7 +57,7 @@ public class DeleteShoppingCart extends FixtureBase{
 
         }
         else{
-            dataVerifyManager.add(new ValueVerify<String>(null,reponseResult.getData().getResult()));
+            dataVerifyManager.add(new ValueVerify<String>(null,reponseResult.getData().getResult()),VerifyResult.SUCCESS);
         }
         super.dataVerify();
     }

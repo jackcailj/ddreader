@@ -36,11 +36,13 @@ public class GetUpdateCustomerSubscribe extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){
-            String[] medias=paramMap.get("mediaId").split("_");
+            if(!paramMap.get("flag").equals("xiajia")) {
+                String[] medias = paramMap.get("mediaId").split("_");
 
-            for(String meidaId:medias) {
-                MediaCustomerSubscription subscription = CustomerSubscribeDb.getCustomerSubscription(login.getCustId(),meidaId,paramMap.get("appId"));
-                dataVerifyManager.add(new ValueVerify<String>(subscription.getStatus().toString(),paramMap.get("operationType")));
+                for (String meidaId : medias) {
+                    MediaCustomerSubscription subscription = CustomerSubscribeDb.getCustomerSubscription(login.getCustId(), meidaId, paramMap.get("appId"));
+                    dataVerifyManager.add(new ValueVerify<String>(subscription.getStatus().toString(), paramMap.get("operationType")));
+                }
             }
         }
         else{

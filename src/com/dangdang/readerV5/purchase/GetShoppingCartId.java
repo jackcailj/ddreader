@@ -51,7 +51,7 @@ public class GetShoppingCartId extends FixtureBase{
 
         }
         else{
-            dataVerifyManager.add(new ValueVerify<String>(reponseResult.getData().getCartId(), null));
+            dataVerifyManager.add(new ValueVerify<String>(reponseResult.getData().getCartId(), null),VerifyResult.SUCCESS);
         }
 
         super.dataVerify();

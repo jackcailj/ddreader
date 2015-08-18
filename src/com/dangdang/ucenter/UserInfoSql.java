@@ -20,7 +20,7 @@ public class UserInfoSql {
         String selectSql="select t.ID from thirdparty_cust_id t\n" +
                 "left join user_device u on t.CUST_ID=u.CUST_ID \n" +
                 "where u.USERNAME='"+userName+"' limit 1";
-        Map<String,Object> result = DbUtil.selectOne(Config.ECMSDBConfig,selectSql);
+        Map<String,Object> result = DbUtil.selectOne(Config.UCENTERDBConfig,selectSql);
         return ""+result.get("ID");
     }
 
@@ -36,7 +36,7 @@ public class UserInfoSql {
 
     public  static String getCustIdByPubId(String pubId) throws Exception {
         String selectSql="SELECT CUST_ID from thirdparty_cust_id where id="+pubId;
-        List<ThirdpartyCustId> result = DbUtil.selectList(Config.ECMSDBConfig, selectSql, ThirdpartyCustId.class);
+        List<ThirdpartyCustId> result = DbUtil.selectList(Config.UCENTERDBConfig, selectSql, ThirdpartyCustId.class);
         if(result.size()==0){
             return null;
         }
@@ -45,7 +45,7 @@ public class UserInfoSql {
 
     public  static String getCustIdByName(String userName) throws Exception {
         String selectSql="SELECT CUST_ID from user_device where username='"+userName+"' limit 1";
-        Map<String,Object> result = DbUtil.selectOne(Config.ECMSDBConfig, selectSql);
+        Map<String,Object> result = DbUtil.selectOne(Config.UCENTERDBConfig, selectSql);
         return ""+result.get("CUST_ID");
     }
 

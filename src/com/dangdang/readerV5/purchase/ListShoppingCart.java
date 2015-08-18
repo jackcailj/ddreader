@@ -8,6 +8,7 @@ import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
+import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.ShoppingCartDb;
@@ -68,8 +69,8 @@ public class ListShoppingCart extends FixtureBase{
             }
         }
         else{
-            dataVerifyManager.add(new ValueVerify<String>(null, reponseResult.getData().getCartId()).setVerifyContent("参数不正确，验证返回的不返回CartId"));
-            dataVerifyManager.add(new ValueVerify<Object>(null, reponseResult.getData().getProducts()).setVerifyContent("参数不正确，验证返回的不返回products"));
+            dataVerifyManager.add(new ValueVerify<String>(null, reponseResult.getData().getCartId()).setVerifyContent("参数不正确，验证返回的不返回CartId"),VerifyResult.SUCCESS);
+            dataVerifyManager.add(new ValueVerify<Object>(null, reponseResult.getData().getProducts()).setVerifyContent("参数不正确，验证返回的不返回products"),VerifyResult.SUCCESS);
         }
 
         super.dataVerify();

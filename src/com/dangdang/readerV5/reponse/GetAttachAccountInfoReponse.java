@@ -9,7 +9,7 @@ import java.util.List;
  */
 public class GetAttachAccountInfoReponse {
     Long accountTotal;
-    List<AttachAccountItems> result;
+    List<AttachAccountItem> result;
 
     public Long getAccountTotal() {
         return accountTotal;
@@ -19,11 +19,11 @@ public class GetAttachAccountInfoReponse {
         this.accountTotal = accountTotal;
     }
 
-    public List<AttachAccountItems> getResult() {
+    public List<AttachAccountItem> getResult() {
         return result;
     }
 
-    public void setResult(List<AttachAccountItems> result) {
+    public void setResult(List<AttachAccountItem> result) {
         this.result = result;
     }
 }

@@ -19,7 +19,7 @@ public class MediaBought {
         PlatForm：只能为PlatForm.DS或者PlatForm.YC
      */
     public  static List<MediaBought> getBoughtList(String custId,PlatForm platForm,int start,int end) throws Exception {
-        String selectString="SELECT * from media_bought where cust_id="+custId+(platForm==PlatForm.YC?" and (from_paltform is null or from_paltform like 'yc%')":"")+" order by bought_id DESC limit "+start+","+(end+1);
+        String selectString="SELECT * from media_bought where cust_id="+custId+(platForm==PlatForm.YC?" and whole_flag=0 ":"")+" order by bought_id DESC limit "+start+","+(end+1);
         List<MediaBought> boughts = DbUtil.selectList(Config.YCDBConfig,selectString,MediaBought.class);
         return boughts;
     }

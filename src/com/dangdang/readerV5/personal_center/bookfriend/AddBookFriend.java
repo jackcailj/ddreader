@@ -25,23 +25,24 @@ public class AddBookFriend extends FixtureBase{
 
     @Override
     protected void dataVerify() throws Exception {
+        if(login!=null){
+            BookFriendRelation afterRelation =UserInfoSql.getRelation(login.getCustId(), UserInfoSql.getCustIdByPubId(paramMap.get("friendPubId")));
 
-        BookFriendRelation afterRelation =UserInfoSql.getRelation(login.getCustId(), UserInfoSql.getCustIdByPubId(paramMap.get("friendPubId")));
-
-        if(reponseV2Base.getStatus().getCode()==0){
-            if(beforeRelation==BookFriendRelation.NO_RELATION){
-                dataVerifyManager.add(new ValueVerify<BookFriendRelation>(BookFriendRelation.ACTIVE,afterRelation));
+            if(reponseV2Base.getStatus().getCode()==0){
+                if(beforeRelation==BookFriendRelation.NO_RELATION){
+                    dataVerifyManager.add(new ValueVerify<BookFriendRelation>(BookFriendRelation.ACTIVE,afterRelation));
+                }
+                else if(beforeRelation==BookFriendRelation.ACTIVE){
+                    dataVerifyManager.add(new ValueVerify<BookFriendRelation>(BookFriendRelation.EACHOTHER,afterRelation));
+                }
+                else if(beforeRelation==BookFriendRelation.PASSIVE){
+                    dataVerifyManager.add(new ValueVerify<BookFriendRelation>(BookFriendRelation.EACHOTHER,afterRelation));
+                }
             }
-            else if(beforeRelation==BookFriendRelation.ACTIVE){
-                dataVerifyManager.add(new ValueVerify<BookFriendRelation>(BookFriendRelation.EACHOTHER,afterRelation));
-            }
-            else if(beforeRelation==BookFriendRelation.PASSIVE){
-                dataVerifyManager.add(new ValueVerify<BookFriendRelation>(BookFriendRelation.EACHOTHER,afterRelation));
-            }
-        }
-        else{
-            if(beforeRelation!=null){
-                dataVerifyManager.add(new ValueVerify<BookFriendRelation>(beforeRelation,afterRelation), VerifyResult.SUCCESS);
+            else{
+                if(beforeRelation!=null){
+                    dataVerifyManager.add(new ValueVerify<BookFriendRelation>(beforeRelation,afterRelation), VerifyResult.SUCCESS);
+                }
             }
         }
         super.dataVerify();

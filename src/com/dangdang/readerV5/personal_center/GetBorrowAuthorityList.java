@@ -48,7 +48,7 @@ public class GetBorrowAuthorityList extends FixtureBase{
         if(reponseV2Base.getStatus().getCode()==0){
             List<BorrowAuthority> borrowAuthorities = BorrowAuthorityDb.getBorrowMedias(login.getCustId());
             if(borrowAuthorities.size()==0){
-                dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getBorrowList(),null));
+                dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getBorrowList().size(),0));
             }
             else{
                 StringBuilder regexArticleId = new StringBuilder();
