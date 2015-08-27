@@ -54,12 +54,12 @@ public class GetDiscoveryHomePageInfo extends FixtureBase{
 		if(reponseResult.getStatus().getCode() == 0){	
 			//当前时间到上次更新时间之间的翻篇儿新增记录条数
 			String sql = "SELECT * FROM `media_digest` where is_show=1 and type=1 "
-					     + "and is_del=0 and create_date>'"+fpTime+"'";
+					     + "and is_del=0 and day_or_night=0 and last_update_date>'"+fpTime+"'";
 			List<MediaDigest> digest1 = DbUtil.selectList(Config.YCDBConfig, sql, MediaDigest.class);
 			
 			//当前时间到上次更新时间之间的抢先读新增记录条数
 			sql = "SELECT * FROM `media_digest` where is_show=1 and type=2 "
-				     + "and is_del=0 and create_date>'"+qxdTime+"'";
+				     + "and is_del=0 and last_update_date>'"+qxdTime+"'";
 		    List<MediaDigest> digest2 = DbUtil.selectList(Config.YCDBConfig, sql, MediaDigest.class);
 			
 			dataVerifyManager.add(new ValueVerify<Integer>(digest1.size(), reponseResult.getData().getFpHasNew(), false));
