@@ -32,16 +32,16 @@ public class GetDiscoveryHomePageInfo extends FixtureBase{
 		super.setParameters(params);				
 		if(paramMap.get("lastFPRequestTime")!=null){
 			fpTime = paramMap.get("lastFPRequestTime");
-			if(paramMap.get("lastFPRequestTime").matches("\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}")){
-		    fpTime = paramMap.get("lastFPRequestTime").replace("T", " ");
+			if(fpTime.matches("\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}")){
+		    fpTime = fpTime.replace("T", " ");
 		    paramMap.put("lastFPRequestTime",Long.toString(df.parse(fpTime).getTime()));
 	}		
 			
 		}
 		if(paramMap.get("lastQXDRequestTime")!=null){
 			 qxdTime = paramMap.get("lastQXDRequestTime");
-			 if(paramMap.get("lastQXDRequestTime").matches("\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}")){
-				String qxdTime = paramMap.get("lastQXDRequestTime").replace("T", " ");
+			 if(qxdTime.matches("\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}")){
+				qxdTime = qxdTime.replace("T", " ");
 				paramMap.put("lastQXDRequestTime",Long.toString(df.parse(qxdTime).getTime()));
 			 }
 		}

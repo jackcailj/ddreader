@@ -4,6 +4,7 @@ import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.account.meta.AttachAccount;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.bookbar.meta.Bar;
 import com.dangdang.config.Config;
@@ -12,7 +13,6 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.Data;
 
-import fitnesse.slim.SystemUnderTest;
 /**
  * 加入吧，退出吧，申请吧主接口
  * @author wuhaiyan
@@ -23,6 +23,11 @@ public class BarMember extends FixtureBase {
 	}
 	int numberNum;
 	String barId;
+	//加入吧，加经验和积分各5分
+	int experience = 5;
+	int integral = 5;
+	int account_experience;
+	int account_integral;
 	
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
@@ -44,9 +49,14 @@ public class BarMember extends FixtureBase {
 			Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
 			barId = map.get("bar_id").toString();	
 		    paramMap.put("barId", barId);
-		    numberNum = Integer.parseInt(map.get("member_num").toString());	
-		    
-		}
+		    numberNum = Integer.parseInt(map.get("member_num").toString());		
+		    if(login!=null&&login.getCustId()!=null){
+				sql = "SELECT * FROM `attach_account` where cust_id="+login.getCustId();
+				AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);
+				account_experience = account.getAccountExperience();
+				account_integral = account.getAccountIntegral();
+			}
+		}		
 	}
 	
 	@Override
@@ -58,6 +68,12 @@ public class BarMember extends FixtureBase {
 			if(paramMap.get("actionType").equals("1")){
 				//加入吧，成员数量加1
 				dataVerifyManager.add(new ValueVerify<Integer>(numberNum+1, bar.getMemberNum(),false));
+				sql = "SELECT * FROM `attach_account` where cust_id="+login.getCustId();
+				AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);
+				dataVerifyManager.add(new ValueVerify<Integer>(account_experience + experience, 
+						                                       account.getAccountExperience(),false));
+				dataVerifyManager.add(new ValueVerify<Integer>(account_integral + integral, 
+					                                           account.getAccountIntegral(),false));
 			}
 			else{
 				//退出吧，成员数量减1
