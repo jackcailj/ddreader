@@ -52,18 +52,6 @@ public class DelArticle extends FixtureBase{
 		if(mediaDigestId==null){
 			mediaDigestId = precondition();
 		}
-		//查找被屏蔽的帖子的media digest id		
-		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equals("shield")){
-			DbUtil.executeUpdate(Config.BOOKBARDBConfig, 
-					"update article set is_show=0 and is_del=0 where cust_id="+login.getCustId()+" and media_digest_id="+mediaDigestId);
-			Thread.sleep(1000);
-		}
-		//查找被删除的帖子的media digest id		
-		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equals("deleted")){
-			DbUtil.executeUpdate(Config.BOOKBARDBConfig, 
-					"update article set is_show=1 and is_del=1 where cust_id="+login.getCustId()+" and media_digest_id="+mediaDigestId);
-			Thread.sleep(1000);
-		}
 		if(paramMap.get("mediaDigestId")!=null&&!(paramMap.get("mediaDigestId").isEmpty())
 				&&!(paramMap.get("mediaDigestId").equals("aa"))){
 			paramMap.put("mediaDigestId",Integer.toString(mediaDigestId));
@@ -92,24 +80,4 @@ public class DelArticle extends FixtureBase{
 		verifyResult(expectedCode);
 	}
 	
-	@Override
-	 public boolean tearDown(){
-		try {
-			DbUtil.executeUpdate(Config.BOOKBARDBConfig, 
-					"update article set is_show=1 and is_del=0 where cust_id="+login.getCustId()+" and media_digest_id="+mediaDigestId);
-//		if(mediaDigestId!=null){
-//			mediaDigestId = null;
-//		}
-//		if(login!=null){
-//			login = null;
-//		}
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return super.tearDown();		 
-	 }
-	
-
 }

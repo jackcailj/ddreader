@@ -96,6 +96,7 @@ public class SquareTest extends FixtureBase{
 				for(int j=0; j<moduleSize; j++){
 					//bar的状态是 待审核或者通过，这两个状态下都会在客户端显示，预审核的显示默认的吧简介和图片
 					//bar_status(1.待审核，2.通过，3.干预审核，4.下架)
+					logger.info("i is "+i+", j is "+j);
 					sql = "select * from bar where bar_status!=4 and bar_id ="+bCotentList.get(j).getContentId();
 					List<Bar> barList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class);
 					BarContent bContentOfDB = new BarContent();
@@ -111,7 +112,7 @@ public class SquareTest extends FixtureBase{
 					}
 					bContentOfDB.setBarName(barList.get(0).getBarName().toString());
 					bContentOfDB.setMemberNum(barList.get(0).getMemberNum().toString());
-					if(!bCotentList.get(j).getRecommendReason().isEmpty()){
+					if(bCotentList.get(j).getRecommendReason()!=null&&!(bCotentList.get(j).getRecommendReason().isEmpty())){
 						bContentOfDB.setRecommendReason(bCotentList.get(j).getRecommendReason().toString());
 					}
 					bContentListOfDB.add(bContentOfDB);	
@@ -212,7 +213,7 @@ public class SquareTest extends FixtureBase{
 				aContentOfDB.setIsTop(article.getIsTop().toString());
 				aContentOfDB.setLastModifiedDateMsec(article.getLastModifiedDateMsec().toString());
 				aContentOfDB.setMediaDigestId(Long.toString(article.getMediaDigestId()));
-				aContentOfDB.setTitle(digest.get("title").toString().isEmpty()?null:digest.get("title").toString());
+				aContentOfDB.setTitle(digest.get("title").toString()==null?null:digest.get("title").toString());
 				aContentOfDB.setType(Integer.toString(article.getType()));
 				aContentListOfDB.add(aContentOfDB);
 			}
@@ -220,7 +221,7 @@ public class SquareTest extends FixtureBase{
 //			if(aContentListOfDB.size()!=0){
 //				info.setArticleContent(aContentListOfDB);
 //			}
-//			squareInfoOfDB.add(info);
+//			squareInfoOfDB.add(info); 
 			dataVerifyManager.add(new ValueVerify(moduleOfDB, reponseResult.getData().getSquareInfo().get(i).getModule(),true));
 			if(aContentListOfDB.size()!=0){
 				dataVerifyManager.add(new ListVerify(aContentListOfDB, reponseResult.getData().getSquareInfo().get(i).getArticleContent(),true));

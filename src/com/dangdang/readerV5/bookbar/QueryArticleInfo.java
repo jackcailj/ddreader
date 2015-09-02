@@ -39,11 +39,11 @@ public class QueryArticleInfo  extends FixtureBase{
 		}
 		// 查找被删除的帖子
 		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equalsIgnoreCase("shield")){
-			sql = "select * from article where is_show=0 ORDER BY RAND() limit 1";
+			sql = "select * from article where is_show=0 and is_del=0 ORDER BY RAND() limit 1";
 		}
 		// 查找被屏蔽的帖子
 		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equalsIgnoreCase("deleted")){
-			sql = "select * from article where is_del=1 ORDER BY RAND() limit 1";
+			sql = "select * from article where is_show=1 and is_del=1 ORDER BY RAND() limit 1";
 		}
 		if(sql!=null){
 			map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
@@ -78,7 +78,7 @@ public class QueryArticleInfo  extends FixtureBase{
 			list1.add(digest.get("content").toString());
 			list1.add(userInfo!=null?userInfo.get("cust_nickname").toString().split("@")[0]:null);
 			list1.add(mediaDigestId);
-			list1.add(!(digest.get("title").toString().isEmpty())?digest.get("title").toString():null);
+			list1.add(!(digest.get("title")==null||digest.get("title").toString().isEmpty())?digest.get("title").toString():null);
 			
 			try{
 				CommentTargetCount count = DbUtil.selectOne(Config.BSAECOMMENT, 
