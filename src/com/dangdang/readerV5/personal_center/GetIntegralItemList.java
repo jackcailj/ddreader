@@ -5,6 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.account.AccountUtils;
 import com.dangdang.account.IntegralItem;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
@@ -21,6 +22,13 @@ public class GetIntegralItemList extends FixtureBase{
     ReponseV2<GetIntegralItemListReponse> reponseResult;
 
     public GetIntegralItemList(){}
+
+    public GetIntegralItemList(ILogin login){
+        setLogin(login);
+        paramMap.put("token",login.getToken());
+        paramMap.put("pageSize","10");
+
+    }
 
 
     public ReponseV2<GetIntegralItemListReponse> getReponseResult() {

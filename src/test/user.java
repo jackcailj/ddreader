@@ -1,7 +1,11 @@
 package test;
 
+import com.dangdang.ddframework.dataverify.verify_annotation.NotNull;
+
 public class user {
-	String userName;
+
+	@NotNull
+	String userName="test";
 
 	
 }
