@@ -85,11 +85,11 @@ public class CreateBar  extends FixtureBase {
 			list2.add(map.get("bar_name").toString());
 			list1.add(paramMap.get("barDesc"));
 			list2.add(map.get("bar_desc").toString());
-		    list1.add(paramMap.get("barImgUrl"));
+			list1.add(paramMap.get("barImgUrl"));
 			list2.add(map.get("bar_img_url").toString());
 			dataVerifyManager.add(new ValueVerify<List<String>>(list1, list2));
 			super.dataVerify();
-		}	
+		}
 		else{
 			dataVerifyResult = false;
 			//TODO will add verify
