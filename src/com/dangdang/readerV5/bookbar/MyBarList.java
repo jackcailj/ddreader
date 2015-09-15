@@ -32,14 +32,14 @@ public class MyBarList extends FixtureBase {
 			if(paramMap.get("type").equals("1")){
 				sql ="select * from bar where bar_id in ("
 						+ "select bar_id from bar_member where 1=1 and "
-						+ "cust_id = "+login.getCustId()+" and member_status=3)"
+						+ "cust_id = "+login.getCustId()+" and member_status=3) and bar_status in(1,2)"
 						+ " order by create_date DESC";
 			}
 			if(paramMap.get("type").equals("2")){
 				sql ="select * from bar where bar_id in ("
 						+ "select bar_id from bar_member where 1=1 and "
 						+ "cust_id = "+login.getCustId()+" and member_status in (1,2))"
-						+ " order by create_date DESC";
+						+ " and bar_status in(1,2) order by create_date DESC";
 			}
 			List<Bar> barList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class);
 			//一页默认有50个吧列表
