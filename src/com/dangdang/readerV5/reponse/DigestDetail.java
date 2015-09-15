@@ -10,6 +10,7 @@ public class DigestDetail extends DigestList{
 	String pic1Path;
 	int reviewCnt;
 	int topCnt;
+	int clickCnt;
 	int isPraise;
 	
 	public String getAlreayMark(){
@@ -39,6 +40,9 @@ public class DigestDetail extends DigestList{
 	public int getTopCnt(){
 		return topCnt;
 	}
+	public int getClickCnt(){
+		return clickCnt;
+	}	
 	public int getIsPraise(){
 		return isPraise;
 	}	
@@ -69,6 +73,9 @@ public class DigestDetail extends DigestList{
 	public void setTopCnt(int topCnt){
 		this.topCnt = topCnt;
 	}
+	public void setClickCnt(int clickCnt){
+		this.clickCnt = clickCnt;
+	}	
 	public void setIsPraise(int isPraise){
 		this.isPraise = isPraise;
 	}	

@@ -66,8 +66,7 @@ public class GetDigestDetail  extends FixtureBase {
 			dataVerifyManager.add(new ValueVerify<String>(detail.getMediaId(), map1.get("media_id").toString()));
 			dataVerifyManager.add(new ValueVerify<String>(detail.getCardTitle(), map1.get("card_title").toString()));
 			
-			//验证ebookInfo
-			
+			//验证ebookInfo			
 			try{
 				Map<String,Object>  map2 = new HashMap<String,Object>();
 				List<String> list1 = new ArrayList<String>();
@@ -140,14 +139,16 @@ public class GetDigestDetail  extends FixtureBase {
 				dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getSubscribe(), false));
 			}
 			
-			//点赞数量，评论数量
+			//点赞数量，评论数量，阅读数量
 			int topCnt = 0;
 			int reviewCnt = 0;
+			int browseCnt = 0;			
 			try{
 				sql = "SELECT * from comment_target_count where target_id="+digestId;
 				CommentTargetCount count = DbUtil.selectOne(Config.BSAECOMMENT, sql, CommentTargetCount.class);
 				topCnt = count.getPraiseCount();
-				reviewCnt = count.getCommentCount();				
+				reviewCnt = count.getCommentCount();	
+				browseCnt = count.getBrowseCount();
 			}
 			catch(Exception e){
 				//没有点赞和评论时，得到null，所以catch 空指针异常
@@ -157,6 +158,8 @@ public class GetDigestDetail  extends FixtureBase {
 		              reponseResult.getData().getDigestDetail().getTopCnt(), false));	
             dataVerifyManager.add(new ValueVerify<Integer>(reviewCnt,
                     reponseResult.getData().getDigestDetail().getReviewCnt(), false));	
+            dataVerifyManager.add(new ValueVerify<Integer>(browseCnt,
+                    reponseResult.getData().getDigestDetail().getClickCnt(), false));	
 
 			super.dataVerify();
 		}	
