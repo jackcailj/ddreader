@@ -70,7 +70,7 @@ public class DelArticle extends FixtureBase{
 			String sql = "select * from article where media_digest_id="+reponseResult.getData().getMediaDigestId()
 					+" and cust_id="+login.getCustId();
 			Article article = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Article.class);
-			dataVerifyManager.add(new ValueVerify<Long>(Integer.toUnsignedLong(article.getIsDel()), 1l));
+			dataVerifyManager.add(new ValueVerify<String>(Integer.toString(article.getIsDel()), "1"));
 			super.dataVerify();
 		}
 		else{
