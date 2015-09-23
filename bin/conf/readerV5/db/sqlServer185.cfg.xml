@@ -5,9 +5,9 @@
 <hibernate-configuration>
     <session-factory >
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
-        <property name="hibernate.connection.password">cms</property>
-        <property name="hibernate.connection.url">jdbc:sqlserver://localhost:1433;databaseName=Account</property>
-        <property name="hibernate.connection.username">cmsuser</property>
+        <property name="hibernate.connection.password">ddbackend</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://10.255.254.185:1433</property>
+        <property name="hibernate.connection.username">writeuser</property>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
      
       <property name="hibernate.c3p0.max_size">100</property>  
