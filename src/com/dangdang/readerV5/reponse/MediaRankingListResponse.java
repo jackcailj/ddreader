@@ -3,15 +3,15 @@ package com.dangdang.readerV5.reponse;
 import java.util.List;
 
 public class MediaRankingListResponse {
-	String count;
+	Integer count;
 	String listType;
 	String name;
 	List<SaleList> saleList;
-	String total;
-	public String getCount() {
+	Integer total;
+	public Integer getCount() {
 		return count;
 	}
-	public void setCount(String count) {
+	public void setCount(Integer count) {
 		this.count = count;
 	}
 	public String getListType() {
@@ -32,10 +32,10 @@ public class MediaRankingListResponse {
 	public void setSaleList(List<SaleList> saleList) {
 		this.saleList = saleList;
 	}
-	public String getTotal() {
+	public Integer getTotal() {
 		return total;
 	}
-	public void setTotal(String total) {
+	public void setTotal(Integer total) {
 		this.total = total;
 	}
 

@@ -1,15 +1,13 @@
 package com.dangdang.readerV5.reponse;
 
-import java.util.List;
-
 public class MediaCategoryReponse {
-	List<CatetoryList3> catetoryList;
+	CatetoryList3 catetoryList;
 
-	public List<CatetoryList3> getCatetoryList() {
+	public CatetoryList3 getCatetoryList() {
 		return catetoryList;
 	}
 
-	public void setCatetoryList(List<CatetoryList3> catetoryList) {
+	public void setCatetoryList(CatetoryList3 catetoryList) {
 		this.catetoryList = catetoryList;
 	}
 }

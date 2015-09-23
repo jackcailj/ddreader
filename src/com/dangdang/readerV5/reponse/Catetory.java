@@ -1,9 +1,6 @@
 package com.dangdang.readerV5.reponse;
 
-import java.util.List;
-
-public class CatetoryList1 {
-	List<Catetory> catetoryList;
+public class Catetory {
 	String code;
 	Integer id;
 	String image;
@@ -12,12 +9,6 @@ public class CatetoryList1 {
 	String name;
 	Integer parentId;
 	Boolean parsed;
-	public List<Catetory> getCatetoryList() {
-		return catetoryList;
-	}
-	public void setCatetoryList(List<Catetory> catetoryList) {
-		this.catetoryList = catetoryList;
-	}
 	public String getCode() {
 		return code;
 	}
@@ -66,5 +57,4 @@ public class CatetoryList1 {
 	public void setParsed(Boolean parsed) {
 		this.parsed = parsed;
 	}
-
 }

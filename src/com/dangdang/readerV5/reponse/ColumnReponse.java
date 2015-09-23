@@ -6,11 +6,11 @@ public class ColumnReponse {
 	String columnCode;
 	String count;
 	//String icon;
-	//String isShowHorn;
+	Boolean isShowHorn;
 	String name;
 	List<SaleList> saleList;
 	String tips;
-	String total;
+	Integer total;
 	public String getColumnCode() {
 		return columnCode;
 	}
@@ -23,12 +23,12 @@ public class ColumnReponse {
 	public void setCount(String count) {
 		this.count = count;
 	}
-//	public String getIsShowHorn() {
-//		return isShowHorn;
-//	}
-//	public void setIsShowHorn(String isShowHorn) {
-//		this.isShowHorn = isShowHorn;
-//	}
+	public Boolean getIsShowHorn() {
+		return isShowHorn;
+	}
+	public void setIsShowHorn(Boolean isShowHorn) {
+		this.isShowHorn = isShowHorn;
+	}
 	public String getName() {
 		return name;
 	}
@@ -47,10 +47,10 @@ public class ColumnReponse {
 	public void setTips(String tips) {
 		this.tips = tips;
 	}
-	public String getTotal() {
+	public Integer getTotal() {
 		return total;
 	}
-	public void setTotal(String total) {
+	public void setTotal(Integer total) {
 		this.total = total;
 	}
 }

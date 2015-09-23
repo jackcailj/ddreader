@@ -34,7 +34,7 @@ public class Column extends FixtureBase{
 			//验证json中返回字段
 			log.info("验证栏目返回的数据：");	
 			int size = Integer.valueOf(paramMap.get("end"))-Integer.valueOf(paramMap.get("start")) + 1;
-			ColumnReponse dbResponse = BookStoreCommSQL.getColumnReponse(paramMap.get("columnType"), size);
+			ColumnReponse dbResponse = BookStoreCommSQL.getColumnReponse(paramMap.get("columnType"), size, false);
 			dataVerifyManager.add(new ResponseVerify(reponseResult.getData(), dbResponse));
 			
 //			dataVerifyManager.add(new ValueVerify<String>(dbResponse.getColumnCode(), reponseResult.getData().getColumnCode()).setVerifyContent("验证columnCode"));
