@@ -21,7 +21,7 @@ public class ChannelSQL {
     	column.setChannelList(getChannelList(columnCode,num));
     	column.setColumnCode(map.get("column_code").toString());
     	column.setCount(getChannelList(columnCode,num).size());
-    	column.setIsShowHorn(Integer.valueOf(map.get("is_show_horn").toString()));   	
+    //	column.setIsShowHorn(map.get("is_show_horn").toString());   	
     	column.setName(map.get("name").toString());
     	column.setTips(map.get("tips").toString());
     	column.setTotal(getTotal(columnCode));      
@@ -84,7 +84,7 @@ public class ChannelSQL {
         	//设置channelId
         	tmp.setChannelId((channelID));
         	//？有问题
-        	//tmp.setCoverPic(Config.getUrl()+"/pic/"+list.get(i).get("cover_pic").toString());
+     //   	tmp.setCoverPic(Config.getUrl()+"/pic/"+list.get(i).get("cover_pic").toString());
         	tmp.setDescs(list.get(i).get("descs").toString());
         	//设置isStore
         	tmp.setIsStore("0");
