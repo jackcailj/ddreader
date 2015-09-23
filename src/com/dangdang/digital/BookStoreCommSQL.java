@@ -90,19 +90,22 @@ public class BookStoreCommSQL {
 	/**************************************** 借阅、限免、栏目结果验证   ****************************************/
 	
 	//获取栏目数据
-	public static ColumnReponse getColumnReponse(String columnCode, int size) throws Exception{ //all_pub_borrow_free
+	public static ColumnReponse getColumnReponse(String columnCode, int size, boolean flag) throws Exception{ //all_pub_borrow_free
 		String selectSQL= "SELECT column_code,icon, is_show_horn,name,tips " +
 				"FROM media_column " +
 				"WHERE column_code='"+columnCode+"'";
 		List<Map<String, Object>> result = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		ColumnReponse reponse = new ColumnReponse();
 		List<SaleList> saleList = new ArrayList<SaleList>();
-		saleList = getSaleList(columnCode, size);
+		saleList = getSaleList(columnCode, size, flag);
 		reponse.setColumnCode(result.get(0).get("column_code").toString());
 		//设置count
 		reponse.setCount(String.valueOf(saleList.size()));
-		//reponse.setIcon(result.get(0).get("icon").toString());
-		//reponse.setIsShowHorn(result.get(0).get("is_show_horn").toString());
+		String isShowHorn = result.get(0).get("is_show_horn").toString();
+		if(isShowHorn.equals("\u0001"))
+			reponse.setIsShowHorn(true);
+		else 
+			reponse.setIsShowHorn(false);
 		reponse.setName(result.get(0).get("name").toString());
 		reponse.setSaleList(saleList);
 		reponse.setTips(result.get(0).get("tips").toString());		
@@ -112,7 +115,7 @@ public class BookStoreCommSQL {
 	}
 	
 	//获取栏目saleList
-	public static List<SaleList> getSaleList(String columnCode, int size) throws Exception{ //all_pub_borrow_free
+	public static List<SaleList> getSaleList(String columnCode, int size, boolean flag) throws Exception{ //all_pub_borrow_free
 		String selectSQL = "SELECT ms.is_support_full_buy,ms.price,ms.sale_id, ms.type " +
 				" from media_column_content mcc,media_sale ms"+
 				 " where column_code ='"+columnCode+"'"+
@@ -126,12 +129,12 @@ public class BookStoreCommSQL {
 		List<MediaList> mediaList = new ArrayList<MediaList>();
 		for(int i=0; i<result.size(); i++){
 			SaleList tmp = new SaleList();
-			tmp.setIsStore("0");
-			tmp.setIsSupportFullBuy(result.get(i).get("is_support_full_buy").toString());
-			tmp.setPrice(result.get(i).get("price").toString());
-			tmp.setSaleId(result.get(i).get("sale_id").toString());
-			tmp.setType(result.get(i).get("type").toString());
-			mediaList = getMediaList(Integer.valueOf(result.get(i).get("sale_id").toString()));
+			tmp.setIsStore(0);
+			tmp.setIsSupportFullBuy(Integer.valueOf(result.get(i).get("is_support_full_buy").toString()));
+			tmp.setPrice(Integer.valueOf(result.get(i).get("price").toString()));
+			tmp.setSaleId(Integer.valueOf(result.get(i).get("sale_id").toString()));
+			tmp.setType(Integer.valueOf(result.get(i).get("type").toString()));
+			mediaList = getMediaList(Integer.valueOf(result.get(i).get("sale_id").toString()), flag);
 			tmp.setMediaList(mediaList);
 			saleList.add(tmp);
 		}
@@ -139,7 +142,7 @@ public class BookStoreCommSQL {
 	}
 	
 	//获取栏目saleList的数量
-	public static String getSaleListCount(String columnCode) throws Exception{
+	public static int getSaleListCount(String columnCode) throws Exception{
 		String selectSQL = "SELECT count(*) " +
 		" from media_column_content mcc,media_sale ms"+
 		" where column_code ='"+columnCode+"'"+
@@ -148,11 +151,15 @@ public class BookStoreCommSQL {
 		" and mcc.sale_id = ms.sale_id"+
 		" and ms.shelf_status =1";		 
 		List<Map<String, Object>> result = DbUtil.selectList(Config.YCDBConfig, selectSQL);
-		return result.get(0).get("count(*)").toString();		
+		int count = Integer.valueOf(result.get(0).get("count(*)").toString());	
+		return count;
 	}
 	
-	//获取栏目MediaList
-	public static List<MediaList> getMediaList(int saleID) throws Exception{
+	/**
+	 * 获取栏目MediaList
+	 * @param flag 是否过滤问号，ture:过滤    false:不过滤
+	 */
+	public static List<MediaList> getMediaList(int saleID, boolean flag) throws Exception{
 		String selectSQL = "SELECT author_id,author_penname,chapter_cnt, cover_pic,descs,is_full, media_id,recommand_words,sale_id,title,doc_type " +
 				"FROM `media` " +
 				"WHERE sale_id ="+saleID+" AND shelf_status=1";//AND is_show=1
@@ -167,7 +174,7 @@ public class BookStoreCommSQL {
 			if(result.get(i).get("author_id")==null)
 				tmp.setAuthorId(null);
 			else
-				tmp.setAuthorId(result.get(i).get("author_id").toString());
+				tmp.setAuthorId(Integer.valueOf(result.get(i).get("author_id").toString()));
 			if(result.get(i).get("author_penname")==null)
 				tmp.setAuthorPenname(null);
 			else
@@ -180,26 +187,28 @@ public class BookStoreCommSQL {
 			if(result.get(i).get("chapter_cnt")==null)
 				tmp.setChapterCnt(null);
 			else
-				tmp.setChapterCnt(result.get(i).get("chapter_cnt").toString());
+				tmp.setChapterCnt(Integer.valueOf(result.get(i).get("chapter_cnt").toString()));
 			//tmp.setCoverPic(result.get(i).get("cover_pic").toString());
 			String descs = result.get(i).get("descs").toString();
-			tmp.setDescs(descs.replace("?",""));
-			//tmp.setDescs(descs);
-			tmp.setIsFull(result.get(i).get("is_full").toString());
+			if(flag){
+				tmp.setDescs(descs.replace("?",""));
+			}else
+				tmp.setDescs(descs);
+			tmp.setIsFull(Integer.valueOf(result.get(i).get("is_full").toString()));
 			//是否收藏
-			tmp.setIsStore("0");
-			tmp.setMediaId(result.get(i).get("media_id").toString());
+			tmp.setIsStore(0);
+			tmp.setMediaId(Integer.valueOf(result.get(i).get("media_id").toString()));
 			//设置mediaType
 			if(result.get(i).get("doc_type").equals("DREBOOK"))
-				tmp.setMediaType("2");
+				tmp.setMediaType(2);
 			else 
-				tmp.setMediaType("1");
+				tmp.setMediaType(1);
 				
 			if(result.get(i).get("recommand_words")==null)
 				tmp.setRecommandWords("");
 			else
 				tmp.setRecommandWords(result.get(i).get("recommand_words").toString());
-			tmp.setSaleId(result.get(i).get("sale_id").toString());
+			tmp.setSaleId(Integer.valueOf(result.get(i).get("sale_id").toString()));
 			tmp.setTitle(result.get(i).get("title").toString());
 			mediaList.add(tmp);
 		}
@@ -207,14 +216,14 @@ public class BookStoreCommSQL {
 	}
 	
 	//获取免费数据
-	public static FreeForLimitedReponse getFreeForLimitedReponse(String columnCode, int size) throws Exception{ //all_pub_borrow_free
+	public static FreeForLimitedReponse getFreeForLimitedReponse(String columnCode, int size, boolean flag) throws Exception{ //all_pub_borrow_free
 		String selectSQL= "SELECT code,icon, is_show_horn,name,tips " +
 				"FROM media_column " +
 				"WHERE column_code='"+columnCode+"'";
 		List<Map<String, Object>> result = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		FreeForLimitedReponse reponse = new FreeForLimitedReponse();
 		List<BorrowSaleList> saleList = new ArrayList<BorrowSaleList>();
-		saleList = getBorrowSaleList(columnCode, size);
+		saleList = getBorrowSaleList(columnCode, size, flag);
 		reponse.setColumnCode(result.get(0).get("code").toString());
 		//设置count
 		reponse.setCount(String.valueOf(saleList.size()));
@@ -229,14 +238,14 @@ public class BookStoreCommSQL {
 	}
 	
 	//获取借阅数据
-	public static BorrowReponse getBorrowReponse(String columnCode, int size) throws Exception{ //all_pub_borrow_free
+	public static BorrowReponse getBorrowReponse(String columnCode, int size, boolean flag) throws Exception{ //all_pub_borrow_free
 		String selectSQL= "SELECT code,icon, is_show_horn,name,tips " +
 				"FROM media_column " +
 				"WHERE column_code='"+columnCode+"'";
 		List<Map<String, Object>> result = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		BorrowReponse reponse = new BorrowReponse();
 		List<BorrowSaleList> saleList = new ArrayList<BorrowSaleList>();
-		saleList = getBorrowSaleList(columnCode, size);
+		saleList = getBorrowSaleList(columnCode, size, flag);
 		reponse.setColumnCode(result.get(0).get("code").toString());
 		//设置count
 		reponse.setCount(String.valueOf(saleList.size()));
@@ -251,7 +260,7 @@ public class BookStoreCommSQL {
 	}
 	
 	//获取借阅saleList
-	public static List<BorrowSaleList> getBorrowSaleList(String columnCode, int size) throws Exception{ //all_pub_borrow_free
+	public static List<BorrowSaleList> getBorrowSaleList(String columnCode, int size, boolean flag) throws Exception{ //all_pub_borrow_free
 		String selectSQL = "SELECT ms.is_support_full_buy,ms.price,ms.sale_id, ms.type " +
 				" from media_column_content mcc,media_sale ms"+
 				 " where column_code ='"+columnCode+"'"+
@@ -270,7 +279,7 @@ public class BookStoreCommSQL {
 			tmp.setPrice(result.get(i).get("price").toString());
 			tmp.setSaleId(result.get(i).get("sale_id").toString());
 			tmp.setType(result.get(i).get("type").toString());
-			mediaList = getMediaList(Integer.valueOf(result.get(i).get("sale_id").toString()));
+			mediaList = getMediaList(Integer.valueOf(result.get(i).get("sale_id").toString()), flag);
 			tmp.setMediaList(mediaList);
 			saleList.add(tmp);
 		}

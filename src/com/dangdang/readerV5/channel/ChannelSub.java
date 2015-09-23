@@ -1,5 +1,8 @@
 package com.dangdang.readerV5.channel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
@@ -25,6 +28,21 @@ public class ChannelSub extends FixtureBase{
 	@Override
 	public boolean doGet(String exceptedCode) throws Exception {		
 		return super.doGet(exceptedCode);
+	}
+	
+	public boolean doGets(String exceptedCode) throws Exception {	
+		boolean flag = true;
+		String cName = paramMap.get("cId");
+		System.out.println("aaa"+cName);
+		List<String>  cIds = new ArrayList<String>();
+		cIds = ChannelSubSQL.getChannelId(cName);
+		for(int i=0; i<cIds.size(); i++){
+			paramMap.put("cId", cIds.get(i));
+			if(!doGet(exceptedCode))
+				flag = false;
+			Thread.sleep(1000);
+		}
+		return flag;
 	}
 	
 	public boolean verifyResult() throws Exception{

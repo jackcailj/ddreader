@@ -2,18 +2,17 @@ package com.dangdang.readerV5.reponse;
 
 import java.util.List;
 
-public class SaleList {
-	
-	String isStore;
-	String isSupportFullBuy;
+public class SaleList {	
+	Integer isStore;
+	Integer isSupportFullBuy;
 	List<MediaList> mediaList;
-	String price;
-	String saleId;
-	String type;
-	public String getIsStore() {
+	Integer price;
+	Integer saleId;
+	Integer type;
+	public Integer getIsStore() {
 		return isStore;
 	}
-	public void setIsStore(String isStore) {
+	public void setIsStore(Integer isStore) {
 		this.isStore = isStore;
 	}
 	public List<MediaList> getMediaList() {
@@ -22,28 +21,28 @@ public class SaleList {
 	public void setMediaList(List<MediaList> mediaList) {
 		this.mediaList = mediaList;
 	}
-	public String getPrice() {
+	public Integer getPrice() {
 		return price;
 	}
-	public void setPrice(String price) {
+	public void setPrice(Integer price) {
 		this.price = price;
 	}
-	public String getSaleId() {
+	public Integer getSaleId() {
 		return saleId;
 	}
-	public void setSaleId(String saleId) {
+	public void setSaleId(Integer saleId) {
 		this.saleId = saleId;
 	}
-	public String getType() {
+	public Integer getType() {
 		return type;
 	}
-	public void setType(String type) {
+	public void setType(Integer type) {
 		this.type = type;
 	}
-	public String getIsSupportFullBuy() {
+	public Integer getIsSupportFullBuy() {
 		return isSupportFullBuy;
 	}
-	public void setIsSupportFullBuy(String isSupportFullBuy) {
+	public void setIsSupportFullBuy(Integer isSupportFullBuy) {
 		this.isSupportFullBuy = isSupportFullBuy;
 	}
 

@@ -1,38 +1,38 @@
 package com.dangdang.readerV5.reponse;
 
 public class MediaList {
-	String authorId;
+	Integer authorId;
 	String authorPenname;
 	//String categoryIds;
 	//String categorys;
-	String chapterCnt;
+	Integer chapterCnt;
 	//String coverPic;
 	String descs;
-	String isFull;
-	String isStore;
-	String mediaId;
-	String mediaType;
+	Integer isFull;
+	Integer isStore;
+	Integer mediaId;
+	Integer mediaType;
 	String recommandWords;
-	String saleId;
+	Integer saleId;
 	String title;
 
-	public String getIsStore() {
+	public Integer getIsStore() {
 		return isStore;
 	}
-	public void setIsStore(String isStore) {
+	public void setIsStore(Integer isStore) {
 		this.isStore = isStore;
 	}
-	public String getMediaType() {
+	public Integer getMediaType() {
 		return mediaType;
 	}
-	public void setMediaType(String mediaType) {
+	public void setMediaType(Integer mediaType) {
 		this.mediaType = mediaType;
 	}
 	
-	public String getAuthorId() {
+	public Integer getAuthorId() {
 		return authorId;
 	}
-	public void setAuthorId(String authorId) {
+	public void setAuthorId(Integer authorId) {
 		this.authorId = authorId;
 	}
 	public String getAuthorPenname() {
@@ -53,10 +53,10 @@ public class MediaList {
 //	public void setCategorys(String categorys) {
 //		this.categorys = categorys;
 //	}
-	public String getChapterCnt() {
+	public Integer getChapterCnt() {
 		return chapterCnt;
 	}
-	public void setChapterCnt(String chapterCnt) {
+	public void setChapterCnt(Integer chapterCnt) {
 		this.chapterCnt = chapterCnt;
 	}
 //	public String getCoverPic() {
@@ -71,16 +71,16 @@ public class MediaList {
 	public void setDescs(String descs) {
 		this.descs = descs;
 	}
-	public String getIsFull() {
+	public Integer getIsFull() {
 		return isFull;
 	}
-	public void setIsFull(String isFull) {
+	public void setIsFull(Integer isFull) {
 		this.isFull = isFull;
 	}
-	public String getMediaId() {
+	public Integer getMediaId() {
 		return mediaId;
 	}
-	public void setMediaId(String mediaId) {
+	public void setMediaId(Integer mediaId) {
 		this.mediaId = mediaId;
 	}
 	public String getRecommandWords() {
@@ -89,10 +89,10 @@ public class MediaList {
 	public void setRecommandWords(String recommandWords) {
 		this.recommandWords = recommandWords;
 	}
-	public String getSaleId() {
+	public Integer getSaleId() {
 		return saleId;
 	}
-	public void setSaleId(String saleId) {
+	public void setSaleId(Integer saleId) {
 		this.saleId = saleId;
 	}
 
