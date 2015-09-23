@@ -6,7 +6,7 @@
     <session-factory >
         <property name="hibernate.connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
         <property name="hibernate.connection.password">ddbackend</property>
-        <property name="hibernate.connection.url">jdbc:sqlserver://10.255.254.185:1433</property>
+        <property name="hibernate.connection.url">jdbc:sqlserver://10.255.254.187:1433;databaseName=customer</property>
         <property name="hibernate.connection.username">writeuser</property>
         <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
      
