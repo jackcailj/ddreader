@@ -15,40 +15,49 @@ import com.dangdang.ddframework.dbutil.DbUtil;
  */
 public class ChannelSubSQL {
 	
-	//随机获取一个可用的频道
-	public static String getChannel() throws Exception{
-	 	String selectSQL = "SELECT channel.channel_id " +
-		" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
-		" where channel.shelf_status=1"+
-		" and channel.is_completed=1"+
-		" and  mcc.status in(1,2) ORDER BY RAND() LIMIT 1";
+	//返回用户未订阅过的一个频道
+	public static String getNoUserChannel(String custId) throws Exception{
+	 	String selectSQL = "SELECT channel.channel_id "+
+	 		" FROM media_column_content mcc LEFT JOIN channel ON mcc.sale_id= channel.channel_id"+
+	 		" WHERE channel.shelf_status=1"+
+	 		" AND channel.is_completed=1"+
+	 		" AND  mcc.status in(1,2)"+
+	 		" AND channel.channel_id NOT IN(" +
+	 		" SELECT channel_id " +
+	 		" FROM `channel_sub_user` " +
+	 		" WHERE cust_id=502326) ORDER BY RAND()  LIMIT 1";
 	 	List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
 	 	return infos.get(0).get("channel_id").toString();
 	}
 	
-	//删除某用户订阅的某频道记录（为模拟首次订阅）
-//	public static void delSubWithCustidAndChannelid(String custid, String channelid) throws Exception{
-//		int custID = Integer.valueOf(custid);
-//		int channelID = Integer.valueOf(channelid);
-//		String selectSQL="SELECT COUNT(1) FROM channel_sub_user WHERE cust_id="+custID+" AND channel_id=" + channelID;
-//		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-//	 	int num = Integer.valueOf(infos.get(0).get("COUNT(1)").toString());
-//	 	if(num==1){
-//	 		String delSQL="DELETE FROM channel_sub_user WHERE cust_id="+custID+" AND channel_id=" + channelID;
-//			DbUtil.executeUpdate(Config.YCDBConfig, delSQL);
-//	 	
-//			//查询频道订阅总数	
-//			int sub_number = Integer.valueOf(getSubTotal(channelid));
-//	
-//			//频道订阅总数-1
-//			if(sub_number>0){
-//				String updateSQL="UPDATE `channel` SET sub_number="+(sub_number-1)+" WHERE channel_id=" + channelID;
-//				DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-//			}
-//	 	}
-//
+	//返回用户已订阅的一个频道
+//	public static String getUserChannel(String custId) throws Exception{
+//		
 //	}
-//	
+	
+	//删除某用户订阅的某频道记录（为模拟首次订阅）
+	public static void delSubWithCustidAndChannelid(String custid, String channelid) throws Exception{
+		int custID = Integer.valueOf(custid);
+		int channelID = Integer.valueOf(channelid);
+		String selectSQL="SELECT COUNT(1) FROM channel_sub_user WHERE cust_id="+custID+" AND channel_id=" + channelID;
+		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
+	 	int num = Integer.valueOf(infos.get(0).get("COUNT(1)").toString());
+	 	if(num==1){
+	 		String delSQL="DELETE FROM channel_sub_user WHERE cust_id="+custID+" AND channel_id=" + channelID;
+			DbUtil.executeUpdate(Config.YCDBConfig, delSQL);
+	 	
+			//查询频道订阅总数	
+			int sub_number = Integer.valueOf(getSubTotal(channelid));
+	
+			//频道订阅总数-1
+			if(sub_number>0){
+				String updateSQL="UPDATE `channel` SET sub_number="+(sub_number-1)+" WHERE channel_id=" + channelID;
+				DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
+			}
+	 	}
+
+	}
+	
 	//查询用户是否订阅或取消订阅某频道 type=1订阅  type=0取消订阅
 	public static String isSub(String custId, String channelId, String type) throws Exception{
 		int _custId = Integer.valueOf(custId);

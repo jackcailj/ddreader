@@ -6,6 +6,8 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.reader.functional.param.model.ParseResult;
+import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.LoginReponse;
 
 import java.util.Map;
@@ -28,7 +30,12 @@ public class ddLogin extends FixtureBase implements ILogin{
         paramMap.putAll((Map<String, String>) JSONObject.toJSON(Info));
         addAction("ddLogin");
     }
-
+    
+    //Add by guohaiying 解决问题：fitnesse上单独调用ddLogin接口时使用
+	public void parseParameters(Map<String, String> params) throws Exception{
+		paramMap =  params;
+		paramMap.putAll(Config.getCommonParam());
+	}
 
 
 

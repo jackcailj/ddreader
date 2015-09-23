@@ -56,13 +56,13 @@ public class MediaCategorySQL {
 		}
 		catetoryList2.setCatetoryList(catetoryList1);
 		catetoryList2.setCode(catetory.getCode());
-		catetoryList2.setId(catetory.getId());
+		//catetoryList2.setId(catetory.getId());
 		catetoryList2.setImage(catetory.getImage());
 		catetoryList2.setImage2(catetory.getImage2());
-		catetoryList2.setLeaf(isLeaf(catetoryId));
+		//catetoryList2.setLeaf(isLeaf(catetoryId));
 		catetoryList2.setName(catetory.getName());
-		catetoryList2.setParentId(catetory.getParentId());
-		catetoryList2.setParsed(catetory.getParsed());			
+		//catetoryList2.setParentId(catetory.getParentId());
+		//catetoryList2.setParsed(catetory.getParsed());			
 		return catetoryList2;
 	}
 		

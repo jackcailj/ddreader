@@ -35,9 +35,9 @@ public class FreeForLimited extends FixtureBase{
 			//验证json中返回字段
 			log.info("验证限免返回结果：");	
 			int size = Integer.valueOf(paramMap.get("end"))-Integer.valueOf(paramMap.get("start")) + 1;
-			FreeForLimitedReponse dbResponse = BookStoreTestEvnSQL.getFreeForLimitedReponse(paramMap.get("channelType") +"_"+paramMap.get("columnType"), size);
+			//FreeForLimitedReponse dbResponse = BookStoreTestEvnSQL.getFreeForLimitedReponse(paramMap.get("channelType") +"_"+paramMap.get("columnType"), size);
 			//log.info(dbResponse.getCount());
-			dataVerifyManager.add(new ValueVerify<FreeForLimitedReponse>(reponseResult.getData(), dbResponse, true));
+			//dataVerifyManager.add(new ValueVerify<FreeForLimitedReponse>(reponseResult.getData(), dbResponse, true));
 		}
 		return dataVerifyManager.dataVerify();
 	}

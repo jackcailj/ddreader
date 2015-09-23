@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
+import com.dangdang.ddframework.dataverify.verify_annotation.AnnotationVerifyProcessor;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.channel.ChannelSubSQL;
 import com.dangdang.readerV5.reponse.ChannelsubReponse;
@@ -19,17 +20,26 @@ import fitnesse.slim.SystemUnderTest;
  *
  */
 public class ChannelSub extends FixtureBase{
-	String subTotal;
+	String subTotal;//频道订阅总数
+	public String getSubTotal() {
+		return subTotal;
+	}
+	
+	String custId;
+	public void setCustId(String custId) {
+		this.custId = custId;
+	}
+	
 	ReponseV2<ChannelsubReponse> reponseResult;	
 
 	@SystemUnderTest
 	public ChannelSubSQL sql = new ChannelSubSQL();	
 	
-	@Override
-	public boolean doGet(String exceptedCode) throws Exception {		
-		return super.doGet(exceptedCode);
+	public void genrateVerifyData() throws Exception {
+		subTotal = ChannelSubSQL.getSubTotal(paramMap.get("cId"));
 	}
-	
+
+	//批量订阅时使用 fitnesse上频道-》辅助工具
 	public boolean doGets(String exceptedCode) throws Exception {	
 		boolean flag = true;
 		String cName = paramMap.get("cId");
@@ -49,9 +59,8 @@ public class ChannelSub extends FixtureBase{
 		dataVerifyManager.setCaseExpectResult(true);
 		reponseResult =JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<ChannelsubReponse>>(){});
 		if(reponseResult.getStatus().getCode()==0){	
-			//验证json中返回字段
 			log.info("验证订阅/取消订阅是否成功");	
-			String sub = ChannelSubSQL.isSub(login.getCustId(),paramMap.get("cId"),paramMap.get("op"));
+			String sub = ChannelSubSQL.isSub(custId, paramMap.get("cId"),paramMap.get("op"));
 			dataVerifyManager.add(new ValueVerify<String>("1", sub).setVerifyContent("验证订阅/取消订阅是否成功"));
 		
 			//验证订阅总数
@@ -59,6 +68,9 @@ public class ChannelSub extends FixtureBase{
 			String dbTotal = ChannelSubSQL.getSubTotal(paramMap.get("cId"));
 			String actual = reponseResult.getData().getSubNumber();
 			dataVerifyManager.add(new ValueVerify<String>(actual, dbTotal).setVerifyContent("验证频道订阅总数"));	
+		
+			//json中返回字段验证
+			AnnotationVerifyProcessor.handleVerifyAnnotation(dataVerifyManager,this);
 		}
 		return dataVerifyManager.dataVerify();    
 	 }
