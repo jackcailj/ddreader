@@ -37,13 +37,13 @@ public class GetUnBuyProductParse implements IParamParse{
     @Override
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
         if(StringUtils.isNotBlank(param)){
-            String[] params = param.split(",");
+            String[] params = ParamParse.parseParam(param);
             BookType bookType = BookType.valueOf(params[0]);
             BookStatus bookStatus= BookStatus.valueOf(params[1]);
 
 
             //用来处理混合情况，比如有效和无效的productId一起
-            String[] numberSplit =params[2].split("and");
+            String[] numberSplit =ParamParse.parseParam(params[2],ParamParse.AND);
             Integer number=Integer.parseInt(numberSplit[0].trim());
 
             //获取购物车中的商品

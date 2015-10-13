@@ -23,7 +23,7 @@ public class GetBookShelfProductIdParse implements IParamParse {
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
         int number=1;
 
-        String[] splitString =param.split(",");
+        String[] splitString =ParamParse.parseParam(param);
 
 
 

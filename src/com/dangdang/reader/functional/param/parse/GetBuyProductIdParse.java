@@ -27,7 +27,7 @@ public class GetBuyProductIdParse implements IParamParse{
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
         //包含一个参数，为数量
         if(StringUtils.isNotBlank(param)){
-            String[] params= param.split(",|!");
+            String[] params= ParamParse.parseParam(param);;
             BuyBookStatus buyBookStatus = BuyBookStatus.valueOf(params[0].trim());
             int num=Integer.parseInt(params[1].trim());
 

@@ -43,7 +43,7 @@ public class GetSubscribeParse implements IParamParse{
 
             //用来处理混合情况，比如有效和无效的productId一起
         if(param!=null) {
-            String[] numberSplit = param.split("and");
+            String[] numberSplit = ParamParse.parseParam(param,ParamParse.AND);
             Integer number = Integer.parseInt(numberSplit[0].trim());
 
             List<MediaCustomerSubscription> subscriptions = CustomerSubscribeDb.getCustomerSubscription(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId(), 1);
