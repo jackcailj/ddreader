@@ -34,7 +34,7 @@ public class SignDb {
     根据连续签到天数获取奖励积分值
      */
     public static int getSignPrize(int continueDay) throws Exception {
-        String selectString="SELECT value from signin_prize where continue_days ="+(continueDay>8?8:continueDay);
+        String selectString="SELECT value from signin_prize where continue_days ="+(continueDay>8?8:continueDay) +" limit 1";
         Map<String,Object> result=DbUtil.selectOne(Config.YCDBConfig,selectString);
         return Integer.parseInt(result.get("value").toString());
     }

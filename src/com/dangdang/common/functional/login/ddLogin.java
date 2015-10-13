@@ -63,6 +63,11 @@ public class ddLogin extends FixtureBase implements ILogin{
         return loginInfo;
     }
 
+    @Override
+    public UserInfo getUserInfo() {
+        return reponseResult.getData().getUser();
+    }
+
     public ReponseV2<LoginReponse> getReponseResult() {
         if(reponseResult ==null) {
 

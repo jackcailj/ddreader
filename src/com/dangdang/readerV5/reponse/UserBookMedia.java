@@ -7,6 +7,8 @@ import com.dangdang.digital.meta.Media;
  */
 public class UserBookMedia extends Media{
     short isHide;
+    String relationType;
+    Integer authorityType;
 
     public short getIsHide() {
         return isHide;
@@ -14,5 +16,21 @@ public class UserBookMedia extends Media{
 
     public void setIsHide(short isHide) {
         this.isHide = isHide;
+    }
+
+    public String getRelationType() {
+        return relationType;
+    }
+
+    public void setRelationType(String relationType) {
+        this.relationType = relationType;
+    }
+
+    public Integer getAuthorityType() {
+        return authorityType;
+    }
+
+    public void setAuthorityType(Integer authorityType) {
+        this.authorityType = authorityType;
     }
 }

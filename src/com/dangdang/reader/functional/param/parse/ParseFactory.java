@@ -8,6 +8,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 
+import com.dangdang.ddframework.core.VariableStore;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
 import javax.print.DocFlavor;
@@ -65,7 +67,24 @@ public class ParseFactory {
 				continue;
 			}
 
-			Matcher matcher = Pattern.compile("#(.+)#(.*)").matcher(entry.getValue());
+            //变量赋值
+			Matcher matcher = Pattern.compile("^\\$(.*?)=").matcher(entry.getValue());
+			String varName="";
+			if(matcher.find()){
+				varName=matcher.group(1).trim();
+			}
+            else{
+                //查找变量，并使用
+                matcher = Pattern.compile("^\\$(.*?)$").matcher(entry.getValue());
+                if(matcher.find()){
+                    varName=matcher.group(1).trim();
+                    entry.setValue(VariableStore.getGlobalVar(varName).toString());
+
+                    return;
+                }
+            }
+
+			matcher = Pattern.compile("#(.+)#(.*)").matcher(entry.getValue());
 			if(matcher.find()){
                 //获取解析类名
 				String parseMethod = matcher.group(1);
@@ -81,6 +100,11 @@ public class ParseFactory {
 				object.parse(paramMap,entry.getKey(),matcher.group(2));
                 //解析完成，替换字段的值
                 //entry.setValue(result.toString());
+
+                //如果存在变量，将值存起来
+				if(StringUtils.isNotBlank(varName)){
+                    VariableStore.addGlobalVar(varName,entry.getValue());
+				}
 			}
 		}
 	}

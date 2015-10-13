@@ -18,6 +18,7 @@ import com.dangdang.digital.MediaDb;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.readerV5.reponse.GetUserBookListReponse;
 import com.dangdang.readerV5.reponse.UserBookMedia;
+import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -39,6 +40,7 @@ public class GetUserBookList extends FixtureBase{
     public GetUserBookList(ILogin login){
         setLogin(login);
         paramMap.put("token",login.getToken());
+        paramMap.put("pageSize","1000");
     }
 
     @Override
@@ -51,7 +53,7 @@ public class GetUserBookList extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){
-            List<MediaAuthority> mediaAuthorities= AuthorityDb.getUserEbook(login.getCustId());
+            List<MediaAuthority> mediaAuthorities= AuthorityDb.getUserEbook(login.getCustId(), StringUtils.isBlank(paramMap.get("pageSize"))?100:Integer.parseInt(paramMap.get("pageSize")));
 
             if(reponseResult.getData().getMediaList()!=null) {
                 List<String> productIds = Util.getFields(mediaAuthorities, "productId");

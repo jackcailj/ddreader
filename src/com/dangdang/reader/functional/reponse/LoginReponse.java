@@ -1,11 +1,13 @@
 package com.dangdang.reader.functional.reponse;
 
+import com.dangdang.common.functional.login.UserInfo;
 import com.dangdang.common.functional.reponse.ddLoginReponseUser;
 
 public class LoginReponse {
 	String token;
 
-    ddLoginReponseUser user;//ddLogin接口可以用此值
+    //ddLoginReponseUser user;//ddLogin接口可以用此值
+	UserInfo user;
 
 	String userPubId;
 
@@ -25,11 +27,11 @@ public class LoginReponse {
 		this.userPubId = userPubId;
 	}
 
-    public ddLoginReponseUser getUser() {
+    public UserInfo getUser() {
         return user;
     }
 
-    public void setUser(ddLoginReponseUser user) {
+    public void setUser(UserInfo user) {
         this.user = user;
     }
 }

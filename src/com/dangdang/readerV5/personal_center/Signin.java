@@ -62,10 +62,12 @@ public class Signin extends FixtureBase{
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){
             //验证返回的数据正确
-            dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getPrizeValue(),prize));
+
+            //接口更改，不返回奖励金额，改为返回提示信息
+            //dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getPrizeValue(),prize));
         }
         else{
-            dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getPrizeValue(),null), VerifyResult.SUCCESS);
+            //dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getPrizeValue(),null), VerifyResult.SUCCESS);
         }
         super.dataVerify();
     }

@@ -13,9 +13,9 @@ public class AuthorityDb {
     /*
     获取购买的书籍
      */
-    public static List<MediaAuthority> getUserEbook(String custId) throws Exception {
+    public static List<MediaAuthority> getUserEbook(String custId,int num) throws Exception {
         Integer nCustId=Integer.parseInt(custId);
-        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +" and authority_type=1 ORDER BY last_modified_date desc";
+        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +" and (authority_type =1 or (authority_type=2 and   order_no is not null and order_no!='' ))  limit  "+num;
         List<MediaAuthority> mediaAuthorities = DbUtil.selectList(Config.AUTHORITYConfig,selectString,MediaAuthority.class);
         return mediaAuthorities;
     }

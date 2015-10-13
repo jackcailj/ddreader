@@ -10,4 +10,6 @@ public interface ILogin {
     public String getToken();
 
     public LoginInfo getLoginInfo();
+
+    public UserInfo getUserInfo();
 }

@@ -41,7 +41,8 @@ public class GetBookCloudSyncReadInfo extends FixtureBase{
             dataVerifyManager.add(new ValueVerify<String>(reponseResult.getData().getProductId().toString(), paramMap.get("productId")));
         }
         else{
-            dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData(),null), VerifyResult.SUCCESS);
+            dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getMarkInfo(),null), VerifyResult.SUCCESS);
+            dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getNoteInfo(),null), VerifyResult.SUCCESS);
         }
         super.dataVerify();
     }

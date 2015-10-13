@@ -7,8 +7,8 @@ import com.dangdang.account.IntegralItem;
  */
 public class SigninReponse {
     Integer continueDays;
-    String nextPrizeValue;
-    Integer prizeValue;
+    String nextTips;
+    String tips;
 
     public Integer getContinueDays() {
         return continueDays;
@@ -18,19 +18,19 @@ public class SigninReponse {
         this.continueDays = continueDays;
     }
 
-    public String getNextPrizeValue() {
-        return nextPrizeValue;
+    public String getNextTips() {
+        return nextTips;
     }
 
-    public void setNextPrizeValue(String nextPrizeValue) {
-        this.nextPrizeValue = nextPrizeValue;
+    public void setNextTips(String nextTips) {
+        this.nextTips = nextTips;
     }
 
-    public Integer getPrizeValue() {
-        return prizeValue;
+    public String getTips() {
+        return tips;
     }
 
-    public void setPrizeValue(Integer prizeValue) {
-        this.prizeValue = prizeValue;
+    public void setTips(String tips) {
+        this.tips = tips;
     }
 }

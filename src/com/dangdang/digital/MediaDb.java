@@ -44,7 +44,7 @@ public class MediaDb {
     */
     public  static List<Media> getMedias(BookType bookType,BookStatus bookStatus,int number,List<String> notInProductIds) throws Exception {
         String shelfStatus= bookStatus==BookStatus.VALID?"1":"0";
-        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  "+(CollectionUtils.isEmpty(notInProductIds)?"": " and m.media_id not in("+StringUtils.join(notInProductIds,",")+")")+" limit "+number;
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+bookStatus.getShelfStatus()+" and m.shelf_status="+bookStatus.getShelfStatus()+" and "+bookType.getMediaSqlFilter()+" and m.is_full_book="+bookStatus.getIsFull()+(CollectionUtils.isEmpty(notInProductIds)?"": " and m.media_id not in("+StringUtils.join(notInProductIds,",")+")")+" limit "+number;
         List<Media> medias = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return medias;
     }

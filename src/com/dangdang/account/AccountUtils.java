@@ -56,7 +56,7 @@ public class AccountUtils {
         String selectString="select aii.action_type as actionType,ati.action_type_desc as actionTypeDesc,aii.creation_date as creationDate, aii.cust_id as custId,aii.device_type as deviceType,\n" +
                 "aii.integral as integral,aii.integral_items_id as integralItemsId, aii.platform_no as platformNo from account_integral_items aii\n" +
                 "LEFT JOIN account_action_type_info ati on aii.action_type=ati.action_type_id\n" +
-                "where aii.cust_id="+custId+" order by aii.creation_date desc";
+                "where aii.cust_id="+custId+" order by aii.creation_date desc limit 0,10";
         List<IntegralItem> integrals = DbUtil.selectList(Config.ACCOUNTDBConfig,selectString,IntegralItem.class);
         return integrals;
     }

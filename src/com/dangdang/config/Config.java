@@ -38,15 +38,21 @@ public class Config extends ConfigCore{
 		CommonParam=params;
 	}
 	
-	/*static{
+	static{
 		Init();
-	}*/
+	}
 
 
-    public static void setEnvironment(TestEnvironment environment) {
+/*    public static void setEnvironment(TestEnvironment environment) {
         ConfigCore.environment = environment;
-        Init();
-    }
+
+    }*/
+
+	public void endTable() {
+		Init();
+	}
+
+
 	public static void Init(){
 		
 		PropertyConfigurator.configure(ResourceLoader.loadCurrentPropertyFile("conf/log4j.properties"));
@@ -58,7 +64,7 @@ public class Config extends ConfigCore{
                 UCENTERDBConfig= "conf/"+testData+"/db/ucenterdb.cfg.xml";
                 BOOKBARDBConfig= "conf/"+testData+"/db/bookbardb.cfg.xml";
 				SQLSERVER185Config= "conf/"+testData+"/db/sqlServer185.cfg.xml";
-				SQLSERVER187Config="";
+				SQLSERVER187Config="conf/"+testData+"/db/sqlServer187.cfg.xml";
 				IMDBConfig= "conf/"+testData+"/db/im.cfg.xml";
                 AUTHORITYConfig= "conf/"+testData+"/db/authority.cfg.xml";
 				BSAECOMMENT= "conf/"+testData+"/db/commentdb.cfg.xml";

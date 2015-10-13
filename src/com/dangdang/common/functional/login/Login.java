@@ -29,6 +29,11 @@ public class Login  extends FunctionalBaseEx implements ILogin{
 		return loginInfo;
 	}
 
+	@Override
+	public UserInfo getUserInfo() {
+		return reponseResult.getData().getUser();
+	}
+
 	/*
 	 * 可以不包括action字段
 	 */

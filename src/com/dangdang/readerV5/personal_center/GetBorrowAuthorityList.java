@@ -5,6 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.authority.BorrowAuthority;
 import com.dangdang.authority.BorrowAuthorityDb;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
@@ -25,6 +26,12 @@ public class GetBorrowAuthorityList extends FixtureBase{
     ReponseV2<GetBorrowAuthorityListReponse> reponseResult;
 
     public GetBorrowAuthorityList(){addAction("getBorrowAuthorityList");}
+
+    public GetBorrowAuthorityList(ILogin login){
+        setLogin(login);
+        paramMap.put("token",login.getToken());
+
+    }
 
     public ReponseV2<GetBorrowAuthorityListReponse> getReponseResult() {
         return reponseResult;
