@@ -9,7 +9,7 @@ public class ParamParse {
     public static String AND="and";
 
     public static String[] parseParam(String param){
-        return parseParam(paramSeparator);
+        return parseParam(param,paramSeparator);
     }
 
     public static String[] parseParam(String param,String separator){
