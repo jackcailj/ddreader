@@ -5,6 +5,7 @@ import com.dangdang.authority.BorrowAuthorityDb;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.digital.BorrowBookStatus;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.reader.functional.param.parse._enum.VarKey;
 import com.dangdang.readerV5.personal_center.GetBorrowAuthorityList;
@@ -27,14 +28,19 @@ public class GetBorrowProductParse implements IParamParse{
     @Override
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
 
-        /*GetBorrowAuthorityList borrowAuthorityList = new GetBorrowAuthorityList((ILogin) VariableStore.get(VarKey.LOGIN));
-        borrowAuthorityList.doWork();
+        String[] params = ParamParse.parseParam(param);
+        BorrowBookStatus borrowBookStatus=BorrowBookStatus.VALID;
+        int num=1;
+        if(params.length>1){
+            borrowBookStatus=BorrowBookStatus.valueOf(params[0]);
+            num = Integer.parseInt(params[1]);
+        }else{
+            num = Integer.parseInt(params[0]);
+        }
 
-        ReponseV2<GetBorrowAuthorityListReponse> reponse=borrowAuthorityList.getReponseResult();*/
+        List<BorrowAuthority> borrowAuthorities= BorrowAuthorityDb.getBorrowNotBuyMedias(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId(),borrowBookStatus);
 
-        List<BorrowAuthority> borrowAuthorities= BorrowAuthorityDb.getBorrowNotBuyMedias(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId());
 
-        int num = Integer.parseInt(param);
         List<String> mediaIds=new ArrayList<String>();
         for(BorrowAuthority media:borrowAuthorities){
             mediaIds.add("" + media.getProductId());

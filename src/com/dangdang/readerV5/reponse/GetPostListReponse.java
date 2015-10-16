@@ -8,13 +8,13 @@ import java.util.List;
  * Created by cailianjie on 2015-6-17.
  */
 public class GetPostListReponse {
-    List<MediaDigest> postList;
+    List<PostListDigestInfo> postList;
 
-    public List<MediaDigest> getPostList() {
+    public List<PostListDigestInfo> getPostList() {
         return postList;
     }
 
-    public void setPostList(List<MediaDigest> postList) {
+    public void setPostList(List<PostListDigestInfo> postList) {
         this.postList = postList;
     }
 }

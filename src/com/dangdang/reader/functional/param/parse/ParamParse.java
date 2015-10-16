@@ -12,7 +12,7 @@ public class ParamParse {
         return parseParam(param,paramSeparator);
     }
 
-    public static String[] parseParam(String param,String separator){
+    public static String[] parseParam(String param, String separator){
         return param.split(separator);
     }
 

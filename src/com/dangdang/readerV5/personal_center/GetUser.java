@@ -57,20 +57,30 @@ public class GetUser extends FixtureBase{
             //获取基本信息
             LoginRecord loginRecord=UserInfoSql.getUserInfoByCustId(custId);
             UserInfo userInfo = new UserInfo();
-            userInfo.setCustId(loginRecord.getCustId());
+            //userInfo.setCustId(loginRecord.getCustId());
             userInfo.setCustImg(loginRecord.getCustImg());
-            userInfo.setDisplayId(loginRecord.getDisplayId());
             userInfo.setGender(loginRecord.getGender());
             userInfo.setNickName(loginRecord.getCustNickname());
             //获取账户信息
-            AccountInfo accountInfo = AccountUtils.getAccountInfo(custId);
-            userInfo.setGoldNum(accountInfo.getMasterAccountMoney());
-            userInfo.setGoldNumIos(accountInfo.getMasterAccountMoneyIos());
-            userInfo.setSilverNum(accountInfo.getAttachAccountMoney());
-            userInfo.setSilverNumIos(accountInfo.getAttachAccountMoneyIos());
-            userInfo.setLevel(accountInfo.getAccountGrade());
+            if(paramMap.get("selfType").equals("0")){
+                AccountInfo accountInfo = AccountUtils.getAccountInfo(custId);
+                userInfo.setGoldNum(accountInfo.getMasterAccountMoney());
+                userInfo.setGoldNumIos(accountInfo.getMasterAccountMoneyIos());
+                userInfo.setSilverNum(accountInfo.getAttachAccountMoney());
+                userInfo.setSilverNumIos(accountInfo.getAttachAccountMoneyIos());
+                userInfo.setLevel(accountInfo.getAccountGrade());
+                userInfo.setDisplayId(loginRecord.getDisplayId());
+            }
+            else{
+                AccountInfo accountInfo = AccountUtils.getAccountInfo(custId);
+                userInfo.setGoldNum(0);
+                userInfo.setGoldNumIos(0);
+                userInfo.setSilverNum(0);
+                userInfo.setSilverNumIos(0);
+                userInfo.setLevel(accountInfo.getAccountGrade());
+            }
 
-            dataVerifyManager.add(new ValueVerify<UserInfo>(userInfo,reponseResult.getData().getUserInfo(),true).setVerifyContent("对比用户信息是否一致"));
+            dataVerifyManager.add(new ValueVerify<UserInfo>(reponseResult.getData().getUserInfo(), userInfo, true).setVerifyContent("对比用户信息是否一致"));
         }
 
         super.dataVerify();

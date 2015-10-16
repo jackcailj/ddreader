@@ -23,10 +23,13 @@ public class DDReaderStoreUpSave extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){
+            Thread.sleep(1000);//由于不能实时查到，所以等待5s
             if(!paramMap.get("flag").equals("error_data")) {
                 StoreUpType type = StoreUpType.valueOf(paramMap.get("type").toUpperCase());
                 DDReaderStoreUpList storeUpList = new DDReaderStoreUpList(login, type);
                 storeUpList.doWorkAndVerify();
+
+
 
                 String[] targetIds = paramMap.get("targetIds").split(",");
 
@@ -34,9 +37,14 @@ public class DDReaderStoreUpSave extends FixtureBase{
                     for (String targetId : targetIds) {
                         dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("productId", targetId), storeUpList.getResult().toString()));
                     }
-                } else {
+                } else if(type ==StoreUpType.ARTICLE){
                     for (String targetId : targetIds) {
                         dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("articleId", targetId), storeUpList.getResult().toString()));
+                    }
+                }
+                else if(type ==StoreUpType.POST){
+                    for (String targetId : targetIds) {
+                        dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("postId", targetId), storeUpList.getResult().toString()));
                     }
                 }
             }

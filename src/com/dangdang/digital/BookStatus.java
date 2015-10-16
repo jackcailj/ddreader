@@ -22,7 +22,7 @@ public enum BookStatus {
             return "1";
         }
         else if(content.equals("下架书籍") || content.equals("未完结的有效书籍")){
-            return "2";
+            return "0";
         }
 
         return "0";

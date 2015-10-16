@@ -44,13 +44,13 @@ public class GetImUser extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){
-            ImUser imUser = IMSqlUtil.getImUserByName(login.getLoginInfo().getUserName());
+            ImUser imUser = IMSqlUtil.getImUser(login.getCustId());
 
             dataVerifyManager.add(new ValueVerify<ImUser>(imUser,reponseResult.getData().getImUser(),true).setVerifyContent("验证获取的ImUser信息是否正确"));
         }
         else
         {
-            dataVerifyManager.add(new ValueVerify<ImUser>(null,reponseResult.getData().getImUser()).setVerifyContent("验证获取失败没有返回ImUser"));
+            dataVerifyManager.add(new ValueVerify<ImUser>(null,reponseResult.getData().getImUser()).setVerifyContent("验证获取失败没有返回ImUser"),VerifyResult.SUCCESS);
         }
         super.dataVerify();
     }

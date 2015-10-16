@@ -7,6 +7,7 @@ import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -121,7 +122,17 @@ public class MediaDb {
     }
 
 
+    /*
+       获取可以借阅的数据
+        */
+    public static List<Media> getCanBorrowMedia(BookType bookType,BookStatus bookStatus,int number,List<String> notIn) throws Exception {
+        String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
+        //String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id where ms.price=0 and ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+(bookType==BookType.EBOOK?"doc_type='ebook'":"doc_type is null")+" limit 1";
+        String selectString="select m.* from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"  and borrow_duration is not null and borrow_duration!=0 "+(CollectionUtils.isEmpty(notIn)?"":" and m.media_id not in("+StringUtils.join(notIn,",")+")")+" limit "+number;
 
+        List<Media> media = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
+        return media;
+    }
 
 
 }

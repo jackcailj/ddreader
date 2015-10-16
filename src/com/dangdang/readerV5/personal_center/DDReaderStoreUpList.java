@@ -87,20 +87,21 @@ public class DDReaderStoreUpList extends FixtureBase{
                         for (MediaStoreup mediaStoreup : mediaStoreups) {
                             DDReaderStoreUpMedia storeUpMedia = new DDReaderStoreUpMedia();
                             storeUpMedia.setStoreDateLong(mediaStoreup.getStoreDate());
+                            storeUpMedia.setProductId(mediaStoreup.getTargetId());
                             for (Media media : medias) {
                                 if (mediaStoreup.getTargetId().equals(media.getProductId())) {
                                     //只返回第一个作者
                                     //storeUpMedia.setAuthorName(media.getAuthorPenname().split(";")[0]);
                                     storeUpMedia.setBookName(media.getTitle());
                                     storeUpMedia.setEditorRecommend(media.getDescs());
-                                    storeUpMedia.setProductId(media.getProductId());
-                                    storeList.add(storeUpMedia);
+
                                 }
                             }
+                            storeList.add(storeUpMedia);
                         }
 
-                        dataVerifyManager.add(new ListVerify(storeList, reponseResultMedia.getData().getStoreUpList(), true).setVerifyContent("验证收藏列表Meida数据是否正确"));
-                    } else {
+                        dataVerifyManager.add(new ListVerify(reponseResultMedia.getData().getStoreUpList(), storeList, true).setVerifyContent("验证收藏列表Meida数据是否正确"));
+                    } else if (storeUpType == StoreUpType.ARTICLE) {
                         if (mediaStoreups.size() > 0) {
                             //不必对详细信息，之比对id是否存在
                             StringBuilder regexArticleId = new StringBuilder();
@@ -112,11 +113,25 @@ public class DDReaderStoreUpList extends FixtureBase{
                             //regexArticleId.(regexArticleId.length()-".*?".length(),".*?".length());
 
                             dataVerifyManager.add(new RegexVerify(regexArticleId.toString(), result.toString()));
-                        }
-                        else{
-                            dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("storeUpList","\\[\\]"), result.toString()));
+                        } else {
+                            dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("storeUpList", "\\[\\]"), result.toString()));
                         }
 
+                    } else if (storeUpType == StoreUpType.POST) {
+                        if (mediaStoreups.size() > 0) {
+                            //不必对详细信息，之比对id是否存在
+                            StringBuilder regexArticleId = new StringBuilder();
+                            for (MediaStoreup mediaStoreup : mediaStoreups) {
+                                regexArticleId.append(Util.getJsonRegexString("postId", mediaStoreup.getTargetId().toString()));
+                                regexArticleId.append(".*?");
+                            }
+
+                            //regexArticleId.(regexArticleId.length()-".*?".length(),".*?".length());
+
+                            dataVerifyManager.add(new RegexVerify(regexArticleId.toString(), result.toString()));
+                        } else {
+                            dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("storeUpList", "\\[\\]"), result.toString()));
+                        }
                     }
                 }
             }
@@ -128,8 +143,11 @@ public class DDReaderStoreUpList extends FixtureBase{
                     if(storeUpType==StoreUpType.MEDIA) {
                         regexArticleId.append(Util.getJsonRegexString("productId", mediaStoreup.getTargetId().toString()));
                     }
-                    else{
+                    else if(storeUpType==StoreUpType.ARTICLE){
                         regexArticleId.append(Util.getJsonRegexString("articleId", mediaStoreup.getTargetId().toString()));
+                    }
+                    else if(storeUpType==StoreUpType.POST){
+                        regexArticleId.append(Util.getJsonRegexString("postId", mediaStoreup.getTargetId().toString()));
                     }
                     regexArticleId.append(".*?");
                 }

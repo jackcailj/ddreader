@@ -9,11 +9,14 @@ import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.MediaDigestDb;
 import com.dangdang.digital.meta.MediaDigest;
-import com.dangdang.readerV5.reponse.GetPublishArticleAndPostReponse;
+import com.dangdang.readerV5.reponse.*;
 import com.dangdang.ucenter.UserInfoSql;
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by cailianjie on 2015-8-21.
@@ -40,10 +43,34 @@ public class GetPublishArticleAndPost extends FixtureBase{
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){
             List<MediaDigest> mediaDigests = MediaDigestDb.getMyCreateMediaDigest(StringUtils.isBlank(paramMap.get("pubId"))?login.getCustId(): UserInfoSql.getCustIdByPubId(paramMap.get("pubId")),10);
+
+            List<PublistPostInfo> postListDigestInfoList=new ArrayList<PublistPostInfo>();
+            for(MediaDigest mediaDigest:mediaDigests){
+                Matcher matcher = Pattern.compile("\"bodyContent\">(.*?)(</br>|<img|</p>)", Pattern.DOTALL).matcher(mediaDigest.getContent());
+                if(matcher.find()) {
+                    mediaDigest.setContent(matcher.group(1));
+                }
+                PublistPostInfo postListDigestInfo = new PublistPostInfo();
+
+                postListDigestInfo.setTitle(mediaDigest.getTitle());
+                postListDigestInfo.setBarId(mediaDigest.getBarId());
+                postListDigestInfo.setCardType(mediaDigest.getCardType());
+                //postListDigestInfo.setType(mediaDigest.getType());
+                //postListDigestInfo.setContent(mediaDigest.getContent());
+                postListDigestInfo.setRemark(mediaDigest.getCardRemark());
+                postListDigestInfo.setIsDel(mediaDigest.getIsDel()?1:0);
+                postListDigestInfo.setIsShow(mediaDigest.getIsShow()?1:0);
+
+                //postListDigestInfo.setCreateDateLong(mediaDigest.getCreateDate().getTime());
+                postListDigestInfo.setDigestId(mediaDigest.getId());
+                //postListDigestInfo.setCustId(login.getCustId());
+                postListDigestInfoList.add(postListDigestInfo);
+            }
+
             if(StringUtils.isBlank(paramMap.get("flag"))) {
-                dataVerifyManager.add(new ListVerify(reponseResult.getData().getPublishList(), mediaDigests, true));
+                dataVerifyManager.add(new ListVerify(reponseResult.getData().getPublishList(), postListDigestInfoList, true));
             }else{
-                dataVerifyManager.add(new ValueVerify<Object>(null, reponseResult.getData().getPublishList()), VerifyResult.SUCCESS);
+                dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getPublishList(),null ), VerifyResult.SUCCESS);
             }
         }
         else{

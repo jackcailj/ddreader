@@ -36,7 +36,7 @@ public class GetMediaGiveStatusOfSender extends FixtureBase{
     public void doWork() throws Exception {
         super.doWork();
 
-        reponseResult= JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<GetMediaGiveStatusOfSenderReponse>>(){});
+        reponseResult= JSONObject.parseObject(result.toString( ),new TypeReference<ReponseV2<GetMediaGiveStatusOfSenderReponse>>(){});
     }
 
     @Override

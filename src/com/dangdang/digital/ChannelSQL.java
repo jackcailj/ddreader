@@ -220,7 +220,9 @@ public class ChannelSQL {
 
 	public static List<MediaDigest> getMediaDigest(StoreUpType storeUpType,BookStatus bookStatus,List<String> DigestIdList,boolean isIn,int number) throws Exception {
 
-		String selectString="select * from media_digest where "+(storeUpType.getDigestType()==""?" 1=1 ":" type in("+storeUpType.getDigestType()+")")+
+		String selectString="select id,author,media_id,media_chapter_id,media_name,bar_id,first_catetory_id,first_catetory_name,content,type*1 as type,column_id,column_name,stars,review_cnt,collect_cnt,share_cnt,\t\n" +
+				"click_cnt,top_cnt,card_title,card_remark,card_type*1 as card_type,pic1_path,small_pic1_path,small_pic2_path,small_pic3_path,show_start_date,create_date,title,\t\n" +
+				"is_show,is_del,sign_ids,day_or_night,mood,weight,operator,sort_page,is_paper_book from media_digest where "+(storeUpType.getDigestType()==""?" 1=1 ":" type in("+storeUpType.getDigestType()+")")+
 				(bookStatus==BookStatus.VALID?" and is_del=0 ":" and is_del=1 ")+
 				(DigestIdList.size()==0?"":" and id "+(isIn?" in ":"not in ")+"("+ StringUtils.join(DigestIdList, ",")+")")+
 				" limit "+number;

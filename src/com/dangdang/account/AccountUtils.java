@@ -36,7 +36,7 @@ public class AccountUtils {
     }
 
     /*
-    获取用户铃铛详情副账户列表
+    获取用户铃铛详情副账户列表，有效的铃铛，7天内无效的铃铛
     参数：
         custid：用户custid
         device：设备类型
@@ -44,7 +44,7 @@ public class AccountUtils {
 
      */
     public  static List<AttachAccountItems> getAttachLingDangDetail(String custid,TestDevice device) throws Exception {
-        return DbUtil.selectList(Config.ACCOUNTDBConfig,"select * from attach_account_items where cust_id="+custid+" and consume_source='"+device+"'  order by effective_date,attach_account_items_id DESC ",AttachAccountItems.class);
+        return DbUtil.selectList(Config.ACCOUNTDBConfig,"select * from attach_account_items where cust_id="+custid+" and (`status`=1 or (`status`!=1 and creation_date>=DATE_SUB(NOW(),INTERVAL 7 DAY))) and consume_source='"+device+"'  order by effective_date,attach_account_items_id DESC ",AttachAccountItems.class);
     }
 
 

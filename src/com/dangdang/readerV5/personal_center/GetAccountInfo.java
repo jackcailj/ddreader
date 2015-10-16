@@ -69,7 +69,7 @@ public class GetAccountInfo extends FixtureBase{
                 accountItems= AccountUtils.getMasterLingDangDetail(login.getCustId(),Config.getDevice());
 
                 if(reponseMasterResult.getData().getResult()!=null) {
-                    dataVerifyManager.add(new ListVerify(accountItems, reponseMasterResult.getData().getResult(), true).setVerifyContent("验证账户金额和记录是否正确"));
+                    dataVerifyManager.add(new ListVerify(reponseMasterResult.getData().getResult(), accountItems, true).setVerifyContent("验证账户金额和记录是否正确"));
                 }
             }
             else if(paramMap.get("accountType").equals("attach"))
@@ -85,7 +85,7 @@ public class GetAccountInfo extends FixtureBase{
                         attachAccountItems.setEffectiveDateMsec(null);
                         attachAccountItems.setCreationDate(null);
                     }
-                    dataVerifyManager.add(new ListVerify(items,reponseAttachResult.getData().getResult(), true).setVerifyContent("验证账户金额和记录是否正确"));
+                    dataVerifyManager.add(new ListVerify(reponseAttachResult.getData().getResult(),items, true).setVerifyContent("验证账户金额和记录是否正确"));
                 }
             }
         }

@@ -67,7 +67,7 @@ public class GetMyBoughtList extends FixtureBase{
                     paramMap.get("start")==null?0:Integer.parseInt(paramMap.get("start"))
                     ,paramMap.get("end")==null?100000:Integer.parseInt(paramMap.get("end")));
 
-            dataVerifyManager.add(new ListVerify(boughts,reponseResult.getData().getBoughtList(),true).setVerifyContent("验证已购列表数据是否正确"));
+            dataVerifyManager.add(new ListVerify(reponseResult.getData().getBoughtList(),boughts,true).setVerifyContent("验证已购列表数据是否正确"));
         }
         else{
             dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData(),null), VerifyResult.FAILED);

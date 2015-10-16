@@ -12,8 +12,10 @@ import com.dangdang.digital.StoreUpType;
 import com.dangdang.digital.meta.MediaDigest;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetPostListReponse;
+import com.dangdang.readerV5.reponse.PostListDigestInfo;
 import com.dangdang.ucenter.UserInfoSql;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,35 +51,70 @@ public class GetPostList extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){
+            Integer lastMediaid=null;
+            try {
+                lastMediaid=Integer.parseInt(paramMap.get("digestId"));
+            }catch (Exception e){
+
+            }
+
+            //组织验证数据，验证。
             if(paramMap.get("selfType").equals("0")) {
-                List<MediaDigest> mediaDigests = MediaDigestDb.getMediaDigest(login.getCustId(), StoreUpType.POST);
+                List<MediaDigest> mediaDigests = MediaDigestDb.getMediaDigest(login.getCustId(), StoreUpType.POST,lastMediaid);
                 if (mediaDigests.size() == 0) {
                     dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getPostList().size()));
                 } else {
+                    List<PostListDigestInfo> postListDigestInfoList=new ArrayList<PostListDigestInfo>();
                     for(MediaDigest mediaDigest:mediaDigests){
-                        Matcher matcher = Pattern.compile("\"bodyContent\">(.*?)</p>", Pattern.DOTALL).matcher(mediaDigest.getContent());
+                        Matcher matcher = Pattern.compile("\"bodyContent\">(.*?)(</br>|<img|</p>)", Pattern.DOTALL).matcher(mediaDigest.getContent());
                         if(matcher.find()) {
                             mediaDigest.setContent(matcher.group(1));
                         }
+                        PostListDigestInfo postListDigestInfo=new PostListDigestInfo();
+                        postListDigestInfo.setTitle(mediaDigest.getTitle());
+                        postListDigestInfo.setBarId(mediaDigest.getBarId());
+                        postListDigestInfo.setCardType(mediaDigest.getCardType());
+                        //postListDigestInfo.setType(mediaDigest.getType());
+                        postListDigestInfo.setContent(mediaDigest.getContent());
+                        postListDigestInfo.setIsDel(mediaDigest.getIsDel()?1:0);
+                        postListDigestInfo.setIsShow(mediaDigest.getIsShow()?1:0);
+                        //postListDigestInfo.setCreateDateLong(mediaDigest.getCreateDate().getTime());
+                        postListDigestInfo.setMediaDigestId(mediaDigest.getId());
+                        postListDigestInfo.setCustId(login.getCustId());
+                        postListDigestInfoList.add(postListDigestInfo);
                     }
-                    dataVerifyManager.add(new ListVerify(reponseResult.getData().getPostList(), mediaDigests, true));
+                    dataVerifyManager.add(new ListVerify(reponseResult.getData().getPostList(), postListDigestInfoList, true));
                 }
             }
             else {
-                List<MediaDigest> mediaDigests = MediaDigestDb.getMediaDigest(UserInfoSql.getCustIdByPubId(paramMap.get("pubId")), StoreUpType.POST);
+                List<MediaDigest> mediaDigests = MediaDigestDb.getMediaDigest(UserInfoSql.getCustIdByPubId(paramMap.get("pubId")), StoreUpType.POST,lastMediaid);
                 if (mediaDigests.size() == 0) {
                     if(reponseResult.getData().getPostList()!=null) {
                         dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getPostList().size()));
                     }
 
                 } else {
+                    List<PostListDigestInfo> postListDigestInfoList=new ArrayList<PostListDigestInfo>();
                     for(MediaDigest mediaDigest:mediaDigests){
-                        Matcher matcher = Pattern.compile("\"bodyContent\">(.*?)</p>", Pattern.DOTALL).matcher(mediaDigest.getContent());
+                        Matcher matcher = Pattern.compile("\"bodyContent\">(.*?)(</br>|<img|</p>)", Pattern.DOTALL).matcher(mediaDigest.getContent());
                         if(matcher.find()) {
                             mediaDigest.setContent(matcher.group(1));
                         }
+
+                        PostListDigestInfo postListDigestInfo=new PostListDigestInfo();
+                        postListDigestInfo.setTitle(mediaDigest.getTitle());
+                        postListDigestInfo.setBarId(mediaDigest.getBarId());
+                        postListDigestInfo.setCardType(mediaDigest.getCardType());
+                        //postListDigestInfo.setType(mediaDigest.getType());
+                        postListDigestInfo.setContent(mediaDigest.getContent());
+                        postListDigestInfo.setIsDel(mediaDigest.getIsDel()?1:0);
+                        postListDigestInfo.setIsShow(mediaDigest.getIsShow()?1:0);
+                        //postListDigestInfo.setCreateDateLong(mediaDigest.getCreateDate().getTime());
+                        postListDigestInfo.setMediaDigestId(mediaDigest.getId());
+                        postListDigestInfo.setCustId(UserInfoSql.getCustIdByPubId(paramMap.get("pubId")));
+                        postListDigestInfoList.add(postListDigestInfo);
                     }
-                    dataVerifyManager.add(new ListVerify(reponseResult.getData().getPostList(), mediaDigests, true));
+                    dataVerifyManager.add(new ListVerify(reponseResult.getData().getPostList(), postListDigestInfoList, true));
                 }
             }
         }
