@@ -5,9 +5,9 @@
 //import com.dangdang.autotest.common.ResponseVerify;
 //import com.dangdang.ddframework.dataverify.ValueVerify;
 //import com.dangdang.ddframework.reponse.ReponseV2;
-//import com.dangdang.digital.BookStoreCommSQL;
-//import com.dangdang.digital.BookStoreTestEvnSQL;
-//import com.dangdang.digital.bookstore.MediaCategorySQL;
+//import BookStoreCommSQL;
+//import BookStoreTestEvnSQL;
+//import MediaCategorySQL;
 //import com.dangdang.readerV5.reponse.CatetoryList1;
 //import com.dangdang.readerV5.reponse.CatetoryList3;
 //import com.dangdang.readerV5.reponse.ColumnReponse;

@@ -8,17 +8,13 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.ddframework.core.ConfigCore;
-import com.dangdang.ddframework.core.TestDevice;
-import com.dangdang.ddframework.dataverify.RecordVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.reader.functional.param.model.ParseResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.model.ParseResult;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.BookList;
-import com.dangdang.reader.functional.reponse.Data;
 import com.dangdang.reader.functional.reponse.DownLoadBooks;
 
 public class DownloadBookList extends FunctionalBaseEx {

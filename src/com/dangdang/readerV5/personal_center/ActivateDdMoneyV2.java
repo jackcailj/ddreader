@@ -1,7 +1,7 @@
 package com.dangdang.readerV5.personal_center;
 
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 //import groovyx.gpars.csp.PAR;
 
 /**

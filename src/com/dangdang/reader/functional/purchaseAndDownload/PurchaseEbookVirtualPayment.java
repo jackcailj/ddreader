@@ -27,13 +27,11 @@ import com.dangdang.ecms.meta.OrderItem;
 import com.dangdang.ecms.meta.UserEbook;
 import com.dangdang.reader.functional.account.GetAccount;
 import com.dangdang.reader.functional.bookstore.BookList;
-import com.dangdang.reader.functional.param.model.ParseResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.model.ParseResult;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.Account;
 import com.dangdang.reader.functional.reponse.MobileEbookInfo;
 import com.dangdang.reader.functional.reponse.PurchaseEbookVirtualPaymentReponse;
-import com.dangdang.account.meta.AttachAccount;
-import com.dangdang.account.meta.MasterAccount;
 
 public class PurchaseEbookVirtualPayment extends FunctionalBaseEx{
 	

@@ -3,7 +3,7 @@ package com.dangdang.db.ecms;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dangdang.db.ecms.meta.ExperienceInfo;
+import com.dangdang.ecms.meta.ExperienceInfo;
 
 public class ExperienceInfoEx {
 	private Long id;

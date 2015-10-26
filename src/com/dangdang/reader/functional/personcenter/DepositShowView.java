@@ -3,7 +3,7 @@ package com.dangdang.reader.functional.personcenter;
 import java.util.List;
 import java.util.Map;
 
-import com.dangdang.ecms.EcmsUtil;
+import com.dangdang.db.ecms.EcmsUtil;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -14,7 +14,7 @@ import com.dangdang.ddframework.core.TestDevice;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.ActivityInfoListReponse;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.meta.MediaActivityInfo;

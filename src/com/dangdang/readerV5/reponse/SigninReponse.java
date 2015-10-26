@@ -1,7 +1,5 @@
 package com.dangdang.readerV5.reponse;
 
-import com.dangdang.account.IntegralItem;
-
 /**
  * Created by cailianjie on 2015-8-21.
  */

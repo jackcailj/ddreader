@@ -2,15 +2,15 @@ package com.dangdang.readerV5.personal_center;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.dangdang.account.AccountInfo;
-import com.dangdang.account.AccountUtils;
+import com.dangdang.db.account.AccountInfo;
+import com.dangdang.db.account.AccountUtils;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetUserReponse;
 import com.dangdang.readerV5.reponse.UserInfo;
-import com.dangdang.ucenter.UserInfoSql;
+import com.dangdang.db.ucenter.UserInfoSql;
 import com.dangdang.ucenter.meta.LoginRecord;
 
 /**

@@ -1,12 +1,9 @@
 package com.dangdang.db.digital;
 
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.digital.meta.Media;
 import com.dangdang.digital.meta.MediaGive;
 import com.dangdang.digital.meta.MediaGiveDetail;
-import com.dangdang.reader.functional.param.parse._enum.PacketStatus;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
+import com.dangdang.enumeration.PacketStatus;
 
 import java.util.List;
 

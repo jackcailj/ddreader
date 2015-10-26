@@ -9,10 +9,10 @@ import com.dangdang.ddframework.core.TestDevice;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.StringUtil;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.GetPaymentReponse;
 import com.dangdang.reader.functional.reponse.PayMent;
-import com.dangdang.digital.MediaActivityInfoDb;
+import com.dangdang.db.digital.MediaActivityInfoDb;
 
 import java.util.List;
 import java.util.Map;

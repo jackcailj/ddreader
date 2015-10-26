@@ -2,6 +2,8 @@ package com.dangdang.db.digital;
 
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.Media;
+import com.dangdang.enumeration.BookStatus;
+import com.dangdang.enumeration.BookType;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.StringUtils;
 

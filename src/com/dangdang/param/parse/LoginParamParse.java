@@ -4,7 +4,7 @@ import java.util.Map;
 
 import com.dangdang.common.functional.login.*;
 import com.dangdang.ddframework.core.VariableStore;
-import com.dangdang.param.parse._enum.VarKey;
+import com.dangdang.enumeration.VarKey;
 import org.apache.commons.lang3.StringUtils;
 
 

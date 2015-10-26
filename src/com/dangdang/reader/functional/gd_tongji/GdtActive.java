@@ -1,7 +1,7 @@
 package com.dangdang.reader.functional.gd_tongji;
 
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 
 import java.util.Map;
 

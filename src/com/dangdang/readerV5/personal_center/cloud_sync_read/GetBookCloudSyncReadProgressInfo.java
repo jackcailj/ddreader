@@ -4,15 +4,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CloudReadingProgress;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.comment.CloudSyncSql;
-import com.dangdang.ddframework.dataverify.ListVerify;
+import com.dangdang.db.comment.CloudSyncSql;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
-import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.GetBookCloudSyncReadProgressInfoReponse;
-
-import java.util.List;
 
 /**
  * Created by cailianjie on 2015-9-22.

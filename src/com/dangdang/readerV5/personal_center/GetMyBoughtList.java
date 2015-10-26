@@ -9,8 +9,8 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.MediaBought;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.db.digital.MediaBought;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetMyBoughtListReponse;
 
 import java.util.List;

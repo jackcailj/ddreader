@@ -1,8 +1,9 @@
 package com.dangdang.db.authority;
 
+import com.dangdang.authority.meta.BorrowAuthority;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.digital.BorrowBookStatus;
+import com.dangdang.enumeration.BorrowBookStatus;
 
 import java.util.List;
 

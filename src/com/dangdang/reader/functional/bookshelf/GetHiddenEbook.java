@@ -1,20 +1,10 @@
 package com.dangdang.reader.functional.bookshelf;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.dangdang.autotest.common.FunctionalBaseEx;
-import com.dangdang.autotest.config.Config;
-import com.dangdang.ddframework.dataverify.RecordExVerify;
-import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.ddframework.util.Util;
-import com.dangdang.ecms.meta.UserEbookStatus;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
-import com.dangdang.reader.functional.reponse.BuyBookListResponse;
 import com.dangdang.reader.functional.reponse.HiddenBookList;
 
 public class GetHiddenEbook extends HiddenEbook {

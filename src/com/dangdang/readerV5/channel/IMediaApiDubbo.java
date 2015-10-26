@@ -6,7 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.digital.api.IMediaApi;
-import com.dangdang.digital.channel.ChannelMonthlySQL;
+import com.dangdang.db.digital.channel.ChannelMonthlySQL;
 
 import fitnesse.slim.SystemUnderTest;
 

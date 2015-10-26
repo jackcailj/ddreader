@@ -1,11 +1,10 @@
 package com.dangdang.readerV5.personal_center.cloud_sync_read;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CloudExperienceInfo;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.comment.CloudSyncSql;
+import com.dangdang.db.comment.CloudSyncSql;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;

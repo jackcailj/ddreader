@@ -7,10 +7,10 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.MediaDigestDb;
+import com.dangdang.db.digital.MediaDigestDb;
 import com.dangdang.digital.meta.MediaDigest;
 import com.dangdang.readerV5.reponse.*;
-import com.dangdang.ucenter.UserInfoSql;
+import com.dangdang.db.ucenter.UserInfoSql;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

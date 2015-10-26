@@ -6,9 +6,9 @@ import java.util.Map;
 import org.testng.Assert;
 
 import com.dangdang.autotest.common.FunctionalBaseEx;
-import com.dangdang.ecms.BookStoreCommSQL;
+import com.dangdang.db.ecms.BookStoreCommSQL;
 import com.dangdang.ecms.meta.Ebook;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 
 public class GetBookFile extends FunctionalBaseEx{
 	

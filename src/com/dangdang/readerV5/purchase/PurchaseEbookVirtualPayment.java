@@ -1,23 +1,16 @@
 package com.dangdang.readerV5.purchase;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
-import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.dataverify.*;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.ddframework.util.StringUtil;
 import com.dangdang.ddframework.util.Util;
 import com.dangdang.ddframework.util.security.SignUtils;
-import com.dangdang.digital.BookType;
-import com.dangdang.digital.MediaDb;
+import com.dangdang.enumeration.BookType;
+import com.dangdang.db.digital.MediaDb;
 import com.dangdang.digital.meta.Media;
-import com.dangdang.ecms.meta.OrderForm;
-import com.dangdang.ecms.meta.OrderItem;
-import com.dangdang.ecms.meta.UserEbook;
-import com.dangdang.reader.functional.param.parse._enum.VarKey;
 import com.dangdang.readerV5.personal_center.GetAccountInfo;
 import com.dangdang.readerV5.personal_center.bookshelf.GetUserBookList;
 import com.dangdang.readerV5.reponse.PurchaseEbookVirtualPaymentReponse;

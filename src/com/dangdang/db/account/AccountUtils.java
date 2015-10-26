@@ -1,7 +1,7 @@
 package com.dangdang.db.account;
 
-import com.dangdang.db.account.meta.AccountConsumeItems;
-import com.dangdang.db.account.meta.AttachAccountItems;
+import com.dangdang.account.meta.AccountConsumeItems;
+import com.dangdang.account.meta.AttachAccountItems;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.core.TestDevice;
 import com.dangdang.ddframework.dbutil.DbUtil;

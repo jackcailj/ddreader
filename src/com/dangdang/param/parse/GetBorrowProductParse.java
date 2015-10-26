@@ -1,11 +1,11 @@
 package com.dangdang.param.parse;
 
-import com.dangdang.db.authority.BorrowAuthority;
+import com.dangdang.authority.meta.BorrowAuthority;
 import com.dangdang.db.authority.BorrowAuthorityDb;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
-import com.dangdang.db.digital.BorrowBookStatus;
-import com.dangdang.param.parse._enum.VarKey;
+import com.dangdang.enumeration.BorrowBookStatus;
+import com.dangdang.enumeration.VarKey;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

@@ -6,8 +6,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.reader.functional.param.model.ParseResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.model.ParseResult;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.GetImgheadReponse;
 
 public class GetImghead extends FunctionalBaseEx{

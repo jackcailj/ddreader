@@ -7,7 +7,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.channel.GetBackgroundImgListSQL;
+import com.dangdang.db.digital.channel.GetBackgroundImgListSQL;
 import com.dangdang.readerV5.reponse.GetBackgroundImgListResponse;
 import com.dangdang.readerV5.reponse.UrlList;
 

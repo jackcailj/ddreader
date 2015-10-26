@@ -1,5 +1,6 @@
 package com.dangdang.db.authority;
 
+import com.dangdang.authority.meta.MediaAuthority;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 

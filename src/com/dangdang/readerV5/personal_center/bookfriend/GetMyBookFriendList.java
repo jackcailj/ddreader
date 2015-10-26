@@ -6,17 +6,11 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
-import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.reader.functional.reponse.User;
-import com.dangdang.readerV5.personal_center.GetUser;
-import com.dangdang.readerV5.reponse.Book;
 import com.dangdang.readerV5.reponse.BookFriendInfo;
 import com.dangdang.readerV5.reponse.GetMyBookFriendListReponse;
-import com.dangdang.readerV5.reponse.UserInfo;
-import com.dangdang.ucenter.UserInfoSql;
+import com.dangdang.db.ucenter.UserInfoSql;
 import com.dangdang.ucenter.meta.BookFirend;
-import com.dangdang.ucenter.meta.LoginRecord;
 
 import java.util.ArrayList;
 import java.util.List;

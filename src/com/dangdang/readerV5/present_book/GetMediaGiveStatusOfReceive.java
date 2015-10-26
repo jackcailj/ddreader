@@ -3,17 +3,14 @@ package com.dangdang.readerV5.present_book;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.digital.MediaGiveDb;
-import com.dangdang.digital.meta.Media;
+import com.dangdang.db.digital.MediaGiveDb;
 import com.dangdang.digital.meta.MediaGiveDetail;
 import com.dangdang.readerV5.reponse.GetMediaGiveStatusOfReceiveReponse;
 
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 

@@ -6,18 +6,14 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.core.ConfigCore;
 import com.dangdang.ddframework.core.TestEnvironment;
-import com.dangdang.ddframework.dataverify.RecordExVerify;
 import com.dangdang.ddframework.dataverify.RecordVerify;
-import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
 import com.dangdang.ddframework.util.security.SignUtils;
-import com.dangdang.ecms.meta.UserEbookStatus;
-import com.dangdang.reader.functional.param.model.ParseResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.model.ParseResult;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.Data;
 
 

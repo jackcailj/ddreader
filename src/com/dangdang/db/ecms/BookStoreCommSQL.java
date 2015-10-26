@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.db.ecms._enum.ColumnNameEnum;
-import com.dangdang.db.ecms.meta.Ebook;
+import com.dangdang.ecms.meta.Ebook;
 
 /**
  * 书城相关查询SQL

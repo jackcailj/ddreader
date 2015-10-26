@@ -1,7 +1,5 @@
 package com.dangdang.readerV5.reponse;
 
-import com.dangdang.account.meta.AttachAccountItems;
-
 import java.util.List;
 
 /**

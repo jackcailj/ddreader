@@ -7,9 +7,8 @@ import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.ShoppingCartDb;
+import com.dangdang.db.digital.ShoppingCartDb;
 import com.dangdang.digital.meta.ShoppingCart;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetShoppingCartIdReponse;
 
 /**

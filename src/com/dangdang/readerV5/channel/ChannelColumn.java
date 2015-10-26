@@ -8,7 +8,7 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.channel.ChannelColumnSQL;
+import com.dangdang.db.digital.channel.ChannelColumnSQL;
 import com.dangdang.readerV5.reponse.ChannelColumnReponse;
 import com.dangdang.readerV5.reponse.ChannelList;
 

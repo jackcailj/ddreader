@@ -10,7 +10,7 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ecms.meta.OrderForm;
 import com.dangdang.ecms.meta.OrderItem;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.SaveSmsOrderReponse;
 import com.dangdang.digital.meta.MediaActivityInfo;
 import org.apache.commons.lang3.StringUtils;

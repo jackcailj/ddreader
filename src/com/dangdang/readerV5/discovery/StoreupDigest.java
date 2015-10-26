@@ -3,20 +3,12 @@ package com.dangdang.readerV5.discovery;
 import java.util.Map;
 
 
-
-import org.testng.Assert;
-
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
-import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.ddframework.drivers.HttpDriver;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.reader.functional.param.model.ParseResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.Data;
 
 /**

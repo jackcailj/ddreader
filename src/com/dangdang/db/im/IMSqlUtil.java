@@ -2,7 +2,7 @@ package com.dangdang.db.im;
 
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.db.im.meta.ImUser;
+import com.dangdang.im.meta.ImUser;
 
 /**
  * Created by cailianjie on 2015-7-9.

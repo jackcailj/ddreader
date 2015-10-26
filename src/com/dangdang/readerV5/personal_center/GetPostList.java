@@ -7,13 +7,13 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.MediaDigestDb;
-import com.dangdang.digital.StoreUpType;
+import com.dangdang.db.digital.MediaDigestDb;
+import com.dangdang.enumeration.StoreUpType;
 import com.dangdang.digital.meta.MediaDigest;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetPostListReponse;
 import com.dangdang.readerV5.reponse.PostListDigestInfo;
-import com.dangdang.ucenter.UserInfoSql;
+import com.dangdang.db.ucenter.UserInfoSql;
 
 import java.util.ArrayList;
 import java.util.List;

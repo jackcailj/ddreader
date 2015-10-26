@@ -5,7 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.bookstore.GetPaperMediaSQL;
+import com.dangdang.db.digital.bookstore.GetPaperMediaSQL;
 import com.dangdang.readerV5.reponse.GetPaperMediaResponse;
 import com.dangdang.readerV5.reponse.Media;
 

@@ -3,7 +3,7 @@ package com.dangdang.param.parse;
 import java.util.Map;
 import com.dangdang.ddframework.util.security.SignUtils;
 import com.dangdang.db.ecms.BookStoreCommSQL;
-import com.dangdang.param.parse._enum.SignEnum;
+import com.dangdang.enumeration.SignEnum;
 
 public class SignParse implements IParamParse{
 

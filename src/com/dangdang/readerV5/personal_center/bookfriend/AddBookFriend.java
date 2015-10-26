@@ -3,10 +3,7 @@ package com.dangdang.readerV5.personal_center.bookfriend;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
-import com.dangdang.ucenter.UserInfoSql;
-import com.dangdang.ucenter.meta.BookFirend;
-
-import java.util.List;
+import com.dangdang.db.ucenter.UserInfoSql;
 
 /**
  * Created by cailianjie on 2015-7-23.

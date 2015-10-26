@@ -2,20 +2,14 @@ package com.dangdang.readerV5.personal_center;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.dangdang.account.IntegralItem;
 import com.dangdang.account.meta.AccountIntegralItems;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.ddframework.dataverify.RecordExVerify;
-import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.SignDb;
-import com.dangdang.digital.model.SigninPrize;
-import com.dangdang.ecms.meta.SigninDetail;
+import com.dangdang.db.digital.SignDb;
 import com.dangdang.readerV5.reponse.SigninReponse;
-
-import java.io.Serializable;
 
 /**
  * Created by cailianjie on 2015-8-3.

@@ -5,12 +5,9 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
-import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
-import com.dangdang.reader.functional.param.model.ChangeUserProfileParam;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
-import com.dangdang.reader.functional.reponse.GetUserProfileReponse;
-import org.apache.ibatis.migration.Change;
+import com.dangdang.param.model.ChangeUserProfileParam;
+import com.dangdang.param.parse.ParseParamUtil;
 
 import java.util.Map;
 

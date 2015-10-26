@@ -7,6 +7,8 @@ import java.util.Map;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaDigest;
+import com.dangdang.enumeration.BookStatus;
+import com.dangdang.enumeration.StoreUpType;
 import com.dangdang.readerV5.reponse.*;
 import org.apache.commons.lang3.StringUtils;
 

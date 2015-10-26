@@ -12,8 +12,8 @@ import com.dangdang.ddframework.drivers.HttpDriver;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.reader.functional.param.model.ParseResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.model.ParseResult;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.AddCommentResponse;
 
 public class DelComment extends FixtureBase{

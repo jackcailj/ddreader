@@ -3,28 +3,21 @@ package com.dangdang.readerV5.purchase;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.common.PlatForm;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.TestDevice;
-import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.digital.MediaActivityInfoDb;
-import com.dangdang.digital.meta.MediaActivityInfo;
-import com.dangdang.digital.meta.MediaStoreup;
-import com.dangdang.ecms.EcmsUtil;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
-import com.dangdang.reader.functional.reponse.ActivityInfoListReponse;
+import com.dangdang.db.digital.MediaActivityInfoDb;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.GetPaymentReponse;
 import com.dangdang.reader.functional.reponse.PayMent;
 
 import java.util.List;
-import java.util.Map;
 
 
 /*

@@ -7,12 +7,11 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.MediaBought;
+import com.dangdang.db.digital.MediaBought;
 import com.dangdang.digital.meta.MediaBoughtDetail;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetMyBoughtDetailListReponse;
 
-import java.lang.reflect.Type;
 import java.util.List;
 
 /**

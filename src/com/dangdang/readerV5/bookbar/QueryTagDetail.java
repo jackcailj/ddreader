@@ -15,7 +15,6 @@ import com.dangdang.config.Config;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.reader.functional.param.parse.RemoveBlankParamParse;
 import com.dangdang.readerV5.reponse.BarContent;
 import com.dangdang.readerV5.reponse.BarListlData;
 

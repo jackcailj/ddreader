@@ -6,19 +6,18 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.RegexVerify;
-import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.digital.MediaDb;
-import com.dangdang.digital.StoreUpSQL;
-import com.dangdang.digital.StoreUpType;
+import com.dangdang.db.digital.MediaDb;
+import com.dangdang.db.digital.StoreUpSQL;
+import com.dangdang.enumeration.StoreUpType;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.digital.meta.MediaStoreup;
 import com.dangdang.readerV5.reponse.DDReaderStoreUpArticle;
 import com.dangdang.readerV5.reponse.DDReaderStoreUpListReponse;
 import com.dangdang.readerV5.reponse.DDReaderStoreUpMedia;
 import com.dangdang.readerV5.reponse.DDReaderStoreUpPost;
-import com.dangdang.ucenter.UserInfoSql;
+import com.dangdang.db.ucenter.UserInfoSql;
 
 
 import java.util.ArrayList;

@@ -6,9 +6,9 @@ import org.testng.Assert;
 
 import com.dangdang.db.ecms.BookStoreCommSQL;
 import com.dangdang.db.ecms.BookStoreTestEvnSQL;
-import com.dangdang.db.ecms.meta.Ebook;
-import com.dangdang.db.ecms.meta.UserEbook;
-import com.dangdang.param.parse._enum.ProductIdsEnum;
+import com.dangdang.ecms.meta.Ebook;
+import com.dangdang.ecms.meta.UserEbook;
+import com.dangdang.enumeration.ProductIdsEnum;
 
 public class ProductIdParse implements IParamParse{
 

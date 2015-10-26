@@ -10,7 +10,7 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 
 import com.dangdang.digital.api.IChannelApi;
-import com.dangdang.digital.channel.ChannelMonthlySQL;
+import com.dangdang.db.digital.channel.ChannelMonthlySQL;
 import com.dangdang.digital.model.Channel;
 import com.dangdang.digital.model.ChannelMonthlyStrategy;
 

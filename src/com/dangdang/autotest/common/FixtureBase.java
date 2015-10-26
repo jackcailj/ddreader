@@ -1,9 +1,7 @@
 package com.dangdang.autotest.common;
 
-import java.util.List;
 import java.util.Map;
 
-import com.alibaba.fastjson.JSON;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
 
@@ -13,13 +11,11 @@ import org.apache.log4j.Logger;
 import org.testng.Assert;
 
 import com.alibaba.fastjson.JSONObject;
-import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.core.InterfaceBase;
 import com.dangdang.ddframework.core.VariableStore;
-import com.dangdang.ddframework.dataverify.verify_annotation.AnnotationVerifyProcessor;
 import com.dangdang.ddframework.drivers.HttpDriver;
-import com.dangdang.reader.functional.param.model.ParseResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.model.ParseResult;
+import com.dangdang.param.parse.ParseParamUtil;
 
 
 /**

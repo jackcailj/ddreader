@@ -1,7 +1,7 @@
 package com.dangdang.readerV5.personal_center.bookshelf;
 
-import com.dangdang.authority.AuthorityDb;
-import com.dangdang.authority.MediaAuthority;
+import com.dangdang.db.authority.AuthorityDb;
+import com.dangdang.authority.meta.MediaAuthority;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 

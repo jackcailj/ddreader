@@ -2,7 +2,7 @@ package com.dangdang.param.parse;
 
 import com.dangdang.db.digital.MediaGiveDb;
 import com.dangdang.digital.meta.MediaGive;
-import com.dangdang.param.parse._enum.PacketStatus;
+import com.dangdang.enumeration.PacketStatus;
 
 import java.util.Map;
 

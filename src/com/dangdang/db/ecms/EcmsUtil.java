@@ -8,9 +8,9 @@ import org.apache.commons.lang3.StringUtils;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.ddframework.core.TestDevice;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.db.ecms.meta.BookNote;
-import com.dangdang.db.ecms.meta.Ebook;
-import com.dangdang.db.ecms.meta.ExperienceInfo;
+import com.dangdang.ecms.meta.BookNote;
+import com.dangdang.ecms.meta.Ebook;
+import com.dangdang.ecms.meta.ExperienceInfo;
 
 public class EcmsUtil {
 

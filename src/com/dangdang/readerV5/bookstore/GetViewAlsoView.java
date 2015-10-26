@@ -3,11 +3,8 @@ package com.dangdang.readerV5.bookstore;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.BookStoreCommSQL;
-import com.dangdang.digital.BookStoreTestEvnSQL;
-import com.dangdang.readerV5.reponse.ColumnReponse;
+import com.dangdang.db.digital.BookStoreTestEvnSQL;
 import com.dangdang.readerV5.reponse.GetBuyAlsoBuyReponse;
 
 import fitnesse.slim.SystemUnderTest;

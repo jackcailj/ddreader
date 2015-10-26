@@ -2,26 +2,18 @@ package com.dangdang.readerV5.personal_center.bookshelf;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.dangdang.authority.AuthorityDb;
-import com.dangdang.authority.MediaAuthority;
+import com.dangdang.db.authority.AuthorityDb;
+import com.dangdang.authority.meta.MediaAuthority;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.ListVerify;
-import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.digital.BookStatus;
-import com.dangdang.digital.BookType;
-import com.dangdang.digital.MediaDb;
-import com.dangdang.digital.meta.Media;
 import com.dangdang.readerV5.reponse.GetUserBookListReponse;
-import com.dangdang.readerV5.reponse.UserBookMedia;
 import org.apache.commons.lang3.StringUtils;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

@@ -8,12 +8,9 @@ import java.util.Map.Entry;
 
 import org.testng.Assert;
 
-import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.common.functional.login.Login;
-import com.dangdang.ddframework.dataverify.RecordExVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.ecms.meta.UserEbookStatus;
 
 public class RecoverHiddenEbook extends HiddenEbook {
 	

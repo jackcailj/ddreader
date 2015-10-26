@@ -2,8 +2,8 @@ package com.dangdang.readerV5.personal_center;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.dangdang.account.AccountUtils;
-import com.dangdang.account.IntegralItem;
+import com.dangdang.db.account.AccountUtils;
+import com.dangdang.db.account.IntegralItem;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.dataverify.ListVerify;

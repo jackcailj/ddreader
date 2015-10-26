@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.digital.meta.Media;
-import com.dangdang.param.parse._enum.VarKey;
+import com.dangdang.enumeration.VarKey;
 import com.dangdang.readerV5.personal_center.bookshelf.GetUserBookList;
 import org.apache.commons.lang3.StringUtils;
 

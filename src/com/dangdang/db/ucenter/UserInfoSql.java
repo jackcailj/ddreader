@@ -4,8 +4,8 @@ import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ecms.meta.ThirdpartyCustId;
 import com.dangdang.readerV5.personal_center.bookfriend.BookFriendRelation;
-import com.dangdang.db.ucenter.meta.BookFirend;
-import com.dangdang.db.ucenter.meta.LoginRecord;
+import com.dangdang.ucenter.meta.BookFirend;
+import com.dangdang.ucenter.meta.LoginRecord;
 
 import java.util.List;
 import java.util.Map;

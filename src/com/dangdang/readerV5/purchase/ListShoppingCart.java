@@ -1,6 +1,5 @@
 package com.dangdang.readerV5.purchase;
 
-import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
@@ -11,7 +10,7 @@ import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.ShoppingCartDb;
+import com.dangdang.db.digital.ShoppingCartDb;
 import com.dangdang.digital.meta.ShoppingCart;
 import com.dangdang.readerV5.reponse.ListShoppingCartReponse;
 import com.dangdang.readerV5.reponse.Products;

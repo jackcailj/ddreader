@@ -17,7 +17,7 @@ import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.reader.functional.account.GetAccount;
 
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 
 import com.dangdang.reader.functional.reponse.Account;
 import com.dangdang.digital.meta.MediaActivityInfo;

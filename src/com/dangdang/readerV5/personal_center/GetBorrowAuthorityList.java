@@ -2,18 +2,16 @@ package com.dangdang.readerV5.personal_center;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.dangdang.authority.BorrowAuthority;
-import com.dangdang.authority.BorrowAuthorityDb;
+import com.dangdang.authority.meta.BorrowAuthority;
+import com.dangdang.db.authority.BorrowAuthorityDb;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.common.functional.login.ILogin;
-import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.digital.meta.MediaStoreup;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetBorrowAuthorityListReponse;
 
 import java.util.List;

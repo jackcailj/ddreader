@@ -1,7 +1,5 @@
 package com.dangdang.readerV5.discovery;
 
-import java.util.Map;
-
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;

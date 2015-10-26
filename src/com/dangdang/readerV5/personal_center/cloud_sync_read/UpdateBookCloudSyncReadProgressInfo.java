@@ -3,10 +3,9 @@ package com.dangdang.readerV5.personal_center.cloud_sync_read;
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.BaseComment.meta.CloudReadingProgress;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.comment.CloudSyncSql;
+import com.dangdang.db.comment.CloudSyncSql;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dataverify.RecordVerify;
-import org.apache.commons.collections.CollectionUtils;
 
 import java.util.List;
 

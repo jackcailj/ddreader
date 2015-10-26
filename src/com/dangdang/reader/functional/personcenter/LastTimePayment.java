@@ -12,7 +12,7 @@ import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.PayMentReponse;
 import com.dangdang.digital.meta.MediaActivityInfo;
 

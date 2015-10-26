@@ -6,9 +6,9 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.im.IMSqlUtil;
+import com.dangdang.db.im.IMSqlUtil;
 import com.dangdang.im.meta.ImUser;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetImUserReponse;
 import org.apache.commons.lang3.StringUtils;
 

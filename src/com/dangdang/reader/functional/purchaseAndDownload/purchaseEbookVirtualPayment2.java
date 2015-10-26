@@ -8,9 +8,8 @@ import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.ddframework.core.TestDevice;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.ecms.BookStoreTestEvnSQL;
 import com.dangdang.ecms.meta.UserEbook;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.BorrowRuleReponse;
 import com.dangdang.reader.functional.reponse.PurchaseEbookVirtualPaymentReponse;
 
@@ -86,13 +85,13 @@ public class purchaseEbookVirtualPayment2 extends FunctionalBaseEx{
 			paramMap.remove("afterParam");
 			return;
 		}
-		if(after.equals("iosPrice")){
+		/*if(after.equals("iosPrice")){
 			BookStoreTestEvnSQL.setIOSPrice(Long.valueOf(paramMap.get("productIds")));
-		}
+		}*/
 		
-		if(after.equals("donnotSupportPurchase")){
+		/*if(after.equals("donnotSupportPurchase")){
 			BookStoreTestEvnSQL.setBorrowDuration(Long.valueOf(paramMap.get("productIds")));
-		}
+		}*/
 		
 		paramMap.remove("afterParam");
 	}
@@ -120,11 +119,11 @@ public class purchaseEbookVirtualPayment2 extends FunctionalBaseEx{
 	
 	public static void main(String[] args) throws Exception{
 		Map<String, String> map = new HashMap<String, String>();
-		map.put("userName", "z16@123.com");
-		map.put("passWord", "111111");
+		map.put("userName", "d2@126.com");
+		map.put("passWord", "ddtest");
 		map.put("loginType", "email");
 		map.put("token", "");
-		map.put("productIds", "1900603291");//用户已过期的借阅本
+		map.put("productIds", "1900089316");//用户已过期的借阅本
 		map.put("sign", "purchase");		
 		map.put("dayNum", "auto");
 		map.put("isAppendBorrow", "true");

@@ -2,16 +2,12 @@ package com.dangdang.reader.functional.bookshelf;
 
 import java.util.Map;
 
-import org.apache.commons.lang3.StringUtils;
-
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
-import com.dangdang.common.functional.login.BindDevice;
-import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.reader.functional.param.model.ParseResult;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.model.ParseResult;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.reader.functional.reponse.Data;
 
 public class NearbyClearLocation extends FunctionalBaseEx {

@@ -2,7 +2,7 @@ package com.dangdang.readerV5.personal_center.bookshelf;
 
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
-import com.dangdang.digital.CustomerSubscribeDb;
+import com.dangdang.db.digital.CustomerSubscribeDb;
 import com.dangdang.digital.meta.MediaCustomerSubscription;
 import org.apache.commons.lang3.StringUtils;
 

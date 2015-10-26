@@ -3,8 +3,8 @@ package com.dangdang.readerV5.personal_center;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.digital.StoreUpType;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.enumeration.StoreUpType;
+import com.dangdang.param.parse.ParseParamUtil;
 
 /**
  * Created by cailianjie on 2015-7-1.

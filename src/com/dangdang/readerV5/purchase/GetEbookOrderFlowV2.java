@@ -8,12 +8,10 @@ import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.meta.Media;
-import com.dangdang.digital.meta.MeidaAnnouncementsCategory;
-import com.dangdang.reader.functional.param.parse.GetProductIdsParse;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.GetProductIdsParse;
+import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetEbookOrderFlowV2Reponse;
 
-import javax.print.DocFlavor;
 import java.util.List;
 
 

@@ -3,6 +3,7 @@ package com.dangdang.db.digital;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaDigest;
+import com.dangdang.enumeration.StoreUpType;
 
 import java.util.List;
 

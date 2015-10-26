@@ -12,8 +12,8 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.util.SessionUtil;
 import com.dangdang.ddframework.util.TelnetUtil;
 import com.dangdang.db.ecms._enum.ColumnNameEnum;
-import com.dangdang.db.ecms.meta.Column;
-import com.dangdang.db.ecms.meta.Ebook;
+import com.dangdang.ecms.meta.Column;
+import com.dangdang.ecms.meta.Ebook;
 
 public abstract class ABookStoreSQL {
 	

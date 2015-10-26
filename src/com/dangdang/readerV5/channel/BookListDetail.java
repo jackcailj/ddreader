@@ -5,7 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.autotest.common.ResponseVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.channel.BookListDetailSQL;
+import com.dangdang.db.digital.channel.BookListDetailSQL;
 import com.dangdang.readerV5.reponse.BookListDetailReponse;
 
 import fitnesse.slim.SystemUnderTest;

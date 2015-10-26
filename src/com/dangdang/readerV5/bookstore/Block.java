@@ -5,7 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.bookstore.BlockSQL;
+import com.dangdang.db.digital.bookstore.BlockSQL;
 import com.dangdang.readerV5.reponse.BlockReponse;
 
 public class Block extends FixtureBase{

@@ -3,7 +3,7 @@ package com.dangdang.param.parse;
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
-import com.dangdang.param.parse._enum.VarKey;
+import com.dangdang.enumeration.VarKey;
 import com.dangdang.readerV5.purchase.ListShoppingCart;
 
 import java.util.ArrayList;

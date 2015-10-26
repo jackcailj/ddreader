@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FunctionalBaseEx;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
-import com.dangdang.reader.functional.param.model.ChangePersonalInfoParam;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.model.ChangePersonalInfoParam;
+import com.dangdang.param.parse.ParseParamUtil;
 
 
 import java.util.Date;

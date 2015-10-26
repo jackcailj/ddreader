@@ -6,7 +6,7 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.im.IMDB;
+import com.dangdang.db.digital.im.IMDB;
 import com.dangdang.readerV5.reponse.GetMyGiveListData;
 import com.dangdang.readerV5.reponse.GetMyGiveListReponse;
 

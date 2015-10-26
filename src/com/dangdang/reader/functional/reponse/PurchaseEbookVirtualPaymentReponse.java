@@ -2,8 +2,6 @@ package com.dangdang.reader.functional.reponse;
 
 import java.util.List;
 
-import com.dangdang.ecms.meta.Ebook;
-
 public class PurchaseEbookVirtualPaymentReponse {
 	List<MobileEbookInfo> mobileEbooks;
 	List<Long> productIds;

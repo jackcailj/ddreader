@@ -1,8 +1,8 @@
 package com.dangdang.param.parse;
 
 import com.dangdang.ddframework.core.VariableStore;
-import com.dangdang.db.digital.BookStatus;
-import com.dangdang.db.digital.BookType;
+import com.dangdang.enumeration.BookStatus;
+import com.dangdang.enumeration.BookType;
 import com.dangdang.db.digital.MediaDb;
 
 import com.dangdang.digital.meta.Media;

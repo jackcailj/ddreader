@@ -1,10 +1,8 @@
 package com.dangdang.reader.functional.reponse;
 
-import java.util.Date;
 import java.util.List;
 
-import com.dangdang.ecms.ExperienceInfoEx;
-import com.dangdang.ecms.meta.ExperienceInfo;
+import com.dangdang.db.ecms.ExperienceInfoEx;
 
 public class GetExperienceInfoListReponse {
 	List<ExperienceInfoEx> experienceInfoList;

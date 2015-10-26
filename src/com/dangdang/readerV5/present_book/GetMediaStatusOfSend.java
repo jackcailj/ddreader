@@ -6,7 +6,7 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.MediaGiveDb;
+import com.dangdang.db.digital.MediaGiveDb;
 import com.dangdang.digital.meta.MediaGive;
 import com.dangdang.readerV5.reponse.GetMediaStatusOfSendReponse;
 import com.dangdang.readerV5.reponse.MediaPacketInfo;

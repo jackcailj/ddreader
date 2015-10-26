@@ -2,16 +2,16 @@ package com.dangdang.readerV5.present_book;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
-import com.dangdang.authority.AuthorityDb;
-import com.dangdang.authority.MediaAuthority;
+import com.dangdang.db.authority.AuthorityDb;
+import com.dangdang.authority.meta.MediaAuthority;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.digital.MediaGiveDb;
+import com.dangdang.db.digital.MediaGiveDb;
 import com.dangdang.digital.meta.MediaGive;
 import com.dangdang.digital.meta.MediaGiveDetail;
-import com.dangdang.reader.functional.param.parse._enum.BuyBookStatus;
-import com.dangdang.reader.functional.param.parse._enum.PacketStatus;
+import com.dangdang.enumeration.BuyBookStatus;
+import com.dangdang.enumeration.PacketStatus;
 import com.dangdang.readerV5.reponse.GetMediaGiveReponse;
 import org.apache.commons.collections.CollectionUtils;
 

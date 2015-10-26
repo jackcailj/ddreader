@@ -9,9 +9,8 @@ import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ecms.meta.OrderForm;
-import com.dangdang.reader.functional.param.parse.ParseParamUtil;
+import com.dangdang.param.parse.ParseParamUtil;
 
-import java.lang.reflect.Type;
 import java.util.Map;
 
 /**

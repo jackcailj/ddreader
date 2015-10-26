@@ -2,19 +2,12 @@ package com.dangdang.readerV5.purchase;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.config.Config;
-import com.dangdang.ddframework.dataverify.RecordVerify;
 import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
-import com.dangdang.digital.ShoppingCartDb;
-import com.dangdang.digital.meta.ShoppingCart;
-import com.dangdang.digital.meta.ShoppingCartDetail;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 import java.util.Map;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 /**
  * Created by cailianjie on 2015-7-14.
