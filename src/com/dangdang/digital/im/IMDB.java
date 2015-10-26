@@ -16,7 +16,7 @@ public class IMDB {
      */
     public static List<GetMyGiveListData> getMyGiveList(String custId) throws Exception {
         String selectString="select m.author_penname as authorName,m.title,m.sale_id as saleId,m.media_id as mediaId,m.descs as 'desc',UNIX_TIMESTAMP(mgd.get_date)*1000 as getDate from media_give mg\n" +
-                "left join media_give_detail mgd on mg.give_id=mgd.packet_id left join media m on mgd.media_id=m.media_id where mg.give_cust_id="+custId+" and mgd.status =1 order by mgd.give_detail_id desc";
+                "left join media_give_detail mgd on mg.give_id=mgd.packet_id left join media m on mgd.media_id=m.media_id where mg.give_cust_id="+custId+" and mgd.status =1 order by mgd.give_detail_id desc limit 10";
 
         return DbUtil.selectList(Config.YCDBConfig,selectString,GetMyGiveListData.class);
     }
@@ -41,7 +41,7 @@ public class IMDB {
                 "    where\n" +
                 "        mgd.receive_cust_id= \n" +custId+
                 "    order by\n" +
-                "        mgd.give_detail_id desc";
+                "        mgd.give_detail_id desc limit 10";
 
         return DbUtil.selectList(Config.YCDBConfig,selectString,GetMyGiveListData.class);
     }

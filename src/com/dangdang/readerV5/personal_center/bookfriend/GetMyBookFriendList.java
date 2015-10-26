@@ -84,7 +84,7 @@ public class GetMyBookFriendList extends FixtureBase{
                     bookFriendInfos.add(bookFriendInfo);
                 }
             }
-            dataVerifyManager.add(new ListVerify(bookFriendInfos,reponseResult.getData().getBookFriendList(),true));
+            dataVerifyManager.add(new ListVerify(reponseResult.getData().getBookFriendList(),bookFriendInfos,true));
         } else {
             dataVerifyManager.add(new ValueVerify<Object>(null, reponseResult.getData().getBookFriendList()), VerifyResult.SUCCESS);
         }

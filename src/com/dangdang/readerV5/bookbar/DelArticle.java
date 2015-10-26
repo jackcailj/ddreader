@@ -1,11 +1,11 @@
 package com.dangdang.readerV5.bookbar;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.account.meta.AccountActionTypeInfo;
+import com.dangdang.account.meta.AttachAccount;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.bookbar.meta.Article;
 import com.dangdang.common.functional.login.ILogin;
@@ -28,6 +28,8 @@ public class DelArticle extends FixtureBase{
 	
 	static Integer mediaDigestId = null;
 	static ILogin login;
+	int experience;
+	int integral;
 	
 	public int precondition() throws Exception{
 		String param = "action=publishArticle&barId=&title=发个贴&content=测试发帖&cardType=0&actionType=1&token=&userName=whytest@dd.con&passWord=111111&loginType=email";
@@ -51,6 +53,12 @@ public class DelArticle extends FixtureBase{
 		super.setParameters(params);
 		if(mediaDigestId==null){
 			mediaDigestId = precondition();
+			String sql = "select * from account_action_type_info where action_type_code='ZJSCTZ'";
+			AccountActionTypeInfo info = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AccountActionTypeInfo.class);
+			sql = "select * from attach_account where cust_id="+login.getCustId();
+			AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);
+			experience = account.getAccountExperience() + info.getExperienceAward(); //info.getExperienceAward()为负数
+			integral = account.getAccountIntegral() + info.getIntegralAward();//info.getIntegralAward()为负数
 		}
 		if(paramMap.get("mediaDigestId")!=null&&!(paramMap.get("mediaDigestId").isEmpty())
 				&&!(paramMap.get("mediaDigestId").equals("aa"))){
@@ -65,12 +73,16 @@ public class DelArticle extends FixtureBase{
 	public void dataVerify(String expectedCode) throws Exception {
 		reponseResult = getResult();
 		if(reponseResult.getStatus().getCode() == 0){
-			List<String> list1 = new ArrayList<String>();
-			List<String> list2 = new ArrayList<String>();
 			String sql = "select * from article where media_digest_id="+reponseResult.getData().getMediaDigestId()
 					+" and cust_id="+login.getCustId();
 			Article article = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Article.class);
 			dataVerifyManager.add(new ValueVerify<String>(Integer.toString(article.getIsDel()), "1"));
+			
+			//删帖扣减经验和积分
+			sql = "select * from attach_account where cust_id="+login.getCustId();
+			AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);
+			dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountIntegral(), integral));
+			dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountExperience(), experience));
 			super.dataVerify();
 		}
 		else{

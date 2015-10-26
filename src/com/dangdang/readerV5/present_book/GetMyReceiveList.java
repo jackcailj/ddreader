@@ -39,7 +39,7 @@ public class GetMyReceiveList extends FixtureBase{
             List<GetMyGiveListData> myReceiveList= IMDB.getMyReceiveList(login.getCustId());
             if(myReceiveList.size()>0) {
                 GetMyGiveListReponse getMyGiveListReponse = new GetMyGiveListReponse();
-                getMyGiveListReponse.setAmount(myReceiveList.size());
+                //getMyGiveListReponse.setAmount(myReceiveList.size());
                 getMyGiveListReponse.setSaleList(myReceiveList);
 
                 dataVerifyManager.add(new ValueVerify<GetMyGiveListReponse>(reponseResult.getData(), getMyGiveListReponse, true));
