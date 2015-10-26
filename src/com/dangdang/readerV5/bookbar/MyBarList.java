@@ -15,6 +15,7 @@ import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.BarListResponse;
+import org.apache.commons.lang3.StringUtils;
 
 public class MyBarList extends FixtureBase {
 	ReponseV2<BarListResponse>   reponseResult;
@@ -29,19 +30,39 @@ public class MyBarList extends FixtureBase {
 		if(reponseResult.getStatus().getCode() == 0){
 			String sql = null;
 			int barSize = 0;
+			List<Bar> barList = new ArrayList<Bar>();
 			if(paramMap.get("type").equals("1")){
 				sql ="select * from bar where bar_id in ("
 						+ "select bar_id from bar_member where 1=1 and "
 						+ "cust_id = "+login.getCustId()+" and member_status=3) and bar_status in(1,2)"
-						+ " order by create_date DESC";
+						+ " order by bar_id DESC";
+
 			}
-			if(paramMap.get("type").equals("2")){
-				sql ="select * from bar where bar_id in ("
+
+
+			if(paramMap.get("type").equals("2")||paramMap.get("type").equals("3")){
+				sql ="SELECT b.* from (select bar_id from bar_member where 1=1 and cust_id = "+login.getCustId()+" and member_status in (1,2) order by bar_member_id desc) a\n" +
+						"left join bar b on a.bar_id=b.bar_id WHERE b.bar_status in(1,2)";
+				/*sql ="select * from bar where bar_id in ("
 						+ "select bar_id from bar_member where 1=1 and "
 						+ "cust_id = "+login.getCustId()+" and member_status in (1,2))"
-						+ " and bar_status in(1,2) order by create_date DESC";
+						+ " and bar_status in(1,2) order by bar_id DESC";*/
+				//barList.addAll(DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class));
 			}
-			List<Bar> barList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class);
+
+			if(paramMap.get("type").equals("3")){
+				sql ="SELECT b.* from (select bar_id from bar_member where 1=1 and cust_id = "+login.getCustId()+" and member_status in (1,2,3) order by bar_member_id desc) a\n" +
+						"left join bar b on a.bar_id=b.bar_id WHERE b.bar_status in(1,2)";
+				/*sql ="select * from bar where bar_id in ("
+						+ "select bar_id from bar_member where 1=1 and "
+						+ "cust_id = "+login.getCustId()+" and member_status in (1,2))"
+						+ " and bar_status in(1,2) order by bar_id DESC";*/
+				//barList.addAll(DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class));
+			}
+
+			barList.addAll(DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class));
+
+			//List<Bar> barList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class);
 			//一页默认有50个吧列表
 			if(barList.size() > 50){
 				if(Integer.parseInt(paramMap.get("pageNo")) < 2){
@@ -63,8 +84,11 @@ public class MyBarList extends FixtureBase {
 					else{
 						dataVerifyManager.add(new ValueVerify<Integer>(barList.size(), 
 								reponseResult.getData().getBarList().size(), false));
-						dataVerifyManager.add(new ValueVerify<Integer>(barList.size(), 
-								reponseResult.getData().getBarCnt(), false));
+						//type=3时没有返回此字段
+						if(!paramMap.get("type").equals("3")) {
+							dataVerifyManager.add(new ValueVerify<Integer>(barList.size(),
+									reponseResult.getData().getBarCnt(), false));
+						}
 					}
 					barSize = barList.size();
 				}

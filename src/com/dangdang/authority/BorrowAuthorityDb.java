@@ -17,7 +17,8 @@ public class BorrowAuthorityDb {
     获取未过期的借阅权限
      */
     public  static List<BorrowAuthority> getBorrowMedias(String custId) throws Exception {
-        String selectString = "select * from borrow_authority where cust_id="+custId+" and UNIX_TIMESTAMP(NOW())*1000<deadline order by creation_date  desc";
+        Long custIdl=Long.parseLong(custId);
+        String selectString = "select * from borrow_authority_"+custIdl%16+" where cust_id="+custId+" and UNIX_TIMESTAMP(NOW())*1000<deadline order by creation_date  desc";
         List<BorrowAuthority> mediaAuthorities = DbUtil.selectList(Config.AUTHORITYConfig, selectString, BorrowAuthority.class);
         return mediaAuthorities;
     }
@@ -26,7 +27,8 @@ public class BorrowAuthorityDb {
     获取所有借阅过的书籍
      */
     public static List<BorrowAuthority> getAllBorrowMedias(String custId) throws Exception {
-        String selectString = "select * from borrow_authority where cust_id="+custId+" order by creation_date  desc";
+        Long custIdl=Long.parseLong(custId);
+        String selectString = "select * from borrow_authority_"+custIdl%16+" where cust_id="+custId+" order by creation_date  desc";
         List<BorrowAuthority> mediaAuthorities = DbUtil.selectList(Config.AUTHORITYConfig, selectString, BorrowAuthority.class);
         return mediaAuthorities;
     }

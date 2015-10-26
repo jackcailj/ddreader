@@ -60,7 +60,7 @@ public class UserInfoSql {
     获取我的书友列表
      */
     public static List<BookFirend> getMyBookFriends(String custId) throws Exception {
-        String selectSql="select * from book_firend where  (active_user_id="+custId+" or passive_user_id="+custId+") and relation_ship!=-1 order by create_date desc";
+        String selectSql="select * from book_firend where  (active_user_id="+custId+" or passive_user_id="+custId+") order by create_date desc limit 10";
         List<BookFirend> bookFirends = DbUtil.selectList(Config.UCENTERDBConfig, selectSql, BookFirend.class);
         return bookFirends;
     }
