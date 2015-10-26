@@ -12,7 +12,6 @@ import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.meta.MediaGive;
 import com.dangdang.digital.meta.MediaGiveDetail;
 import com.dangdang.readerV5.reponse.GiveMediaGiveReponse;
-import com.jidesoft.validation.ValidationResult;
 
 import java.util.ArrayList;
 import java.util.List;

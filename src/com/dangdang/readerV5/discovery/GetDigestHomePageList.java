@@ -54,7 +54,7 @@ public class GetDigestHomePageList extends FixtureBase {
 			List<String> list1 = new ArrayList<String>();
 			List<String> list2 = new ArrayList<String>();
 			String sql = "SELECT id,card_title,card_remark,review_cnt,top_cnt FROM `media_digest` where is_show=1 and is_del=0 and "
-					+ "type="+paramMap.get("type")+" and day_or_night="+(paramMap.get("dayOrNight").equals("day")?"0":"1")+
+					+ "type="+paramMap.get("type")+
 					" and sort_page"+(paramMap.get("act").equals("new")?">":"<")+"'"+paramMap.get("sortPage")
 					+"' and show_start_date<'"+df.format(new Date())
 					+"' ORDER BY sort_page DESC limit "+(paramMap.get("pageSize").isEmpty()?"10":paramMap.get("pageSize"));
