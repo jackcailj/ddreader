@@ -1,4 +1,4 @@
-package com.dangdang.param.parse._enum;
+package com.dangdang.enumeration;
 
 /**
  * Created by cailianjie on 2015-10-12.

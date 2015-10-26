@@ -1,4 +1,4 @@
-package com.dangdang.param.parse._enum;
+package com.dangdang.enumeration;
 
 /**
  * Excel中productIds字段解析
