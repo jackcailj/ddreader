@@ -16,6 +16,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.ddframework.core.InterfaceBase;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.dataverify.verify_annotation.AnnotationVerifyProcessor;
 import com.dangdang.ddframework.drivers.HttpDriver;
 import com.dangdang.reader.functional.param.model.ParseResult;
 import com.dangdang.reader.functional.param.parse.ParseParamUtil;
@@ -79,6 +80,14 @@ public class FixtureBase extends InterfaceBase{
 	 */
 	
 	public boolean doGet(String exceptedCode) throws Exception {
+		String en = Config.getEnvironment().toString();
+		if(paramMap.get("enviroment")!=null){
+			if(!paramMap.get("enviroment").contains(en)){
+				return true;
+			}
+			paramMap.remove("enviroment");
+		}	
+		
 		genrateVerifyData();
 		boolean statusCode = false;
 		genrateVerifyData();
@@ -131,6 +140,16 @@ public class FixtureBase extends InterfaceBase{
 	
 	public boolean getVerifyResult(){
 		return verifyResult;
+	}
+	
+	//Add by guohaiying
+	public boolean verifyResult() throws Exception{
+		//读取配置文件中是否执行数据验证参数
+		if(true){
+			dataVerify();
+			return dataVerifyResult; 
+		}else
+			return true;
 	}
 
 	public String verifiedResult(){
@@ -229,6 +248,9 @@ public class FixtureBase extends InterfaceBase{
                 paramMap.put(EXPECTED,value);
                 exceptStatusCode=value;
             }
+            if(name.equals("enviroment")){
+            	setEnviroment(value);
+            }
             else {
                 paramMap.put(name, value);
             }
@@ -287,6 +309,15 @@ public class FixtureBase extends InterfaceBase{
     执行DynamicDecisionTable的每一行
      */
 	public void execute() throws Exception {
+		//add by guohaiying 
+		//wiki上控制执行哪个环境下的用例 
+		String env = Config.getEnvironment().toString();
+		if(getEnviroment()!=null&&!getEnviroment().equals("all")){
+			if(!getEnviroment().contains(env)){
+				return;
+			}				
+		}
+		
         handleParam();
 		doWorkAndVerify();
 

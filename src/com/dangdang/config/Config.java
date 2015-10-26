@@ -43,10 +43,10 @@ public class Config extends ConfigCore{
 	}
 
 
-/*    public static void setEnvironment(TestEnvironment environment) {
-        ConfigCore.environment = environment;
-
-    }*/
+//   public static void setEnvironment(TestEnvironment environment) {
+//        ConfigCore.environment = environment;
+//
+//    }
 
 	public void endTable() {
 		Init();

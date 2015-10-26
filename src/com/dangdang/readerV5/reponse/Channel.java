@@ -1,23 +1,32 @@
 package com.dangdang.readerV5.reponse;
 
-import java.util.List;
-
-import com.dangdang.digital.model.ChannelMonthlyStrategy;
+import com.dangdang.ddframework.dataverify.verify_annotation.NotNull;
 
 public class Channel {
 	ChannelBookList bookList;
+	@NotNull
 	String channelId;
 	//List<ChannelMonthlyStrategy> channelMonthlyStrategy;
 	String description;
+	@NotNull
 	String hasArtical;
+	@NotNull
 	String hasBoughtMonthly;
+	@NotNull
 	String icon;
+	@NotNull
 	String isAllowMonthly;
+	@NotNull
 	String isSub;
 	//String monthlyType;
 	//String ownder;
+	//String ownerCustId;
+	@NotNull
 	String ownerType;
+	//String shelfStatus;
+	@NotNull
 	String subNumber;
+	@NotNull
 	String title;
 
 	public ChannelBookList getBookList() {
