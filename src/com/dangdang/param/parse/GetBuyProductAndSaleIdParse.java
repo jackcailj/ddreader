@@ -15,6 +15,9 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ * 获取购买的书籍Id，返回格式为[{"productId":"123456","saleId":"1234545"},{"productId":"123456","saleId":"131345"}]
+ * 调用方式：
+ * #GetBuyProductAndSaleId#数量
  */
 public class GetBuyProductAndSaleIdParse implements IParamParse{
 

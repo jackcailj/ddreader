@@ -8,6 +8,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-10-12.
+ * 获取红包Id
+ * 格式：#GetPacket#
  */
 public class GetPacketParse implements IParamParse{
     @Override

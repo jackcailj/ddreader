@@ -14,6 +14,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ * 获取购物车中商品id
+ * #GetShopCartProductId#数量
  */
 public class GetShopCartProductIdParse implements IParamParse{
 

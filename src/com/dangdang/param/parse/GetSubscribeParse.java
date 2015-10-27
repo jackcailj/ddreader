@@ -13,6 +13,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ * 获取追更商品Id
+ * 格式：#GetSubscribe#数量 and 112
  */
 public class GetSubscribeParse implements IParamParse{
 

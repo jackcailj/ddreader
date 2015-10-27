@@ -11,6 +11,9 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-6-18.
+ * 通过名字获取pubId
+ *
+ * 格式：#GetPubIdByName#用户名，密码
  */
 public class GetPubIdByNameParse implements  IParamParse{
 

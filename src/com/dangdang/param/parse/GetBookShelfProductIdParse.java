@@ -12,6 +12,9 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-16.
+ *获取购买的书籍Id，参数为数量
+ * 调用方式为#GetBookShelfProductId#UNHIDDEN或者HIDDEN,数量
+ *
  */
 public class GetBookShelfProductIdParse implements IParamParse {
     @Override

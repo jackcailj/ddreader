@@ -13,6 +13,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ * 获取购物车中的商品id，返回一个，返回格式为[{"productId":"123456","saleId":"1234545"}}]
+ * 格式：#GetShopCartProductIdAndSaleId#
  */
 public class GetShopCartProductIdAndSaleIdParse implements IParamParse{
 

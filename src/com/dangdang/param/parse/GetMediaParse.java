@@ -11,6 +11,7 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-7.
+ * 获取MediaId
  */
 public class GetMediaParse implements IParamParse{
     @Override

@@ -15,6 +15,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ * 获取收藏商品id，需要参数中有一个type参数
+ * #GetStoreId#数量
  */
 public class GetStoreIdParse implements IParamParse{
 

@@ -17,6 +17,9 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ * 获取没有购买的商品id
+ *
+ * #GetUnBuyProduct#BookType，BookStatus，数量 and 123
  */
 public class GetUnBuyProductParse implements IParamParse{
 

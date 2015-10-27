@@ -9,6 +9,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ * 获取购物车Id，如果有token，获取用户的购物车Id，如果没有，按照设备号获取
+ *
  */
 public class GetCartIdParse implements IParamParse{
     @Override

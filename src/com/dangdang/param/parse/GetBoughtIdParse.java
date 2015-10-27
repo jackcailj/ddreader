@@ -10,6 +10,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ *
+ * 获取购买表的Id，返回1个
  */
 public class GetBoughtIdParse implements IParamParse{
 

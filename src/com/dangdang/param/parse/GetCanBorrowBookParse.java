@@ -16,6 +16,9 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ *
+ *  * 获取可以借阅的书籍Id，[{"productId":"123456","saleId":"1234545"},{"productId":"123456","saleId":"131345"}]，多个以逗号分开
+ * 调用格式：#GetCanBorrowBook#BookType，BookStatus，1 and 123
  */
 public class GetCanBorrowBookParse implements IParamParse{
 

@@ -10,6 +10,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-8-21.
+ * 更新签到日期
+ * #UpdateSingDate#1
  */
 public class UpdateSingDateParse implements IParamParse{
     @Override

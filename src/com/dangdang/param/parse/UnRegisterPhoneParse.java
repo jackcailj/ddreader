@@ -8,6 +8,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-6-26.
+ * 获取没有注册的手机号
+ * #UnRegisterPhone#
  */
 public class UnRegisterPhoneParse implements IParamParse{
     public  static Logger logger=Logger.getLogger(UnRegisterPhoneParse.class);

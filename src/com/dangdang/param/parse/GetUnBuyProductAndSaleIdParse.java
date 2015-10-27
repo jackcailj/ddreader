@@ -19,6 +19,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-14.
+ * 获取没有购买的商品id，返回格式为[{"productId":"123456","saleId":"1234545"},{"productId":"123456","saleId":"131345"}]
+ * #GetUnBuyProductAndSaleId#BookType，BookStatus，数量 and 123
  */
 public class GetUnBuyProductAndSaleIdParse implements IParamParse{
 

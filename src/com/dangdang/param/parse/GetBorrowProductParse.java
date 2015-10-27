@@ -14,6 +14,9 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-10-10.
+ * 获取借阅书籍id
+ *
+ * 格式：#GetBorrowProduct#借阅状态，数量
  */
 public class GetBorrowProductParse implements IParamParse{
     @Override

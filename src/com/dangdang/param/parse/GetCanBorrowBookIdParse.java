@@ -19,6 +19,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-10-16.
+ * 获取可以借阅的书籍Id，返回meidaId，多个以逗号分开
+ * 调用格式：#GetCanBorrowBookId#BookType，BookStatus，1 and 123
  */
 public class GetCanBorrowBookIdParse implements IParamParse{
     @Override

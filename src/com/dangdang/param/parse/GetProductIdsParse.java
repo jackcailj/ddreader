@@ -16,6 +16,8 @@ import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-7-13.
+ * 获取书籍ID
+ * 格式：#GetProductIds#BookType，BookStatus，数量 and 123
  */
 public class GetProductIdsParse implements IParamParse{
 
