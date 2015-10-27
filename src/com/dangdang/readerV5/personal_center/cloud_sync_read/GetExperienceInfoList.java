@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CloudExperienceInfo;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.config.Config;
 import com.dangdang.db.comment.CloudSyncSql;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
@@ -22,7 +23,7 @@ public class GetExperienceInfoList extends FixtureBase{
 
     ReponseV2<GetExperienceInfoListReponse> reponseResult;
 
-    public GetExperienceInfoList(){}
+    public GetExperienceInfoList(){URL= Config.getMobileUrl();}
 
     public ReponseV2<GetExperienceInfoListReponse> getReponseResult() {
         return reponseResult;
@@ -39,7 +40,7 @@ public class GetExperienceInfoList extends FixtureBase{
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){
 
-            Integer pageSize=Integer.parseInt(paramMap.get("pageSize"));
+           /* Integer pageSize=Integer.parseInt(paramMap.get("pageSize"));
             List<CloudExperienceInfo> cloudExperienceInfos= CloudSyncSql.getExperienceInfos(login.getCustId(),
                     pageSize + 1,
                     StringUtils.isBlank(paramMap.get("recordTime")) ? null : Long.parseLong(paramMap.get("recordTime")),
@@ -92,7 +93,7 @@ public class GetExperienceInfoList extends FixtureBase{
                     dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getIsHasNextPage(),hasNextPage).setVerifyContent("验证IsHasNextPage"));
                     dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getIncrementIsHasNextPage(),null).setVerifyContent("验证IncrementIsHasNextPage"));
                 }
-            }
+            }*/
 
         }
         else{

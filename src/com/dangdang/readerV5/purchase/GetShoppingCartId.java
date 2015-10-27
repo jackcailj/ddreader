@@ -37,6 +37,10 @@ public class GetShoppingCartId extends FixtureBase{
         reponseResult= JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<GetShoppingCartIdReponse>>(){});
     }
 
+    public String getShopCartId(){
+        return reponseResult.getData().getCartId();
+    }
+
     @Override
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){

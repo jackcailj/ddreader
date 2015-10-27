@@ -1,6 +1,8 @@
 package com.dangdang.param.parse;
 
+import com.dangdang.authority.meta.BorrowAuthority;
 import com.dangdang.common.functional.login.ILogin;
+import com.dangdang.db.authority.BorrowAuthorityDb;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.util.Util;
 import com.dangdang.enumeration.BookStatus;
@@ -41,9 +43,12 @@ public class GetCanBorrowBookIdParse implements IParamParse{
             String[] numberSplit =ParamParse.parseParam(params[2], ParamParse.AND);
             Integer number=Integer.parseInt(numberSplit[0].trim());
 
-            GetBorrowAuthorityList getBorrowAuthorityList =new GetBorrowAuthorityList((ILogin) VariableStore.get(VarKey.LOGIN));
+            /*GetBorrowAuthorityList getBorrowAuthorityList =new GetBorrowAuthorityList((ILogin) VariableStore.get(VarKey.LOGIN));
             getBorrowAuthorityList.doWork();
-            List<String> productIds = Util.getFields(getBorrowAuthorityList.getReponseResult().getData().getBorrowList(),"productId");
+            List<String> productIds = Util.getFields(getBorrowAuthorityList.getReponseResult().getData().getBorrowList(),"productId");*/
+
+            List<BorrowAuthority> borrowAuthorities = BorrowAuthorityDb.getAllBorrowMedias(((ILogin) VariableStore.get(VarKey.LOGIN)).getCustId());
+            List<String> productIds = Util.getFields(borrowAuthorities,"productId");
 
             List<Media> medias = MediaDb.getCanBorrowMedia(bookType, bookStatus, number,productIds);
 

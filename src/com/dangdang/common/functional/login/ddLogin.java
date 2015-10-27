@@ -35,6 +35,11 @@ public class ddLogin extends FixtureBase implements ILogin{
 	}
 
 
+    @Override
+    public void doWork() throws Exception {
+        super.doWork();
+        getReponseResult();
+    }
 
     @Override
     public String getCustId() throws Exception{

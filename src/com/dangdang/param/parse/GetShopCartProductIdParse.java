@@ -2,8 +2,10 @@ package com.dangdang.param.parse;
 
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.digital.meta.Media;
 import com.dangdang.enumeration.VarKey;
 import com.dangdang.readerV5.purchase.ListShoppingCart;
+import com.dangdang.readerV5.reponse.Products;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
@@ -24,8 +26,17 @@ public class GetShopCartProductIdParse implements IParamParse{
     @Override
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
         //获取购物车中的商品
-        ListShoppingCart listShoppingCart =new ListShoppingCart((ILogin) VariableStore.get(VarKey.LOGIN));
-        listShoppingCart.doWork();
+
+        ILogin login=(ILogin) VariableStore.get(VarKey.LOGIN);
+        ListShoppingCart listShoppingCart=null;
+        if(login!=null) {
+            listShoppingCart = new ListShoppingCart((ILogin) VariableStore.get(VarKey.LOGIN));
+            listShoppingCart.doWork();
+        }
+        else{
+            listShoppingCart = new ListShoppingCart(paramMap.get("cartId"));
+            listShoppingCart.doWork();
+        }
         List productIds = new ArrayList();
 
         int number=1;
@@ -37,8 +48,12 @@ public class GetShopCartProductIdParse implements IParamParse{
         //Map<String,String> productMap=new HashMap<String, String>();
         //productMap.put("productId", listShoppingCart.getReponseResult().getData().getProducts().get(0).getMediaId());
         //productMap.put("saleId", listShoppingCart.getReponseResult().getData().getProducts().get(0).getSaleId());
-        for(int i=0;i<number;++i) {
-            productIds.add(listShoppingCart.getReponseResult().getData().getProducts().get(i).getMediaId());
+
+        for(Products media:listShoppingCart.getReponseResult().getData().getProducts()){
+            if(productIds.size()>=number){
+                break;
+            }
+            productIds.add(media.getMediaId());
         }
 
 

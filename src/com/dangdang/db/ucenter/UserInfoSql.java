@@ -35,7 +35,7 @@ public class UserInfoSql {
 
     public  static String getCustIdByPubId(String pubId) throws Exception {
         String selectSql="SELECT CUST_ID from thirdparty_cust_id where id="+pubId;
-        List<ThirdpartyCustId> result = DbUtil.selectList(Config.UCENTERDBConfig, selectSql, ThirdpartyCustId.class);
+        List<ThirdpartyCustId> result = DbUtil.selectList(Config.ECMSDBConfig, selectSql, ThirdpartyCustId.class);
         if(result.size()==0){
             return null;
         }

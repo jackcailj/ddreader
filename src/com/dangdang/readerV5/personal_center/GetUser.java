@@ -2,6 +2,8 @@ package com.dangdang.readerV5.personal_center;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.common.functional.login.ILogin;
+import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.db.account.AccountInfo;
 import com.dangdang.db.account.AccountUtils;
 import com.dangdang.autotest.common.FixtureBase;
@@ -47,12 +49,23 @@ public class GetUser extends FixtureBase{
         if(reponseResult.getStatus().getCode()==0){
 
             String custId="";
-            if(login ==null || paramMap.get("pubId")!=null){
+           /* if(login ==null || paramMap.get("pubId")!=null){
                 custId=UserInfoSql.getCustIdByPubId(paramMap.get("pubId"));
             }
             else{
                 custId=login.getCustId();
+            }*/
+
+            if(paramMap.get("selfType").equals("1"))
+            {
+                ILogin _login= LoginManager.getLogin(paramMap.get("pubUserName"));
+                custId = _login.getCustId();
             }
+            else
+            {
+                custId=login.getCustId();
+            }
+
 
             //获取基本信息
             LoginRecord loginRecord=UserInfoSql.getUserInfoByCustId(custId);

@@ -14,6 +14,7 @@ public class Config extends ConfigCore{
 	
 	protected static  String BaseUrl = "";
 	protected static  String LoginUrl = "";
+	protected static  String MobileUrl = "";
 	protected static  String tempUrl = "";	
 	
 	public static String YCDBConfig="";
@@ -97,8 +98,14 @@ public class Config extends ConfigCore{
 		return LoginUrl;
 	}
 
+	public static String getMobileUrl() {
+		return MobileUrl;
+	}
 
-	
+	public static void setMobileUrl(String mobileUrl) {
+		MobileUrl = mobileUrl;
+	}
+
 	public static String getBaseUrl() {
 		return BaseUrl;
 	}

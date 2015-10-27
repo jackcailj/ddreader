@@ -3,6 +3,7 @@ package com.dangdang.readerV5.personal_center;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
@@ -14,6 +15,7 @@ import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetPostListReponse;
 import com.dangdang.readerV5.reponse.PostListDigestInfo;
 import com.dangdang.db.ucenter.UserInfoSql;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +77,11 @@ public class GetPostList extends FixtureBase{
                         postListDigestInfo.setBarId(mediaDigest.getBarId());
                         postListDigestInfo.setCardType(mediaDigest.getCardType());
                         //postListDigestInfo.setType(mediaDigest.getType());
-                        postListDigestInfo.setContent(mediaDigest.getContent());
+                        /*String content=mediaDigest.getContent();
+                        if(content.length()>200){
+                            content=content.substring(0,200)+"...";
+                        }*/
+                        postListDigestInfo.setContent(mediaDigest.getCardRemark());
                         postListDigestInfo.setIsDel(mediaDigest.getIsDel()?1:0);
                         postListDigestInfo.setIsShow(mediaDigest.getIsShow()?1:0);
                         //postListDigestInfo.setCreateDateLong(mediaDigest.getCreateDate().getTime());
@@ -87,7 +93,13 @@ public class GetPostList extends FixtureBase{
                 }
             }
             else {
-                List<MediaDigest> mediaDigests = MediaDigestDb.getMediaDigest(UserInfoSql.getCustIdByPubId(paramMap.get("pubId")), StoreUpType.POST,lastMediaid);
+                String custID= StringUtils.isBlank(paramMap.get("pubUserName"))?null:LoginManager.getLogin(paramMap.get("pubUserName")).getCustId(); //UserInfoSql.getCustIdByPubId(paramMap.get("pubId"));
+                List<MediaDigest> mediaDigests =new ArrayList<MediaDigest>();
+                if(custID!=null) {
+                    mediaDigests = MediaDigestDb.getMediaDigest(custID, StoreUpType.POST, lastMediaid);
+                }
+
+
                 if (mediaDigests.size() == 0) {
                     if(reponseResult.getData().getPostList()!=null) {
                         dataVerifyManager.add(new ValueVerify<Integer>(0, reponseResult.getData().getPostList().size()));
@@ -106,7 +118,7 @@ public class GetPostList extends FixtureBase{
                         postListDigestInfo.setBarId(mediaDigest.getBarId());
                         postListDigestInfo.setCardType(mediaDigest.getCardType());
                         //postListDigestInfo.setType(mediaDigest.getType());
-                        postListDigestInfo.setContent(mediaDigest.getContent());
+                        postListDigestInfo.setContent(mediaDigest.getCardRemark());
                         postListDigestInfo.setIsDel(mediaDigest.getIsDel()?1:0);
                         postListDigestInfo.setIsShow(mediaDigest.getIsShow()?1:0);
                         //postListDigestInfo.setCreateDateLong(mediaDigest.getCreateDate().getTime());

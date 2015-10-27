@@ -46,6 +46,13 @@ public class LoginManager {
         return loginObject;
     }
 
+    /*
+    通过用户名称获取Login实例
+     */
+    public static ILogin getLogin(String userName){
+        return  loginManager.get(userName);
+    }
+
     public static ILogin getLogin(Map<String,String> param) throws Exception {
         LoginInfo loginInfo = JSONObject.parseObject(JSONObject.toJSONString(param),LoginInfo.class);
         return getLogin(loginInfo);

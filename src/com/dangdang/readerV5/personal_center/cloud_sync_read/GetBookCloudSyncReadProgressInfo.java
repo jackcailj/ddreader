@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CloudReadingProgress;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.config.Config;
 import com.dangdang.db.comment.CloudSyncSql;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
@@ -17,7 +18,7 @@ public class GetBookCloudSyncReadProgressInfo extends FixtureBase{
 
     ReponseV2<GetBookCloudSyncReadProgressInfoReponse> reponseResult;
 
-    public GetBookCloudSyncReadProgressInfo(){}
+    public GetBookCloudSyncReadProgressInfo(){URL= Config.getMobileUrl();}
 
     public ReponseV2<GetBookCloudSyncReadProgressInfoReponse> getReponseResult() {
         return reponseResult;
@@ -42,7 +43,7 @@ public class GetBookCloudSyncReadProgressInfo extends FixtureBase{
             }
         }
         else{
-            dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData(),null), VerifyResult.SUCCESS);
+            dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getBookReadingProgress(),null), VerifyResult.SUCCESS);
         }
 
         super.dataVerify();

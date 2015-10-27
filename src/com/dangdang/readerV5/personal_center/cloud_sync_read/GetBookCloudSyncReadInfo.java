@@ -3,6 +3,7 @@ package com.dangdang.readerV5.personal_center.cloud_sync_read;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.config.Config;
 import com.dangdang.db.comment.CloudSyncSql;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
@@ -17,7 +18,7 @@ public class GetBookCloudSyncReadInfo extends FixtureBase{
 
     ReponseV2<GetBookCloudSyncReadInfoReponse> reponseResult;
 
-    public GetBookCloudSyncReadInfo(){}
+    public GetBookCloudSyncReadInfo(){URL= Config.getMobileUrl();}
 
     public ReponseV2<GetBookCloudSyncReadInfoReponse> getReponseResult() {
         return reponseResult;

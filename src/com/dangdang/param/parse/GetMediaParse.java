@@ -1,8 +1,11 @@
 package com.dangdang.param.parse;
 
 import com.dangdang.config.Config;
+import com.dangdang.db.digital.MediaDb;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.Media;
+import com.dangdang.enumeration.BookStatus;
+import com.dangdang.enumeration.BookType;
 
 import java.util.Map;
 
@@ -17,9 +20,8 @@ public class GetMediaParse implements IParamParse{
 
     @Override
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
-        String selectString="select * from media where doc_type='ebook' and shelf_status =1 limit 1";
 
-        Media media = DbUtil.selectOne(Config.YCDBConfig,selectString,Media.class);
+        Media media= MediaDb.getMedia(BookType.YUANCHUANG, BookStatus.VALID);
         paramMap.put(key,media.getMediaId().toString());
     }
 }

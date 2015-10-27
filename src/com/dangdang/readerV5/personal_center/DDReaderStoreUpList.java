@@ -92,7 +92,9 @@ public class DDReaderStoreUpList extends FixtureBase{
                                     //只返回第一个作者
                                     //storeUpMedia.setAuthorName(media.getAuthorPenname().split(";")[0]);
                                     storeUpMedia.setBookName(media.getTitle());
-                                    storeUpMedia.setEditorRecommend(media.getDescs());
+
+                                    //由于描述数据可能存在乱码问题，所以去掉此项验证。
+                                    //storeUpMedia.setEditorRecommend(media.getDescs());
 
                                 }
                             }
