@@ -79,9 +79,9 @@ public class QueryArticleList extends FixtureBase{
 						+ "and last_modified_date_msec <"+time+" ORDER BY is_top DESC, last_modified_date_msec DESC";
 			}
 			if(paramMap.get("objectId")!=null&&(!paramMap.get("objectId").isEmpty())&&paramMap.get("barId")==null){
-				// 单品页最多返回三条
+				// 单品页最多返回三条, 单品页帖子是按权重排序
 				sql = "select * from article where is_show=1 and is_del=0 and bar_id ="+barId2+" "
-						+ "ORDER BY is_top DESC, last_modified_date_msec DESC limit 3";
+						+ "ORDER BY is_top DESC, weight DESC, last_modified_date_msec DESC limit 3";
 			}
 			List<Article> article = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Article.class);
 			List<ArticleList> list = reponseResult.getData().getArticleList();

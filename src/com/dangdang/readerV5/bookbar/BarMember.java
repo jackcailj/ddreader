@@ -1,6 +1,7 @@
 package com.dangdang.readerV5.bookbar;
 
 import java.util.Map;
+import java.util.Random;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -38,15 +39,15 @@ public class BarMember extends FixtureBase {
 				||paramMap.get("barId").equalsIgnoreCase("Repeat Join"))){
 			sql = "select b.bar_id, b.member_num, bm.member_status from bar as b left join bar_member as bm on b.bar_id=bm.bar_id "
 					+ "where bm.member_status in (1,2,3) and b.bar_status!=4 and bm.cust_id="+login.getCustId()+
-					" order by rand() limit 1";
+					" limit 20";
 		}
 		if(paramMap.get("barId")!=null&&(paramMap.get("barId").equalsIgnoreCase("Join")
 				||paramMap.get("barId").equalsIgnoreCase("Repeat Leave"))){
 			sql = "select bar_id,member_num from bar where bar_id not in (select bar_id from bar_member "
-					+ "where cust_id="+login.getCustId()+") order by rand() limit 1";
+					+ "where cust_id="+login.getCustId()+") limit 20";
 		}
 		if(sql!=null){
-			Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
+			Map<String,Object> map = DbUtil.selectList(Config.BOOKBARDBConfig, sql).get((new Random()).nextInt(20));
 			barId = map.get("bar_id").toString();	
 		    paramMap.put("barId", barId);
 		    numberNum = Integer.parseInt(map.get("member_num").toString());		

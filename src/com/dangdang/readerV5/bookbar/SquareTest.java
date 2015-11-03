@@ -66,7 +66,9 @@ public class SquareTest extends FixtureBase{
 		//type: 类型（1.吧模块 2.帖子模块 3.标签模块）
 		//status: 状态（1.显示 2.屏蔽 3.已删除）
 		//查找广场显示的模块信息，在客户端会以权重大小为顺序排列，权重最大的排在第一个
-		String sql = "select * from bar_module where status=1 and (type=1 or type=3) ORDER BY module_order DESC limit 10";
+		String sql = "select * from bar_module where status=1 and (type=1 or type=3) "
+				   + "and (device_type='all' or device_type='"+paramMap.get("deviceType")+"') "
+				   + "and module_order>0 ORDER BY module_order DESC, templet_no DESC limit 10";
 		List<BarModule> bModuleList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarModule.class);
 		for(int i=0; i< bModuleList.size(); i++){
 			SquareInfo info = new SquareInfo();
@@ -98,23 +100,24 @@ public class SquareTest extends FixtureBase{
 					//bar_status(1.待审核，2.通过，3.干预审核，4.下架)
 					logger.info("i is "+i+", j is "+j);
 					sql = "select * from bar where bar_status!=4 and bar_id ="+bCotentList.get(j).getContentId();
-					List<Bar> barList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class);
+					Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
 					BarContent bContentOfDB = new BarContent();
-					bContentOfDB.setArticleNum(barList.get(0).getArticleNum().toString());
-					bContentOfDB.setBarDesc(barList.get(0).getBarDesc().toString().isEmpty()?
-							defaultDesc:barList.get(0).getBarDesc().toString());
-					bContentOfDB.setBarId(barList.get(0).getBarId().toString());
-					if(barList.get(0).getBarImgUrl()!=null){
+					bContentOfDB.setArticleNum(bar.getArticleNum().toString());
+					bContentOfDB.setBarDesc(bar.getBarDesc().toString().isEmpty()?
+							defaultDesc:bar.getBarDesc().toString());
+					bContentOfDB.setBarId(bar.getBarId().toString());
+					if(bar.getBarImgUrl()!=null){
 						String str = reponseResult.getData().getSquareInfo().get(i).getBarContent().get(j).getBarImgUrl();
 						str	= str!=null?str.replaceAll("[._][a-z]\\.", "."):null;
 						reponseResult.getData().getSquareInfo().get(i).getBarContent().get(j).setBarImgUrl(str);
-						bContentOfDB.setBarImgUrl(barList.get(0).getBarImgUrl().toString());
+						bContentOfDB.setBarImgUrl(bar.getBarImgUrl().toString());
 					}
-					bContentOfDB.setBarName(barList.get(0).getBarName().toString());
-					bContentOfDB.setMemberNum(barList.get(0).getMemberNum().toString());
+					bContentOfDB.setBarName(bar.getBarName().toString());
+					bContentOfDB.setMemberNum(bar.getMemberNum().toString());
 					if(bCotentList.get(j).getRecommendReason()!=null&&!(bCotentList.get(j).getRecommendReason().isEmpty())){
 						bContentOfDB.setRecommendReason(bCotentList.get(j).getRecommendReason().toString());
 					}
+					logger.info("bContentOfDB is "+bContentOfDB.getBarId());
 					bContentListOfDB.add(bContentOfDB);	
 				}
 			}
@@ -122,9 +125,10 @@ public class SquareTest extends FixtureBase{
 				// 查找标签信息(status为1且end_date大于当前日期), 在客户端会以权重大小为顺序排列，权重最大的排在第一个
 				// tag_type 标签类型（1.吧标签 2.帖子标签 3.单品标签）
 				sql = "SELECT * FROM `bar_module_tag` where bar_module_id="+bModuleList.get(i).getBarModuleId().toString()+" and "
-						+ "status=1 and end_date > CURDATE() ORDER BY sort DESC";
+						+ "status=1 and end_date > CURDATE() ORDER BY sort DESC limit 9";
 				List<BarModuleTag> tCotentList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarModuleTag.class);
-				for(int k=0; k<tCotentList.size(); k++){					
+				for(int k=0; k<tCotentList.size(); k++){	
+					logger.info("i is "+i+", k is "+k);
 					TagContent tContentOfDB = new TagContent();
 					tContentOfDB.setBarModuleId(Long.toString(tCotentList.get(k).getBarModuleId()));
 					tContentOfDB.setBarModuleTagId(Long.toString(tCotentList.get(k).getBarModuleTagId()));
@@ -136,6 +140,7 @@ public class SquareTest extends FixtureBase{
 					tContentOfDB.setStatus(Integer.toString(tCotentList.get(k).getStatus()));
 					tContentOfDB.setTagName(tCotentList.get(k).getTagName());
 					tContentOfDB.setTagType(Integer.toString(tCotentList.get(k).getTagType()));
+					logger.info("tContentOfDB is "+tContentOfDB.getBarModuleId());
 					tContentListOfDB.add(tContentOfDB);
 				}
 			}			
@@ -147,12 +152,12 @@ public class SquareTest extends FixtureBase{
 //				info.setTagContent(tContentListOfDB);
 //			}
 //			squareInfoOfDB.add(info);
-			dataVerifyManager.add(new ValueVerify(moduleOfDB, reponseResult.getData().getSquareInfo().get(i).getModule(),true));
+			dataVerifyManager.add(new ValueVerify(reponseResult.getData().getSquareInfo().get(i).getModule(),moduleOfDB, true));
 			if(bContentListOfDB.size()!=0){
-				dataVerifyManager.add(new ListVerify(bContentListOfDB, reponseResult.getData().getSquareInfo().get(i).getBarContent(),true));
+				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(i).getBarContent(),bContentListOfDB, true));
 			}
 			if(tContentListOfDB.size()!=0){
-				dataVerifyManager.add(new ListVerify(tContentListOfDB, reponseResult.getData().getSquareInfo().get(i).getTagContent(),true));
+				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(i).getTagContent(), tContentListOfDB, true));
 			}
 		}
 		//dataVerifyManager.add(new ListVerify(squareInfoOfDB, reponseResult.getData().getSquareInfo(),true));
@@ -213,7 +218,8 @@ public class SquareTest extends FixtureBase{
 				aContentOfDB.setIsTop(article.getIsTop().toString());
 				aContentOfDB.setLastModifiedDateMsec(article.getLastModifiedDateMsec().toString());
 				aContentOfDB.setMediaDigestId(Long.toString(article.getMediaDigestId()));
-				aContentOfDB.setTitle(digest.get("title").toString()==null?null:digest.get("title").toString());
+				//logger.info("title is "+digest.get("title").toString());
+				aContentOfDB.setTitle(digest.get("title")==null?null:digest.get("title").toString());
 				aContentOfDB.setType(Integer.toString(article.getType()));
 				aContentListOfDB.add(aContentOfDB);
 			}
@@ -222,9 +228,9 @@ public class SquareTest extends FixtureBase{
 //				info.setArticleContent(aContentListOfDB);
 //			}
 //			squareInfoOfDB.add(info); 
-			dataVerifyManager.add(new ValueVerify(moduleOfDB, reponseResult.getData().getSquareInfo().get(i).getModule(),true));
+			dataVerifyManager.add(new ValueVerify(reponseResult.getData().getSquareInfo().get(i).getModule(),moduleOfDB, true));
 			if(aContentListOfDB.size()!=0){
-				dataVerifyManager.add(new ListVerify(aContentListOfDB, reponseResult.getData().getSquareInfo().get(i).getArticleContent(),true));
+				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(i).getArticleContent(), aContentListOfDB, true));
 			}
 		}
 		super.dataVerify();

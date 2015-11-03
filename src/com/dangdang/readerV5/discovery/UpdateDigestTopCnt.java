@@ -39,17 +39,17 @@ public class UpdateDigestTopCnt extends FixtureBase{
 			}
 			if(paramMap.get("digestId")!=null&&paramMap.get("digestId").equalsIgnoreCase("FromDB")){
 				String sql = "select id, top_cnt from media_digest where is_show=1 and (type=1 or type=2) "
-					     + "and is_del=0 and last_update_date>'0' and id not in "
-						   + praiseList + " ORDER BY RAND() limit 1";
+					     + "and is_del=0 and create_date>'0' and id not in "
+						   + praiseList + " limit 1";
 				Map<String, Object> map = DbUtil.selectOne(Config.YCDBConfig, sql);
 				digestId = map.get("id").toString();	
-				topCnt = Integer.parseInt(map.get("top_cnt")==null?"0":map.get("top_cnt").toString());	
+				topCnt = Integer.parseInt((map.get("top_cnt")==null||map.get("top_cnt").toString().isEmpty())?"0":map.get("top_cnt").toString());	
 				paramMap.put("digestId",digestId);
 			}
 			if(paramMap.get("digestId")!=null&&paramMap.get("digestId").equalsIgnoreCase("repeat")){
 				String sql = "select id from media_digest where is_show=1 and (type=1 or type=2) "
-					     + "and is_del=0 and last_update_date>'0' and id in "
-						   + praiseList + " ORDER BY RAND() limit 1";
+					     + "and is_del=0 and create_date>'0' and id in "
+						   + praiseList + " limit 1";
 				digestId = DbUtil.selectOne(Config.YCDBConfig, sql).get("id").toString();	
 				paramMap.put("digestId",digestId);
 			}			

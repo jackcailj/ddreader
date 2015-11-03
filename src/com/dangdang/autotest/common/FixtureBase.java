@@ -25,7 +25,7 @@ import com.dangdang.param.parse.ParseParamUtil;
  */
 public class FixtureBase extends InterfaceBase{
 	protected static Logger log = Logger.getLogger(FixtureBase.class);
-	protected boolean verifyResult;
+	protected boolean verifyResult = true;
 	protected ILogin login = null;
     protected String exceptStatusCode;
 
@@ -41,6 +41,15 @@ public class FixtureBase extends InterfaceBase{
 	 * @throws Exception 
 	 */
 	public void setParameters(Map<String, String> params) throws Exception{
+//		//add by Haiyan
+//		//wiki上控制执行哪个环境下的用例 
+//		String env = Config.getEnvironment().toString();		
+//		if(params.get("environment")!=null){
+//			setEnviroment(params.get("environment"));
+//			if(!getEnviroment().contains(env)){
+//				return;
+//			}	
+//		}
 		parseParameters(params);
 	}
 	
@@ -48,6 +57,9 @@ public class FixtureBase extends InterfaceBase{
 
 		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		paramMap =  params;
+
+		ParseParamUtil.parseOperateParam(paramMap);
+		
 		paramMap.putAll(Config.getCommonParam());
 		login = parseResult.getLogin();
 		handleParam();
@@ -118,7 +130,17 @@ public class FixtureBase extends InterfaceBase{
 		return result.toString();
 	}
 	
+//	public void dataVerify(String expectedCode) throws Exception {
+//		super.dataVerify();
+//		verifyResult(expectedCode);
+//	}
+	
 	public void dataVerify(String expectedCode) throws Exception {
+		String env = Config.getEnvironment().toString();	
+		if(!getEnviroment().contains(env)){
+			return;
+		}	
+		doRequest();
 		super.dataVerify();
 		verifyResult(expectedCode);
 	}

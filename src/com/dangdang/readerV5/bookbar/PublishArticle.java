@@ -10,6 +10,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.db.digital.MediaDigestDb;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
@@ -71,8 +72,7 @@ public class PublishArticle extends FixtureBase{
 		if(reponseResult.getStatus().getCode() == 0){
 			List<String> list1 = new ArrayList<String>();
 			List<String> list2 = new ArrayList<String>();
-			String sql = "select * from media_digest where id="+reponseResult.getData().getMediaDigestId();
-			MediaDigest digest = DbUtil.selectOne(Config.YCDBConfig, sql, MediaDigest.class);
+			MediaDigest digest = MediaDigestDb.getMediaDigest(reponseResult.getData().getMediaDigestId());
 			if(paramMap.get("title")!=null){
 				list1.add(digest.getTitle());
 				list2.add(paramMap.get("title"));

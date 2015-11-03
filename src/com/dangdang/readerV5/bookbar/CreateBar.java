@@ -34,8 +34,11 @@ public class CreateBar  extends FixtureBase {
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<CreateBarResponse>>(){});
 	}
 	
-	public static String getBarId(){
-		return barId;
+	public  String getBarId(){
+		if(reponseResult.getStatus().getCode() == 0){
+			return reponseResult.getData().getBarId();
+		}
+		return null;
 	}
 	
 	@Override
@@ -109,7 +112,7 @@ public class CreateBar  extends FixtureBase {
 				list2.add(Integer.toString(account.getAccountExperience()));
 				list2.add(Integer.toString(account.getAccountIntegral()));
 			}
-			dataVerifyManager.add(new ValueVerify<List<String>>(list1, list2));
+			dataVerifyManager.add(new ValueVerify<List<String>>(list2, list1));
 			super.dataVerify();
 		}	
 		else{

@@ -1,6 +1,5 @@
 package com.dangdang.readerV5.bookbar;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -9,13 +8,11 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.bookbar.meta.Bar;
-import com.dangdang.bookbar.meta.DefaultImage;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
-import com.dangdang.readerV5.reponse.BarDefImgResponse;
 import com.dangdang.readerV5.reponse.BarListResponse;
 
 
@@ -32,23 +29,11 @@ public class QueryBarList  extends FixtureBase {
 	 
 	 @Override
 	 public void setParameters(Map<String, String> params) throws Exception {
-		    String barName="";
 		    String rBarName="";
 			super.setParameters(params);
-			String sql = "SELECT bar_name FROM bar where length(bar_name)>4 ORDER BY rand() limit 1";
 			if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("Random")){
 				rBarName = Util.getRandomString(8)+"careatebar"+((new Random()).nextInt());
 				paramMap.put("barName", rBarName);
-			}
-			if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("FromDB")){
-				Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);	
-				barName = map.get("bar_name").toString();
-				paramMap.put("barName", barName);
-			}
-			if(paramMap.get("barName")!=null&&paramMap.get("barName").equals("FromDB-sub")){
-				Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);	
-				barName = map.get("bar_name").toString().substring(0, 1);
-				paramMap.put("barName", barName);
 			}
 	  	}
 	 

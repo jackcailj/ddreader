@@ -59,11 +59,11 @@ public class GetDigestHomePageList extends FixtureBase {
 					+"' and show_start_date<'"+df.format(new Date())
 					+"' ORDER BY sort_page DESC limit "+(paramMap.get("pageSize").isEmpty()?"10":paramMap.get("pageSize"));
 		    List<Map<String,Object>> digest = DbUtil.selectList(Config.YCDBConfig, sql);		
-			dataVerifyManager.add(new ValueVerify<Integer>(digest.size(), 
-					                         reponseResult.getData().getDigestList().size(), false));
+			dataVerifyManager.add(new ValueVerify<Integer>(
+					                         reponseResult.getData().getDigestList().size(), digest.size(), false));
 			for(int i=0; i<digest.size(); i++){
 				list1.add(digest.get(i).get("card_title").toString());
-				list1.add(digest.get(i).get("card_remark").toString());
+				list1.add(new String(digest.get(i).get("card_remark").toString().getBytes(),"gbk"));
 				list1.add(digest.get(i).get("id").toString());
 				try{
 					CommentTargetCount count = DbUtil.selectOne(Config.BSAECOMMENT, 
@@ -79,13 +79,11 @@ public class GetDigestHomePageList extends FixtureBase {
 				}
 				
 				list2.add(digestList.get(i).getCardTitle());
-				list2.add(digestList.get(i).getCardRemark());
+				list2.add(new String(digestList.get(i).getCardRemark().getBytes(),"gbk"));
 				list2.add(digestList.get(i).getId().toString());
 				list2.add(Integer.toString(digestList.get(i).getReplyCnt()));
 				list2.add(Integer.toString(digestList.get(i).getTopCnt()));
-				dataVerifyManager.add(new ListVerify(list1,list2, false));
-				logger.info("list1 is "+list1.toString());
-				logger.info("list2 is "+list2.toString());
+				dataVerifyManager.add(new ListVerify(list2, list1,false));
 			}
 			super.dataVerify();			
 		}	

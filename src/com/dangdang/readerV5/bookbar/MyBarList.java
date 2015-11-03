@@ -39,7 +39,6 @@ public class MyBarList extends FixtureBase {
 
 			}
 
-
 			if(paramMap.get("type").equals("2")||paramMap.get("type").equals("3")){
 				sql ="SELECT b.* from (select bar_id from bar_member where 1=1 and cust_id = "+login.getCustId()+" and member_status in (1,2) order by bar_member_id desc) a\n" +
 						"left join bar b on a.bar_id=b.bar_id WHERE b.bar_status in(1,2)";
@@ -66,28 +65,28 @@ public class MyBarList extends FixtureBase {
 			//一页默认有50个吧列表
 			if(barList.size() > 50){
 				if(Integer.parseInt(paramMap.get("pageNo")) < 2){
-					dataVerifyManager.add(new ValueVerify<Integer>(50, 
-							reponseResult.getData().getBarList().size(), false));
+					dataVerifyManager.add(new ValueVerify<Integer>( 
+							reponseResult.getData().getBarList().size(), 50, false));
 				}
 				else{
 					int size = barList.size()-50*(Integer.parseInt(paramMap.get("pageNo"))-1);
-					dataVerifyManager.add(new ValueVerify<Integer>(size, 
-							reponseResult.getData().getBarList().size(), false));
+					dataVerifyManager.add(new ValueVerify<Integer>(
+							reponseResult.getData().getBarList().size(), size, false));
 				}
 				
 			}
 			else{
 				if(Integer.parseInt(paramMap.get("pageNo")) < 2){
 					if(reponseResult.getData().getBarList()==null){
-						dataVerifyManager.add(new ValueVerify<Integer>(barList.size(), reponseResult.getData().getBarCnt(), false));
+						dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getBarCnt(), barList.size(), false));
 					}
 					else{
-						dataVerifyManager.add(new ValueVerify<Integer>(barList.size(), 
-								reponseResult.getData().getBarList().size(), false));
+						dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getBarList().size(),
+							       	                                   barList.size(), false));
 						//type=3时没有返回此字段
 						if(!paramMap.get("type").equals("3")) {
-							dataVerifyManager.add(new ValueVerify<Integer>(barList.size(),
-									reponseResult.getData().getBarCnt(), false));
+							dataVerifyManager.add(new ValueVerify<Integer>(
+									reponseResult.getData().getBarCnt(), barList.size(), false));
 						}
 					}
 					barSize = barList.size();

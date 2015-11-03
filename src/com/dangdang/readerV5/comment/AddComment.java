@@ -23,7 +23,7 @@ public class AddComment extends FixtureBase{
 		super.setParameters(params);		
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("FromDB")){
 			String sql = "select target_id from comment where is_delete=0 and status=1 "
-					   + "and target_source="+paramMap.get("targetSource")+" ORDER BY RAND() limit 1";
+					   + "and target_source="+paramMap.get("targetSource")+" limit 1";
 			String targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
 			paramMap.put("targetId",targetId);
 		}

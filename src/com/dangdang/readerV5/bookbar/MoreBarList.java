@@ -30,7 +30,8 @@ public class MoreBarList extends FixtureBase {
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
 		if(params.get("barModuleId")!=null&&params.get("barModuleId").toString().equalsIgnoreCase("FromDB")){
-			String sql = "select * from bar_module where status=1 and (type=1 or type=3) ORDER BY RAND() limit 1";
+			String sql = "select * from bar_module where status=1 and (type=1 or type=3) limit 1";
+			//TODO remove order by rand, will do other updates
 			BarModule bModule = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, BarModule.class);
 			moduleId = bModule.getBarModuleId().toString();
 			params.put("barModuleId", moduleId);
@@ -46,6 +47,7 @@ public class MoreBarList extends FixtureBase {
 			String sql = "SELECT * from `bar_module_content` where module_tag_id="+moduleId+" and "
 					+ "`status`=1 and fk_type=1 and end_date > CURDATE() ORDER BY content_order DESC";
 			List<BarModuleContent> list = DbUtil.selectList(Config.BOOKBARDBConfig, sql,BarModuleContent.class);
+			logger.info("list size is "+list.size());
 			List<BarContent> barList = new ArrayList<BarContent>();
 			if(list.size() > 0){
 				for(int i=0; i<list.size(); i++){
@@ -53,6 +55,7 @@ public class MoreBarList extends FixtureBase {
 					try{
 						sql = "select * from bar where bar_status!=4 and bar_id ="+list.get(i).getContentId();
 						Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
+						logger.info("i is "+i);
 						content.setArticleNum(bar.getArticleNum().toString());
 						content.setBarDesc(bar.getBarDesc().isEmpty()?"在人生的道路上，当你的希望一个个落空的时候，你也要坚定，要沉着。":bar.getBarDesc());
 						content.setBarId(bar.getBarId().toString());
@@ -66,14 +69,16 @@ public class MoreBarList extends FixtureBase {
 						content.setMemberNum(Integer.toString(bar.getMemberNum()));
 						content.setRecommendReason(list.get(i).getRecommendReason());
 						barList.add(content);
+						
 					}
 					catch(Exception e){
-						i++;
-						logger.info("此吧已不存在");
+						logger.info("此吧已不存在: "+e);
 					}
 					
 				}
-				dataVerifyManager.add(new ListVerify(barList, reponseResult.getData().getBarList(), true));
+				logger.info("barList size is "+barList.size());
+				logger.info("reponseResult.getData().getBarList() is "+reponseResult.getData().getBarList().size());
+				dataVerifyManager.add(new ListVerify(reponseResult.getData().getBarList(),barList, true));
 			}
 			else{
 				Assert.assertEquals(reponseResult.getData().getBarList().size(),0,"吧列表信息为空");

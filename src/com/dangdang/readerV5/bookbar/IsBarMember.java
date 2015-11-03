@@ -27,12 +27,14 @@ public class IsBarMember  extends FixtureBase {
 		if(paramMap.get("barId")!=null&&paramMap.get("barId").equalsIgnoreCase("true")){
 			sql = "select b.bar_id, bm.member_status from bar as b left join bar_member as bm on b.bar_id=bm.bar_id "
 					+ "where bm.member_status in (1,2,3) and b.bar_status!=4 and bm.cust_id="+login.getCustId()+
-					" order by rand() limit 1";
+					" limit 1";
+			//TODO remove order by rand, will do other updates
 			isBarMember = true; 
 		}
 		if(paramMap.get("barId")!=null&&paramMap.get("barId").equalsIgnoreCase("false")){
 			sql = "select bar_id from bar where bar_id not in (select bar_id from bar_member "
-					+ "where cust_id="+login.getCustId()+") order by rand() limit 1";
+					+ "where cust_id="+login.getCustId()+") limit 1";
+			//TODO remove order by rand, will do other updates
 			isBarMember = false; 
 		}
 		if(sql!=null){
