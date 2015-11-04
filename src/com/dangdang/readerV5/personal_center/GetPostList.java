@@ -3,6 +3,7 @@ package com.dangdang.readerV5.personal_center;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.common.functional.login.Login;
 import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
@@ -123,7 +124,7 @@ public class GetPostList extends FixtureBase{
                         postListDigestInfo.setIsShow(mediaDigest.getIsShow()?1:0);
                         //postListDigestInfo.setCreateDateLong(mediaDigest.getCreateDate().getTime());
                         postListDigestInfo.setMediaDigestId(mediaDigest.getId());
-                        postListDigestInfo.setCustId(UserInfoSql.getCustIdByPubId(paramMap.get("pubId")));
+                        postListDigestInfo.setCustId(LoginManager.getLoginByPubID(paramMap.get("pubId")).getCustId());
                         postListDigestInfoList.add(postListDigestInfo);
                     }
                     dataVerifyManager.add(new ListVerify(reponseResult.getData().getPostList(), postListDigestInfoList, true));

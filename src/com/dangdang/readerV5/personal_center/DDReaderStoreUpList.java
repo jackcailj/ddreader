@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.common.functional.login.ILogin;
+import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
@@ -138,7 +139,7 @@ public class DDReaderStoreUpList extends FixtureBase{
             }
             else{
                 //获取别人的
-                List<MediaStoreup> storeups = StoreUpSQL.getStoreUpList(UserInfoSql.getCustIdByPubId(paramMap.get("pubId")), storeUpType);
+                List<MediaStoreup> storeups = StoreUpSQL.getStoreUpList(LoginManager.getLoginByPubID(paramMap.get("pubId")).getCustId(), storeUpType);
                 StringBuilder regexArticleId = new StringBuilder();
                 for (MediaStoreup mediaStoreup : storeups) {
                     if(storeUpType==StoreUpType.MEDIA) {

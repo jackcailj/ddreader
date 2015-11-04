@@ -69,7 +69,7 @@ public class GetMediaGiveStatusOfSender extends FixtureBase{
             }
 
             for(Map.Entry<Long,MediaByCustIdInfo> entry:map.entrySet()){
-                if(entry.getKey().equals(0)){
+                if(entry.getKey().longValue()==0){
                     entry.getValue().setCustId(null);
                 }
                 packetDetails.add(entry.getValue());

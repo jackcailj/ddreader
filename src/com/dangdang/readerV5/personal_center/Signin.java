@@ -6,6 +6,7 @@ import com.dangdang.account.meta.AccountIntegralItems;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.autotest.config.Config;
 import com.dangdang.ddframework.dataverify.RecordExVerify;
+import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.db.digital.SignDb;
@@ -17,6 +18,9 @@ import com.dangdang.readerV5.reponse.SigninReponse;
 public class Signin extends FixtureBase{
 
     ReponseV2<SigninReponse> reponseResult;
+
+    GetAccountInfo masterAccountInfo;
+    GetAccountInfo attachAccountInfo;
 
     int prize;
 
@@ -47,6 +51,16 @@ public class Signin extends FixtureBase{
             dataVerifyManager.add(new RecordExVerify(Config.ACCOUNTDBConfig, accountIntegralItems, "integral_items_id", " from account_integral_items where cust_id=" + login.getCustId())
                     ,isEXCEPTSUCCESS()?VerifyResult.SUCCESS:VerifyResult.FAILED);
 
+
+            //验证铃铛获取正确
+            masterAccountInfo = new GetAccountInfo(login,true);
+            masterAccountInfo.doWorkAndVerify();
+
+            attachAccountInfo = new GetAccountInfo(login,false);
+            attachAccountInfo.doWorkAndVerify();
+
+            attachAccountInfo.getReponseAttachResult().getData().setAccountTotal(attachAccountInfo.getReponseAttachResult().getData().getAccountTotal()+prize);
+
         }
 
 
@@ -54,14 +68,41 @@ public class Signin extends FixtureBase{
 
     @Override
     protected void dataVerify() throws Exception {
+
+        GetAccountInfo afterMasterAccountInfo=null;
+        GetAccountInfo afterAttachAccountInfo=null;
+        if(login!=null) {
+            afterMasterAccountInfo = new GetAccountInfo(login, true);
+            afterMasterAccountInfo.doWorkAndVerify();
+
+            afterAttachAccountInfo = new GetAccountInfo(login,false);
+            afterAttachAccountInfo.doWorkAndVerify();
+
+        }
+
+
         if(reponseV2Base.getStatus().getCode()==0){
             //验证返回的数据正确
 
-            //接口更改，不返回奖励金额，改为返回提示信息
-            //dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getPrizeValue(),prize));
+            dataVerifyManager.add(new ValueVerify<Object>(afterMasterAccountInfo.getReponseMasterResult().getData(),masterAccountInfo.getReponseMasterResult().getData(),true)
+                    .setVerifyContent("验证主账户金额是否正确"));
+
+
+            dataVerifyManager.add(new ValueVerify<Long>(afterAttachAccountInfo.getReponseAttachResult().getData().getAccountTotal(),attachAccountInfo.getReponseAttachResult().getData().getAccountTotal())
+                    .setVerifyContent("验证副账户金额是否正确"));
+
         }
         else{
             //dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getPrizeValue(),null), VerifyResult.SUCCESS);
+
+            if(login!=null) {
+                dataVerifyManager.add(new ValueVerify<Object>(afterMasterAccountInfo.getReponseMasterResult().getData(), masterAccountInfo.getReponseMasterResult().getData(),true
+                )
+                        .setVerifyContent("验证主账户金额是否正确"), VerifyResult.SUCCESS);
+
+                dataVerifyManager.add(new ValueVerify<Long>(afterAttachAccountInfo.getReponseAttachResult().getData().getAccountTotal(), attachAccountInfo.getReponseAttachResult().getData().getAccountTotal()-prize)
+                        .setVerifyContent("验证副账户金额是否正确"), VerifyResult.SUCCESS);
+            }
         }
         super.dataVerify();
     }

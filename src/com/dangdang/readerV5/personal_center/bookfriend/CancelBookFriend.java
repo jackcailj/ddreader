@@ -1,6 +1,7 @@
 package com.dangdang.readerV5.personal_center.bookfriend;
 
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.db.ucenter.UserInfoSql;
@@ -19,7 +20,9 @@ public class CancelBookFriend extends FixtureBase{
     protected void genrateVerifyData() throws Exception {
 
         if(login!=null && paramMap.get("friendPubId")!=null) {
-            beforeRelation = UserInfoSql.getRelation(login.getCustId(), UserInfoSql.getCustIdByPubId(paramMap.get("friendPubId")));
+            if(paramMap.get("flag")==null ||!paramMap.get("flag").equals("flag_pubid_error")) {
+                beforeRelation = UserInfoSql.getRelation(login.getCustId(), LoginManager.getLoginByPubID(paramMap.get("friendPubId")).getCustId());
+            }
         }
     }
 
@@ -28,7 +31,9 @@ public class CancelBookFriend extends FixtureBase{
 
         BookFriendRelation afterRelation=null;
         if(login!=null && paramMap.get("friendPubId")!=null) {
-            afterRelation = UserInfoSql.getRelation(login.getCustId(), UserInfoSql.getCustIdByPubId(paramMap.get("friendPubId")));
+            if(paramMap.get("flag")==null ||!paramMap.get("flag").equals("flag_pubid_error")) {
+                afterRelation = UserInfoSql.getRelation(login.getCustId(), LoginManager.getLoginByPubID(paramMap.get("friendPubId")).getCustId());
+            }
         }
 
         if(reponseV2Base.getStatus().getCode()==0){

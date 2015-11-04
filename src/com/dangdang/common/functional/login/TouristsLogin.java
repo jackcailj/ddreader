@@ -12,7 +12,7 @@ public class TouristsLogin extends FunctionalBaseEx{
 	
 	ReponseV2<TouristsLoginReponse> reponseResult;
 	
-	
+	public TouristsLogin(){}
 
 	public TouristsLogin(Map<String, String> param) {
 		// TODO Auto-generated constructor stub

@@ -13,6 +13,8 @@ import java.util.Map;
 public class LoginManager {
     //Login对象管理，记录每个用户的Login对象
     static Map<String, ILogin> loginManager = new HashMap<String, ILogin>();
+    static Map<String, ILogin> loginManager_custID = new HashMap<String, ILogin>();
+    static Map<String, ILogin> loginManager_pubID = new HashMap<String, ILogin>();
 
     public static ILogin getLogin(LoginInfo loginInfo) throws Exception {
         ILogin loginObject=null;
@@ -34,6 +36,8 @@ public class LoginManager {
                 dlogin.doWorkAndVerify();
                 if (dlogin.getReponseStatus().getStatus().getCode() == 0) {
                     loginManager.put(loginInfo.getUserName(), dlogin);
+                    loginManager_custID.put(dlogin.getCustId(),dlogin);
+                    loginManager_pubID.put(dlogin.getPubId(),dlogin);
                     loginObject=dlogin;
                 }
             }
@@ -51,6 +55,21 @@ public class LoginManager {
      */
     public static ILogin getLogin(String userName){
         return  loginManager.get(userName);
+    }
+
+
+    /*
+    通过custid获取login
+     */
+    public static ILogin getLoginByCustID(String custID){
+        return  loginManager_custID.get(custID);
+    }
+
+    /*
+    通过pubid获取login
+     */
+    public static ILogin getLoginByPubID(String pubId){
+        return  loginManager_pubID.get(pubId);
     }
 
     public static ILogin getLogin(Map<String,String> param) throws Exception {

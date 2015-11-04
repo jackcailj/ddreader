@@ -16,7 +16,7 @@ public class StoreUpSQL {
     获取收藏列表
      */
     public  static List<MediaStoreup> getStoreUpList(String custId,StoreUpType storeUpType) throws Exception {
-        String selectString ="select * from media_storeup where cust_id="+custId+" and type='"+storeUpType.toString()+"' order by store_date desc";
+        String selectString ="select * from media_storeup where cust_id="+custId+" and type='"+storeUpType.toString()+"' order by store_date desc limit 10";
         List<MediaStoreup> mediaStoreups = DbUtil.selectList(Config.YCDBConfig,selectString,MediaStoreup.class);
 
         return mediaStoreups;
