@@ -9,6 +9,7 @@ import com.dangdang.db.digital.channel.BookListSQL;
 import com.dangdang.readerV5.reponse.ChannelBookList;
 import com.dangdang.readerV5.reponse.ChannelBookListResponse;
 
+
 import fitnesse.slim.SystemUnderTest;
 
 /**
@@ -18,21 +19,29 @@ import fitnesse.slim.SystemUnderTest;
  */
 public class BookList extends FixtureBase{
 
-	ReponseV2<ChannelBookListResponse> reponseResult;	
+	ReponseV2<ChannelBookListResponse> jsonResult;	
 	
 	@SystemUnderTest
 	public BookListSQL sql = new BookListSQL();
 	
-	public boolean verifyResult() throws Exception{
-		dataVerifyManager.setCaseExpectResult(true);
-		reponseResult =JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<ChannelBookListResponse>>(){});
-		if(reponseResult.getStatus().getCode()==0){	
-			//验证json中返回字段
-			log.info("验证书单基本信息");	
-			ChannelBookList  bookList = BookListSQL.getBookList(paramMap.get("bookListId"));
-			dataVerifyManager.add(new ValueVerify<ChannelBookList>(bookList, reponseResult.getData().getBookList(), true));	
-		}
-		return dataVerifyManager.dataVerify();    
-	 }
+	public BookList(){
+		addAction("bookList");
+	}
+	
+    @Override
+    public void doWork() throws Exception {
+        super.doWork();
+        jsonResult = JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<ChannelBookListResponse >>(){});
+    }
+    
+    @Override
+    protected void dataVerify() throws Exception {
+        if(reponseV2Base.getStatus().getCode()==0){       	
+        	//ChannelBookList  bookList = BookListSQL.getBookList(paramMap.get("bookListId"));
+        	//dataVerifyManager.add(new ValueVerify<ChannelBookList>(bookList, jsonResult.getData().getBookList(), true));
+            
+        }
+        super.dataVerify();
+    }
 	
 }

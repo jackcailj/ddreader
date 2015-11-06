@@ -15,7 +15,7 @@ public class ChannelColumnReponse {
 	//String isShowHorn;
 	String name;
 	String tips; //小喇叭提示内容
-	String total;
+	Integer total;
 
 	public List<ChannelList> getChannelList() {
 		return channelList;
@@ -54,10 +54,10 @@ public class ChannelColumnReponse {
 	public void setTips(String tips) {
 		this.tips = tips;
 	}
-	public String getTotal() {
+	public Integer getTotal() {
 		return total;
 	}
-	public void setTotal(String total) {
+	public void setTotal(Integer total) {
 		this.total = total;
 	}
 }

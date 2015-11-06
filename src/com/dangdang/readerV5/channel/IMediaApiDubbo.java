@@ -4,9 +4,11 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.config.Config;
+import com.dangdang.db.digital.ChannelMonthlyStrategyDb;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.digital.api.IMediaApi;
-import com.dangdang.db.digital.channel.ChannelMonthlySQL;
+
 
 import fitnesse.slim.SystemUnderTest;
 
@@ -16,28 +18,31 @@ import fitnesse.slim.SystemUnderTest;
  *
  */
 public class IMediaApiDubbo extends FixtureBase{
-	
-	@SystemUnderTest
-	public ChannelMonthlySQL sql = new ChannelMonthlySQL();
-	
+	Long returnChannelId;
 	ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:conf/readerV5/applicationContext-im.xml");
 	IMediaApi iMediaApi = (IMediaApi)factory.getBean("iMediaApi");
 	
-	Long returnChannelId;
-	public void getWithTokenAndMediaAndChannelid(String token,String mediaId, String channelid) throws Exception{
+	@SystemUnderTest
+	public ChannelMonthlyStrategyDb Db = new ChannelMonthlyStrategyDb();
+	
+	//UserDeviceDb.getToken();
+	
+	public Long getChannelId(String token,String mediaId, String channelid) throws Exception{
 		Long _mediaId = Long.valueOf(mediaId);
 		Long _channelId = Long.valueOf(channelid);
 		returnChannelId = iMediaApi.getMeidaMonthlyInfo(token,_mediaId,_channelId);	
+		return  returnChannelId;
 	}
 	
-	public boolean verifyChannelId(String expected) throws Exception{
-		dataVerifyManager.setCaseExpectResult(true);	
-		if(expected.equals(null))
-			dataVerifyManager.add(new ValueVerify<String>(String.valueOf(returnChannelId),null));
-		else{
-			
+	public static void main(String[] args){
+		IMediaApiDubbo dubbo = new IMediaApiDubbo();
+		try {
+			Long l = dubbo.getChannelId("856095434f1f8ac8314863745e6d499b","1900089597","66");
+			System.out.println("l: "+l);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return dataVerifyManager.dataVerify();
 	}
 
 

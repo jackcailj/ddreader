@@ -35,25 +35,25 @@ public class BookListSQL {
 	   			"WHERE booklist_id=" + _bookListId;
 	   	List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 	   	ChannelBookList bookList = new ChannelBookList();
-	   	bookList.setBookNum(infos.get(0).get("book_num").toString());
-	   	bookList.setBooklistId(infos.get(0).get("booklist_id").toString());
-	   	bookList.setChangeNum(infos.get(0).get("change_num").toString());
-	   	bookList.setChannelId(infos.get(0).get("channel_id").toString());
-	   	bookList.setCreator(infos.get(0).get("creator").toString());
-	   	bookList.setDescription(infos.get(0).get("description").toString());
-	   	if(infos.get(0).get("image_url").equals(null)||infos.get(0).get("image_url")==null)
-	   		bookList.setImageUrl(null);
-	   	else
-	   		bookList.setImageUrl(infos.get(0).get("image_url").toString());
-	   	bookList.setIsShow(infos.get(0).get("is_show").toString());
-	   	if(infos.get(0).get("modifier").equals(null)||infos.get(0).get("modifier")==null)
-	   		bookList.setModifier("");
-	   	else
-	   		bookList.setModifier(infos.get(0).get("modifier").toString());
-	   	bookList.setName(infos.get(0).get("name").toString());
-	   	bookList.setOwner(infos.get(0).get("owner").toString());
-	   	bookList.setStatus(infos.get(0).get("status").toString());
-	   	bookList.setStoreNum(infos.get(0).get("store_num").toString());
+//	   	bookList.setBookNum(infos.get(0).get("book_num").toString());
+//	   	bookList.setBooklistId(infos.get(0).get("booklist_id").toString());
+//	   	bookList.setChangeNum(infos.get(0).get("change_num").toString());
+//	   	bookList.setChannelId(infos.get(0).get("channel_id").toString());
+//	   	bookList.setCreator(infos.get(0).get("creator").toString());
+//	   	bookList.setDescription(infos.get(0).get("description").toString());
+//	   	if(infos.get(0).get("image_url").equals(null)||infos.get(0).get("image_url")==null)
+//	   		bookList.setImageUrl(null);
+//	   	else
+//	   		bookList.setImageUrl(infos.get(0).get("image_url").toString());
+//	   	bookList.setIsShow(infos.get(0).get("is_show").toString());
+//	   	if(infos.get(0).get("modifier").equals(null)||infos.get(0).get("modifier")==null)
+//	   		bookList.setModifier("");
+//	   	else
+//	   		bookList.setModifier(infos.get(0).get("modifier").toString());
+//	   	bookList.setName(infos.get(0).get("name").toString());
+//	   	bookList.setOwner(infos.get(0).get("owner").toString());
+//	   	bookList.setStatus(infos.get(0).get("status").toString());
+//	   	bookList.setStoreNum(infos.get(0).get("store_num").toString());
 	    return bookList;
 	}
 	

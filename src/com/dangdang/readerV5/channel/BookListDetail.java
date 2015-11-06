@@ -23,6 +23,10 @@ public class BookListDetail extends FixtureBase{
 		return reponseResult;
 	}
 	 
+	 public BookListDetail(){
+		 addAction("bookListDetail");
+	 }
+	 
 	 @SystemUnderTest
 	 public BookListDetailSQL sql = new BookListDetailSQL();
 	

@@ -1,26 +1,29 @@
 package com.dangdang.readerV5.channel;
 
+import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.readerV5.reponse.ChannelArticleReponse;
-
-import fitnesse.slim.SystemUnderTest;
+import com.dangdang.readerV5.reponse.BookListBookUpdateResponse;
 
 /**
- * 文章列表接口
+ * 
  * @author guohaiying
  *
  */
-public class ChannelArticle extends FixtureBase{
+public class BookListBookUpdate extends FixtureBase{
+	ReponseV2<BookListBookUpdateResponse> jsonResult;
 	
-	ReponseV2<ChannelArticleReponse> reponseResult;
-	
-	@SystemUnderTest
-	//public ChannelSQL sql = new ChannelSQL();
-	public ChannelArticle(){
-		addAction("channelArticle");
+	public BookListBookUpdate(){
+		addAction("bookListBookUpdate");
 	}
-	
+		
+    @Override
+    public void doWork() throws Exception {
+        super.doWork();
+        jsonResult = JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<BookListBookUpdateResponse >>(){});
+    }
+
     @Override
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){

@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.db.digital.ChannelSQL;
 import com.dangdang.readerV5.reponse.ChannelArticleReponse;
 
 import fitnesse.slim.SystemUnderTest;
@@ -19,7 +18,7 @@ public class getDigestDetail extends FixtureBase{
 	ReponseV2<ChannelArticleReponse> reponseResult;
 	
 	@SystemUnderTest
-	ChannelSQL sql = new ChannelSQL();
+	//ChannelSQL sql = new ChannelSQL();
 	
 	//验证结果
 	public boolean verifyResult() throws Exception{

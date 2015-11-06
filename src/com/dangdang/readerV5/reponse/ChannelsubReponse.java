@@ -4,13 +4,13 @@ import com.dangdang.ddframework.dataverify.verify_annotation.NotNull;
 
 public class ChannelsubReponse {
 	@NotNull
-	String subNumber;
+	Integer subNumber;
 
-	public String getSubNumber() {
+	public Integer getSubNumber() {
 		return subNumber;
 	}
 
-	public void setSubNumber(String subNumber) {
+	public void setSubNumber(Integer subNumber) {
 		this.subNumber = subNumber;
 	}
 }

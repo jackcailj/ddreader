@@ -1,46 +1,31 @@
 package com.dangdang.readerV5.reponse;
 
-import com.dangdang.ddframework.dataverify.verify_annotation.NotNull;
-
 public class Channel {
 	ChannelBookList bookList;
-	@NotNull
-	String channelId;
-	//List<ChannelMonthlyStrategy> channelMonthlyStrategy;
+	Long channelId;
 	String description;
-	@NotNull
 	String hasArtical;
-	@NotNull
 	String hasBoughtMonthly;
-	@NotNull
 	String icon;
-	@NotNull
-	String isAllowMonthly;
-	@NotNull
+	Integer isAllowMonthly;
 	String isSub;
-	//String monthlyType;
-	//String ownder;
-	//String ownerCustId;
-	@NotNull
+	Integer monthlyType;
+	String ownder;
+	String ownerCustId;
 	String ownerType;
-	//String shelfStatus;
-	@NotNull
-	String subNumber;
-	@NotNull
+	Integer shelfStatus;
+	Integer subNumber;
 	String title;
-
 	public ChannelBookList getBookList() {
 		return bookList;
 	}
-
 	public void setBookList(ChannelBookList bookList) {
 		this.bookList = bookList;
 	}
-	
-	public String getChannelId() {
+	public Long getChannelId() {
 		return channelId;
 	}
-	public void setChannelId(String channelId) {
+	public void setChannelId(Long channelId) {
 		this.channelId = channelId;
 	}
 	public String getDescription() {
@@ -55,11 +40,23 @@ public class Channel {
 	public void setHasArtical(String hasArtical) {
 		this.hasArtical = hasArtical;
 	}
+	public String getHasBoughtMonthly() {
+		return hasBoughtMonthly;
+	}
+	public void setHasBoughtMonthly(String hasBoughtMonthly) {
+		this.hasBoughtMonthly = hasBoughtMonthly;
+	}
 	public String getIcon() {
 		return icon;
 	}
 	public void setIcon(String icon) {
 		this.icon = icon;
+	}
+	public Integer getIsAllowMonthly() {
+		return isAllowMonthly;
+	}
+	public void setIsAllowMonthly(Integer isAllowMonthly) {
+		this.isAllowMonthly = isAllowMonthly;
 	}
 	public String getIsSub() {
 		return isSub;
@@ -67,16 +64,40 @@ public class Channel {
 	public void setIsSub(String isSub) {
 		this.isSub = isSub;
 	}
-//	public String getOwnder() {
-//		return ownder;
-//	}
-//	public void setOwnder(String ownder) {
-//		this.ownder = ownder;
-//	}
-	public String getSubNumber() {
+	public Integer getMonthlyType() {
+		return monthlyType;
+	}
+	public void setMonthlyType(Integer monthlyType) {
+		this.monthlyType = monthlyType;
+	}
+	public String getOwnder() {
+		return ownder;
+	}
+	public void setOwnder(String ownder) {
+		this.ownder = ownder;
+	}
+	public String getOwnerCustId() {
+		return ownerCustId;
+	}
+	public void setOwnerCustId(String ownerCustId) {
+		this.ownerCustId = ownerCustId;
+	}
+	public String getOwnerType() {
+		return ownerType;
+	}
+	public void setOwnerType(String ownerType) {
+		this.ownerType = ownerType;
+	}
+	public Integer getShelfStatus() {
+		return shelfStatus;
+	}
+	public void setShelfStatus(Integer shelfStatus) {
+		this.shelfStatus = shelfStatus;
+	}
+	public Integer getSubNumber() {
 		return subNumber;
 	}
-	public void setSubNumber(String subNumber) {
+	public void setSubNumber(Integer subNumber) {
 		this.subNumber = subNumber;
 	}
 	public String getTitle() {
@@ -86,43 +107,4 @@ public class Channel {
 		this.title = title;
 	}
 
-	public String getHasBoughtMonthly() {
-		return hasBoughtMonthly;
-	}
-
-	public void setHasBoughtMonthly(String hasBoughtMonthly) {
-		this.hasBoughtMonthly = hasBoughtMonthly;
-	}
-
-	public String getIsAllowMonthly() {
-		return isAllowMonthly;
-	}
-
-	public void setIsAllowMonthly(String isAllowMonthly) {
-		this.isAllowMonthly = isAllowMonthly;
-	}
-
-//	public String getMonthlyType() {
-//		return monthlyType;
-//	}
-//	
-//	public void setMonthlyType(String monthlyType) {
-//		this.monthlyType = monthlyType;
-//	}
-
-	public String getOwnerType() {
-		return ownerType;
-	}
-
-	public void setOwnerType(String ownerType) {
-		this.ownerType = ownerType;
-	}
-//	public List<ChannelMonthlyStrategy> getChannelMonthlyStrategy() {
-//		return channelMonthlyStrategy;
-//	}
-//
-//	public void setChannelMonthlyStrategy(
-//			List<ChannelMonthlyStrategy> channelMonthlyStrategy) {
-//		this.channelMonthlyStrategy = channelMonthlyStrategy;
-//	}
 }
