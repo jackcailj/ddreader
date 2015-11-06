@@ -35,23 +35,25 @@ public class QueryArticleInfo  extends FixtureBase{
 		String sql = null;
 		// 查找正常显示的帖子
 		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equalsIgnoreCase("FromDB")){
-			sql = "select * from article where is_show=1 and is_del=0 ORDER BY RAND() limit 1";
+			sql = "select * from article where is_show=1 and is_del=0 limit 1";
 		}
 		// 查找被删除的帖子
 		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equalsIgnoreCase("shield")){
-			sql = "select * from article where is_show=0 and is_del=0 ORDER BY RAND() limit 1";
+			sql = "select * from article where is_show=0 and is_del=0 limit 1";
 		}
 		// 查找被屏蔽的帖子
 		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equalsIgnoreCase("deleted")){
-			sql = "select * from article where is_show=1 and is_del=1 ORDER BY RAND() limit 1";
+			sql = "select * from article where is_show=1 and is_del=1 limit 1";
 		}
 		if(sql!=null){
-			map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
-			if(map.get("media_digest_id")==null){
-				throw new Exception("没有查找到'"+paramMap.get("mediaDigestId").toString()+"'帖子id");
+			try{
+				map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
+				mediaDigestId = map.get("media_digest_id").toString();
+				paramMap.put("mediaDigestId", mediaDigestId);
 			}
-			mediaDigestId = map.get("media_digest_id").toString();
-			paramMap.put("mediaDigestId", mediaDigestId);
+			catch(Exception e){
+				throw new Exception("数据表中不存在符合条件的帖子id，此用例不执行");
+			}
 		}
 	}
 	
@@ -94,7 +96,7 @@ public class QueryArticleInfo  extends FixtureBase{
 			}			
 			list2.add(article.getBarId());
 			list2.add(article.getContent());
-			list2.add(userInfo!=null?article.getNickName():null);
+			list2.add(userInfo!=null?article.getUserBaseInfo().getNickName():null);
 			list2.add(article.getMediaDigestId());
 			list2.add(article.getTitle()!=null?article.getTitle().toString():null);		
 			list2.add(article.getCommentNum());
