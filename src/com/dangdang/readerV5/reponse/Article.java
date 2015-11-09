@@ -4,12 +4,14 @@ public class Article {
 	String barHostCustId;
 	String barId;
 	String barName;
+	String browseCount;
 	String commentNum;            
 	String content;
 	String custId;
 	String headPhoto;	
 	String isDel;	
 	String isPraise;	
+	String isResolve;
 	String isShow;
 	String isStoreUp;    
 	String isTop;
@@ -19,7 +21,19 @@ public class Article {
 	String nickName;
 	String praiseNum;    
 	String title;
+	String type;
+	UserBaseInfo userBaseInfo;
+	
 
+	public String getBrowseCount(){
+		return browseCount;
+	}
+	public String getIsResolve(){
+		return isResolve;
+	}
+	public String getType(){
+		return type;
+	}	
 	public String getContent(){
 		return content;
 	}
@@ -50,6 +64,19 @@ public class Article {
 	public String getTitle(){
 		return title;
 	}
+	public UserBaseInfo getUserBaseInfo(){
+		return userBaseInfo;
+	}
+	
+	public void setBrowseCount(String browseCount){
+		this.browseCount = browseCount;
+	}
+	public void setIsResolve(String isResolve){
+		this.isResolve = isResolve;
+	}
+	public void setType(String type){
+		this.type = type;
+	}	
 	public void setContent(String content){
 		this.content = content;
 	}
@@ -127,5 +154,8 @@ public class Article {
 	}
 	public void setPraiseNum(String praiseNum){
 		this.praiseNum = praiseNum;
+	}
+	public void getUserBaseInfo(UserBaseInfo userBaseInfo){
+		this.userBaseInfo = userBaseInfo;
 	}
 }

@@ -7,6 +7,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.db.digital.MediaDigestDb;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
@@ -22,9 +23,28 @@ public class AddComment extends FixtureBase{
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);		
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("FromDB")){
-			String sql = "select target_id from comment where is_delete=0 and status=1 "
-					   + "and target_source="+paramMap.get("targetSource")+" limit 1";
-			String targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
+//			String sql = "select target_id from comment where is_delete=0 and status=1 "
+//					   + "and target_source="+paramMap.get("targetSource")+" limit 1";
+//			sql = "select * ";
+			//类型： 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子; 5:攻略
+			//来源：1000:书吧 2000：翻篇 3000：抢先读 4000：频道_(必填) 7000 攻略_
+			String source = paramMap.get("targetSource");
+			String type = null;
+			switch(source){
+			case "1000":type="4";
+				        break;
+			case "2000":type="1";
+				        break;
+			case "3000":type="2";
+				        break;
+			case "4000":type="3";
+			            break;
+			case "7000":type="5";
+			            break;
+			}				
+			String targetId = MediaDigestDb.getNewDigest(type,"0").get(0).getId().toString();;
+			
+			//String targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
 			paramMap.put("targetId",targetId);
 		}
 	}

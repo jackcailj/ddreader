@@ -50,12 +50,13 @@ public class MoreBarList extends FixtureBase {
 			logger.info("list size is "+list.size());
 			List<BarContent> barList = new ArrayList<BarContent>();
 			if(list.size() > 0){
-				for(int i=0; i<list.size(); i++){
+				for(int j=0,i=0; i<list.size(); j++,i++){
 					BarContent content = new BarContent();
 					try{
 						sql = "select * from bar where bar_status!=4 and bar_id ="+list.get(i).getContentId();
 						Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
 						logger.info("i is "+i);
+						logger.info("j is "+j);
 						content.setArticleNum(bar.getArticleNum().toString());
 						content.setBarDesc(bar.getBarDesc().isEmpty()?"在人生的道路上，当你的希望一个个落空的时候，你也要坚定，要沉着。":bar.getBarDesc());
 						content.setBarId(bar.getBarId().toString());
@@ -63,8 +64,8 @@ public class MoreBarList extends FixtureBase {
 						//http://10.255.223.6/wiki/pages/viewpage.action?pageId=4360026 
 						//所以对返回结果中的barimgurl做以下处理
 						content.setBarImgUrl(bar.getBarImgUrl());
-						String str = reponseResult.getData().getBarList().get(i).getBarImgUrl().replaceAll("[._][a-z]\\.", ".");
-						reponseResult.getData().getBarList().get(i).setBarImgUrl(str);
+						String str = reponseResult.getData().getBarList().get(j).getBarImgUrl().replaceAll("[._][a-z]\\.", ".");
+						reponseResult.getData().getBarList().get(j).setBarImgUrl(str);
 						content.setBarName(bar.getBarName());
 						content.setMemberNum(Integer.toString(bar.getMemberNum()));
 						content.setRecommendReason(list.get(i).getRecommendReason());
@@ -72,6 +73,7 @@ public class MoreBarList extends FixtureBase {
 						
 					}
 					catch(Exception e){
+						j--;
 						logger.info("此吧已不存在: "+e);
 					}
 					

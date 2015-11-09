@@ -11,6 +11,7 @@ import com.dangdang.digital.meta.MediaActivityInfo;
 import com.dangdang.reader.functional.reponse.Account;
 import com.dangdang.readerV5.personal_center.GetAccountInfo;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.Date;
 import java.util.Map;
@@ -44,7 +45,8 @@ public class ConsumerDeposit extends FixtureBase{
 			//String token =paramMap.get("token").toString();
 			//获取充值方式数据
 			
-				if(paramMap.get("relationProductId")!=null && paramMap.get("relationProductId").toString().equals("auto") ){
+				if(paramMap.get("relationProductId")!=null && paramMap.get("relationProductId").toString().equals("auto")
+						&&(paramMap.get("flag")==null || !paramMap.get("flag").equals("paymentId_error"))){
 					GetDepositShowView depositShowView =new GetDepositShowView(login,PlatForm.getPlatForm(paramMap.get("fromPaltform")),paramMap.get("paymentId"));
 					depositShowView.doWork();
 					mediaActivityInfo=depositShowView.getReponseResult().getData().getActivityInfos().get(0);
@@ -59,7 +61,8 @@ public class ConsumerDeposit extends FixtureBase{
 				
 				
 				//产生订单
-				if(paramMap.get("depositOrderNo")!=null && paramMap.get("depositOrderNo").toString().equals("auto") && paramMap.get("relationProductId")!=null){
+				if(paramMap.get("depositOrderNo")!=null && paramMap.get("depositOrderNo").toString().equals("auto") && StringUtils.isNotBlank(paramMap.get("relationProductId"))
+						&&(paramMap.get("flag")==null || !paramMap.get("flag").equals("paymentId_error"))){
 					String relationProductId =paramMap.get("relationProductId").toString();
 					if(relationProductId.contains("invaild")){
 						relationProductId.replace("invaild,", "");
@@ -140,12 +143,12 @@ public class ConsumerDeposit extends FixtureBase{
 				GetAccountInfo afterMasterAccountInfo = new GetAccountInfo(login, true);
 				afterMasterAccountInfo.doWork();
 
-				dataVerifyManager.add(new ValueVerify<Long>(afterMasterAccountInfo.getReponseMasterResult().getData().getAccountTotal(), beforeMasterAcount.getReponseMasterResult().getData().getAccountTotal()+mediaActivityInfo.getDepositMoney()).setVerifyContent("验证主账户金额是否正确"), VerifyResult.SUCCESS);
+				dataVerifyManager.add(new ValueVerify<Long>(afterMasterAccountInfo.getReponseMasterResult().getData().getAccountTotal(), beforeMasterAcount.getReponseMasterResult().getData().getAccountTotal()+(mediaActivityInfo==null?0:mediaActivityInfo.getDepositMoney())).setVerifyContent("验证主账户金额是否正确"), VerifyResult.SUCCESS);
 
 				GetAccountInfo afterAttachAccountInfo = new GetAccountInfo(login, false);
 				afterAttachAccountInfo.doWork();
 
-				dataVerifyManager.add(new ValueVerify<Long>(afterAttachAccountInfo.getReponseAttachResult().getData().getAccountTotal(), beforeAttachAcount.getReponseAttachResult().getData().getAccountTotal()+mediaActivityInfo.getDepositGiftReadPrice()).setVerifyContent("验证副账户金额是否正确"), VerifyResult.SUCCESS);
+				dataVerifyManager.add(new ValueVerify<Long>(afterAttachAccountInfo.getReponseAttachResult().getData().getAccountTotal(), beforeAttachAcount.getReponseAttachResult().getData().getAccountTotal()+(mediaActivityInfo==null?0:mediaActivityInfo.getDepositGiftReadPrice())).setVerifyContent("验证副账户金额是否正确"), VerifyResult.SUCCESS);
 			}
 		}
 		else {
