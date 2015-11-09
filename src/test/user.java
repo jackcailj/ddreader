@@ -1,9 +1,9 @@
 package test;
 
 import com.dangdang.ddframework.dataverify.verify_annotation.NotNull;
-import fitnesse.plugins.PluginFeatureFactoryBase;
+//import fitnesse.plugins.PluginFeatureFactoryBase;
 
-public class user extends PluginFeatureFactoryBase {
+public class user {
 
 	@NotNull
 	String userName="test";

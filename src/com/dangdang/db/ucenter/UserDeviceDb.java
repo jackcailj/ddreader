@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.dangdang.authority.meta.MediaMonthlyAuthority;
 import com.dangdang.config.Config;
+import com.dangdang.db.authority.AuthorityDb;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
 import com.dangdang.db.SqlUtil;
 import com.dangdang.ddframework.dbutil.DbUtil;
@@ -105,9 +106,37 @@ public class UserDeviceDb {
 		return infos.get(0).get("LOGIN_TOKEN").toString();
 	}	
 	
+	//获取没有买过书的Token
+	//GetTokenParse.java used
+	public static String getNoBuyBookToken(String deviceType) throws Exception{
+		List<String> custIDs = AuthorityDb.getAllCustIdList();
+		String selectSQL = "SELECT LOGIN_TOKEN " +
+				" FROM `user_device` " +
+				" WHERE LOGIN_TOKEN IS NOT NULL  " +
+				" AND DEVICE_TYPE='"+deviceType+
+				"' AND CUST_ID NOT IN "+SqlUtil.getListToString(custIDs)+
+				" LIMIT 1";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
+		return infos.get(0).get("LOGIN_TOKEN").toString();
+	}
+	
+	//获取买过书的Token
+	//GetTokenParse.java used
+	public static String getAlreadyBuyBookToken(String deviceType) throws Exception{
+		List<String> custIDs = AuthorityDb.getCustIdList("media_authority_0");
+		String selectSQL = "SELECT LOGIN_TOKEN " +
+				" FROM `user_device` " +
+				" WHERE LOGIN_TOKEN IS NOT NULL  " +
+				" AND DEVICE_TYPE='"+deviceType+
+				"' AND CUST_ID IN"+SqlUtil.getListToString(custIDs)+
+				" LIMIT 1";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
+		return infos.get(0).get("LOGIN_TOKEN").toString();
+	}
+	
 	public static void main(String[] args){
 		try {
-			String s=UserDeviceDb.getMonthlyChannelOfflineToken("Android");
+			String s=UserDeviceDb.getNoBuyBookToken("Android");
 			System.out.println(s);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

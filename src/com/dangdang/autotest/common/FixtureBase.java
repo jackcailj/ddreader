@@ -330,14 +330,13 @@ public class FixtureBase extends InterfaceBase{
 		//add by guohaiying 
 		//wiki上控制执行哪个环境下的用例 
 		String env = Config.getEnvironment().toString();
-		if(getEnviroment()==null||getEnviroment().equals("all")){
-			
+		if(getEnviroment().equals("all")||getEnviroment().equals("")||getEnviroment().equals(null)){
+
 		}else{
 			if(!getEnviroment().contains(env)){
 				return;
 			}	
 		}
-		
         handleParam();
 		doWorkAndVerify();
 
