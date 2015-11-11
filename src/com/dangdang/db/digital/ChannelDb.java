@@ -58,7 +58,7 @@ public class ChannelDb {
 	//GetChannelIdParse.java used
 	public static String getMonthlyChannel(String custID) throws Exception{
 		//用户已经包月的频道列表
-		List userMonthlyChannelList = MediaMonthlyAuthorityDb.getUserMonthlyChannelID(custID);
+		List userMonthlyChannelList = MediaMonthlyAuthorityDb.getUserMonthlyChannelID(custID, "1");
 		String selectSQL = "";
 		if(userMonthlyChannelList==null){
 			selectSQL = "SELECT * FROM `channel` " +

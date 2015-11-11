@@ -5,8 +5,10 @@ import java.util.Map;
 import org.apache.commons.lang3.StringUtils;
 
 import com.dangdang.config.Config;
+import com.dangdang.db.authority.AuthorityDb;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
 import com.dangdang.db.ucenter.UserDeviceDb;
+import com.dangdang.enumeration.TokenType;
 
 /**
  * 
@@ -27,14 +29,26 @@ public class GetTokenParse implements IParamParse{
 			String[] params= ParamParse.parseParam(param);
 			String tokenFlag = params[0].trim();
 			String deviceType = Config.getCommonParam().get("deviceType");
-			if(tokenFlag.equals("UserNoMonthly")){//获取没有频道包月的Token
+			
+			if(tokenFlag.equals(TokenType.UserNoMonthly.toString())){ //获取没有频道包月的Token
 				paramMap.put(key,UserDeviceDb.getNoMonthlyToken(deviceType));
-			}else if(tokenFlag.equals("UserMonthly")){//获取有频道包月(未过期)的Token
+			
+			}else if(tokenFlag.equals(TokenType.UserMonthly.toString())){ //获取有频道包月(未过期)的Token
 				paramMap.put(key,UserDeviceDb.getTokenByCustId());
-			}else if(tokenFlag.equals("UserMonthlyOverdue")){//获取有频道包月(已过期)的Token
+			
+			}else if(tokenFlag.equals(TokenType.UserMonthlyOverdue.toString())){ //获取有频道包月(已过期)的Token
 				paramMap.put(key,UserDeviceDb.getMonthlyOverdueToken(deviceType));
-			}else if(tokenFlag.equals("MonthlyChannelOffline")){//获取有频道(已下架)包月(未过期)的Token						
+			
+			}else if(tokenFlag.equals(TokenType.MonthlyChannelOffline.toString())){ //获取有频道(已下架)包月(未过期)的Token						
 				paramMap.put(key,UserDeviceDb.getMonthlyChannelOfflineToken(deviceType));
+			
+			}else if(tokenFlag.equals(TokenType.UserNoBuyBook.toString())){ //获取没有买过书的Token
+				paramMap.put(key,UserDeviceDb.getNoBuyBookToken(deviceType));
+				
+			}else if(tokenFlag.equals(TokenType.UserAlreadyBuyBook.toString())){ //获取买过书的Token
+				String token = UserDeviceDb.getAlreadyBuyBookToken(deviceType);
+				paramMap.put(key, token);				
+				paramMap.put("mediaId", AuthorityDb.getUserAlreadyBuyBook(UserDeviceDb.getCustIdByToken(token)));
 			}
 		
 		}

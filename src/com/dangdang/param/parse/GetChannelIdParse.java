@@ -33,10 +33,8 @@ public class GetChannelIdParse implements IParamParse{
 			String[] params= ParamParse.parseParam(param);
 			cId = params[0].trim();
 			flag = params[1].trim();
-			System.out.println("aaaa"+cId);
-			String custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
-			System.out.println("aaaa"+custId);
-			if(cId.equals("TYPE")){ //企业频道
+			String custId = "";
+			if(cId.equals(ChannelId.TYPE.toString())){ //企业频道
 				cIdValue = ChannelDb.getChannelWithOwnerType(flag);
 				paramMap.put(key, cIdValue);
 			}else if(cId.equals(ChannelId.IfAllowMonthly.toString())){ 
@@ -46,14 +44,17 @@ public class GetChannelIdParse implements IParamParse{
 					cIdValue = ChannelMonthlyStrategyDb.getMonthlyStrategyChannel();
 				paramMap.put(key, cIdValue);
 			}else if(cId.equals(ChannelId.IfAlreadyMonthly.toString())&&flag.equals("0")){ //支持包月，0未包月的频道(注意验证到期时间)
+				custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
 				cIdValue = ChannelDb.getMonthlyChannel(custId);
 				paramMap.put(key, cIdValue);
-			}else if(cId.equals(ChannelId.IfOverdue.toString())){ //已购买的频道 ，0未过期， 续费(注意验证到期时间)
-				List<String> list =  MediaMonthlyAuthorityDb.getUserMonthlyChannelID(custId);
+			}else if(cId.equals(ChannelId.NoOverdueIfAutoRenew.toString())){ //已购买的频道未过期， 1续费(注意验证到期时间) 0不续费
+				custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
+				List<String> list =  MediaMonthlyAuthorityDb.getUserMonthlyChannelID(custId, flag);
 				cIdValue = list.get(0);
 				paramMap.put(key, cIdValue);
-			}else if(cId.equals(ChannelId.IfAutoRenew.toString())){ //已购买的频道已过期，1(自动续订状态)（需要跑后台任务） 0(不自动续费状态)，测续费
-			    cIdValue = MediaMonthlyAuthorityDb.getAutoRenewChannel(custId, flag);
+			}else if(cId.equals(ChannelId.OverdueIfAutoRenew.toString())){ //已购买的频道已过期，1(自动续订状态)（需要跑后台任务） 0(不自动续费状态)，测续费
+				custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
+				cIdValue = MediaMonthlyAuthorityDb.getAutoRenewChannel(custId, flag);
 				paramMap.put(key, cIdValue);
 			}else if(cId.equals(ChannelId.Offline.toString())){//0频道支持包月且下线  1//未过期且已下线
 				if(flag.equals("0"))
@@ -63,7 +64,7 @@ public class GetChannelIdParse implements IParamParse{
 					cIdValue = list.get(0).getRelationId().toString();
 				}
 				paramMap.put(key, cIdValue);
-				
+
 			}else{
 				throw new Exception("[custId:]"+custId+" 获取ChannelId失败！");
 			}

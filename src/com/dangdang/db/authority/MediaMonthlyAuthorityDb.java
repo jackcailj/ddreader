@@ -53,15 +53,16 @@ public class MediaMonthlyAuthorityDb {
 	//获取用户已包月未过期的频道
 	//IMediaApiDubbo.java used
 	//GetChannelIdParse.java used
-	public static List<String> getUserMonthlyChannelID(String custId) throws Exception{
+	public static List<String> getUserMonthlyChannelID(String custId, String renewFlag) throws Exception{
 		int _custId = Integer.valueOf(custId);
+		int _renewFlag = Integer.valueOf(renewFlag);
 		String selectSQL = "SELECT relation_id " +
 				"FROM `media_monthly_authority` " +
 				"WHERE platform_no=1002 " +
 				"AND monthly_type=2 " +
 				"AND NOW()>=monthly_start_time " +
 				"AND NOW()<=monthly_end_time " +
-				"AND cust_id="+_custId;		
+				"AND is_automatically_renew = "+_renewFlag+" AND cust_id="+_custId;		
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.AUTHORITYConfig, selectSQL);
 		List<String> list = new ArrayList<String>();
 		if(infos == null){
@@ -125,11 +126,23 @@ public class MediaMonthlyAuthorityDb {
 		return infos;
 	}
 	
+	//获取用户包月频道中频道的续费状态
+	//ChangeAutoBuyMonthlyState.java used
+	public static String getUserMonthlyState(String custId, String channelId) throws Exception{
+		int _custId = Integer.valueOf(custId);
+		int _channelId = Integer.valueOf(channelId);
+		String selectSQL = "SELECT is_automatically_renew " +
+				" FROM `media_monthly_authority` " +
+				" WHERE cust_id= "+_custId+
+				" AND relation_id="+_channelId;
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.AUTHORITYConfig, selectSQL);
+		return infos.get(0).get("is_automatically_renew").toString();
+	}
 	public static void main(String[] args){
 		 List<String> list = null;
 		try {
-			//String s = MediaMonthlyAuthorityDb.getMonthlyChannelOffline("Android");
-			//System.out.println("aaa" + s);
+			String s = MediaMonthlyAuthorityDb.getUserMonthlyState("50244532","17");
+			System.out.println("aaa" + s);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
