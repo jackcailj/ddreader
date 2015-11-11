@@ -21,6 +21,7 @@ public class ArticleList {
 	String praiseNum;
 	String title;
 	String type;
+	UserBaseInfo userBaseInfo;
 	
 	public String getArticleId(){
 		return articleId;
@@ -76,6 +77,10 @@ public class ArticleList {
 	public String getType(){
 		return type;
 	}
+	public UserBaseInfo getUserBaseInfo(){
+		return userBaseInfo;
+	}
+	
 	public void setArticleId(String articleId){
 		this.articleId = articleId;
 	}
@@ -129,6 +134,9 @@ public class ArticleList {
 	}
 	public void setType(String type){
 		this.type = type;
+	}
+	public void setUserBaseInfo(UserBaseInfo userBaseInfo){
+		this.userBaseInfo = userBaseInfo;
 	}
 
 }

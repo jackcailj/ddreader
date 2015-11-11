@@ -31,30 +31,13 @@ public class QueryArticleInfo  extends FixtureBase{
 	
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
-		super.setParameters(params);
-		String sql = null;
-		// 查找正常显示的帖子
-		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equalsIgnoreCase("FromDB")){
-			sql = "select * from article where is_show=1 and is_del=0 limit 1";
-		}
-		// 查找被删除的帖子
-		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equalsIgnoreCase("shield")){
-			sql = "select * from article where is_show=0 and is_del=0 limit 1";
-		}
-		// 查找被屏蔽的帖子
-		if(paramMap.get("mediaDigestId")!=null&&paramMap.get("mediaDigestId").equalsIgnoreCase("deleted")){
-			sql = "select * from article where is_show=1 and is_del=1 limit 1";
-		}
-		if(sql!=null){
-			try{
-				map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
-				mediaDigestId = map.get("media_digest_id").toString();
-				paramMap.put("mediaDigestId", mediaDigestId);
-			}
-			catch(Exception e){
-				throw new Exception("数据表中不存在符合条件的帖子id，此用例不执行");
-			}
-		}
+		try{
+			super.setParameters(params);
+			mediaDigestId = paramMap.get("mediaDigestId");
+	    }
+	       catch(Exception e){
+		   throw new Exception("数据表中不存在符合条件的帖子id，此用例不执行");
+	    }
 	}
 	
 	@Override
@@ -96,13 +79,23 @@ public class QueryArticleInfo  extends FixtureBase{
 			}			
 			list2.add(article.getBarId());
 			list2.add(article.getContent());
-			list2.add(userInfo!=null?article.getUserBaseInfo().getNickName():null);
+			String nickName = null;
+			if(userInfo!=null){
+				if(paramMap.get("action").equals("queryArticleInfo")){
+					nickName = article.getNickName();
+				}
+				else{
+					//return the UserBaseInfo if action is queryArticleInfoV2 in 5.2 version
+					nickName = article.getUserBaseInfo().getNickName();
+				}
+			}			
+			list2.add(nickName);
 			list2.add(article.getMediaDigestId());
 			list2.add(article.getTitle()!=null?article.getTitle().toString():null);		
 			list2.add(article.getCommentNum());
 			list2.add(article.getPraiseNum());
 						
-			dataVerifyManager.add(new ValueVerify(list1, list2,false));
+			dataVerifyManager.add(new ValueVerify(list2, list1,false));
 			super.dataVerify();			
 		}
 		else{

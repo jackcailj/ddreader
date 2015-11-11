@@ -62,6 +62,21 @@ public class MediaDigestDb {
         return mediaDigests;
     }
     
+    /**
+     * 获取要对其发表评论的目标主体
+     * @param
+     *       type: 文章类型，1. 翻篇儿  2 抢先读
+     *       time： 当前时间 
+     * */    
+    public static  List<MediaDigest> getTargetId(String type) throws Exception{
+    	String selectString="select id,author,media_id,media_chapter_id,media_name,bar_id,first_catetory_id,first_catetory_name,content,type*1 as type,column_id,column_name,stars,review_cnt,collect_cnt,share_cnt," +
+                "click_cnt,top_cnt,card_title,card_remark,card_type*1 as card_type,pic1_path,small_pic1_path,small_pic2_path,small_pic3_path,show_start_date,create_date,title,"+
+                "is_show*1 as is_show,is_del*1 as is_del,sign_ids,day_or_night,mood*1,weight,operator,sort_page,is_paper_book*1 as is_paper_book from media_digest "
+                + "where is_show=1 and is_del=0 and type="+type+" order by create_date DESC limit 20";
+        List<MediaDigest> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString, MediaDigest.class);
+        return mediaDigests;
+    }
+    
     
     //Add guohaiying
     

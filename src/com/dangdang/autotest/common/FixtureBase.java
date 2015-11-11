@@ -46,25 +46,23 @@ public class FixtureBase extends InterfaceBase{
 	 * @throws Exception 
 	 */
 	public void setParameters(Map<String, String> params) throws Exception{
-//		//add by Haiyan
-//		//wiki上控制执行哪个环境下的用例 
-//		String env = Config.getEnvironment().toString();		
-//		if(params.get("environment")!=null){
-//			setEnviroment(params.get("environment"));
-//			if(!getEnviroment().contains(env)){
-//				return;
-//			}	
-//		}
 		parseParameters(params);
+	}
+	
+	/**
+	 * 接收FitNesse上map形式的参数 
+	 * @param params
+	 * @throws Exception 
+	 */
+	public void setParams(Map<String, String> params) throws Exception{
+		setParameters(params);
 	}
 	
 	public void parseParameters(Map<String, String> params) throws Exception{
 
 		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		paramMap =  params;
-
-		ParseParamUtil.parseOperateParam(paramMap);
-		
+		ParseParamUtil.parseOperateParam(paramMap);		
 		paramMap.putAll(Config.getCommonParam());
 		login = parseResult.getLogin();
 		handleParam();
@@ -134,20 +132,16 @@ public class FixtureBase extends InterfaceBase{
 		result = HttpDriver.doGet(Config.getUrl(), paramMap,false);
 		return result.toString();
 	}
-	
-//	public void dataVerify(String expectedCode) throws Exception {
-//		super.dataVerify();
-//		verifyResult(expectedCode);
-//	}
-	
+		
 	public void dataVerify(String expectedCode) throws Exception {
-		String env = Config.getEnvironment().toString();	
-		if(!getEnviroment().contains(env)){
-			return;
-		}	
-		doRequest();
-		super.dataVerify();
-		verifyResult(expectedCode);
+		
+	}
+	
+	public void dataVeried(String expectedCode) throws Exception {
+		if(CheckIsRun()){
+			doRequest();
+			dataVerify(expectedCode);
+		}
 	}
 	
 	public void verifyResult(String expectedCode){
@@ -176,7 +170,7 @@ public class FixtureBase extends InterfaceBase{
 	}
 
 	public String verifiedResult(){
-		if(verifyResult){
+		if(verifyResult||result==null){
 			return "pass";
 		}
 		else 
