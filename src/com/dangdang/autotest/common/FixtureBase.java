@@ -1,6 +1,8 @@
 package com.dangdang.autotest.common;
 
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
@@ -28,6 +30,8 @@ public class FixtureBase extends InterfaceBase{
 	protected boolean verifyResult = true;
 	protected ILogin login = null;
     protected String exceptStatusCode;
+
+	protected static Integer interval=0;
 
     protected ReponseV2Base reponseV2Base;
 	
@@ -266,12 +270,17 @@ public class FixtureBase extends InterfaceBase{
                 paramMap.put(EXPECTED,value);
                 exceptStatusCode=value;
             }
-            if(name.equals("enviroment")){
+			else if(name.equals("enviroment")){
             	setEnviroment(value);
             }
+			else if(name.startsWith("interval")){
+				parseInterval(name);
+			}
             else {
-                paramMap.put(name, value);
+				paramMap.put(name, value);
             }
+
+
         }
 	}
 
@@ -320,6 +329,8 @@ public class FixtureBase extends InterfaceBase{
 			}
         }
 
+
+
         throw  new Exception("没有["+columnName+"]数据");
 	}
 
@@ -327,7 +338,9 @@ public class FixtureBase extends InterfaceBase{
     执行DynamicDecisionTable的每一行
      */
 	public void execute() throws Exception {
-		//add by guohaiying 
+		//add by guohaiying
+
+		Interval();
 		//wiki上控制执行哪个环境下的用例 
 		String env = Config.getEnvironment().toString();
 		if(getEnviroment()==null||getEnviroment().equals("all")){
@@ -341,9 +354,24 @@ public class FixtureBase extends InterfaceBase{
         handleParam();
 		doWorkAndVerify();
 
+
+
 	}
 
 
+	/*
+	解析每个用例执行间隔，用来应对防刷机制
+	 */
+	public void parseInterval(String columnName){
+		Matcher matcher = Pattern.compile("interval#(\\d+)").matcher(columnName);
+		if(matcher.find()){
+			interval=Integer.parseInt(matcher.group(1));
+		}
+	}
+
+	public void Interval() throws InterruptedException {
+		Thread.sleep(interval*1000);
+	}
 
 	/*
     每次执行前清除上次运行的数据
@@ -358,6 +386,8 @@ public class FixtureBase extends InterfaceBase{
         login=null;
         result=null;
 		VariableStore.clear();
+
+
     }
 
     /*============================fitnesse DynamicDecisionTable设置列值函数=================================*/
