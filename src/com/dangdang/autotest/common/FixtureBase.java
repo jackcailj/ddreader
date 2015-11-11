@@ -150,7 +150,7 @@ public class FixtureBase extends InterfaceBase{
 
 	}
 	
-	public void dataVeried(String expectedCode) throws Exception {
+	public void dataVerified(String expectedCode) throws Exception {
 		if(CheckIsRun()){
 			doRequest();
 			dataVerify(expectedCode);
