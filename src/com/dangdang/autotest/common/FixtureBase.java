@@ -8,6 +8,7 @@ import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
 
 import com.dangdang.ddframework.reponse.ReponseV2Base;
+import com.dangdang.enumeration.RunLevel;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -102,7 +103,7 @@ public class FixtureBase extends InterfaceBase{
 		
 		genrateVerifyData();
 		boolean statusCode = false;
-		genrateVerifyData();
+		//genrateVerifyData();
 		result=HttpDriver.doGet(URL, paramMap, bHttps);
 		
 		if(result.toString().contains("\"code\":"+exceptedCode)){ 
@@ -249,6 +250,19 @@ public class FixtureBase extends InterfaceBase{
         }
     }
 
+	/*
+	检测是否运行用例
+
+	 */
+	public boolean CheckIsRun(){
+		if(Config.getRunLevel()== RunLevel.ALL || (Config.getRunLevel()==RunLevel.FAST && EXCEPTSUCCESS)){
+			return true;
+		}
+
+		return false;
+	}
+
+
 
     // add by cailj ，支持DynamicDecisionTable
     /*============================与fitnesse DynamicDecisionTable集成相关函数=================================*/
@@ -343,17 +357,19 @@ public class FixtureBase extends InterfaceBase{
 		Interval();
 		//wiki上控制执行哪个环境下的用例 
 		String env = Config.getEnvironment().toString();
-		if(getEnviroment().equals("all")||getEnviroment().equals("")||getEnviroment().equals(null)){
+		if(getEnviroment() == null || getEnviroment().equals("all")||getEnviroment().equals("")){
 
 		}else{
 			if(!getEnviroment().contains(env)){
 				return;
 			}	
 		}
+
         handleParam();
-		doWorkAndVerify();
 
-
+		if(CheckIsRun()) {
+			doWorkAndVerify();
+		}
 
 	}
 

@@ -6,6 +6,7 @@ import java.util.Random;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.enumeration.BarStatus;
+import com.dangdang.readerV5.bookbar.BarMember;
 
 public class BarRelationDb {
 	public static Map<String,Object> getObjectId(BarStatus status) throws Exception{
@@ -20,5 +21,8 @@ public class BarRelationDb {
 		Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
 		return map;
 	}
+
+
+
 
 }

@@ -33,4 +33,16 @@ public class BarMemberDb {
 		BarMember member = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, BarMember.class);
 		return member;
 	}
+
+
+	/*
+	获取某个人的吧列表
+	参数：
+		cust_id：
+	 */
+	public static List<com.dangdang.readerV5.bookbar.BarMember> getOwnerBars(String cust_id) throws Exception {
+		String sql = "select * from bar_member where cust_id="+cust_id+" and member_status=3";
+		List<com.dangdang.readerV5.bookbar.BarMember> bars = DbUtil.selectList(Config.BOOKBARDBConfig, sql, com.dangdang.readerV5.bookbar.BarMember.class);
+		return bars;
+	}
 }

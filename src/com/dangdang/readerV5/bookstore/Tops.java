@@ -10,4 +10,8 @@ public class Tops extends FixtureBase{
     public Tops(){}
 
 
+    @Override
+    protected void dataVerify() throws Exception {
+        super.dataVerify();
+    }
 }

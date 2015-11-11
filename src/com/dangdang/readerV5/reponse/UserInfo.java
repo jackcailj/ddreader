@@ -1,9 +1,13 @@
 package com.dangdang.readerV5.reponse;
 
+import com.dangdang.db.account.IntegralItem;
+
 /**
  * Created by cailianjie on 2015-6-17.
  */
 public class UserInfo {
+    Integer barOwnerLevel;
+    Integer channelOwner;
     Integer bookFriend;
     Long custId;
     String custImg;
@@ -102,5 +106,22 @@ public class UserInfo {
 
     public void setSilverNumIos(Integer silverNumIos) {
         this.silverNumIos = silverNumIos;
+    }
+
+
+    public Integer getBarOwnerLevel() {
+        return barOwnerLevel;
+    }
+
+    public void setBarOwnerLevel(Integer barOwnerLevel) {
+        this.barOwnerLevel = barOwnerLevel;
+    }
+
+    public Integer getChannelOwner() {
+        return channelOwner;
+    }
+
+    public void setChannelOwner(Integer channelOwner) {
+        this.channelOwner = channelOwner;
     }
 }

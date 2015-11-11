@@ -7,7 +7,8 @@ import java.util.Map;
 import com.dangdang.config.Config;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.digital.meta.Channel;
+import com.dangdang.digital.meta.*;
+import com.dangdang.digital.meta.ChannelOwner;
 import com.dangdang.readerV5.reponse.BookList;
 import com.dangdang.readerV5.reponse.ChannelBookList;
 
@@ -185,6 +186,16 @@ public class ChannelDb {
     	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
     	return infos.get(0);
     }
+
+
+	/*
+	获取ChannelOwner信息
+	 */
+	public static ChannelOwner getChannelOwner(String custId) throws Exception{
+		String selectSQL = "select * from channel_owner where cust_id="+custId;
+		ChannelOwner channelOwner = DbUtil.selectOne(Config.YCDBConfig, selectSQL, ChannelOwner.class);
+		return channelOwner;
+	}
     
     //获取频道下书单id
     public static ChannelBookList getBookIDList(String channelID) throws Exception {   
