@@ -55,6 +55,16 @@ public class FixtureBase extends InterfaceBase{
 	 * @throws Exception 
 	 */
 	public void setParams(Map<String, String> params) throws Exception{
+//      //add by Haiyan
+//      //wiki上控制执行哪个环境下的用例 
+//      String env = Config.getEnvironment().toString();        
+//      if(params.get("environment")!=null){
+//          setEnviroment(params.get("environment"));
+//          if(!getEnviroment().contains(env)){
+//              return;
+//          }    
+//      }
+
 		setParameters(params);
 	}
 	
@@ -134,7 +144,10 @@ public class FixtureBase extends InterfaceBase{
 	}
 		
 	public void dataVerify(String expectedCode) throws Exception {
-		
+        doRequest();
+        super.dataVerify();
+        verifyResult(expectedCode);
+
 	}
 	
 	public void dataVeried(String expectedCode) throws Exception {
