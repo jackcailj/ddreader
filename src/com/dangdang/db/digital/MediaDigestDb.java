@@ -5,7 +5,9 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaDigest;
 import com.dangdang.enumeration.StoreUpType;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-8-3.
@@ -64,7 +66,22 @@ public class MediaDigestDb {
     
     
     //Add guohaiying
+    //获取频道中的文章
+    //SELECT * FROM `media_digest` WHERE id IN (SELECT  digest_id FROM `channel_articles_digest` WHERE is_publish=1 AND channel_id IS NOT NULL AND `status` IN (0, 1, 2) ORDER BY articles_id);
+    public static  List<String> getDigestId(String type) throws Exception{
+    	int _type = Integer.valueOf(type);
+    	String selectString="SELECT id FROM digital.media_digest WHERE type="+_type+" AND is_del=0";
+        List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectString);
+        List ids = new ArrayList<String>();
+        for(int i=0;i<infos.size();i++){
+        	ids.add(infos.get(i).get("id").toString());
+        }
+        return ids;
+        
+    }
     
+    //攻略
+    //SELECT * FROM `comment_target_count` WHERE target_source=7000 ORDER BY browse_count DESC
     
     
 

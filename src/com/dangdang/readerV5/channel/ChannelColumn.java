@@ -59,6 +59,7 @@ public class ChannelColumn extends FixtureBase{
 				dataVerifyManager.add(new ValueVerify<String>(jsonList.get(i).getChannelId(), dbList.get(i).getChannelId()).setVerifyContent("验证ChannelId"));
 				dataVerifyManager.add(new ValueVerify<String>(jsonList.get(i).getIcon(), dbList.get(i).getIcon()).setVerifyContent("验证Icon"));
 				dataVerifyManager.add(new ValueVerify<String>(jsonList.get(i).getOwnerType(), dbList.get(i).getOwnerType()).setVerifyContent("验证OwnerType"));
+				dataVerifyManager.add(new ValueVerify<Integer>(jsonList.get(i).getHasBoughtMonthly(), dbList.get(i).getHasBoughtMonthly()).setVerifyContent("验证hasBoughtMonthly"));
 				int jsonSubNumber = jsonList.get(i).getSubNumber();
 				int dbSubNumber = dbList.get(i).getSubNumber();
 				dataVerifyManager.add(new ExpressionVerify(Math.abs(jsonSubNumber-dbSubNumber)<=10).setVerifyContent("验证SubNumber,jsonValue"+jsonSubNumber+" dbValue"+dbSubNumber));

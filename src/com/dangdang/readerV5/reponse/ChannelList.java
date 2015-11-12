@@ -3,15 +3,15 @@ package com.dangdang.readerV5.reponse;
 public class ChannelList {
 	String channelId;
 	//String description;
-	//Integer hasBoughtMonthly;
+	Integer hasBoughtMonthly;
 	String icon;
 	//String owner;
 	//String ownerCustId;
 	String ownerType;
 	Integer subNumber;//订阅数
 	String title;
+	UserBaseInfo userBaseInfo;
 		
-
 	public String getChannelId() {
 		return channelId;
 	}
@@ -24,6 +24,12 @@ public class ChannelList {
 //	public void setDescription(String description) {
 //		this.description = description;
 //	}
+	public Integer getHasBoughtMonthly() {
+		return hasBoughtMonthly;
+	}
+	public void setHasBoughtMonthly(Integer hasBoughtMonthly) {
+		this.hasBoughtMonthly = hasBoughtMonthly;
+	}
 	public String getIcon() {
 		return icon;
 	}
@@ -54,5 +60,10 @@ public class ChannelList {
 	public void setOwnerType(String ownerType) {
 		this.ownerType = ownerType;
 	}
-
+	public UserBaseInfo getUserBaseInfo() {
+		return userBaseInfo;
+	}
+	public void setUserBaseInfo(UserBaseInfo userBaseInfo) {
+		this.userBaseInfo = userBaseInfo;
+	}
 }
