@@ -7,13 +7,20 @@ import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.db.account.AccountInfo;
 import com.dangdang.db.account.AccountUtils;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.db.bookbar.BarMemberDb;
+import com.dangdang.db.digital.ChannelDb;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.digital.meta.ChannelOwner;
+import com.dangdang.enumeration.ChannelOwnerStatus;
 import com.dangdang.param.parse.ParseParamUtil;
+import com.dangdang.readerV5.bookbar.BarMember;
 import com.dangdang.readerV5.reponse.GetUserReponse;
 import com.dangdang.readerV5.reponse.UserInfo;
 import com.dangdang.db.ucenter.UserInfoSql;
 import com.dangdang.ucenter.meta.LoginRecord;
+
+import java.util.List;
 
 /**
  * Created by cailianjie on 2015-6-17.
@@ -73,7 +80,7 @@ public class GetUser extends FixtureBase{
             //userInfo.setCustId(loginRecord.getCustId());
             userInfo.setCustImg(loginRecord.getCustImg());
             userInfo.setGender(loginRecord.getGender());
-            userInfo.setNickName(loginRecord.getCustNickname());
+            //userInfo.setNickName(loginRecord.getCustNickname());
             //获取账户信息
             if(paramMap.get("selfType").equals("0")){
                 AccountInfo accountInfo = AccountUtils.getAccountInfo(custId);
@@ -91,6 +98,25 @@ public class GetUser extends FixtureBase{
                 userInfo.setSilverNum(0);
                 userInfo.setSilverNumIos(0);
                 userInfo.setLevel(accountInfo.getAccountGrade());
+            }
+
+            //验证是否有bar或者channel
+          /*  List<BarMember> bars = BarMemberDb.getOwnerBars(custId);
+            if(bars.size()>0){
+                userInfo.setBarOwnerLevel(1);
+            }
+            else{
+                userInfo.setBarOwnerLevel(0);
+            }*/
+
+            //验证是否有channel
+            try {
+                ChannelOwner owner = ChannelDb.getChannelOwner(custId);
+                if(owner.getStatus() == ChannelOwnerStatus.AUDITED){
+                    userInfo.setChannelOwner(1);
+                }
+            }catch (Exception e){
+                userInfo.setChannelOwner(0);
             }
 
             dataVerifyManager.add(new ValueVerify<UserInfo>(reponseResult.getData().getUserInfo(), userInfo, true).setVerifyContent("对比用户信息是否一致"));

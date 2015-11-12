@@ -1,11 +1,14 @@
 package com.dangdang.autotest.common;
 
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
 
 import com.dangdang.ddframework.reponse.ReponseV2Base;
+import com.dangdang.enumeration.RunLevel;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 import org.testng.Assert;
@@ -29,6 +32,8 @@ public class FixtureBase extends InterfaceBase{
 	protected ILogin login = null;
     protected String exceptStatusCode;
 
+	protected static Integer interval=0;
+
     protected ReponseV2Base reponseV2Base;
 	
 	public FixtureBase(){
@@ -41,25 +46,33 @@ public class FixtureBase extends InterfaceBase{
 	 * @throws Exception 
 	 */
 	public void setParameters(Map<String, String> params) throws Exception{
-//		//add by Haiyan
-//		//wiki上控制执行哪个环境下的用例 
-//		String env = Config.getEnvironment().toString();		
-//		if(params.get("environment")!=null){
-//			setEnviroment(params.get("environment"));
-//			if(!getEnviroment().contains(env)){
-//				return;
-//			}	
-//		}
 		parseParameters(params);
+	}
+	
+	/**
+	 * 接收FitNesse上map形式的参数 
+	 * @param params
+	 * @throws Exception 
+	 */
+	public void setParams(Map<String, String> params) throws Exception{
+//      //add by Haiyan
+//      //wiki上控制执行哪个环境下的用例 
+//      String env = Config.getEnvironment().toString();        
+//      if(params.get("environment")!=null){
+//          setEnviroment(params.get("environment"));
+//          if(!getEnviroment().contains(env)){
+//              return;
+//          }    
+//      }
+
+		setParameters(params);
 	}
 	
 	public void parseParameters(Map<String, String> params) throws Exception{
 
 		ParseResult parseResult=ParseParamUtil.parseParameter(params);
 		paramMap =  params;
-
-		ParseParamUtil.parseOperateParam(paramMap);
-		
+		ParseParamUtil.parseOperateParam(paramMap);		
 		paramMap.putAll(Config.getCommonParam());
 		login = parseResult.getLogin();
 		handleParam();
@@ -98,7 +111,7 @@ public class FixtureBase extends InterfaceBase{
 		
 		genrateVerifyData();
 		boolean statusCode = false;
-		genrateVerifyData();
+		//genrateVerifyData();
 		result=HttpDriver.doGet(URL, paramMap, bHttps);
 		
 		if(result.toString().contains("\"code\":"+exceptedCode)){ 
@@ -129,20 +142,19 @@ public class FixtureBase extends InterfaceBase{
 		result = HttpDriver.doGet(Config.getUrl(), paramMap,false);
 		return result.toString();
 	}
-	
-//	public void dataVerify(String expectedCode) throws Exception {
-//		super.dataVerify();
-//		verifyResult(expectedCode);
-//	}
-	
+		
 	public void dataVerify(String expectedCode) throws Exception {
-		String env = Config.getEnvironment().toString();	
-		if(!getEnviroment().contains(env)){
-			return;
-		}	
-		doRequest();
-		super.dataVerify();
-		verifyResult(expectedCode);
+        doRequest();
+        super.dataVerify();
+        verifyResult(expectedCode);
+
+	}
+	
+	public void dataVerified(String expectedCode) throws Exception {
+		if(CheckIsRun()){
+			doRequest();
+			dataVerify(expectedCode);
+		}
 	}
 	
 	public void verifyResult(String expectedCode){
@@ -171,7 +183,7 @@ public class FixtureBase extends InterfaceBase{
 	}
 
 	public String verifiedResult(){
-		if(verifyResult){
+		if(verifyResult||result==null){
 			return "pass";
 		}
 		else 
@@ -245,6 +257,19 @@ public class FixtureBase extends InterfaceBase{
         }
     }
 
+	/*
+	检测是否运行用例
+
+	 */
+	public boolean CheckIsRun(){
+		if(Config.getRunLevel()== RunLevel.ALL || (Config.getRunLevel()==RunLevel.FAST && EXCEPTSUCCESS)){
+			return true;
+		}
+
+		return false;
+	}
+
+
 
     // add by cailj ，支持DynamicDecisionTable
     /*============================与fitnesse DynamicDecisionTable集成相关函数=================================*/
@@ -266,12 +291,17 @@ public class FixtureBase extends InterfaceBase{
                 paramMap.put(EXPECTED,value);
                 exceptStatusCode=value;
             }
-            if(name.equals("enviroment")){
+			else if(name.equals("enviroment")){
             	setEnviroment(value);
             }
+			else if(name.startsWith("interval")){
+				parseInterval(name);
+			}
             else {
-                paramMap.put(name, value);
+				paramMap.put(name, value);
             }
+
+
         }
 	}
 
@@ -320,6 +350,8 @@ public class FixtureBase extends InterfaceBase{
 			}
         }
 
+
+
         throw  new Exception("没有["+columnName+"]数据");
 	}
 
@@ -327,22 +359,41 @@ public class FixtureBase extends InterfaceBase{
     执行DynamicDecisionTable的每一行
      */
 	public void execute() throws Exception {
-		//add by guohaiying 
+		//add by guohaiying
+
+		Interval();
 		//wiki上控制执行哪个环境下的用例 
 		String env = Config.getEnvironment().toString();
-		if(getEnviroment().equals("all")||getEnviroment().equals("")||getEnviroment().equals(null)){
+		if(getEnviroment() == null || getEnviroment().equals("all")||getEnviroment().equals("")){
 
 		}else{
 			if(!getEnviroment().contains(env)){
 				return;
 			}	
 		}
+
         handleParam();
-		doWorkAndVerify();
+
+		if(CheckIsRun()) {
+			doWorkAndVerify();
+		}
 
 	}
 
 
+	/*
+	解析每个用例执行间隔，用来应对防刷机制
+	 */
+	public void parseInterval(String columnName){
+		Matcher matcher = Pattern.compile("interval#(\\d+)").matcher(columnName);
+		if(matcher.find()){
+			interval=Integer.parseInt(matcher.group(1));
+		}
+	}
+
+	public void Interval() throws InterruptedException {
+		Thread.sleep(interval*1000);
+	}
 
 	/*
     每次执行前清除上次运行的数据
@@ -357,6 +408,8 @@ public class FixtureBase extends InterfaceBase{
         login=null;
         result=null;
 		VariableStore.clear();
+
+
     }
 
     /*============================fitnesse DynamicDecisionTable设置列值函数=================================*/

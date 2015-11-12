@@ -2,6 +2,8 @@ package com.dangdang.config;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import com.dangdang.enumeration.RunLevel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.PropertyConfigurator;
 
@@ -27,6 +29,8 @@ public class Config extends ConfigCore{
 	public static String IMDBConfig="";
     public static String AUTHORITYConfig="";
 	public static String BSAECOMMENT="";
+
+	protected static RunLevel runLevel=RunLevel.ALL;
 
 	
 	protected static Map<String, String> CommonParam =new HashMap<String, String>();
@@ -133,7 +137,15 @@ public class Config extends ConfigCore{
 	public static void setCommonParam(Map<String, String> commonParam) {
 		CommonParam = commonParam;
 	}
-		
+
+	public static RunLevel getRunLevel() {
+		return runLevel;
+	}
+
+	public static void setRunLevel(String runLevel) {
+		Config.runLevel = RunLevel.valueOf(runLevel.toUpperCase());
+	}
+
 	public static void main(String[] args) {
 		
 		System.out.print(Config.BaseUrl);

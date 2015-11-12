@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -33,15 +34,16 @@ public class QueryArticleList extends FixtureBase{
 			super.setParameters(params);
 			if(paramMap.get("barId")!=null&&paramMap.get("barId").equals("FromDB")){
 				String sql = "select bar_id from bar where bar_status!=4 and bar_id in "
-					         + "(select bar_id from article where is_show=1 and is_del=0) ORDER BY rand() limit 1";
-				barId1 = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_id").toString();	
+					         + "(select bar_id from article where is_show=1 and is_del=0) limit 20";
+				barId1 = DbUtil.selectList(Config.BOOKBARDBConfig, sql)
+						.get((new Random()).nextInt(20)).get("bar_id").toString();	
 				paramMap.put("barId", barId1);
 			}
 			if(paramMap.get("objectId")!=null&&paramMap.get("objectId").equals("FromDB")){
 				String sql = "select br.bar_id, br.object_id from bar_relation as br left join "
 						+ "bar as b on br.bar_id=b.bar_id where b.bar_status!=4 and b.bar_id in "
-						+ "(select bar_id from article where is_show=1 and is_del=0) ORDER BY rand() limit 1";
-				Map<String,Object> map = DbUtil.selectOne(Config.BOOKBARDBConfig, sql);
+						+ "(select bar_id from article where is_show=1 and is_del=0) limit 20";
+				Map<String,Object> map = DbUtil.selectList(Config.BOOKBARDBConfig, sql).get((new Random()).nextInt(20));
 				barId2 = map.get("bar_id").toString();	
 				String objectId = map.get("object_id").toString();	
 				paramMap.put("objectId", objectId);

@@ -12,6 +12,7 @@ import com.dangdang.config.Config;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.enumeration.GradeExpRelationMap;
 import com.dangdang.readerV5.reponse.Data;
 
 /**
@@ -25,10 +26,12 @@ public class BarMember extends FixtureBase {
 	int numberNum;
 	String barId;
 	//加入吧，加经验和积分各5分
-	int experience = 5;
-	int integral = 5;
+	//退出吧，减经验和积分各5分
+	int experience = 0;
+	int integral = 0;
 	int account_experience;
 	int account_integral;
+	GradeExpRelationMap geMap = new GradeExpRelationMap();
 	
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
@@ -68,18 +71,32 @@ public class BarMember extends FixtureBase {
 			Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
 			if(paramMap.get("actionType").equals("1")){
 				//加入吧，成员数量加1
-				dataVerifyManager.add(new ValueVerify<Integer>(numberNum+1, bar.getMemberNum(),false));
-				sql = "SELECT * FROM `attach_account` where cust_id="+login.getCustId();
-				AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);
-				dataVerifyManager.add(new ValueVerify<Integer>(account_experience + experience, 
-						                                       account.getAccountExperience(),false));
-				dataVerifyManager.add(new ValueVerify<Integer>(account_integral + integral, 
-					                                           account.getAccountIntegral(),false));
+				//加入吧，加经验和积分各5分
+				experience = 5;
+				integral = 5;
+				numberNum = numberNum+1;	
+				//积分累积到一定数量，就有升级奖励积分
+				account_experience = account_experience + experience;
+				account_experience = account_experience + (geMap.get(account_experience)==null?0:geMap.get(account_experience));
+				account_integral = account_integral + integral;
 			}
-			else{
-				//退出吧，成员数量减1
-				dataVerifyManager.add(new ValueVerify<Integer>(numberNum-1, bar.getMemberNum(),false));
-			}			
+			else{				
+				//退出吧，成员数量减1		
+				numberNum = numberNum-1;	
+				//5.2版本中，退出吧，扣减积分，5.2之前的版本，不扣减
+				//退出吧，减经验和积分各5分
+//				experience = -5;
+//				integral = -5;
+//				account_experience = account_experience + experience;
+//				account_integral = account_integral + integral;
+			}
+			sql = "SELECT * FROM `attach_account` where cust_id="+login.getCustId();
+			AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);
+			dataVerifyManager.add(new ValueVerify<Integer>(bar.getMemberNum(),numberNum, false));
+			dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountExperience(),
+                    account_experience,false));
+            dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountIntegral(),
+                    account_integral, false));
 			super.dataVerify();
 		}
 		else{
