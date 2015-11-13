@@ -17,7 +17,7 @@ import com.dangdang.readerV5.reponse.PublishArticleResponse;
 public class PublishArticle extends FixtureBase{
 	ReponseV2<PublishArticleResponse>   reponseResult; 
 	static String barId;
-	int publishCount=1;
+	int publishCount=0;
 	
 	public ReponseV2<PublishArticleResponse> getResult(){
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<PublishArticleResponse>>(){});
@@ -25,11 +25,11 @@ public class PublishArticle extends FixtureBase{
 	
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
-		if(publishCount==3){
-			//三次发帖成功后，等待70秒
-			//防刷帖机制：60秒内发帖不能超过三次
-			Thread.sleep(1000*90);
-			publishCount = 1;
+		if(publishCount==4){
+			//四次发帖成功后，等待80秒
+			//防刷帖机制：60秒内发帖不能超过三次，第四次发帖，会提示“发帖速度太快，请休息一会儿吧”			
+			Thread.sleep(1000*80);
+			publishCount = 0;
 		}
 		super.setParameters(params);
 		if(barId==null){
@@ -56,8 +56,10 @@ public class PublishArticle extends FixtureBase{
 				list1.add(digest.getTitle());
 				list2.add(paramMap.get("title"));
 			}			
-			list1.add(digest.getCardRemark());			
-			list2.add(paramMap.get("content"));
+			if(paramMap.get("content")!=null&&!(paramMap.get("content").isEmpty())){
+				list1.add(digest.getCardRemark());			
+				list2.add(paramMap.get("content"));
+			}			
 			if(paramMap.get("imgUrls")!=null&&!(paramMap.get("imgUrls").isEmpty())){
 				list1.add(digest.getSmallPic1Path());
 				list2.add(paramMap.get("imgUrls"));

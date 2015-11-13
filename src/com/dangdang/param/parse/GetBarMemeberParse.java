@@ -5,11 +5,8 @@ import java.util.Map;
 import java.util.Random;
 
 import org.apache.commons.lang3.StringUtils;
-import org.apache.log4j.Logger;
 
-import com.dangdang.bookbar.meta.Article;
 import com.dangdang.bookbar.meta.BarMember;
-import com.dangdang.db.bookbar.ArticleDb;
 import com.dangdang.db.bookbar.BarMemberDb;
 
 public class GetBarMemeberParse implements IParamParse{
