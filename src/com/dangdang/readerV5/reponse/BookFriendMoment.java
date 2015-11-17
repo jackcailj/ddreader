@@ -19,6 +19,7 @@ public class BookFriendMoment {
 	String remark;
 	String title;
 	String type;
+	String indexNum;
 
 	public String getBarId(){
 		return barId;
@@ -74,6 +75,9 @@ public class BookFriendMoment {
 	public String getType(){
 		return type;
 	}
+	public String getIndexNum(){
+		return indexNum;
+	}
 	
 	public void setBarId(String barId){
 		this.barId = barId;
@@ -126,6 +130,9 @@ public class BookFriendMoment {
 	public void setTitle(String title){
 		this.title = title;
 	}
+	public void setIndexNum(String IndexNum){
+		this.indexNum = indexNum;
+	}	
 	public void setType(String type){
 		this.type = type;
 	}
