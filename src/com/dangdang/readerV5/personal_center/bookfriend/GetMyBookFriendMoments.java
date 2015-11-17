@@ -58,7 +58,6 @@ public class GetMyBookFriendMoments extends FixtureBase{
 			//TODO will add verify
 		}
 		verifyResult(expectedCode);
-	}
-	}
+	}	
 
 }
