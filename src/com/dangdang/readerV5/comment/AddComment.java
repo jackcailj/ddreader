@@ -40,9 +40,7 @@ public class AddComment extends FixtureBase{
 			case "7000":type="5";
 			            break;
 			}				
-			String targetId = MediaDigestDb.getTargetId(type).get((new Random()).nextInt(20)).getId().toString();;
-			
-			//String targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
+			String targetId = MediaDigestDb.getTargetId(type).get((new Random()).nextInt(10)).getId().toString();;
 			paramMap.put("targetId",targetId);
 		}
 	}
@@ -65,15 +63,4 @@ public class AddComment extends FixtureBase{
 		}
 		verifyResult(expectedCode);
 	}
-	
-	//TODO 查找target_id的sql语句，需要进一步处理，有时能找到已被删除的帖子的id
-	
-//	select * from article where media_digest_id=1117
-//
-//			select * from article where media_digest_id=999
-//			select * from article where media_digest_id=1399
-//	replyId为字母字，返回错误码为200
-//	http://10.255.223.117/media/api2.go?deviceType=Android&targetId=1399&replyCommentId=750&commentParentId=749&clientOs=5.0.0&resolution=1280*720&content=%E8%AF%84%E8%AE%BA%E5%9B%9E%E5%A4%8D&targetSource=1000&token=3f2c0af74e17f47037a9701df1742cb6&clientVersionNo=5.0.0&activityId=0&isAnonymous=0&deviceSerialNo=863151026834264&replyId=UyFgrQr%3Ca+title%3D%22create+page%22+href%3D%22FrontPage.InterfaceTestPage.TestScript.ReviewSuite.UyFgrQr%3Fedit%26nonExistent%3Dtrue%22%3E%5B%3F%5D%3C%2Fa%3E%25252Bjcxms6CjJdqf7w%25253D%25253D&serverVersionNo=1.2.1&action=addComment&permanentId=20150110021451227105983711475801861&returnType=json&channelId=30000&macAddr=18%3Adc%3A56%3A36%3A67%3A9c
-//		2015-07-22 14:31:00  [ main:26872 ] - [ INFO ]  Get请求结果:{"data":{"currentDate":"2015-07-22 14:29:09","systemDate":"1437546549103"},"status":{"code":200,"message":"系统错误200"}}
-
 }

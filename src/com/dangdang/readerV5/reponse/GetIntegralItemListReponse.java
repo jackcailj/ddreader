@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class GetIntegralItemListReponse {
     List<AccountIntegralItems> accountIntegralList;
+    Integer accountIntegralTotal;
 
     public List<AccountIntegralItems> getAccountIntegralList() {
         return accountIntegralList;
@@ -16,5 +17,13 @@ public class GetIntegralItemListReponse {
 
     public void setAccountIntegralList(List<AccountIntegralItems> accountIntegralList) {
         this.accountIntegralList = accountIntegralList;
+    }
+
+    public Integer getAccountIntegralTotal() {
+        return accountIntegralTotal;
+    }
+
+    public void setAccountIntegralTotal(Integer accountIntegralTotal) {
+        this.accountIntegralTotal = accountIntegralTotal;
     }
 }

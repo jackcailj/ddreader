@@ -74,11 +74,15 @@ public class QueryArticleList extends FixtureBase{
 			int defaultSize=50;
 			if(paramMap.get("barId")!=null&&!(paramMap.get("barId").isEmpty())){
 				long time=System.currentTimeMillis();
-				if(paramMap.get("lastModifiedDateMsec")!=null&&!(paramMap.get("lastModifiedDateMsec").equals("null"))){
-					time = Long.parseLong(paramMap.get("lastModifiedDateMsec"));
-				}
 				sql = "select * from article where is_show=1 and is_del=0 and bar_id ="+barId1+" "
 						+ "and last_modified_date_msec <"+time+" ORDER BY is_top DESC, last_modified_date_msec DESC";
+				
+				if(paramMap.get("lastModifiedDateMsec")!=null&&!(paramMap.get("lastModifiedDateMsec").equals("null"))){
+					//传 lastModifiedDateMsec参数时，先把置顶的帖子，过滤出来放在上边，然后查找 lastModifiedDateMsec时间之后的非置顶的帖子。
+					time = Long.parseLong(paramMap.get("lastModifiedDateMsec"));
+					sql = "select * from article where is_show=1 and is_del=0 and bar_id ="+barId1+" "
+							+ "and is_top=0 and last_modified_date_msec <"+time+" ORDER BY last_modified_date_msec DESC";
+				}
 			}
 			if(paramMap.get("objectId")!=null&&(!paramMap.get("objectId").isEmpty())&&paramMap.get("barId")==null){
 				// 单品页最多返回三条, 单品页帖子是按权重排序

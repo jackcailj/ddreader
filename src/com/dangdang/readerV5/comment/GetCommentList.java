@@ -3,6 +3,7 @@ package com.dangdang.readerV5.comment;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -27,8 +28,8 @@ public class GetCommentList extends FixtureBase{
 		super.setParameters(params);		
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("FromDB")){
 			String sql = "select target_id, comment_id from comment where status=1 "
-					   + "and target_source="+paramMap.get("targetSource")+" ORDER BY RAND() limit 1";
-			Map<String, Object> map = DbUtil.selectOne(Config.BSAECOMMENT, sql);
+					   + "and target_source="+paramMap.get("targetSource")+" limit 10";
+			Map<String, Object> map = DbUtil.selectList(Config.BSAECOMMENT, sql).get((new Random()).nextInt(10));
 			targetId = map.get("target_id").toString();
 			paramMap.put("targetId",targetId);
 			if(paramMap.get("commentId")!=null&&paramMap.get("commentId").equalsIgnoreCase("FromDB")){
@@ -46,11 +47,11 @@ public class GetCommentList extends FixtureBase{
 			String sql = "select * from comment where status=1 and target_source="+paramMap.get("targetSource")
 					   +" and target_id="+targetId+" and comment_parent_id=0"+subSql+" order by last_modified_date DESC";
 			List<Comment> comment = DbUtil.selectList(Config.BSAECOMMENT, sql, Comment.class);
-		   
+		    int comCount = comment.size();
 			for(int i=0; i<comment.size(); i++){
 				//把被删除的评论过滤掉
 				if(comment.get(i).getIsDelete()==1){
-					comment.remove(i);
+					comCount--;
 					continue;
 				}
 				//验证一级评论及每个评论下显示的回复的大小
@@ -60,12 +61,12 @@ public class GetCommentList extends FixtureBase{
 						   + "and target_source="+paramMap.get("targetSource")+" and target_id="+targetId
 						   +" and comment_parent_id="+comment.get(i).getCommentId();
 				List<Comment> subComment = DbUtil.selectList(Config.BSAECOMMENT, sql, Comment.class);			
-				
+				int subComCount = subComment.size();
 				//验证回复
 				for(int j=0; j<subComment.size(); j++){
 					//把被删除的回复过滤掉
 					if(subComment.get(j).getIsDelete()==1){
-						subComment.remove(j);
+						subComCount--;
 						continue;
 					}
 					Map<String,Object> map3 = new HashMap<String,Object>();
@@ -77,7 +78,7 @@ public class GetCommentList extends FixtureBase{
 					dataVerifyManager.add(new ValueVerify(map3, map4, true));
 				}
 				//验证一级评论
-				int size = subComment.size()<10?subComment.size():9;				
+				int size = subComCount<10?subComCount:9;				
 				map1.put("commentId", comment.get(i).getCommentId());
 				map1.put("targetId", comment.get(i).getTargetId());
 				map1.put("size", size);
@@ -87,12 +88,12 @@ public class GetCommentList extends FixtureBase{
 				dataVerifyManager.add(new ValueVerify(map1, map2, true));
 			}		
 			 
-			if(comment.size()<20){
-				dataVerifyManager.add(new ValueVerify<Integer>(comment.size(), reponseResult.getData().getCommentList().size(),false));	
+			if(comCount<20){
+				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getCommentList().size(),comCount,false));	
 			}
 			else{
 				//默认一页显示20条一级评论
-				dataVerifyManager.add(new ValueVerify<Integer>(20, reponseResult.getData().getCommentList().size(),false));	
+				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getCommentList().size(),20,false));	
 			}
 			super.dataVerify();
 		}	

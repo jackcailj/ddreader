@@ -121,7 +121,7 @@ public class PurchaseEbookVirtualPayment extends FixtureBase{
                 for (Object product : products) {
                     Map<String, String> mapObject = (Map<String, String>) product;
                     Media media = MediaDb.getMedia(mapObject.get("productId"));
-                    if (!paramMap.get("flag").equals("重复")) {
+                    if (!paramMap.get("flag").equals("free")) {
                         totalCost += media.getPrice();
                     }
                     dataVerifyManager.add(new RecordVerify(Config.AUTHORITYConfig, "select * from media_authority where cust_id = "+login.getCustId()+" and product_id="+mapObject.get("productId")+" and authority_type=3"));
@@ -139,7 +139,7 @@ public class PurchaseEbookVirtualPayment extends FixtureBase{
                         if (BookType.SHIDU.isShiDu(media.getUid())) {
                             continue;
                         }
-                        if (!paramMap.get("flag").equals("重复")) {
+                        if (!paramMap.get("flag").equals("free")) {
                             totalCost += media.getPrice();
                         }
                         dataVerifyManager.add(new RegexVerify(Util.getJsonRegexString("mediaId", media.getProductId().toString()), getUserBookList.getResult().toString()).setVerifyContent("购买成功，验证" + media.getProductId() + "是否有权限"));

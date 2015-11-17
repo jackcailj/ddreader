@@ -18,7 +18,7 @@ public class AuthorityDb {
      */
     public static List<MediaAuthority> getUserEbook(String custId,int num) throws Exception {
         Integer nCustId=Integer.parseInt(custId);
-        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +" and (authority_type =1 or (authority_type=2 and   order_no is not null and order_no!='' ))  limit  "+num;
+        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +" and relation_type!= 9999 and (authority_type =1 or (authority_type=2 and   order_no is not null and order_no!='' ))  limit  "+num;
         List<MediaAuthority> mediaAuthorities = DbUtil.selectList(Config.AUTHORITYConfig,selectString,MediaAuthority.class);
         return mediaAuthorities;
     }
@@ -29,7 +29,7 @@ public class AuthorityDb {
      */
     public static List<MediaAuthority> getMediaAuthority(String custId) throws Exception {
         Integer nCustId=Integer.parseInt(custId);
-        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +" ORDER BY last_modified_date desc";
+        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +" and relation_type!= 9999 ORDER BY last_modified_date desc";
         List<MediaAuthority> mediaAuthorities = DbUtil.selectList(Config.AUTHORITYConfig,selectString,MediaAuthority.class);
         return mediaAuthorities;
     }
@@ -40,7 +40,7 @@ public class AuthorityDb {
     */
     public static MediaAuthority getUserEbook(String custId,String productId) throws Exception {
         Integer nCustId=Integer.parseInt(custId);
-        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +" and authority_type=1 and product_id="+productId+" ORDER BY last_modified_date desc";
+        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +" and relation_type!= 9999 and authority_type=1 and product_id="+productId+" ORDER BY last_modified_date desc";
         MediaAuthority mediaAuthorities = DbUtil.selectOne(Config.AUTHORITYConfig,selectString,MediaAuthority.class);
         return mediaAuthorities;
     }
@@ -83,7 +83,7 @@ public class AuthorityDb {
     //getTokenParse.java used
     public static String getUserAlreadyBuyBook(String custId) throws Exception{
     	int _custId = Integer.valueOf(custId);
-    	String selectString = "SELECT product_id FROM media_authority_"+_custId%32+" WHERE cust_id=50230489 AND platform_no=1002 AND authority_type IN(1,2) AND relation_type=1001 AND order_no IS NOT NULL;";
+    	String selectString = "SELECT product_id FROM media_authority_"+_custId%32+" WHERE cust_id="+custId+" AND platform_no=1002 AND authority_type IN(1,2) AND relation_type=1001 AND order_no IS NOT NULL;";
     	List<Map<String, Object>> infos = DbUtil.selectList(Config.AUTHORITYConfig,selectString);   	
     	return infos.get(0).get("product_id").toString();
     }

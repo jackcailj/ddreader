@@ -2,7 +2,9 @@ package com.dangdang.readerV5.personal_center;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.account.meta.AttachAccount;
 import com.dangdang.db.account.AccountUtils;
+import com.dangdang.db.account.AttachAccountDb;
 import com.dangdang.db.account.IntegralItem;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.common.functional.login.ILogin;
@@ -48,6 +50,10 @@ public class GetIntegralItemList extends FixtureBase{
             List<IntegralItem> integralItems = AccountUtils.getIntegralItems(login.getCustId());
 
             dataVerifyManager.add(new ListVerify(reponseResult.getData().getAccountIntegralList(),integralItems,true));
+
+            AttachAccount attachAccount = AttachAccountDb.getAttachAccount(login.getCustId());
+
+            dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getAccountIntegralTotal(),attachAccount.getAccountIntegral()));
         }
         else{
             dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getAccountIntegralList(),null), VerifyResult.SUCCESS);
