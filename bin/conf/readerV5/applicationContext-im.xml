@@ -9,8 +9,9 @@
 
 <dubbo:application name="consumer-of-im-app" />
 
-<!-- 使用zookeeper注册中心暴露服务地址 -->
-<dubbo:registry protocol="zookeeper" address="10.255.223.208:2881"/>
+<!-- 使用zookeeper注册中心暴露服务地址 10.255.223.208:2881-->
+<!-- 开发10.255.223.112:2881-->
+<dubbo:registry protocol="zookeeper" address="10.255.223.112:2881"/>  
 
 
 
@@ -20,6 +21,8 @@
     <dubbo:reference id="iMediaApi" interface="com.dangdang.digital.api.IMediaApi" protocol="dubbo" version="5.0"
                      timeout="10000"/>
     <dubbo:reference id="iChannelApi" interface="com.dangdang.digital.api.IChannelApi" protocol="dubbo" version="5.0"
+                     timeout="10000"/>
+   	<dubbo:reference id="iUcenterApi" interface="com.dangdang.ucenter.api.service.IUcenterApi" protocol="dubbo" version="5.0"
                      timeout="10000"/>
 
 

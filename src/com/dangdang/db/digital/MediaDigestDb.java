@@ -1,6 +1,7 @@
 package com.dangdang.db.digital;
 
 import com.dangdang.config.Config;
+import com.dangdang.db.SqlUtil;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaDigest;
 import com.dangdang.enumeration.StoreUpType;
@@ -80,8 +81,8 @@ public class MediaDigestDb {
     }
     
     
-    //Add guohaiying
     //获取频道中的文章
+    //type: 类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
     //SELECT * FROM `media_digest` WHERE id IN (SELECT  digest_id FROM `channel_articles_digest` WHERE is_publish=1 AND channel_id IS NOT NULL AND `status` IN (0, 1, 2) ORDER BY articles_id);
     public static  List<String> getDigestId(String type) throws Exception{
     	int _type = Integer.valueOf(type);
@@ -95,9 +96,54 @@ public class MediaDigestDb {
         
     }
     
+	//选取有效地type类型的文章
+    //CommentTargetCountDb.java used
+    //类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
+	public static List<String> getDigest(int type) throws Exception{
+		String selectSQL = "SELECT d.id "+
+                " FROM"+
+                	" digital.media_digest d,"+
+                	" digital.channel_articles_digest cad,"+
+                	" digital.channel c"+
+                " WHERE d.id = cad.digest_id"+
+                " AND cad.channel_id = c.channel_id"+
+                " AND cad. STATUS IN ('0', '1')"+
+                " AND c. STATUS IN ('0', '1')"+
+                " AND c.shelf_status = '1'  AND d.is_show=1 AND d.is_del=0 AND d.type="+type+
+                " AND cad.is_publish = 1 ";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		List<String> list = new ArrayList<String>();
+		for(int i=0; i<infos.size(); i++){
+			list.add(infos.get(i).get("id").toString());
+		}
+		return list;
+	}
+    
     //攻略
     //SELECT * FROM `comment_target_count` WHERE target_source=7000 ORDER BY browse_count DESC
     
+    //获取用户的某个攻略/文章
+    //type: 类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
+    public static String getUserDigestId(String custId, String type) throws Exception{
+    	int _type = Integer.valueOf(type);
+    	String selectString = "SELECT id FROM `media_digest` " +
+    			"WHERE type ="+_type+" AND id IN " + 
+    			SqlUtil.getListToString(ChannelArticlesDigestDb.getUserChannelDigest(custId));
+    	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectString);
+		int n = (int) (Math.random()*(infos.size()-1));
+    	return infos.get(n).get("id").toString();  	
+    }
     
+    public static void main(String[] args){
+    	String s;
+		try {
+			s = MediaDigestDb.getUserDigestId("50098052","3");
+			System.out.println(s);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
 
 }
