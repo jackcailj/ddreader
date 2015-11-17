@@ -95,7 +95,7 @@ public class FixtureBase extends InterfaceBase{
 //	}
 	
 	/**
-	 * @param actionName
+
 	 * @param exceptedCode 鎺ュ彛杩斿洖鐨刢ode鍊�
 	 * @throws Exception
 	 */
@@ -408,6 +408,7 @@ public class FixtureBase extends InterfaceBase{
         login=null;
         result=null;
 		VariableStore.clear();
+		dataVerifyResult=true;
 
 
     }

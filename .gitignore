@@ -57,3 +57,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 /test-output
+logs/example_log.txt
