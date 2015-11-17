@@ -6,7 +6,10 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaDigest;
 import com.dangdang.enumeration.StoreUpType;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -132,6 +135,24 @@ public class MediaDigestDb {
     	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectString);
 		int n = (int) (Math.random()*(infos.size()-1));
     	return infos.get(n).get("id").toString();  	
+    }
+    /**
+     * 获取书友圈的文章
+     * @param
+     *       custId:用户id
+     *       limit： 取几条记录
+     *       date： sort page时间 
+     * */    
+    public static  List<Map<String, Object>> getDigestOfBookFriend(String custId, String limit, String date) throws Exception{
+    	DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    	
+    	String selectString = "SELECT id,title,type*1 as type FROM media_digest "
+    			            + "where creator_cust_id in "
+    			            + "(select passive_user_id from ucenter.book_firend bf where (bf.active_user_id="+custId+" or bf.passive_user_id="+custId+")) "
+    			            + "and is_show=1 and is_del=0 and sort_page"+date+" and show_start_date<'"+df.format(new Date())
+  			                +"' ORDER BY sort_page DESC limit "+limit;
+    	List<Map<String, Object>> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString);
+        return mediaDigests;
     }
     
     public static void main(String[] args){
