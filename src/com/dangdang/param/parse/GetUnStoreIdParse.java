@@ -1,6 +1,8 @@
 package com.dangdang.param.parse;
 
 import com.dangdang.common.functional.login.ILogin;
+import com.dangdang.db.digital.ChannelDb;
+import com.dangdang.db.digital.MediaDigestDb;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.enumeration.BookStatus;
 import com.dangdang.enumeration.BookType;
@@ -100,10 +102,10 @@ public class GetUnStoreIdParse implements IParamParse{
                 }
 
                 Integer number=Integer.parseInt(params[1]);
-//                List<MediaDigest> mediaDigests =ChannelSQL.getMediaDigest(storeUpType,bookStatus,productIds,false,number);
-//                for(MediaDigest mediaDigest:mediaDigests){
-//                    mediaIds.add(mediaDigest.getId());
-//                }
+                List<MediaDigest> mediaDigests = MediaDigestDb.getMediaDigest(storeUpType,bookStatus,productIds,false,number);
+                for(MediaDigest mediaDigest:mediaDigests){
+                    mediaIds.add(mediaDigest.getId());
+                }
             }
 
 
