@@ -38,7 +38,7 @@ public class DelArticle extends FixtureBase{
 		params.putAll(Config.getCommonParam());
 		login = parseResult.getLogin();		
 		String sql = "select bm.bar_id from bar_member as bm left join bar as b on bm.bar_id=b.bar_id "
-				+ "where bm.cust_id="+login.getCustId()+" and bm.member_status!=4 and b.bar_status!=4"
+				+ "where bm.cust_id="+login.getCustId()+" and bm.member_status!=4 and b.bar_status=2"
 				+ " ORDER BY rand() limit 1";
 		String barId = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_id").toString();
 		params.put("barId",barId);	

@@ -45,7 +45,8 @@ public class GetCommentList extends FixtureBase{
 		if(reponseResult.getStatus().getCode() == 0){
 			String subSql = (paramMap.get("commentId").equals("0"))?"":" and comment_id<"+commentId;
 			String sql = "select * from comment where status=1 and target_source="+paramMap.get("targetSource")
-					   +" and target_id="+targetId+" and comment_parent_id=0"+subSql+" order by last_modified_date DESC";
+					   +" and target_id="+targetId+" and comment_parent_id=0"+subSql+" order by create_date DESC";
+				//	   +" order by last_modified_date DESC";
 			List<Comment> comment = DbUtil.selectList(Config.BSAECOMMENT, sql, Comment.class);
 		    int comCount = comment.size();
 			for(int i=0; i<comment.size(); i++){

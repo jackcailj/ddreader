@@ -85,10 +85,10 @@ public class BarMember extends FixtureBase {
 				numberNum = numberNum-1;	
 				//5.2版本中，退出吧，扣减积分，5.2之前的版本，不扣减
 				//退出吧，减经验和积分各5分
-//				experience = -5;
-//				integral = -5;
-//				account_experience = account_experience + experience;
-//				account_integral = account_integral + integral;
+				experience = -5;
+				integral = -5;
+				account_experience = account_experience + experience;
+				account_integral = account_integral + integral;
 			}
 			sql = "SELECT * FROM `attach_account` where cust_id="+login.getCustId();
 			AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);

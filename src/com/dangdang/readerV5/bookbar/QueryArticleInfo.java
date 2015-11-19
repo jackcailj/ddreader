@@ -60,7 +60,6 @@ public class QueryArticleInfo  extends FixtureBase{
 			List<String> list1 = new ArrayList<String>();	
 			List<String> list2 = new ArrayList<String>();	
 			list1.add(digest.get("bar_id").toString());
-			list1.add(digest.get("content").toString());
 			list1.add(userInfo!=null?userInfo.get("cust_nickname").toString().split("@")[0]:null);
 			list1.add(mediaDigestId);
 			list1.add(!(digest.get("title")==null||digest.get("title").toString().isEmpty())?digest.get("title").toString():null);
@@ -78,7 +77,6 @@ public class QueryArticleInfo  extends FixtureBase{
 				list1.add("0");
 			}			
 			list2.add(article.getBarId());
-			list2.add(article.getContent());
 			String nickName = null;
 			if(userInfo!=null){
 				if(paramMap.get("action").equals("queryArticleInfo")){

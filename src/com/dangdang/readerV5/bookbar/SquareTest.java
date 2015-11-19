@@ -158,7 +158,7 @@ public class SquareTest extends FixtureBase{
 		//type: 类型（1.吧模块 2.帖子模块 3.标签模块）
 		//status: 状态（1.显示 2.屏蔽 3.已删除）
 		//查找广场显示的热帖信息，在客户端会以权重大小为顺序排列，权重最大的排在第一个
-		String sql = "select * from bar_module where status=1 and type=2 ORDER BY module_order DESC";
+		String sql = "select * from bar_module where status=1 and type=2 and module_order!=0 ORDER BY module_order DESC";
 		List<BarModule> bModuleList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarModule.class);
 		for(int l=0,i=0; i< bModuleList.size(); i++,l++){
 			SquareInfo info = new SquareInfo();
@@ -198,16 +198,8 @@ public class SquareTest extends FixtureBase{
 					Map<String,Object> digest = DbUtil.selectOne(Config.YCDBConfig, sql);
 					aContentOfDB.setContent(digest.get("card_remark").toString());
 					aContentOfDB.setCustId(reponseResult.getData().getSquareInfo().get(l).getArticleContent().get(m).getCustId());
-					List<String> imgList = new ArrayList<String>();
 					List<String> img = reponseResult.getData().getSquareInfo().get(l).getArticleContent().get(m).getImgList();
-					if(img!=null){
-						//for(int k=1; k<=(img.size()>3?3:img.size()); k++){
-					    for(int k=1; k<=img.size(); k++){
-							imgList.add(digest.get("small_pic"+k+"_path").toString());
-						}
-					}
-					logger.info("imglist is "+imgList.toString());
-					aContentOfDB.setImgList(imgList.isEmpty()?null:imgList);
+					aContentOfDB.setImgList(img==null?null:img);
 					aContentOfDB.setIsPraise("0");
 					aContentOfDB.setIsTop(article.getIsTop().toString());
 					aContentOfDB.setLastModifiedDateMsec(article.getLastModifiedDateMsec().toString());
@@ -215,7 +207,6 @@ public class SquareTest extends FixtureBase{
 					aContentOfDB.setTitle(digest.get("title")==null?null:digest.get("title").toString());
 					aContentOfDB.setType(Integer.toString(article.getType()));
 					aContentListOfDB.add(aContentOfDB);
-					logger.info("l1 is  "+l);
 					if(aContentListOfDB.size()==11){
 						break;
 					}
@@ -230,11 +221,6 @@ public class SquareTest extends FixtureBase{
 			dataVerifyManager.add(new ValueVerify(reponseResult.getData().getSquareInfo().get(l).getModule(),moduleOfDB, true));
 			if(aContentListOfDB.size()!=0){
 				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(l).getArticleContent(), aContentListOfDB, true));
-				logger.info("l2 is  "+l);
-				logger.info("aContentListOfDB is  "+aContentListOfDB.size());
-				logger.info("aContentListOfDB is  "+reponseResult.getData().getSquareInfo().get(l).getArticleContent().size());
-				
-				
 			}
 		}
 		super.dataVerify();

@@ -26,9 +26,9 @@ public class PublishArticle extends FixtureBase{
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
 		if(publishCount==4){
-			//四次发帖成功后，等待80秒
+			//四次发帖成功后，等待90秒
 			//防刷帖机制：60秒内发帖不能超过三次，第四次发帖，会提示“发帖速度太快，请休息一会儿吧”			
-			Thread.sleep(1000*80);
+			Thread.sleep(1000*90);
 			publishCount = 0;
 		}
 		super.setParameters(params);
