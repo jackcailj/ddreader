@@ -1,5 +1,6 @@
 package com.dangdang.db.digital;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -26,6 +27,22 @@ public class ChannelArticlesDigestDb {
 					"WHERE type="+type+")";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		return null;
+	}
+	
+	//获取用户的文章
+	public static List<String> getUserChannelDigest(String custId) throws Exception{
+		int _custId = Integer.valueOf(custId);
+		String selectSQL ="SELECT digest_id " +
+				"FROM `channel_articles_digest` " +
+				"WHERE channel_id=(SELECT channel_id " +
+							"FROM `channel` WHERE cust_id="+_custId+") " +
+				"AND `status` IN (0,1,2) AND is_publish=1";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		List<String> digestIdList = new ArrayList<String>();
+		for(int i=0; i<infos.size(); i++){
+			digestIdList.add(infos.get(i).get("digest_id").toString());
+		}
+		return digestIdList;
 	}
 	
 }

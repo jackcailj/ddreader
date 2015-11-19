@@ -9,7 +9,6 @@ import com.dangdang.config.Config;
 import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.digital.model.Channel;
 import com.dangdang.ucenter.api.service.IUcenterApi;
-import com.dangdang.ucenter.enums.ChannelOwnerEnums;
 import com.dangdang.ucenter.vo.UserBaseInfo;
 
 
@@ -23,7 +22,7 @@ public class IUcenterApiDubbo extends FixtureBase{
 	
 	public UserBaseInfo getUserBaseInfo(String custId){
 		Long _custId = Long.valueOf(custId);
-		iUcenterApi.channelOwnerAuthorizationHandle(_custId,ChannelOwnerEnums.UNPASS);		
+		//iUcenterApi.channelOwnerAuthorizationHandle(_custId,ChannelOwnerEnums.UNPASS);		
 		UserBaseInfo userInfo = iUcenterApi.getUserBaseInfo(_custId);
 		return userInfo;
 	}
@@ -42,20 +41,11 @@ public class IUcenterApiDubbo extends FixtureBase{
 	}	
 	
 	public static void main(String[] args){
+		//测试点：认证通过账户50230557    认证不通过账户 50098052   未申请过认证的用户    个人账户   企业账户 
 		IUcenterApiDubbo dubbo = new IUcenterApiDubbo();
-		UserBaseInfo user = dubbo.getUserBaseInfo("50098052");
-		System.out.println("aabb"+user.getBarOwnerLevel());
-		System.out.println("aabb"+user.getChannelOwner());
-		System.out.println("aabb"+user.isCreateBar());
-		System.out.println("aabb"+user.getCustImg());
-		System.out.println("aabb"+user.getDisplayId());
-		System.out.println("aabb"+user.getExperience());
-		System.out.println("aabb"+user.getGender());
-		System.out.println("aabb"+user.getIntegral());
-		System.out.println("aabb"+user.getIntroduct());
-		System.out.println("aabb"+user.getLevel());
-		System.out.println("aabb"+user.getNickName());
-		System.out.println("aabb"+user.getNickNameAll());
-		System.out.println("aabb"+user.getPubCustId());		
+		UserBaseInfo user = dubbo.getUserBaseInfo("50244453");
+		//频道道长认证 0:无认证 1:已认证   //ucenter    login_record表
+		// digest  channel_owner表
+		System.out.println("ChannelOwner："+user.getChannelOwner());	
 	}
 }

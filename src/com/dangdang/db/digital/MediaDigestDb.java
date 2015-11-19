@@ -1,9 +1,12 @@
 package com.dangdang.db.digital;
 
 import com.dangdang.config.Config;
+import com.dangdang.db.SqlUtil;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaDigest;
+import com.dangdang.enumeration.BookStatus;
 import com.dangdang.enumeration.StoreUpType;
+import org.apache.commons.lang3.StringUtils;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -83,8 +86,8 @@ public class MediaDigestDb {
     }
     
     
-    //Add guohaiying
     //获取频道中的文章
+    //type: 类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
     //SELECT * FROM `media_digest` WHERE id IN (SELECT  digest_id FROM `channel_articles_digest` WHERE is_publish=1 AND channel_id IS NOT NULL AND `status` IN (0, 1, 2) ORDER BY articles_id);
     public static  List<String> getDigestId(String type) throws Exception{
     	int _type = Integer.valueOf(type);
@@ -98,9 +101,43 @@ public class MediaDigestDb {
         
     }
     
+	//选取有效地type类型的文章
+    //CommentTargetCountDb.java used
+    //类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
+	public static List<String> getDigest(int type) throws Exception{
+		String selectSQL = "SELECT d.id "+
+                " FROM"+
+                	" digital.media_digest d,"+
+                	" digital.channel_articles_digest cad,"+
+                	" digital.channel c"+
+                " WHERE d.id = cad.digest_id"+
+                " AND cad.channel_id = c.channel_id"+
+                " AND cad. STATUS IN ('0', '1')"+
+                " AND c. STATUS IN ('0', '1')"+
+                " AND c.shelf_status = '1'  AND d.is_show=1 AND d.is_del=0 AND d.type="+type+
+                " AND cad.is_publish = 1 ";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		List<String> list = new ArrayList<String>();
+		for(int i=0; i<infos.size(); i++){
+			list.add(infos.get(i).get("id").toString());
+		}
+		return list;
+	}
+    
     //攻略
     //SELECT * FROM `comment_target_count` WHERE target_source=7000 ORDER BY browse_count DESC
     
+    //获取用户的某个攻略/文章
+    //type: 类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
+    public static String getUserDigestId(String custId, String type) throws Exception{
+    	int _type = Integer.valueOf(type);
+    	String selectString = "SELECT id FROM `media_digest` " +
+    			"WHERE type ="+_type+" AND id IN " + 
+    			SqlUtil.getListToString(ChannelArticlesDigestDb.getUserChannelDigest(custId));
+    	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectString);
+		int n = (int) (Math.random()*(infos.size()-1));
+    	return infos.get(n).get("id").toString();  	
+    }
     /**
      * 获取书友圈的文章
      * @param
@@ -119,6 +156,32 @@ public class MediaDigestDb {
     	List<Map<String, Object>> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString);
         return mediaDigests;
     }
+
+    /*
+    获取文章
+     */
+    public static List<MediaDigest> getMediaDigest(StoreUpType storeUpType, BookStatus bookStatus, List<String> DigestIdList, boolean isIn, int number) throws Exception {
+
+        String selectString="select id,author,media_id,media_chapter_id,media_name,bar_id,first_catetory_id,first_catetory_name,content,type*1 as type,column_id,column_name,stars,review_cnt,collect_cnt,share_cnt,\t\n" +
+                "click_cnt,top_cnt,card_title,card_remark,card_type*1 as card_type,pic1_path,small_pic1_path,small_pic2_path,small_pic3_path,show_start_date,create_date,title,\t\n" +
+                "is_show,is_del,sign_ids,day_or_night,mood,weight,operator,sort_page,is_paper_book from media_digest where "+(storeUpType.getDigestType()==""?" 1=1 ":" type in("+storeUpType.getDigestType()+")")+
+                (bookStatus==BookStatus.VALID?" and is_del=0 ":" and is_del=1 ")+
+                (DigestIdList.size()==0?"":" and id "+(isIn?" in ":"not in ")+"("+ StringUtils.join(DigestIdList, ",")+")")+
+                " limit "+number;
+        List<MediaDigest> mediaDigest = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, MediaDigest.class);
+        return mediaDigest;
+    }
     
+    public static void main(String[] args){
+    	String s;
+		try {
+			s = MediaDigestDb.getUserDigestId("50098052","3");
+			System.out.println(s);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    }
 
 }
