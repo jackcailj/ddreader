@@ -143,16 +143,17 @@ public class MediaDigestDb {
      * @param
      *       custId:用户id
      *       limit： 取几条记录
-     *       date： sort page时间 
+     *       date： create date时间 
      * */    
     public static  List<Map<String, Object>> getDigestOfBookFriend(String custId, String limit, String date) throws Exception{
     	DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     	
     	String selectString = "SELECT id,title,type*1 as type FROM media_digest "
     			            + "where creator_cust_id in "
-    			            + "(select passive_user_id from ucenter.book_firend bf where (bf.active_user_id="+custId+" or bf.passive_user_id="+custId+")) "
-    			            + "and is_show=1 and is_del=0 and sort_page"+date+" and show_start_date<'"+df.format(new Date())
-  			                +"' ORDER BY sort_page DESC limit "+limit;
+    			            + "(select passive_user_id from ucenter.book_firend bf1 where bf1.active_user_id="+custId
+    			            + " UNION select active_user_id from ucenter.book_firend bf2 where  bf2.passive_user_id="+custId+") "
+    			            + "and is_show=1 and is_del=0 and create_date"+date+" and show_start_date<'"+df.format(new Date())
+  			                +"' ORDER BY create_date DESC limit "+limit;
     	List<Map<String, Object>> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString);
         return mediaDigests;
     }
