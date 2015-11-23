@@ -7,7 +7,7 @@ import java.util.Map;
 import com.dangdang.config.Config;
 import com.dangdang.db.digital.RefreshCache;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.readerV5.reponse.ChannelList;
+import com.dangdang.digital.meta.Channel;
 
 /**
  * 
@@ -18,8 +18,7 @@ public class MediaColumnContentDb {
 	
 	//获取频道栏目下频道列表 
 	//MediaColumn.class used
-    public static List<ChannelList> getChannelList(String columnCode, int num) throws Exception {
-       
+    public static List<Channel> getChannelList(String columnCode, int num) throws Exception {       
     	String selectSQL = "SELECT channel.channel_id,channel.owner_id,channel.title,channel.description,channel.icon,channel.sub_number" +
     			" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
 				" where column_code ='"+columnCode+"'"+
@@ -28,20 +27,8 @@ public class MediaColumnContentDb {
 				" and  mcc.status in(1,2)"+
 				" and  now() between start_date and end_date"+
 				" order by mcc.status asc , IF(ISNULL(order_value),1,0) asc,order_value desc LIMIT "+num;      
-        List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-        List<ChannelList> channelList = new ArrayList<ChannelList>();
-        for(int i=0; i<infos.size(); i++){
-        	ChannelList tmp = new ChannelList();
-        	tmp.setChannelId(infos.get(i).get("channel_id").toString());
-        	//tmp.setDescription(infos.get(i).get("description").toString());
-        	//设置type
-        	tmp.setOwnerType(ChannelOwner.getOwnerType(infos.get(i).get("owner_id").toString()));      	
-        	tmp.setIcon(infos.get(i).get("icon").toString());
-        	tmp.setSubNumber(Integer.valueOf(infos.get(i).get("sub_number").toString()));
-        	tmp.setTitle(infos.get(i).get("title").toString());       	
-        	channelList.add(tmp);
-        }
-        return channelList;
+        List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Channel.class);	
+        return infos;
     }
        
 	
@@ -186,6 +173,12 @@ public class MediaColumnContentDb {
 	}
 	
 	public static void main(String[] args){
-		
+		try {
+			List<Channel> list = MediaColumnContentDb.getChannelList("all_rec_pdzbtj",10);
+			System.out.println(list.get(0).getChannelId());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 }

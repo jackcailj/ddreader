@@ -52,6 +52,16 @@ public class MediaDigestDb {
         return mediaDigests;
     }
     
+    /*
+    获取某个文章或帖子信息
+*/
+    public static MediaDigest getMediaDigest(String id) throws Exception {
+    	String selectString="select id,author,type*1 as type,card_title,card_remark,pic1_path " +
+    			"from media_digest where id="+id;
+    	MediaDigest mediaDigests = DbUtil.selectOne(Config.YCDBConfig,selectString,MediaDigest.class);
+    	return mediaDigests;
+    }
+    
     /**
      * 当前时间到上次更新时间之间的翻篇儿新增文章条数
      * 当前时间到上次更新时间之间的抢先读新增文章条数

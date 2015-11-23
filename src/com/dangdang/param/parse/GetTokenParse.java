@@ -1,5 +1,6 @@
 package com.dangdang.param.parse;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
@@ -7,16 +8,16 @@ import org.apache.commons.lang3.StringUtils;
 import com.dangdang.config.Config;
 import com.dangdang.db.authority.AuthorityDb;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
+import com.dangdang.db.digital.ChannelDb;
 import com.dangdang.db.ucenter.UserDeviceDb;
 import com.dangdang.enumeration.TokenType;
 
 /**
  * 
  * @author guohaiying
- *
  */
 public class GetTokenParse implements IParamParse{
-
+	String tokenFlag="";
 	@Override
 	public Object parse(Map<String, String> param) throws Exception {
 		return null;
@@ -27,7 +28,7 @@ public class GetTokenParse implements IParamParse{
 			throws Exception {
 		if(StringUtils.isNotBlank(param)){
 			String[] params= ParamParse.parseParam(param);
-			String tokenFlag = params[0].trim();
+			tokenFlag = params[0].trim();
 			String deviceType = Config.getCommonParam().get("deviceType");
 			
 			if(tokenFlag.equals(TokenType.UserNoMonthly.toString())){ //获取没有频道包月的Token
@@ -51,6 +52,17 @@ public class GetTokenParse implements IParamParse{
 				paramMap.put("mediaId", AuthorityDb.getUserAlreadyBuyBook(UserDeviceDb.getCustIdByToken(token)));
 			}
 		
+		}
+		
+		if(paramMap.get("cId")!=null){
+			if(paramMap.get("cId").equals("auto")&&tokenFlag.equals(TokenType.UserMonthly.toString())){
+				String custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
+				List<String> channels = MediaMonthlyAuthorityDb.getUserMonthlyChannelID(custId);
+				int n=(int)Math.random()*(channels.size()-1);
+				paramMap.put("cId",channels.get(n));
+			}else if(paramMap.get("cId").equals("auto")&&tokenFlag.equals(TokenType.UserNoMonthly.toString())){
+				paramMap.put("cId",ChannelDb.getChannelWithOwnerType("1"));
+			}
 		}
 	}
 

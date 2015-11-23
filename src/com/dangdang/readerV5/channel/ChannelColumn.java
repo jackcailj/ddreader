@@ -1,6 +1,7 @@
 package com.dangdang.readerV5.channel;
 
 import java.util.List;
+import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -8,27 +9,23 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ExpressionVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.db.digital.ChannelDb;
+import com.dangdang.digital.meta.Channel;
+import com.dangdang.db.digital.MediaColumnContentDb;
 import com.dangdang.db.digital.MediaColumnDb;
+import com.dangdang.db.ucenter.LoginRecordDb;
 import com.dangdang.readerV5.reponse.ChannelColumnReponse;
 import com.dangdang.readerV5.reponse.ChannelList;
-
-
-import fitnesse.slim.SystemUnderTest;
+import com.dangdang.readerV5.reponse.UserBaseInfo;
 
 /**
  * 频道列表接口
  * @author guohaiying
- *
  */
 public class ChannelColumn extends FixtureBase{
 	ReponseV2<ChannelColumnReponse> jsonResult;
 		
-	@SystemUnderTest
-	public MediaColumnDb db = new MediaColumnDb();
-	
 	public ChannelColumn(){
-		addAction("column");
+    	addAction("column");
 	}
 
     @Override
@@ -39,40 +36,56 @@ public class ChannelColumn extends FixtureBase{
 
     @Override
     protected void dataVerify() throws Exception {
-        if(reponseV2Base.getStatus().getCode()==0){
-        	log.info("验证频道栏目"+paramMap.get("columnType")+"下的频道列表: ");
-        	int num = Integer.valueOf(paramMap.get("end"))-Integer.valueOf(paramMap.get("start"))+1;
-        	ChannelColumnReponse dbResult = db.getChannelColumn(paramMap.get("columnType"), num);
+        if(reponseV2Base.getStatus().getCode()==0&&jsonResult.getData().getCount()!=0){
+        	String columnType = paramMap.get("columnType");
+        	//验证 name 
+        	String actualName = jsonResult.getData().getName();
+        	String expectedName = MediaColumnDb.getColumnName(columnType);
+        	dataVerifyManager.add(new ValueVerify<String>(actualName.replace("•",""), expectedName.replace("?","")).setVerifyContent("验证栏目name"));   	       	      	
         	
-			dataVerifyManager.add(new ValueVerify<String>(jsonResult.getData().getColumnCode(), dbResult.getColumnCode()).setVerifyContent("验证ColumnCode"));
-			dataVerifyManager.add(new ValueVerify<Integer>(jsonResult.getData().getCount(), dbResult.getCount()).setVerifyContent("验证Count"));
-			String jsonName = jsonResult.getData().getName();
-			String dbName = dbResult.getName();
-			dataVerifyManager.add(new ValueVerify<String>(jsonName.replace("•",""), dbName.replace("?","")).setVerifyContent("验证Name"));
-			dataVerifyManager.add(new ValueVerify<String>(jsonResult.getData().getTips(), dbResult.getTips()).setVerifyContent("验证Tips"));
-			dataVerifyManager.add(new ValueVerify<Integer>(jsonResult.getData().getTotal(), dbResult.getTotal()).setVerifyContent("验证Total"));
-       
-			//验证ChannelList
-			List<ChannelList> jsonList = jsonResult.getData().getChannelList();
-			List<ChannelList> dbList = dbResult.getChannelList();
-			for(int i=0; i<jsonList.size(); i++){
-				dataVerifyManager.add(new ValueVerify<String>(jsonList.get(i).getChannelId(), dbList.get(i).getChannelId()).setVerifyContent("验证ChannelId"));
-				dataVerifyManager.add(new ValueVerify<String>(jsonList.get(i).getIcon(), dbList.get(i).getIcon()).setVerifyContent("验证Icon"));
-				dataVerifyManager.add(new ValueVerify<String>(jsonList.get(i).getOwnerType(), dbList.get(i).getOwnerType()).setVerifyContent("验证OwnerType"));
-				dataVerifyManager.add(new ValueVerify<Integer>(jsonList.get(i).getHasBoughtMonthly(), dbList.get(i).getHasBoughtMonthly()).setVerifyContent("验证hasBoughtMonthly"));
-				int jsonSubNumber = jsonList.get(i).getSubNumber();
-				int dbSubNumber = dbList.get(i).getSubNumber();
-				dataVerifyManager.add(new ExpressionVerify(Math.abs(jsonSubNumber-dbSubNumber)<=10).setVerifyContent("验证SubNumber,jsonValue"+jsonSubNumber+" dbValue"+dbSubNumber));
-				dataVerifyManager.add(new ValueVerify<String>(jsonList.get(i).getTitle(), dbList.get(i).getTitle()).setVerifyContent("验证Title"));				
-			}
-			     
+        	//验证 channelId title subNumber icon description
+        	List<ChannelList> actualList = jsonResult.getData().getChannelList();
+        	int num = Integer.valueOf(paramMap.get("end"))-Integer.valueOf(paramMap.get("start"))+1;
+        	List<Channel> expectedList = MediaColumnContentDb.getChannelList(columnType, num);      	
+        	for(int i=0; i<actualList.size();i++){
+        		String channelId = actualList.get(i).getChannelId();
+        		dataVerifyManager.add(new ValueVerify<String>(channelId, String.valueOf(expectedList.get(i).getChannelId())).setVerifyContent("验证channelId"));
+        		
+        		//验证title
+        		String actualTitle = actualList.get(i).getTitle().replace("∇","").replace("♪","");
+        		String expectedTitle = expectedList.get(i).getTitle().replace("?","");
+        		dataVerifyManager.add(new ValueVerify<String>(actualTitle, expectedTitle).setVerifyContent("验证title"));
+        		
+        		//验证subNumber
+        		int actualSubNumber = actualList.get(i).getSubNumber();
+        		int expectedSubNumber = expectedList.get(i).getSubNumber();
+        		System.out.println(channelId+"的actualSubNumber： "+ actualSubNumber);
+        		System.out.println(channelId+"的expectedSubNumber： "+ expectedSubNumber);
+        		dataVerifyManager.add(new ExpressionVerify(Math.abs(actualSubNumber-expectedSubNumber)<10?true:false).setVerifyContent("验证subNumber"));
+        		dataVerifyManager.add(new ValueVerify<String>(actualList.get(i).getIcon(), expectedList.get(i).getIcon()).setVerifyContent("验证icon"));
+        		dataVerifyManager.add(new ValueVerify<String>(actualList.get(i).getDescription().replace("∇","").replace("❀",""), expectedList.get(i).getDescription().replace("?","")).setVerifyContent("验证description"));
+        		
+        		//验证 nickName ChannelOwner
+        		UserBaseInfo actualUser = actualList.get(i).getUserBaseInfo();
+        		Map<String, Object> expectedUser = LoginRecordDb.getUserLoginRecord(actualList.get(i).getChannelId());
+        		if(expectedUser==null||expectedUser.equals(null))
+        			dataVerifyManager.add(new ValueVerify<String>(actualUser.getChannelOwner(), "0").setVerifyContent("验证ChannelOwner"));
+        		else{
+        			dataVerifyManager.add(new ValueVerify<String>(actualUser.getNickNameAll(), expectedUser.get("cust_nickname").toString()).setVerifyContent("验证nickName"));
+        			dataVerifyManager.add(new ValueVerify<String>(actualUser.getChannelOwner(), String.valueOf(expectedUser.get("channel_owner").toString())).setVerifyContent("验证ChannelOwner"));
+        		}
+        	}        	
+        	dataVerifyManager.add(new ValueVerify<Integer>(actualList.size(), expectedList.size()).setVerifyContent("验证ChannelList size"));
+     
         }
         super.dataVerify();
     }
-    
-	//获取某栏目下频道的总数+1
-	public int getNum(String columnCode) throws Exception{
-		return ChannelDb.getChannelList(columnCode).size()+ 1;
+	
+	public static void main(String[] args){
+		String actualTitle = "欧巴（≧∇≦）传递爱与正能量";
+		String actual = actualTitle.replace("∇","");
+		System.out.println(actual);
+		
 	}
 	
 }

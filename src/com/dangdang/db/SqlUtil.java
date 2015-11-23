@@ -27,6 +27,10 @@ public class SqlUtil {
 		return list.get(n);
 	}
 	
+	public static int getRandNum(List arg){
+		return (int)(Math.random()*(arg.size()-1));
+	}
+	
 	public static void main(String[] args){
 		List<String> list = new ArrayList<String>();
 		list.add("aa");

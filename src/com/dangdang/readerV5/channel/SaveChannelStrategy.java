@@ -20,8 +20,9 @@ public class SaveChannelStrategy extends FixtureBase{
 	String _userIntegral; //用户积分
 	String custId;
 	
-	public void setParameters(Map<String, String> params) throws Exception{
-		super.parseParameters(params);
+	@Override
+	public void set(String name, String value){
+		super.set(name, value);
 		String title = "AutoTest"+ Math.random();
 		String content = "<body class=\"bodyContent\"><link rel=\"stylesheet\" href=\"http://e.dangdang.com/media/h5/fenxiang/raiders/radiersmodel.css\"><div class=\"raiderwrap\" data-channelid=\"\">" +
 				"<div class=\"raiderdes\"></div><div class=\"raidercell\"><h2><p><span class=\"block\"><i></i></span>唐璜——石宴：汉法对照(电子书)</p></h2><div class=\"raidercelldes\"></div>" +
@@ -37,6 +38,7 @@ public class SaveChannelStrategy extends FixtureBase{
 		paramMap.put("author",author);
 		paramMap.put("productArray",productArray);
 		
+		System.out.println("title: "+ paramMap.get("title"));
 	}
 	
 	/*

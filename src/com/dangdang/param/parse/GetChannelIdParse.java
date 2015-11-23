@@ -6,8 +6,10 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.dangdang.authority.meta.MediaMonthlyAuthority;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
+import com.dangdang.db.digital.ChannelArticlesDigestDb;
 import com.dangdang.db.digital.ChannelDb;
 import com.dangdang.db.digital.ChannelMonthlyStrategyDb;
+import com.dangdang.db.digital.ChannelSubUserDb;
 import com.dangdang.db.ucenter.UserDeviceDb;
 import com.dangdang.digital.meta.ChannelMonthlyStrategy;
 import com.dangdang.enumeration.ChannelId;
@@ -65,6 +67,17 @@ public class GetChannelIdParse implements IParamParse{
 				}
 				paramMap.put(key, cIdValue);
 
+			}else if(cId.equals(ChannelId.Mine.toString())){ //获取我自己的频道
+				custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
+				cIdValue = ChannelDb.getChannelIdByCustId(custId);
+				paramMap.put(key, cIdValue);
+			}else if(cId.equals(ChannelId.IfSub.toString())){
+				custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
+				if(flag.equals("0"))
+					cIdValue = ChannelSubUserDb.getNotUserChannel(custId);
+				else
+					cIdValue = ChannelSubUserDb.getUserSubChannel(custId);
+				paramMap.put(key, cIdValue);
 			}else{
 				throw new Exception("[custId:]"+custId+" 获取ChannelId失败！");
 			}
@@ -73,6 +86,13 @@ public class GetChannelIdParse implements IParamParse{
 				if(paramMap.get("channelMonthlyStrategyId").equals("auto")){
 					List<ChannelMonthlyStrategy> list = ChannelMonthlyStrategyDb.getChannelMonthlyStrategy(cIdValue);
 					paramMap.put("channelMonthlyStrategyId", String.valueOf(list.get(0).getId()));
+				}
+			}
+			
+			if(paramMap.get("digestId")!=null){
+				if(paramMap.get("digestId").equals("auto")){
+					//获取频道下的文章					
+					paramMap.put("digestId", ChannelArticlesDigestDb.getDigestIdByChannelId(cIdValue));
 				}
 			}
 

@@ -1,9 +1,12 @@
 package com.dangdang.param.parse;
 
+import java.util.List;
 import java.util.Map;
 
 import org.apache.commons.lang3.StringUtils;
 import com.dangdang.digital.meta.Media;
+import com.dangdang.digital.meta.MediaBooklistDetail;
+import com.dangdang.db.digital.MediaBookListDetailDb;
 import com.dangdang.db.digital.MediaDb;
 import com.dangdang.enumeration.BookStatus;
 import com.dangdang.enumeration.BookType;
@@ -23,8 +26,8 @@ public class GetMediaIdParse implements IParamParse{
 			String mediaId = params[0].trim();
 
 			if(mediaId.equals("1")){ 
-			Media media = MediaDb.getMedia(BookType.EBOOK, BookStatus.VALID);
-			paramMap.put(key, media.getMediaId().toString());
+				Media media = MediaDb.getMedia(BookType.EBOOK, BookStatus.VALID);
+				paramMap.put(key, String.valueOf(media.getMediaId()));
 			}
 		}
 	}

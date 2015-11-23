@@ -2,7 +2,7 @@ package com.dangdang.readerV5.reponse;
 
 public class ChannelList {
 	String channelId;
-	//String description;
+	String description;
 	Integer hasBoughtMonthly;
 	String icon;
 	//String owner;
@@ -18,12 +18,12 @@ public class ChannelList {
 	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 	}
-//	public String getDescription() {
-//		return description;
-//	}
-//	public void setDescription(String description) {
-//		this.description = description;
-//	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 	public Integer getHasBoughtMonthly() {
 		return hasBoughtMonthly;
 	}

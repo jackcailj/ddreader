@@ -7,9 +7,7 @@ import com.dangdang.ddframework.dataverify.ExpressionVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 
 /**
- * 
  * @author guohaiying
- *
  */
 public class ChangeAutoBuyMonthlyState extends FixtureBase{
 	String monthlyState1 ="";

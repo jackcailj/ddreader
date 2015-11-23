@@ -43,6 +43,8 @@ public class UserDeviceDb {
 	public static String getCustIdByToken(String token) throws Exception{
 		String selectSQL = "SELECT CUST_ID FROM `user_device` WHERE LOGIN_TOKEN='"+token+"'";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
+		if(infos.size()==0) return null;
+		else
 		return infos.get(0).get("CUST_ID").toString();
 	}
 	
@@ -54,7 +56,8 @@ public class UserDeviceDb {
 				"WHERE LOGIN_TOKEN IS NOT NULL " +
 				"AND CUST_ID IN "+SqlUtil.getListToString(custIdList);
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
-		return infos.get(0).get("LOGIN_TOKEN").toString();
+		int n= (int)Math.random()*(infos.size()-1);
+		return infos.get(n).get("LOGIN_TOKEN").toString();
 	}
 	
 	//获取没有包月的token
@@ -69,7 +72,8 @@ public class UserDeviceDb {
 				" ORDER BY LOGIN_TOKEN DESC " +
 				" LIMIT 1 ";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
-		return infos.get(0).get("LOGIN_TOKEN").toString();
+		int n= (int)Math.random()*(infos.size()-1);
+		return infos.get(n).get("LOGIN_TOKEN").toString();
 	}
 	
 	//获取有包月过期的Token
@@ -84,7 +88,8 @@ public class UserDeviceDb {
 				" ORDER BY LOGIN_TOKEN DESC " +
 				" LIMIT 1 ";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
-		return infos.get(0).get("LOGIN_TOKEN").toString();
+		int n= (int)Math.random()*(infos.size()-1);
+		return infos.get(n).get("LOGIN_TOKEN").toString();
 	}	
 	
 	//获取有频道(已下架)包月(未过期)的Token
@@ -103,7 +108,8 @@ public class UserDeviceDb {
 				" ORDER BY LOGIN_TOKEN DESC " +
 				" LIMIT 1 ";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
-		return infos.get(0).get("LOGIN_TOKEN").toString();
+		int n= (int)Math.random()*(infos.size()-1);
+		return infos.get(n).get("LOGIN_TOKEN").toString();
 	}	
 	
 	//获取没有买过书的Token
@@ -117,7 +123,8 @@ public class UserDeviceDb {
 				"' AND CUST_ID NOT IN "+SqlUtil.getListToString(custIDs)+
 				" LIMIT 1";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
-		return infos.get(0).get("LOGIN_TOKEN").toString();
+		int n= (int)Math.random()*(infos.size()-1);
+		return infos.get(n).get("LOGIN_TOKEN").toString();
 	}
 	
 	//获取买过书的Token
@@ -131,12 +138,13 @@ public class UserDeviceDb {
 				"' AND CUST_ID IN"+SqlUtil.getListToString(custIDs)+
 				" LIMIT 1";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
-		return infos.get(0).get("LOGIN_TOKEN").toString();
+		int n= (int)Math.random()*(infos.size()-1);
+		return infos.get(n).get("LOGIN_TOKEN").toString();
 	}
 	
 	public static void main(String[] args){
 		try {
-			String s=UserDeviceDb.getNoBuyBookToken("Android");
+			String s=UserDeviceDb.getCustIdByToken("Android");
 			System.out.println(s);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

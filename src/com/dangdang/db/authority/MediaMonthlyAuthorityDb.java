@@ -12,11 +12,20 @@ import com.dangdang.db.SqlUtil;
 import com.dangdang.ddframework.dbutil.DbUtil;
 
 /**
- * 
  * @author guohaiying
- *
  */
 public class MediaMonthlyAuthorityDb {
+	
+	//用户是否有包月权限
+	public static String getUserMonthlyAuthority(String custId, String channelId) throws Exception{
+		int _custId = Integer.valueOf(custId);
+		int _channelId = Integer.valueOf(channelId);
+		String selectSQL = "SELECT COUNT(1) FROM `media_monthly_authority` " +
+				"WHERE cust_id="+_custId+" AND relation_id="+_channelId+" AND platform_no=1002 AND monthly_type=2 " +
+				"AND NOW()>=monthly_start_time AND NOW()<=monthly_end_time";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.AUTHORITYConfig, selectSQL);
+		return infos.get(0).get("COUNT(1)").toString();
+	}
 	
 	//根据custId和channelId获取用户的已包月的频道
 	//BuyMonthlyAuthority.java used
@@ -25,7 +34,7 @@ public class MediaMonthlyAuthorityDb {
 		int _channelID = Integer.valueOf(channelID);
 		String selectSQL = "SELECT * " +
 				"FROM `media_monthly_authority` " +
-				"WHERE cust_id=50244532 AND relation_id=17";
+				"WHERE cust_id="+_custID+" AND relation_id="+_channelID;
 		List<MediaMonthlyAuthority> infos = DbUtil.selectList(Config.AUTHORITYConfig, selectSQL, MediaMonthlyAuthority.class);
 		if(infos==null)
 			return null;
@@ -53,22 +62,61 @@ public class MediaMonthlyAuthorityDb {
 	//获取用户已包月未过期的频道
 	//IMediaApiDubbo.java used
 	//GetChannelIdParse.java used
+	//GetBookListParse.java used
 	public static List<String> getUserMonthlyChannelID(String custId, String renewFlag) throws Exception{
-		int _custId = Integer.valueOf(custId);
-		int _renewFlag = Integer.valueOf(renewFlag);
 		String selectSQL = "SELECT relation_id " +
 				"FROM `media_monthly_authority` " +
 				"WHERE platform_no=1002 " +
 				"AND monthly_type=2 " +
 				"AND NOW()>=monthly_start_time " +
 				"AND NOW()<=monthly_end_time " +
-				"AND is_automatically_renew = "+_renewFlag+" AND cust_id="+_custId;		
+				"AND is_automatically_renew = "+renewFlag+" AND cust_id="+custId;			
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.AUTHORITYConfig, selectSQL);
 		List<String> list = new ArrayList<String>();
 		if(infos == null){
 			return null;
 		}else{
 			for(int i=0; i<infos.size(); i++){
+				list.add(infos.get(i).get("relation_id").toString());
+			}
+			return list;
+		}
+	}
+	
+	public static List<String> getUserMonthlyChannelID(String custId) throws Exception{
+		String	selectSQL = "SELECT relation_id " +
+				"FROM `media_monthly_authority` " +
+				"WHERE platform_no=1002 " +
+				"AND monthly_type=2 " +
+				"AND NOW()>=monthly_start_time " +
+				"AND NOW()<=monthly_end_time " +
+				"AND cust_id="+custId;	
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.AUTHORITYConfig, selectSQL);
+		List<String> list = new ArrayList<String>();
+		if(infos == null){
+			return null;
+		}else{
+			for(int i=0; i<infos.size(); i++){
+				list.add(infos.get(i).get("relation_id").toString());
+			}
+			return list;
+		}
+	}
+	
+	//获取用户包过月的所有频道
+	public static List<String> getUserAllMonthlyChannelID(String custId) throws Exception{
+		String	selectSQL = "SELECT relation_id " +
+				"FROM `media_monthly_authority` " +
+				"WHERE platform_no=1002 " +
+				"AND monthly_type=2 " +
+				"AND cust_id="+custId;	
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.AUTHORITYConfig, selectSQL);
+		List<String> list = new ArrayList<String>();
+		if(infos == null){
+			return null;
+		}else{
+			for(int i=0; i<infos.size(); i++){
+				System.out.println("aaaaaa: "+ infos.get(i).get("relation_id"));
 				list.add(infos.get(i).get("relation_id").toString());
 			}
 			return list;
@@ -138,6 +186,8 @@ public class MediaMonthlyAuthorityDb {
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.AUTHORITYConfig, selectSQL);
 		return infos.get(0).get("is_automatically_renew").toString();
 	}
+
+	
 	public static void main(String[] args){
 		 List<String> list = null;
 		try {

@@ -4,14 +4,21 @@ public class ChannelMediaList {
 
 	String authorPenname;
 	String channelId;
-	//String coverPic;
+	String coverPic;
 	String descs;
 	String isStore;
-	String mediaId;
-	String mediaType;
+	Long mediaId;
+	Integer mediaType;
 	String recommandWords;
-	String saleId;
+	Long saleId;
 	String title;
+	Long productId;
+	public Long getProductId() {
+		return productId;
+	}
+	public void setProductId(Long productId) {
+		this.productId = productId;
+	}
 	public String getAuthorPenname() {
 		return authorPenname;
 	}
@@ -24,12 +31,12 @@ public class ChannelMediaList {
 	public void setChannelId(String channelId) {
 		this.channelId = channelId;
 	}
-//	public String getCoverPic() {
-//		return coverPic;
-//	}
-//	public void setCoverPic(String coverPic) {
-//		this.coverPic = coverPic;
-//	}
+	public String getCoverPic() {
+		return coverPic;
+	}
+	public void setCoverPic(String coverPic) {
+		this.coverPic = coverPic;
+	}
 	public String getDescs() {
 		return descs;
 	}
@@ -42,16 +49,16 @@ public class ChannelMediaList {
 	public void setIsStore(String isStore) {
 		this.isStore = isStore;
 	}
-	public String getMediaId() {
+	public Long getMediaId() {
 		return mediaId;
 	}
-	public void setMediaId(String mediaId) {
+	public void setMediaId(Long mediaId) {
 		this.mediaId = mediaId;
 	}
-	public String getMediaType() {
+	public Integer getMediaType() {
 		return mediaType;
 	}
-	public void setMediaType(String mediaType) {
+	public void setMediaType(Integer mediaType) {
 		this.mediaType = mediaType;
 	}
 	public String getRecommandWords() {
@@ -60,10 +67,10 @@ public class ChannelMediaList {
 	public void setRecommandWords(String recommandWords) {
 		this.recommandWords = recommandWords;
 	}
-	public String getSaleId() {
+	public Long getSaleId() {
 		return saleId;
 	}
-	public void setSaleId(String saleId) {
+	public void setSaleId(Long saleId) {
 		this.saleId = saleId;
 	}
 	public String getTitle() {

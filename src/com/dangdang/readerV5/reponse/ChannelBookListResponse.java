@@ -1,7 +1,6 @@
 package com.dangdang.readerV5.reponse;
 
 public class ChannelBookListResponse {
-
 	ChannelBookList bookList;
 	String hasBoughtMonthly;
 	public ChannelBookList getBookList() {
