@@ -33,7 +33,7 @@ public class QueryTagDetail extends FixtureBase {
 	
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
-		String sql = "select bar_module_tag_id from bar_module_tag where status=1 ORDER BY RAND() limit 1";
+		String sql = "select bar_module_tag_id from bar_module_tag limit 1";
 		tagId = DbUtil.selectOne(Config.BOOKBARDBConfig, sql).get("bar_module_tag_id").toString();
 		if(params.get("moduleTagId")!=null&&params.get("moduleTagId").toString().equalsIgnoreCase("FromDB")){
 			params.put("moduleTagId", tagId);

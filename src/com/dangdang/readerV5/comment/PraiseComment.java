@@ -1,6 +1,8 @@
 package com.dangdang.readerV5.comment;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.autotest.common.FixtureBase;
@@ -19,22 +21,23 @@ public class PraiseComment extends FixtureBase{
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);		
+		String sql = null;
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("FromDB")){
-			String sql = "select target_id from comment where "
+			sql = "select target_id from comment where "
 					   + ((Config.getEnvironment()== TestEnvironment.TESTING)?"is_delete=0 and ":"")+"status=1 "
 					   + "and target_source="+paramMap.get("targetSource")+ " and target_id not in "
-					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+")"
-					   + "ORDER BY RAND() limit 1";
-			targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
-			paramMap.put("targetId",targetId);
+					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+")";			
+			
 		}
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("repeat")){
-			String sql = "select target_id from comment where "
+			sql = "select target_id from comment where "
 					   + ((Config.getEnvironment()== TestEnvironment.TESTING)?"is_delete=0 and ":"")+"status=1 "
 					   + "and target_source="+paramMap.get("targetSource")+ " and target_id in "
-					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+")"
-					   + "ORDER BY RAND() limit 1";
-			targetId = DbUtil.selectOne(Config.BSAECOMMENT, sql).get("target_id").toString();	
+					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+")";
+		}
+		if(sql!=null){
+			List<Map<String,Object>> list = DbUtil.selectList(Config.BSAECOMMENT, sql);
+			targetId = list.get((new Random()).nextInt(list.size())).get("target_id").toString();	
 			paramMap.put("targetId",targetId);
 		}
 	}

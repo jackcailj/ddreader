@@ -1,6 +1,7 @@
 package com.dangdang.readerV5.comment;
 
 import java.util.Map;
+import java.util.Random;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
@@ -27,7 +28,7 @@ public class DelComment extends FixtureBase{
 	 * 添加新评论 
 	 */
 	public String addComment(String targetId, String targetSource) throws Exception{		
-		String param = "action=addComment&targetId="+targetId+"&content=评论评论"
+		String param = "action=addComment&targetId="+targetId+"&content=好"+(new Random()).nextInt(20)
 				+ "&replyCommentId=0&replyId=0&commentParentId=0&targetSource="+targetSource+"&isAnonymous=0"
 				+ "&token=&userName=whytest@dd.con&passWord=111111&loginType=email";
 		Map<String,String> params = Util.generateMap(param);
@@ -45,7 +46,9 @@ public class DelComment extends FixtureBase{
 	   super.setParameters(params);		
 	   if(params.get("targetId")!=null&&params.get("targetId").equalsIgnoreCase("FromDB")){
 			String sql = "select target_id, comment_id from comment where is_delete=0 and status=1 "
-					   + "and target_source="+params.get("targetSource")+" ORDER BY RAND() limit 1";
+					   + "and target_source="+params.get("targetSource")+
+					   " and target_id in (select id from digital.media_digest where is_show=1 and is_del=0)"
+					   + " ORDER BY RAND() limit 1";
 			Map<String, Object> map = DbUtil.selectOne(Config.BSAECOMMENT, sql);
 			targetId = map.get("target_id").toString();
 			params.put("targetId",targetId);

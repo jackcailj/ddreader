@@ -34,16 +34,16 @@ public class QueryArticleList extends FixtureBase{
 			super.setParameters(params);
 			if(paramMap.get("barId")!=null&&paramMap.get("barId").equals("FromDB")){
 				String sql = "select bar_id from bar where bar_status!=4 and bar_id in "
-					         + "(select bar_id from article where is_show=1 and is_del=0) limit 20";
+					         + "(select bar_id from article where is_show=1 and is_del=0) limit 10";
 				barId1 = DbUtil.selectList(Config.BOOKBARDBConfig, sql)
-						.get((new Random()).nextInt(20)).get("bar_id").toString();	
+						.get((new Random()).nextInt(10)).get("bar_id").toString();	
 				paramMap.put("barId", barId1);
 			}
 			if(paramMap.get("objectId")!=null&&paramMap.get("objectId").equals("FromDB")){
 				String sql = "select br.bar_id, br.object_id from bar_relation as br left join "
 						+ "bar as b on br.bar_id=b.bar_id where b.bar_status!=4 and b.bar_id in "
-						+ "(select bar_id from article where is_show=1 and is_del=0) limit 20";
-				Map<String,Object> map = DbUtil.selectList(Config.BOOKBARDBConfig, sql).get((new Random()).nextInt(20));
+						+ "(select bar_id from article where is_show=1 and is_del=0) limit 10";
+				Map<String,Object> map = DbUtil.selectList(Config.BOOKBARDBConfig, sql).get((new Random()).nextInt(10));
 				barId2 = map.get("bar_id").toString();	
 				String objectId = map.get("object_id").toString();	
 				paramMap.put("objectId", objectId);
@@ -71,7 +71,6 @@ public class QueryArticleList extends FixtureBase{
 		reponseResult = getResult();
 		if(reponseResult.getStatus().getCode() == 0){
 			String sql = null;
-			int defaultSize=50;
 			if(paramMap.get("barId")!=null&&!(paramMap.get("barId").isEmpty())){
 				long time=System.currentTimeMillis();
 				sql = "select * from article where is_show=1 and is_del=0 and bar_id ="+barId1+" "
@@ -105,14 +104,6 @@ public class QueryArticleList extends FixtureBase{
 				list2.add(map2);
 			}
 			dataVerifyManager.add(new ListVerify(list1, list2,false));
-			
-			//验证帖子数量
-			if(article.size()>50){				
-				dataVerifyManager.add(new ValueVerify<Integer>(defaultSize, list.size(),false));
-			}
-			else{
-				dataVerifyManager.add(new ValueVerify<Integer>(article.size(), list.size(),false));
-			}
 			
 			//updateArticleNum的值
 			long lastVisitTime=0;

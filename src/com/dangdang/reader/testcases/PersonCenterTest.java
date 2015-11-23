@@ -208,14 +208,14 @@ public class PersonCenterTest extends  TestCaseBase {
 		assert(functional.getDataVerifyResult());
 	}	
 	
-	@Test(dataProvider="dataProvider")
+/*	@Test(dataProvider="dataProvider")
 	public void TouristsLoginTest(String caseName,Map<String, String> param,String excpectd) throws Exception {
 		TouristsLogin functional =new TouristsLogin(param);
 		functional.doWorkAndVerify();
 		
 		assert(excpectd.equals(functional.getReponseResult().getStatus().getCode().toString()));
 		assert(functional.getDataVerifyResult());
-	}	
+	}*/
 
 	
 	@Test

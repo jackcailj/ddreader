@@ -57,7 +57,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 /test-output
-src/com/dangdang/db/account/AccountExperienceItemsDb_BACKUP_11016.java
-src/com/dangdang/db/account/AccountExperienceItemsDb_BASE_11016.java
-src/com/dangdang/db/account/AccountExperienceItemsDb_LOCAL_11016.java
-src/com/dangdang/db/account/AccountExperienceItemsDb_REMOTE_11016.java
+logs/example_log.txt

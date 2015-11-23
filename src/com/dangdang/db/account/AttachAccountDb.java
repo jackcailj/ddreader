@@ -2,7 +2,7 @@ package com.dangdang.db.account;
 
 import com.dangdang.account.meta.AccountExperienceItems;
 import com.dangdang.account.meta.AttachAccount;
-import com.dangdang.autotest.config.Config;
+import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 
 import java.util.List;

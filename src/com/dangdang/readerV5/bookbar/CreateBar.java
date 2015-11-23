@@ -52,7 +52,8 @@ public class CreateBar  extends FixtureBase {
 			account_integral = account.getAccountIntegral();
 			//用户等级大于等于10时，用户才有权限建吧
 			if(grade < createBarGrade){
-				DbUtil.executeUpdate(Config.ACCOUNTDBConfig, "update attach_account set account_grade="+createBarGrade+" where cust_id="+login.getCustId());
+				DbUtil.executeUpdate(Config.ACCOUNTDBConfig, 
+						"update attach_account set account_experience=2500 and account_grade="+createBarGrade+" where cust_id="+login.getCustId());
 			}
 		}
 		String rBarName = "建吧-"+((new Random()).nextInt());
