@@ -7,6 +7,7 @@ import java.util.Map;
 import com.dangdang.config.Config;
 import com.dangdang.db.SqlUtil;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
+import com.dangdang.db.comment.CommentTargetCountDb;
 import com.dangdang.ddframework.core.ConfigCore;
 import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dbutil.DbUtil;
@@ -242,6 +243,34 @@ public class ChannelDb {
 				" LIMIT 1";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		return infos.get(0).get("media_id").toString();
+	}
+	
+	//Recommendarticle.java used
+	public static List<Channel> getRelatedChannel(String channelId, int num) throws Exception{
+		String selectSQL = "SELECT * FROM `channel` " +
+				" WHERE  shelf_status=1 " +
+				" AND channel_id IN "+SqlUtil.getListToString(CommentTargetCountDb.getRelatedChannel(channelId))+
+				" ORDER BY sub_number DESC LIMIT "+num;
+		List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Channel.class);
+		return infos;
+	}
+	
+	//获取有标签的频道
+	public static String getHaveTagChannel() throws Exception{
+		String selectSQL = 	"SELECT channel_id FROM channel " +
+		"WHERE shelf_status=1 " +
+		"AND channel_id IN" + SqlUtil.getListToString(CommentTargetCountDb.getHaveTagChannels("4000"));	
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
+	}
+	
+	//获取没有表签的频道
+	public static String getHaveNotTagChannel() throws Exception{
+		String selectSQL = "SELECT channel_id FROM channel " +
+				"WHERE shelf_status=1 " +
+				"AND channel_id NOT IN" + SqlUtil.getListToString(CommentTargetCountDb.getHaveTagChannels("4000"));
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
 	}
     
     public static void main(String[] args) throws Exception{

@@ -1,6 +1,5 @@
 package com.dangdang.db.digital;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -8,6 +7,7 @@ import com.dangdang.config.Config;
 import com.dangdang.db.digital.RefreshCache;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.Channel;
+import com.dangdang.digital.meta.MediaColumnContent;
 
 /**
  * 
@@ -68,30 +68,20 @@ public class MediaColumnContentDb {
 //        return channelList;
 //    }
     
-    //获取某个频道栏目下频道总数量（没有书单的频道不计数）
-    public static String getTotal(String columnCode) throws Exception{
-       	String selectSQL = "SELECT count(*)	" +
+    //获取某个栏目下的所有有效频道
+    public static List<MediaColumnContent> getChannelList(String columnCode) throws Exception{
+       	String selectSQL = "SELECT mcc.* " +
        		" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
-       		" where column_code ='"+columnCode+"'"+
+       		" where mcc.column_code ='"+columnCode+"'"+
        		" and channel.shelf_status=1"+
-       		" and channel.is_completed=1"+
        		" and  mcc.status in(1,2)"+
        		" and  now() between start_date and end_date";  
-		List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-		return infos.get(0).get("count(*)").toString();	
+		List<MediaColumnContent>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, MediaColumnContent.class);	
+		return infos;	
     }
 
-//	public static String setShelfStatusWithColumnCode(String columnCode) throws Exception{
-//		//随机获取频道栏目下的某个频道
-//		String selectSQL = "SELECT sale_id FROM `media_column_content` " +
-//				"WHERE column_code='"+columnCode+"' " +
-//				"ORDER BY RAND() " +
-//				"LIMIT 1";
-//		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-//		String channelId = infos.get(0).get("sale_id").toString();
-//	//	return setStatusWithChannelAndStatus(channelId, "0");
-//	}
-	
+    
+
 	//随机返回xx栏目下的一个频道
 	public static int getRandChannel(String columnCode) throws Exception{
 		String selectSQL = "SELECT sale_id,sale_name FROM `media_column_content`" +
@@ -106,56 +96,8 @@ public class MediaColumnContentDb {
 						" order by rand() limit 1";
 		List<Map<String, Object>> result = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		Map<String, Object> m = result.get(0);
-		int sale_id = Integer.parseInt(m.get("sale_id").toString());
-		return sale_id;
-	}
-	
-	//模拟后台，删除xx栏目下数据
-	public static int delColumnDataWithColumncode(String columncode) throws Exception{
-		int sale_id = getRandChannel(columncode);
-		String delSQL = "DELETE FROM `media_column_content` WHERE sale_id=" +sale_id;
-		DbUtil.executeUpdate(Config.YCDBConfig, delSQL);
-		RefreshCache.refresh();
-		return sale_id;
-	}
-	
-	//模拟后台，设置书为强制有效
-	public static int setEffective(String columnCode) throws Exception{
-		setNormal(columnCode);
-		int sale_id = getRandChannel(columnCode);
-		String updateSQL = "UPDATE media_column_content SET status=1 WHERE sale_id="+ sale_id +" and column_code='" +columnCode+ "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		RefreshCache.refresh();
-		return sale_id;
-	}
-
-	//模拟后台，设置书为强制无效
-	public static int setInvalidWithColumncode(String columncode) throws Exception{
-		int sale_id = getRandChannel(columncode);
-		String updateSQL = "UPDATE media_column_content SET status=0 WHERE sale_id="+ sale_id +" and column_code='" +columncode+ "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		RefreshCache.refresh();
-		return sale_id;
-	}
-	
-	//模拟后台，设置书为正常显示
-	public static void setNormal(String columncode) throws Exception{
-		String updateSQL = "UPDATE media_column_content SET status=2 WHERE column_code='" +columncode+ "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		RefreshCache.refresh();
-	}
-	
-	//模拟后台，设置书的有效期
-	public static int setEffectiveWithColumncode(String columncode) throws Exception{
-		int sale_id = getRandChannel(columncode);
-		String updateSQL = "UPDATE media_column_content " +
-				"SET end_date=DATE_ADD(now(),INTERVAL 2 MINUTE) " +
-				"WHERE sale_id="+ sale_id +" and column_code='" +columncode+ "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		RefreshCache.refresh();
-		Thread.sleep(12000);
-		return sale_id;
-	}
+		return Integer.parseInt(m.get("sale_id").toString());
+	}	
 	
 	//返回最高排序值
 	public static int setSortWithColumncode(String columncode) throws Exception{
@@ -174,8 +116,8 @@ public class MediaColumnContentDb {
 	
 	public static void main(String[] args){
 		try {
-			List<Channel> list = MediaColumnContentDb.getChannelList("all_rec_pdzbtj",10);
-			System.out.println(list.get(0).getChannelId());
+			List<MediaColumnContent> list = MediaColumnContentDb.getChannelList("all_rec_pdzbtj");
+			System.out.println(list.size());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

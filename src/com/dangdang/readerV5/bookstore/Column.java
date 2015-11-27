@@ -3,12 +3,9 @@ package com.dangdang.readerV5.bookstore;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
-import com.dangdang.autotest.common.ResponseVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.db.digital.BookStoreCommSQL;
 import com.dangdang.db.digital.BookStoreTestEvnSQL;
 import com.dangdang.readerV5.reponse.ColumnReponse;
-import com.dangdang.readerV5.reponse.GetBackgroundImgListResponse;
 
 import fitnesse.slim.SystemUnderTest;
 

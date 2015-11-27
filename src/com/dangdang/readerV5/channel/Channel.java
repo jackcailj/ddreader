@@ -50,7 +50,10 @@ public class Channel extends FixtureBase{
         	dataVerifyManager.add(new ExpressionVerify(Math.abs(actualChannel.getSubNumber()-expectedChannel.getSubNumber())<10?true:false).setVerifyContent("验证SubNumber"));
         	dataVerifyManager.add(new ValueVerify<String>(actualChannel.getDescription(), expectedChannel.getDescription()).setVerifyContent("验证Description"));	
         	dataVerifyManager.add(new ValueVerify<Integer>(actualChannel.getIsAllowMonthly(), expectedChannel.getIsAllowMonthly()).setVerifyContent("验证IsAllowMonthly"));
-                   	       	        	
+              
+        	//验证文章数
+        	dataVerifyManager.add(new ValueVerify<Integer>(actualChannel.getDigestNum(), expectedChannel.getDigestNum()).setVerifyContent("验证文章数"));
+        	
         	//验证标签 tagNames       	
         	String actualTagNames = actualChannel.getTagNames();
         	List<String> actualTagNameList = new ArrayList<String>(); 

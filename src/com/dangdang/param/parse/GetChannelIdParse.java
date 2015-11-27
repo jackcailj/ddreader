@@ -78,6 +78,12 @@ public class GetChannelIdParse implements IParamParse{
 				else
 					cIdValue = ChannelSubUserDb.getUserSubChannel(custId);
 				paramMap.put(key, cIdValue);
+			}else if(cId.equals(ChannelId.IfHaveTag.toString())){
+				if(flag.equals("0"))
+					cIdValue = ChannelDb.getHaveNotTagChannel();
+				else 
+					cIdValue = ChannelDb.getHaveTagChannel();
+				paramMap.put(key, cIdValue);
 			}else{
 				throw new Exception("[custId:]"+custId+" 获取ChannelId失败！");
 			}

@@ -5,13 +5,20 @@ public class ChannelList {
 	String description;
 	Integer hasBoughtMonthly;
 	String icon;
-	//String owner;
-	//String ownerCustId;
+	String isAllowMonthly;
+	String owner;
+	String ownerCustId;
 	String ownerType;
 	Integer subNumber;//订阅数
 	String title;
 	UserBaseInfo userBaseInfo;
 		
+	public String getIsAllowMonthly() {
+		return isAllowMonthly;
+	}
+	public void setIsAllowMonthly(String isAllowMonthly) {
+		this.isAllowMonthly = isAllowMonthly;
+	}
 	public String getChannelId() {
 		return channelId;
 	}
@@ -48,12 +55,12 @@ public class ChannelList {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-//	public String getOwnerCustId() {
-//		return ownerCustId;
-//	}
-//	public void setOwnerCustId(String ownerCustId) {
-//		this.ownerCustId = ownerCustId;
-//	}
+	public String getOwnerCustId() {
+		return ownerCustId;
+	}
+	public void setOwnerCustId(String ownerCustId) {
+		this.ownerCustId = ownerCustId;
+	}
 	public String getOwnerType() {
 		return ownerType;
 	}

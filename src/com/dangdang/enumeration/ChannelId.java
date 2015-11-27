@@ -14,7 +14,8 @@ public enum ChannelId {
 	OverdueIfAutoRenew("是否自动续费"), // 已过期的包月频道是否续费  1续费  0不续费
 	Offline("下线"), // 0频道支持包月且下线  1//未过期且已下线
 	IfSub("是否已经订阅"), // 1已订阅  0未订阅
-	Mine("我自己的频道");
+	Mine("我自己的频道"),
+	IfHaveTag("频道是否有标签"); //1有标签   0没有标签
 
 
 	String content="";
