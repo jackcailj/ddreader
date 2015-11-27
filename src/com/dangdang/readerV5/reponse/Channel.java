@@ -4,7 +4,8 @@ public class Channel {
 	ChannelBookList bookList;
 	Long channelId;
 	String description;
-	String hasArtical;
+	Integer digestNum;
+	String hasArtical;	
 	String hasBoughtMonthly;
 	String icon;
 	Integer isAllowMonthly;
@@ -43,6 +44,12 @@ public class Channel {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public Integer getDigestNum() {
+		return digestNum;
+	}
+	public void setDigestNum(Integer digestNum) {
+		this.digestNum = digestNum;
 	}
 	public String getHasArtical() {
 		return hasArtical;

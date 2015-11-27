@@ -31,32 +31,38 @@ public class IMediaApiDubbo extends FixtureBase{
 	
 	//channelType 1:已包月   2：未包月
 	public String getMonthlyChannelId(String channelType) throws Exception{
-		String custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
-		if(channelType.equals("1")){
-			List<String> list = MediaMonthlyAuthorityDb.getUserMonthlyChannelID(custId);
-			channelId = list.get(SqlUtil.getRandNum(list));
-		}else if(channelType.equals("2")){
-			channelId = ChannelDb.getMonthlyChannel(custId);
+		if(env.equals(TestEnvironment.TESTING.toString())){	
+			String custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
+			if(channelType.equals("1")){
+				List<String> list = MediaMonthlyAuthorityDb.getUserMonthlyChannelID(custId);
+				channelId = list.get(SqlUtil.getRandNum(list));
+			}else if(channelType.equals("2")){
+				channelId = ChannelDb.getMonthlyChannel(custId);
+			}
+			return channelId;
 		}
-		return channelId;
+		return null;
 	}
 	
 	//mediaType: 1频道下的电子书    2频道下的纸书 即null 
 	public String getMonthlyMediaId(String mediaType) throws Exception{
-		String mediaId="";
-		if(mediaType.equals("1")){
-			List<MediaBooklistDetail> list = MediaBookListDetailDb.getMediaIdList(channelId);
-			for(int i=0; i<list.size(); i++){
-				int type = Integer.valueOf(list.get(i).getType());
-				if(type==1||type==2){
-					mediaId = String.valueOf(list.get(i).getMediaId());
-					break;
+		if(env.equals(TestEnvironment.TESTING.toString())){	
+			String mediaId="";
+			if(mediaType.equals("1")){
+				List<MediaBooklistDetail> list = MediaBookListDetailDb.getMediaIdList(channelId);
+				for(int i=0; i<list.size(); i++){
+					int type = Integer.valueOf(list.get(i).getType());
+					if(type==1||type==2){
+						mediaId = String.valueOf(list.get(i).getMediaId());
+						break;
+					}
 				}
+			}else{
+				mediaId = "0";
 			}
-		}else{
-			mediaId = "0";
-		}
-		return mediaId;		
+			return mediaId;		
+		} 
+		return null;
 	}
 	
 	String flag="";
@@ -65,19 +71,23 @@ public class IMediaApiDubbo extends FixtureBase{
 	}
 	
 	public String getChannelIdAndMediaId(String channelId, String mediaId) throws Exception{
-		Long _mediaId = Long.valueOf(mediaId);
-		Long _channelId = Long.valueOf(channelId); 
-		Long _returnChannelId = iMediaApi.getMeidaMonthlyInfo(paramMap.get("token"),_mediaId,_channelId);	
-		return String.valueOf(_returnChannelId);
+		if(env.equals(TestEnvironment.TESTING.toString())){	
+			Long _mediaId = Long.valueOf(mediaId);
+			Long _channelId = Long.valueOf(channelId); 
+			Long _returnChannelId = iMediaApi.getMeidaMonthlyInfo(paramMap.get("token"),_mediaId,_channelId);	
+			return String.valueOf(_returnChannelId);
+		}else 
+			return null;
 	}
 	
 	public boolean verify(String returnChannelId) throws Exception{	
 		log.info("运行环境：" + env);
 		if(env.equals(TestEnvironment.TESTING.toString())){	
-			if(returnChannelId.equals(flag))
+			if(returnChannelId.equals(flag)){
 				return true;
-		}else
-			return false;
+			}else
+				return false;
+		}
 		return true;		
 	}
 	
@@ -91,6 +101,5 @@ public class IMediaApiDubbo extends FixtureBase{
 			e.printStackTrace();
 		}
 	}
-
 
 }

@@ -104,6 +104,23 @@ public class ChannelSubUserDb {
 		return list;   	
     }
        
+    //获取有效地频道列表：按订阅数倒序排列
+    public static List<String> getHotChannelIds() throws Exception{
+    	String selectSQL = "SELECT count(*), channel_id " +
+    			"FROM `channel_sub_user` " +
+    			"WHERE type=1 AND channel_id IN (SELECT channel_id " +
+    								"FROM `channel` " +
+    								"WHERE is_completed=1 AND shelf_status=1)" +
+    								"GROUP BY channel_id ORDER BY count(*) DESC";
+    	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+    	List<String> channelIdList = new ArrayList<String>();
+    	for(int i=0; i<infos.size(); i++){
+    		System.out.println("dbList: " + infos.get(i).get("channel_id"));
+    		channelIdList.add(infos.get(i).get("channel_id").toString());
+    	}
+    	return channelIdList;
+    }
+    
     public static void main(String[] args){
     	try {
 			String list=ChannelSubUserDb.getUserSubChannel("aa");
