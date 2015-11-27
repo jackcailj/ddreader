@@ -12,7 +12,6 @@ import com.dangdang.autotest.common.PlatForm;
 import com.dangdang.common.functional.login.LogOut;
 import com.dangdang.common.functional.login.Login;
 import com.dangdang.common.functional.login.LoginInfo;
-import com.dangdang.common.functional.login.TouristsLogin;
 import com.dangdang.ddframework.core.TestCaseBase;
 import com.dangdang.reader.functional.account.GetAccount;
 import com.dangdang.reader.functional.purchaseAndDownload.GetRechargeVirtualPid;

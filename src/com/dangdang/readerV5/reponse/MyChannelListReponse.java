@@ -1,6 +1,5 @@
 package com.dangdang.readerV5.reponse;
 
-
 import java.util.List;
 public class MyChannelListReponse {
 	List<MyChannelList> channelList;

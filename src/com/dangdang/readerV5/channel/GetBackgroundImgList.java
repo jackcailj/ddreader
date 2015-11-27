@@ -14,7 +14,6 @@ import com.dangdang.readerV5.reponse.UrlList;
 
 /**
  * @author guohaiying
- *
  */
 public class GetBackgroundImgList extends FixtureBase{
 	ReponseV2<GetBackgroundImgListResponse> jsonResult;
@@ -29,8 +28,7 @@ public class GetBackgroundImgList extends FixtureBase{
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){
         	List<UrlList>  actual = ChannelBgImgDb.getBackImg(paramMap.get("type"));
-            dataVerifyManager.add(new ListVerify(jsonResult.getData().getUrlList(),actual, true));
-            
+            dataVerifyManager.add(new ListVerify(jsonResult.getData().getUrlList(),actual, true));           
         }
         super.dataVerify();
     }

@@ -4,18 +4,29 @@ public class Channel {
 	ChannelBookList bookList;
 	Long channelId;
 	String description;
-	String hasArtical;
+	Integer digestNum;
+	String hasArtical;	
 	String hasBoughtMonthly;
 	String icon;
 	Integer isAllowMonthly;
+	String isMine;
 	String isSub;
 	Integer monthlyType;
 	String ownder;
 	String ownerCustId;
 	String ownerType;
 	Integer shelfStatus;
+	String tagIds;
+	String tagNames;
 	Integer subNumber;
 	String title;
+	UserBaseInfo userBaseInfo;
+	public UserBaseInfo getUserBaseInfo() {
+		return userBaseInfo;
+	}
+	public void setUserBaseInfo(UserBaseInfo userBaseInfo) {
+		this.userBaseInfo = userBaseInfo;
+	}
 	public ChannelBookList getBookList() {
 		return bookList;
 	}
@@ -33,6 +44,12 @@ public class Channel {
 	}
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	public Integer getDigestNum() {
+		return digestNum;
+	}
+	public void setDigestNum(Integer digestNum) {
+		this.digestNum = digestNum;
 	}
 	public String getHasArtical() {
 		return hasArtical;
@@ -106,5 +123,22 @@ public class Channel {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	public String getIsMine() {
+		return isMine;
+	}
+	public void setIsMine(String isMine) {
+		this.isMine = isMine;
+	}
+	public String getTagIds() {
+		return tagIds;
+	}
+	public void setTagIds(String tagIds) {
+		this.tagIds = tagIds;
+	}
+	public String getTagNames() {
+		return tagNames;
+	}
+	public void setTagNames(String tagNames) {
+		this.tagNames = tagNames;
+	}
 }

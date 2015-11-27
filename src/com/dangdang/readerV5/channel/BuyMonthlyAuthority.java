@@ -22,7 +22,6 @@ import com.dangdang.readerV5.reponse.BuyMonthlyAuthorityResponse;
 /**
  * 购买频道包月权限
  * @author guohaiying
- *
  */
 public class BuyMonthlyAuthority extends FixtureBase{
 
@@ -39,6 +38,10 @@ public class BuyMonthlyAuthority extends FixtureBase{
     	channelId = paramMap.get("cId");
     	dbResult1 = MediaMonthlyAuthorityDb.get(custId, channelId);   	
     	masterAccount1 = MasterAccountDB.getUserMasterAccount(custId);
+    	if(masterAccount1.getMasterAccountMoney()<500){//如果账户余额不足，则先设置主账户余额
+    		MasterAccountDB.SetUserAccount(custId, "master_account_money");
+    		masterAccount1 = MasterAccountDB.getUserMasterAccount(custId);
+    	}
 	}
 	
     @Override

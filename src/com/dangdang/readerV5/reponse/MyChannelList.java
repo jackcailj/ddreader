@@ -5,6 +5,7 @@ public class MyChannelList {
 	String description;
 	String icon;
 	String shelfStatus;
+	String isMine;
 	String title;
 	public String getChannelId() {
 		return channelId;
@@ -36,5 +37,10 @@ public class MyChannelList {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
+	public String getIsMine() {
+		return isMine;
+	}
+	public void setIsMine(String isMine) {
+		this.isMine = isMine;
+	}
 }

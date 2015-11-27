@@ -45,4 +45,14 @@ public class ChannelArticlesDigestDb {
 		return digestIdList;
 	}
 	
+	//获取频道下的文章
+	public static String getDigestIdByChannelId(String channelId) throws Exception{
+		int _channelId = Integer.valueOf(channelId);
+		String selectSQL = "SELECT digest_id FROM `channel_articles_digest` " +
+				"WHERE channel_id="+_channelId+" AND is_publish=1 AND `status` IN (0,1)";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		int n=(int)Math.random()*(infos.size()-1);
+		return infos.get(n).get("digest_id").toString();
+	}
+	
 }

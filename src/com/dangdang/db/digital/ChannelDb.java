@@ -5,9 +5,13 @@ import java.util.List;
 import java.util.Map;
 
 import com.dangdang.config.Config;
+import com.dangdang.db.SqlUtil;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
+import com.dangdang.db.comment.CommentTargetCountDb;
+import com.dangdang.ddframework.core.ConfigCore;
+import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dbutil.DbUtil;
-import com.dangdang.digital.meta.*;
+import com.dangdang.digital.meta.Channel;
 import com.dangdang.digital.meta.ChannelOwner;
 import com.dangdang.readerV5.reponse.BookList;
 import com.dangdang.readerV5.reponse.ChannelBookList;
@@ -18,12 +22,28 @@ import com.dangdang.readerV5.reponse.ChannelBookList;
  *
  */
 public class ChannelDb {
+	//根据custId获取频道id  如果没有返回null
+	//Channel.java used
+	public static String getChannelIdByCustId(String custId) throws Exception{
+    	String selectSQL = "SELECT channel_id FROM channel " +
+    			"WHERE is_completed=1 AND shelf_status=1 AND cust_id="+custId;
+    	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
+    	if(infos.size()==0)return null;
+    	else
+    		return infos.get(0).get("channel_id").toString();
+	}
+	
+	//根据channelId获取custId
+	public static String getCustIdByChannelId(String channelId) throws Exception{
+    	String selectSQL = "SELECT cust_id FROM channel WHERE channel_id="+channelId;
+    	List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Channel.class);	
+        return infos.get(0).getCustId().toString();
+	}
 	
     //获取频道信息
     //Channel.java used
     public static Channel getChannel(String channelId) throws Exception { 
-    	long _channelId = Long.valueOf(channelId);
-    	String selectSQL = "SELECT * FROM `channel` WHERE channel_id="+_channelId;
+    	String selectSQL = "SELECT * FROM `channel` WHERE channel_id="+channelId;
     	List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Channel.class);	
         return infos.get(0);
     }
@@ -44,15 +64,14 @@ public class ChannelDb {
 	//获取企业/个人的频道  企业type=1  个人type=2
 	//GetChannelIdParse.java used
 	public static String getChannelWithOwnerType(String type) throws Exception{
-		int _type = Integer.valueOf(type);
 		String selectSQL = "SELECT c.channel_id " +
 				"FROM channel c, channel_owner co " +
 				"WHERE c.owner_id= co.owner_id " +
 				"AND c.shelf_status=1 " +
 				"AND c.is_completed=1 " +
-				"AND co.type=1 LIMIT 1";
+				"AND co.type="+type;
 		 List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectSQL);
-		 return infos.get(0).get("channel_id").toString();		
+		 return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();		
 	}
 	
 	//获取支持包月，未包月的频道
@@ -64,28 +83,24 @@ public class ChannelDb {
 		if(userMonthlyChannelList==null){
 			selectSQL = "SELECT * FROM `channel` " +
 				"WHERE shelf_status=1 AND is_completed=1 AND is_allow_monthly=1 LIMIT 1";
-		}else{
-			String cLists = "(";
-			for(int i=0;i<userMonthlyChannelList.size();i++){
-				cLists += userMonthlyChannelList.get(i)+",";
-			}
-
-			cLists=cLists.substring(0, cLists.lastIndexOf(",")) + ")";
-			selectSQL = "SELECT channel_id FROM `channel` " +
-					"WHERE shelf_status=1 " +
-					"AND is_completed=1 " +
-					"AND is_allow_monthly=1 " +
-					"AND channel_id NOT IN "+cLists+" LIMIT 1";
 		}
+		selectSQL = "SELECT channel_id FROM `channel` " +
+				"WHERE shelf_status=1 " +
+				"AND is_completed=1 " +
+				"AND is_allow_monthly=1 " +
+				"AND channel_id NOT IN "+ SqlUtil.getListToString(userMonthlyChannelList);
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
-		return infos.get(0).get("channel_id").toString();
+		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
 	}
 	
 	//获取下线的频道
 	//UserDevice.java used
 	//ChannelMonthlyStrategyDb.java used
 	public static List<String> getOfflineChannelList() throws Exception{
-		String selectSQL = "SELECT channel_id FROM `channel` WHERE shelf_status=0 AND is_completed=1";
+		String selectSQL = "SELECT channel_id" +
+				"FROM `channel` " +
+				"WHERE shelf_status=0 " +
+				"AND is_completed=1";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		List<String> list = new ArrayList<String>();
 		for(int i=0; i<infos.size(); i++){
@@ -103,10 +118,9 @@ public class ChannelDb {
 				"AND c.shelf_status=1 " +
 				"AND c.is_completed=1 " +
 				"AND mcc.`status` IN (1,2) " +
-				"AND NOW() BETWEEN start_date AND end_date " +
-				"LIMIT 1";
+				"AND NOW() BETWEEN start_date AND end_date";
 		 List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectSQL);
-		 return infos.get(0).get("channel_id").toString();		
+		 return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();		
 	}
 	
 	//获取无文章频道
@@ -120,18 +134,15 @@ public class ChannelDb {
 				"AND NOW() BETWEEN start_date AND end_date " +
 				"AND c.channel_id NOT IN(SELECT DISTINCT channel_id " +
 				"FROM channel_articles " +
-				"WHERE channel_id IS NOT NULL) " +
-				"ORDER BY RAND() " +
-				"LIMIT 1";
+				"WHERE channel_id IS NOT NULL)";
 		 List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectSQL);
-		 return infos.get(0).get("channel_id").toString();	
+		 return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();	
 	}
 		
 	//获取用户无包月权限的频道
 	
 	//获取用户已订阅/未订阅的频道
-	public static String getChannelIsSub(String custid) throws Exception{
-		int _custId = Integer.valueOf(custid);
+	public static String getChannelIsSub(String custId) throws Exception{
 		String selectSQL = "SELECT c.channel_id "+
 				" FROM channel c,media_column_content mcc"+
 				" WHERE c.channel_id = mcc.sale_id "+
@@ -142,11 +153,9 @@ public class ChannelDb {
 				" AND c.channel_id NOT IN(SELECT channel_id "+
 				" FROM channel_sub_user "+
 				" WHERE type=1 "+
-				" AND cust_id="+custid+")"+
-				" ORDER BY RAND()"+
-				" LIMIT 1";
+				" AND cust_id="+custId+")";
 		 List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectSQL);
-		 return infos.get(0).get("channel_id").toString();		
+		 return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();		
 	}
 	
     //获取书的基本信息
@@ -155,7 +164,7 @@ public class ChannelDb {
 		"is_show,modifier,name, owner,status,store_num " +
 		"FROM `media_booklist`" +
 		" WHERE booklist_id="+booklist_id;      
-        List<BookList> bookList =  DbUtil.selectList(Config.YCDBConfig,selectSQL,BookList.class);
+        List<BookList> bookList = DbUtil.selectList(Config.YCDBConfig,selectSQL,BookList.class);
         if(bookList.size()==0) 
         	return null;
         else
@@ -206,7 +215,7 @@ public class ChannelDb {
     	if(infos.size()==0)
     		bookList=null;
     	else 
-    		bookList.setBooklistId(infos.get(0).get("booklist_id").toString());  	
+    		bookList.setBooklistId(Integer.valueOf(infos.get(0).get("booklist_id").toString()));  	
     	
     	return bookList;
     }
@@ -235,6 +244,34 @@ public class ChannelDb {
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		return infos.get(0).get("media_id").toString();
 	}
+	
+	//Recommendarticle.java used
+	public static List<Channel> getRelatedChannel(String channelId, int num) throws Exception{
+		String selectSQL = "SELECT * FROM `channel` " +
+				" WHERE  shelf_status=1 " +
+				" AND channel_id IN "+SqlUtil.getListToString(CommentTargetCountDb.getRelatedChannel(channelId))+
+				" ORDER BY sub_number DESC LIMIT "+num;
+		List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Channel.class);
+		return infos;
+	}
+	
+	//获取有标签的频道
+	public static String getHaveTagChannel() throws Exception{
+		String selectSQL = 	"SELECT channel_id FROM channel " +
+		"WHERE shelf_status=1 " +
+		"AND channel_id IN" + SqlUtil.getListToString(CommentTargetCountDb.getHaveTagChannels("4000"));	
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
+	}
+	
+	//获取没有表签的频道
+	public static String getHaveNotTagChannel() throws Exception{
+		String selectSQL = "SELECT channel_id FROM channel " +
+				"WHERE shelf_status=1 " +
+				"AND channel_id NOT IN" + SqlUtil.getListToString(CommentTargetCountDb.getHaveTagChannels("4000"));
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
+	}
     
     public static void main(String[] args) throws Exception{
 //    	List<BookList> list = new ArrayList<BookList>();
@@ -244,6 +281,9 @@ public class ChannelDb {
 //    	System.out.println(list.size());
 //    	BookList b = list.get(0);
 //    	System.out.println(b.getBooklist_id());
+    	ConfigCore.setEnvironment(TestEnvironment.ONLINE);
+    	String s = ChannelDb.getCustIdByChannelId("1169");
+    	System.out.println(s);
     }
 	
 }

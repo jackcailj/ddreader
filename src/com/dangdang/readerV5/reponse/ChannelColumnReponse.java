@@ -12,7 +12,7 @@ public class ChannelColumnReponse {
 	List<ChannelList> channelList;
 	String columnCode;
 	Integer count;
-	//String isShowHorn;
+	String isShowHorn;
 	String name;
 	String tips; //小喇叭提示内容
 	Integer total;
@@ -36,12 +36,12 @@ public class ChannelColumnReponse {
 	public void setCount(Integer count) {
 		this.count = count;
 	}
-//	public String getIsShowHorn() {
-//		return isShowHorn;
-//	}
-//	public void setIsShowHorn(String isShowHorn) {
-//		this.isShowHorn = isShowHorn;
-//	}
+	public String getIsShowHorn() {
+		return isShowHorn;
+	}
+	public void setIsShowHorn(String isShowHorn) {
+		this.isShowHorn = isShowHorn;
+	}
 	public String getName() {
 		return name;
 	}

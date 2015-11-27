@@ -5,7 +5,7 @@ import java.util.List;
 public class ColumnReponse {
 	String columnCode;
 	String count;
-	//String icon;
+	String icon;
 	Boolean isShowHorn;
 	String name;
 	List<SaleList> saleList;
@@ -22,6 +22,12 @@ public class ColumnReponse {
 	}
 	public void setCount(String count) {
 		this.count = count;
+	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
 	}
 	public Boolean getIsShowHorn() {
 		return isShowHorn;

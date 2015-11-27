@@ -28,13 +28,7 @@ public class MyChannelListSQL {
 			return infos.get(0).get("COUNT(1)").toString();
 	}
 	
-	//设置某频道上下线 status=1上线  status=0 下线
-	public static void setShelfStatusWithChannelidAndStatus(String channelId, String status) throws Exception{
-		int _channelId = Integer.valueOf(channelId);
-		int _status = Integer.valueOf(status);
-		String updateSQL = "UPDATE channel SET shelf_status="+_status+" WHERE channel_id="+_channelId;
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-	}
+
 	
 	//获取用户订阅的所有频道
 	public static List<MyChannelList> getMyChannelList(String custId) throws Exception{

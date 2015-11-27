@@ -3,10 +3,10 @@ package com.dangdang.readerV5.reponse;
 public class MonthlyChannelList {
 	String channelId;
 	String description;
-	String hasBoughtMonthly;
 	String icon;
-	String isAutomaticallRenew;
+	String isMine;
 	String shelfStatus;
+	String subId;
 	String title;
 	public String getChannelId() {
 		return channelId;
@@ -20,23 +20,11 @@ public class MonthlyChannelList {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	public String getHasBoughtMonthly() {
-		return hasBoughtMonthly;
-	}
-	public void setHasBoughtMonthly(String hasBoughtMonthly) {
-		this.hasBoughtMonthly = hasBoughtMonthly;
-	}
 	public String getIcon() {
 		return icon;
 	}
 	public void setIcon(String icon) {
 		this.icon = icon;
-	}
-	public String getIsAutomaticallRenew() {
-		return isAutomaticallRenew;
-	}
-	public void setIsAutomaticallRenew(String isAutomaticallRenew) {
-		this.isAutomaticallRenew = isAutomaticallRenew;
 	}
 	public String getShelfStatus() {
 		return shelfStatus;
@@ -50,6 +38,16 @@ public class MonthlyChannelList {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-
-	
+	public String getIsMine() {
+		return isMine;
+	}
+	public void setIsMine(String isMine) {
+		this.isMine = isMine;
+	}
+	public String getSubId() {
+		return subId;
+	}
+	public void setSubId(String subId) {
+		this.subId = subId;
+	}
 }

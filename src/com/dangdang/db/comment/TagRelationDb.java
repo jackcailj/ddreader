@@ -7,6 +7,9 @@ import java.util.Map;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 
+/**
+ * @author guohaiying
+ */
 public class TagRelationDb {
 	
 	//获取标签  
@@ -23,4 +26,7 @@ public class TagRelationDb {
         }
         return list;
     }
+    
+    
+    
 }

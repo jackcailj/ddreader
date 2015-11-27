@@ -1,5 +1,6 @@
 package com.dangdang.db.digital;
 
+import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.enumeration.BookStatus;
@@ -134,7 +135,20 @@ public class MediaDb {
         return media;
     }
 
-    //根据productId获取mediaId
-   // public static String getMediaIdByProductId()
+	//根据sale_id获取单品页信息
+    //BookListDetail.java used
+    public static Media getMediaIdBySaleId(long saleId) throws Exception{
+    	String selectSQL = "SELECT * FROM media WHERE sale_id="+saleId;
+    	List<Media> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Media.class);
+    	return infos.get(0);   	
+    }   
+    
+  //BookListDetail.java used
+    public static List<Media> getMedias2(BookType bookType,BookStatus bookStatus,int number) throws Exception {
+        String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
+        String selectString="select m.media_id,m.sale_id,m.product_id from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"   limit "+number;
+        List<Media> medias = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
+        return medias;
+    }
 
 }
