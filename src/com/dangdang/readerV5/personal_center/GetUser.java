@@ -116,7 +116,7 @@ public class GetUser extends FixtureBase{
                     userInfo.setChannelOwner(1);
                 }
             }catch (Exception e){
-                userInfo.setChannelOwner(0);
+                userInfo.setChannelOwner(null);
             }
 
             dataVerifyManager.add(new ValueVerify<UserInfo>(reponseResult.getData().getUserInfo(), userInfo, true).setVerifyContent("对比用户信息是否一致"));
