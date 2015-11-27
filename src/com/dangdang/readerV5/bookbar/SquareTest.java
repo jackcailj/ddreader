@@ -70,9 +70,10 @@ public class SquareTest extends FixtureBase{
 				   + "and (device_type='all' or device_type='"+paramMap.get("deviceType")+"') "
 				   + "and module_order>0 ORDER BY module_order DESC, templet_no DESC limit 10";
 		List<BarModule> bModuleList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarModule.class);
-		for(int i=0; i< bModuleList.size(); i++){
+		for(int h=0,i=0; i< bModuleList.size(); i++,h++){
 			SquareInfo info = new SquareInfo();
 			Module moduleOfDB = new Module();
+			int moduleSize = 0;
 			List<BarContent> bContentListOfDB = new ArrayList<BarContent>();
 			List<TagContent> tContentListOfDB = new ArrayList<TagContent>();
 			moduleOfDB.setBarModuleId(bModuleList.get(i).getBarModuleId().toString());
@@ -80,7 +81,7 @@ public class SquareTest extends FixtureBase{
 			moduleOfDB.setShowNum(bModuleList.get(i).getShowNum().toString());
 			moduleOfDB.setType(bModuleList.get(i).getType().toString());
 			//type: 类型（1.吧模块 2.帖子模块 3.标签模块）
-			if(bModuleList.get(i).getType().toString().equals("1")){
+			if(bModuleList.get(i).getType().toString().equals("1")){	
 				moduleOfDB.setTemplateNo(bModuleList.get(i).getTempletNo().toString());
 				// 查某模块下展示的内容(status为1且end_date大于当前日期)，在客户端会以权重大小为顺序排列，权重最大的排在第一个
 				sql = "SELECT * FROM `bar_module_content` where module_tag_id="+bModuleList.get(i).getBarModuleId().toString()+" "
@@ -88,12 +89,14 @@ public class SquareTest extends FixtureBase{
 				List<BarModuleContent> bCotentList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarModuleContent.class);
 				//showNum是该模块要显示的吧的数量
 				int showNum = Integer.parseInt(bModuleList.get(i).getShowNum().toString());
-				int moduleSize;
 				if(showNum > bCotentList.size()){
 					moduleSize = bCotentList.size();
 				}
 				else{
 					moduleSize = showNum;
+				}
+				if(moduleSize==0){
+					h--;
 				}
 				for(int j=0; j<moduleSize; j++){
 					//bar的状态是 待审核或者通过，这两个状态下都会在客户端显示，预审核的显示默认的吧简介和图片
@@ -107,9 +110,9 @@ public class SquareTest extends FixtureBase{
 							defaultDesc:bar.getBarDesc().toString());
 					bContentOfDB.setBarId(bar.getBarId().toString());					
 					if(bar.getBarImgUrl()!=null){
-						String str = reponseResult.getData().getSquareInfo().get(i).getBarContent().get(j).getBarImgUrl();
+						String str = reponseResult.getData().getSquareInfo().get(h).getBarContent().get(j).getBarImgUrl();
 						str	= str!=null?str.replaceAll("[._][a-z]\\.", "."):null;
-						reponseResult.getData().getSquareInfo().get(i).getBarContent().get(j).setBarImgUrl(str);
+						reponseResult.getData().getSquareInfo().get(h).getBarContent().get(j).setBarImgUrl(str);
 						//有时数据表里有img url的值，但接口不一定返回barImgUrl字段
 						bContentOfDB.setBarImgUrl(str!=null?bar.getBarImgUrl().toString():null);
 					}
@@ -140,13 +143,15 @@ public class SquareTest extends FixtureBase{
 					tContentOfDB.setTagType(Integer.toString(tCotentList.get(k).getTagType()));
 					tContentListOfDB.add(tContentOfDB);
 				}
-			}			
-			dataVerifyManager.add(new ValueVerify(reponseResult.getData().getSquareInfo().get(i).getModule(),moduleOfDB, true));
+			}	
+			if(moduleSize!=0){
+				dataVerifyManager.add(new ValueVerify(reponseResult.getData().getSquareInfo().get(h).getModule(),moduleOfDB, true));
+			}
 			if(bContentListOfDB.size()!=0){
-				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(i).getBarContent(),bContentListOfDB, true));
+				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(h).getBarContent(),bContentListOfDB, true));
 			}
 			if(tContentListOfDB.size()!=0){
-				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(i).getTagContent(), tContentListOfDB, true));
+				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(h).getTagContent(), tContentListOfDB, true));
 			}
 		}
 		//dataVerifyManager.add(new ListVerify(squareInfoOfDB, reponseResult.getData().getSquareInfo(),true));
@@ -209,14 +214,12 @@ public class SquareTest extends FixtureBase{
 					aContentListOfDB.add(aContentOfDB);
 					if(aContentListOfDB.size()==11){
 						break;
-					}
-					
+					}					
 				}
 				catch(NullPointerException e){
 					logger.info("该帖子已不存在 "+e);
 					m--;
-				}
-				
+				}				
 			}
 			dataVerifyManager.add(new ValueVerify(reponseResult.getData().getSquareInfo().get(l).getModule(),moduleOfDB, true));
 			if(aContentListOfDB.size()!=0){
