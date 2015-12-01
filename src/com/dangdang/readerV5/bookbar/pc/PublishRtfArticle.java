@@ -29,6 +29,7 @@ public class PublishRtfArticle extends FixtureBase{
 	int account_experience;
 	int account_integral;
 	GradeExpRelationMap geMap = new GradeExpRelationMap();
+	String custId="50232713";
 	
 	public ReponseV2<PublishArticleResponse> getResult(){
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<PublishArticleResponse>>(){});
@@ -45,25 +46,27 @@ public class PublishRtfArticle extends FixtureBase{
 		super.setParameters(params);
 		if(barId==null){
 			barId = Long.toString(
-					BarMemberDb.getJoniedBarEmember(login.getCustId()).get((new Random()).nextInt(10)).getBarId());
+					BarMemberDb.getJoniedBarEmember(custId).get((new Random()).nextInt(10)).getBarId());
 		}
 		if(paramMap.get("barId")!=null&&paramMap.get("barId").equals("FromDB")){
 			paramMap.put("barId",barId);
 		}
-		if(login!=null&&login.getCustId()!=null){
-			AttachAccount account = AttachAccountDb.getAttachAccount(login.getCustId());
+		//if(login!=null&&login.getCustId()!=null){
+			AttachAccount account = AttachAccountDb.getAttachAccount(custId);
 			account_experience = account.getAccountExperience();
 			account_integral = account.getAccountIntegral();
-		}
+	//	}
 		//不定时内，发帖内容相同三次以上，会有防刷帖提示，为保证测试用例能多次运行，故在此确保每次运行用例时发帖内容每次都不一样
 		String content = paramMap.get("content");
 		if(content!=null&&!(content.isEmpty())){
-			if(content.startsWith("<p>")&&!content.startsWith("<p><img")){	
-				paramMap.put("content", "<p>"+Util.getRandomString(5)+content.substring(3, content.length()-1));
-			}
-			if(!content.startsWith("<p>")){	
-				paramMap.put("content", Util.getRandomString(5)+content);
-			}			
+			if(!(content.startsWith("<p><img"))){
+				if(content.startsWith("<p>")){	
+					paramMap.put("content", "<p>"+Util.getRandomString(5)+content.substring(3, content.length()));
+				}
+				else{
+					paramMap.put("content", Util.getRandomString(5)+content);
+				}
+			}				
 		}
 
 	}
@@ -75,7 +78,7 @@ public class PublishRtfArticle extends FixtureBase{
 			if(paramMap.get("actionType").equals("1")){
 				publishCount++;
 				//发帖，经验值，积分增加
-				AttachAccount account = AttachAccountDb.getAttachAccount(login.getCustId());
+				AttachAccount account = AttachAccountDb.getAttachAccount(custId);
 				account_experience = account_experience + experience;
 				account_experience = account_experience + (geMap.get(account_experience)==null?0:geMap.get(account_experience));
 				dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountExperience(),
@@ -93,17 +96,19 @@ public class PublishRtfArticle extends FixtureBase{
 				list2.add(paramMap.get("title"));
 			}			
 			if(paramMap.get("content")!=null&&!(paramMap.get("content").isEmpty())){
-				list1.add("<p>"+digest.getCardRemark()+"</p>");			
-				list2.add(paramMap.get("content"));
+				if(paramMap.get("content").contains("<img src=")){
+					list1.add("<p>"+digest.getCardRemark());			
+					list2.add(paramMap.get("content").split("<img src=")[0]);
+				}
+				else{
+					list1.add("<p>"+digest.getCardRemark()+"</p>");			
+					list2.add(paramMap.get("content"));
+				}				
 			}		
 			if(paramMap.get("content")!=null&&paramMap.get("content").contains("<img src=")){
 				list1.add(digest.getSmallPic1Path());
 				list2.add(paramMap.get("content").split("\"")[0]);
 			}
-//			if(paramMap.get("imgUrls")!=null&&!(paramMap.get("imgUrls").isEmpty())){
-//				list1.add(digest.getSmallPic1Path());
-//				list2.add(paramMap.get("imgUrls"));
-//			}
 			dataVerifyManager.add(new ListVerify(list1, list2,false));	
 			super.dataVerify();
 		}

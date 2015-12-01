@@ -25,12 +25,6 @@ public class QueryBarInfo extends FixtureBase{
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<BarInfoResponse>>(){});
 	}
 	
-//	@Override
-//	public void setParameters(Map<String, String> params) throws Exception {
-//			super.setParameters(params);
-//			ParseParamUtil.parseOperateParam(paramMap);
-//	}
-	
 	@Override
 	public void dataVerify(String expectedCode) throws Exception {
 		reponseResult = getResult();
