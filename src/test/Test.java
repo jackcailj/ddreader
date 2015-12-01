@@ -43,13 +43,13 @@ public class Test extends FunctionalBase {
 		test.doWorkAndVerify();*/
 
 		//Boolean b= Boolean.parseBoolean("true");
-/*		EMMessage emMessage = EMMessage.createSendMessage(EMMessage.Type.TXT);
+		EMMessage emMessage = EMMessage.createSendMessage(EMMessage.Type.TXT);
 		emMessage.setChatType(EMMessage.ChatType.Chat);
 
 		EMConversation conversation = EMChatManager.getInstance().getConversation("1234");
 		conversation.addMessage(emMessage);
 
-		EMChatManager.getInstance().sendMessage(emMessage, null);*/
+		EMChatManager.getInstance().sendMessage(emMessage, null);
 
 
 
