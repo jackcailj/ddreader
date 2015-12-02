@@ -6,7 +6,7 @@
     <session-factory >
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.password">cms</property>
-        <property name="hibernate.connection.url">jdbc:mysql://10.255.223.243:3306/ecmst</property>
+        <property name="hibernate.connection.url">jdbc:mysql://10.255.223.241:3306/ecmst</property>
         <property name="hibernate.connection.username">cmsuser</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
          
