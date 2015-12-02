@@ -155,7 +155,7 @@ public class Article {
 	public void setPraiseNum(String praiseNum){
 		this.praiseNum = praiseNum;
 	}
-	public void getUserBaseInfo(UserBaseInfo userBaseInfo){
+	public void setUserBaseInfo(UserBaseInfo userBaseInfo){
 		this.userBaseInfo = userBaseInfo;
 	}
 }
