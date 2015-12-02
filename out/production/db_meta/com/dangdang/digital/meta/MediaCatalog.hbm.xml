@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCatalog" table="media_catalog" catalog="digital">
+        <id name="mcId" type="java.lang.Long">
+            <column name="mc_id" />
+            <generator class="identity" />
+        </id>
+        <property name="productId" type="long">
+            <column name="product_id" not-null="true" />
+        </property>
+        <property name="catalogName" type="string">
+            <column name="catalog_name" length="200" not-null="true" />
+        </property>
+        <property name="catalogContent" type="string">
+            <column name="catalog_content" length="400" not-null="true">
+                <comment>&#199;&#176;100&#215;&#214;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

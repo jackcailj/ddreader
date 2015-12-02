@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCloudPushStrategy" table="media_cloud_push_strategy" catalog="digital">
+        <id name="cloudPushStrategyId" type="java.lang.Long">
+            <column name="cloud_push_strategy_id" />
+            <generator class="identity" />
+        </id>
+        <property name="appId" type="java.lang.Integer">
+            <column name="app_id" />
+        </property>
+        <property name="strategyType" type="java.lang.Integer">
+            <column name="strategy_type">
+                <comment>0 &#213;&#253;&#179;&#163; 1
+                &#177;&#216;&#204;&#238;&#196;&#208;&#198;&#181;&#187;&#242;&#197;&#174;&#198;&#181;&#178;&#206;&#202;&#253;&#181;&#196;&#178;&#223;&#194;&#212;</comment>
+            </column>
+        </property>
+        <property name="strategyName" type="string">
+            <column name="strategy_name" />
+        </property>
+    </class>
+</hibernate-mapping>

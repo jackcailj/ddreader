@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-23 11:10:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.BaseComment.meta.BrowseInfo" table="browse_info" catalog="base_comment">
+        <id name="browseInfoId" type="java.lang.Long">
+            <column name="browse_info_id" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="long">
+            <column name="user_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="targetId" type="long">
+            <column name="target_id" not-null="true">
+                <comment>&#214;&#247;&#204;&#229;id</comment>
+            </column>
+        </property>
+        <property name="targetSource" type="string">
+            <column name="target_source" length="4" not-null="true">
+                <comment>&#214;&#247;&#204;&#229;&#192;&#180;&#212;&#180;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

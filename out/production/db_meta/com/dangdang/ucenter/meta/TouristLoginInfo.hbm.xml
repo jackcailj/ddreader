@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-18 19:23:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ucenter.meta.TouristLoginInfo" table="tourist_login_info" catalog="ucenter">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="deviceNo" type="string">
+            <column name="device_no" length="100" />
+        </property>
+        <property name="loginUsername" type="string">
+            <column name="login_username" length="100" />
+        </property>
+        <property name="loginPwd" type="string">
+            <column name="login_pwd" length="100" />
+        </property>
+        <property name="loginTime" type="timestamp">
+            <column name="login_time" length="19" />
+        </property>
+        <property name="errorPwd" type="string">
+            <column name="error_pwd" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>

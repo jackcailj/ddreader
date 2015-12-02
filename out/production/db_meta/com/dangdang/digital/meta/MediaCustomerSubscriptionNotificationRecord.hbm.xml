@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-4 17:59:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCustomerSubscriptionNotificationRecord" table="media_customer_subscription_notification_record" catalog="digital">
+        <id name="customerSubscriptionNotificationRecordId" type="java.lang.Long">
+            <column name="customer_subscription_notification_record_id" />
+            <generator class="identity" />
+        </id>
+        <property name="deviceNo" type="string">
+            <column name="device_no" />
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" />
+        </property>
+        <property name="lastPullChapterDate" type="timestamp">
+            <column name="last_pull_chapter_date" length="19" />
+        </property>
+        <property name="deviceType" type="java.lang.Integer">
+            <column name="device_type" />
+        </property>
+        <property name="extUserId" type="string">
+            <column name="ext_user_id" />
+        </property>
+        <property name="extChannelId" type="string">
+            <column name="ext_channel_id" />
+        </property>
+        <property name="appId" type="java.lang.Integer">
+            <column name="app_id" />
+        </property>
+    </class>
+</hibernate-mapping>

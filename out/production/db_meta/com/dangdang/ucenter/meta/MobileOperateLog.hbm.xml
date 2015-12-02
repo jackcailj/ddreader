@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-18 19:23:36 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ucenter.meta.MobileOperateLog" table="mobile_operate_log" catalog="ucenter">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="USERNAME" length="100" />
+        </property>
+        <property name="deviceId" type="string">
+            <column name="DEVICE_ID" length="100" />
+        </property>
+        <property name="deviceType" type="string">
+            <column name="DEVICE_TYPE" length="100" />
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="PRODUCT_ID" />
+        </property>
+        <property name="operateType" type="string">
+            <column name="OPERATE_TYPE" length="100" />
+        </property>
+        <property name="operateTime" type="timestamp">
+            <column name="OPERATE_TIME" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

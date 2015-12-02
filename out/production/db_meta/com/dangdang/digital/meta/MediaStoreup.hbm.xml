@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaStoreup" table="media_storeup" catalog="digital">
+        <id name="storeId" type="java.lang.Long">
+            <column name="store_id" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="string">
+            <column name="type" length="10">
+                <comment>
+                &#202;&#213;&#178;&#216;&#192;&#224;&#208;&#205;,media-&#212;&#173;&#180;&#180;&#202;&#233;&#196;&#191;,discover:&#212;&#173;&#180;&#180;&#183;&#162;&#207;&#214;,digest:&#190;&#171;&#198;&#183;</comment>
+            </column>
+        </property>
+        <property name="targetId" type="java.lang.Long">
+            <column name="target_id">
+                <comment>media&#187;&#242;&#213;&#223;&#183;&#162;&#207;&#214;&#210;&#212;&#188;&#176;&#190;&#171;&#198;&#183;&#181;&#196;Id</comment>
+            </column>
+        </property>
+        <property name="storeDate" type="timestamp">
+            <column name="store_date" length="19">
+                <comment>&#202;&#213;&#178;&#216;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name" length="50" />
+        </property>
+        <property name="nickName" type="string">
+            <column name="nick_name" length="50">
+                <comment>&#211;&#195;&#187;&#167;&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="platform" type="string">
+            <column name="platform" length="32" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.ChannelArticles" table="channel_articles" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="isPublish" type="java.lang.Boolean">
+            <column name="is_publish">
+                <comment>&#178;&#221;&#184;&#229;or&#183;&#162;&#178;&#188;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Boolean">
+            <column name="status">
+                <comment>&#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#213;&#194;&#189;&#218;&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateDate" type="timestamp">
+            <column name="last_update_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#210;&#187;&#180;&#206;&#177;&#224;&#188;&#173;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="channelId" type="java.lang.Long">
+            <column name="channel_id" />
+        </property>
+    </class>
+</hibernate-mapping>

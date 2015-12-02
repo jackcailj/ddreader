@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCpTaxinfo" table="media_cp_taxinfo" catalog="digital">
+        <id name="taxId" type="java.lang.Integer">
+            <column name="tax_id" />
+            <generator class="identity" />
+        </id>
+        <property name="cpId" type="java.lang.Integer">
+            <column name="cp_id">
+                <comment>&#203;&#249;&#202;&#244;CP&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="taxNo" type="string">
+            <column name="tax_no" length="20">
+                <comment>&#203;&#176;&#206;&#241;&#181;&#199;&#188;&#199;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>&#196;&#201;&#203;&#176;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="taxpayerType" type="java.lang.Integer">
+            <column name="taxpayer_type">
+                <comment>&#196;&#201;&#203;&#176;&#200;&#203;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="issueDate" type="timestamp">
+            <column name="issue_date" length="19">
+                <comment>&#183;&#162;&#214;&#164;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="busiScope" type="string">
+            <column name="busi_scope" length="500">
+                <comment>&#190;&#173;&#211;&#170;&#183;&#182;&#206;&#167;</comment>
+            </column>
+        </property>
+        <property name="certificationAttach" type="string">
+            <column name="certification_attach" length="100">
+                <comment>&#214;&#164;&#188;&#254;&#184;&#189;&#188;&#254;&#180;&#230;&#212;&#218;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

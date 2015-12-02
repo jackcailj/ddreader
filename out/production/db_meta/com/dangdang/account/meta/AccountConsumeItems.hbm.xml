@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-21 15:53:56 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.account.meta.AccountConsumeItems" table="account_consume_items" catalog="account">
+        <id name="consumeItemId" type="java.lang.Long">
+            <column name="consume_item_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="consumeNo" type="string">
+            <column name="consume_no" length="64" not-null="true">
+                <comment>&#207;&#251;&#183;&#209;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="consumeMoney" type="int">
+            <column name="consume_money" not-null="true">
+                <comment>&#207;&#251;&#183;&#209;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="accountType" type="string">
+            <column name="account_type" length="8" not-null="true">
+                <comment>&#213;&#203;&#187;&#167;&#192;&#224;&#208;&#205;(master:&#214;&#247;&#213;&#203;&#187;&#167;,attach:&#184;&#189;&#213;&#203;&#187;&#167;)</comment>
+            </column>
+        </property>
+        <property name="consumeType" type="string">
+            <column name="consume_type" length="8" not-null="true">
+                <comment>&#207;&#251;&#183;&#209;&#192;&#224;&#208;&#205;(1000:&#179;&#228;&#214;&#181;,2000&#207;&#251;&#183;&#209;)</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifyedDate" type="timestamp">
+            <column name="last_modifyed_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="consumeSource" type="string">
+            <column name="consume_source" length="16" not-null="true">
+                <comment>&#207;&#251;&#183;&#209;&#192;&#180;&#212;&#180;</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="16" not-null="true">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;(android,iphone,ipad)</comment>
+            </column>
+        </property>
+        <property name="consumeResult" type="short">
+            <column name="consume_result" not-null="true">
+                <comment>&#207;&#251;&#183;&#209;&#189;&#225;&#185;&#251;(0,&#202;&#167;&#176;&#220;,1:&#179;&#201;&#185;&#166;)</comment>
+            </column>
+        </property>
+        <property name="platformNo" type="string">
+            <column name="platform_no" length="8" not-null="true">
+                <comment>
+                &#198;&#189;&#204;&#168;&#177;&#224;&#186;&#197;(1001.&#181;&#177;&#182;&#193;&#208;&#161;&#203;&#181;,1002.&#181;&#177;&#181;&#177;&#182;&#193;&#202;&#233;)</comment>
+            </column>
+        </property>
+        <property name="sourceOrderNo" type="string">
+            <column name="source_order_no" length="64" not-null="true">
+                <comment>&#205;&#226;&#178;&#191;&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="attachAccountItemsId" type="java.lang.Long">
+            <column name="attach_account_items_id">
+                <comment>&#184;&#189;&#213;&#203;&#187;&#167;&#195;&#247;&#207;&#184;&#214;&#247;&#188;&#252;ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

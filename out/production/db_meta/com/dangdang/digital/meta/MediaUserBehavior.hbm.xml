@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaUserBehavior" table="media_user_behavior" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="saleId" type="java.lang.Long">
+            <column name="saleId">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;id</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="mediaId">
+                <comment>&#215;&#202;&#212;&#180;id</comment>
+            </column>
+        </property>
+        <property name="behaviorType" type="string">
+            <column name="behavior_type" />
+        </property>
+        <property name="times" type="java.lang.Integer">
+            <column name="times">
+                <comment>&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="custId" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="platform" type="string">
+            <column name="platform" length="32">
+                <comment>&#192;&#180;&#212;&#180;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

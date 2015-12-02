@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaDiscovery" table="media_discovery" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="author" type="string">
+            <column name="author">
+                <comment>&#215;&#247;&#213;&#223;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#185;&#216;&#193;&#170;&#202;&#233;&#188;&#174;ID</comment>
+            </column>
+        </property>
+        <property name="mediaName" type="string">
+            <column name="media_name" length="500">
+                <comment>&#185;&#216;&#193;&#170;&#202;&#233;&#188;&#174;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="firstCatetoryId" type="java.lang.Integer">
+            <column name="first_catetory_id">
+                <comment>&#210;&#187;&#188;&#182;&#183;&#214;&#192;&#224;ID</comment>
+            </column>
+        </property>
+        <property name="firstCatetoryName" type="string">
+            <column name="first_catetory_name" length="500">
+                <comment>&#182;&#254;&#188;&#182;&#183;&#214;&#192;&#224;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content">
+                <comment>&#196;&#218;&#200;&#221;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>&#192;&#224;&#208;&#205; 1&#163;&#186;&#183;&#162;&#207;&#214; 2&#163;&#186;&#181;&#177;&#208;&#196;&#186;&#195;&#206;&#196;</comment>
+            </column>
+        </property>
+        <property name="columnId" type="java.lang.Long">
+            <column name="column_id">
+                <comment>&#192;&#184;&#196;&#191;ID</comment>
+            </column>
+        </property>
+        <property name="columnName" type="string">
+            <column name="column_name">
+                <comment>&#192;&#184;&#196;&#191;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="stars" type="java.lang.Integer">
+            <column name="stars">
+                <comment>&#198;&#192;&#208;&#199;</comment>
+            </column>
+        </property>
+        <property name="reviewCnt" type="java.lang.Integer">
+            <column name="review_cnt" />
+        </property>
+        <property name="collectCnt" type="java.lang.Integer">
+            <column name="collect_cnt">
+                <comment>&#202;&#213;&#178;&#216;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="topOrder" type="java.lang.Integer">
+            <column name="top_order" />
+        </property>
+        <property name="operator" type="string">
+            <column name="operator">
+                <comment>&#178;&#217;&#215;&#247;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="shareCnt" type="java.lang.Integer">
+            <column name="share_cnt">
+                <comment>&#183;&#214;&#207;&#237;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="signName" type="string">
+            <column name="sign_name">
+                <comment>&#177;&#234;&#199;&#169;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="secondCatetoryId" type="java.lang.Integer">
+            <column name="second_catetory_id">
+                <comment>&#182;&#254;&#188;&#182;&#183;&#214;&#192;&#224;ID</comment>
+            </column>
+        </property>
+        <property name="secondCatetoryName" type="string">
+            <column name="second_catetory_name">
+                <comment>&#182;&#254;&#188;&#182;&#183;&#214;&#192;&#224;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="topCnt" type="java.lang.Integer">
+            <column name="top_cnt">
+                <comment>&#182;&#165;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="discardCnt" type="java.lang.Integer">
+            <column name="discard_cnt">
+                <comment>&#178;&#200;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="cardTitle" type="string">
+            <column name="card_title" length="500">
+                <comment>&#191;&#168;&#198;&#172;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="cardRemark" type="string">
+            <column name="card_remark" length="1000">
+                <comment>&#191;&#168;&#198;&#172;&#213;&#170;&#210;&#170;</comment>
+            </column>
+        </property>
+        <property name="pic1Path" type="string">
+            <column name="pic1_path" length="500">
+                <comment>&#205;&#188;&#198;&#172;1&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="pic2Path" type="string">
+            <column name="pic2_path" length="500">
+                <comment>&#205;&#188;&#198;&#172;2&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="pic3Path" type="string">
+            <column name="pic3_path" length="500">
+                <comment>&#205;&#188;&#198;&#172;3&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="cardType" type="java.lang.Integer">
+            <column name="card_type">
+                <comment>&#191;&#168;&#198;&#172;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="showStartDate" type="timestamp">
+            <column name="show_start_date" length="19">
+                <comment>&#191;&#170;&#202;&#188;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="showEndDate" type="timestamp">
+            <column name="show_end_date" length="19">
+                <comment>&#189;&#225;&#202;&#248;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="500">
+                <comment>&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="isShow" type="java.lang.Integer">
+            <column name="is_show">
+                <comment>&#202;&#199;&#183;&#241;&#207;&#212;&#202;&#190;</comment>
+            </column>
+        </property>
+        <property name="signId" type="string">
+            <column name="sign_id" length="1000">
+                <comment>&#177;&#234;&#199;&#169;ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

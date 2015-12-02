@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaBookcityModelVersion" table="media_bookcity_model_version" catalog="digital">
+        <id name="bookcityModelVersionId" type="java.lang.Long">
+            <column name="bookcity_model_version_id" />
+            <generator class="identity" />
+        </id>
+        <version name="version" type="java.lang.Long">
+            <column name="version" />
+        </version>
+        <property name="modelCode" type="string">
+            <column name="model_code" />
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

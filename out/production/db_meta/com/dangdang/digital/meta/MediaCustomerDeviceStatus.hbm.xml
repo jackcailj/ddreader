@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-4 17:59:14 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCustomerDeviceStatus" table="media_customer_device_status" catalog="digital">
+        <id name="customerDeviceStatusId" type="java.lang.Long">
+            <column name="customer_device_status_id" />
+            <generator class="identity" />
+        </id>
+        <property name="appId" type="java.lang.Integer">
+            <column name="app_id" />
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" />
+        </property>
+        <property name="deviceNo" type="string">
+            <column name="device_no" />
+        </property>
+        <property name="type" type="int">
+            <column name="type" not-null="true" />
+        </property>
+        <property name="statusA" type="java.lang.Integer">
+            <column name="status_a" />
+        </property>
+        <property name="statusB" type="java.lang.Integer">
+            <column name="status_b" />
+        </property>
+        <property name="statusC" type="java.lang.Integer">
+            <column name="status_c" />
+        </property>
+        <property name="statusD" type="java.lang.Integer">
+            <column name="status_d" />
+        </property>
+        <property name="statusE" type="java.lang.Integer">
+            <column name="status_e" />
+        </property>
+        <property name="statusF" type="java.lang.Integer">
+            <column name="status_f" />
+        </property>
+        <property name="statusG" type="java.lang.Integer">
+            <column name="status_g" />
+        </property>
+    </class>
+</hibernate-mapping>

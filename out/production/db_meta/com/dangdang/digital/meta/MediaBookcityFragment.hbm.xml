@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaBookcityFragment" table="media_bookcity_fragment" catalog="digital">
+        <id name="bookcityFragmentId" type="java.lang.Long">
+            <column name="bookcity_fragment_id" />
+            <generator class="identity" />
+        </id>
+        <property name="fragmentName" type="string">
+            <column name="fragment_name">
+                <comment>
+                &#195;&#251;&#215;&#214;&#163;&#172;&#211;&#195;&#211;&#218;&#199;&#248;&#177;&#240;&#205;&#172;&#192;&#224;&#208;&#205;&#181;&#196;&#196;&#163;&#176;&#229;&#198;&#172;&#182;&#206;</comment>
+            </column>
+        </property>
+        <property name="fragmentType" type="java.lang.Long">
+            <column name="fragment_type">
+                <comment>&#196;&#163;&#176;&#229;&#198;&#172;&#182;&#206;&#192;&#224;&#208;&#205;,
+                &#198;&#181;&#181;&#192;&#161;&#162;&#205;&#188;&#202;&#233;&#161;&#162;&#182;&#204;banner&#161;&#162;&#179;&#164;banner</comment>
+            </column>
+        </property>
+        <property name="fragmentSubtype" type="java.lang.Long">
+            <column name="fragment_subtype">
+                <comment>
+                &#190;&#223;&#204;&#229;&#181;&#196;&#192;&#224;&#208;&#205;&#163;&#172;&#177;&#200;&#200;&#231;&#198;&#181;&#181;&#192;&#181;&#196;&#185;&#172;&#184;&#241;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="fragmentHtml" type="string">
+            <column name="fragment_html">
+                <comment>&#196;&#163;&#176;&#229;&#198;&#172;&#182;&#206;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="hasTitle" type="java.lang.Boolean">
+            <column name="has_title" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" />
+        </property>
+        <property name="hasMoreText" type="java.lang.Boolean">
+            <column name="has_more_text" />
+        </property>
+        <property name="moreText" type="string">
+            <column name="more_text" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#215;&#180;&#204;&#172;&#163;&#186;&#211;&#208;&#208;&#167;1 or &#183;&#207;&#198;&#250;0</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier" />
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

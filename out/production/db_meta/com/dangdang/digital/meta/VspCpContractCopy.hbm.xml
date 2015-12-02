@@ -1,0 +1,228 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.VspCpContractCopy" table="vsp_cp_contract_copy" catalog="digital">
+        <id name="contractId" type="java.lang.Integer">
+            <column name="contract_id" />
+            <generator class="identity" />
+        </id>
+        <property name="contractCode" type="string">
+            <column name="contract_code" length="128">
+                <comment>&#186;&#207;&#205;&#172;&#177;&#224;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="contractName" type="string">
+            <column name="contract_name">
+                <comment>&#186;&#207;&#205;&#172;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="cpName" type="string">
+            <column name="cp_name" length="128">
+                <comment>&#186;&#207;&#205;&#172;&#203;&#249;&#202;&#244;CP&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="cpId" type="java.lang.Integer">
+            <column name="cp_id">
+                <comment>&#203;&#249;&#202;&#244;CP&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="paymentInAdvance" type="java.lang.Integer">
+            <column name="payment_in_advance">
+                <comment>&#212;&#164;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="checkoutWay" type="java.lang.Short">
+            <column name="checkout_way">
+                <comment>&#189;&#225;&#191;&#238;&#183;&#189;&#202;&#189;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Short">
+            <column name="type">
+                <comment>&#186;&#207;&#205;&#172;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="firstParty" type="string">
+            <column name="first_party">
+                <comment>&#188;&#215;&#183;&#189;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="secondParty" type="string">
+            <column name="second_party">
+                <comment>&#210;&#210;&#183;&#189;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="recordDate" type="timestamp">
+            <column name="record_date" length="19">
+                <comment>&#181;&#199;&#188;&#199;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="start_date" length="19">
+                <comment>&#186;&#207;&#205;&#172;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="end_date" length="19">
+                <comment>&#186;&#207;&#205;&#172;&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="contentRatio" type="java.lang.Short">
+            <column name="content_ratio">
+                <comment>&#196;&#218;&#200;&#221;&#183;&#214;&#179;&#201;&#177;&#200;&#192;&#253;</comment>
+            </column>
+        </property>
+        <property name="manageRatio" type="java.lang.Short">
+            <column name="manage_ratio">
+                <comment>&#212;&#203;&#211;&#170;&#191;&#219;&#179;&#253;&#177;&#200;&#192;&#253;</comment>
+            </column>
+        </property>
+        <property name="otherRadtio" type="java.lang.Short">
+            <column name="other_radtio">
+                <comment>&#198;&#228;&#203;&#252;&#191;&#219;&#179;&#246;&#177;&#200;&#192;&#253;</comment>
+            </column>
+        </property>
+        <property name="sharingNote" type="string">
+            <column name="sharing_note">
+                <comment>&#183;&#214;&#179;&#201;&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="electronicProtocol" type="java.lang.Boolean">
+            <column name="electronic_protocol">
+                <comment>&#181;&#231;&#215;&#211;&#202;&#233;&#208;&#173;&#210;&#233; 1&#202;&#199;,0&#183;&#241;</comment>
+            </column>
+        </property>
+        <property name="paperProtocol" type="java.lang.Boolean">
+            <column name="paper_protocol">
+                <comment>&#214;&#189;&#202;&#233;&#208;&#173;&#210;&#233;1&#202;&#199;,0&#183;&#241;</comment>
+            </column>
+        </property>
+        <property name="payCycle" type="string">
+            <column name="pay_cycle" length="128">
+                <comment>&#214;&#167;&#184;&#182;&#214;&#220;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="cycleType" type="java.lang.Short">
+            <column name="cycle_type">
+                <comment>
+                &#189;&#225;&#203;&#227;&#214;&#220;&#198;&#218;&#192;&#224;&#208;&#205;&#163;&#186;&#215;&#212;&#200;&#187;&#212;&#194;,&#213;&#251;&#212;&#194;</comment>
+            </column>
+        </property>
+        <property name="fullAuthorization" type="java.lang.Boolean">
+            <column name="full_authorization">
+                <comment>&#202;&#199;&#183;&#241;&#200;&#171;&#177;&#190;&#202;&#218;&#200;&#168;1 &#202;&#199;,0&#183;&#241;</comment>
+            </column>
+        </property>
+        <property name="probationAuthorization" type="java.lang.Boolean">
+            <column name="probation_authorization">
+                <comment>&#202;&#199;&#183;&#241;&#202;&#212;&#182;&#193;&#202;&#218;&#200;&#168; 1&#202;&#199;,0&#183;&#241;</comment>
+            </column>
+        </property>
+        <property name="channelProbation" type="java.lang.Boolean">
+            <column name="channel_probation">
+                <comment>&#199;&#254;&#181;&#192;&#202;&#212;&#182;&#193;&#202;&#218;&#200;&#168; 1&#202;&#199;,0&#183;&#241;</comment>
+            </column>
+        </property>
+        <property name="freeRatio" type="java.lang.Short">
+            <column name="free_ratio">
+                <comment>&#195;&#226;&#183;&#209;&#177;&#200;&#192;&#253;</comment>
+            </column>
+        </property>
+        <property name="invoiceType" type="string">
+            <column name="invoice_type">
+                <comment>&#183;&#162;&#198;&#177;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="isExclusive" type="java.lang.Boolean">
+            <column name="is_exclusive">
+                <comment>&#202;&#199;&#183;&#241;&#182;&#192;&#188;&#210;(1:&#182;&#192;&#188;&#210;,0:&#178;&#187;&#202;&#199;)</comment>
+            </column>
+        </property>
+        <property name="attachFile" type="string">
+            <column name="attach_file" length="100">
+                <comment>&#184;&#189;&#188;&#254;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="authorizationListName" type="string">
+            <column name="authorization_list_name">
+                <comment>&#202;&#218;&#200;&#168;&#202;&#233;&#181;&#165;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="principal" type="string">
+            <column name="principal">
+                <comment>&#184;&#186;&#212;&#240;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="supplierAptitudeInfo" type="string">
+            <column name="supplier_aptitude_info">
+                <comment>&#185;&#169;&#183;&#189;&#215;&#202;&#214;&#202;&#208;&#197;&#207;&#162;</comment>
+            </column>
+        </property>
+        <property name="radioFranceRemark" type="string">
+            <column name="radio_france_remark">
+                <comment>&#183;&#181;&#181;&#227;&#208;&#197;&#207;&#162;&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="taxRate" type="string">
+            <column name="tax_rate">
+                <comment>&#203;&#176;&#194;&#202;</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" length="10">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="auditor" type="string">
+            <column name="auditor" length="10">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#203;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="auditDate" type="timestamp">
+            <column name="audit_date" length="19">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Short">
+            <column name="status">
+                <comment>&#186;&#207;&#205;&#172;&#215;&#180;&#204;&#172;(0:&#206;&#180;&#201;&#243;&#186;&#203;,1:&#210;&#209;&#201;&#243;&#186;&#203;)</comment>
+            </column>
+        </property>
+        <property name="comments" type="string">
+            <column name="comments" length="500">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+        <property name="archiveFile" type="string">
+            <column name="archive_file">
+                <comment>&#180;&#230;&#181;&#181;&#206;&#196;&#188;&#254;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="vendorContactPerson" type="string">
+            <column name="vendor_contact_person">
+                <comment>&#179;&#246;&#176;&#230;&#201;&#231;&#189;&#211;&#191;&#218;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="vendorContact" type="string">
+            <column name="vendor_contact">
+                <comment>&#179;&#246;&#176;&#230;&#201;&#231;&#193;&#170;&#207;&#181;&#183;&#189;&#202;&#189;</comment>
+            </column>
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="lastChangeDate" type="timestamp">
+            <column name="last_change_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

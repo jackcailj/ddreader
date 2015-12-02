@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaImportTask" table="media_import_task" catalog="digital">
+        <id name="taskId" type="java.lang.Long">
+            <column name="task_id" />
+            <generator class="identity" />
+        </id>
+        <property name="path" type="string">
+            <column name="path">
+                <comment>&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="finishDate" type="timestamp">
+            <column name="finish_date" length="19">
+                <comment>&#205;&#234;&#179;&#201;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="status" type="string">
+            <column name="status">
+                <comment>&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="error" type="string">
+            <column name="error" length="1000">
+                <comment>&#180;&#237;&#206;&#243;&#208;&#197;&#207;&#162;</comment>
+            </column>
+        </property>
+        <property name="batchId" type="java.lang.Long">
+            <column name="batch_id">
+                <comment>&#197;&#250;&#180;&#206;ID</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="500">
+                <comment>&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="author" type="string">
+            <column name="author">
+                <comment>&#215;&#247;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#195;&#189;&#204;&#229;ID</comment>
+            </column>
+        </property>
+        <property name="chapterId" type="java.lang.Long">
+            <column name="chapter_id">
+                <comment>&#213;&#194;&#189;&#218;ID</comment>
+            </column>
+        </property>
+        <property name="chapterName" type="string">
+            <column name="chapter_name" length="500">
+                <comment>&#213;&#194;&#189;&#218;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="mediaName" type="string">
+            <column name="media_name" length="500" />
+        </property>
+        <property name="volumeName" type="string">
+            <column name="volume_name" length="500" />
+        </property>
+        <property name="volumeId" type="java.lang.Long">
+            <column name="volume_id" />
+        </property>
+        <property name="uid" type="string">
+            <column name="uid" />
+        </property>
+        <property name="cpMediaPullId" type="java.lang.Long">
+            <column name="cp_media_pull_id" />
+        </property>
+        <property name="cpChapterPullId" type="java.lang.Long">
+            <column name="cp_chapter_pull_id" />
+        </property>
+        <property name="indexOrder" type="java.lang.Integer">
+            <column name="index_order" />
+        </property>
+    </class>
+</hibernate-mapping>

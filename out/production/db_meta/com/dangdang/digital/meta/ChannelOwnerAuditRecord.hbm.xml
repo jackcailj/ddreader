@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.ChannelOwnerAuditRecord" table="channel_owner_audit_record" catalog="digital">
+        <id name="recordId" type="java.lang.Long">
+            <column name="record_id" />
+            <generator class="identity" />
+        </id>
+        <property name="ownerId" type="java.lang.Long">
+            <column name="owner_id" />
+        </property>
+        <property name="account" type="string">
+            <column name="account" length="100">
+                <comment>&#201;&#234;&#199;&#235;&#200;&#203;&#213;&#203;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#201;&#234;&#199;&#235;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="auditDate" type="timestamp">
+            <column name="audit_date" length="19">
+                <comment>&#201;&#243;&#186;&#203;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="failMsg" type="string">
+            <column name="fail_msg" length="1000">
+                <comment>&#202;&#167;&#176;&#220;&#212;&#173;&#210;&#242;</comment>
+            </column>
+        </property>
+        <property name="auditor" type="string">
+            <column name="auditor" length="50">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#203;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

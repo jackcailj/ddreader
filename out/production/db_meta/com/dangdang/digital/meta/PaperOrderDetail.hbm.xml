@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-14 14:45:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.PaperOrderDetail" table="paper_order_detail" catalog="digital">
+        <id name="paperOrderDetailId" type="java.lang.Long">
+            <column name="paper_order_detail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderNo" type="string">
+            <column name="order_no" />
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="product_id" />
+        </property>
+        <property name="productName" type="string">
+            <column name="product_name" />
+        </property>
+        <property name="paidPrice" type="java.lang.Integer">
+            <column name="paid_price">
+                <comment>&#202;&#181;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price">
+                <comment>&#201;&#204;&#198;&#183;&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+        <property name="productCount" type="java.lang.Integer">
+            <column name="product_count">
+                <comment>&#185;&#186;&#194;&#242;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="fromChannelId" type="string">
+            <column name="from_channel_id">
+                <comment>&#192;&#180;&#212;&#180;&#198;&#181;&#181;&#192;id</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

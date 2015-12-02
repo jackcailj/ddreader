@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaActivitySale" table="media_activity_sale" catalog="digital">
+        <id name="activitySaleId" type="java.lang.Integer">
+            <column name="activity_sale_id" />
+            <generator class="identity" />
+        </id>
+        <property name="activityId" type="java.lang.Integer">
+            <column name="activity_id">
+                <comment>&#187;&#238;&#182;&#175;ID</comment>
+            </column>
+        </property>
+        <property name="saleId" type="java.lang.Integer">
+            <column name="sale_id">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;ID</comment>
+            </column>
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="start_time" length="19">
+                <comment>&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19">
+                <comment>&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="sort">
+                <comment>&#197;&#197;&#208;&#242;&#215;&#214;&#182;&#206;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#215;&#180;&#204;&#172;&#163;&#168;0&#163;&#186;&#206;&#222;&#208;&#167; 1&#163;&#186;&#211;&#208;&#208;&#167;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="salePrice" type="java.lang.Long">
+            <column name="sale_price" precision="10" scale="0">
+                <comment>&#207;&#250;&#202;&#219;&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

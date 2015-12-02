@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaConsumerConsumeDetail" table="media_consumer_consume_detail" catalog="digital">
+        <id name="consumerConsumeDeatilId" type="java.lang.Long">
+            <column name="consumer_consume_deatil_id" />
+            <generator class="identity" />
+        </id>
+        <property name="consumerConsumeId" type="java.lang.Long">
+            <column name="consumer_consume_id">
+                <comment>&#211;&#195;&#187;&#167;&#207;&#251;&#183;&#209;&#188;&#199;&#194;&#188;&#177;&#237;id</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#195;&#189;&#204;&#229;id</comment>
+            </column>
+        </property>
+        <property name="mediaName" type="string">
+            <column name="media_name" length="128">
+                <comment>&#195;&#189;&#204;&#229;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="mediaConsumeChapterNum" type="java.lang.Integer">
+            <column name="media_consume_chapter_num">
+                <comment>&#207;&#251;&#183;&#209;&#195;&#189;&#204;&#229;&#213;&#194;&#189;&#218;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="propId" type="java.lang.Integer">
+            <column name="prop_id">
+                <comment>&#181;&#192;&#190;&#223;id</comment>
+            </column>
+        </property>
+        <property name="propName" type="string">
+            <column name="prop_name" length="128">
+                <comment>&#181;&#192;&#190;&#223;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="totalPrice" type="java.lang.Integer">
+            <column name="total_price" />
+        </property>
+        <property name="prePrice" type="java.lang.Integer">
+            <column name="pre_price" />
+        </property>
+        <property name="mainGoldPrice" type="java.lang.Integer">
+            <column name="main_gold_price">
+                <comment>&#181;&#192;&#190;&#223;&#181;&#165;&#188;&#219;&#163;&#168;&#214;&#247;&#212;&#196;&#182;&#193;&#177;&#210;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="subGoldPrice" type="java.lang.Integer">
+            <column name="sub_gold_price">
+                <comment>&#181;&#192;&#190;&#223;&#181;&#165;&#188;&#219;&#163;&#168;&#184;&#189;&#212;&#196;&#182;&#193;&#177;&#210;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="propCount" type="java.lang.Integer">
+            <column name="prop_count">
+                <comment>&#185;&#186;&#194;&#242;&#181;&#192;&#190;&#223;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

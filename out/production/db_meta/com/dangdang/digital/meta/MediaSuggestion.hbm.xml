@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaSuggestion" table="media_suggestion" catalog="digital">
+        <id name="suggestionId" type="java.lang.Long">
+            <column name="suggestion_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name" length="50" />
+        </property>
+        <property name="nickName" type="string">
+            <column name="nick_name" length="50" />
+        </property>
+        <property name="suggestDate" type="timestamp">
+            <column name="suggest_date" length="19" />
+        </property>
+        <property name="advice" type="string">
+            <column name="advice" length="1000">
+                <comment>&#210;&#226;&#188;&#251;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="contactWay" type="string">
+            <column name="contact_way" length="50">
+                <comment>&#193;&#170;&#207;&#181;&#183;&#189;&#202;&#189;</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="50">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="clientOs" type="string">
+            <column name="client_os" length="50">
+                <comment>&#202;&#214;&#187;&#250;&#207;&#181;&#205;&#179;</comment>
+            </column>
+        </property>
+        <property name="clientVersion" type="string">
+            <column name="client_version" length="20">
+                <comment>app&#176;&#230;&#177;&#190;</comment>
+            </column>
+        </property>
+        <property name="platform" type="string">
+            <column name="platform" length="32">
+                <comment>&#198;&#189;&#204;&#168;&#192;&#180;&#212;&#180;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

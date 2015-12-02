@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaWorshipRecordCopy" table="media_worship_record_copy" catalog="digital">
+        <id name="recordId" type="java.lang.Long">
+            <column name="record_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="150">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="worshipedCustId" type="java.lang.Long">
+            <column name="worshiped_cust_id">
+                <comment>&#177;&#187;&#196;&#164;&#176;&#221;&#181;&#196;&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="worshipedUsername" type="string">
+            <column name="worshiped_username" length="150">
+                <comment>&#177;&#187;&#196;&#164;&#176;&#221;&#181;&#196;&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastTime" type="timestamp">
+            <column name="last_time" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#210;&#187;&#180;&#206;&#196;&#164;&#176;&#221;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount">
+                <comment>&#177;&#190;&#180;&#206;&#196;&#164;&#176;&#221;&#199;&#174;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="times" type="java.lang.Long">
+            <column name="times">
+                <comment>&#215;&#220;&#181;&#196;&#196;&#164;&#176;&#221;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="sum" type="java.lang.Long">
+            <column name="sum">
+                <comment>&#196;&#164;&#176;&#221;&#181;&#196;&#215;&#220;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

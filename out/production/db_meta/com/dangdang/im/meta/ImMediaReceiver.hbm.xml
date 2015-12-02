@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-9 11:15:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.im.meta.ImMediaReceiver" table="im_media_receiver" catalog="im">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="sendRecordId" type="java.lang.Long">
+            <column name="send_record_id">
+                <comment>&#210;&#187;&#180;&#206;&#212;&#249;&#202;&#233;&#208;&#208;&#206;&#170;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="receiver" type="java.lang.Long">
+            <column name="receiver">
+                <comment>&#189;&#211;&#202;&#220;&#213;&#223;&#181;&#196;custId</comment>
+            </column>
+        </property>
+        <property name="receiverName" type="string">
+            <column name="receiver_name" length="50">
+                <comment>&#189;&#211;&#202;&#220;&#213;&#223;&#181;&#196;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#210;&#209;&#193;&#236;&#200;&#161;media&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

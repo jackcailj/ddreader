@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-9 11:15:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.im.meta.ImMediaSendDetails" table="im_media_send_details" catalog="im">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#212;&#249;&#203;&#205;&#202;&#233;&#181;&#196;id</comment>
+            </column>
+        </property>
+        <property name="sendRecordId" type="java.lang.Long">
+            <column name="send_record_id">
+                <comment>&#185;&#216;&#193;&#170;send_record&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="mediaStatus" type="java.lang.Integer">
+            <column name="media_status">
+                <comment>
+                &#202;&#233;&#212;&#249;&#203;&#205;&#215;&#180;&#204;&#172;(&#206;&#180;&#193;&#236;&#200;&#161;,&#210;&#209;&#205;&#203;&#187;&#216;,&#210;&#209;&#193;&#236;&#200;&#161;)</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

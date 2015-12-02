@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaImUser" table="media_im_user" catalog="digital">
+        <id name="imId" type="java.lang.Long">
+            <column name="im_id" />
+            <generator class="identity" />
+        </id>
+        <property name="userId" type="java.lang.Long">
+            <column name="user_id">
+                <comment>
+                &#185;&#216;&#193;&#170;&#211;&#195;&#187;&#167;&#177;&#237;&#215;&#212;&#182;&#175;&#212;&#246;&#179;&#164;&#181;&#196;Id(&#214;&#177;&#189;&#211;&#211;&#195;&#215;&#247;IM&#213;&#203;&#186;&#197;)</comment>
+            </column>
+        </property>
+        <property name="userImId" type="string">
+            <column name="user_im_id" length="50" />
+        </property>
+        <property name="userImPwd" type="string">
+            <column name="user_im_pwd" length="50">
+                <comment>&#211;&#195;&#187;&#167;IM&#195;&#220;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="appCode" type="string">
+            <column name="app_code" length="20">
+                <comment>app_code+user_id=user_im_id</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaDigestAnthology" table="media_digest_anthology" catalog="digital">
+        <id name="anthologyDigestId" type="java.lang.Long">
+            <column name="anthology_digest_id" />
+            <generator class="identity" />
+        </id>
+        <property name="digestId" type="long">
+            <column name="digest_id" not-null="true">
+                <comment>&#190;&#171;&#198;&#183;id</comment>
+            </column>
+        </property>
+        <property name="anthologyId" type="long">
+            <column name="anthology_id" not-null="true">
+                <comment>&#206;&#196;&#188;&#175;id</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true">
+                <comment>&#190;&#171;&#198;&#183;&#188;&#211;&#200;&#235;&#206;&#196;&#188;&#175;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

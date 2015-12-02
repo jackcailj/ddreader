@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaMessage" table="media_message" catalog="digital">
+        <id name="messageId" type="java.lang.Long">
+            <column name="message_id" />
+            <generator class="identity" />
+        </id>
+        <property name="receiverCustId" type="java.lang.Long">
+            <column name="receiver_cust_id">
+                <comment>&#189;&#211;&#202;&#213;&#213;&#223;ID</comment>
+            </column>
+        </property>
+        <property name="senderCustId" type="java.lang.Long">
+            <column name="sender_cust_id">
+                <comment>&#183;&#162;&#203;&#205;&#213;&#223;ID</comment>
+            </column>
+        </property>
+        <property name="appId" type="string">
+            <column name="app_id" length="500" />
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="500">
+                <comment>&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1000">
+                <comment>&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="openDate" type="timestamp">
+            <column name="open_date" length="19">
+                <comment>&#180;&#242;&#191;&#170;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="openShareType" type="java.lang.Integer">
+            <column name="open_share_type">
+                <comment>1&#180;&#242;&#191;&#170;&#184;&#163;&#180;&#252; 2&#183;&#214;&#207;&#237;&#189;&#240;&#193;&#229;&#238;&#245;</comment>
+            </column>
+        </property>
+        <property name="isRead" type="java.lang.Integer">
+            <column name="is_read">
+                <comment>0:&#206;&#180;&#182;&#193;;1:&#210;&#209;&#182;&#193;</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Long">
+            <column name="amount">
+                <comment>&#189;&#240;&#193;&#229;&#238;&#245;&#187;&#242;&#213;&#223;&#184;&#163;&#180;&#252;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="500">
+                <comment>&#176;&#178;&#215;&#191;&#163;&#172;iPhone</comment>
+            </column>
+        </property>
+        <property name="isAllDevice" type="java.lang.Integer">
+            <column name="is_all_device">
+                <comment>&#202;&#199;&#183;&#241;&#199;&#248;&#183;&#214;&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;&#163;&#172;0:&#199;&#248;&#183;&#214;,1:all</comment>
+            </column>
+        </property>
+        <property name="customContent" type="string">
+            <column name="custom_content" length="1024">
+                <comment>&#215;&#212;&#182;&#168;&#210;&#229;json</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaVolume" table="media_volume" catalog="digital">
+        <id name="volumeId" type="java.lang.Long">
+            <column name="volume_id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="500" />
+        </property>
+        <property name="volumeOrder" type="java.lang.Integer">
+            <column name="volume_order" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="descs" type="string">
+            <column name="descs" />
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id" />
+        </property>
+        <property name="cpCode" type="string">
+            <column name="cp_code" />
+        </property>
+        <property name="cpVolumeId" type="string">
+            <column name="cp_volume_id" />
+        </property>
+    </class>
+</hibernate-mapping>

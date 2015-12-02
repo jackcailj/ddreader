@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaOrderDetail" table="media_order_detail" catalog="digital">
+        <id name="orderDetailId" type="java.lang.Long">
+            <column name="order_detail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderNo" type="string">
+            <column name="order_no" length="128">
+                <comment>&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="saleInfoId" type="java.lang.Long">
+            <column name="sale_info_id">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;id</comment>
+            </column>
+        </property>
+        <property name="saleInfoName" type="string">
+            <column name="sale_info_name" length="128">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="activeId" type="string">
+            <column name="active_id" length="128">
+                <comment>&#187;&#238;&#182;&#175;id</comment>
+            </column>
+        </property>
+        <property name="totalPrice" type="java.lang.Integer">
+            <column name="total_price">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#215;&#220;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="payMainPrice" type="java.lang.Integer">
+            <column name="pay_main_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#214;&#247;&#212;&#196;&#182;&#193;&#177;&#210;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="paySubPrice" type="java.lang.Integer">
+            <column name="pay_sub_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#184;&#189;&#212;&#196;&#182;&#193;&#177;&#210;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="prePrice" type="java.lang.Integer">
+            <column name="pre_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="vspPrice" type="java.lang.Integer">
+            <column name="vsp_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#185;&#169;&#211;&#166;&#201;&#204;&#183;&#214;&#204;&#175;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="couponPrice" type="java.lang.Integer">
+            <column name="coupon_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#211;&#197;&#187;&#221;&#200;&#175;&#202;&#185;&#211;&#195;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="givingPoint" type="java.lang.Integer">
+            <column name="giving_point">
+                <comment>&#207;&#250;&#202;&#219;&#202;&#181;&#204;&#229;&#183;&#214;&#204;&#175;&#212;&#249;&#203;&#205;&#187;&#253;&#183;&#214;</comment>
+            </column>
+        </property>
+        <property name="downRationPrice" type="java.lang.Integer">
+            <column name="down_ration_price">
+                <comment>&#207;&#194;&#184;&#161;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

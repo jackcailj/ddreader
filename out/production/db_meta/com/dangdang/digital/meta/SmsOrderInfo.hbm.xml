@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-14 14:45:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.SmsOrderInfo" table="sms_order_info" catalog="digital">
+        <id name="smsOrderId" type="java.lang.Integer">
+            <column name="sms_order_id" />
+            <generator class="identity" />
+        </id>
+        <property name="mercId" type="string">
+            <column name="merc_id" length="32" />
+        </property>
+        <property name="orderId" type="string">
+            <column name="order_id" length="32" />
+        </property>
+        <property name="appOrderId" type="string">
+            <column name="app_order_id" length="32" />
+        </property>
+        <property name="userId" type="string">
+            <column name="user_id" length="32" />
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="20" />
+        </property>
+        <property name="recAmount" type="java.lang.Integer">
+            <column name="rec_amount" />
+        </property>
+        <property name="chType" type="string">
+            <column name="ch_type" length="10" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="otherInfo" type="string">
+            <column name="other_info" length="1000" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

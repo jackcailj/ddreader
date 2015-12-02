@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-23 11:10:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.BaseComment.meta.CloudBookMark" table="cloud_book_mark" catalog="base_comment">
+        <id name="markId" type="java.lang.Long">
+            <column name="mark_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="productId" type="long">
+            <column name="product_id" not-null="true">
+                <comment>&#181;&#165;&#198;&#183;id</comment>
+            </column>
+        </property>
+        <property name="chaptersIndex" type="long">
+            <column name="chapters_index" not-null="true">
+                <comment>&#213;&#194;&#189;&#218;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="characterIndex" type="long">
+            <column name="character_index" not-null="true">
+                <comment>&#215;&#214;&#183;&#251;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="markInfo" type="string">
+            <column name="mark_info" length="65535">
+                <comment>&#202;&#233;&#199;&#169;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="status" type="short">
+            <column name="status" not-null="true">
+                <comment>&#177;&#234;&#199;&#169;&#215;&#180;&#204;&#172;&#163;&#168;1:&#208;&#194;&#212;&#246; ,3:&#201;&#190;&#179;&#253;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="modifyTime" type="long">
+            <column name="modify_time" not-null="true">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="bookModVersion" type="string">
+            <column name="book_mod_version" length="20">
+                <comment>&#176;&#230;&#177;&#190;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

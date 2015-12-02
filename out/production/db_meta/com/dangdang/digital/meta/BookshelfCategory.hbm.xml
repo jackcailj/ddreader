@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.BookshelfCategory" table="bookshelf_category" catalog="digital">
+        <id name="CId" type="java.lang.Long">
+            <column name="c_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="lastChangedDate" type="long">
+            <column name="last_changed_date" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#178;&#217;&#215;&#247;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="categoryName" type="string">
+            <column name="category_name" length="30" not-null="true">
+                <comment>&#183;&#214;&#192;&#224;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

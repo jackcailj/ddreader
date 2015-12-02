@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaUserAuthority" table="media_user_authority" catalog="digital">
+        <id name="userAuthorityId" type="java.lang.Long">
+            <column name="user_authority_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="mediaType" type="java.lang.Short">
+            <column name="media_type">
+                <comment>&#195;&#189;&#204;&#229;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="authorityType" type="java.lang.Short">
+            <column name="authority_type">
+                <comment>&#200;&#168;&#207;&#222;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#195;&#189;&#204;&#229;id</comment>
+            </column>
+        </property>
+        <property name="authorityStart" type="timestamp">
+            <column name="authority_start" length="19">
+                <comment>&#200;&#168;&#207;&#222;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="authorityEnd" type="timestamp">
+            <column name="authority_end" length="19">
+                <comment>&#200;&#168;&#207;&#222;&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="payMainPrice" type="java.lang.Integer">
+            <column name="pay_main_price">
+                <comment>&#214;&#247;&#213;&#203;&#187;&#167;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="paySubPrice" type="java.lang.Integer">
+            <column name="pay_sub_price">
+                <comment>&#184;&#177;&#213;&#203;&#187;&#167;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

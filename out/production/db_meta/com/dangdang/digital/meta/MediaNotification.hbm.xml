@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaNotification" table="media_notification" catalog="digital">
+        <id name="notificationId" type="java.lang.Long">
+            <column name="notification_id" />
+            <generator class="identity" />
+        </id>
+        <property name="appId" type="java.lang.Integer">
+            <column name="app_id" />
+        </property>
+        <property name="appClientVersion" type="string">
+            <column name="app_client_version" length="200" />
+        </property>
+        <property name="deviceNo" type="string">
+            <column name="device_no" length="200" />
+        </property>
+        <property name="deviceType" type="java.lang.Integer">
+            <column name="device_type" />
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" />
+        </property>
+        <property name="extUserId" type="string">
+            <column name="ext_user_id" length="256" />
+        </property>
+        <property name="extChannelId" type="string">
+            <column name="ext_channel_id" length="256" />
+        </property>
+        <property name="channelId" type="string">
+            <column name="channel_id" length="200" />
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

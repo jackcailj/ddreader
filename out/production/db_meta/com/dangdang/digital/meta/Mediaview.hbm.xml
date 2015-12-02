@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.Mediaview" table="mediaview" catalog="digital">
+        <composite-id name="id" class="com.dangdang.digital.meta.MediaviewId">
+            <key-property name="mediaId" type="long">
+                <column name="media_id" />
+            </key-property>
+            <key-property name="saleId" type="java.lang.Long">
+                <column name="sale_id" />
+            </key-property>
+            <key-property name="title" type="string">
+                <column name="title" />
+            </key-property>
+            <key-property name="subTitle" type="string">
+                <column name="sub_title" />
+            </key-property>
+            <key-property name="descs" type="string">
+                <column name="descs" />
+            </key-property>
+            <key-property name="provideId" type="java.lang.Integer">
+                <column name="provide_id" />
+            </key-property>
+            <key-property name="keyWords" type="string">
+                <column name="key_words" length="500" />
+            </key-property>
+            <key-property name="coverPic" type="string">
+                <column name="cover_pic" length="500" />
+            </key-property>
+            <key-property name="hdfsPath" type="string">
+                <column name="hdfs_path" length="500" />
+            </key-property>
+            <key-property name="filePath" type="string">
+                <column name="file_path" length="500" />
+            </key-property>
+            <key-property name="uid" type="string">
+                <column name="uid" length="30" />
+            </key-property>
+            <key-property name="shelfStatus" type="java.lang.Byte">
+                <column name="shelf_status" />
+            </key-property>
+            <key-property name="catalog" type="string">
+                <column name="catalog" />
+            </key-property>
+            <key-property name="productId" type="java.lang.Long">
+                <column name="product_id" />
+            </key-property>
+            <key-property name="chapterCnt" type="java.lang.Integer">
+                <column name="chapter_cnt" />
+            </key-property>
+            <key-property name="hasNew" type="java.lang.Byte">
+                <column name="has_new" />
+            </key-property>
+            <key-property name="isFull" type="java.lang.Byte">
+                <column name="is_full" />
+            </key-property>
+            <key-property name="creationDate" type="timestamp">
+                <column name="creation_date" length="19" />
+            </key-property>
+            <key-property name="lastModifyDate" type="timestamp">
+                <column name="last_modify_date" length="19" />
+            </key-property>
+            <key-property name="creator" type="string">
+                <column name="creator" />
+            </key-property>
+            <key-property name="modifier" type="string">
+                <column name="modifier" />
+            </key-property>
+            <key-property name="authorId" type="java.lang.Long">
+                <column name="author_id" />
+            </key-property>
+            <key-property name="cpResourceId" type="string">
+                <column name="cp_resource_id" length="100" />
+            </key-property>
+            <key-property name="encrypkey" type="string">
+                <column name="encrypkey" />
+            </key-property>
+            <key-property name="signIds" type="string">
+                <column name="sign_ids" length="1000" />
+            </key-property>
+            <key-property name="signNames" type="string">
+                <column name="sign_names" />
+            </key-property>
+            <key-property name="role" type="string">
+                <column name="role" length="1000" />
+            </key-property>
+            <key-property name="authorName" type="string">
+                <column name="author_name" />
+            </key-property>
+            <key-property name="authorPenname" type="string">
+                <column name="author_penname" />
+            </key-property>
+            <key-property name="providerName" type="string">
+                <column name="provider_name" />
+            </key-property>
+            <key-property name="isShow" type="java.lang.Integer">
+                <column name="is_show" />
+            </key-property>
+            <key-property name="recommandWords" type="string">
+                <column name="recommand_words" />
+            </key-property>
+            <key-property name="isSupportFullBuy" type="java.lang.Integer">
+                <column name="is_support_full_buy" />
+            </key-property>
+            <key-property name="lastPullChapterDate" type="timestamp">
+                <column name="last_pull_chapter_date" length="19" />
+            </key-property>
+            <key-property name="priceUnit" type="java.lang.Integer">
+                <column name="price_unit" />
+            </key-property>
+            <key-property name="lastIndexOrder" type="java.lang.Integer">
+                <column name="last_index_order" />
+            </key-property>
+            <key-property name="lastUpdateChapter" type="string">
+                <column name="last_update_chapter" length="500" />
+            </key-property>
+            <key-property name="wordCnt" type="java.lang.Long">
+                <column name="word_cnt" />
+            </key-property>
+            <key-property name="cpShortName" type="string">
+                <column name="cp_short_name" />
+            </key-property>
+            <key-property name="cpCode" type="string">
+                <column name="cp_code" />
+            </key-property>
+            <key-property name="zipStatus" type="java.lang.Integer">
+                <column name="zip_status" />
+            </key-property>
+            <key-property name="picCdnStatus" type="java.lang.Integer">
+                <column name="pic_cdn_status" />
+            </key-property>
+            <key-property name="isBlack" type="java.lang.Integer">
+                <column name="is_black" />
+            </key-property>
+            <key-property name="isVip" type="java.lang.Integer">
+                <column name="is_vip" />
+            </key-property>
+            <key-property name="speaker" type="string">
+                <column name="speaker" />
+            </key-property>
+            <key-property name="weekHeat" type="java.lang.Long">
+                <column name="week_heat" />
+            </key-property>
+            <key-property name="monthHeat" type="java.lang.Long">
+                <column name="month_heat" />
+            </key-property>
+            <key-property name="heat" type="java.lang.Long">
+                <column name="heat" />
+            </key-property>
+        </composite-id>
+    </class>
+</hibernate-mapping>

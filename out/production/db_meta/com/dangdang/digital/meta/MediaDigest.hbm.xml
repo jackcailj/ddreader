@@ -1,0 +1,206 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-5 11:20:32 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaDigest" table="media_digest" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="author" type="string">
+            <column name="author" length="500">
+                <comment>&#190;&#171;&#198;&#183;&#182;&#212;&#211;&#166;&#182;&#224;&#184;&#246;&#215;&#247;&#213;&#223;key-value&#188;&#252;&#214;&#181;&#182;&#212;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#185;&#216;&#193;&#170;&#202;&#233;&#188;&#174;ID</comment>
+            </column>
+        </property>
+        <property name="mediaChapterId" type="java.lang.Long">
+            <column name="media_chapter_id">
+                <comment>&#206;&#196;&#213;&#194;&#213;&#194;&#189;&#218;ID</comment>
+            </column>
+        </property>
+        <property name="mediaName" type="string">
+            <column name="media_name" length="500">
+                <comment>&#185;&#216;&#193;&#170;&#202;&#233;&#188;&#174;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="barId" type="java.lang.Long">
+            <column name="bar_id">
+                <comment>&#202;&#233;&#176;&#201;ID</comment>
+            </column>
+        </property>
+        <property name="firstCatetoryId" type="java.lang.Integer">
+            <column name="first_catetory_id">
+                <comment>&#210;&#187;&#188;&#182;&#183;&#214;&#192;&#224;ID</comment>
+            </column>
+        </property>
+        <property name="firstCatetoryName" type="string">
+            <column name="first_catetory_name" length="500">
+                <comment>&#210;&#187;&#188;&#182;&#183;&#214;&#192;&#224;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content">
+                <comment>&#190;&#171;&#198;&#183;&#190;&#223;&#204;&#229;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Boolean">
+            <column name="type">
+                <comment>&#192;&#224;&#208;&#205; 1:&#183;&#173;&#198;&#170;&#182;&#249;; 2:&#199;&#192;&#207;&#200;&#182;&#193;; 3:&#198;&#181;&#181;&#192;;
+                4:&#204;&#249;&#215;&#211;;</comment>
+            </column>
+        </property>
+        <property name="columnId" type="java.lang.Long">
+            <column name="column_id">
+                <comment>&#192;&#184;&#196;&#191;ID</comment>
+            </column>
+        </property>
+        <property name="columnName" type="string">
+            <column name="column_name">
+                <comment>&#192;&#184;&#196;&#191;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="stars" type="java.lang.Integer">
+            <column name="stars">
+                <comment>&#198;&#192;&#208;&#199;</comment>
+            </column>
+        </property>
+        <property name="reviewCnt" type="java.lang.Integer">
+            <column name="review_cnt">
+                <comment>&#198;&#192;&#194;&#219;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="collectCnt" type="java.lang.Integer">
+            <column name="collect_cnt">
+                <comment>&#202;&#213;&#178;&#216;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="shareCnt" type="java.lang.Integer">
+            <column name="share_cnt">
+                <comment>&#183;&#214;&#207;&#237;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="clickCnt" type="java.lang.Integer">
+            <column name="click_cnt">
+                <comment>&#181;&#227;&#187;&#247;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="topCnt" type="java.lang.Integer">
+            <column name="top_cnt">
+                <comment>&#212;&#222;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="cardTitle" type="string">
+            <column name="card_title" length="500">
+                <comment>App&#213;&#185;&#202;&#190;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="cardRemark" type="string">
+            <column name="card_remark" length="1000">
+                <comment>&#191;&#168;&#198;&#172;&#213;&#170;&#210;&#170;</comment>
+            </column>
+        </property>
+        <property name="cardType" type="java.lang.Boolean">
+            <column name="card_type">
+                <comment>&#191;&#168;&#198;&#172;&#192;&#224;&#208;&#205; 0:&#200;&#171;&#206;&#196;&#215;&#214; 1:&#206;&#196;&#215;&#214;&#188;&#211;&#205;&#188;&#198;&#172;
+                2:&#200;&#171;&#205;&#188;</comment>
+            </column>
+        </property>
+        <property name="pic1Path" type="string">
+            <column name="pic1_path" length="500">
+                <comment>&#205;&#188;&#198;&#172;1&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="smallPic1Path" type="string">
+            <column name="small_pic1_path" length="500">
+                <comment>&#208;&#161;&#205;&#188;1&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="smallPic2Path" type="string">
+            <column name="small_pic2_path" length="500">
+                <comment>&#208;&#161;&#205;&#188;2&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="smallPic3Path" type="string">
+            <column name="small_pic3_path" length="500">
+                <comment>&#208;&#161;&#205;&#188;3&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="showStartDate" type="timestamp">
+            <column name="show_start_date" length="19">
+                <comment>&#191;&#170;&#202;&#188;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#213;&#194;&#189;&#218;&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="500">
+                <comment>&#212;&#173;&#202;&#188;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="isShow" type="java.lang.Boolean">
+            <column name="is_show">
+                <comment>0:&#178;&#187;&#207;&#212;&#202;&#190;;1:&#207;&#212;&#202;&#190;</comment>
+            </column>
+        </property>
+        <property name="isDel" type="java.lang.Boolean">
+            <column name="is_del">
+                <comment>&#202;&#199;&#183;&#241;&#201;&#190;&#179;&#253; 0:&#206;&#180;&#201;&#190;&#179;&#253;; 1:&#210;&#209;&#201;&#190;&#179;&#253;;</comment>
+            </column>
+        </property>
+        <property name="signIds" type="string">
+            <column name="sign_ids" length="500">
+                <comment>
+                &#206;&#196;&#213;&#194;&#182;&#212;&#211;&#166;&#203;&#249;&#211;&#208;&#177;&#234;&#199;&#169;ID&#211;&#235;&#195;&#251;&#179;&#198;&#188;&#252;&#214;&#181;&#182;&#212;</comment>
+            </column>
+        </property>
+        <property name="dayOrNight" type="java.lang.Boolean">
+            <column name="day_or_night">
+                <comment>&#176;&#215;&#204;&#236;:0;&#186;&#218;&#210;&#185;:1</comment>
+            </column>
+        </property>
+        <property name="mood" type="java.lang.Integer">
+            <column name="mood">
+                <comment>&#208;&#196;&#199;&#233;&#192;&#224;&#177;&#240;</comment>
+            </column>
+        </property>
+        <property name="weight" type="java.lang.Integer">
+            <column name="weight">
+                <comment>&#200;&#168;&#214;&#216;&#214;&#195;&#182;&#165;&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="operator" type="string">
+            <column name="operator">
+                <comment>&#178;&#217;&#215;&#247;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateDate" type="timestamp">
+            <column name="last_update_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#210;&#187;&#180;&#206;&#177;&#224;&#188;&#173;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="sortPage" type="long">
+            <column name="sort_page" not-null="true">
+                <comment>&#202;&#215;&#210;&#179;&#191;&#216;&#214;&#198;&#197;&#197;&#208;&#242;&#183;&#214;&#210;&#179;&#215;&#214;&#182;&#206;:yyyy-MM-dd + HH:mm:ss + weight+
+                random(4)</comment>
+            </column>
+        </property>
+        <property name="isPaperBook" type="boolean">
+            <column name="is_paper_book" not-null="true">
+                <comment>&#181;&#231;&#215;&#211;&#202;&#233; &#163;&#186;0&#163;&#172; &#214;&#189;&#202;&#233;1</comment>
+            </column>
+        </property>
+        <property name="creatorCustId" type="java.lang.Long">
+            <column name="creator_cust_id">
+                <comment>&#180;&#180;&#189;&#168;&#213;&#223;custid</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

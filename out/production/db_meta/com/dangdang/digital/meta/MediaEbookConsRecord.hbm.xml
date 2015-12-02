@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaEbookConsRecord" table="media_ebook_cons_record" catalog="digital">
+        <id name="mediaEbookConsRecordId" type="java.lang.Long">
+            <column name="media_ebook_cons_record_id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="100">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;-&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="userImgUrl" type="string">
+            <column name="user_img_url" length="100">
+                <comment>&#211;&#195;&#187;&#167;&#205;&#183;&#207;&#241;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#202;&#233;&#181;&#196;ID</comment>
+            </column>
+        </property>
+        <property name="saleId" type="java.lang.Long">
+            <column name="sale_id">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;ID</comment>
+            </column>
+        </property>
+        <property name="mediaName" type="string">
+            <column name="media_name" length="200">
+                <comment>&#202;&#233;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="mediaUrl" type="string">
+            <column name="media_url" length="150">
+                <comment>&#202;&#233;&#205;&#188;&#198;&#172;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="cons" type="java.lang.Integer">
+            <column name="cons">
+                <comment>&#207;&#251;&#183;&#209;&#181;&#196;&#189;&#240;&#177;&#210;</comment>
+            </column>
+        </property>
+        <property name="channel" type="string">
+            <column name="channel" length="50">
+                <comment>&#198;&#181;&#181;&#192;&#192;&#224;&#208;&#205; NP(&#196;&#208;&#198;&#181;)VP(&#197;&#174;&#198;&#181;)</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

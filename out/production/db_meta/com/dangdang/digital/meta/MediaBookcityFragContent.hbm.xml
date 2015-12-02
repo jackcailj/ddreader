@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaBookcityFragContent" table="media_bookcity_frag_content" catalog="digital">
+        <id name="bookcityFragContentId" type="java.lang.Long">
+            <column name="bookcity_frag_content_id" />
+            <generator class="identity" />
+        </id>
+        <property name="fragmentId" type="java.lang.Long">
+            <column name="fragment_id" />
+        </property>
+        <property name="contentHtml" type="string">
+            <column name="content_html" />
+        </property>
+        <property name="contentHtmlEditing" type="string">
+            <column name="content_html_editing" />
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier" />
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

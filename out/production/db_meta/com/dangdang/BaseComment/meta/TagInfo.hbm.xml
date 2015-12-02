@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-23 11:10:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.BaseComment.meta.TagInfo" table="tag_info" catalog="base_comment">
+        <id name="tagId" type="java.lang.Long">
+            <column name="tag_id" />
+            <generator class="identity" />
+        </id>
+        <property name="tagType" type="short">
+            <column name="tag_type" not-null="true">
+                <comment>
+                &#192;&#224;&#208;&#205;&#163;&#168;1:&#185;&#217;&#183;&#189;&#177;&#234;&#199;&#169;;2:&#215;&#212;&#182;&#168;&#210;&#229;&#177;&#234;&#199;&#169;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="tagName" type="string">
+            <column name="tag_name" length="20" not-null="true">
+                <comment>&#177;&#234;&#199;&#169;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="isRecommend" type="short">
+            <column name="is_recommend" not-null="true">
+                <comment>
+                &#202;&#199;&#183;&#241;&#205;&#198;&#188;&#246;&#163;&#168;0:&#178;&#187;&#205;&#198;&#188;&#246;&#163;&#187;1:&#205;&#198;&#188;&#246;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

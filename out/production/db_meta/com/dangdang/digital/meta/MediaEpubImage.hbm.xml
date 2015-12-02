@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaEpubImage" table="media_epub_image" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#185;&#216;&#193;&#170;mediaId</comment>
+            </column>
+        </property>
+        <property name="url" type="string">
+            <column name="url" length="500" />
+        </property>
+        <property name="localPath" type="string">
+            <column name="local_path" length="400">
+                <comment>&#177;&#190;&#181;&#216;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="importTime" type="timestamp">
+            <column name="import_time" length="19">
+                <comment>&#201;&#207;&#180;&#171;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>
+                &#215;&#180;&#204;&#172;:0&#206;&#180;&#201;&#207;&#180;&#171;,1&#210;&#209;&#201;&#207;&#180;&#171;,2&#201;&#207;&#180;&#171;&#202;&#167;&#176;&#220;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

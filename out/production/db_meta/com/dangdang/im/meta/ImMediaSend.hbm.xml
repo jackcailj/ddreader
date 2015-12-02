@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-9 11:15:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.im.meta.ImMediaSend" table="im_media_send" catalog="im">
+        <id name="sendRecordId" type="java.lang.Long">
+            <column name="send_record_id" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>&#212;&#249;&#202;&#233;&#192;&#224;&#208;&#205;(&#210;&#187;&#182;&#212;&#210;&#187;,&#210;&#187;&#182;&#212;&#182;&#224;)</comment>
+            </column>
+        </property>
+        <property name="sender" type="java.lang.Long">
+            <column name="sender">
+                <comment>&#212;&#249;&#203;&#205;&#213;&#223;&#181;&#196;custId</comment>
+            </column>
+        </property>
+        <property name="senderName" type="string">
+            <column name="sender_name" length="50">
+                <comment>&#212;&#249;&#203;&#205;&#200;&#203;&#181;&#196;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#212;&#249;&#203;&#205;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19">
+                <comment>&#212;&#249;&#203;&#205;&#189;&#216;&#214;&#185;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>
+                &#212;&#249;&#203;&#205;&#215;&#180;&#204;&#172;(&#189;&#248;&#208;&#208;&#214;&#208;,&#210;&#209;&#181;&#189;&#198;&#218;,&#210;&#209;&#193;&#236;&#205;&#234;)</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

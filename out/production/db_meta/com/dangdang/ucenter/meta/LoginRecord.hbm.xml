@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-19 14:13:30 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.ucenter.meta.LoginRecord" table="login_record" catalog="ucenter">
+        <id name="lrId" type="java.lang.Long">
+            <column name="lr_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;custId</comment>
+            </column>
+        </property>
+        <property name="custNickname" type="string">
+            <column name="cust_nickname" length="100">
+                <comment>&#211;&#195;&#187;&#167;&#234;&#199;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="custImg" type="string">
+            <column name="cust_img" length="200">
+                <comment>&#211;&#195;&#187;&#167;&#205;&#183;&#207;&#241;url</comment>
+            </column>
+        </property>
+        <property name="deviceNo" type="string">
+            <column name="device_no" length="100">
+                <comment>&#201;&#232;&#177;&#184;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="100">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="loginToken" type="string">
+            <column name="login_token" length="100">
+                <comment>&#215;&#238;&#189;&#252;&#210;&#187;&#180;&#206;&#181;&#199;&#194;&#188;token</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#188;&#199;&#194;&#188;&#202;&#215;&#180;&#206;&#181;&#199;&#194;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastUpdateDate" type="timestamp">
+            <column name="last_update_date" length="19">
+                <comment>&#215;&#238;&#189;&#252;&#210;&#187;&#180;&#206;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="introduct" type="string">
+            <column name="introduct" length="500">
+                <comment>&#181;&#177;&#181;&#177;&#182;&#193;&#202;&#233;&#184;&#246;&#200;&#203;&#189;&#233;&#201;&#220;</comment>
+            </column>
+        </property>
+        <property name="loginPlatform" type="string">
+            <column name="login_platform" length="50">
+                <comment>&#181;&#199;&#194;&#188;&#198;&#189;&#204;&#168;thirdId:DANGDANG(0)|QQ(6)|ALIPAY(7)|SINA_WEIBO(5)|WECHAT(200)</comment>
+            </column>
+        </property>
+        <property name="loginClient" type="java.lang.Integer">
+            <column name="login_client">
+                <comment>
+                &#181;&#199;&#194;&#188;&#191;&#205;&#187;&#167;&#182;&#203;:0:&#181;&#177;&#181;&#177;&#182;&#193;&#202;&#233;|1:&#181;&#177;&#182;&#193;&#208;&#161;&#203;&#181;|2:&#183;&#173;&#198;&#172;&#182;&#249;|3:&#204;&#236;&#204;&#236;|4:&#204;&#253;&#202;&#233;</comment>
+            </column>
+        </property>
+        <property name="gender" type="java.lang.Boolean">
+            <column name="gender">
+                <comment>-1:&#177;&#163;&#195;&#220;|0:&#196;&#208;|1:&#197;&#174;</comment>
+            </column>
+        </property>
+        <property name="bindPhoneNum" type="string">
+            <column name="bind_phone_num" length="20">
+                <comment>&#176;&#243;&#182;&#168;&#202;&#214;&#187;&#250;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="displayId" type="java.lang.Long">
+            <column name="display_id">
+                <comment>displayId</comment>
+            </column>
+        </property>
+        <property name="channelOwner" type="java.lang.Byte">
+            <column name="channel_owner">
+                <comment>&#198;&#181;&#181;&#192;&#181;&#192;&#179;&#164;&#200;&#207;&#214;&#164; 0:&#206;&#222;&#200;&#207;&#214;&#164;
+                1:&#210;&#209;&#200;&#207;&#214;&#164;</comment>
+            </column>
+        </property>
+        <property name="barOwnerLevel" type="java.lang.Byte">
+            <column name="bar_owner_level">
+                <comment>&#202;&#233;&#176;&#201;&#176;&#201;&#214;&#247;&#181;&#200;&#188;&#182;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

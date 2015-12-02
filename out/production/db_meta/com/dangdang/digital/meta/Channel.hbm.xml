@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-27 18:40:41 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.Channel" table="channel" catalog="digital">
+        <id name="channelId" type="java.lang.Long">
+            <column name="channel_id" />
+            <generator class="identity" />
+        </id>
+        <property name="ownerId" type="java.lang.Long">
+            <column name="owner_id">
+                <comment>&#198;&#181;&#181;&#192;&#203;&#249;&#211;&#208;&#213;&#223;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#180;&#180;&#189;&#168;&#213;&#223;&#181;&#196;cust_id</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="title" length="500" />
+        </property>
+        <property name="icon" type="string">
+            <column name="icon" length="300" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1000" />
+        </property>
+        <property name="subNumber" type="java.lang.Integer">
+            <column name="sub_number" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>
+                &#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;0:&#206;&#180;&#201;&#243;&#186;&#203;,1:&#201;&#243;&#186;&#203;&#206;&#180;&#205;&#168;&#185;&#253;2:&#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="modify_date" length="19">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="isCompleted" type="java.lang.Integer">
+            <column name="is_completed">
+                <comment>&#198;&#181;&#181;&#192;&#208;&#197;&#207;&#162;&#202;&#199;&#183;&#241;&#205;&#234;&#213;&#251;</comment>
+            </column>
+        </property>
+        <property name="modifyTimes" type="java.lang.Integer">
+            <column name="modify_times">
+                <comment>&#198;&#181;&#181;&#192;&#181;&#177;&#212;&#194;&#208;&#222;&#184;&#196;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="shelfStatus" type="java.lang.Integer">
+            <column name="shelf_status">
+                <comment>&#201;&#207;&#207;&#194;&#188;&#220;&#215;&#180;&#204;&#172;(0:&#207;&#194;&#188;&#220;1:&#201;&#207;&#188;&#220;)</comment>
+            </column>
+        </property>
+        <property name="applyTimes" type="java.lang.Integer">
+            <column name="apply_times">
+                <comment>&#215;&#220;&#185;&#178;&#181;&#196;&#201;&#243;&#186;&#203;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="auditResult" type="string">
+            <column name="audit_result" length="1000">
+                <comment>&#201;&#243;&#186;&#203;&#189;&#225;&#185;&#251;</comment>
+            </column>
+        </property>
+        <property name="auditDate" type="timestamp">
+            <column name="audit_date" length="19">
+                <comment>&#201;&#243;&#186;&#203;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="auditor" type="string">
+            <column name="auditor" length="50">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="isRead" type="java.lang.Integer">
+            <column name="is_read" />
+        </property>
+        <property name="isAllowMonthly" type="java.lang.Integer">
+            <column name="is_allow_monthly">
+                <comment>&#202;&#199;&#183;&#241;&#212;&#202;&#208;&#237;&#176;&#252;&#212;&#194;</comment>
+            </column>
+        </property>
+        <property name="booklistNum" type="java.lang.Integer">
+            <column name="booklist_num">
+                <comment>&#202;&#233;&#181;&#165;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="booksNum" type="java.lang.Integer">
+            <column name="books_num">
+                <comment>&#202;&#233;&#181;&#165;&#202;&#233;&#188;&#174;&#215;&#220;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="totalBooksSoldPrice" type="long">
+            <column name="total_books_sold_price" not-null="true">
+                <comment>&#202;&#233;&#188;&#174;&#207;&#250;&#202;&#219;&#215;&#220;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="totalBooksSoldNum" type="int">
+            <column name="total_books_sold_num" not-null="true">
+                <comment>&#202;&#233;&#188;&#174;&#207;&#250;&#202;&#219;&#215;&#220;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="articlesNum" type="int">
+            <column name="articles_num" not-null="true">
+                <comment>&#183;&#199;&#207;&#194;&#207;&#223;&#206;&#196;&#188;&#175;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="digestNum" type="int">
+            <column name="digest_num" not-null="true">
+                <comment>&#183;&#199;&#207;&#194;&#207;&#223;&#206;&#196;&#213;&#194;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="booksPrice" type="java.lang.Long">
+            <column name="books_price">
+                <comment>&#202;&#233;&#181;&#165;&#202;&#233;&#188;&#174;&#215;&#220;&#202;&#219;&#188;&#219;</comment>
+            </column>
+        </property>
+        <property name="currentMonthlyNum" type="int">
+            <column name="current_monthly_num" not-null="true">
+                <comment>&#192;&#219;&#188;&#198;&#176;&#252;&#212;&#194;&#200;&#203;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="totalMonthlyNum" type="int">
+            <column name="total_monthly_num" not-null="true">
+                <comment>&#215;&#220;&#188;&#198;&#176;&#252;&#212;&#194;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="totalMonthlyPrice" type="long">
+            <column name="total_monthly_price" not-null="true">
+                <comment>&#215;&#220;&#188;&#198;&#176;&#252;&#212;&#194;&#202;&#219;&#188;&#219;</comment>
+            </column>
+        </property>
+        <property name="monthlyType" type="int">
+            <column name="monthly_type" not-null="true">
+                <comment>0:&#189;&#240;&#193;&#229;&#238;&#245;&#163;&#187;1&#210;&#248;&#193;&#229;&#238;&#245;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

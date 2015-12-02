@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaActivityUser" table="media_activity_user" catalog="digital">
+        <id name="mediaActivityUserId" type="java.lang.Long">
+            <column name="media_activity_user_id" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="username" length="150">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" unique="true">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="lotTimes" type="java.lang.Integer">
+            <column name="lot_times">
+                <comment>&#191;&#201;&#211;&#195;&#179;&#233;&#189;&#177;&#180;&#206;&#202;&#253;(&#184;&#163;&#180;&#252;&#202;&#253;&#193;&#191;)</comment>
+            </column>
+        </property>
+        <property name="lottedTimes" type="java.lang.Integer">
+            <column name="lotted_times">
+                <comment>&#210;&#209;&#211;&#195;&#179;&#233;&#189;&#177;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="shareTimes" type="java.lang.Integer">
+            <column name="share_times">
+                <comment>&#183;&#214;&#207;&#237;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="worshipedTimes" type="java.lang.Long">
+            <column name="worshiped_times">
+                <comment>&#177;&#187;&#196;&#164;&#176;&#221;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="worshipTimes" type="java.lang.Long">
+            <column name="worship_times">
+                <comment>&#196;&#164;&#176;&#221;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="rewardCons" type="java.lang.Long">
+            <column name="reward_cons">
+                <comment>&#180;&#242;&#201;&#205;&#199;&#174;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="dayTopRank" type="java.lang.Integer">
+            <column name="day_top_rank">
+                <comment>&#200;&#213;&#215;&#238;&#184;&#223;&#197;&#197;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="weekTopRank" type="java.lang.Integer">
+            <column name="week_top_rank">
+                <comment>&#208;&#199;&#198;&#218;&#215;&#238;&#184;&#223;&#197;&#197;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="mouthTopRank" type="java.lang.Integer">
+            <column name="mouth_top_rank">
+                <comment>&#212;&#194;&#215;&#238;&#184;&#223;&#197;&#197;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="totalTopRank" type="java.lang.Integer">
+            <column name="total_top_rank">
+                <comment>&#215;&#220;&#215;&#238;&#184;&#223;&#197;&#197;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19">
+                <comment>&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

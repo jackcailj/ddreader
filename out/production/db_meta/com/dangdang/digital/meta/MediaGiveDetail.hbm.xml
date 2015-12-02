@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-10-10 18:09:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaGiveDetail" table="media_give_detail" catalog="digital">
+        <id name="giveDetailId" type="java.lang.Long">
+            <column name="give_detail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="packetId" type="string">
+            <column name="packet_id" length="32">
+                <comment>&#203;&#249;&#202;&#244; &#202;&#233;&#176;&#252;&#181;&#196;id</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#212;&#249;&#202;&#233;&#181;&#196;id</comment>
+            </column>
+        </property>
+        <property name="giveCustId" type="java.lang.Long">
+            <column name="give_cust_id">
+                <comment>&#212;&#249;&#202;&#233;&#200;&#203;&#181;&#196;id</comment>
+            </column>
+        </property>
+        <property name="receiveCustId" type="java.lang.Long">
+            <column name="receive_cust_id">
+                <comment>&#193;&#236;&#202;&#233;&#200;&#203;&#181;&#196;id</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>0:&#206;&#180;&#177;&#187;&#193;&#236;&#163;&#172;1:&#193;&#236;&#185;&#253;&#163;&#187;2:&#179;&#172;&#202;&#177;&#189;&#225;&#202;&#248;</comment>
+            </column>
+        </property>
+        <property name="getDate" type="timestamp">
+            <column name="get_date" length="19">
+                <comment>receive_cust_id&#193;&#236;&#200;&#161;&#181;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

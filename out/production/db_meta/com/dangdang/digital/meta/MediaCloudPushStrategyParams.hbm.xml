@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCloudPushStrategyParams" table="media_cloud_push_strategy_params" catalog="digital">
+        <id name="cloudPushStrategyParamsId" type="java.lang.Long">
+            <column name="cloud_push_strategy_params_id" />
+            <generator class="identity" />
+        </id>
+        <property name="strategyId" type="java.lang.Long">
+            <column name="strategy_id" />
+        </property>
+        <property name="paramName" type="string">
+            <column name="param_name" />
+        </property>
+        <property name="paramDefaultValue" type="string">
+            <column name="param_default_value" length="512" />
+        </property>
+        <property name="deviceType" type="int">
+            <column name="device_type" not-null="true" />
+        </property>
+        <property name="paramDescription" type="string">
+            <column name="param_description" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCardTemplate" table="media_card_template" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="500" />
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="1000" />
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type" />
+        </property>
+        <property name="pic1Path" type="string">
+            <column name="pic1_path" length="500" />
+        </property>
+        <property name="pic2Path" type="string">
+            <column name="pic2_path" length="500" />
+        </property>
+        <property name="pic3Path" type="string">
+            <column name="pic3_path" length="500" />
+        </property>
+    </class>
+</hibernate-mapping>

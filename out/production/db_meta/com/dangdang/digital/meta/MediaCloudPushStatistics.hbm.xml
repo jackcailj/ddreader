@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCloudPushStatistics" table="media_cloud_push_statistics" catalog="digital">
+        <id name="cloudPushStatisticsId" type="java.lang.Long">
+            <column name="cloud_push_statistics_id" />
+            <generator class="identity" />
+        </id>
+        <property name="cloudPushPlanId" type="java.lang.Long">
+            <column name="cloud_push_plan_id" />
+        </property>
+        <property name="pushedNumber" type="java.lang.Long">
+            <column name="pushed_number" />
+        </property>
+        <property name="openedNumber" type="java.lang.Long">
+            <column name="opened_number" />
+        </property>
+        <property name="statisticDay" type="timestamp">
+            <column name="statistic_day" length="19" />
+        </property>
+    </class>
+</hibernate-mapping>

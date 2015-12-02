@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.DeviceType" table="device_type" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="code" type="string">
+            <column name="CODE" length="40" not-null="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="100" not-null="true" />
+        </property>
+        <property name="descn" type="string">
+            <column name="DESCN" length="400" not-null="true" />
+        </property>
+        <property name="defaultResfileType" type="string">
+            <column name="DEFAULT_RESFILE_TYPE" length="400" />
+        </property>
+        <property name="compatibleServerVersion" type="string">
+            <column name="COMPATIBLE_SERVER_VERSION" length="100" />
+        </property>
+        <property name="binaryValue" type="java.lang.Long">
+            <column name="BINARY_VALUE" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="SORT">
+                <comment>&#197;&#197;&#208;&#242;&#193;&#208;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
