@@ -8,8 +8,10 @@ import org.apache.log4j.Logger;
 
 import com.dangdang.account.meta.AttachAccount;
 import com.dangdang.bookbar.meta.Bar;
+import com.dangdang.config.Config;
 import com.dangdang.db.account.AttachAccountDb;
 import com.dangdang.db.bookbar.BarDb;
+import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.util.DesUtils;
 import com.dangdang.enumeration.BarHostTitle;
 
@@ -39,10 +41,19 @@ public class BarCommon {
 		}
 	}
 	
+	
+	public static String getBarOwnerLevelFromDb(String encryCustId) throws Exception{
+		String cust = DesUtils.decryptCustId(encryCustId).toString();
+		String sql = "select bar_owner_level from login_record where cust_id="+cust;
+		Object object = DbUtil.selectOne(Config.UCENTERDBConfig, sql).get("bar_owner_level");
+		String level = object==null?"0":object.toString();
+		return level;
+	}
+	
 	public static void main(String[] args){
 		BarCommon common = new BarCommon();
 		try {
-			int l = common.getBarOwnerLevel("KNc7BKFtpmZms6CjJdqf7w==");
+			int l = common.getBarOwnerLevel("ROo2JOyksqNms6CjJdqf7w==");
 			System.out.println("l is "+l);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -70,10 +81,11 @@ public class BarCommon {
 						l[i] = 0;
 					}
 					else{
-						String key = String.join("", Integer.toString(l1),Integer.toString(l2),Integer.toString(l3));
+						String key = Integer.toString(l1)+Integer.toString(l2)+Integer.toString(l3);
 						log.info("key is "+ key);
 						l[i]=levelMap.get(key);
-					}				
+					}	
+					log.info("l is "+ l[i]);			
 				}	
 				//如果同一用户有N个吧，满足条件不能累加，一个吧也必须满足吧主等级&吧成员数量&帖子数量三个条件才可，并且以最高级别头衔为准。	
 				return getMaxValue(l);
