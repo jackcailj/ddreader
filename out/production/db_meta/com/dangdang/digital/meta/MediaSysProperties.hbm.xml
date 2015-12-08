@@ -1,14 +1,23 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaSysProperties" table="media_sys_properties" schema=""
-           catalog="digital">
-        <id name="propertyId" column="property_id"/>
-        <property name="keyName" column="key_name"/>
-        <property name="keyValue" column="key_value"/>
-        <property name="comment" column="comment"/>
+    <class name="com.dangdang.digital.meta.MediaSysProperties" table="media_sys_properties" catalog="digital">
+        <id name="propertyId" type="java.lang.Integer">
+            <column name="property_id" />
+            <generator class="identity" />
+        </id>
+        <property name="keyName" type="string">
+            <column name="key_name" length="250" unique="true" />
+        </property>
+        <property name="keyValue" type="string">
+            <column name="key_value" length="2000" />
+        </property>
+        <property name="comment" type="string">
+            <column name="comment" length="100">
+                <comment>&#177;&#184;&#215;&#162;&#203;&#181;&#195;&#247;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

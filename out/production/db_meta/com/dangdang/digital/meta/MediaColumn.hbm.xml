@@ -1,28 +1,98 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaColumn" table="media_column" schema="" catalog="digital">
-        <id name="columnId" column="column_id"/>
-        <property name="columnCode" column="column_code"/>
-        <property name="channel" column="channel"/>
-        <property name="path" column="path"/>
-        <property name="code" column="code"/>
-        <property name="name" column="name"/>
-        <property name="parentId" column="parent_id"/>
-        <property name="startDate" column="start_date"/>
-        <property name="endDate" column="end_date"/>
-        <property name="isactiverForever" column="isactiver_forever"/>
-        <property name="creator" column="creator"/>
-        <property name="createDate" column="create_date"/>
-        <property name="lastChangeDate" column="last_change_date"/>
-        <property name="modifer" column="modifer"/>
-        <property name="icon" column="icon"/>
-        <property name="tips" column="tips"/>
-        <property name="descs" column="descs"/>
-        <property name="isShowHorn" column="is_show_horn"/>
-        <property name="type" column="type"/>
+    <class name="com.dangdang.digital.meta.MediaColumn" table="media_column" catalog="digital">
+        <id name="columnId" type="java.lang.Integer">
+            <column name="column_id" />
+            <generator class="identity" />
+        </id>
+        <property name="columnCode" type="string">
+            <column name="column_code" length="64" not-null="true" unique="true">
+                <comment>&#192;&#184;&#196;&#191;&#192;&#224;&#208;&#205;&#177;&#234;&#202;&#182;</comment>
+            </column>
+        </property>
+        <property name="channel" type="string">
+            <column name="channel" length="20">
+                <comment>
+                &#198;&#181;&#181;&#192;&#177;&#234;&#202;&#182;,&#196;&#208;&#198;&#181;&#187;&#242;&#197;&#174;&#198;&#181;&#187;&#242;&#200;&#171;&#198;&#181;</comment>
+            </column>
+        </property>
+        <property name="path" type="string">
+            <column name="path" length="256" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" length="20">
+                <comment>&#192;&#184;&#196;&#191;&#183;&#199;&#198;&#181;&#181;&#192;&#177;&#234;&#202;&#182;</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="64" not-null="true" />
+        </property>
+        <property name="parentId" type="java.lang.Integer">
+            <column name="parent_id" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="start_date" length="19">
+                <comment>&#192;&#184;&#196;&#191;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="end_date" length="19">
+                <comment>&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="isactiverForever" type="java.lang.Boolean">
+            <column name="isactiver_forever">
+                <comment>
+                &#192;&#184;&#196;&#191;&#202;&#199;&#183;&#241;&#179;&#164;&#190;&#195;&#211;&#208;&#208;&#167;(0:&#183;&#241;,1:&#202;&#199;)(1,&#196;&#172;&#200;&#207;)</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" length="64">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="lastChangeDate" type="timestamp">
+            <column name="last_change_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="modifer" type="string">
+            <column name="modifer" length="64">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="icon" type="string">
+            <column name="icon" length="100">
+                <comment>&#192;&#184;&#196;&#191;&#205;&#188;&#177;&#234;</comment>
+            </column>
+        </property>
+        <property name="tips" type="string">
+            <column name="tips" length="500">
+                <comment>&#208;&#161;&#192;&#174;&#176;&#200;&#204;&#225;&#202;&#190;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="descs" type="string">
+            <column name="descs" length="500">
+                <comment>&#192;&#184;&#196;&#191;&#188;&#242;&#189;&#233;</comment>
+            </column>
+        </property>
+        <property name="isShowHorn" type="java.lang.Boolean">
+            <column name="is_show_horn">
+                <comment>&#202;&#199;&#183;&#241;&#207;&#212;&#202;&#190;&#208;&#161;&#192;&#174;&#176;&#200;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>&#192;&#184;&#196;&#191;&#192;&#224;&#208;&#205;(1,&#198;&#181;&#181;&#192;,0&#202;&#233;&#189;&#229;)</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

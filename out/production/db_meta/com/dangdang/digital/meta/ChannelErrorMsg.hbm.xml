@@ -1,16 +1,38 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.ChannelErrorMsg" table="channel_error_msg" schema="" catalog="digital">
-        <id name="errorId" column="error_id"/>
-        <property name="type" column="type"/>
-        <property name="errorMsg" column="error_msg"/>
-        <property name="fields" column="fields"/>
-        <property name="defaultJson" column="default_json"/>
-        <property name="changer" column="changer"/>
-        <property name="modifyDate" column="modify_date"/>
+    <class name="com.dangdang.digital.meta.ChannelErrorMsg" table="channel_error_msg" catalog="digital">
+        <id name="errorId" type="java.lang.Integer">
+            <column name="error_id" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="string">
+            <column name="type" length="50">
+                <comment>&#192;&#224;&#208;&#205;,&#198;&#181;&#181;&#192;,&#202;&#233;&#181;&#165;&#187;&#242;&#213;&#223;&#198;&#228;&#203;&#252;</comment>
+            </column>
+        </property>
+        <property name="errorMsg" type="string">
+            <column name="error_msg" length="500">
+                <comment>&#180;&#237;&#206;&#243;&#204;&#225;&#202;&#190;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="fields" type="string">
+            <column name="fields" length="200">
+                <comment>&#180;&#237;&#206;&#243;&#215;&#214;&#182;&#206;,&#182;&#224;&#184;&#246;&#210;&#212;&#183;&#214;&#186;&#197;&#183;&#214;&#184;&#244;</comment>
+            </column>
+        </property>
+        <property name="defaultJson" type="string">
+            <column name="default_json" length="500">
+                <comment>&#196;&#172;&#200;&#207;&#215;&#214;&#182;&#206;map json&#180;&#174;,</comment>
+            </column>
+        </property>
+        <property name="changer" type="string">
+            <column name="changer" length="50" />
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="modify_date" length="19" />
+        </property>
     </class>
 </hibernate-mapping>

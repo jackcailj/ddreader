@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-23 11:10:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.BaseComment.meta.Comment" table="comment" catalog="base_comment">
+        <id name="commentId" type="java.lang.Long">
+            <column name="comment_id" />
+            <generator class="identity" />
+        </id>
+        <property name="targetId" type="long">
+            <column name="target_id" not-null="true">
+                <comment>&#208;&#232;&#210;&#170;&#198;&#192;&#194;&#219;&#214;&#247;&#204;&#229;&#181;&#196;ID</comment>
+            </column>
+        </property>
+        <property name="userId" type="long">
+            <column name="user_id" not-null="true">
+                <comment>&#198;&#192;&#194;&#219;&#211;&#195;&#187;&#167;&#181;&#196;ID</comment>
+            </column>
+        </property>
+        <property name="replyId" type="long">
+            <column name="reply_id" not-null="true">
+                <comment>&#187;&#216;&#184;&#180;id</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="600" not-null="true">
+                <comment>&#198;&#192;&#194;&#219;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="commentParentId" type="long">
+            <column name="comment_parent_id" not-null="true">
+                <comment>
+                &#198;&#192;&#194;&#219;&#181;&#196;&#201;&#207;&#188;&#182;ID,&#200;&#231;&#185;&#251;&#202;&#199;0&#163;&#172;&#212;&#242;&#177;&#237;&#202;&#190;&#210;&#187;&#188;&#182;&#198;&#192;&#194;&#219;</comment>
+            </column>
+        </property>
+        <property name="commentImg" type="string">
+            <column name="comment_img" length="256">
+                <comment>&#198;&#192;&#194;&#219;&#205;&#188;&#198;&#172;</comment>
+            </column>
+        </property>
+        <property name="targetSource" type="string">
+            <column name="target_source" length="4" not-null="true">
+                <comment>
+                &#198;&#192;&#194;&#219;&#192;&#180;&#212;&#180;&#163;&#168;1000,&#202;&#233;&#176;&#201;;2000,&#183;&#173;&#198;&#170;,3000:&#199;&#192;&#207;&#200;&#182;&#193;,4000,&#198;&#181;&#181;&#192;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="status" type="short">
+            <column name="status" not-null="true">
+                <comment>
+                &#198;&#192;&#194;&#219;&#201;&#243;&#186;&#203;&#215;&#180;&#204;&#172;(0,&#178;&#187;&#207;&#212;&#202;&#190;,1,&#207;&#212;&#202;&#190;,2,&#201;&#243;&#186;&#203;&#202;&#167;&#176;&#220;)</comment>
+            </column>
+        </property>
+        <property name="up" type="short">
+            <column name="up" not-null="true">
+                <comment>&#214;&#195;&#182;&#165;(0,&#206;&#222;,1.&#214;&#195;&#182;&#165;)</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="16" not-null="true">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;(android,iphone,ipad)</comment>
+            </column>
+        </property>
+        <property name="isDelete" type="short">
+            <column name="is_delete" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#201;&#190;&#179;&#253;&#163;&#168;0,&#183;&#241; 1. &#202;&#199;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="isAnonymous" type="short">
+            <column name="is_anonymous" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#196;&#228;&#195;&#251;&#198;&#192;&#194;&#219;(0,&#183;&#241;&#163;&#172;1.&#202;&#199;)</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="remark" type="string">
+            <column name="remark" length="32" not-null="true">
+                <comment>&#177;&#184;&#215;&#162;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,7 +1,7 @@
 package com.dangdang.readerV5.reponse;
 
 public class UserBaseInfo {
-	String barOwnerLevel;
+	int barOwnerLevel;
 	String channelOwner;
 	String createBar;
 	String custImg;
@@ -15,7 +15,7 @@ public class UserBaseInfo {
 	String nickNameAll;
 	String pubCustId;
 	
-	public String getBarOwnerLevel(){
+	public int getBarOwnerLevel(){
 		return barOwnerLevel;
 	}
 	public String getChannelOwner(){
@@ -55,7 +55,7 @@ public class UserBaseInfo {
 		return pubCustId;
 	}
 	
-	public void setBarOwnerLevel(String barOwnerLevel){
+	public void setBarOwnerLevel(int barOwnerLevel){
 		this.barOwnerLevel = barOwnerLevel;
 	}
 	public void setChannelOwner(String channelOwner){

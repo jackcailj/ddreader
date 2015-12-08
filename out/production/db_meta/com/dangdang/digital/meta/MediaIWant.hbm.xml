@@ -1,17 +1,47 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaIWant" table="media_i_want" schema="" catalog="digital">
-        <id name="id" column="ID"/>
-        <property name="custId" column="CUST_ID"/>
-        <property name="createTime" column="CREATE_TIME"/>
-        <property name="title" column="TITLE"/>
-        <property name="author" column="AUTHOR"/>
-        <property name="speaker" column="SPEAKER"/>
-        <property name="contactInfo" column="CONTACT_INFO"/>
-        <property name="platform" column="PLATFORM"/>
+    <class name="com.dangdang.digital.meta.MediaIWant" table="media_i_want" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="CUST_ID">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CREATE_TIME" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE">
+                <comment>&#202;&#233;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR">
+                <comment>&#215;&#247;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="speaker" type="string">
+            <column name="SPEAKER">
+                <comment>&#209;&#221;&#178;&#165;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="contactInfo" type="string">
+            <column name="CONTACT_INFO">
+                <comment>&#193;&#170;&#207;&#181;&#183;&#189;&#202;&#189;</comment>
+            </column>
+        </property>
+        <property name="platform" type="string">
+            <column name="PLATFORM" length="32">
+                <comment>&#192;&#180;&#212;&#180;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

@@ -1,12 +1,18 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaBookCatetory" table="media_book_catetory" schema="" catalog="digital">
-        <id name="id" column="id"/>
-        <property name="catetoryId" column="catetory_id"/>
-        <property name="mediaId" column="media_id"/>
+    <class name="com.dangdang.digital.meta.MediaBookCatetory" table="media_book_catetory" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="catetoryId" type="int">
+            <column name="catetory_id" not-null="true" />
+        </property>
+        <property name="mediaId" type="long">
+            <column name="media_id" not-null="true" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -1,23 +1,78 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaBoughtDetail" table="media_bought_detail" schema="" catalog="digital">
-        <id name="boughtDetailId" column="bought_detail_id"/>
-        <property name="boughtId" column="bought_id"/>
-        <property name="orderNo" column="order_no"/>
-        <property name="orderTime" column="order_time"/>
-        <property name="orderContent" column="order_content"/>
-        <property name="orderType" column="order_type"/>
-        <property name="payMainPrice" column="pay_main_price"/>
-        <property name="paySubPrice" column="pay_sub_price"/>
-        <property name="chapterId" column="chapter_id"/>
-        <property name="boughtType" column="bought_type"/>
-        <property name="mediaTitle" column="media_title"/>
-        <property name="authorPenName" column="author_pen_name"/>
-        <property name="mediaId" column="media_id"/>
-        <property name="unitPrice" column="unit_price"/>
+    <class name="com.dangdang.digital.meta.MediaBoughtDetail" table="media_bought_detail" catalog="digital">
+        <id name="boughtDetailId" type="java.lang.Long">
+            <column name="bought_detail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="boughtId" type="java.lang.Long">
+            <column name="bought_id">
+                <comment>&#210;&#209;&#185;&#186;&#202;&#233;&#188;&#174;id</comment>
+            </column>
+        </property>
+        <property name="orderNo" type="string">
+            <column name="order_no" length="128">
+                <comment>&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="orderTime" type="timestamp">
+            <column name="order_time" length="19">
+                <comment>&#182;&#169;&#181;&#165;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="orderContent" type="string">
+            <column name="order_content" length="1024">
+                <comment>&#182;&#169;&#181;&#165;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="orderType" type="java.lang.Short">
+            <column name="order_type">
+                <comment>
+                &#182;&#169;&#181;&#165;&#192;&#224;&#208;&#205;&#163;&#168;1&#163;&#186;&#181;&#165;&#213;&#194;&#185;&#186;&#194;&#242;&#163;&#187;0&#163;&#186;&#182;&#224;&#213;&#194;&#185;&#186;&#194;&#242;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="payMainPrice" type="java.lang.Integer">
+            <column name="pay_main_price">
+                <comment>&#214;&#247;&#213;&#203;&#187;&#167;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="paySubPrice" type="java.lang.Integer">
+            <column name="pay_sub_price">
+                <comment>&#215;&#211;&#213;&#203;&#187;&#167;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="chapterId" type="java.lang.Long">
+            <column name="chapter_id">
+                <comment>&#213;&#194;&#189;&#218;id</comment>
+            </column>
+        </property>
+        <property name="boughtType" type="string">
+            <column name="bought_type" length="512">
+                <comment>&#210;&#209;&#185;&#186;&#192;&#224;&#208;&#205;&#163;&#186;&#185;&#186;&#194;&#242;&#161;&#162;&#179;&#233;&#189;&#177;&#181;&#200;</comment>
+            </column>
+        </property>
+        <property name="mediaTitle" type="string">
+            <column name="media_title">
+                <comment>&#215;&#247;&#198;&#183;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="authorPenName" type="string">
+            <column name="author_pen_name">
+                <comment>&#215;&#247;&#213;&#223;&#177;&#202;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#215;&#247;&#198;&#183;id</comment>
+            </column>
+        </property>
+        <property name="unitPrice" type="java.lang.Integer">
+            <column name="unit_price">
+                <comment>&#215;&#247;&#198;&#183;&#181;&#165;&#188;&#219;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

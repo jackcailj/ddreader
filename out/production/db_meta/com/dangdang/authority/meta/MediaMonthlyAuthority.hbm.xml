@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-15 16:22:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.authority.meta.MediaMonthlyAuthority" table="media_monthly_authority" catalog="authority">
+        <id name="mediaMonthlyAuthorityId" type="java.lang.Long">
+            <column name="media_monthly_authority_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#213;&#203;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="platformNo" type="string">
+            <column name="platform_no" length="8" not-null="true">
+                <comment>&#198;&#189;&#204;&#168;&#177;&#224;&#186;&#197;(1001,&#181;&#177;&#182;&#193;&#208;&#161;&#203;&#181;
+                1002.&#181;&#177;&#181;&#177;&#182;&#193;&#202;&#233;&#161;&#164;)</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="8" not-null="true">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;(android iphone ipad h5)</comment>
+            </column>
+        </property>
+        <property name="monthlyType" type="short">
+            <column name="monthly_type" not-null="true">
+                <comment>&#176;&#252;&#212;&#194;&#192;&#224;&#208;&#205; 1. &#181;&#177;&#182;&#193;&#200;&#171;&#179;&#161; 2.
+                &#181;&#177;&#181;&#177;&#182;&#193;&#202;&#233;-&#198;&#181;&#181;&#192;</comment>
+            </column>
+        </property>
+        <property name="relationId" type="java.lang.Long">
+            <column name="relation_id">
+                <comment>&#185;&#216;&#207;&#181;ID&#200;&#161;&#190;&#246;&#211;&#218;monthly_type</comment>
+            </column>
+        </property>
+        <property name="monthlyStartTime" type="timestamp">
+            <column name="monthly_start_time" length="19" not-null="true">
+                <comment>&#176;&#252;&#212;&#194;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="monthlyEndTime" type="timestamp">
+            <column name="monthly_end_time" length="19" not-null="true">
+                <comment>&#176;&#252;&#212;&#194;&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="isAutomaticallyRenew" type="java.lang.Short">
+            <column name="is_automatically_renew">
+                <comment>&#202;&#199;&#183;&#241;&#215;&#212;&#182;&#175;&#208;&#248;&#183;&#209;(1.&#202;&#199; 0.&#183;&#241;)</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

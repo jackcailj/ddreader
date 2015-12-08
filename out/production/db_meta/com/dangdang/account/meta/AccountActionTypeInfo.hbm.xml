@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-21 15:53:56 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.account.meta.AccountActionTypeInfo" table="account_action_type_info" catalog="account">
+        <id name="actionTypeId" type="java.lang.Integer">
+            <column name="action_type_id" />
+            <generator class="identity" />
+        </id>
+        <property name="actionTypeCode" type="string">
+            <column name="action_type_code" length="16" not-null="true">
+                <comment>&#208;&#208;&#206;&#170;&#192;&#224;&#208;&#205;CODE</comment>
+            </column>
+        </property>
+        <property name="actionTypeDesc" type="string">
+            <column name="action_type_desc" length="32" not-null="true">
+                <comment>&#208;&#208;&#206;&#170;&#192;&#224;&#208;&#205;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="experienceAward" type="int">
+            <column name="experience_award" not-null="true">
+                <comment>&#190;&#173;&#209;&#233;&#189;&#177;&#192;&#248;&#214;&#181;</comment>
+            </column>
+        </property>
+        <property name="integralAward" type="int">
+            <column name="integral_award" not-null="true">
+                <comment>&#187;&#253;&#183;&#214;&#189;&#177;&#192;&#248;&#214;&#181;</comment>
+            </column>
+        </property>
+        <property name="experienceUpperDay" type="int">
+            <column name="experience_upper_day" not-null="true">
+                <comment>&#190;&#173;&#209;&#233;&#189;&#177;&#192;&#248;&#195;&#191;&#200;&#213;&#201;&#207;&#207;&#222;(0&#206;&#222;&#201;&#207;&#207;&#222;)</comment>
+            </column>
+        </property>
+        <property name="integralUpperDay" type="int">
+            <column name="integral_upper_day" not-null="true">
+                <comment>&#187;&#253;&#183;&#214;&#189;&#177;&#192;&#248;&#195;&#191;&#200;&#213;&#201;&#207;&#207;&#222;(0&#206;&#222;&#201;&#207;&#207;&#222;)</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

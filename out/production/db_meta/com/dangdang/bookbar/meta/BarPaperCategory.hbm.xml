@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-25 14:46:42 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="meta.BarPaperCategory" table="bar_paper_category" catalog="bookbar">
+        <id name="paperCategoryId" type="java.lang.Long">
+            <column name="paper_category_id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="parentId" type="java.lang.Long">
+            <column name="parent_id" />
+        </property>
+        <property name="path" type="string">
+            <column name="path" />
+        </property>
+        <property name="level" type="java.lang.Integer">
+            <column name="level" />
+        </property>
+    </class>
+</hibernate-mapping>

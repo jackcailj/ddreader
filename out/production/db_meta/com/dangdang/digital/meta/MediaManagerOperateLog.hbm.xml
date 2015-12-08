@@ -1,18 +1,48 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaManagerOperateLog" table="media_manager_operate_log" schema=""
-           catalog="digital">
-        <id name="managerOperateLogId" column="manager_operate_log_id"/>
-        <property name="operateType" column="operate_type"/>
-        <property name="operateResult" column="operate_result"/>
-        <property name="operateTargetType" column="operate_target_type"/>
-        <property name="operateTargetId" column="operate_target_id"/>
-        <property name="operator" column="operator"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="operateDescription" column="operate_description"/>
+    <class name="com.dangdang.digital.meta.MediaManagerOperateLog" table="media_manager_operate_log" catalog="digital">
+        <id name="managerOperateLogId" type="java.lang.Long">
+            <column name="manager_operate_log_id" />
+            <generator class="identity" />
+        </id>
+        <property name="operateType" type="java.lang.Short">
+            <column name="operate_type">
+                <comment>&#178;&#217;&#215;&#247;&#200;&#213;&#214;&#190;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="operateResult" type="java.lang.Short">
+            <column name="operate_result">
+                <comment>
+                &#178;&#217;&#215;&#247;&#189;&#225;&#185;&#251;&#163;&#168;1&#163;&#186;&#179;&#201;&#185;&#166;&#163;&#172;0&#163;&#186;&#202;&#167;&#176;&#220;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="operateTargetType" type="string">
+            <column name="operate_target_type" length="128">
+                <comment>&#178;&#217;&#215;&#247;&#182;&#212;&#207;&#243;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="operateTargetId" type="java.lang.Long">
+            <column name="operate_target_id">
+                <comment>&#178;&#217;&#215;&#247;&#182;&#212;&#207;&#243;id</comment>
+            </column>
+        </property>
+        <property name="operator" type="string">
+            <column name="operator" length="128">
+                <comment>&#178;&#217;&#215;&#247;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#178;&#217;&#215;&#247;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="operateDescription" type="string">
+            <column name="operate_description" length="4000">
+                <comment>&#178;&#217;&#215;&#247;&#208;&#208;&#206;&#170;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

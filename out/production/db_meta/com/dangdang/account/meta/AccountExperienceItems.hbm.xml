@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-21 15:53:56 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.account.meta.AccountExperienceItems" table="account_experience_items" catalog="account">
+        <id name="experienceItemsId" type="java.lang.Long">
+            <column name="experience_items_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="experience" type="int">
+            <column name="experience" not-null="true">
+                <comment>&#190;&#173;&#209;&#233;&#214;&#181;</comment>
+            </column>
+        </property>
+        <property name="actionType" type="int">
+            <column name="action_type" not-null="true">
+                <comment>&#187;&#238;&#182;&#175;&#192;&#224;&#177;&#240;&#163;&#168;&#187;&#238;&#182;&#175;&#192;&#224;&#177;&#240;&#177;&#237;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="platformNo" type="string">
+            <column name="platform_no" length="8" not-null="true">
+                <comment>
+                &#198;&#189;&#204;&#168;&#177;&#224;&#186;&#197;(1001.&#181;&#177;&#182;&#193;&#208;&#161;&#203;&#181;,1002.&#181;&#177;&#181;&#177;&#182;&#193;&#202;&#233;)</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="8" not-null="true">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;(android,iphone,ipad,h5)</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifyedDate" type="timestamp">
+            <column name="last_modifyed_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;&#176;&#174;&#196;&#227;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

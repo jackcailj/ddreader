@@ -1,21 +1,71 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaUserMonthly" table="media_user_monthly" schema="" catalog="digital">
-        <id name="userMonthlyId" column="user_monthly_id"/>
-        <property name="custId" column="cust_id"/>
-        <property name="monthlyPaymentRelation" column="monthly_payment_relation"/>
-        <property name="monthlyType" column="monthly_type"/>
-        <property name="monthlyStartTime" column="monthly_start_time"/>
-        <property name="monthlyEndTime" column="monthly_end_time"/>
-        <property name="firstLoginGiving" column="first_login_giving"/>
-        <property name="firstShareGiving" column="first_share_giving"/>
-        <property name="firstLoginGivingDays" column="first_login_giving_days"/>
-        <property name="firstShareGivingDays" column="first_share_giving_days"/>
-        <property name="shareGivingTime" column="share_giving_time"/>
-        <property name="operateVersion" column="operate_version"/>
+    <class name="com.dangdang.digital.meta.MediaUserMonthly" table="media_user_monthly" catalog="digital">
+        <id name="userMonthlyId" type="java.lang.Long">
+            <column name="user_monthly_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="monthlyPaymentRelation" type="string">
+            <column name="monthly_payment_relation" length="64">
+                <comment>
+                &#200;&#231;&#185;&#251;&#202;&#199;&#176;&#180;&#192;&#184;&#196;&#191;&#176;&#252;&#212;&#194;&#181;&#196;&#187;&#176;&#180;&#203;&#180;&#166;&#206;&#170;&#192;&#184;&#196;&#191;ID&#163;&#172;&#200;&#231;&#185;&#251;&#202;&#199;&#176;&#180;&#183;&#214;&#192;&#224;&#176;&#252;&#212;&#194;&#181;&#196;&#187;&#176;&#180;&#203;&#180;&#166;&#206;&#170;&#183;&#214;&#192;&#224;&#181;&#196;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="monthlyType" type="java.lang.Short">
+            <column name="monthly_type">
+                <comment>&#176;&#252;&#212;&#194;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="monthlyStartTime" type="timestamp">
+            <column name="monthly_start_time" length="19">
+                <comment>&#176;&#252;&#212;&#194;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="monthlyEndTime" type="timestamp">
+            <column name="monthly_end_time" length="19">
+                <comment>&#176;&#252;&#212;&#194;&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="firstLoginGiving" type="java.lang.Short">
+            <column name="first_login_giving">
+                <comment>
+                &#202;&#199;&#183;&#241;&#210;&#209;&#190;&#173;&#202;&#215;&#180;&#206;&#181;&#199;&#194;&#189;&#212;&#249;&#203;&#205;&#176;&#252;&#212;&#194;&#163;&#168;1&#163;&#186;&#202;&#199;&#163;&#172;0&#163;&#186;&#183;&#241;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="firstShareGiving" type="java.lang.Short">
+            <column name="first_share_giving">
+                <comment>
+                &#202;&#199;&#183;&#241;&#210;&#209;&#178;&#206;&#188;&#211;&#185;&#253;&#202;&#215;&#180;&#206;&#183;&#214;&#207;&#237;&#203;&#205;&#176;&#252;&#212;&#194;&#187;&#238;&#182;&#175;
+                1&#210;&#209;&#178;&#206;&#188;&#211; 0&#163;&#172;null&#206;&#180;&#178;&#206;&#188;&#211;</comment>
+            </column>
+        </property>
+        <property name="firstLoginGivingDays" type="java.lang.Integer">
+            <column name="first_login_giving_days">
+                <comment>&#202;&#215;&#180;&#206;&#181;&#199;&#194;&#189;&#203;&#205;&#176;&#252;&#212;&#194;&#204;&#236;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="firstShareGivingDays" type="java.lang.Integer">
+            <column name="first_share_giving_days">
+                <comment>&#202;&#215;&#180;&#206;&#183;&#214;&#207;&#237;&#203;&#205;&#176;&#252;&#212;&#194;&#204;&#236;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="shareGivingTime" type="timestamp">
+            <column name="share_giving_time" length="19">
+                <comment>&#187;&#241;&#200;&#161;&#183;&#214;&#207;&#237;&#203;&#205;&#176;&#252;&#212;&#194;&#189;&#177;&#192;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="operateVersion" type="java.lang.Integer">
+            <column name="operate_version">
+                <comment>&#178;&#217;&#215;&#247;&#176;&#230;&#177;&#190;&#186;&#197;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

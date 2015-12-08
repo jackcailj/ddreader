@@ -1,12 +1,22 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaDigestLable" table="media_digest_lable" schema="" catalog="digital">
-        <id name="id" column="id"/>
-        <property name="digestId" column="digest_id"/>
-        <property name="signId" column="sign_id"/>
+    <class name="com.dangdang.digital.meta.MediaDigestLable" table="media_digest_lable" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="digestId" type="java.lang.Long">
+            <column name="digest_id">
+                <comment>&#185;&#216;&#193;&#170;&#206;&#196;&#213;&#194;&#214;&#247;&#188;&#252;</comment>
+            </column>
+        </property>
+        <property name="signId" type="java.lang.Long">
+            <column name="sign_id">
+                <comment>&#185;&#216;&#193;&#170;&#177;&#234;&#199;&#169;&#214;&#247;&#188;&#252;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

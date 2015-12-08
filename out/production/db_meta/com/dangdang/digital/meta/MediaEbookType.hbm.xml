@@ -1,15 +1,27 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaEbookType" table="media_ebook_type" schema="" catalog="digital">
-        <id name="id" column="ID"/>
-        <property name="name" column="NAME"/>
-        <property name="code" column="CODE"/>
-        <property name="descn" column="DESCN"/>
-        <property name="catCode" column="CAT_CODE"/>
-        <property name="typeGroup" column="TYPE_GROUP"/>
+    <class name="com.dangdang.digital.meta.MediaEbookType" table="media_ebook_type" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="50" not-null="true" />
+        </property>
+        <property name="code" type="string">
+            <column name="CODE" length="2" not-null="true" />
+        </property>
+        <property name="descn" type="string">
+            <column name="DESCN" length="400" not-null="true" />
+        </property>
+        <property name="catCode" type="string">
+            <column name="CAT_CODE" length="20" not-null="true" />
+        </property>
+        <property name="typeGroup" type="string">
+            <column name="TYPE_GROUP" length="10" />
+        </property>
     </class>
 </hibernate-mapping>

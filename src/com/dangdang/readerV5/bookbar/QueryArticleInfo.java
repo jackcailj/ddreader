@@ -94,6 +94,12 @@ public class QueryArticleInfo  extends FixtureBase{
 			list2.add(article.getPraiseNum());
 						
 			dataVerifyManager.add(new ValueVerify(list2, list1,false));
+			//5.3 验证吧主头衔
+			BarCommon common = new BarCommon();
+			String custId = article.getUserBaseInfo().getPubCustId();
+			int level = common.getBarOwnerLevel(custId);
+			dataVerifyManager.add(new ValueVerify<Integer>(
+					reponseResult.getData().getArticle().getUserBaseInfo().getBarOwnerLevel(), level,false));
 			super.dataVerify();			
 		}
 		else{
@@ -102,5 +108,4 @@ public class QueryArticleInfo  extends FixtureBase{
 		}
 		verifyResult(expectedCode);
 	}
-
 }

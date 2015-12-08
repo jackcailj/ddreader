@@ -1,17 +1,33 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-18 19:23:36 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.ucenter.meta.ApiConfig" table="api_config" schema="" catalog="ucenter">
-        <id name="id" column="ID"/>
-        <property name="api" column="API"/>
-        <property name="name" column="NAME"/>
-        <property name="descn" column="DESCN"/>
-        <property name="devStatus" column="DEV_STATUS"/>
-        <property name="dummyData" column="DUMMY_DATA"/>
-        <property name="recentLog" column="RECENT_LOG"/>
-        <property name="actionId" column="ACTION_ID"/>
+    <class name="com.dangdang.ucenter.meta.ApiConfig" table="api_config" catalog="ucenter">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="api" type="string">
+            <column name="API" length="100" not-null="true" unique="true" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="100" not-null="true" />
+        </property>
+        <property name="descn" type="string">
+            <column name="DESCN" length="200" />
+        </property>
+        <property name="devStatus" type="int">
+            <column name="DEV_STATUS" not-null="true" />
+        </property>
+        <property name="dummyData" type="string">
+            <column name="DUMMY_DATA" length="65535" />
+        </property>
+        <property name="recentLog" type="string">
+            <column name="RECENT_LOG" length="16777215" />
+        </property>
+        <property name="actionId" type="java.lang.Integer">
+            <column name="ACTION_ID" />
+        </property>
     </class>
 </hibernate-mapping>

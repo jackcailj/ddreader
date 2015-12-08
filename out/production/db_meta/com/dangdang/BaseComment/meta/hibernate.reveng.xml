@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-schema="base_comment" match-name=".*"/>
+  <table-filter match-catalog="base_comment" match-name="barrage_comment"/>
+  <table-filter match-catalog="base_comment" match-name="comment"/>
+  <table-filter match-catalog="base_comment" match-name="comment_target_count"/>
+  <table-filter match-catalog="base_comment" match-name="praise_info"/>
+  <table-filter match-catalog="base_comment" match-name="tag_domain"/>
+  <table-filter match-catalog="base_comment" match-name="tag_domain_relation"/>
+  <table-filter match-catalog="base_comment" match-name="tag_info"/>
+  <table-filter match-catalog="base_comment" match-name="tag_relation"/>
+  <table-filter match-catalog="base_comment" match-name="user_blacklist"/>
+</hibernate-reverse-engineering>

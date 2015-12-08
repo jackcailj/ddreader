@@ -1,20 +1,42 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaCpPullMedia" table="media_cp_pull_media" schema="" catalog="digital">
-        <id name="id" column="id"/>
-        <property name="lastModifyDate" column="last_modify_date"/>
-        <property name="cpMediaId" column="cp_media_id"/>
-        <property name="ddMediaId" column="dd_media_id"/>
-        <property name="content" column="content"/>
-        <property name="isFull" column="is_full"/>
-        <property name="cpCode" column="cp_code"/>
-        <property name="batchId" column="batch_id"/>
-        <property name="mediaName" column="media_name"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="status" column="status"/>
+    <class name="com.dangdang.digital.meta.MediaCpPullMedia" table="media_cp_pull_media" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="lastModifyDate" type="timestamp">
+            <column name="last_modify_date" length="19" />
+        </property>
+        <property name="cpMediaId" type="string">
+            <column name="cp_media_id" length="100" />
+        </property>
+        <property name="ddMediaId" type="java.lang.Long">
+            <column name="dd_media_id" />
+        </property>
+        <property name="content" type="string">
+            <column name="content" />
+        </property>
+        <property name="isFull" type="java.lang.Integer">
+            <column name="is_full" />
+        </property>
+        <property name="cpCode" type="string">
+            <column name="cp_code" />
+        </property>
+        <property name="batchId" type="java.lang.Long">
+            <column name="batch_id" />
+        </property>
+        <property name="mediaName" type="string">
+            <column name="media_name" length="500" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
     </class>
 </hibernate-mapping>

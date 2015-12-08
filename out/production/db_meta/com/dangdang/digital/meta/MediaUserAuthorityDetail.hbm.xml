@@ -1,16 +1,35 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaUserAuthorityDetail" table="media_user_authority_detail" schema=""
-           catalog="digital">
-        <id name="userAuthorityDetailId" column="user_authority_detail_id"/>
-        <property name="userAuthorityId" column="user_authority_id"/>
-        <property name="mediaChapterId" column="media_chapter_id"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="mediaId" column="media_id"/>
-        <property name="custId" column="cust_id"/>
+    <class name="com.dangdang.digital.meta.MediaUserAuthorityDetail" table="media_user_authority_detail" catalog="digital">
+        <id name="userAuthorityDetailId" type="java.lang.Long">
+            <column name="user_authority_detail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="userAuthorityId" type="java.lang.Long">
+            <column name="user_authority_id">
+                <comment>&#211;&#195;&#187;&#167;&#200;&#168;&#207;&#222;&#214;&#247;&#177;&#237;id</comment>
+            </column>
+        </property>
+        <property name="mediaChapterId" type="java.lang.Long">
+            <column name="media_chapter_id">
+                <comment>&#213;&#194;&#189;&#218;id</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>mediaId</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" />
+        </property>
     </class>
 </hibernate-mapping>

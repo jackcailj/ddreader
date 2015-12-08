@@ -1,17 +1,45 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaDeviceType" table="media_device_type" schema="" catalog="digital">
-        <id name="deviceTypeId" column="device_type_id"/>
-        <property name="code" column="code"/>
-        <property name="name" column="name"/>
-        <property name="desc" column="desc"/>
-        <property name="defaultType" column="default_type"/>
-        <property name="compatibleServerVersion" column="compatible_server_version"/>
-        <property name="binaryValue" column="binary_value"/>
-        <property name="sort" column="sort"/>
+    <class name="com.dangdang.digital.meta.MediaDeviceType" table="media_device_type" catalog="digital">
+        <id name="deviceTypeId" type="java.lang.Integer">
+            <column name="device_type_id" />
+            <generator class="identity" />
+        </id>
+        <property name="code" type="string">
+            <column name="code">
+                <comment>&#177;&#224;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name">
+                <comment>&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="desc" type="string">
+            <column name="desc" length="1000">
+                <comment>&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="defaultType" type="string">
+            <column name="default_type">
+                <comment>&#200;&#177;&#202;&#161;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="compatibleServerVersion" type="string">
+            <column name="compatible_server_version">
+                <comment>&#176;&#230;&#177;&#190;</comment>
+            </column>
+        </property>
+        <property name="binaryValue" type="string">
+            <column name="binary_value" />
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="sort">
+                <comment>&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-23 11:10:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.BaseComment.meta.CloudReadingProgress" table="cloud_reading_progress" catalog="base_comment">
+        <id name="progressId" type="java.lang.Long">
+            <column name="progress_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="productId" type="long">
+            <column name="product_id" not-null="true">
+                <comment>&#181;&#165;&#198;&#183;id</comment>
+            </column>
+        </property>
+        <property name="chaptersIndex" type="long">
+            <column name="chapters_index" not-null="true">
+                <comment>&#213;&#194;&#189;&#218;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="characterIndex" type="long">
+            <column name="character_index" not-null="true">
+                <comment>&#215;&#214;&#183;&#251;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="startTime" type="long">
+            <column name="start_time" not-null="true">
+                <comment>&#212;&#196;&#182;&#193;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="endTime" type="java.lang.Long">
+            <column name="end_time">
+                <comment>&#212;&#196;&#182;&#193;&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="readingTime" type="long">
+            <column name="reading_time" not-null="true">
+                <comment>&#212;&#196;&#182;&#193;&#202;&#177;&#179;&#164;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

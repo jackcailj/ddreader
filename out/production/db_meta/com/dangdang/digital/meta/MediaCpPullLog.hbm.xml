@@ -1,17 +1,33 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaCpPullLog" table="media_cp_pull_log" schema="" catalog="digital">
-        <id name="id" column="id"/>
-        <property name="cpCode" column="cp_code"/>
-        <property name="logType" column="log_type"/>
-        <property name="startDate" column="start_date"/>
-        <property name="endDate" column="end_date"/>
-        <property name="msg" column="msg"/>
-        <property name="flag" column="flag"/>
-        <property name="batchId" column="batch_id"/>
+    <class name="com.dangdang.digital.meta.MediaCpPullLog" table="media_cp_pull_log" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="cpCode" type="string">
+            <column name="cp_code" />
+        </property>
+        <property name="logType" type="java.lang.Integer">
+            <column name="log_type" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="start_date" length="19" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="end_date" length="19" />
+        </property>
+        <property name="msg" type="string">
+            <column name="msg" />
+        </property>
+        <property name="flag" type="java.lang.Integer">
+            <column name="flag" />
+        </property>
+        <property name="batchId" type="string">
+            <column name="batch_id" length="50" />
+        </property>
     </class>
 </hibernate-mapping>

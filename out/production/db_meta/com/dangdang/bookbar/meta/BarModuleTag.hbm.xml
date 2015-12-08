@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-25 14:46:42 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="meta.BarModuleTag" table="bar_module_tag" catalog="bookbar">
+        <id name="barModuleTagId" type="java.lang.Long">
+            <column name="bar_module_tag_id" />
+            <generator class="identity" />
+        </id>
+        <property name="barModuleId" type="long">
+            <column name="bar_module_id" not-null="true">
+                <comment>&#196;&#163;&#191;&#233;ID</comment>
+            </column>
+        </property>
+        <property name="tagName" type="string">
+            <column name="tag_name" length="16" not-null="true">
+                <comment>&#177;&#234;&#199;&#169;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>&#215;&#180;&#204;&#172;&#163;&#168;1.&#207;&#212;&#202;&#190; 2.&#198;&#193;&#177;&#206; 3.&#210;&#209;&#201;&#190;&#179;&#253;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="tagType" type="byte">
+            <column name="tag_type" not-null="true">
+                <comment>&#177;&#234;&#199;&#169;&#192;&#224;&#208;&#205;&#163;&#168;1.&#176;&#201;&#177;&#234;&#199;&#169; 2.&#204;&#251;&#215;&#211;&#177;&#234;&#199;&#169;
+                3.&#181;&#165;&#198;&#183;&#177;&#234;&#199;&#169;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="sort">
+                <comment>&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="beginDate" type="timestamp">
+            <column name="begin_date" length="19">
+                <comment>&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="end_date" length="19">
+                <comment>&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedUser" type="java.lang.Long">
+            <column name="last_modified_user">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

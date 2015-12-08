@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-23 11:10:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.BaseComment.meta.TagRelation" table="tag_relation" catalog="base_comment">
+        <id name="tagRelationId" type="java.lang.Long">
+            <column name="tag_relation_id" />
+            <generator class="identity" />
+        </id>
+        <property name="tagId" type="long">
+            <column name="tag_id" not-null="true">
+                <comment>&#177;&#234;&#199;&#169;id</comment>
+            </column>
+        </property>
+        <property name="sourceId" type="long">
+            <column name="source_id" not-null="true">
+                <comment>&#185;&#216;&#193;&#170;&#181;&#196;&#214;&#247;&#204;&#229;id</comment>
+            </column>
+        </property>
+        <property name="targetSource" type="string">
+            <column name="target_source" length="4" not-null="true">
+                <comment>
+                &#192;&#180;&#212;&#180;&#192;&#224;&#208;&#205;&#163;&#168;1000,&#202;&#233;&#176;&#201;;4000:&#198;&#181;&#181;&#192;;5000:&#206;&#196;&#213;&#194;;6000:&#202;&#233;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="recommendStatus" type="short">
+            <column name="recommend_status" not-null="true">
+                <comment>&#205;&#198;&#188;&#246;&#215;&#180;&#204;&#172;&#163;&#168;0:&#178;&#187;&#205;&#198;&#188;&#246; 1:&#205;&#198;&#188;&#246;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedTime" type="timestamp">
+            <column name="last_modified_time" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

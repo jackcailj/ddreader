@@ -1,24 +1,54 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaProductTask" table="media_product_task" schema="" catalog="digital">
-        <id name="id" column="ID"/>
-        <property name="ebooklistId" column="EBOOKLIST_ID"/>
-        <property name="processor" column="PROCESSOR"/>
-        <property name="creator" column="CREATOR"/>
-        <property name="created" column="CREATED"/>
-        <property name="updator" column="UPDATOR"/>
-        <property name="updated" column="UPDATED"/>
-        <property name="processingResult" column="PROCESSING_RESULT"/>
-        <property name="trialPercentage" column="TRIAL_PERCENTAGE"/>
-        <property name="descn" column="DESCN"/>
-        <property name="status" column="STATUS"/>
-        <property name="category" column="CATEGORY"/>
-        <property name="paperBookStatus" column="PAPER_BOOK_STATUS"/>
-        <property name="name" column="NAME"/>
-        <property name="thirdPartyPermission" column="THIRD_PARTY_PERMISSION"/>
+    <class name="com.dangdang.digital.meta.MediaProductTask" table="media_product_task" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="ebooklistId" type="long">
+            <column name="EBOOKLIST_ID" not-null="true" />
+        </property>
+        <property name="processor" type="string">
+            <column name="PROCESSOR" length="200" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" not-null="true" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" not-null="true" />
+        </property>
+        <property name="updator" type="string">
+            <column name="UPDATOR" length="50" />
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="UPDATED" length="19" />
+        </property>
+        <property name="processingResult" type="int">
+            <column name="PROCESSING_RESULT" not-null="true" />
+        </property>
+        <property name="trialPercentage" type="int">
+            <column name="TRIAL_PERCENTAGE" not-null="true" />
+        </property>
+        <property name="descn" type="string">
+            <column name="DESCN" length="400" />
+        </property>
+        <property name="status" type="int">
+            <column name="STATUS" not-null="true" />
+        </property>
+        <property name="category" type="string">
+            <column name="CATEGORY" length="2" />
+        </property>
+        <property name="paperBookStatus" type="java.lang.Integer">
+            <column name="PAPER_BOOK_STATUS" />
+        </property>
+        <property name="name" type="string">
+            <column name="NAME" length="100" />
+        </property>
+        <property name="thirdPartyPermission" type="java.lang.Integer">
+            <column name="THIRD_PARTY_PERMISSION" />
+        </property>
     </class>
 </hibernate-mapping>

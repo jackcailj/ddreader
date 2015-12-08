@@ -1,15 +1,24 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaNotificationApikey" table="media_notification_apikey" schema=""
-           catalog="digital">
-        <id name="notificationApikeyId" column="notification_apikey_id"/>
-        <property name="appid" column="appid"/>
-        <property name="appname" column="appname"/>
-        <property name="apiKey" column="api_key"/>
-        <property name="secret" column="secret"/>
+    <class name="com.dangdang.digital.meta.MediaNotificationApikey" table="media_notification_apikey" catalog="digital">
+        <id name="notificationApikeyId" type="java.lang.Long">
+            <column name="notification_apikey_id" />
+            <generator class="identity" />
+        </id>
+        <property name="appid" type="java.lang.Integer">
+            <column name="appid" />
+        </property>
+        <property name="appname" type="string">
+            <column name="appname" length="200" />
+        </property>
+        <property name="apiKey" type="string">
+            <column name="api_key" length="200" />
+        </property>
+        <property name="secret" type="string">
+            <column name="secret" length="200" />
+        </property>
     </class>
 </hibernate-mapping>

@@ -1,27 +1,86 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaListRanking" table="media_list_ranking" schema="" catalog="digital">
-        <id name="listId" column="list_id"/>
-        <property name="saleId" column="sale_id"/>
-        <property name="mediaId" column="media_id"/>
-        <property name="mediaName" column="media_name"/>
-        <property name="mediaCover" column="media_cover"/>
-        <property name="penName" column="pen_name"/>
-        <property name="mediaIntroduce" column="media_introduce"/>
-        <property name="listType" column="list_type"/>
-        <property name="issue" column="issue"/>
-        <property name="orderOne" column="order_one"/>
-        <property name="counts" column="counts"/>
-        <property name="lastChangeDate" column="last_change_date"/>
-        <property name="appointOrder" column="appoint_order"/>
-        <property name="operator" column="operator"/>
-        <property name="operateTime" column="operate_time"/>
-        <property name="rankDay" column="rank_day"/>
-        <property name="status" column="status"/>
-        <property name="mediaPaths" column="media_paths"/>
+    <class name="com.dangdang.digital.meta.MediaListRanking" table="media_list_ranking" catalog="digital">
+        <id name="listId" type="java.lang.Long">
+            <column name="list_id" />
+            <generator class="identity" />
+        </id>
+        <property name="saleId" type="java.lang.Integer">
+            <column name="sale_id">
+                <comment>media&#181;&#165;&#198;&#183;&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id" />
+        </property>
+        <property name="mediaName" type="string">
+            <column name="media_name" length="500" />
+        </property>
+        <property name="mediaCover" type="string">
+            <column name="media_cover" length="100">
+                <comment>&#183;&#226;&#195;&#230;</comment>
+            </column>
+        </property>
+        <property name="penName" type="string">
+            <column name="pen_name" />
+        </property>
+        <property name="mediaIntroduce" type="string">
+            <column name="media_introduce" length="500" />
+        </property>
+        <property name="listType" type="string">
+            <column name="list_type" length="20">
+                <comment>&#176;&#241;&#181;&#165;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="issue" type="java.lang.Integer">
+            <column name="issue">
+                <comment>&#176;&#241;&#181;&#165;&#198;&#218;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="orderOne" type="java.lang.Float">
+            <column name="order_one" precision="10">
+                <comment>
+                &#181;&#218;&#182;&#254;&#206;&#172;&#182;&#200;&#197;&#197;&#208;&#242;&#214;&#181;,&#208;&#199;&#176;&#241;&#206;&#170;&#208;&#199;&#214;&#181;</comment>
+            </column>
+        </property>
+        <property name="counts" type="java.lang.Long">
+            <column name="counts" />
+        </property>
+        <property name="lastChangeDate" type="timestamp">
+            <column name="last_change_date" length="19">
+                <comment>&#176;&#241;&#181;&#165;&#184;&#252;&#208;&#194;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="appointOrder" type="java.lang.Integer">
+            <column name="appoint_order">
+                <comment>&#214;&#184;&#182;&#168;&#197;&#197;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="operator" type="string">
+            <column name="operator" length="20">
+                <comment>&#184;&#201;&#212;&#164;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="operateTime" type="timestamp">
+            <column name="operate_time" length="19">
+                <comment>&#184;&#201;&#212;&#164;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="rankDay" type="timestamp">
+            <column name="rank_day" length="19" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#176;&#241;&#181;&#165;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="mediaPaths" type="string">
+            <column name="media_paths" length="500">
+                <comment>media&#181;&#196;&#183;&#214;&#192;&#224;&#208;&#197;&#207;&#162;,&#182;&#224;&#184;&#246;&#210;&#212;,&#183;&#214;&#184;&#244;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

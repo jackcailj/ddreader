@@ -1,22 +1,65 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaActivityRecord" table="media_activity_record" schema=""
-           catalog="digital">
-        <id name="mediaActivityRecordId" column="media_activity_record_id"/>
-        <property name="custId" column="cust_id"/>
-        <property name="username" column="username"/>
-        <property name="prizeId" column="prize_id"/>
-        <property name="activityType" column="activity_type"/>
-        <property name="prizeType" column="prize_type"/>
-        <property name="prizeVestType" column="prize_vest_type"/>
-        <property name="prizeName" column="prize_name"/>
-        <property name="worshipedCustId" column="worshiped_cust_id"/>
-        <property name="worshipedUsername" column="worshiped_username"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="amount" column="amount"/>
+    <class name="com.dangdang.digital.meta.MediaActivityRecord" table="media_activity_record" catalog="digital">
+        <id name="mediaActivityRecordId" type="java.lang.Long">
+            <column name="media_activity_record_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="username" type="string">
+            <column name="username" length="150">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="prizeId" type="java.lang.Long">
+            <column name="prize_id">
+                <comment>&#189;&#177;&#198;&#183;id</comment>
+            </column>
+        </property>
+        <property name="activityType" type="java.lang.Integer">
+            <column name="activity_type">
+                <comment>&#187;&#238;&#182;&#175;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="prizeType" type="java.lang.Integer">
+            <column name="prize_type">
+                <comment>&#189;&#177;&#198;&#183;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="prizeVestType" type="java.lang.Integer">
+            <column name="prize_vest_type">
+                <comment>&#185;&#233;&#202;&#244;&#192;&#224;&#208;&#205;&#163;&#172;&#177;&#200;&#200;&#231;&#184;&#163;&#180;&#252;</comment>
+            </column>
+        </property>
+        <property name="prizeName" type="string">
+            <column name="prize_name" length="100">
+                <comment>&#189;&#177;&#198;&#183;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="worshipedCustId" type="java.lang.Long">
+            <column name="worshiped_cust_id">
+                <comment>&#177;&#187;&#196;&#164;&#176;&#221;&#181;&#196;&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="worshipedUsername" type="string">
+            <column name="worshiped_username" length="150">
+                <comment>&#177;&#187;&#196;&#164;&#176;&#221;&#181;&#196;&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount" />
+        </property>
     </class>
 </hibernate-mapping>

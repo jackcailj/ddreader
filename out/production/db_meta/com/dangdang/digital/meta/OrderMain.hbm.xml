@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-14 14:45:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.OrderMain" table="order_main" catalog="digital">
+        <id name="orderId" type="java.lang.Long">
+            <column name="order_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderNo" type="string">
+            <column name="order_no" length="128" unique="true">
+                <comment>&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="totalPrice" type="java.lang.Integer">
+            <column name="total_price">
+                <comment>&#182;&#169;&#181;&#165;&#215;&#220;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="payMainPrice" type="java.lang.Integer">
+            <column name="pay_main_price">
+                <comment>&#189;&#240;&#193;&#229;&#238;&#245;&#214;&#167;&#184;&#182;&#215;&#220;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="paySubPrice" type="java.lang.Integer">
+            <column name="pay_sub_price">
+                <comment>&#210;&#248;&#193;&#229;&#238;&#245;&#214;&#167;&#184;&#182;&#215;&#220;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="prePrice" type="java.lang.Integer">
+            <column name="pre_price">
+                <comment>&#211;&#197;&#187;&#221;&#215;&#220;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="vspPrice" type="java.lang.Integer">
+            <column name="vsp_price">
+                <comment>&#185;&#169;&#211;&#166;&#201;&#204;&#178;&#206;&#211;&#235;&#183;&#214;&#179;&#201;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="orderStatus" type="java.lang.Integer">
+            <column name="order_status">
+                <comment>
+                &#182;&#169;&#181;&#165;&#215;&#180;&#204;&#172;&#163;&#168;&#208;&#194;&#189;&#168;&#163;&#172;&#210;&#209;&#214;&#167;&#184;&#182;&#163;&#172;&#201;&#234;&#199;&#235;&#205;&#203;&#191;&#238;&#163;&#172;&#210;&#209;&#200;&#161;&#207;&#251;&#181;&#200;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="orderType" type="java.lang.Integer">
+            <column name="order_type">
+                <comment>&#182;&#169;&#181;&#165;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="wholeFlag" type="java.lang.Short">
+            <column name="whole_flag">
+                <comment>
+                &#200;&#171;&#177;&#190;&#185;&#186;&#194;&#242;&#177;&#234;&#214;&#190;&#163;&#168;1&#163;&#186;&#200;&#171;&#177;&#190;&#185;&#186;&#194;&#242;&#163;&#172;0&#163;&#186;&#183;&#199;&#200;&#171;&#177;&#190;&#185;&#186;&#194;&#242;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="payment" type="string">
+            <column name="payment" length="128">
+                <comment>&#214;&#167;&#184;&#182;&#183;&#189;&#202;&#189;</comment>
+            </column>
+        </property>
+        <property name="payTime" type="timestamp">
+            <column name="pay_time" length="19">
+                <comment>&#214;&#167;&#184;&#182;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="fromPaltform" type="string">
+            <column name="from_paltform">
+                <comment>&#192;&#180;&#212;&#180;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
+        <property name="downRationPrice" type="java.lang.Integer">
+            <column name="down_ration_price">
+                <comment>&#207;&#194;&#184;&#161;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="payTypeSub" type="java.lang.Integer">
+            <column name="pay_type_sub">
+                <comment>&#208;&#233;&#196;&#226;&#214;&#167;&#184;&#182;&#192;&#224;&#208;&#205; 1 &#179;&#228;&#214;&#181; 2 &#207;&#251;&#183;&#209;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

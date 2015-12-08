@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-9 11:15:53 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.im.meta.ImUser" table="im_user" catalog="im">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="imAccount" type="string">
+            <column name="im_account" length="50">
+                <comment>im&#213;&#203;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="imPwd" type="string">
+            <column name="im_pwd" length="50">
+                <comment>&#211;&#195;&#187;&#167;IM&#195;&#220;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#185;&#216;&#193;&#170;&#211;&#195;&#187;&#167;&#177;&#237;&#215;&#212;&#182;&#175;&#212;&#246;&#179;&#164;&#181;&#196;Id</comment>
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name" length="50">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="appCode" type="string">
+            <column name="app_code" length="20">
+                <comment>app_code+user_id=im_account</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifyDate" type="timestamp">
+            <column name="last_modify_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#210;&#187;&#180;&#206;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

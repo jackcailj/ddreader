@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-9-23 11:10:18 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.BaseComment.meta.CommentTargetCount" table="comment_target_count" catalog="base_comment">
+        <id name="commentTargetCountId" type="java.lang.Long">
+            <column name="comment_target_count_id" />
+            <generator class="identity" />
+        </id>
+        <property name="targetId" type="long">
+            <column name="target_id" not-null="true">
+                <comment>&#198;&#192;&#194;&#219;&#196;&#191;&#177;&#234;&#214;&#247;&#204;&#229;&#181;&#196;ID</comment>
+            </column>
+        </property>
+        <property name="targetSource" type="string">
+            <column name="target_source" length="4" not-null="true">
+                <comment>
+                &#198;&#192;&#194;&#219;&#192;&#180;&#212;&#180;&#163;&#168;1000,&#202;&#233;&#176;&#201;;2000,&#183;&#173;&#198;&#170;,3000:&#199;&#192;&#207;&#200;&#182;&#193;,4000,&#198;&#181;&#181;&#192;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="upCount" type="int">
+            <column name="up_count" not-null="true">
+                <comment>&#182;&#165;</comment>
+            </column>
+        </property>
+        <property name="praiseCount" type="int">
+            <column name="praise_count" not-null="true">
+                <comment>&#212;&#222;</comment>
+            </column>
+        </property>
+        <property name="treadCount" type="int">
+            <column name="tread_count" not-null="true">
+                <comment>&#178;&#200;</comment>
+            </column>
+        </property>
+        <property name="commentCount" type="int">
+            <column name="comment_count" not-null="true">
+                <comment>&#198;&#192;&#194;&#219;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="browseCount" type="int">
+            <column name="browse_count" not-null="true">
+                <comment>&#228;&#175;&#192;&#192;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

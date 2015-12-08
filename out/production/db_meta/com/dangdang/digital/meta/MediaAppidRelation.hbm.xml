@@ -1,15 +1,24 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaAppidRelation" table="media_appid_relation" schema=""
-           catalog="digital">
-        <id name="appidRelationId" column="appid_relation_id"/>
-        <property name="appid" column="appid"/>
-        <property name="appkey" column="appkey"/>
-        <property name="deviceType" column="device_type"/>
-        <property name="deviceKey" column="device_key"/>
+    <class name="com.dangdang.digital.meta.MediaAppidRelation" table="media_appid_relation" catalog="digital">
+        <id name="appidRelationId" type="java.lang.Integer">
+            <column name="appid_relation_id" />
+            <generator class="identity" />
+        </id>
+        <property name="appid" type="java.lang.Integer">
+            <column name="appid" />
+        </property>
+        <property name="appkey" type="string">
+            <column name="appkey" length="500" />
+        </property>
+        <property name="deviceType" type="java.lang.Integer">
+            <column name="device_type" />
+        </property>
+        <property name="deviceKey" type="string">
+            <column name="device_key" length="500" />
+        </property>
     </class>
 </hibernate-mapping>

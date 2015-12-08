@@ -22,7 +22,7 @@ public class GetArticleParse  implements IParamParse{
 	    	if(StringUtils.isNotBlank(param)){
 				String[] params= ParamParse.parseParam(param);
 				List<Article> article = ArticleDb.getArticle(params[0].trim(), params[1].trim(), params[2].trim(),params[3].trim());
-				paramMap.put(key, Long.toString(article.get((new Random()).nextInt(20)).getMediaDigestId()));
+				paramMap.put(key, Long.toString(article.get((new Random()).nextInt(article.size())).getMediaDigestId()));
 			}
 	    }
 }

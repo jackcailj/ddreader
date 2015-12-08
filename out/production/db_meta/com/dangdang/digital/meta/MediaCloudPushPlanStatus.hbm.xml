@@ -1,17 +1,36 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaCloudPushPlanStatus" table="media_cloud_push_plan_status" schema=""
-           catalog="digital">
-        <id name="cloudPushPlanStatusId" column="cloud_push_plan_status_id"/>
-        <property name="planId" column="plan_id"/>
-        <property name="planType" column="plan_type"/>
-        <property name="planJobStatus" column="plan_job_status"/>
-        <property name="planSendStatus" column="plan_send_status"/>
-        <property name="sendTime" column="send_time"/>
-        <property name="creationDate" column="creation_date"/>
+    <class name="com.dangdang.digital.meta.MediaCloudPushPlanStatus" table="media_cloud_push_plan_status" catalog="digital">
+        <id name="cloudPushPlanStatusId" type="java.lang.Long">
+            <column name="cloud_push_plan_status_id" />
+            <generator class="identity" />
+        </id>
+        <property name="planId" type="java.lang.Long">
+            <column name="plan_id" />
+        </property>
+        <property name="planType" type="java.lang.Integer">
+            <column name="plan_type" />
+        </property>
+        <property name="planJobStatus" type="java.lang.Integer">
+            <column name="plan_job_status">
+                <comment>1 &#213;&#253;&#212;&#218;&#215;&#188;&#177;&#184;&#202;&#253;&#190;&#221;&#163;&#172; 2
+                &#202;&#253;&#190;&#221;&#215;&#188;&#177;&#184;&#205;&#234;&#179;&#201;</comment>
+            </column>
+        </property>
+        <property name="planSendStatus" type="java.lang.Integer">
+            <column name="plan_send_status">
+                <comment>1 &#206;&#180;&#183;&#162;&#203;&#205; 2&#213;&#253;&#212;&#218;&#183;&#162;&#203;&#205; 3 &#183;&#162;&#203;&#205;&#205;&#234;&#179;&#201; 4
+                &#183;&#162;&#203;&#205;&#179;&#246;&#180;&#237;</comment>
+            </column>
+        </property>
+        <property name="sendTime" type="timestamp">
+            <column name="send_time" length="19" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
     </class>
 </hibernate-mapping>

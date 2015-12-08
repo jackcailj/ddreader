@@ -1,27 +1,94 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaOrderDetailChapter" table="media_order_detail_chapter" schema=""
-           catalog="digital">
-        <id name="orderDetailChapterId" column="order_detail_chapter_id"/>
-        <property name="orderNo" column="order_no"/>
-        <property name="orderDetailId" column="order_detail_id"/>
-        <property name="saleInfoRelationId" column="sale_info_relation_id"/>
-        <property name="mediaName" column="media_name"/>
-        <property name="mediaId" column="media_id"/>
-        <property name="chapterNo" column="chapter_no"/>
-        <property name="chapterId" column="chapter_id"/>
-        <property name="chapterPrice" column="chapter_price"/>
-        <property name="payMainPrice" column="pay_main_price"/>
-        <property name="paySubPrice" column="pay_sub_price"/>
-        <property name="prePrice" column="pre_price"/>
-        <property name="vspPrice" column="vsp_price"/>
-        <property name="activeId" column="active_id"/>
-        <property name="couponPrice" column="coupon_price"/>
-        <property name="givingPoint" column="giving_point"/>
-        <property name="downRation" column="down_ration"/>
+    <class name="com.dangdang.digital.meta.MediaOrderDetailChapter" table="media_order_detail_chapter" catalog="digital">
+        <id name="orderDetailChapterId" type="java.lang.Long">
+            <column name="order_detail_chapter_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderNo" type="string">
+            <column name="order_no" length="128">
+                <comment>&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="orderDetailId" type="java.lang.Long">
+            <column name="order_detail_id">
+                <comment>&#182;&#169;&#181;&#165;&#195;&#247;&#207;&#184;id</comment>
+            </column>
+        </property>
+        <property name="saleInfoRelationId" type="java.lang.Long">
+            <column name="sale_info_relation_id">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#213;&#194;&#189;&#218;&#211;&#179;&#201;&#228;&#177;&#237;id</comment>
+            </column>
+        </property>
+        <property name="mediaName" type="string">
+            <column name="media_name" length="128">
+                <comment>&#195;&#189;&#204;&#229;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>media_id</comment>
+            </column>
+        </property>
+        <property name="chapterNo" type="java.lang.Integer">
+            <column name="chapter_no">
+                <comment>&#213;&#194;&#189;&#218;&#208;&#242;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="chapterId" type="java.lang.Long">
+            <column name="chapter_id">
+                <comment>&#213;&#194;&#189;&#218;id</comment>
+            </column>
+        </property>
+        <property name="chapterPrice" type="java.lang.Integer">
+            <column name="chapter_price">
+                <comment>&#213;&#194;&#189;&#218;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="payMainPrice" type="java.lang.Integer">
+            <column name="pay_main_price">
+                <comment>
+                &#213;&#194;&#189;&#218;&#214;&#167;&#184;&#182;&#214;&#247;&#212;&#196;&#182;&#193;&#177;&#210;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="paySubPrice" type="java.lang.Integer">
+            <column name="pay_sub_price">
+                <comment>
+                &#213;&#194;&#189;&#218;&#214;&#167;&#184;&#182;&#184;&#189;&#212;&#196;&#182;&#193;&#177;&#210;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="prePrice" type="java.lang.Integer">
+            <column name="pre_price">
+                <comment>&#213;&#194;&#189;&#218;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="vspPrice" type="java.lang.Integer">
+            <column name="vsp_price">
+                <comment>&#213;&#194;&#189;&#218;&#185;&#169;&#211;&#166;&#201;&#204;&#183;&#214;&#179;&#201;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="activeId" type="java.lang.Integer">
+            <column name="active_id">
+                <comment>&#187;&#238;&#182;&#175;id</comment>
+            </column>
+        </property>
+        <property name="couponPrice" type="java.lang.Integer">
+            <column name="coupon_price">
+                <comment>&#213;&#194;&#189;&#218;&#211;&#197;&#187;&#221;&#200;&#175;&#183;&#214;&#204;&#175;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="givingPoint" type="java.lang.Integer">
+            <column name="giving_point">
+                <comment>&#213;&#194;&#189;&#218;&#183;&#214;&#204;&#175;&#212;&#249;&#203;&#205;&#187;&#253;&#183;&#214;</comment>
+            </column>
+        </property>
+        <property name="downRation" type="java.lang.Integer">
+            <column name="down_ration">
+                <comment>&#207;&#194;&#184;&#161;&#213;&#219;&#191;&#219;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

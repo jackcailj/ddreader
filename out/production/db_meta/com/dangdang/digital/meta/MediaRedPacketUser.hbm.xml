@@ -1,17 +1,42 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaRedPacketUser" table="media_red_packet_user" schema=""
-           catalog="digital">
-        <id name="mediaRedPacketUserId" column="media_red_packet_user_id"/>
-        <property name="custId" column="cust_id"/>
-        <property name="prizeId" column="prize_id"/>
-        <property name="amount" column="amount"/>
-        <property name="putCons" column="put_cons"/>
-        <property name="leftAmount" column="left_amount"/>
-        <property name="creationDate" column="creation_date"/>
+    <class name="com.dangdang.digital.meta.MediaRedPacketUser" table="media_red_packet_user" catalog="digital">
+        <id name="mediaRedPacketUserId" type="java.lang.Long">
+            <column name="media_red_packet_user_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="prizeId" type="java.lang.Long">
+            <column name="prize_id">
+                <comment>&#192;&#180;&#212;&#180;&#181;&#196;&#189;&#177;&#198;&#183;id</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount">
+                <comment>&#179;&#245;&#202;&#188;&#202;&#177;&#181;&#196;&#215;&#220;&#184;&#246;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="putCons" type="java.lang.Integer">
+            <column name="put_cons">
+                <comment>&#210;&#209;&#183;&#162;&#183;&#197;&#181;&#196;&#199;&#174;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="leftAmount" type="java.lang.Integer">
+            <column name="left_amount">
+                <comment>&#202;&#163;&#211;&#224;&#181;&#196;&#186;&#236;&#176;&#252;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

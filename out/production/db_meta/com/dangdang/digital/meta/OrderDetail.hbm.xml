@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-14 14:45:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.OrderDetail" table="order_detail" catalog="digital">
+        <id name="orderDetailId" type="java.lang.Long">
+            <column name="order_detail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderNo" type="string">
+            <column name="order_no" length="128">
+                <comment>&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="saleInfoId" type="java.lang.Long">
+            <column name="sale_info_id">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;id</comment>
+            </column>
+        </property>
+        <property name="saleInfoName" type="string">
+            <column name="sale_info_name" length="128">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>0 &#185;&#186;&#194;&#242; 1 &#184;&#182;&#183;&#209;&#189;&#232;&#212;&#196;</comment>
+            </column>
+        </property>
+        <property name="activeId" type="string">
+            <column name="active_id" length="128">
+                <comment>&#187;&#238;&#182;&#175;id</comment>
+            </column>
+        </property>
+        <property name="totalPrice" type="java.lang.Integer">
+            <column name="total_price">
+                <comment>&#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#215;&#220;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="payMainPrice" type="java.lang.Integer">
+            <column name="pay_main_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#214;&#247;&#212;&#196;&#182;&#193;&#177;&#210;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="paySubPrice" type="java.lang.Integer">
+            <column name="pay_sub_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#184;&#189;&#212;&#196;&#182;&#193;&#177;&#210;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="prePrice" type="java.lang.Integer">
+            <column name="pre_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="vspPrice" type="java.lang.Integer">
+            <column name="vsp_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#185;&#169;&#211;&#166;&#201;&#204;&#183;&#214;&#204;&#175;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="couponPrice" type="java.lang.Integer">
+            <column name="coupon_price">
+                <comment>
+                &#207;&#250;&#202;&#219;&#214;&#247;&#204;&#229;&#183;&#214;&#204;&#175;&#211;&#197;&#187;&#221;&#200;&#175;&#202;&#185;&#211;&#195;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="ddmoneyPrice" type="java.lang.Integer">
+            <column name="ddmoney_price">
+                <comment>&#192;&#241;&#198;&#183;&#191;&#168;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="balancePrice" type="java.lang.Integer">
+            <column name="balance_price">
+                <comment>&#211;&#224;&#182;&#238;&#214;&#167;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="reductPrice" type="java.lang.Integer">
+            <column name="reduct_price">
+                <comment>&#180;&#217;&#207;&#250;&#183;&#214;&#204;&#175;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="activityPrice" type="java.lang.Integer">
+            <column name="activity_price">
+                <comment>&#187;&#238;&#182;&#175;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="deductPrice" type="java.lang.Integer">
+            <column name="deduct_price">
+                <comment>&#210;&#248;&#208;&#208;&#194;&#250;&#188;&#245;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="pointDeductionPrice" type="java.lang.Integer">
+            <column name="point_deduction_price">
+                <comment>&#187;&#253;&#183;&#214;&#181;&#214;&#191;&#219;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="payablePrice" type="java.lang.Integer">
+            <column name="payable_price">
+                <comment>&#205;&#248;&#201;&#207;&#214;&#167;&#184;&#182;&#211;&#197;&#187;&#221;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="saleInfoCount" type="java.lang.Integer">
+            <column name="sale_info_count">
+                <comment>&#200;&#171;&#177;&#190;&#185;&#186;&#194;&#242;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="downRationPrice" type="java.lang.Integer">
+            <column name="down_ration_price">
+                <comment>&#207;&#194;&#184;&#161;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="wholeFlag" type="java.lang.Short">
+            <column name="whole_flag">
+                <comment>
+                &#200;&#171;&#177;&#190;&#185;&#186;&#194;&#242;&#177;&#234;&#214;&#190;&#163;&#168;1&#163;&#186;&#200;&#171;&#177;&#190;&#185;&#186;&#194;&#242;&#163;&#172;0&#163;&#186;&#183;&#199;&#200;&#171;&#177;&#190;&#185;&#186;&#194;&#242;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="fromChannelId" type="string">
+            <column name="from_channel_id">
+                <comment>&#192;&#180;&#212;&#180;&#198;&#181;&#181;&#192;id</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
