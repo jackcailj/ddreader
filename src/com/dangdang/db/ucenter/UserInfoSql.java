@@ -43,7 +43,7 @@ public class UserInfoSql {
     }
 
     public  static String getCustIdByName(String userName) throws Exception {
-        String selectSql="SELECT CUST_ID from user_device where username='"+userName+"' limit 1";
+        String selectSql="SELECT CUST_ID from user_device where username='"+userName+"' order by order by LAST_LOGIN_TIME desc limit 1";
         Map<String,Object> result = DbUtil.selectOne(Config.UCENTERDBConfig, selectSql);
         return ""+result.get("CUST_ID");
     }

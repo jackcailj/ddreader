@@ -18,16 +18,16 @@ public enum  BuyBookStatus {
     }
 
     public String getBookStatusString() throws Exception {
-        if(this==BuyBookStatus.BUY
+        if(this==BuyBookStatus.BUY//自己购买的书籍
                 ||this==NOTFULL
                 ||this==FULL
                 ||this==FONT){
-            return "1001";
+            return "1001,1002";
         }
-        else if(this == BuyBookStatus.ZENGSONG){
+        else if(this == BuyBookStatus.ZENGSONG){//接收别人的书籍
             return "1004";
         }
-        else if(this == BuyBookStatus.SENDEDBOOK){
+        else if(this == BuyBookStatus.SENDEDBOOK){//送给别人的书籍
             return "9999";
         }
 
