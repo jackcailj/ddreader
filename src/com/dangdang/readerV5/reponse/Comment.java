@@ -20,6 +20,7 @@ public class Comment {
 	String targetSource;
 	String up;
 	String userId;
+	UserBaseInfo userBaseInfo;
 	
 	public Long getCommentId(){
 		return commentId;
@@ -78,6 +79,9 @@ public class Comment {
 	public String getUserId(){
 		return userId;
 	}
+	public UserBaseInfo getUserBaseInfo(){
+		return userBaseInfo;
+	}
 	
 	public void setCommentId(Long commentId){
 		this.commentId = commentId;
@@ -135,6 +139,9 @@ public class Comment {
 	}
 	public void setUserId(String userId){
 		this.userId = userId;
+	}
+	public void setUserBaseInfo(UserBaseInfo userBaseInfo){
+		this.userBaseInfo = userBaseInfo;
 	}
 
 }

@@ -14,6 +14,7 @@ public class ArticleContent {
 	String praiseNum;
 	String title;
 	String type;
+	UserBaseInfo userBaseInfo;
 	
 	public String getCommentNum(){
 		return commentNum;
@@ -48,6 +49,9 @@ public class ArticleContent {
 	public String getType(){
 		return type;
 	}
+	public UserBaseInfo getUserBaseInfo(){
+		return userBaseInfo;
+	}
 	public void setCommentNum(String commentNum){
 		this.commentNum = commentNum;
 	}
@@ -80,6 +84,9 @@ public class ArticleContent {
 	}
 	public void setType(String type){
 		this.type = type;
+	}
+	public void setUserBaseInfo(UserBaseInfo userBaseInfo){
+		this.userBaseInfo = userBaseInfo;
 	}
 
 }

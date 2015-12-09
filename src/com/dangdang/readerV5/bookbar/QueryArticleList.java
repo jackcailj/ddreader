@@ -16,9 +16,11 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.ddframework.util.DesUtils;
 import com.dangdang.readerV5.reponse.ArticleList;
 import com.dangdang.readerV5.reponse.ArticleListData;
 import com.dangdang.readerV5.reponse.BarInfo;
+import com.dangdang.readerV5.reponse.UserBaseInfo;
 
 public class QueryArticleList extends FixtureBase{
 	ReponseV2<ArticleListData>   reponseResult;
@@ -99,7 +101,13 @@ public class QueryArticleList extends FixtureBase{
 				map1.put("mediaDigestId", Long.toString(article.get(i).getMediaDigestId()));
 				map1.put("barId", Long.toString(article.get(i).getBarId()));
 				map2.put("mediaDigestId", list.get(i).getMediaDigestId());
-				map2.put("barId", list.get(i).getBarId());
+				map2.put("barId", list.get(i).getBarId());				
+				
+				//5.3 验证吧主头衔
+				UserBaseInfo userBaseInfo = list.get(i).getUserBaseInfo();			
+				String level = BarCommon.getBarOwnerLevelFromDb(userBaseInfo.getPubCustId());
+				map1.put("barOwnerLevel", level);
+				map2.put("barOwnerLevel", Integer.toString(list.get(i).getUserBaseInfo().getBarOwnerLevel()));
 				list1.add(map1);
 				list2.add(map2);
 			}

@@ -14,7 +14,9 @@ import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.readerV5.bookbar.BarCommon;
 import com.dangdang.readerV5.reponse.CommentList;
+import com.dangdang.readerV5.reponse.UserBaseInfo;
 
 public class GetCommentList extends FixtureBase{
 	String targetId = null;
@@ -76,6 +78,13 @@ public class GetCommentList extends FixtureBase{
 					map3.put("targetId", subComment.get(j).getTargetId());
 					map4.put("commentId", reponseResult.getData().getCommentList().get(i).get(j+1).getCommentId());
 					map4.put("targetId", reponseResult.getData().getCommentList().get(i).get(j+1).getTargetId());
+					
+					//5.3验证吧主头衔
+					UserBaseInfo subUser = reponseResult.getData().getCommentList().get(i).get(j+1).getUserBaseInfo();
+					String custId = subUser.getPubCustId();
+					String level = BarCommon.getBarOwnerLevelFromDb(custId);
+					map3.put("barOwnerLevel", level);
+					map4.put("barOwnerLevel", Integer.toString(subUser.getBarOwnerLevel()));
 					dataVerifyManager.add(new ValueVerify(map3, map4, true));
 				}
 				//验证一级评论
@@ -86,6 +95,13 @@ public class GetCommentList extends FixtureBase{
 				map2.put("commentId", reponseResult.getData().getCommentList().get(i).get(0).getCommentId());
 				map2.put("targetId", reponseResult.getData().getCommentList().get(i).get(0).getTargetId());
 				map2.put("size", reponseResult.getData().getCommentList().get(i).size()-1);
+				
+				//5.3验证吧主头衔
+				UserBaseInfo subUser = reponseResult.getData().getCommentList().get(i).get(0).getUserBaseInfo();
+				String custId = subUser.getPubCustId();
+				String level = BarCommon.getBarOwnerLevelFromDb(custId);
+				map1.put("barOwnerLevel", level);
+				map2.put("barOwnerLevel", Integer.toString(subUser.getBarOwnerLevel()));				
 				dataVerifyManager.add(new ValueVerify(map1, map2, true));
 			}		
 			 
