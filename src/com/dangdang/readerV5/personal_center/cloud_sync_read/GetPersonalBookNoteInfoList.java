@@ -8,5 +8,5 @@ import com.dangdang.config.Config;
  */
 public class GetPersonalBookNoteInfoList extends FixtureBase{
 
-    public GetPersonalBookNoteInfoList(){URL= Config.getMobileUrl();}
+    public GetPersonalBookNoteInfoList(){}
 }

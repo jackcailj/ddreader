@@ -79,7 +79,7 @@ public class GetUser extends FixtureBase{
             UserInfo userInfo = new UserInfo();
             //userInfo.setCustId(loginRecord.getCustId());
             userInfo.setCustImg(loginRecord.getCustImg());
-            userInfo.setGender(loginRecord.getGender()?1:0);
+            userInfo.setGender(loginRecord.getGender());
             //userInfo.setNickName(loginRecord.getCustNickname());
             //获取账户信息
             if(paramMap.get("selfType").equals("0")){

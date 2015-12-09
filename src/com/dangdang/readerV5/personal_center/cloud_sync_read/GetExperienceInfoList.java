@@ -23,7 +23,7 @@ public class GetExperienceInfoList extends FixtureBase{
 
     ReponseV2<GetExperienceInfoListReponse> reponseResult;
 
-    public GetExperienceInfoList(){URL= Config.getMobileUrl();}
+    public GetExperienceInfoList(){}
 
     public ReponseV2<GetExperienceInfoListReponse> getReponseResult() {
         return reponseResult;

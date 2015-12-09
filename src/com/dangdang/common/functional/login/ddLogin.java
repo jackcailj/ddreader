@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.reader.functional.reponse.LoginReponse;
 
@@ -24,6 +25,14 @@ public class ddLogin extends FixtureBase implements ILogin{
     public  ddLogin(LoginInfo Info){
         URL= Config.getLoginUrl();
         loginInfo = Info;
+
+        //为了兼容cailj_ddtest@126.com账户线上线下密码不一致问题。
+        //暂时这么处理
+        if(Config.getEnvironment()!= TestEnvironment.TESTING
+                && loginInfo.getUserName().toLowerCase().equals("cailj_ddtest@126.com")){
+            loginInfo.setPassWord("111111");
+        }
+
         paramMap.putAll((Map<String, String>) JSONObject.toJSON(Info));
         addAction("ddLogin");
     }

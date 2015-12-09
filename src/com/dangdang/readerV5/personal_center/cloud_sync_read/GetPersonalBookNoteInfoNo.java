@@ -17,7 +17,7 @@ public class GetPersonalBookNoteInfoNo extends FixtureBase{
 
     ReponseV2<GetPersonalBookNoteInfoNoReponse> reponseResult;
 
-    public GetPersonalBookNoteInfoNo(){URL= Config.getMobileUrl();}
+    public GetPersonalBookNoteInfoNo(){}
 
 
     @Override
@@ -30,7 +30,7 @@ public class GetPersonalBookNoteInfoNo extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){
-           /* int noteNo=0;
+            int noteNo=0;
             try{
                 noteNo=CloudSyncSql.getPersonalNoteCount(login.getCustId());
             }
@@ -38,7 +38,7 @@ public class GetPersonalBookNoteInfoNo extends FixtureBase{
 
             }
 
-            dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getBookNoteInfoNo(), noteNo));*/
+            dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getBookNoteInfoNo(), noteNo));
         }
         else {
             dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getBookNoteInfoNo(), null), VerifyResult.SUCCESS);

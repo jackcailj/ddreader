@@ -18,7 +18,7 @@ public class GetBookCloudSyncReadInfo extends FixtureBase{
 
     ReponseV2<GetBookCloudSyncReadInfoReponse> reponseResult;
 
-    public GetBookCloudSyncReadInfo(){URL= Config.getMobileUrl();}
+    public GetBookCloudSyncReadInfo(){}
 
     public ReponseV2<GetBookCloudSyncReadInfoReponse> getReponseResult() {
         return reponseResult;

@@ -18,7 +18,7 @@ public class GetBookCloudSyncReadProgressInfo extends FixtureBase{
 
     ReponseV2<GetBookCloudSyncReadProgressInfoReponse> reponseResult;
 
-    public GetBookCloudSyncReadProgressInfo(){URL= Config.getMobileUrl();}
+    public GetBookCloudSyncReadProgressInfo(){}
 
     public ReponseV2<GetBookCloudSyncReadProgressInfoReponse> getReponseResult() {
         return reponseResult;
