@@ -9,6 +9,7 @@ public class BarInfo {
 	String hasBook;
 	String memberNum;
 	String memberStatus;
+	UserBaseInfo userBaseInfo;
 	
 	public String getBarDesc(){
 		return barDesc;
@@ -34,6 +35,11 @@ public class BarInfo {
 	public String getMemberStatus(){
 		return memberStatus;
 	}
+	public UserBaseInfo getUserBaseInfo(){
+		return userBaseInfo;
+	}
+
+
 	public void setBarDesc(String barDesc){
 		this.barDesc = barDesc;
 	}
@@ -57,5 +63,8 @@ public class BarInfo {
 	}
 	public void setMemberStatus(String memberStatus){
 		this.memberStatus = memberStatus;
+	}
+	public void setUserBaseInfo(UserBaseInfo userBaseInfo){
+		this.userBaseInfo = userBaseInfo;
 	}
 }

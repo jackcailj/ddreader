@@ -16,6 +16,7 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.BarMembers;
 import com.dangdang.readerV5.reponse.BarMembersResponse;
+import com.dangdang.readerV5.reponse.UserBaseInfo;
 import com.dangdang.ucenter.meta.LoginRecord;
 import com.dangdang.bookbar.meta.BarMember;
 
@@ -40,11 +41,12 @@ public class QueryBarMember  extends FixtureBase {
 				List<BarMembers> memberList = new ArrayList<BarMembers>();
 				for(int i=0; i<lists.size(); i++){	
 					BarMembers member = new BarMembers();
+					UserBaseInfo userBaseInfo = new UserBaseInfo();
      				String custId = Long.toString(lists.get(i).getCustId());
 					LoginRecord record = UserInfoSql.getUserInfoByCustId(custId);
 					member.setBarMemberId(lists.get(i).getBarMemberId().toString());
 					member.setMemberStatus(Integer.toString(lists.get(i).getMemberStatus()));
-					member.setHeadPhoto(record.getCustImg());
+					userBaseInfo.setCustImg(record.getCustImg());
 					//判断nickName是不是手机号，如果是手机号将中间四位设置成*
 					String nickName = record.getCustNickname();
 					String pattern = "^1[3|4|5|8][0-9]\\d{4,8}$";
@@ -55,9 +57,11 @@ public class QueryBarMember  extends FixtureBase {
 					else{
 						nickName = nickName.split("@")[0];
 					}
-					member.setNickName(nickName);
-					//返回信息里的custid是加密的，为了便于下边比较，做如下设置
-					member.setCustId(responseList.get(i).getCustId());
+					userBaseInfo.setNickName(nickName);
+					//5.3 验证吧主头衔		
+					String level = BarCommon.getBarOwnerLevelFromDb(responseList.get(i).getUserBaseInfo().getPubCustId());
+					userBaseInfo.setBarOwnerLevel(Integer.parseInt(level));
+					member.setUserBaseInfo(userBaseInfo);			
 					memberList.add(member);
 				}
 //				for(BarMembers response:responseList){

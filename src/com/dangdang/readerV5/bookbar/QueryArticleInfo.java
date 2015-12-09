@@ -95,6 +95,10 @@ public class QueryArticleInfo  extends FixtureBase{
 						
 			dataVerifyManager.add(new ValueVerify(list2, list1,false));
 			//5.3 验证吧主头衔
+			//在发帖，删帖，加入吧，退出吧，用户升级，降级的时候，这些动作会触发代码，更新吧主的头衔
+			//更新的数据存在login_record表里的bar_owner_level字段。
+			//下边验证level有时候失败，可能是因为，没有上述动作触发数据更新。
+			//在这儿用getBarOwnerLevel方法验证，是为了验证规则的正确性，其他接口是从数据表取bar_owner_level值来验证的。
 			BarCommon common = new BarCommon();
 			String custId = article.getUserBaseInfo().getPubCustId();
 			int level = common.getBarOwnerLevel(custId);

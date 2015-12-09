@@ -12,7 +12,8 @@ import com.dangdang.enumeration.BarStatus;
 public class BarDb {
 	
 	public static Bar getBarInfo(BarStatus status) throws Exception{
-		String sql = "SELECT * FROM bar where bar_status="+status.getIndex()+" and member_num>0 limit 100";
+		String sql = "select * from bar b where b.bar_status="+status.getIndex()+" and b.bar_id in "
+				+ "(SELECT bm.bar_id from bar_member bm where bm.member_status=3) limit 100";
 		List<Bar> bar = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class);	
 		return bar.get((new Random()).nextInt(100));			
 	}

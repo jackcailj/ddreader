@@ -27,6 +27,7 @@ import com.dangdang.readerV5.reponse.Module;
 import com.dangdang.readerV5.reponse.SquareInfo;
 import com.dangdang.readerV5.reponse.SquareInfoData;
 import com.dangdang.readerV5.reponse.TagContent;
+import com.dangdang.readerV5.reponse.UserBaseInfo;
 /**
  * 书吧广场接口
  * @author wuhaiyan
@@ -154,7 +155,6 @@ public class SquareTest extends FixtureBase{
 				dataVerifyManager.add(new ListVerify(reponseResult.getData().getSquareInfo().get(h).getTagContent(), tContentListOfDB, true));
 			}
 		}
-		//dataVerifyManager.add(new ListVerify(squareInfoOfDB, reponseResult.getData().getSquareInfo(),true));
 		super.dataVerify();
 	}
 	
@@ -168,6 +168,7 @@ public class SquareTest extends FixtureBase{
 		for(int l=0,i=0; i< bModuleList.size(); i++,l++){
 			SquareInfo info = new SquareInfo();
 			Module moduleOfDB = new Module();
+			int moduleSize = 0;
 			moduleOfDB.setBarModuleId(bModuleList.get(i).getBarModuleId().toString());
 			moduleOfDB.setModuleName(bModuleList.get(i).getModuleName().toString());
 			moduleOfDB.setShowNum(bModuleList.get(i).getShowNum().toString());
@@ -177,10 +178,18 @@ public class SquareTest extends FixtureBase{
 			sql = "SELECT * FROM `bar_module_content` where module_tag_id="+bModuleList.get(i).getBarModuleId().toString()+" "
 					+ "and `status`=1 and fk_type=1 and end_date > CURDATE() ORDER BY content_order DESC";
 			List<BarModuleContent> bCotentList = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarModuleContent.class);
-			if(bCotentList.size()==0){
+			//showNum是该模块要显示的吧的数量
+			int showNum = Integer.parseInt(bModuleList.get(i).getShowNum().toString());
+			if(showNum > bCotentList.size()){
+				moduleSize = bCotentList.size();
+			}
+			else{
+				moduleSize = showNum;
+			}
+			if(moduleSize==0){
 				l--;
 			}
-			for(int m=0,j=0; j<bCotentList.size(); j++,m++){				
+			for(int m=0,j=0; j<moduleSize; j++,m++){				
 				try{
 					ArticleContent aContentOfDB = new ArticleContent();
 					sql = "select * from article where is_show=1 and is_del=0 and media_digest_id ="+bCotentList.get(j).getContentId();
@@ -201,7 +210,7 @@ public class SquareTest extends FixtureBase{
 					
 					sql ="SELECT * FROM `media_digest` where id="+bCotentList.get(j).getContentId()+" and is_show=1";
 					Map<String,Object> digest = DbUtil.selectOne(Config.YCDBConfig, sql);
-					aContentOfDB.setContent(digest.get("card_remark").toString());
+					//aContentOfDB.setContent(digest.get("card_remark").toString());
 					aContentOfDB.setCustId(reponseResult.getData().getSquareInfo().get(l).getArticleContent().get(m).getCustId());
 					List<String> img = reponseResult.getData().getSquareInfo().get(l).getArticleContent().get(m).getImgList();
 					aContentOfDB.setImgList(img==null?null:img);
@@ -211,10 +220,13 @@ public class SquareTest extends FixtureBase{
 					aContentOfDB.setMediaDigestId(Long.toString(article.getMediaDigestId()));
 					aContentOfDB.setTitle(digest.get("title")==null?null:digest.get("title").toString());
 					aContentOfDB.setType(Integer.toString(article.getType()));
+					UserBaseInfo userBaseInfo = new UserBaseInfo();
+					//5.3 验证吧主头衔		
+					String custId = reponseResult.getData().getSquareInfo().get(l).getArticleContent().get(m).getUserBaseInfo().getPubCustId();
+					String level = BarCommon.getBarOwnerLevelFromDb(custId);
+					userBaseInfo.setBarOwnerLevel(Integer.parseInt(level));
+					aContentOfDB.setUserBaseInfo(userBaseInfo);
 					aContentListOfDB.add(aContentOfDB);
-					if(aContentListOfDB.size()==11){
-						break;
-					}					
 				}
 				catch(NullPointerException e){
 					logger.info("该帖子已不存在 "+e);
