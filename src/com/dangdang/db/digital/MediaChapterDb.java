@@ -45,5 +45,22 @@ public class MediaChapterDb {
         MediaChapter chapters = DbUtil.selectOne(Config.YCDBConfig,selectString,MediaChapter.class);
         return chapters;
     }
+    /*
+           获取章节startChapterId<id<endChapterId的剩余付费章节应付的钱数
+    */
+    public static int GetSumOfChapters(String start, String end) throws Exception {
+        String selectString = "select sum(price) from media_chapter where media_id=(select media_id from media_chapter where id ="+start+" ) and (id>"+start+" AND Id<="+end+") and is_free=0";
+        int price = Integer.parseInt(DbUtil.selectOne(Config.YCDBConfig,selectString).get("sum(price)").toString());
+        return price;
+    }
+
+    /*
+           获取付费章节
+    */
+    public static List<MediaChapter> GetMediaChapter() throws Exception {
+        String selectString="select * from media_chapter where is_show=1 and is_free=0 limit 200";
+        List<MediaChapter> chapters = DbUtil.selectList(Config.YCDBConfig,selectString,MediaChapter.class);
+        return chapters;
+    } 
 
 }
