@@ -23,6 +23,7 @@ public class Article {
 	String title;
 	String type;
 	UserBaseInfo userBaseInfo;
+	VoteInfo voteInfo;
 	
 
 	public String getBrowseCount(){
@@ -67,7 +68,9 @@ public class Article {
 	public UserBaseInfo getUserBaseInfo(){
 		return userBaseInfo;
 	}
-	
+	public VoteInfo getVoteInfo(){
+		return voteInfo;
+	}
 	public void setBrowseCount(String browseCount){
 		this.browseCount = browseCount;
 	}
@@ -157,5 +160,8 @@ public class Article {
 	}
 	public void setUserBaseInfo(UserBaseInfo userBaseInfo){
 		this.userBaseInfo = userBaseInfo;
+	}
+	public void setVoteInfo(VoteInfo voteInfo){
+		this.voteInfo = voteInfo;
 	}
 }

@@ -9,7 +9,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CommentTargetCount;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.bookbar.meta.ArticleItems;
 import com.dangdang.config.Config;
+import com.dangdang.db.bookbar.ArticleItemsDb;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
@@ -103,7 +105,22 @@ public class QueryArticleInfo  extends FixtureBase{
 			String custId = article.getUserBaseInfo().getPubCustId();
 			int level = common.getBarOwnerLevel(custId);
 			dataVerifyManager.add(new ValueVerify<Integer>(
-					reponseResult.getData().getArticle().getUserBaseInfo().getBarOwnerLevel(), level,false));
+					article.getUserBaseInfo().getBarOwnerLevel(), level,false));
+			//验证投票贴信息
+			String type = digest.get("type").toString();
+			if(type.equals("31")||type.equals("32")){
+				List<ArticleItems> items = ArticleItemsDb.getArticleItemsId(mediaDigestId);
+				if(items!=null){
+					int voteCount = 0;
+					for(int i=0; i<items.size(); i++){
+						voteCount = voteCount+items.get(i).getVoteCount();
+					}
+					dataVerifyManager.add(new ValueVerify<Integer>(
+							article.getVoteInfo().getItems().size(), items.size(),false));
+					dataVerifyManager.add(new ValueVerify<Integer>(
+							article.getVoteInfo().getVoteCount(), voteCount,false));			
+				}		
+			}				
 			super.dataVerify();			
 		}
 		else{

@@ -15,7 +15,6 @@ import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.BarListResponse;
-import org.apache.commons.lang3.StringUtils;
 
 public class MyBarList extends FixtureBase {
 	ReponseV2<BarListResponse>   reponseResult;
@@ -43,7 +42,7 @@ public class MyBarList extends FixtureBase {
 
 			if(paramMap.get("type").equals("2")||paramMap.get("type").equals("3")){
 				sql = "SELECT b.* from (select distinct bar_id from bar_member where 1=1 and cust_id = "+login.getCustId()
-				   + "and member_status in (1,2) order by create_date desc) a left join bar b on a.bar_id=b.bar_id WHERE b.bar_status in(1,2)";
+				   + " and member_status in (1,2) order by create_date desc) a left join bar b on a.bar_id=b.bar_id WHERE b.bar_status in(1,2)";
 
 				/*sql ="select * from bar where bar_id in ("
 						+ "select bar_id from bar_member where 1=1 and "
