@@ -1,0 +1,130 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-25 14:46:42 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="meta.Article" table="article" catalog="bookbar">
+        <id name="articleId" type="java.lang.Long">
+            <column name="article_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="barId" type="long">
+            <column name="bar_id" not-null="true">
+                <comment>&#176;&#201;ID</comment>
+            </column>
+        </property>
+        <property name="mediaDigestId" type="long">
+            <column name="media_digest_id" not-null="true">
+                <comment>&#190;&#171;&#198;&#183;ID</comment>
+            </column>
+        </property>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>&#204;&#251;&#215;&#211;&#192;&#224;&#208;&#205;(1:&#202;&#233;&#198;&#192;&#204;&#249;; 2:&#202;&#233;&#176;&#201;&#204;&#249;;
+                3:&#205;&#182;&#198;&#177;&#204;&#249;;41:&#202;&#233;&#188;&#174;&#183;&#214;&#207;&#237;&#204;&#249;;42:&#177;&#202;&#188;&#199;&#183;&#214;&#207;&#237;&#204;&#249;;43:&#198;&#181;&#181;&#192;&#183;&#214;&#207;&#237;&#204;&#249;;44:&#206;&#196;&#213;&#194;&#183;&#214;&#207;&#237;&#204;&#249;;45:&#176;&#201;&#183;&#214;&#207;&#237;&#204;&#249;;46:&#204;&#249;&#215;&#211;&#183;&#214;&#207;&#237;&#204;&#249;;47:&#202;&#233;&#181;&#165;&#183;&#214;&#207;&#237;&#204;&#249;;48:&#215;&#168;&#204;&#226;&#183;&#214;&#207;&#237;&#204;&#249;;49:&#185;&#165;&#194;&#212;&#183;&#214;&#207;&#237;&#204;&#249;;50:reader&#205;&#188;&#198;&#172;&#183;&#214;&#207;&#237;&#204;&#249;)</comment>
+            </column>
+        </property>
+        <property name="shareSourceId" type="java.lang.Long">
+            <column name="share_source_id">
+                <comment>&#183;&#214;&#207;&#237;&#192;&#180;&#212;&#180;ID</comment>
+            </column>
+        </property>
+        <property name="saleId" type="java.lang.Long">
+            <column name="sale_id">
+                <comment>&#207;&#250;&#202;&#219;ID</comment>
+            </column>
+        </property>
+        <property name="bookType" type="java.lang.Byte">
+            <column name="book_type">
+                <comment>
+                &#202;&#233;&#188;&#174;&#192;&#224;&#208;&#205;&#163;&#168;1&#161;&#162;&#212;&#173;&#180;&#180;&#208;&#161;&#203;&#181;&#163;&#187;2&#161;&#162;&#179;&#246;&#176;&#230;&#206;&#239;&#163;&#187;3&#161;&#162;&#214;&#189;&#202;&#233;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="sourceChannelId" type="java.lang.Long">
+            <column name="source_channel_id">
+                <comment>&#192;&#180;&#212;&#180;&#198;&#181;&#181;&#192;&#181;&#196;ID</comment>
+            </column>
+        </property>
+        <property name="targetSource" type="java.lang.Boolean">
+            <column name="target_source">
+                <comment>&#192;&#180;&#212;&#180;&#206;&#196;&#213;&#194;&#181;&#196;&#192;&#224;&#208;&#205; 1:&#183;&#173;&#198;&#170;&#182;&#249;;
+                2:&#199;&#192;&#207;&#200;&#182;&#193;; 3:&#198;&#181;&#181;&#192;</comment>
+            </column>
+        </property>
+        <property name="specialTopicName" type="string">
+            <column name="special_topic_name" length="64">
+                <comment>&#192;&#180;&#212;&#180;&#215;&#168;&#204;&#226;&#181;&#196;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="specialTopicUrl" type="string">
+            <column name="special_topic_url" length="512">
+                <comment>&#192;&#180;&#212;&#180;&#215;&#168;&#204;&#226;&#181;&#196;URL</comment>
+            </column>
+        </property>
+        <property name="objectId" type="string">
+            <column name="object_id" length="128">
+                <comment>&#182;&#212;&#207;&#243;ID(&#202;&#233;&#187;&#242;&#213;&#223;&#215;&#247;&#213;&#223;)</comment>
+            </column>
+        </property>
+        <property name="relationType" type="java.lang.Byte">
+            <column name="relation_type">
+                <comment>&#185;&#216;&#207;&#181;&#192;&#224;&#208;&#205;&#163;&#168;1. &#181;&#165;&#198;&#183; 2. &#215;&#247;&#213;&#223;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="isShow" type="byte">
+            <column name="is_show" not-null="true">
+                <comment>0:&#178;&#187;&#207;&#212;&#202;&#190;;1:&#207;&#212;&#202;&#190;</comment>
+            </column>
+        </property>
+        <property name="isDel" type="byte">
+            <column name="is_del" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#201;&#190;&#179;&#253; 0:&#206;&#180;&#201;&#190;&#179;&#253;; 1:&#210;&#209;&#201;&#190;&#179;&#253;;</comment>
+            </column>
+        </property>
+        <property name="isTop" type="java.lang.Byte">
+            <column name="is_top">
+                <comment>&#202;&#199;&#183;&#241;&#214;&#195;&#182;&#165;&#204;&#249;(0.&#183;&#241; 1.&#202;&#199;)</comment>
+            </column>
+        </property>
+        <property name="isWonderful" type="java.lang.Byte">
+            <column name="is_wonderful">
+                <comment>&#202;&#199;&#183;&#241;&#190;&#171;&#187;&#170;&#204;&#249;(0.&#183;&#241; 1.&#202;&#199;)</comment>
+            </column>
+        </property>
+        <property name="isResolve" type="java.lang.Byte">
+            <column name="is_resolve">
+                <comment>&#211;&#195;&#187;&#167;&#206;&#202;&#204;&#226;&#189;&#226;&#190;&#246;&#177;&#234;&#202;&#182;(1:&#189;&#226;&#190;&#246;)</comment>
+            </column>
+        </property>
+        <property name="weight" type="big_decimal">
+            <column name="weight" precision="10">
+                <comment>&#200;&#168;&#214;&#216;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedUser" type="java.lang.Long">
+            <column name="last_modified_user">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#181;&#177;&#181;&#177;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDateMsec" type="java.lang.Long">
+            <column name="last_modified_date_msec">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;&#163;&#168;&#186;&#193;&#195;&#235;&#163;&#169;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

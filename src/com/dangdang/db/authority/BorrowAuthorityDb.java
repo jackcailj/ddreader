@@ -17,7 +17,7 @@ public class BorrowAuthorityDb {
      */
     public  static List<BorrowAuthority> getBorrowMedias(String custId) throws Exception {
         Long custIdl=Long.parseLong(custId);
-        String selectString = "select * from borrow_authority_"+custIdl%16+" where cust_id="+custId+" and UNIX_TIMESTAMP(NOW())*1000<deadline order by creation_date  desc";
+        String selectString = "select * from borrow_authority_"+custIdl%16+" where cust_id="+custId+" and UNIX_TIMESTAMP(NOW())*1000<deadline order by creation_date  desc limit 10";
         List<BorrowAuthority> mediaAuthorities = DbUtil.selectList(Config.AUTHORITYConfig, selectString, BorrowAuthority.class);
         return mediaAuthorities;
     }

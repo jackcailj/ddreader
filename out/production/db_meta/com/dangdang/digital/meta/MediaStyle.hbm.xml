@@ -1,16 +1,30 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaStyle" table="media_style" schema="" catalog="digital">
-        <id name="styleId" column="style_id"/>
-        <property name="name" column="name"/>
-        <property name="code" column="code"/>
-        <property name="descs" column="descs"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="price" column="price"/>
-        <property name="status" column="status"/>
+    <class name="com.dangdang.digital.meta.MediaStyle" table="media_style" catalog="digital">
+        <id name="styleId" type="java.lang.Integer">
+            <column name="style_id" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="code" type="string">
+            <column name="code" />
+        </property>
+        <property name="descs" type="string">
+            <column name="descs" length="500" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="creation_date" length="10" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price" />
+        </property>
+        <property name="status" type="java.lang.Short">
+            <column name="status" />
+        </property>
     </class>
 </hibernate-mapping>

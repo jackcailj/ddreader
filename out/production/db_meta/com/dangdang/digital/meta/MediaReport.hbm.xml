@@ -1,18 +1,52 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaReport" table="media_report" schema="" catalog="digital">
-        <id name="id" column="ID"/>
-        <property name="custId" column="CUST_ID"/>
-        <property name="mediaId" column="MEDIA_ID"/>
-        <property name="chapterId" column="CHAPTER_ID"/>
-        <property name="createTime" column="CREATE_TIME"/>
-        <property name="reportType" column="REPORT_TYPE"/>
-        <property name="reportContent" column="REPORT_CONTENT"/>
-        <property name="contactInfo" column="CONTACT_INFO"/>
-        <property name="platform" column="PLATFORM"/>
+    <class name="com.dangdang.digital.meta.MediaReport" table="media_report" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="CUST_ID">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="MEDIA_ID">
+                <comment>&#215;&#202;&#212;&#180;id</comment>
+            </column>
+        </property>
+        <property name="chapterId" type="java.lang.Long">
+            <column name="CHAPTER_ID">
+                <comment>&#213;&#194;&#189;&#218;id</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="CREATE_TIME" length="19">
+                <comment>&#180;&#178;&#188;&#220;&#196;&#227;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="reportType" type="string">
+            <column name="REPORT_TYPE" length="32">
+                <comment>&#190;&#217;&#177;&#168;&#196;&#218;&#200;&#221;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="reportContent" type="string">
+            <column name="REPORT_CONTENT" length="1000">
+                <comment>&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="contactInfo" type="string">
+            <column name="CONTACT_INFO">
+                <comment>&#193;&#170;&#207;&#181;&#183;&#189;&#202;&#189;</comment>
+            </column>
+        </property>
+        <property name="platform" type="string">
+            <column name="PLATFORM" length="32">
+                <comment>&#192;&#180;&#212;&#180;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

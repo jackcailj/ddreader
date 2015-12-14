@@ -1,15 +1,29 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaDeviceConfig" table="media_device_config" schema="" catalog="digital">
-        <id name="mediaDeviceId" column="media_device_id"/>
-        <property name="deviceTypeId" column="device_type_id"/>
-        <property name="deviceTypeCode" column="device_type_code"/>
-        <property name="deviceTypeName" column="device_type_name"/>
-        <property name="createTime" column="create_time"/>
-        <property name="mediaId" column="media_id"/>
+    <class name="com.dangdang.digital.meta.MediaDeviceConfig" table="media_device_config" catalog="digital">
+        <id name="mediaDeviceId" type="java.lang.Long">
+            <column name="media_device_id" />
+            <generator class="identity" />
+        </id>
+        <property name="deviceTypeId" type="java.lang.Long">
+            <column name="device_type_id" />
+        </property>
+        <property name="deviceTypeCode" type="string">
+            <column name="device_type_code" length="30" />
+        </property>
+        <property name="deviceTypeName" type="string">
+            <column name="device_type_name" length="100" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#195;&#189;&#204;&#229;ID</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

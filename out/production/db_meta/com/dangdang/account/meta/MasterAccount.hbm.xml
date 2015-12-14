@@ -1,17 +1,47 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-21 15:53:56 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.account.meta.MasterAccount" table="master_account" schema="" catalog="account">
-        <id name="masterAccountId" column="master_account_id"/>
-        <property name="userName" column="user_name"/>
-        <property name="custId" column="cust_id"/>
-        <property name="masterAccountMoney" column="master_account_money"/>
-        <property name="masterAccountMoneyIos" column="master_account_money_ios"/>
-        <property name="masterModifiedVersion" column="master_modified_version"/>
-        <property name="lastModifiedDate" column="last_modified_date"/>
-        <property name="lastModifiedSource" column="last_modified_source"/>
+    <class name="com.dangdang.account.meta.MasterAccount" table="master_account" catalog="account">
+        <id name="masterAccountId" type="java.lang.Long">
+            <column name="master_account_id" />
+            <generator class="identity" />
+        </id>
+        <property name="userName" type="string">
+            <column name="user_name" length="128" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true" unique="true">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="masterAccountMoney" type="int">
+            <column name="master_account_money" not-null="true">
+                <comment>&#213;&#203;&#187;&#167;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="masterAccountMoneyIos" type="int">
+            <column name="master_account_money_ios" not-null="true">
+                <comment>&#213;&#203;&#187;&#167;&#189;&#240;&#182;&#238;(IOS)</comment>
+            </column>
+        </property>
+        <property name="masterModifiedVersion" type="int">
+            <column name="master_modified_version" not-null="true">
+                <comment>&#213;&#203;&#187;&#167;&#208;&#197;&#207;&#162;&#184;&#252;&#208;&#194;&#176;&#230;&#177;&#190;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedSource" type="string">
+            <column name="last_modified_source" length="16" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#184;&#252;&#208;&#194;&#192;&#180;&#212;&#180;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

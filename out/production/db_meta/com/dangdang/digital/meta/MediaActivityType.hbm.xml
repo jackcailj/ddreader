@@ -1,18 +1,53 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaActivityType" table="media_activity_type" schema="" catalog="digital">
-        <id name="activityTypeId" column="activity_type_id"/>
-        <property name="activityTypeName" column="activity_type_name"/>
-        <property name="status" column="status"/>
-        <property name="activityTypeCode" column="activity_type_code"/>
-        <property name="creator" column="creator"/>
-        <property name="modifier" column="modifier"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="lastChangedDate" column="last_changed_date"/>
-        <property name="isPromptlyToAccount" column="is_promptly_to_account"/>
+    <class name="com.dangdang.digital.meta.MediaActivityType" table="media_activity_type" catalog="digital">
+        <id name="activityTypeId" type="java.lang.Integer">
+            <column name="activity_type_id" />
+            <generator class="identity" />
+        </id>
+        <property name="activityTypeName" type="string">
+            <column name="activity_type_name" length="64">
+                <comment>&#180;&#217;&#207;&#250;&#187;&#238;&#182;&#175;&#192;&#224;&#208;&#205; &#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#192;&#224;&#208;&#205;&#215;&#180;&#204;&#172;(1:&#211;&#208;&#208;&#167;&#163;&#172;0&#163;&#186;&#206;&#222;&#208;&#167;)</comment>
+            </column>
+        </property>
+        <property name="activityTypeCode" type="string">
+            <column name="activity_type_code" length="64">
+                <comment>&#187;&#238;&#182;&#175;&#192;&#224;&#208;&#205;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" length="64">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier" length="64">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="isPromptlyToAccount" type="java.lang.Integer">
+            <column name="is_promptly_to_account">
+                <comment>
+                &#202;&#199;&#183;&#241;&#202;&#181;&#202;&#177;&#181;&#189;&#213;&#203;(1:&#202;&#181;&#202;&#177;&#181;&#189;&#213;&#203;&#163;&#172;0&#163;&#186;&#183;&#199;&#202;&#181;&#202;&#177;&#181;&#189;&#213;&#203;)</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

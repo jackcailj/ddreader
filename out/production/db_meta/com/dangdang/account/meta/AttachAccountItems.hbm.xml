@@ -1,26 +1,88 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-21 15:53:56 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.account.meta.AttachAccountItems" table="attach_account_items" schema=""
-           catalog="account">
-        <id name="attachAccountItemsId" column="attach_account_items_id"/>
-        <property name="custId" column="cust_id"/>
-        <property name="faceValue" column="face_value"/>
-        <property name="surplusMoney" column="surplus_money"/>
-        <property name="consumeSource" column="consume_source"/>
-        <property name="modifiedVersion" column="modified_version"/>
-        <property name="effectiveDate" column="effective_date"/>
-        <property name="effectiveDateMsec" column="effective_date_msec"/>
-        <property name="platformNo" column="platform_no"/>
-        <property name="status" column="status"/>
-        <property name="activityCode" column="activity_code"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="lastModifiedDate" column="last_modified_date"/>
-        <property name="deviceType" column="device_type"/>
-        <property name="isShow" column="is_show"/>
-        <property name="activityName" column="activity_name"/>
+    <class name="com.dangdang.account.meta.AttachAccountItems" table="attach_account_items" catalog="account">
+        <id name="attachAccountItemsId" type="java.lang.Long">
+            <column name="attach_account_items_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="faceValue" type="int">
+            <column name="face_value" not-null="true">
+                <comment>&#184;&#189;&#213;&#203;&#187;&#167;&#195;&#247;&#207;&#184;&#195;&#230;&#214;&#181;</comment>
+            </column>
+        </property>
+        <property name="surplusMoney" type="int">
+            <column name="surplus_money" not-null="true">
+                <comment>&#184;&#189;&#213;&#203;&#187;&#167;&#195;&#247;&#207;&#184;&#202;&#163;&#211;&#224;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="consumeSource" type="string">
+            <column name="consume_source" length="16" not-null="true">
+                <comment>&#207;&#251;&#183;&#209;&#192;&#180;&#212;&#180;</comment>
+            </column>
+        </property>
+        <property name="modifiedVersion" type="int">
+            <column name="modified_version" not-null="true">
+                <comment>&#213;&#203;&#187;&#167;&#208;&#197;&#207;&#162;&#184;&#252;&#208;&#194;&#176;&#230;&#177;&#190;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="effectiveDate" type="date">
+            <column name="effective_date" length="10" not-null="true">
+                <comment>&#211;&#208;&#208;&#167;&#198;&#218;&#207;&#222;</comment>
+            </column>
+        </property>
+        <property name="effectiveDateMsec" type="long">
+            <column name="effective_date_msec" not-null="true">
+                <comment>&#211;&#208;&#208;&#167;&#198;&#218;&#207;&#222;(&#186;&#193;&#195;&#235;)</comment>
+            </column>
+        </property>
+        <property name="platformNo" type="string">
+            <column name="platform_no" length="8" not-null="true">
+                <comment>&#198;&#189;&#204;&#168;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true">
+                <comment>&#215;&#180;&#204;&#172;(1.&#211;&#208;&#208;&#167;2.&#210;&#209;&#185;&#253;&#198;&#218; 3.&#206;&#180;&#188;&#164;&#187;&#238;
+                4.&#210;&#209;&#202;&#185;&#211;&#195;)</comment>
+            </column>
+        </property>
+        <property name="activityCode" type="string">
+            <column name="activity_code" length="32">
+                <comment>&#187;&#238;&#182;&#175;CODE</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="16" not-null="true">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;(android,iphone,ipad)</comment>
+            </column>
+        </property>
+        <property name="isShow" type="int">
+            <column name="is_show" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#213;&#185;&#202;&#190;&#163;&#168;0.&#183;&#241; 1.&#202;&#199;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="activityName" type="string">
+            <column name="activity_name" length="16">
+                <comment>&#187;&#238;&#182;&#175;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

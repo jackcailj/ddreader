@@ -1,20 +1,46 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaEpubCategory" table="media_epub_category" schema="" catalog="digital">
-        <id name="id" column="ID"/>
-        <property name="name" column="NAME"/>
-        <property name="code" column="CODE"/>
-        <property name="parentId" column="PARENT_ID"/>
-        <property name="catTypeId" column="CAT_TYPE_ID"/>
-        <property name="abbreviation" column="ABBREVIATION"/>
-        <property name="categoryCode" column="CATEGORY_CODE"/>
-        <property name="displayorder" column="DISPLAYORDER"/>
-        <property name="status" column="status"/>
-        <property name="visiable" column="visiable"/>
-        <property name="cat0" column="cat0"/>
+    <class name="com.dangdang.digital.meta.MediaEpubCategory" table="media_epub_category" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" not-null="true" />
+        </property>
+        <property name="code" type="string">
+            <column name="CODE" length="100" not-null="true" />
+        </property>
+        <property name="parentId" type="java.lang.Long">
+            <column name="PARENT_ID" />
+        </property>
+        <property name="catTypeId" type="java.lang.Long">
+            <column name="CAT_TYPE_ID" />
+        </property>
+        <property name="abbreviation" type="string">
+            <column name="ABBREVIATION" />
+        </property>
+        <property name="categoryCode" type="string">
+            <column name="CATEGORY_CODE" length="100" unique="true" />
+        </property>
+        <property name="displayorder" type="java.lang.Integer">
+            <column name="DISPLAYORDER" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>0: &#206;&#180;&#208;&#222;&#184;&#196;; 1: &#208;&#232;&#210;&#170;&#186;&#243;&#204;&#168;&#184;&#252;&#208;&#194;</comment>
+            </column>
+        </property>
+        <property name="visiable" type="java.lang.Short">
+            <column name="visiable" />
+        </property>
+        <property name="cat0" type="java.lang.Integer">
+            <column name="cat0">
+                <comment>&#185;&#221;ID</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

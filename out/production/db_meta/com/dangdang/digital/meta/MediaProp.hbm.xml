@@ -1,20 +1,62 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaProp" table="media_prop" schema="" catalog="digital">
-        <id name="propId" column="prop_id"/>
-        <property name="propName" column="prop_name"/>
-        <property name="propMainGoldPrice" column="prop_main_gold_price"/>
-        <property name="propSubGoldPrice" column="prop_sub_gold_price"/>
-        <property name="propPurposeId" column="prop_purpose_id"/>
-        <property name="propPurposeDesc" column="prop_purpose_desc"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="creator" column="creator"/>
-        <property name="lastModifiedDate" column="last_modified_date"/>
-        <property name="modifier" column="modifier"/>
-        <property name="coverPic" column="cover_pic"/>
+    <class name="com.dangdang.digital.meta.MediaProp" table="media_prop" catalog="digital">
+        <id name="propId" type="java.lang.Integer">
+            <column name="prop_id" />
+            <generator class="identity" />
+        </id>
+        <property name="propName" type="string">
+            <column name="prop_name" length="128">
+                <comment>&#181;&#192;&#190;&#223;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="propMainGoldPrice" type="java.lang.Integer">
+            <column name="prop_main_gold_price">
+                <comment>&#214;&#247;&#212;&#196;&#182;&#193;&#177;&#210;&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+        <property name="propSubGoldPrice" type="java.lang.Integer">
+            <column name="prop_sub_gold_price">
+                <comment>&#184;&#189;&#212;&#196;&#182;&#193;&#177;&#210;&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+        <property name="propPurposeId" type="java.lang.Integer">
+            <column name="prop_purpose_id">
+                <comment>&#181;&#192;&#190;&#223;&#185;&#166;&#196;&#220;id</comment>
+            </column>
+        </property>
+        <property name="propPurposeDesc" type="string">
+            <column name="prop_purpose_desc" length="500">
+                <comment>&#181;&#192;&#190;&#223;&#185;&#166;&#196;&#220;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" length="128">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier" length="128">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="coverPic" type="string">
+            <column name="cover_pic" length="500">
+                <comment>&#183;&#226;&#195;&#230;&#205;&#188;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

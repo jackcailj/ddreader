@@ -6,6 +6,7 @@ import com.dangdang.authority.meta.BorrowAuthority;
 import com.dangdang.db.authority.BorrowAuthorityDb;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.common.functional.login.ILogin;
+import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.RegexVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
@@ -57,11 +58,16 @@ public class GetBorrowAuthorityList extends FixtureBase{
             }
             else{
                 StringBuilder regexArticleId = new StringBuilder();
-                for (BorrowAuthority borrowAuthority : borrowAuthorities) {
+
+                List<String> expectProductIds=Util.getFields(borrowAuthorities,"productId");
+                List<String> ProductIds=Util.getFields(reponseResult.getData().getBorrowList(),"productId");
+
+                /*for (BorrowAuthority borrowAuthority : borrowAuthorities) {
                     regexArticleId.append(Util.getJsonRegexString("productId", ""+borrowAuthority.getProductId()));
                     regexArticleId.append(".*?");
                 }
-                dataVerifyManager.add(new RegexVerify(regexArticleId.toString(),result.toString()));
+                dataVerifyManager.add(new RegexVerify(regexArticleId.toString(),result.toString()));*/
+                dataVerifyManager.add(new ListVerify(ProductIds,expectProductIds,false));
             }
         }
         else {

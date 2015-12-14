@@ -1,16 +1,42 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaAnthology" table="media_anthology" schema="" catalog="digital">
-        <id name="anthologyId" column="anthology_id"/>
-        <property name="anthologyName" column="anthology_name"/>
-        <property name="anthologyPic" column="anthology_pic"/>
-        <property name="custId" column="cust_id"/>
-        <property name="custName" column="cust_name"/>
-        <property name="createDate" column="create_date"/>
-        <property name="platform" column="platform"/>
+    <class name="com.dangdang.digital.meta.MediaAnthology" table="media_anthology" catalog="digital">
+        <id name="anthologyId" type="java.lang.Long">
+            <column name="anthology_id" />
+            <generator class="identity" />
+        </id>
+        <property name="anthologyName" type="string">
+            <column name="anthology_name" length="100" not-null="true">
+                <comment>&#190;&#171;&#198;&#183;&#206;&#196;&#188;&#175;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="anthologyPic" type="string">
+            <column name="anthology_pic">
+                <comment>&#206;&#196;&#188;&#175;&#177;&#179;&#190;&#176;&#205;&#188;&#198;&#172;url&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#206;&#196;&#188;&#175;&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="custName" type="string">
+            <column name="cust_name" length="50">
+                <comment>&#180;&#180;&#189;&#168;&#190;&#171;&#198;&#183;&#206;&#196;&#188;&#175;&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#206;&#196;&#188;&#175;&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="platform" type="string">
+            <column name="platform" length="50">
+                <comment>&#206;&#196;&#188;&#175;&#203;&#249;&#202;&#244;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

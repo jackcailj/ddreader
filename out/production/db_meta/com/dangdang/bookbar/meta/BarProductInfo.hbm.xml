@@ -1,0 +1,94 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-25 14:46:42 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="meta.BarProductInfo" table="bar_product_info" catalog="bookbar">
+        <id name="barProductInfoId" type="java.lang.Long">
+            <column name="bar_product_info_id" />
+            <generator class="identity" />
+        </id>
+        <property name="productId" type="long">
+            <column name="product_id" not-null="true">
+                <comment>&#181;&#165;&#198;&#183;ID</comment>
+            </column>
+        </property>
+        <property name="productName" type="string">
+            <column name="product_name" length="200">
+                <comment>&#181;&#165;&#198;&#183;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="bookNameForBar" type="string">
+            <column name="book_name_for_bar" length="200">
+                <comment>&#202;&#233;&#176;&#201;&#181;&#165;&#198;&#183;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="bookAuthorId" type="java.lang.Integer">
+            <column name="book_author_id">
+                <comment>&#215;&#247;&#213;&#223;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="bookAuthor" type="string">
+            <column name="book_author">
+                <comment>&#215;&#247;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="bookIsbn" type="string">
+            <column name="book_isbn" length="64">
+                <comment>ISBN</comment>
+            </column>
+        </property>
+        <property name="bookCategory" type="java.lang.Long">
+            <column name="book_category">
+                <comment>&#183;&#214;&#192;&#224;</comment>
+            </column>
+        </property>
+        <property name="publisher" type="string">
+            <column name="publisher" length="400">
+                <comment>&#179;&#246;&#176;&#230;&#201;&#231;</comment>
+            </column>
+        </property>
+        <property name="publishDate" type="timestamp">
+            <column name="publish_date" length="19">
+                <comment>&#179;&#246;&#176;&#230;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="bookPrice" type="big_decimal">
+            <column name="book_price" precision="10">
+                <comment>&#188;&#219;&#184;&#241;(&#182;&#168;&#188;&#219;)</comment>
+            </column>
+        </property>
+        <property name="descs" type="string">
+            <column name="descs">
+                <comment>&#201;&#204;&#198;&#183;&#188;&#242;&#189;&#233;</comment>
+            </column>
+        </property>
+        <property name="type" type="short">
+            <column name="type" not-null="true">
+                <comment>&#192;&#224;&#208;&#205; 1.&#181;&#231;&#215;&#211;&#202;&#233; 2. &#215;&#212;&#211;&#170;&#214;&#189;&#202;&#233;</comment>
+            </column>
+        </property>
+        <property name="paperBookStatus" type="java.lang.Integer">
+            <column name="paper_book_status">
+                <comment>&#214;&#189;&#202;&#233;&#215;&#180;&#204;&#172;(-1&#201;&#190;&#179;&#253; 0&#213;&#253;&#179;&#163; 6&#201;&#204;&#188;&#210;&#207;&#194;&#188;&#220;
+                1&#190;&#217;&#177;&#168;&#207;&#194;&#188;&#220; 3&#178;&#187;&#191;&#201;&#202;&#219; 4&#199;&#191;&#214;&#198; 5&#181;&#189;&#198;&#218;
+                7&#205;&#198;&#188;&#246;&#207;&#194;&#188;&#220; 8&#193;&#217;&#202;&#177;&#207;&#194;&#188;&#220;)</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="isHasBar" type="short">
+            <column name="is_has_bar" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#210;&#209;&#190;&#173;&#211;&#181;&#211;&#208;&#176;&#201;(1.&#211;&#208; 0. &#183;&#241;)</comment>
+            </column>
+        </property>
+        <property name="barId" type="java.lang.Long">
+            <column name="bar_id">
+                <comment>&#176;&#201;ID</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

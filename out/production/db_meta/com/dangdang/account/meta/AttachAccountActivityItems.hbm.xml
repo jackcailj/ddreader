@@ -1,23 +1,79 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-8-21 15:53:56 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.account.meta.AttachAccountActivityItems" table="attach_account_activity_items" schema=""
-           catalog="account">
-        <id name="attachAccountActivityItemsId" column="attach_account_activity_items_id"/>
-        <property name="attachAccountActivityId" column="attach_account_activity_id"/>
-        <property name="activityCode" column="activity_code"/>
-        <property name="isRandomFaceValue" column="is_random_face_value"/>
-        <property name="faceValue" column="face_value"/>
-        <property name="hasUpperLimit" column="has_upper_limit"/>
-        <property name="initNum" column="init_num"/>
-        <property name="lastNum" column="last_num"/>
-        <property name="effectiveDay" column="effective_day"/>
-        <property name="alarmNum" column="alarm_num"/>
-        <property name="status" column="status"/>
-        <property name="lastModifiedDate" column="last_modified_date"/>
-        <property name="lastModifiedUser" column="last_modified_user"/>
+    <class name="com.dangdang.account.meta.AttachAccountActivityItems" table="attach_account_activity_items" catalog="account">
+        <id name="attachAccountActivityItemsId" type="java.lang.Long">
+            <column name="attach_account_activity_items_id" />
+            <generator class="identity" />
+        </id>
+        <property name="attachAccountActivityId" type="long">
+            <column name="attach_account_activity_id" not-null="true">
+                <comment>&#187;&#238;&#182;&#175;&#214;&#247;&#177;&#237;ID</comment>
+            </column>
+        </property>
+        <property name="activityCode" type="string">
+            <column name="activity_code" length="32" not-null="true">
+                <comment>&#187;&#238;&#182;&#175;code</comment>
+            </column>
+        </property>
+        <property name="isRandomFaceValue" type="int">
+            <column name="is_random_face_value" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#203;&#230;&#187;&#250;&#195;&#230;&#214;&#181;(1,&#202;&#199; 0,&#183;&#241;)</comment>
+            </column>
+        </property>
+        <property name="faceValue" type="java.lang.Integer">
+            <column name="face_value">
+                <comment>&#195;&#230;&#214;&#181;</comment>
+            </column>
+        </property>
+        <property name="hasUpperLimit" type="int">
+            <column name="has_upper_limit" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#211;&#208;&#202;&#253;&#193;&#191;&#201;&#207;&#207;&#222;(1,&#211;&#208; 0,&#206;&#222;)</comment>
+            </column>
+        </property>
+        <property name="initNum" type="java.lang.Integer">
+            <column name="init_num">
+                <comment>&#179;&#245;&#202;&#188;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="lastNum" type="java.lang.Integer">
+            <column name="last_num">
+                <comment>&#202;&#163;&#211;&#224;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="effectiveDay" type="int">
+            <column name="effective_day" not-null="true">
+                <comment>&#211;&#208;&#208;&#167;&#198;&#218;&#207;&#222;(&#204;&#236;)</comment>
+            </column>
+        </property>
+        <property name="alarmNum" type="java.lang.Integer">
+            <column name="alarm_num">
+                <comment>&#212;&#164;&#190;&#175;&#183;&#167;&#214;&#181;</comment>
+            </column>
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true">
+                <comment>&#215;&#180;&#204;&#172;(0:&#206;&#222;&#208;&#167;&#163;&#187;1&#163;&#186;&#211;&#208;&#208;&#167;&#163;&#172;2:&#185;&#253;&#198;&#218; &#163;&#172; 3.
+                &#206;&#180;&#188;&#164;&#187;&#238;)</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedUser" type="long">
+            <column name="last_modified_user" not-null="true">
+                <comment>&#215;&#238;&#186;&#243;&#178;&#217;&#215;&#247;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="userType" type="java.lang.Byte">
+            <column name="user_type">
+                <comment>
+                &#187;&#238;&#182;&#175;&#195;&#230;&#207;&#242;&#211;&#195;&#187;&#167;0:&#208;&#194;&#211;&#195;&#187;&#167;,1:&#192;&#207;&#211;&#195;&#187;&#167;,2:&#203;&#249;&#211;&#208;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

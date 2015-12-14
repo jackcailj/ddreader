@@ -1,53 +1,226 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaActivityInfoCopy" table="media_activity_info_copy" schema=""
-           catalog="digital">
-        <id name="activityId" column="activity_id"/>
-        <property name="activityName" column="activity_name"/>
-        <property name="startTime" column="start_time"/>
-        <property name="endTime" column="end_time"/>
-        <property name="activityTypeId" column="activity_type_id"/>
-        <property name="activityTypeCode" column="activity_type_code"/>
-        <property name="isFirstDeposit" column="is_first_deposit"/>
-        <property name="isPreviousNumber" column="is_previous_number"/>
-        <property name="giveScale" column="give_scale"/>
-        <property name="consumeSatisfy" column="consume_satisfy"/>
-        <property name="originalLevel" column="original_level"/>
-        <property name="newLevel" column="new_level"/>
-        <property name="giveGoldPiece" column="give_gold_piece"/>
-        <property name="dayWorshipLimit" column="day_worship_limit"/>
-        <property name="lowestGoldPiece" column="lowest_gold_piece"/>
-        <property name="highestGoldPiece" column="highest_gold_piece"/>
-        <property name="isWholeMedia" column="is_whole_media"/>
-        <property name="consumeChapter" column="consume_chapter"/>
-        <property name="discount" column="discount"/>
-        <property name="isMonthlyPayment" column="is_monthly_payment"/>
-        <property name="monthlyPaymentType" column="monthly_payment_type"/>
-        <property name="monthlyBuyOrGive" column="monthly_buy_or_give"/>
-        <property name="monthlyPaymentOriginalPrice" column="monthly_payment_original_price"/>
-        <property name="monthlyPaymentPrice" column="monthly_payment_price"/>
-        <property name="monthlyPaymentDiscount" column="monthly_payment_discount"/>
-        <property name="monthlyPaymentRelation" column="monthly_payment_relation"/>
-        <property name="monthlyBuyDays" column="monthly_buy_days"/>
-        <property name="monthlyGiveDays" column="monthly_give_days"/>
-        <property name="isFixedPrice" column="is_fixed_price"/>
-        <property name="fixedPrice" column="fixed_price"/>
-        <property name="prizeQuantity" column="prize_quantity"/>
-        <property name="prizePrice" column="prize_price"/>
-        <property name="depositMoney" column="deposit_money"/>
-        <property name="depositReadPrice" column="deposit_read_price"/>
-        <property name="depositGiftGoldPrice" column="deposit_gift_gold_price"/>
-        <property name="depositGiftReadPrice" column="deposit_gift_read_price"/>
-        <property name="relationProductId" column="relation_product_id"/>
-        <property name="creator" column="creator"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="modifier" column="modifier"/>
-        <property name="lastChangedDate" column="last_changed_date"/>
-        <property name="status" column="status"/>
-        <property name="fromPaltform" column="from_paltform"/>
+    <class name="com.dangdang.digital.meta.MediaActivityInfoCopy" table="media_activity_info_copy" catalog="digital">
+        <id name="activityId" type="java.lang.Integer">
+            <column name="activity_id" />
+            <generator class="identity" />
+        </id>
+        <property name="activityName" type="string">
+            <column name="activity_name" length="64">
+                <comment>&#180;&#217;&#207;&#250;&#187;&#238;&#182;&#175; &#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="startTime" type="timestamp">
+            <column name="start_time" length="19">
+                <comment>&#187;&#238;&#182;&#175;&#191;&#170;&#202;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="endTime" type="timestamp">
+            <column name="end_time" length="19">
+                <comment>&#187;&#238;&#182;&#175;&#189;&#225;&#202;&#248;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="activityTypeId" type="java.lang.Integer">
+            <column name="activity_type_id">
+                <comment>&#180;&#217;&#207;&#250;&#187;&#238;&#182;&#175;&#192;&#224;&#208;&#205;ID</comment>
+            </column>
+        </property>
+        <property name="activityTypeCode" type="string">
+            <column name="activity_type_code" length="64">
+                <comment>&#187;&#238;&#182;&#175;&#192;&#224;&#208;&#205;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="isFirstDeposit" type="java.lang.Integer">
+            <column name="is_first_deposit">
+                <comment>&#202;&#199;&#183;&#241;&#206;&#170;&#181;&#218;&#210;&#187;&#180;&#206;&#180;&#230;&#191;&#238;</comment>
+            </column>
+        </property>
+        <property name="isPreviousNumber" type="java.lang.Integer">
+            <column name="is_previous_number">
+                <comment>&#195;&#191;&#204;&#236;&#179;&#228;&#214;&#181;&#199;&#176;N&#184;&#246;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="giveScale" type="java.lang.Integer">
+            <column name="give_scale">
+                <comment>&#212;&#249;&#203;&#205;&#177;&#200;&#192;&#253;</comment>
+            </column>
+        </property>
+        <property name="consumeSatisfy" type="java.lang.Integer">
+            <column name="consume_satisfy">
+                <comment>&#195;&#191;&#184;&#246;&#212;&#194;&#207;&#251;&#183;&#209;&#194;&#250;&#182;&#224;&#201;&#217;&#189;&#240;&#177;&#210;</comment>
+            </column>
+        </property>
+        <property name="originalLevel" type="string">
+            <column name="original_level" length="64">
+                <comment>&#211;&#195;&#187;&#167;&#212;&#173;&#192;&#180;&#188;&#182;&#177;&#240;</comment>
+            </column>
+        </property>
+        <property name="newLevel" type="string">
+            <column name="new_level" length="64">
+                <comment>&#211;&#195;&#187;&#167;&#208;&#194;&#181;&#196;&#188;&#182;&#177;&#240;</comment>
+            </column>
+        </property>
+        <property name="giveGoldPiece" type="java.lang.Integer">
+            <column name="give_gold_piece">
+                <comment>
+                &#195;&#191;&#212;&#194;&#207;&#251;&#183;&#209;&#194;&#250;&#182;&#224;&#201;&#217;&#199;&#174;&#202;&#177;&#212;&#249;&#203;&#205;&#181;&#196;&#181;&#196;&#189;&#240;&#177;&#210;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="dayWorshipLimit" type="java.lang.Integer">
+            <column name="day_worship_limit">
+                <comment>&#195;&#191;&#204;&#236;&#215;&#238;&#182;&#224;&#196;&#164;&#176;&#221;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="lowestGoldPiece" type="java.lang.Integer">
+            <column name="lowest_gold_piece">
+                <comment>&#195;&#191;&#180;&#206;&#196;&#164;&#176;&#221;&#215;&#238;&#181;&#205;&#212;&#249;&#203;&#205;&#189;&#240;&#177;&#210;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="highestGoldPiece" type="java.lang.Integer">
+            <column name="highest_gold_piece">
+                <comment>&#195;&#191;&#180;&#206;&#196;&#164;&#176;&#221;&#215;&#238;&#184;&#223;&#212;&#249;&#203;&#205;&#189;&#240;&#177;&#210;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="isWholeMedia" type="java.lang.Integer">
+            <column name="is_whole_media">
+                <comment>&#202;&#199;&#183;&#241;&#206;&#170;&#200;&#171;&#177;&#190;&#185;&#186;&#194;&#242;</comment>
+            </column>
+        </property>
+        <property name="consumeChapter" type="java.lang.Integer">
+            <column name="consume_chapter">
+                <comment>&#210;&#187;&#180;&#206;&#208;&#212;&#185;&#186;&#194;&#242;&#213;&#194;&#189;&#218;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="discount" type="java.lang.Integer">
+            <column name="discount">
+                <comment>&#194;&#250;&#215;&#227;&#204;&#245;&#188;&#254;&#186;&#243;&#181;&#196;&#185;&#186;&#194;&#242;&#213;&#219;&#191;&#219;</comment>
+            </column>
+        </property>
+        <property name="isMonthlyPayment" type="java.lang.Integer">
+            <column name="is_monthly_payment">
+                <comment>&#202;&#199;&#183;&#241;&#176;&#252;&#212;&#194;&#163;&#168;0&#163;&#186;&#183;&#199;&#176;&#252;&#212;&#194;
+                1&#163;&#186;&#202;&#199;&#176;&#252;&#212;&#194;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="monthlyPaymentType" type="string">
+            <column name="monthly_payment_type" length="64">
+                <comment>
+                &#176;&#252;&#212;&#194;&#192;&#224;&#208;&#205;&#163;&#186;&#200;&#171;&#179;&#161;&#161;&#162;&#176;&#180;&#192;&#184;&#196;&#191;&#176;&#252;&#212;&#194;&#161;&#162;&#176;&#180;&#183;&#214;&#192;&#224;&#176;&#252;&#212;&#194;</comment>
+            </column>
+        </property>
+        <property name="monthlyBuyOrGive" type="java.lang.Integer">
+            <column name="monthly_buy_or_give">
+                <comment>0&#163;&#186;&#185;&#186;&#194;&#242; 1&#163;&#186;&#212;&#249;&#203;&#205;</comment>
+            </column>
+        </property>
+        <property name="monthlyPaymentOriginalPrice" type="java.lang.Integer">
+            <column name="monthly_payment_original_price">
+                <comment>&#176;&#252;&#212;&#194;&#212;&#173;&#188;&#219;</comment>
+            </column>
+        </property>
+        <property name="monthlyPaymentPrice" type="java.lang.Integer">
+            <column name="monthly_payment_price">
+                <comment>&#176;&#252;&#212;&#194;&#181;&#196;&#207;&#250;&#202;&#219;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="monthlyPaymentDiscount" type="java.lang.Integer">
+            <column name="monthly_payment_discount">
+                <comment>&#176;&#252;&#212;&#194;&#213;&#219;&#191;&#219;</comment>
+            </column>
+        </property>
+        <property name="monthlyPaymentRelation" type="string">
+            <column name="monthly_payment_relation" length="64">
+                <comment>
+                &#200;&#231;&#185;&#251;&#202;&#199;&#176;&#180;&#192;&#184;&#196;&#191;&#176;&#252;&#212;&#194;&#181;&#196;&#187;&#176;&#180;&#203;&#180;&#166;&#206;&#170;&#192;&#184;&#196;&#191;ID&#163;&#172;&#200;&#231;&#185;&#251;&#202;&#199;&#176;&#180;&#183;&#214;&#192;&#224;&#176;&#252;&#212;&#194;&#181;&#196;&#187;&#176;&#180;&#203;&#180;&#166;&#206;&#170;&#183;&#214;&#192;&#224;&#181;&#196;&#177;&#224;&#186;&#197;&#163;&#187;</comment>
+            </column>
+        </property>
+        <property name="monthlyBuyDays" type="java.lang.Integer">
+            <column name="monthly_buy_days">
+                <comment>&#176;&#252;&#212;&#194;&#185;&#186;&#194;&#242;&#204;&#236;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="monthlyGiveDays" type="java.lang.Integer">
+            <column name="monthly_give_days">
+                <comment>&#176;&#252;&#212;&#194;&#212;&#249;&#203;&#205;&#204;&#236;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="isFixedPrice" type="java.lang.Integer">
+            <column name="is_fixed_price">
+                <comment>
+                &#202;&#199;&#183;&#241;&#206;&#170;&#210;&#187;&#191;&#218;&#188;&#219;&#163;&#168;0&#163;&#186;&#178;&#187;&#202;&#199;&#210;&#187;&#191;&#218;&#188;&#219;, 1
+                :&#210;&#187;&#191;&#218;&#188;&#219;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="fixedPrice" type="java.lang.Integer">
+            <column name="fixed_price">
+                <comment>&#210;&#187;&#191;&#218;&#188;&#219;&#181;&#196;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="prizeQuantity" type="java.lang.Integer">
+            <column name="prize_quantity">
+                <comment>&#185;&#186;&#194;&#242;&#184;&#163;&#180;&#252;&#184;&#246;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="prizePrice" type="java.lang.Integer">
+            <column name="prize_price">
+                <comment>&#185;&#186;&#194;&#242;&#184;&#163;&#180;&#252;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="depositMoney" type="java.lang.Integer">
+            <column name="deposit_money">
+                <comment>0</comment>
+            </column>
+        </property>
+        <property name="depositReadPrice" type="java.lang.Integer">
+            <column name="deposit_read_price">
+                <comment>0</comment>
+            </column>
+        </property>
+        <property name="depositGiftGoldPrice" type="java.lang.Integer">
+            <column name="deposit_gift_gold_price">
+                <comment>&#212;&#249;&#203;&#205;&#189;&#240;&#193;&#229;&#238;&#245;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="depositGiftReadPrice" type="java.lang.Integer">
+            <column name="deposit_gift_read_price">
+                <comment>&#212;&#249;&#203;&#205;&#210;&#248;&#193;&#229;&#238;&#245;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="relationProductId" type="string">
+            <column name="relation_product_id" length="200" />
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" length="64">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier" length="64">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#192;&#224;&#208;&#205;&#215;&#180;&#204;&#172;(0&#163;&#186;&#206;&#222;&#208;&#167; 1:&#211;&#208;&#208;&#167;&#163;&#172;)</comment>
+            </column>
+        </property>
+        <property name="fromPaltform" type="string">
+            <column name="from_paltform">
+                <comment>&#198;&#189;&#204;&#168;&#192;&#180;&#212;&#180;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

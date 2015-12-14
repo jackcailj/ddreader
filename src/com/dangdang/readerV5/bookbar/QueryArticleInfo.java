@@ -9,7 +9,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CommentTargetCount;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.bookbar.meta.ArticleItems;
 import com.dangdang.config.Config;
+import com.dangdang.db.bookbar.ArticleItemsDb;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
@@ -94,6 +96,31 @@ public class QueryArticleInfo  extends FixtureBase{
 			list2.add(article.getPraiseNum());
 						
 			dataVerifyManager.add(new ValueVerify(list2, list1,false));
+			//5.3 验证吧主头衔
+			//在发帖，删帖，加入吧，退出吧，用户升级，降级的时候，这些动作会触发代码，更新吧主的头衔
+			//更新的数据存在login_record表里的bar_owner_level字段。
+			//下边验证level有时候失败，可能是因为，没有上述动作触发数据更新。
+			//在这儿用getBarOwnerLevel方法验证，是为了验证规则的正确性，其他接口是从数据表取bar_owner_level值来验证的。
+			BarCommon common = new BarCommon();
+			String custId = article.getUserBaseInfo().getPubCustId();
+			int level = common.getBarOwnerLevel(custId);
+			dataVerifyManager.add(new ValueVerify<Integer>(
+					article.getUserBaseInfo().getBarOwnerLevel(), level,false));
+			//验证投票贴信息
+			String type = digest.get("type").toString();
+			if(type.equals("31")||type.equals("32")){
+				List<ArticleItems> items = ArticleItemsDb.getArticleItemsId(mediaDigestId);
+				if(items!=null){
+					int voteCount = 0;
+					for(int i=0; i<items.size(); i++){
+						voteCount = voteCount+items.get(i).getVoteCount();
+					}
+					dataVerifyManager.add(new ValueVerify<Integer>(
+							article.getVoteInfo().getItems().size(), items.size(),false));
+					dataVerifyManager.add(new ValueVerify<Integer>(
+							article.getVoteInfo().getVoteCount(), voteCount,false));			
+				}		
+			}				
 			super.dataVerify();			
 		}
 		else{
@@ -102,5 +129,4 @@ public class QueryArticleInfo  extends FixtureBase{
 		}
 		verifyResult(expectedCode);
 	}
-
 }

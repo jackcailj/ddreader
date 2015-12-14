@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-14 14:45:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.OrderMainExtend" table="order_main_extend" catalog="digital">
+        <id name="orderMainExtendlId" type="java.lang.Long">
+            <column name="order_main_extendl_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderNo" type="string">
+            <column name="order_no" unique="true">
+                <comment>&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="receiverProvinceId" type="java.lang.Long">
+            <column name="receiver_province_id">
+                <comment>&#202;&#213;&#187;&#245;&#200;&#203;&#202;&#161;&#183;&#221;id</comment>
+            </column>
+        </property>
+        <property name="receiverCityId" type="java.lang.Long">
+            <column name="receiver_city_id">
+                <comment>&#202;&#213;&#187;&#245;&#200;&#203;&#179;&#199;&#202;&#208;id</comment>
+            </column>
+        </property>
+        <property name="receiverMobileTel" type="string">
+            <column name="receiver_mobile_tel">
+                <comment>&#202;&#213;&#187;&#245;&#200;&#203;&#202;&#214;&#187;&#250;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="custEmail" type="string">
+            <column name="cust_email">
+                <comment>&#211;&#195;&#187;&#167;&#211;&#202;&#207;&#228;</comment>
+            </column>
+        </property>
+        <property name="orderSource" type="string">
+            <column name="order_source">
+                <comment>&#182;&#169;&#181;&#165;&#192;&#180;&#212;&#180;</comment>
+            </column>
+        </property>
+        <property name="orderPlatform" type="java.lang.Integer">
+            <column name="order_platform">
+                <comment>&#182;&#169;&#181;&#165;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
+        <property name="channelType" type="string">
+            <column name="channel_type">
+                <comment>&#199;&#254;&#181;&#192;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="deviceVersion" type="string">
+            <column name="device_version">
+                <comment>&#201;&#232;&#177;&#184;&#176;&#230;&#177;&#190;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="chanelCode" type="string">
+            <column name="chanel_code">
+                <comment>&#199;&#254;&#181;&#192;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="activeId" type="string">
+            <column name="active_id">
+                <comment>&#178;&#206;&#211;&#235;&#187;&#238;&#182;&#175;id</comment>
+            </column>
+        </property>
+        <property name="payFlag" type="java.lang.Integer">
+            <column name="pay_flag">
+                <comment>0 &#185;&#186;&#194;&#242; 1 &#184;&#182;&#183;&#209;&#189;&#232;&#212;&#196;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

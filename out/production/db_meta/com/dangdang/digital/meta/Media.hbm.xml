@@ -1,122 +1,418 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.Media" table="media" schema="" catalog="digital">
-        <id name="mediaId" column="media_id"/>
-        <property name="saleId" column="sale_id"/>
-        <property name="title" column="title"/>
-        <property name="subTitle" column="sub_title"/>
-        <property name="descs" column="descs"/>
-        <property name="provideId" column="provide_id"/>
-        <property name="keyWords" column="key_words"/>
-        <property name="coverPic" column="cover_pic"/>
-        <property name="hdfsPath" column="hdfs_path"/>
-        <property name="filePath" column="file_path"/>
-        <property name="uid" column="uid"/>
-        <property name="shelfStatus" column="shelf_status"/>
-        <property name="catalog" column="catalog"/>
-        <property name="productId" column="product_id"/>
-        <property name="chapterCnt" column="chapter_cnt"/>
-        <property name="hasNew" column="has_new"/>
-        <property name="isFull" column="is_full"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="lastModifyDate" column="last_modify_date"/>
-        <property name="creator" column="creator"/>
-        <property name="modifier" column="modifier"/>
-        <property name="authorId" column="author_id"/>
-        <property name="cpResourceId" column="cp_resource_id"/>
-        <property name="encrypkey" column="encrypkey"/>
-        <property name="signIds" column="sign_ids"/>
-        <property name="signNames" column="sign_names"/>
-        <property name="role" column="role"/>
-        <property name="authorName" column="author_name"/>
-        <property name="authorPenname" column="author_penname"/>
-        <property name="providerName" column="provider_name"/>
-        <property name="isShow" column="is_show"/>
-        <property name="recommandWords" column="recommand_words"/>
-        <property name="isSupportFullBuy" column="is_support_full_buy"/>
-        <property name="lastPullChapterDate" column="last_pull_chapter_date"/>
-        <property name="priceUnit" column="price_unit"/>
-        <property name="lastIndexOrder" column="last_index_order"/>
-        <property name="lastUpdateChapter" column="last_update_chapter"/>
-        <property name="wordCnt" column="word_cnt"/>
-        <property name="cpShortName" column="cp_short_name"/>
-        <property name="cpCode" column="cp_code"/>
-        <property name="zipStatus" column="zip_status"/>
-        <property name="picCdnStatus" column="pic_cdn_status"/>
-        <property name="isBlack" column="is_black"/>
-        <property name="isVip" column="is_vip"/>
-        <property name="speaker" column="speaker"/>
-        <property name="weekHeat" column="week_heat"/>
-        <property name="monthHeat" column="month_heat"/>
-        <property name="heat" column="heat"/>
-        <property name="freeKey" column="FREE_KEY"/>
-        <property name="pdfFullKey" column="pdf_full_key"/>
-        <property name="pdfFreeKey" column="pdf_free_key"/>
-        <property name="introTitle" column="intro_title"/>
-        <property name="docType" column="doc_type"/>
-        <property name="seriesBook" column="series_book"/>
-        <property name="seriesBookId" column="series_book_id"/>
-        <property name="paperBookId" column="paper_book_id"/>
-        <property name="readBookId" column="read_book_id"/>
-        <property name="isBn" column="is_bn"/>
-        <property name="edition" column="edition"/>
-        <property name="printNo" column="print_no"/>
-        <property name="pageNum" column="page_num"/>
-        <property name="bookSize" column="book_size"/>
-        <property name="wordsNum" column="words_num"/>
-        <property name="printNum" column="print_num"/>
-        <property name="publisher" column="publisher"/>
-        <property name="publishLocation" column="publish_location"/>
-        <property name="publishDate" column="publish_date"/>
-        <property name="paperBookPrice" column="paper_book_price"/>
-        <property name="paperBookOverseaPrice" column="paper_book_oversea_price"/>
-        <property name="paperBookCategory" column="paper_book_category"/>
-        <property name="language" column="language"/>
-        <property name="translator" column="translator"/>
-        <property name="authorIntroduce" column="author_introduce"/>
-        <property name="editorRecommend" column="editor_recommend"/>
-        <property name="massMediaRecommend" column="mass_media_recommend"/>
-        <property name="metadatafile" column="metadatafile"/>
-        <property name="pdfFile" column="pdf_file"/>
-        <property name="srcFile" column="src_file"/>
-        <property name="paperBookOverseaPriceUnit" column="paper_book_oversea_price_unit"/>
-        <property name="copyRightCommpany" column="copy_right_commpany"/>
-        <property name="pdfPageNumber" column="pdf_page_number"/>
-        <property name="probationProportion" column="probation_proportion"/>
-        <property name="isFullBook" column="is_full_book"/>
-        <property name="backgroundUpdate" column="background_update"/>
-        <property name="readShelfStatus" column="read_shelf_status"/>
-        <property name="swfSize" column="swf_size"/>
-        <property name="priceStatus" column="price_status"/>
-        <property name="epubFile" column="epub_file"/>
-        <property name="category" column="category"/>
-        <property name="taskName" column="task_name"/>
-        <property name="batchId" column="batch_id"/>
-        <property name="otherPaperBookId" column="other_paper_book_id"/>
-        <property name="thirdPartyPermission" column="third_party_permission"/>
-        <property name="vendorId" column="vendor_id"/>
-        <property name="uploadDate" column="upload_date"/>
-        <property name="iosPrice" column="ios_price"/>
-        <property name="catalogLevel" column="catalog_level"/>
-        <property name="promotionId" column="promotion_id"/>
-        <property name="iapFlag" column="iap_flag"/>
-        <property name="iapShelfStatus" column="iap_shelf_status"/>
-        <property name="iapDeviceType" column="iap_device_type"/>
-        <property name="rateMediaStatus" column="rate_media_status"/>
-        <property name="canUsePoints" column="can_use_points"/>
-        <property name="relatedProducts" column="related_products"/>
-        <property name="isMonth" column="is_month"/>
-        <property name="firstLoadDate" column="first_load_date"/>
-        <property name="promotionLanguage" column="promotion_language"/>
-        <property name="pimState" column="pim_state"/>
-        <property name="borrowDuration" column="borrow_duration"/>
-        <property name="authorizeStartDate" column="authorize_start_date"/>
-        <property name="authorizeEndDate" column="authorize_end_date"/>
-        <property name="otherPaperBookids" column="other_paper_bookids"/>
-        <property name="price" column="price"/>
+    <class name="com.dangdang.digital.meta.Media" table="media" catalog="digital">
+        <id name="mediaId" type="java.lang.Long">
+            <column name="media_id" />
+            <generator class="identity" />
+        </id>
+        <property name="saleId" type="java.lang.Long">
+            <column name="sale_id" unique="true" />
+        </property>
+        <property name="title" type="string">
+            <column name="title">
+                <comment>&#202;&#233;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="subTitle" type="string">
+            <column name="sub_title">
+                <comment>&#215;&#211;&#177;&#234;&#204;&#226;</comment>
+            </column>
+        </property>
+        <property name="descs" type="string">
+            <column name="descs">
+                <comment>&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="provideId" type="java.lang.Integer">
+            <column name="provide_id">
+                <comment>CP</comment>
+            </column>
+        </property>
+        <property name="keyWords" type="string">
+            <column name="key_words" length="500">
+                <comment>&#185;&#216;&#188;&#252;&#215;&#214;</comment>
+            </column>
+        </property>
+        <property name="coverPic" type="string">
+            <column name="cover_pic" length="500">
+                <comment>&#183;&#226;&#195;&#230;&#205;&#188;</comment>
+            </column>
+        </property>
+        <property name="hdfsPath" type="string">
+            <column name="hdfs_path" length="500">
+                <comment>hdfs&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="filePath" type="string">
+            <column name="file_path" length="500">
+                <comment>&#206;&#196;&#188;&#254;&#211;&#178;&#197;&#204;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="uid" type="string">
+            <column name="uid" length="30">
+                <comment>uid</comment>
+            </column>
+        </property>
+        <property name="shelfStatus" type="java.lang.Byte">
+            <column name="shelf_status">
+                <comment>&#201;&#207;&#207;&#194;&#188;&#220;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="catalog" type="string">
+            <column name="catalog">
+                <comment>&#196;&#191;&#194;&#188;</comment>
+            </column>
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="product_id">
+                <comment>&#181;&#165;&#198;&#183;ID</comment>
+            </column>
+        </property>
+        <property name="chapterCnt" type="java.lang.Integer">
+            <column name="chapter_cnt">
+                <comment>&#213;&#194;&#189;&#218;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="hasNew" type="java.lang.Byte">
+            <column name="has_new">
+                <comment>&#202;&#199;&#183;&#241;&#211;&#208;&#184;&#252;&#208;&#194;(0:&#206;&#222; 1:&#211;&#208;)</comment>
+            </column>
+        </property>
+        <property name="isFull" type="java.lang.Byte">
+            <column name="is_full">
+                <comment>&#202;&#199;&#183;&#241;&#200;&#171;&#177;&#190;(0&#163;&#186;&#206;&#222; 1&#163;&#186;&#211;&#208;)</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="lastModifyDate" type="timestamp">
+            <column name="last_modify_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#210;&#187;&#180;&#206;&#208;&#222;&#184;&#196;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="authorId" type="java.lang.Long">
+            <column name="author_id">
+                <comment>&#215;&#247;&#213;&#223;ID</comment>
+            </column>
+        </property>
+        <property name="cpResourceId" type="string">
+            <column name="cp_resource_id" length="100">
+                <comment>CP&#215;&#202;&#212;&#180;ID</comment>
+            </column>
+        </property>
+        <property name="encrypkey" type="string">
+            <column name="encrypkey">
+                <comment>&#188;&#211;&#195;&#220;key</comment>
+            </column>
+        </property>
+        <property name="signIds" type="string">
+            <column name="sign_ids" length="1000">
+                <comment>&#177;&#234;&#199;&#169;ID</comment>
+            </column>
+        </property>
+        <property name="signNames" type="string">
+            <column name="sign_names">
+                <comment>&#177;&#234;&#199;&#169;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="1000" />
+        </property>
+        <property name="authorName" type="string">
+            <column name="author_name">
+                <comment>&#215;&#247;&#213;&#223;&#208;&#213;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="authorPenname" type="string">
+            <column name="author_penname">
+                <comment>&#215;&#247;&#213;&#223;&#177;&#202;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="providerName" type="string">
+            <column name="provider_name">
+                <comment>CP&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="isShow" type="java.lang.Integer">
+            <column name="is_show">
+                <comment>&#202;&#199;&#183;&#241;&#207;&#212;&#202;&#190;</comment>
+            </column>
+        </property>
+        <property name="recommandWords" type="string">
+            <column name="recommand_words" />
+        </property>
+        <property name="isSupportFullBuy" type="java.lang.Integer">
+            <column name="is_support_full_buy" />
+        </property>
+        <property name="lastPullChapterDate" type="timestamp">
+            <column name="last_pull_chapter_date" length="19" />
+        </property>
+        <property name="priceUnit" type="java.lang.Integer">
+            <column name="price_unit" />
+        </property>
+        <property name="lastIndexOrder" type="java.lang.Integer">
+            <column name="last_index_order" />
+        </property>
+        <property name="lastUpdateChapter" type="string">
+            <column name="last_update_chapter" length="500" />
+        </property>
+        <property name="wordCnt" type="java.lang.Long">
+            <column name="word_cnt" />
+        </property>
+        <property name="cpShortName" type="string">
+            <column name="cp_short_name" />
+        </property>
+        <property name="cpCode" type="string">
+            <column name="cp_code" />
+        </property>
+        <property name="zipStatus" type="java.lang.Integer">
+            <column name="zip_status">
+                <comment>&#180;&#242;&#176;&#252;&#215;&#180;&#204;&#172; 0:&#206;&#180;&#180;&#242;&#176;&#252; 1:&#210;&#209;&#180;&#242;&#176;&#252;</comment>
+            </column>
+        </property>
+        <property name="picCdnStatus" type="java.lang.Integer">
+            <column name="pic_cdn_status" />
+        </property>
+        <property name="isBlack" type="java.lang.Integer">
+            <column name="is_black">
+                <comment>&#202;&#199;&#183;&#241;&#202;&#199;&#186;&#218;&#195;&#251;&#181;&#165;</comment>
+            </column>
+        </property>
+        <property name="isVip" type="java.lang.Integer">
+            <column name="is_vip">
+                <comment>&#202;&#199;&#183;&#241;&#202;&#199;VIP&#202;&#233;&#188;&#174;</comment>
+            </column>
+        </property>
+        <property name="speaker" type="string">
+            <column name="speaker">
+                <comment>&#209;&#221;&#189;&#178;&#213;&#223;</comment>
+            </column>
+        </property>
+        <property name="weekHeat" type="java.lang.Long">
+            <column name="week_heat">
+                <comment>&#214;&#220;&#200;&#200;&#182;&#200;</comment>
+            </column>
+        </property>
+        <property name="monthHeat" type="java.lang.Long">
+            <column name="month_heat">
+                <comment>&#212;&#194;&#200;&#200;&#182;&#200;</comment>
+            </column>
+        </property>
+        <property name="heat" type="java.lang.Long">
+            <column name="heat">
+                <comment>&#202;&#233;&#188;&#174;&#215;&#220;&#200;&#200;&#182;&#200;</comment>
+            </column>
+        </property>
+        <property name="freeKey" type="string">
+            <column name="FREE_KEY" length="100" />
+        </property>
+        <property name="pdfFullKey" type="string">
+            <column name="pdf_full_key" length="100" />
+        </property>
+        <property name="pdfFreeKey" type="string">
+            <column name="pdf_free_key" length="100" />
+        </property>
+        <property name="introTitle" type="string">
+            <column name="intro_title" length="100" />
+        </property>
+        <property name="docType" type="string">
+            <column name="doc_type" length="10" />
+        </property>
+        <property name="seriesBook" type="string">
+            <column name="series_book" length="100" />
+        </property>
+        <property name="seriesBookId" type="java.lang.Long">
+            <column name="series_book_id" />
+        </property>
+        <property name="paperBookId" type="java.lang.Long">
+            <column name="paper_book_id" />
+        </property>
+        <property name="readBookId" type="java.lang.Long">
+            <column name="read_book_id" />
+        </property>
+        <property name="isBn" type="string">
+            <column name="is_bn" length="20" />
+        </property>
+        <property name="edition" type="java.lang.Integer">
+            <column name="edition" />
+        </property>
+        <property name="printNo" type="java.lang.Integer">
+            <column name="print_no" />
+        </property>
+        <property name="pageNum" type="java.lang.Integer">
+            <column name="page_num" />
+        </property>
+        <property name="bookSize" type="string">
+            <column name="book_size" length="10" />
+        </property>
+        <property name="wordsNum" type="string">
+            <column name="words_num" length="11" />
+        </property>
+        <property name="printNum" type="string">
+            <column name="print_num" length="11" />
+        </property>
+        <property name="publisher" type="string">
+            <column name="publisher" length="400" />
+        </property>
+        <property name="publishLocation" type="string">
+            <column name="publish_location" length="400" />
+        </property>
+        <property name="publishDate" type="timestamp">
+            <column name="publish_date" length="19" />
+        </property>
+        <property name="paperBookPrice" type="java.lang.Integer">
+            <column name="paper_book_price" />
+        </property>
+        <property name="paperBookOverseaPrice" type="java.lang.Integer">
+            <column name="paper_book_oversea_price" />
+        </property>
+        <property name="paperBookCategory" type="string">
+            <column name="paper_book_category" length="100" />
+        </property>
+        <property name="language" type="string">
+            <column name="language" length="50" />
+        </property>
+        <property name="translator" type="string">
+            <column name="translator" length="100" />
+        </property>
+        <property name="authorIntroduce" type="string">
+            <column name="author_introduce" length="65535" />
+        </property>
+        <property name="editorRecommend" type="string">
+            <column name="editor_recommend" length="65535" />
+        </property>
+        <property name="massMediaRecommend" type="string">
+            <column name="mass_media_recommend" length="65535" />
+        </property>
+        <property name="metadatafile" type="string">
+            <column name="metadatafile" length="100" />
+        </property>
+        <property name="pdfFile" type="string">
+            <column name="pdf_file" length="100" />
+        </property>
+        <property name="srcFile" type="string">
+            <column name="src_file" length="100" />
+        </property>
+        <property name="paperBookOverseaPriceUnit" type="string">
+            <column name="paper_book_oversea_price_unit" length="10" />
+        </property>
+        <property name="copyRightCommpany" type="string">
+            <column name="copy_right_commpany" length="100" />
+        </property>
+        <property name="pdfPageNumber" type="java.lang.Integer">
+            <column name="pdf_page_number" />
+        </property>
+        <property name="probationProportion" type="java.lang.Integer">
+            <column name="probation_proportion" />
+        </property>
+        <property name="isFullBook" type="java.lang.Integer">
+            <column name="is_full_book" />
+        </property>
+        <property name="backgroundUpdate" type="java.lang.Integer">
+            <column name="background_update" />
+        </property>
+        <property name="readShelfStatus" type="java.lang.Integer">
+            <column name="read_shelf_status" />
+        </property>
+        <property name="swfSize" type="string">
+            <column name="swf_size" length="64" />
+        </property>
+        <property name="priceStatus" type="java.lang.Integer">
+            <column name="price_status" />
+        </property>
+        <property name="epubFile" type="string">
+            <column name="epub_file" length="100" />
+        </property>
+        <property name="category" type="string">
+            <column name="category" length="2" />
+        </property>
+        <property name="taskName" type="string">
+            <column name="task_name" length="100" />
+        </property>
+        <property name="batchId" type="java.lang.Long">
+            <column name="batch_id" />
+        </property>
+        <property name="otherPaperBookId" type="string">
+            <column name="other_paper_book_id" length="200" />
+        </property>
+        <property name="thirdPartyPermission" type="java.lang.Integer">
+            <column name="third_party_permission" />
+        </property>
+        <property name="vendorId" type="java.lang.Long">
+            <column name="vendor_id" />
+        </property>
+        <property name="uploadDate" type="timestamp">
+            <column name="upload_date" length="19" />
+        </property>
+        <property name="iosPrice" type="java.lang.Integer">
+            <column name="ios_price" />
+        </property>
+        <property name="catalogLevel" type="java.lang.Integer">
+            <column name="catalog_level" />
+        </property>
+        <property name="promotionId" type="java.lang.Long">
+            <column name="promotion_id" />
+        </property>
+        <property name="iapFlag" type="java.lang.Integer">
+            <column name="iap_flag" />
+        </property>
+        <property name="iapShelfStatus" type="java.lang.Integer">
+            <column name="iap_shelf_status" />
+        </property>
+        <property name="iapDeviceType" type="string">
+            <column name="iap_device_type" length="200" />
+        </property>
+        <property name="rateMediaStatus" type="java.lang.Integer">
+            <column name="rate_media_status" />
+        </property>
+        <property name="canUsePoints" type="java.lang.Integer">
+            <column name="can_use_points" />
+        </property>
+        <property name="relatedProducts" type="string">
+            <column name="related_products" length="400" />
+        </property>
+        <property name="isMonth" type="string">
+            <column name="is_month" length="400" />
+        </property>
+        <property name="firstLoadDate" type="timestamp">
+            <column name="first_load_date" length="19" />
+        </property>
+        <property name="promotionLanguage" type="string">
+            <column name="promotion_language" length="500" />
+        </property>
+        <property name="pimState" type="java.lang.Integer">
+            <column name="pim_state" />
+        </property>
+        <property name="borrowDuration" type="java.lang.Integer">
+            <column name="borrow_duration" />
+        </property>
+        <property name="authorizeStartDate" type="timestamp">
+            <column name="authorize_start_date" length="19" />
+        </property>
+        <property name="authorizeEndDate" type="timestamp">
+            <column name="authorize_end_date" length="19" />
+        </property>
+        <property name="otherPaperBookids" type="string">
+            <column name="other_paper_bookids" length="2000" />
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price" />
+        </property>
     </class>
 </hibernate-mapping>

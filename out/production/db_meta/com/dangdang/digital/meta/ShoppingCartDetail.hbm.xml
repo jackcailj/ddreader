@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-14 14:45:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.ShoppingCartDetail" table="shopping_cart_detail" catalog="digital">
+        <id name="cartDetailId" type="string">
+            <column name="cart_detail_id" length="32" />
+            <generator class="assigned" />
+        </id>
+        <property name="cartId" type="string">
+            <column name="cart_id" length="32" not-null="true">
+                <comment>&#185;&#186;&#206;&#239;&#179;&#181;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="productId" type="long">
+            <column name="product_id" not-null="true">
+                <comment>&#201;&#204;&#198;&#183;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="int">
+            <column name="status" not-null="true">
+                <comment>&#215;&#180;&#204;&#172;&#161;&#163;1&#163;&#186;&#191;&#201;&#211;&#195;&#163;&#187;0&#163;&#186;&#178;&#187;&#191;&#201;&#211;&#195;</comment>
+            </column>
+        </property>
+        <property name="qutity" type="java.lang.Integer">
+            <column name="qutity">
+                <comment>&#202;&#253;&#193;&#191;&#161;&#163;&#192;&#169;&#213;&#185;&#211;&#195;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>&#192;&#224;&#208;&#205;&#161;&#163;&#192;&#169;&#213;&#185;&#211;&#195;</comment>
+            </column>
+        </property>
+        <property name="saleId" type="java.lang.Long">
+            <column name="sale_id" />
+        </property>
+    </class>
+</hibernate-mapping>

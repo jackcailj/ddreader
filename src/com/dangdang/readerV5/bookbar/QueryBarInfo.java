@@ -16,6 +16,7 @@ import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.enumeration.BarStatus;
 import com.dangdang.readerV5.reponse.BarInfo;
 import com.dangdang.readerV5.reponse.BarInfoResponse;
+import com.dangdang.readerV5.reponse.UserBaseInfo;
 
 public class QueryBarInfo extends FixtureBase{	
     ReponseV2<BarInfoResponse>   reponseResult;
@@ -60,9 +61,22 @@ public class QueryBarInfo extends FixtureBase{
 				info.setHasBook("1");			}
 			catch(Exception e){
 				info.setHasBook("0");
-			}	
-			
+			}				
 			dataVerifyManager.add(new ValueVerify(reponseResult.getData().getBar(),info, true));
+			
+			//5.3 验证吧主头衔
+			//在发帖，删帖，加入吧，退出吧，用户升级，降级的时候，这些动作会触发代码，更新吧主的头衔
+			//更新的数据存在login_record表里的bar_owner_level字段。
+			//下边验证level有时候失败，可能是因为，没有上述动作触发数据更新。
+			//在这儿用getBarOwnerLevel方法验证，是为了验证规则的正确性，其他接口是从数据表取bar_owner_level值来验证的。
+			UserBaseInfo userBaseInfo = reponseResult.getData().getBar().getUserBaseInfo();
+			if(userBaseInfo!=null){
+				BarCommon common = new BarCommon();
+				String cust = userBaseInfo.getPubCustId();
+				int level = common.getBarOwnerLevel(cust);
+				dataVerifyManager.add(new ValueVerify<Integer>(
+						reponseResult.getData().getBar().getUserBaseInfo().getBarOwnerLevel(), level,false));
+			}			
 			super.dataVerify();
 		}	
 		else{

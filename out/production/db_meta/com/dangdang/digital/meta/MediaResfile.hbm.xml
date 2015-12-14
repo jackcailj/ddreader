@@ -1,23 +1,51 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaResfile" table="media_resfile" schema="" catalog="digital">
-        <id name="id" column="ID"/>
-        <property name="mediaId" column="MEDIA_ID"/>
-        <property name="resfileId" column="RESFILE_ID"/>
-        <property name="resfileType" column="RESFILE_TYPE"/>
-        <property name="resfilePath" column="RESFILE_PATH"/>
-        <property name="resfileSize" column="RESFILE_SIZE"/>
-        <property name="deviceTypeId" column="DEVICE_TYPE_ID"/>
-        <property name="deviceTypeCode" column="DEVICE_TYPE_CODE"/>
-        <property name="deviceTypeName" column="DEVICE_TYPE_NAME"/>
-        <property name="created" column="CREATED"/>
-        <property name="resfileWidth" column="RESFILE_WIDTH"/>
-        <property name="resfileHeight" column="RESFILE_HEIGHT"/>
-        <property name="resfilePageNum" column="RESFILE_PAGE_NUM"/>
-        <property name="resfilePicNum" column="RESFILE_PIC_NUM"/>
+    <class name="com.dangdang.digital.meta.MediaResfile" table="media_resfile" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="mediaId" type="long">
+            <column name="MEDIA_ID" not-null="true" />
+        </property>
+        <property name="resfileId" type="long">
+            <column name="RESFILE_ID" not-null="true" />
+        </property>
+        <property name="resfileType" type="string">
+            <column name="RESFILE_TYPE" length="40" not-null="true" />
+        </property>
+        <property name="resfilePath" type="string">
+            <column name="RESFILE_PATH" length="400" not-null="true" />
+        </property>
+        <property name="resfileSize" type="int">
+            <column name="RESFILE_SIZE" not-null="true" />
+        </property>
+        <property name="deviceTypeId" type="long">
+            <column name="DEVICE_TYPE_ID" not-null="true" />
+        </property>
+        <property name="deviceTypeCode" type="string">
+            <column name="DEVICE_TYPE_CODE" length="40" not-null="true" />
+        </property>
+        <property name="deviceTypeName" type="string">
+            <column name="DEVICE_TYPE_NAME" length="100" not-null="true" />
+        </property>
+        <property name="created" type="date">
+            <column name="CREATED" length="10" />
+        </property>
+        <property name="resfileWidth" type="java.lang.Integer">
+            <column name="RESFILE_WIDTH" />
+        </property>
+        <property name="resfileHeight" type="java.lang.Integer">
+            <column name="RESFILE_HEIGHT" />
+        </property>
+        <property name="resfilePageNum" type="java.lang.Integer">
+            <column name="RESFILE_PAGE_NUM" />
+        </property>
+        <property name="resfilePicNum" type="java.lang.Integer">
+            <column name="RESFILE_PIC_NUM" />
+        </property>
     </class>
 </hibernate-mapping>

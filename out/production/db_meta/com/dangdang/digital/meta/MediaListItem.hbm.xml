@@ -1,35 +1,87 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaListItem" table="media_list_item" schema="" catalog="digital">
-        <id name="id" column="ID"/>
-        <property name="listId" column="LIST_ID"/>
-        <property name="title" column="TITLE"/>
-        <property name="isbn" column="ISBN"/>
-        <property name="author" column="AUTHOR"/>
-        <property name="publisher" column="PUBLISHER"/>
-        <property name="publishDate" column="PUBLISH_DATE"/>
-        <property name="copyrightCompany" column="COPYRIGHT_COMPANY"/>
-        <property name="paperBookPrice" column="PAPER_BOOK_PRICE"/>
-        <property name="ebookPrice" column="EBOOK_PRICE"/>
-        <property name="inputFile" column="INPUT_FILE"/>
-        <property name="outputPdf" column="OUTPUT_PDF"/>
-        <property name="outputEpub" column="OUTPUT_EPUB"/>
-        <property name="problem1" column="PROBLEM1"/>
-        <property name="problem2" column="PROBLEM2"/>
-        <property name="problem3" column="PROBLEM3"/>
-        <property name="problem4" column="PROBLEM4"/>
-        <property name="problem5" column="PROBLEM5"/>
-        <property name="problem6" column="PROBLEM6"/>
-        <property name="problem7" column="PROBLEM7"/>
-        <property name="problem8" column="PROBLEM8"/>
-        <property name="problem9" column="PROBLEM9"/>
-        <property name="problem10" column="PROBLEM10"/>
-        <property name="mark" column="MARK"/>
-        <property name="uid" column="UID"/>
-        <property name="providerId" column="provider_ID"/>
+    <class name="com.dangdang.digital.meta.MediaListItem" table="media_list_item" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="listId" type="long">
+            <column name="LIST_ID" not-null="true" />
+        </property>
+        <property name="title" type="string">
+            <column name="TITLE" length="100" not-null="true" />
+        </property>
+        <property name="isbn" type="string">
+            <column name="ISBN" length="20" />
+        </property>
+        <property name="author" type="string">
+            <column name="AUTHOR" length="100" not-null="true" />
+        </property>
+        <property name="publisher" type="string">
+            <column name="PUBLISHER" length="400" />
+        </property>
+        <property name="publishDate" type="timestamp">
+            <column name="PUBLISH_DATE" length="19" />
+        </property>
+        <property name="copyrightCompany" type="string">
+            <column name="COPYRIGHT_COMPANY" length="400" />
+        </property>
+        <property name="paperBookPrice" type="java.lang.Integer">
+            <column name="PAPER_BOOK_PRICE" />
+        </property>
+        <property name="ebookPrice" type="java.lang.Integer">
+            <column name="EBOOK_PRICE" />
+        </property>
+        <property name="inputFile" type="string">
+            <column name="INPUT_FILE" length="400" />
+        </property>
+        <property name="outputPdf" type="string">
+            <column name="OUTPUT_PDF" length="1" />
+        </property>
+        <property name="outputEpub" type="string">
+            <column name="OUTPUT_EPUB" length="1" />
+        </property>
+        <property name="problem1" type="string">
+            <column name="PROBLEM1" length="400" />
+        </property>
+        <property name="problem2" type="string">
+            <column name="PROBLEM2" length="400" />
+        </property>
+        <property name="problem3" type="string">
+            <column name="PROBLEM3" length="400" />
+        </property>
+        <property name="problem4" type="string">
+            <column name="PROBLEM4" length="400" />
+        </property>
+        <property name="problem5" type="string">
+            <column name="PROBLEM5" length="400" />
+        </property>
+        <property name="problem6" type="string">
+            <column name="PROBLEM6" length="400" />
+        </property>
+        <property name="problem7" type="string">
+            <column name="PROBLEM7" length="400" />
+        </property>
+        <property name="problem8" type="string">
+            <column name="PROBLEM8" length="400" />
+        </property>
+        <property name="problem9" type="string">
+            <column name="PROBLEM9" length="400" />
+        </property>
+        <property name="problem10" type="string">
+            <column name="PROBLEM10" length="400" />
+        </property>
+        <property name="mark" type="string">
+            <column name="MARK" length="1" not-null="true" />
+        </property>
+        <property name="uid" type="string">
+            <column name="UID" length="21" />
+        </property>
+        <property name="providerId" type="java.lang.Long">
+            <column name="provider_ID" />
+        </property>
     </class>
 </hibernate-mapping>

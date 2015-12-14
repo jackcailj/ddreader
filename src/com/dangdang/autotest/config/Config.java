@@ -48,7 +48,8 @@ public class Config extends ConfigCore {
 	 */
 	public static void Init(){
 		try{
-			
+			/*setEnvironment(TestEnvironment.STAGING);
+			setTestData("readerV4");*/
 
 			//PropertyConfigurator.configure(ResourceLoader.loadCurrentPropertyFile("conf/log4j.properties"));
 			

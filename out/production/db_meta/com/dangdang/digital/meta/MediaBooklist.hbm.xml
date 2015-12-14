@@ -1,24 +1,57 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaBooklist" table="media_booklist" schema="" catalog="digital">
-        <id name="booklistId" column="booklist_id"/>
-        <property name="channelId" column="channel_id"/>
-        <property name="owner" column="owner"/>
-        <property name="isShow" column="is_show"/>
-        <property name="name" column="name"/>
-        <property name="imageUrl" column="image_url"/>
-        <property name="description" column="description"/>
-        <property name="status" column="status"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="creator" column="creator"/>
-        <property name="lastUpdateTime" column="last_update_time"/>
-        <property name="modifier" column="modifier"/>
-        <property name="bookNum" column="book_num"/>
-        <property name="storeNum" column="store_num"/>
-        <property name="changeNum" column="change_num"/>
+    <class name="com.dangdang.digital.meta.MediaBooklist" table="media_booklist" catalog="digital">
+        <id name="booklistId" type="java.lang.Long">
+            <column name="booklist_id" />
+            <generator class="identity" />
+        </id>
+        <property name="channelId" type="java.lang.Long">
+            <column name="channel_id" />
+        </property>
+        <property name="owner" type="java.lang.Long">
+            <column name="owner" />
+        </property>
+        <property name="isShow" type="java.lang.Byte">
+            <column name="is_show" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" />
+        </property>
+        <property name="imageUrl" type="string">
+            <column name="image_url" length="1024" />
+        </property>
+        <property name="description" type="string">
+            <column name="description" length="1024" />
+        </property>
+        <property name="status" type="java.lang.Byte">
+            <column name="status">
+                <comment>&#215;&#180;&#204;&#172; 0 &#201;&#243;&#186;&#203;&#202;&#167;&#176;&#220; 1 &#201;&#243;&#186;&#203;&#205;&#168;&#185;&#253; 2
+                &#201;&#243;&#186;&#203;&#214;&#208;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="creator" type="java.lang.Long">
+            <column name="creator" />
+        </property>
+        <property name="lastUpdateTime" type="timestamp">
+            <column name="last_update_time" length="19" />
+        </property>
+        <property name="modifier" type="java.lang.Long">
+            <column name="modifier" />
+        </property>
+        <property name="bookNum" type="java.lang.Integer">
+            <column name="book_num" />
+        </property>
+        <property name="storeNum" type="java.lang.Integer">
+            <column name="store_num" />
+        </property>
+        <property name="changeNum" type="java.lang.Integer">
+            <column name="change_num" />
+        </property>
     </class>
 </hibernate-mapping>

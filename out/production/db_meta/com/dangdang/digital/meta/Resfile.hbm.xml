@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-14 14:45:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.Resfile" table="resfile" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <version name="version" type="string">
+            <column name="VERSION" length="20" not-null="true" />
+        </version>
+        <property name="type" type="string">
+            <column name="TYPE" length="40" not-null="true" />
+        </property>
+        <property name="path" type="string">
+            <column name="PATH" length="400" not-null="true" />
+        </property>
+        <property name="size" type="int">
+            <column name="SIZE" not-null="true" />
+        </property>
+        <property name="mediaId" type="long">
+            <column name="MEDIA_ID" not-null="true" />
+        </property>
+        <property name="width" type="java.lang.Integer">
+            <column name="WIDTH" />
+        </property>
+        <property name="height" type="java.lang.Integer">
+            <column name="HEIGHT" />
+        </property>
+        <property name="pageNum" type="java.lang.Integer">
+            <column name="PAGE_NUM" />
+        </property>
+        <property name="picNum" type="java.lang.Integer">
+            <column name="PIC_NUM" />
+        </property>
+        <property name="styleCount" type="int">
+            <column name="STYLE_COUNT" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

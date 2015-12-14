@@ -1,21 +1,42 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaBookcityModel" table="media_bookcity_model" schema=""
-           catalog="digital">
-        <id name="bookcityModelId" column="bookcity_model_id"/>
-        <property name="modelCode" column="model_code"/>
-        <property name="modelName" column="model_name"/>
-        <property name="modelFragContentIds" column="model_frag_content_ids"/>
-        <property name="modelHtml" column="model_html"/>
-        <property name="modelHtmlEditing" column="model_html_editing"/>
-        <property name="status" column="status"/>
-        <property name="creator" column="creator"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="modifier" column="modifier"/>
-        <property name="lastChangedDate" column="last_changed_date"/>
+    <class name="com.dangdang.digital.meta.MediaBookcityModel" table="media_bookcity_model" catalog="digital">
+        <id name="bookcityModelId" type="java.lang.Long">
+            <column name="bookcity_model_id" />
+            <generator class="identity" />
+        </id>
+        <property name="modelCode" type="string">
+            <column name="model_code" />
+        </property>
+        <property name="modelName" type="string">
+            <column name="model_name" />
+        </property>
+        <property name="modelFragContentIds" type="string">
+            <column name="model_frag_content_ids" length="1024" />
+        </property>
+        <property name="modelHtml" type="string">
+            <column name="model_html" />
+        </property>
+        <property name="modelHtmlEditing" type="string">
+            <column name="model_html_editing" />
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status" />
+        </property>
+        <property name="creator" type="string">
+            <column name="creator" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier" />
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19" />
+        </property>
     </class>
 </hibernate-mapping>

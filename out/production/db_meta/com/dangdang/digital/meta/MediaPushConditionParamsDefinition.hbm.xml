@@ -1,15 +1,31 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaPushConditionParamsDefinition"
-           table="media_push_condition_params_definition" schema="" catalog="digital">
-        <id name="pushConditionParamsDefinitionId" column="push_condition_params_definition_id"/>
-        <property name="conditionId" column="condition_id"/>
-        <property name="keyType" column="key_type"/>
-        <property name="keyName" column="key_name"/>
-        <property name="keyInputName" column="key_input_name"/>
+    <class name="com.dangdang.digital.meta.MediaPushConditionParamsDefinition" table="media_push_condition_params_definition" catalog="digital">
+        <id name="pushConditionParamsDefinitionId" type="java.lang.Long">
+            <column name="push_condition_params_definition_id" />
+            <generator class="identity" />
+        </id>
+        <property name="conditionId" type="java.lang.Long">
+            <column name="condition_id" />
+        </property>
+        <property name="keyType" type="java.lang.Integer">
+            <column name="key_type">
+                <comment>1 &#202;&#253;&#215;&#214; 2 &#215;&#214;&#183;&#251;&#180;&#174; &#211;&#195;&#192;&#180;&#199;&#176;&#204;&#168;&#209;&#233;&#214;&#164;</comment>
+            </column>
+        </property>
+        <property name="keyName" type="string">
+            <column name="key_name">
+                <comment>&#177;&#234;&#202;&#182;, &#205;&#172;&#210;&#187;&#184;&#246;condition
+                id&#178;&#187;&#212;&#202;&#208;&#237;&#211;&#208;&#214;&#216;&#184;&#180;&#181;&#196;key_name</comment>
+            </column>
+        </property>
+        <property name="keyInputName" type="string">
+            <column name="key_input_name">
+                <comment>&#207;&#212;&#202;&#190;&#181;&#196;&#195;&#251;&#215;&#214;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

@@ -1,35 +1,119 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaChapter" table="media_chapter" schema="" catalog="digital">
-        <id name="id" column="id"/>
-        <property name="title" column="title"/>
-        <property name="subTitle" column="sub_title"/>
-        <property name="indexOrder" column="index_order"/>
-        <property name="descs" column="descs"/>
-        <property name="wordCnt" column="word_cnt"/>
-        <property name="price" column="price"/>
-        <property name="iosPrice" column="ios_price"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="creator" column="creator"/>
-        <property name="lastModifyedDate" column="last_modifyed_date"/>
-        <property name="modifier" column="modifier"/>
-        <property name="isFree" column="is_free"/>
-        <property name="signIds" column="sign_ids"/>
-        <property name="signNames" column="sign_names"/>
-        <property name="recommandWords" column="recommand_words"/>
-        <property name="volumeId" column="volume_id"/>
-        <property name="mediaId" column="media_id"/>
-        <property name="isShow" column="is_show"/>
-        <property name="filePath" column="file_path"/>
-        <property name="encrypkey" column="encrypkey"/>
-        <property name="encryptVersion" column="encrypt_version"/>
-        <property name="volumeName" column="volume_name"/>
-        <property name="duration" column="duration"/>
-        <property name="upRation" column="up_ration"/>
-        <property name="downRation" column="down_ration"/>
+    <class name="com.dangdang.digital.meta.MediaChapter" table="media_chapter" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="title" type="string">
+            <column name="title" length="500">
+                <comment>&#213;&#194;&#189;&#218;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="subTitle" type="string">
+            <column name="sub_title" length="500">
+                <comment>&#215;&#211;&#213;&#194;&#189;&#218;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="indexOrder" type="java.lang.Integer">
+            <column name="index_order">
+                <comment>&#203;&#179;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="descs" type="string">
+            <column name="descs" length="1000">
+                <comment>&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="wordCnt" type="java.lang.Long">
+            <column name="word_cnt">
+                <comment>&#215;&#214;&#189;&#218;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="price" type="java.lang.Integer">
+            <column name="price">
+                <comment>&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+        <property name="iosPrice" type="java.lang.Integer">
+            <column name="ios_price">
+                <comment>IOS&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="creator" type="string">
+            <column name="creator">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="lastModifyedDate" type="timestamp">
+            <column name="last_modifyed_date" length="19">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="isFree" type="string">
+            <column name="is_free">
+                <comment>&#202;&#199;&#183;&#241;&#195;&#226;&#183;&#209;&#163;&#168;0&#163;&#186;&#183;&#241; 1&#163;&#186;&#202;&#199;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="signIds" type="string">
+            <column name="sign_ids">
+                <comment>&#177;&#234;&#199;&#169;ID</comment>
+            </column>
+        </property>
+        <property name="signNames" type="string">
+            <column name="sign_names" length="1000">
+                <comment>&#177;&#234;&#199;&#169;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="recommandWords" type="string">
+            <column name="recommand_words" length="1000" />
+        </property>
+        <property name="volumeId" type="java.lang.Long">
+            <column name="volume_id">
+                <comment>&#190;&#237;ID</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id" />
+        </property>
+        <property name="isShow" type="java.lang.Integer">
+            <column name="is_show" />
+        </property>
+        <property name="filePath" type="string">
+            <column name="file_path" length="1000" />
+        </property>
+        <property name="encrypkey" type="string">
+            <column name="encrypkey" />
+        </property>
+        <property name="encryptVersion" type="string">
+            <column name="encrypt_version" />
+        </property>
+        <property name="volumeName" type="string">
+            <column name="volume_name" length="500" />
+        </property>
+        <property name="duration" type="java.lang.Integer">
+            <column name="duration">
+                <comment>&#202;&#177;&#179;&#164;</comment>
+            </column>
+        </property>
+        <property name="upRation" type="java.lang.Integer">
+            <column name="up_ration" />
+        </property>
+        <property name="downRation" type="java.lang.Integer">
+            <column name="down_ration" />
+        </property>
     </class>
 </hibernate-mapping>

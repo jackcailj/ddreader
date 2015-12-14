@@ -39,7 +39,7 @@ public class GetBuyProductIdParse implements IParamParse{
 
             List<String> mediaIds=new ArrayList<String>();
             for(UserBookMedia userBookMedia:reponse.getData().getMediaList()){
-                if(userBookMedia.getRelationType().equals(buyBookStatus.getBookStatusString())
+                if(buyBookStatus.getBookStatusString().contains(userBookMedia.getRelationType())
                         && userBookMedia.getAuthorityType().equals(buyBookStatus.getAuthorifyType())){
                     mediaIds.add(userBookMedia.getMediaId().toString());
                 }

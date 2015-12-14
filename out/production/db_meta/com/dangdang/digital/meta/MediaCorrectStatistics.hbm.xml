@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-18 10:27:24 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCorrectStatistics" table="media_correct_statistics" catalog="digital">
+        <id name="correctStatisticsId" type="java.lang.Long">
+            <column name="correct_statistics_id" />
+            <generator class="identity" />
+        </id>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id" />
+        </property>
+        <property name="chapterId" type="java.lang.Long">
+            <column name="chapter_id">
+                <comment>&#213;&#194;&#189;&#218;id</comment>
+            </column>
+        </property>
+        <property name="chapterName" type="string">
+            <column name="chapter_name" length="20">
+                <comment>&#213;&#194;&#189;&#218;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="paragraphIndex" type="java.lang.Integer">
+            <column name="paragraph_index">
+                <comment>&#203;&#249;&#212;&#218;&#182;&#206;&#194;&#228;</comment>
+            </column>
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="amount">
+                <comment>&#215;&#220;&#188;&#198;&#180;&#237;&#206;&#243;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="modifyAmout" type="java.lang.Integer">
+            <column name="modify_amout">
+                <comment>&#210;&#209;&#208;&#222;&#184;&#196;&#181;&#196;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

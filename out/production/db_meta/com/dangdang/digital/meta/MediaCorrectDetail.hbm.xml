@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-11-18 10:27:24 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.MediaCorrectDetail" table="media_correct_detail" catalog="digital">
+        <id name="correctDetailId" type="java.lang.Long">
+            <column name="correct_detail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="correctStatisticsId" type="java.lang.Long">
+            <column name="correct_statistics_id">
+                <comment>&#203;&#249;&#202;&#244;&#182;&#206;&#194;&#228;id</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>&#202;&#233;id</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="chapterId" type="java.lang.Long">
+            <column name="chapter_id">
+                <comment>&#213;&#194;&#189;&#218;id</comment>
+            </column>
+        </property>
+        <property name="content" type="string">
+            <column name="content" length="1024">
+                <comment>&#190;&#192;&#180;&#237;&#181;&#196;&#212;&#173;&#206;&#196;</comment>
+            </column>
+        </property>
+        <property name="correctContent" type="string">
+            <column name="correct_content" length="1024">
+                <comment>&#190;&#192;&#180;&#237;&#181;&#196;&#196;&#218;&#200;&#221;</comment>
+            </column>
+        </property>
+        <property name="startIndex" type="java.lang.Integer">
+            <column name="start_index">
+                <comment>&#191;&#170;&#202;&#188;&#181;&#196;&#215;&#214;&#203;&#249;&#212;&#218;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="endIndex" type="java.lang.Integer">
+            <column name="end_index">
+                <comment>&#189;&#225;&#202;&#248;&#181;&#196;&#215;&#214;&#203;&#249;&#212;&#218;&#206;&#187;&#214;&#195;</comment>
+            </column>
+        </property>
+        <property name="paragraph" type="java.lang.Integer">
+            <column name="paragraph">
+                <comment>&#203;&#249;&#212;&#218;&#182;&#206;&#194;&#228;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#192;&#224;&#208;&#205;&#215;&#180;&#204;&#172;(0&#163;&#186;&#206;&#180;&#208;&#222;&#184;&#196; 1:&#208;&#222;&#184;&#196;&#163;&#172;)</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="16">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
+        <property name="modifier" type="string">
+            <column name="modifier" length="64">
+                <comment>&#208;&#222;&#184;&#196;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="lastChangedDate" type="timestamp">
+            <column name="last_changed_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

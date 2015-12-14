@@ -1,20 +1,46 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-18 19:23:36 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.ucenter.meta.UserDevice" table="user_device" schema="" catalog="ucenter">
-        <id name="id" column="ID"/>
-        <property name="username" column="USERNAME"/>
-        <property name="deviceNo" column="DEVICE_NO"/>
-        <property name="deviceType" column="DEVICE_TYPE"/>
-        <property name="state" column="STATE"/>
-        <property name="created" column="CREATED"/>
-        <property name="publicKey" column="PUBLIC_KEY"/>
-        <property name="custId" column="CUST_ID"/>
-        <property name="publicKeyPdf" column="PUBLIC_KEY_PDF"/>
-        <property name="loginToken" column="LOGIN_TOKEN"/>
-        <property name="lastLoginTime" column="LAST_LOGIN_TIME"/>
+    <class name="com.dangdang.ucenter.meta.UserDevice" table="user_device" catalog="ucenter">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="username" type="string">
+            <column name="USERNAME" length="100" />
+        </property>
+        <property name="deviceNo" type="string">
+            <column name="DEVICE_NO" length="100" />
+        </property>
+        <property name="deviceType" type="string">
+            <column name="DEVICE_TYPE" length="100" />
+        </property>
+        <property name="state" type="java.lang.Integer">
+            <column name="STATE" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" />
+        </property>
+        <property name="publicKey" type="string">
+            <column name="PUBLIC_KEY" length="400" />
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="CUST_ID" />
+        </property>
+        <property name="publicKeyPdf" type="string">
+            <column name="PUBLIC_KEY_PDF" length="400" />
+        </property>
+        <property name="loginToken" type="string">
+            <column name="LOGIN_TOKEN" length="100">
+                <comment>&#211;&#195;&#187;&#167;&#181;&#199;&#194;&#188;token</comment>
+            </column>
+        </property>
+        <property name="lastLoginTime" type="timestamp">
+            <column name="LAST_LOGIN_TIME" length="19">
+                <comment>&#211;&#195;&#187;&#167;&#201;&#207;&#180;&#206;&#181;&#199;&#194;&#188;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

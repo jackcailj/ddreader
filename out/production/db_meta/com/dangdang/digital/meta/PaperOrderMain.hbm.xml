@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-14 14:45:51 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.digital.meta.PaperOrderMain" table="paper_order_main" catalog="digital">
+        <id name="paperOrderId" type="java.lang.Long">
+            <column name="paper_order_id" />
+            <generator class="identity" />
+        </id>
+        <property name="orderNo" type="string">
+            <column name="order_no" length="128" unique="true">
+                <comment>&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;</comment>
+            </column>
+        </property>
+        <property name="totalPrice" type="java.lang.Integer">
+            <column name="total_price">
+                <comment>&#182;&#169;&#181;&#165;&#215;&#220;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="paidPrice" type="java.lang.Integer">
+            <column name="paid_price">
+                <comment>&#202;&#181;&#184;&#182;&#189;&#240;&#182;&#238;</comment>
+            </column>
+        </property>
+        <property name="orderStatus" type="java.lang.Short">
+            <column name="order_status">
+                <comment>&#182;&#169;&#181;&#165;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19">
+                <comment>&#182;&#169;&#181;&#165;&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="payTime" type="timestamp">
+            <column name="pay_time" length="19">
+                <comment>&#214;&#167;&#184;&#182;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

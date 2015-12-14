@@ -1,14 +1,21 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaPushConditionVariable" table="media_push_condition_variable" schema=""
-           catalog="digital">
-        <id name="pushConditionVariableId" column="push_condition_variable_id"/>
-        <property name="conditionId" column="condition_id"/>
-        <property name="variableName" column="variable_name"/>
-        <property name="variableDescription" column="variable_description"/>
+    <class name="com.dangdang.digital.meta.MediaPushConditionVariable" table="media_push_condition_variable" catalog="digital">
+        <id name="pushConditionVariableId" type="java.lang.Long">
+            <column name="push_condition_variable_id" />
+            <generator class="identity" />
+        </id>
+        <property name="conditionId" type="java.lang.Long">
+            <column name="condition_id" />
+        </property>
+        <property name="variableName" type="string">
+            <column name="variable_name" />
+        </property>
+        <property name="variableDescription" type="string">
+            <column name="variable_description" />
+        </property>
     </class>
 </hibernate-mapping>

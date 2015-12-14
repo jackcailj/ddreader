@@ -1,28 +1,92 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaStatistics" table="media_statistics" schema="" catalog="digital">
-        <id name="sId" column="s_id"/>
-        <property name="saleId" column="sale_id"/>
-        <property name="mediaId" column="media_id"/>
-        <property name="mediaTitle" column="media_title"/>
-        <property name="mediaAuthorPenname" column="media_author_penname"/>
-        <property name="mediaCover" column="media_cover"/>
-        <property name="mediaIntroduce" column="media_introduce"/>
-        <property name="mediaCategoryIds" column="media_category_ids"/>
-        <property name="statisticsDay" column="statistics_day"/>
-        <property name="saleCount" column="sale_count"/>
-        <property name="prizeCount" column="prize_count"/>
-        <property name="rewardsCount" column="rewards_count"/>
-        <property name="starCount" column="star_count"/>
-        <property name="playCount" column="play_count"/>
-        <property name="searchCount" column="search_count"/>
-        <property name="downloadCount" column="download_count"/>
-        <property name="commentCount" column="comment_count"/>
-        <property name="mediaChapterChangeDate" column="media_chapter_change_date"/>
-        <property name="mediaCreationDate" column="media_creation_date"/>
+    <class name="com.dangdang.digital.meta.MediaStatistics" table="media_statistics" catalog="digital">
+        <id name="SId" type="java.lang.Long">
+            <column name="s_id" />
+            <generator class="identity" />
+        </id>
+        <property name="saleId" type="java.lang.Long">
+            <column name="sale_id">
+                <comment>&#207;&#250;&#202;&#219;&#202;&#181;&#204;&#229;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="mediaId" type="java.lang.Long">
+            <column name="media_id">
+                <comment>media&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="mediaTitle" type="string">
+            <column name="media_title" length="200">
+                <comment>media&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="mediaAuthorPenname" type="string">
+            <column name="media_author_penname" length="200" />
+        </property>
+        <property name="mediaCover" type="string">
+            <column name="media_cover" length="100" />
+        </property>
+        <property name="mediaIntroduce" type="string">
+            <column name="media_introduce" />
+        </property>
+        <property name="mediaCategoryIds" type="string">
+            <column name="media_category_ids" length="200" />
+        </property>
+        <property name="statisticsDay" type="timestamp">
+            <column name="statistics_day" length="19">
+                <comment>&#205;&#179;&#188;&#198;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="saleCount" type="java.lang.Long">
+            <column name="sale_count">
+                <comment>&#205;&#179;&#188;&#198;&#202;&#177;&#188;&#228;&#182;&#206;&#207;&#250;&#202;&#219;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="prizeCount" type="java.lang.Long">
+            <column name="prize_count">
+                <comment>&#205;&#179;&#188;&#198;&#202;&#177;&#188;&#228;&#182;&#206;&#181;&#196;&#181;&#227;&#212;&#222;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="rewardsCount" type="java.lang.Long">
+            <column name="rewards_count">
+                <comment>&#205;&#179;&#188;&#198;&#202;&#177;&#188;&#228;&#182;&#206;&#177;&#187;&#180;&#242;&#201;&#205;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="starCount" type="java.lang.Float">
+            <column name="star_count" precision="12">
+                <comment>&#202;&#233;&#181;&#196;&#208;&#199;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="playCount" type="java.lang.Long">
+            <column name="play_count" />
+        </property>
+        <property name="searchCount" type="java.lang.Long">
+            <column name="search_count">
+                <comment>&#188;&#236;&#203;&#247;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="downloadCount" type="java.lang.Long">
+            <column name="download_count">
+                <comment>&#207;&#194;&#212;&#216;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="commentCount" type="java.lang.Long">
+            <column name="comment_count">
+                <comment>&#198;&#192;&#194;&#219;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="mediaChapterChangeDate" type="timestamp">
+            <column name="media_chapter_change_date" length="19">
+                <comment>media&#215;&#238;&#186;&#243;&#184;&#252;&#208;&#194;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="mediaCreationDate" type="timestamp">
+            <column name="media_creation_date" length="19">
+                <comment>media&#201;&#207;&#188;&#220;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

@@ -1,17 +1,30 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaUserMergeRecord" table="media_user_merge_record" schema=""
-           catalog="digital">
-        <id name="userMergeId" column="user_merge_id"/>
-        <property name="oldCustId" column="old_cust_id"/>
-        <property name="newCustId" column="new_cust_id"/>
-        <property name="consumerDepositId" column="consumer_deposit_id"/>
-        <property name="boughtId" column="bought_id"/>
-        <property name="lastUpdateTime" column="last_update_time"/>
-        <property name="createTime" column="create_time"/>
+    <class name="com.dangdang.digital.meta.MediaUserMergeRecord" table="media_user_merge_record" catalog="digital">
+        <id name="userMergeId" type="java.lang.Long">
+            <column name="user_merge_id" />
+            <generator class="identity" />
+        </id>
+        <property name="oldCustId" type="java.lang.Long">
+            <column name="old_cust_id" />
+        </property>
+        <property name="newCustId" type="java.lang.Long">
+            <column name="new_cust_id" />
+        </property>
+        <property name="consumerDepositId" type="string">
+            <column name="consumer_deposit_id" />
+        </property>
+        <property name="boughtId" type="string">
+            <column name="bought_id" />
+        </property>
+        <property name="lastUpdateTime" type="timestamp">
+            <column name="last_update_time" length="19" />
+        </property>
+        <property name="createTime" type="timestamp">
+            <column name="create_time" length="19" />
+        </property>
     </class>
 </hibernate-mapping>

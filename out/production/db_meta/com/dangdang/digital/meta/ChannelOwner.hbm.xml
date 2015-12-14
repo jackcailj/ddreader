@@ -1,43 +1,177 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.ChannelOwner" table="channel_owner" schema="" catalog="digital">
-        <id name="ownerId" column="owner_id"/>
-        <property name="custId" column="cust_id"/>
-        <property name="userAccout" column="user_accout"/>
-        <property name="name" column="name"/>
-        <property name="idNumber" column="id_number"/>
-        <property name="idBackPath" column="id_back_path"/>
-        <property name="idFrontPath" column="id_front_path"/>
-        <property name="company" column="company"/>
-        <property name="bankSubbranch" column="bank_subbranch"/>
-        <property name="bankName" column="bank_name"/>
-        <property name="employeeCardPath" column="employee_card_path"/>
-        <property name="bankArea" column="bank_area"/>
-        <property name="bankCity" column="bank_city"/>
-        <property name="bankProvince" column="bank_province"/>
-        <property name="bankOwnerName" column="bank_owner_name"/>
-        <property name="bankCardNumber" column="bank_card_number"/>
-        <property name="phone" column="phone"/>
-        <property name="verificationCode" column="verification_code"/>
-        <property name="type" column="type"/>
-        <property name="introduction" column="introduction"/>
-        <property name="introductionPicPath" column="introduction_pic_path"/>
-        <property name="companyName" column="company_name"/>
-        <property name="licenseNumber" column="license_number"/>
-        <property name="licensePicPath" column="license_pic_path"/>
-        <property name="createDate" column="create_date"/>
-        <property name="modifyDate" column="modify_date"/>
-        <property name="auditDate" column="audit_date"/>
-        <property name="auditor" column="auditor"/>
-        <property name="status" column="status"/>
-        <property name="failMsg" column="fail_msg"/>
-        <property name="applyTimes" column="apply_times"/>
-        <property name="modifyTimes" column="modify_times"/>
-        <property name="recordId" column="record_id"/>
-        <property name="isRead" column="is_read"/>
+    <class name="com.dangdang.digital.meta.ChannelOwner" table="channel_owner" catalog="digital">
+        <id name="ownerId" type="java.lang.Long">
+            <column name="owner_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#212;&#203;&#211;&#170;&#213;&#223;&#181;&#177;&#181;&#177;&#182;&#193;&#202;&#233;&#181;&#196;cust_id</comment>
+            </column>
+        </property>
+        <property name="userAccout" type="string">
+            <column name="user_accout" length="50">
+                <comment>
+                &#211;&#195;&#187;&#167;&#212;&#218;&#181;&#177;&#181;&#177;&#205;&#248;&#215;&#162;&#178;&#225;&#181;&#196;&#177;&#234;&#202;&#182;(&#202;&#214;&#187;&#250;&#186;&#197;&#187;&#242;&#213;&#223;&#211;&#202;&#207;&#228;)</comment>
+            </column>
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="20">
+                <comment>&#184;&#246;&#200;&#203;&#187;&#242;&#198;&#243;&#210;&#181;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="idNumber" type="string">
+            <column name="id_number" length="50">
+                <comment>
+                &#184;&#246;&#200;&#203;&#201;&#237;&#183;&#221;&#214;&#164;&#186;&#197;&#187;&#242;&#198;&#243;&#210;&#181;&#211;&#170;&#210;&#181;&#214;&#164;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="idBackPath" type="string">
+            <column name="id_back_path">
+                <comment>&#201;&#237;&#183;&#221;&#214;&#164;&#183;&#180;&#195;&#230;</comment>
+            </column>
+        </property>
+        <property name="idFrontPath" type="string">
+            <column name="id_front_path" length="200">
+                <comment>&#184;&#246;&#200;&#203;&#201;&#237;&#183;&#221;&#214;&#164;&#213;&#253;&#195;&#230;</comment>
+            </column>
+        </property>
+        <property name="company" type="string">
+            <column name="company" length="100">
+                <comment>&#184;&#246;&#200;&#203;&#185;&#164;&#215;&#247;&#181;&#165;&#206;&#187;&#187;&#242;&#213;&#223;&#198;&#243;&#210;&#181;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="bankSubbranch" type="string">
+            <column name="bank_subbranch" length="50">
+                <comment>&#191;&#170;&#187;&#167;&#214;&#167;&#208;&#208;</comment>
+            </column>
+        </property>
+        <property name="bankName" type="string">
+            <column name="bank_name" length="50">
+                <comment>&#191;&#170;&#187;&#167;&#210;&#248;&#208;&#208;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="employeeCardPath" type="string">
+            <column name="employee_card_path" length="200">
+                <comment>&#185;&#164;&#215;&#247;&#214;&#164;&#201;&#168;&#195;&#232;&#188;&#254;&#180;&#230;&#183;&#197;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="bankArea" type="string">
+            <column name="bank_area" length="50">
+                <comment>&#191;&#170;&#187;&#167;&#210;&#248;&#208;&#208;&#203;&#249;&#199;&#248;&#211;&#242;</comment>
+            </column>
+        </property>
+        <property name="bankCity" type="string">
+            <column name="bank_city" length="50">
+                <comment>&#191;&#170;&#187;&#167;&#210;&#248;&#208;&#208;&#203;&#249;&#212;&#218;&#179;&#199;&#202;&#208;</comment>
+            </column>
+        </property>
+        <property name="bankProvince" type="string">
+            <column name="bank_province" length="50">
+                <comment>&#191;&#170;&#198;&#244;&#210;&#248;&#208;&#208;&#203;&#249;&#212;&#218;&#202;&#161;&#183;&#221;</comment>
+            </column>
+        </property>
+        <property name="bankOwnerName" type="string">
+            <column name="bank_owner_name" length="50">
+                <comment>&#210;&#248;&#208;&#208;&#191;&#168;&#203;&#249;&#211;&#208;&#200;&#203;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="bankCardNumber" type="java.lang.Long">
+            <column name="bank_card_number">
+                <comment>&#210;&#248;&#208;&#208;&#191;&#168;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="phone" type="string">
+            <column name="phone" length="15">
+                <comment>&#202;&#214;&#187;&#250;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="verificationCode" type="string">
+            <column name="verification_code" length="20">
+                <comment>&#209;&#233;&#214;&#164;&#194;&#235;</comment>
+            </column>
+        </property>
+        <property name="type" type="java.lang.Integer">
+            <column name="type">
+                <comment>&#184;&#246;&#200;&#203;2&#187;&#185;&#202;&#199;&#198;&#243;&#210;&#181;1</comment>
+            </column>
+        </property>
+        <property name="introduction" type="string">
+            <column name="introduction" length="500">
+                <comment>&#179;&#201;&#206;&#170;&#181;&#192;&#179;&#164;&#181;&#196;&#192;&#237;&#211;&#201;&#203;&#181;&#195;&#247;</comment>
+            </column>
+        </property>
+        <property name="introductionPicPath" type="string">
+            <column name="introduction_pic_path" length="200">
+                <comment>&#179;&#201;&#206;&#170;&#181;&#192;&#179;&#164;&#181;&#196;&#192;&#237;&#211;&#201;&#181;&#196;&#189;&#216;&#205;&#188;</comment>
+            </column>
+        </property>
+        <property name="companyName" type="string">
+            <column name="company_name" length="100">
+                <comment>&#185;&#171;&#203;&#190;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="licenseNumber" type="string">
+            <column name="license_number" length="100">
+                <comment>&#211;&#170;&#210;&#181;&#214;&#180;&#213;&#213;&#215;&#162;&#178;&#225;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="licensePicPath" type="string">
+            <column name="license_pic_path" length="200">
+                <comment>&#190;&#173;&#211;&#170;&#214;&#164;&#188;&#254;&#201;&#168;&#195;&#232;&#188;&#254;&#180;&#230;&#183;&#197;&#194;&#183;&#190;&#182;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#200;&#213;&#198;&#218;</comment>
+            </column>
+        </property>
+        <property name="modifyDate" type="timestamp">
+            <column name="modify_date" length="19">
+                <comment>&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="auditDate" type="timestamp">
+            <column name="audit_date" length="19">
+                <comment>&#201;&#243;&#186;&#203;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="auditor" type="string">
+            <column name="auditor" length="20">
+                <comment>&#201;&#243;&#186;&#203;&#200;&#203;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#201;&#243;&#186;&#203;&#202;&#199;&#183;&#241;&#205;&#168;&#185;&#253;</comment>
+            </column>
+        </property>
+        <property name="failMsg" type="string">
+            <column name="fail_msg" length="500">
+                <comment>&#201;&#243;&#186;&#203;&#178;&#187;&#205;&#168;&#185;&#253;&#212;&#173;&#210;&#242;</comment>
+            </column>
+        </property>
+        <property name="applyTimes" type="java.lang.Integer">
+            <column name="apply_times">
+                <comment>&#201;&#234;&#199;&#235;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="modifyTimes" type="java.lang.Integer">
+            <column name="modify_times">
+                <comment>&#177;&#190;&#212;&#194;&#208;&#222;&#184;&#196;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="recordId" type="java.lang.Long">
+            <column name="record_id">
+                <comment>&#201;&#243;&#186;&#203;&#188;&#199;&#194;&#188;&#177;&#224;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="isRead" type="java.lang.Integer">
+            <column name="is_read" />
+        </property>
     </class>
 </hibernate-mapping>

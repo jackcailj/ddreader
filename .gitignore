@@ -58,3 +58,13 @@ $RECYCLE.BIN/
 *.lnk
 /test-output
 logs/example_log.txt
+bin/conf/onlinedb/websql-authority.properties
+bin/conf/onlinedb/websql.properties
+bin/conf/onlinedb/websql_account.properties
+bin/conf/onlinedb/websql_authority.properties
+bin/conf/onlinedb/websql_base_comment.properties
+bin/conf/onlinedb/websql_bookbar.properties
+bin/conf/onlinedb/websql_ddreader.properties
+bin/conf/onlinedb/websql_im.properties
+bin/conf/onlinedb/websql_ucenter.properties
+bin/conf/onlinedb/websql_yc.properties

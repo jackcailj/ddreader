@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-7-15 16:22:05 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.dangdang.authority.meta.MediaAuthorityDetail" table="media_authority_detail" catalog="authority">
+        <id name="mediaAuthorityDetailId" type="java.lang.Long">
+            <column name="media_authority_detail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="mediaAuthorityId" type="long">
+            <column name="media_authority_id" not-null="true">
+                <comment>&#200;&#168;&#207;&#222;&#177;&#237;ID</comment>
+            </column>
+        </property>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="productId" type="java.lang.Long">
+            <column name="product_id">
+                <comment>&#181;&#165;&#198;&#183;ID</comment>
+            </column>
+        </property>
+        <property name="chapterId" type="long">
+            <column name="chapter_id" not-null="true">
+                <comment>&#213;&#194;&#189;&#218;ID</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="8" not-null="true">
+                <comment>&#201;&#232;&#177;&#184;&#192;&#224;&#208;&#205;(android iphone ipad h5)</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

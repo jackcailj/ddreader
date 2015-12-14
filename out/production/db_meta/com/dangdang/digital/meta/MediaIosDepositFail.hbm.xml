@@ -1,28 +1,96 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaIosDepositFail" table="media_ios_deposit_fail" schema=""
-           catalog="digital">
-        <id name="iosDepositFailId" column="ios_deposit_fail_id"/>
-        <property name="custId" column="cust_id"/>
-        <property name="userName" column="user_name"/>
-        <property name="depositOrderNo" column="deposit_order_no"/>
-        <property name="payment" column="payment"/>
-        <property name="relationProductId" column="relation_product_id"/>
-        <property name="money" column="money"/>
-        <property name="mainGold" column="main_gold"/>
-        <property name="giveMainGold" column="give_main_gold"/>
-        <property name="subGold" column="sub_gold"/>
-        <property name="deviceType" column="device_type"/>
-        <property name="payTime" column="pay_time"/>
-        <property name="creationDate" column="creation_date"/>
-        <property name="fromPaltform" column="from_paltform"/>
-        <property name="productCount" column="product_count"/>
-        <property name="receiptData" column="receipt_data"/>
-        <property name="status" column="status"/>
-        <property name="operateCount" column="operate_count"/>
+    <class name="com.dangdang.digital.meta.MediaIosDepositFail" table="media_ios_deposit_fail" catalog="digital">
+        <id name="iosDepositFailId" type="java.lang.Long">
+            <column name="ios_deposit_fail_id" />
+            <generator class="identity" />
+        </id>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id">
+                <comment>&#211;&#195;&#187;&#167;id</comment>
+            </column>
+        </property>
+        <property name="userName" type="string">
+            <column name="user_name">
+                <comment>&#211;&#195;&#187;&#167;&#195;&#251;&#179;&#198;</comment>
+            </column>
+        </property>
+        <property name="depositOrderNo" type="string">
+            <column name="deposit_order_no" length="128" unique="true">
+                <comment>&#179;&#228;&#214;&#181;&#182;&#169;&#181;&#165;&#186;&#197;</comment>
+            </column>
+        </property>
+        <property name="payment" type="string">
+            <column name="payment" length="128">
+                <comment>&#214;&#167;&#184;&#182;&#183;&#189;&#202;&#189;</comment>
+            </column>
+        </property>
+        <property name="relationProductId" type="string">
+            <column name="relation_product_id" length="200">
+                <comment>&#214;&#167;&#184;&#182;&#208;&#233;&#196;&#226;&#201;&#204;&#198;&#183;id</comment>
+            </column>
+        </property>
+        <property name="money" type="java.lang.Integer">
+            <column name="money">
+                <comment>&#179;&#228;&#214;&#181;&#189;&#240;&#182;&#238;&#163;&#168;&#183;&#214;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="mainGold" type="java.lang.Integer">
+            <column name="main_gold">
+                <comment>&#214;&#247;&#212;&#196;&#182;&#193;&#177;&#210;</comment>
+            </column>
+        </property>
+        <property name="giveMainGold" type="java.lang.Integer">
+            <column name="give_main_gold">
+                <comment>&#212;&#249;&#203;&#205;&#214;&#247;&#213;&#203;&#187;&#167;&#212;&#196;&#182;&#193;&#177;&#210;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="subGold" type="java.lang.Integer">
+            <column name="sub_gold">
+                <comment>&#184;&#189;&#212;&#196;&#182;&#193;&#177;&#210;</comment>
+            </column>
+        </property>
+        <property name="deviceType" type="string">
+            <column name="device_type" length="128" />
+        </property>
+        <property name="payTime" type="timestamp">
+            <column name="pay_time" length="19">
+                <comment>&#214;&#167;&#184;&#182;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19">
+                <comment>&#179;&#228;&#214;&#181;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="fromPaltform" type="string">
+            <column name="from_paltform">
+                <comment>&#214;&#167;&#184;&#182;&#192;&#180;&#212;&#180;&#198;&#189;&#204;&#168;</comment>
+            </column>
+        </property>
+        <property name="productCount" type="java.lang.Integer">
+            <column name="product_count">
+                <comment>&#208;&#233;&#196;&#226;&#201;&#204;&#198;&#183;&#202;&#253;&#193;&#191;</comment>
+            </column>
+        </property>
+        <property name="receiptData" type="string">
+            <column name="receipt_data" length="1024">
+                <comment>ios&#214;&#167;&#184;&#182;&#198;&#190;&#214;&#164;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Short">
+            <column name="status">
+                <comment>&#215;&#180;&#204;&#172;
+                0&#163;&#186;&#206;&#180;&#180;&#166;&#192;&#237;&#163;&#172;1&#163;&#186;&#210;&#209;&#180;&#166;&#192;&#237;&#163;&#172;2&#163;&#186;&#210;&#209;&#202;&#167;&#208;&#167;</comment>
+            </column>
+        </property>
+        <property name="operateCount" type="java.lang.Integer">
+            <column name="operate_count">
+                <comment>&#180;&#166;&#192;&#237;&#180;&#206;&#202;&#253;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

@@ -1,20 +1,42 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaList" table="media_list" schema="" catalog="digital">
-        <id name="id" column="ID"/>
-        <property name="name" column="NAME"/>
-        <property name="fileName" column="FILE_NAME"/>
-        <property name="processingResult" column="PROCESSING_RESULT"/>
-        <property name="hasError" column="HAS_ERROR"/>
-        <property name="creator" column="CREATOR"/>
-        <property name="created" column="CREATED"/>
-        <property name="updator" column="UPDATOR"/>
-        <property name="updated" column="UPDATED"/>
-        <property name="typeId" column="TYPE_ID"/>
-        <property name="category" column="CATEGORY"/>
+    <class name="com.dangdang.digital.meta.MediaList" table="media_list" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="ID" />
+            <generator class="identity" />
+        </id>
+        <property name="name" type="string">
+            <column name="NAME" length="100" />
+        </property>
+        <property name="fileName" type="string">
+            <column name="FILE_NAME" length="200" not-null="true" />
+        </property>
+        <property name="processingResult" type="int">
+            <column name="PROCESSING_RESULT" not-null="true" />
+        </property>
+        <property name="hasError" type="java.lang.Boolean">
+            <column name="HAS_ERROR" />
+        </property>
+        <property name="creator" type="string">
+            <column name="CREATOR" length="50" not-null="true" />
+        </property>
+        <property name="created" type="timestamp">
+            <column name="CREATED" length="19" not-null="true" />
+        </property>
+        <property name="updator" type="string">
+            <column name="UPDATOR" length="50" />
+        </property>
+        <property name="updated" type="timestamp">
+            <column name="UPDATED" length="19" />
+        </property>
+        <property name="typeId" type="java.lang.Long">
+            <column name="TYPE_ID" />
+        </property>
+        <property name="category" type="string">
+            <column name="CATEGORY" length="2" />
+        </property>
     </class>
 </hibernate-mapping>

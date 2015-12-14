@@ -1,14 +1,28 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.ChannelBooklist" table="channel_booklist" schema="" catalog="digital">
-        <id name="id" column="id"/>
-        <property name="channelId" column="channel_id"/>
-        <property name="bookListId" column="book_list_id"/>
-        <property name="isShow" column="is_show"/>
-        <property name="status" column="status"/>
+    <class name="com.dangdang.digital.meta.ChannelBooklist" table="channel_booklist" catalog="digital">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="channelId" type="java.lang.Long">
+            <column name="channel_id" />
+        </property>
+        <property name="bookListId" type="java.lang.Long">
+            <column name="book_list_id" />
+        </property>
+        <property name="isShow" type="java.lang.Integer">
+            <column name="is_show">
+                <comment>&#202;&#199;&#183;&#241;&#199;&#176;&#204;&#168;&#207;&#212;&#202;&#190;</comment>
+            </column>
+        </property>
+        <property name="status" type="java.lang.Integer">
+            <column name="status">
+                <comment>&#202;&#233;&#181;&#165;&#215;&#180;&#204;&#172;</comment>
+            </column>
+        </property>
     </class>
 </hibernate-mapping>

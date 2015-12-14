@@ -1,16 +1,27 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaPushConditionParams" table="media_push_condition_params" schema=""
-           catalog="digital">
-        <id name="pushConditionParamsId" column="push_condition_params_id"/>
-        <property name="pushPlanId" column="push_plan_id"/>
-        <property name="conditionId" column="condition_id"/>
-        <property name="keyName" column="key_name"/>
-        <property name="keyValue" column="key_value"/>
-        <property name="keyInputName" column="key_input_name"/>
+    <class name="com.dangdang.digital.meta.MediaPushConditionParams" table="media_push_condition_params" catalog="digital">
+        <id name="pushConditionParamsId" type="java.lang.Long">
+            <column name="push_condition_params_id" />
+            <generator class="identity" />
+        </id>
+        <property name="pushPlanId" type="java.lang.Long">
+            <column name="push_plan_id" />
+        </property>
+        <property name="conditionId" type="java.lang.Long">
+            <column name="condition_id" />
+        </property>
+        <property name="keyName" type="string">
+            <column name="key_name" />
+        </property>
+        <property name="keyValue" type="string">
+            <column name="key_value" length="1024" />
+        </property>
+        <property name="keyInputName" type="string">
+            <column name="key_input_name" />
+        </property>
     </class>
 </hibernate-mapping>

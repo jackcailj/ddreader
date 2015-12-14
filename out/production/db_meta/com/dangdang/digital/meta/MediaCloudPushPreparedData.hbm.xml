@@ -1,16 +1,27 @@
-<?xml version='1.0' encoding='utf-8'?>
-<!DOCTYPE hibernate-mapping PUBLIC
-    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
-    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-6-17 10:36:15 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-
-    <class name="com.dangdang.digital.meta.MediaCloudPushPreparedData" table="media_cloud_push_prepared_data" schema=""
-           catalog="digital">
-        <id name="cloudPushPreparedDataId" column="cloud_push_prepared_data_id"/>
-        <property name="planId" column="plan_id"/>
-        <property name="custId" column="cust_id"/>
-        <property name="deviceNo" column="device_no"/>
-        <property name="message" column="message"/>
-        <property name="creationDate" column="creation_date"/>
+    <class name="com.dangdang.digital.meta.MediaCloudPushPreparedData" table="media_cloud_push_prepared_data" catalog="digital">
+        <id name="cloudPushPreparedDataId" type="java.lang.Long">
+            <column name="cloud_push_prepared_data_id" />
+            <generator class="identity" />
+        </id>
+        <property name="planId" type="java.lang.Long">
+            <column name="plan_id" />
+        </property>
+        <property name="custId" type="java.lang.Long">
+            <column name="cust_id" />
+        </property>
+        <property name="deviceNo" type="string">
+            <column name="device_no" />
+        </property>
+        <property name="message" type="string">
+            <column name="message" />
+        </property>
+        <property name="creationDate" type="timestamp">
+            <column name="creation_date" length="19" />
+        </property>
     </class>
 </hibernate-mapping>
