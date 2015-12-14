@@ -98,4 +98,5 @@ public class MyBarList extends FixtureBase {
 		verifyResult(expectedCode);
 		
 	}
+  }
 }
