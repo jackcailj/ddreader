@@ -85,7 +85,7 @@ public class Column extends FixtureBase{
         					dataVerifyManager.add(new ValueVerify<Float>(actualMediaList.get(j).getAvgStarLevel(),expectedMedia.getAvgStarLevel()).setVerifyContent("验证AvgStarLevel"));
         				if(!"null".equals(actualMediaList.get(j).getCommentNumber()+""))
         					dataVerifyManager.add(new ValueVerify<Integer>(actualMediaList.get(j).getCommentNumber(),expectedMedia.getCommentNumber()).setVerifyContent("验证CommentNumber"));
-        				dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(j).getPrice(),expectedMedia.getPrice()).setVerifyContent("验证Price"));        				
+        				dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(j).getPrice(),String.valueOf(expectedMedia.getPrice())).setVerifyContent("验证Price"));        				
         				//dataVerifyManager.add(new ExpressionVerify(expectedMedia.getDescs().contains(actualMediaList.get(j).getDescs())).setVerifyContent("验证Descs"));
         				dataVerifyManager.add(new ValueVerify<Integer>(actualMediaList.get(j).getShelfStatus(),1).setVerifyContent("验证shelfStatus"));
         				
@@ -106,7 +106,7 @@ public class Column extends FixtureBase{
         					dataVerifyManager.add(new ValueVerify<Float>(actualMediaList.get(j).getAvgStarLevel(),expectedMedia.getAvgStarLevel()).setVerifyContent("验证AvgStarLevel"));
         				if(!"null".equals(actualMediaList.get(j).getCommentNumber()+""))
         					dataVerifyManager.add(new ValueVerify<Integer>(actualMediaList.get(j).getCommentNumber(),expectedMedia.getCommentNumber()).setVerifyContent("验证CommentNumber"));
-        				dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(j).getPrice(),expectedMedia.getPrice()).setVerifyContent("验证Price"));
+        				dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(j).getPrice(),String.valueOf(expectedMedia.getPrice())).setVerifyContent("验证Price"));
         				dataVerifyManager.add(new ValueVerify<Integer>((int)(actualMediaList.get(j).getOriginalPrice()*100),expectedMedia.getPaperBookPrice()).setVerifyContent("验证OriginalPrice"));
         				//dataVerifyManager.add(new ExpressionVerify(expectedMedia.getDescs().contains(actualMediaList.get(j).getDescs())).setVerifyContent("验证Descs"));
         				dataVerifyManager.add(new ValueVerify<Integer>(actualMediaList.get(j).getShelfStatus(),1).setVerifyContent("验证shelfStatus"));
