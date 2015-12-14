@@ -7,8 +7,6 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.db.digital.BookStoreCommSQL;
-import com.dangdang.db.digital.BookStoreTestEvnSQL;
 import com.dangdang.readerV5.reponse.GetMediaReponse;
 
 import fitnesse.slim.SystemUnderTest;
@@ -23,14 +21,14 @@ public class GetMedia extends FixtureBase{
 	ReponseV2<GetMediaReponse> reponseResult;
 	
 	@SystemUnderTest
-	public BookStoreTestEvnSQL service = new BookStoreTestEvnSQL();
+	//public BookStoreTestEvnSQL service = new BookStoreTestEvnSQL();
 	
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception{
 		String saleIdName = params.get("saleId");
 		String saleID = "";
 		if(saleIdName.equals("可借阅")) 
-			saleID = BookStoreCommSQL.getBorrowBook();
+	//		saleID = BookStoreCommSQL.getBorrowBook();
 //		else if(saleIdName.equals("已借阅"))
 //			//
 //		else if(saleIdName.equals("借阅过期"))
@@ -59,8 +57,8 @@ public class GetMedia extends FixtureBase{
 			//验证json中返回字段
 			int custID = Integer.valueOf(login.getCustId());
 			log.info("验证分类一级页面的返回数据：");	
-			GetMediaReponse dbResponse = BookStoreCommSQL.getMediaReponse(Integer.valueOf(paramMap.get("saleId")),custID);
-			dataVerifyManager.add(new ValueVerify<GetMediaReponse>(reponseResult.getData(), dbResponse, true));
+		//	GetMediaReponse dbResponse = BookStoreCommSQL.getMediaReponse(Integer.valueOf(paramMap.get("saleId")),custID);
+		//	dataVerifyManager.add(new ValueVerify<GetMediaReponse>(reponseResult.getData(), dbResponse, true));
 			
 		}
 		return dataVerifyManager.dataVerify();      	

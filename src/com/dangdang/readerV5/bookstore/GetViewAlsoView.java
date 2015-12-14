@@ -4,7 +4,6 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.db.digital.BookStoreTestEvnSQL;
 import com.dangdang.readerV5.reponse.GetBuyAlsoBuyReponse;
 
 import fitnesse.slim.SystemUnderTest;
@@ -18,7 +17,7 @@ public class GetViewAlsoView extends FixtureBase{
 	ReponseV2<GetBuyAlsoBuyReponse> reponseResult;
 	
 	@SystemUnderTest
-	public BookStoreTestEvnSQL service = new BookStoreTestEvnSQL();
+	//public BookStoreTestEvnSQL service = new BookStoreTestEvnSQL();
 	
 	//验证结果
 	public boolean verifyResult(){
