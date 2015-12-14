@@ -14,8 +14,8 @@ import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.BarBooks;
-import com.dangdang.base.bookbar.client.api.IBarApi;
-import com.dangdang.base.bookbar.client.vo.*;
+//import com.dangdang.base.bookbar.client.api.IBarApi;
+//import com.dangdang.base.bookbar.client.vo.*;
 
 public class QueryBarOneBook extends FixtureBase {
 	//ApplicationContext factory = new ClassPathXmlApplicationContext("classpath:conf/readerV5/applicationContext-im.xml");
