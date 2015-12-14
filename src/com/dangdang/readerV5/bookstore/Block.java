@@ -5,23 +5,25 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.db.digital.bookstore.BlockSQL;
+import com.dangdang.db.digital.BlockDb;
 import com.dangdang.readerV5.reponse.BlockReponse;
 
 public class Block extends FixtureBase{
-
-	ReponseV2<BlockReponse> reponseResult;
+	ReponseV2<BlockReponse> jsonResult;
 	  
-	//验证结果
-	public boolean verifyResult() throws Exception{
-		dataVerifyManager.setCaseExpectResult(true);
-		reponseResult =JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<BlockReponse>>(){});
-		if(reponseResult.getStatus().getCode()==0){		
-			//验证json中返回字段
-			log.info("验证Block返回结果：");	
-			String dbResponse = BlockSQL.getBlock(paramMap.get("code"));
-			dataVerifyManager.add(new ValueVerify<String>(reponseResult.getData().getBlock(), dbResponse));
+    @Override
+    public void doWork() throws Exception {
+        super.doWork();
+        jsonResult = JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<BlockReponse>>(){});
+    }
+    
+    @Override
+    protected void dataVerify() throws Exception {
+    	if(reponseV2Base.getStatus().getCode()==0){	
+    		String expectedCode = BlockDb.getBlock(paramMap.get("code"));
+			dataVerifyManager.add(new ValueVerify<String>(jsonResult.getData().getBlock(), expectedCode).setVerifyContent("验证块的code内容"));			
 		}
-		return dataVerifyManager.dataVerify();
+        super.dataVerify();    	
 	}
+ 
 }

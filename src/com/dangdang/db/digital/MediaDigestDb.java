@@ -7,6 +7,7 @@ import com.dangdang.digital.meta.MediaDigest;
 import com.dangdang.enumeration.BookStatus;
 import com.dangdang.enumeration.StoreUpType;
 import org.apache.commons.lang3.StringUtils;
+import com.dangdang.digital.meta.MediaDigest;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -113,7 +114,7 @@ public class MediaDigestDb {
     
 	//选取有效地type类型的文章
     //CommentTargetCountDb.java used
-    //类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
+    //类型 3:频道; 5:攻略
 	public static List<String> getDigest(int type) throws Exception{
 		String selectSQL = "SELECT d.id "+
                 " FROM"+
@@ -138,7 +139,7 @@ public class MediaDigestDb {
     //SELECT * FROM `comment_target_count` WHERE target_source=7000 ORDER BY browse_count DESC
     
     //获取用户的某个攻略/文章
-    //type: 类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
+    //type: 类型 3:频道; 5:攻略
     public static String getUserDigestId(String custId, String type) throws Exception{
     	int _type = Integer.valueOf(type);
     	String selectString = "SELECT id FROM `media_digest` " +
@@ -181,6 +182,23 @@ public class MediaDigestDb {
                 " limit "+number;
         List<MediaDigest> mediaDigest = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, MediaDigest.class);
         return mediaDigest;
+    }
+    
+    //获取支持或不支持打赏的频道文章或攻略
+    //type 3：频道 5：攻略
+    //isSupportReward 1：支持打赏  0：不支持打赏
+    public static String getDegistId(int type, int isSupportReward) throws Exception{
+    	String selectSQL="SELECT digest_id " +
+    			"FROM `channel_articles_digest` " +
+    			"WHERE is_publish=1 AND `status` IN (0,1) " +
+    			"AND channel_id IN (SELECT channel_id FROM channel WHERE shelf_status=1) " +
+    			"AND digest_id IN (SELECT id FROM `media_digest` WHERE type=5 AND is_support_reward=1)";
+    	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+    	List<String> degistIds = new ArrayList<String>();
+    	for(int i=0; i<infos.size(); i++){
+    		degistIds.add(infos.get(i).get("digest_id").toString());
+    	}
+    	return degistIds.get(SqlUtil.getRandNum(degistIds));
     }
     
     public static void main(String[] args){

@@ -7,6 +7,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.db.digital.MediaColumnContentDb;
 import com.dangdang.ddframework.dataverify.ExpressionVerify;
+import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.meta.MediaColumnContent;
 
@@ -43,6 +44,15 @@ public class GetNRandomChannel extends FixtureBase{
         	}
         	
             dataVerifyManager.add(new ExpressionVerify(expectedChannelIds.containsAll(actualChannelIds)).setVerifyContent("验证channelList"));           
+            //验证返回的数量
+            int num=0;
+            try{
+            	num = Integer.valueOf(paramMap.get("num"));
+            }catch(Exception e){
+            	num=5;
+            }
+            dataVerifyManager.add(new ValueVerify<Integer>(actualChannelList.size(),num).setVerifyContent("验证List size"));
+        
         }
         super.dataVerify();
     }

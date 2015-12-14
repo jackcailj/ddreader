@@ -15,6 +15,14 @@ import java.util.List;
  * Created by cailianjie on 2015-7-7.
  */
 public class MediaDb {
+	
+	public static List<Media> getMediaBySaleId(String saleId) throws Exception{
+		String selectSQL = "SELECT media_id,cover_pic,title,avg_star_level,comment_number,price,paper_book_price,descs  " +
+				"FROM `media` " +
+				"WHERE sale_id="+saleId;
+		List<Media> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Media.class);
+		return infos;		
+	}
 
     /*
        获取一个mediaId（有效或者下架）
@@ -151,4 +159,12 @@ public class MediaDb {
         return medias;
     }
 
+    public static void main(String[] args){
+    	try {
+			MediaDb.getMedia(BookType.EBOOK, BookStatus.VALID);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
 }

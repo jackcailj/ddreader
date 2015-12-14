@@ -5,11 +5,11 @@ import java.util.List;
 public class FreeForLimitedReponse {
 	String columnCode;
 	String count;
-	//String icon;
+	String icon;
 	String isShowHorn;
 	String name;
-	//String overtime;
-	List<BorrowSaleList> saleList;
+	String overtime;
+	List<SaleList> saleList;
 	String tips;
 	String total;
 	public String getColumnCode() {
@@ -24,12 +24,12 @@ public class FreeForLimitedReponse {
 	public void setCount(String count) {
 		this.count = count;
 	}
-//	public String getIcon() {
-//		return icon;
-//	}
-//	public void setIcon(String icon) {
-//		this.icon = icon;
-//	}
+	public String getIcon() {
+		return icon;
+	}
+	public void setIcon(String icon) {
+		this.icon = icon;
+	}
 	public String getIsShowHorn() {
 		return isShowHorn;
 	}
@@ -42,16 +42,16 @@ public class FreeForLimitedReponse {
 	public void setName(String name) {
 		this.name = name;
 	}
-//	public String getOvertime() {
-//		return overtime;
-//	}
-//	public void setOvertime(String overtime) {
-//		this.overtime = overtime;
-//	}
-	public List<BorrowSaleList> getSaleList() {
+	public String getOvertime() {
+		return overtime;
+	}
+	public void setOvertime(String overtime) {
+		this.overtime = overtime;
+	}
+	public List<SaleList> getSaleList() {
 		return saleList;
 	}
-	public void setSaleList(List<BorrowSaleList> saleList) {
+	public void setSaleList(List<SaleList> saleList) {
 		this.saleList = saleList;
 	}
 	public String getTips() {

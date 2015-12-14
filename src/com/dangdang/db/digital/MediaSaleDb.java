@@ -1,30 +1,52 @@
 package com.dangdang.db.digital;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
 import com.dangdang.config.Config;
+import com.dangdang.db.SqlUtil;
 import com.dangdang.ddframework.dbutil.DbUtil;
+import com.dangdang.digital.meta.MediaSale;
 
 /**
- * 
  * @author guohaiying
- *
  */
 public class MediaSaleDb {
-
 	
-	//模拟后台，下架某本书
-//	public static int setShelfStatusWithColumncode(String columncode) throws Exception{
-//		int sale_id = getRandChannel(columncode);
-//		String updateSQL = "UPDATE `media_sale` SET shelf_status=0 WHERE sale_id= "+ sale_id;
-//		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-//		RefreshCache.refresh();
-//		return sale_id;
-//	}
-	
-	//模拟后台，上架某本书
-	public static int setShelfStatusWithSaleid(int saleid) throws Exception{
-		String updateSQL = "UPDATE `media_sale` SET shelf_status=1 WHERE sale_id= "+ saleid;
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		RefreshCache.refresh();
-		return saleid;
+	//根据saleId获取MediaSale
+	public static MediaSale getMediaSale(String saleId) throws Exception{
+		String selectSQL = "SELECT * FROM `media_sale` WHERE shelf_status=1 AND sale_id="+ saleId;
+		List<MediaSale> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, MediaSale.class);
+		if(infos.size()==0) return null;
+		else return infos.get(0);
 	}
+	
+	//获取xx栏目下书
+	public static List<String> getMediaIds(String columnCode) throws Exception{
+		String selectSQL = "SELECT sale_id " +
+				"FROM media_sale " +
+				"WHERE shelf_status=1 " +
+				"AND sale_id IN"+SqlUtil.getListToString(MediaColumnContentDb.getColumnContent(columnCode));
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		if(infos.size()==0) return null;
+		else{
+			List<String> MediaIdList = new ArrayList<String>();
+			for(int i=0; i<infos.size(); i++){
+				MediaIdList.add(infos.get(i).get("sale_id").toString());
+			}
+			return MediaIdList;
+		}
+	}
+	
+	public static void main(String[] args){
+		try {
+			List<String> list = MediaSaleDb.getMediaIds("all_rec_xssf");
+			System.out.println(list.size());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 }

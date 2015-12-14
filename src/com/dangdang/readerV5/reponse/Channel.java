@@ -1,5 +1,7 @@
 package com.dangdang.readerV5.reponse;
 
+import java.util.List;
+
 public class Channel {
 	ChannelBookList bookList;
 	Long channelId;
@@ -20,7 +22,14 @@ public class Channel {
 	String tagNames;
 	Integer subNumber;
 	String title;
+	List<MonthlyStrategy> channelMonthlyStrategy;
 	UserBaseInfo userBaseInfo;
+	public List<MonthlyStrategy> getChannelMonthlyStrategy() {
+		return channelMonthlyStrategy;
+	}
+	public void setChannelMonthlyStrategy(List<MonthlyStrategy> channelMonthlyStrategy) {
+		this.channelMonthlyStrategy = channelMonthlyStrategy;
+	}
 	public UserBaseInfo getUserBaseInfo() {
 		return userBaseInfo;
 	}

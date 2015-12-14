@@ -10,7 +10,6 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 /**
  * 
  * @author guohaiying
- *
  */
 public class ChannelArticlesDigestDb {
 

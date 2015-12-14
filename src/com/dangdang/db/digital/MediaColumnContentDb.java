@@ -1,5 +1,6 @@
 package com.dangdang.db.digital;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -31,42 +32,22 @@ public class MediaColumnContentDb {
         return infos;
     }
        
-	
+	//获取xx栏目下书
+	public static List<String> getColumnContent(String columnCode) throws Exception{
+		String selectSQL = "SELECT sale_id " +
+								"FROM `media_column_content` " +
+								"WHERE column_code='"+columnCode+"' " +
+								"AND `status` in (1,2) " +
+								"AND end_date> NOW()";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
+		List<String> saleIdList = new  ArrayList<String>();
+		for(int i=0; i<infos.size(); i++){
+			saleIdList.add(infos.get(i).get("sale_id").toString());
+			System.out.println("dbList: "+ infos.get(i).get("sale_id"));
+		}
+		return saleIdList;
+	}
 
-	
-	//获取频道栏目下频道列表
-//    public static List<ChannelList> getChannelList(String columnCode, String custId, int num) throws Exception {
-//       
-//    	String selectSQL = "SELECT channel.channel_id,channel.owner_id,channel.title,channel.description,channel.icon,channel.sub_number	" +
-//    			" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
-//				" where column_code ='"+columnCode+"'"+
-//				" and channel.shelf_status=1"+
-//				" and channel.is_completed=1"+
-//				" and  mcc.status in(1,2)"+
-//				" and  now() between start_date and end_date"+
-//				" order by mcc.status asc , IF(ISNULL(order_value),1,0) asc,order_value desc LIMIT "+num;      
-//        List<Map<String, Object>>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);	
-//        List<ChannelList> channelList = new ArrayList<ChannelList>();
-//        for(int i=0; i<infos.size(); i++){
-//        	ChannelList tmp = new ChannelList();
-//        	tmp.setChannelId(infos.get(i).get("channel_id").toString());
-//        	tmp.setDescription(infos.get(i).get("description").toString());
-//        	//设置hasBoughtMonthly  是否有包月权限  
-//        	if(custId==null)
-//        		tmp.setHasBoughtMonthly(0);  
-//        	else if(hasBoughtMonthly(custId, infos.get(i).get("channel_id").toString())==0){
-//        		tmp.setHasBoughtMonthly(0);  
-//        	}else 
-//        		tmp.setHasBoughtMonthly(1);  
-//        	//设置type
-//        	tmp.setOwnerType(getOwnerType(infos.get(i).get("owner_id").toString()));      	
-//        	tmp.setIcon(infos.get(i).get("icon").toString());
-//        	tmp.setSubNumber(infos.get(i).get("sub_number").toString());
-//        	tmp.setTitle(infos.get(i).get("title").toString());       	
-//        	channelList.add(tmp);
-//        }
-//        return channelList;
-//    }
     
     //获取某个栏目下的所有有效频道
     public static List<MediaColumnContent> getChannelList(String columnCode) throws Exception{

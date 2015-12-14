@@ -38,6 +38,7 @@ public class BuyMonthlyAuthority extends FixtureBase{
     	channelId = paramMap.get("cId");
     	dbResult1 = MediaMonthlyAuthorityDb.get(custId, channelId);   	
     	masterAccount1 = MasterAccountDB.getUserMasterAccount(custId);
+    	System.out.println("bbbbbb"+masterAccount1);
     	if(masterAccount1.getMasterAccountMoney()<500){//如果账户余额不足，则先设置主账户余额
     		MasterAccountDB.SetUserAccount(custId, "master_account_money");
     		masterAccount1 = MasterAccountDB.getUserMasterAccount(custId);
@@ -69,14 +70,18 @@ public class BuyMonthlyAuthority extends FixtureBase{
         		strategyId = paramMap.get("channelMonthlyStrategyId");
         		strategy = ChannelMonthlyStrategyDb.getChannelMonthlyStrategy(channelId, strategyId);
         		String name = strategy.getName();
-        		int n = 0; //包月的月数
-        		if(name.contains("一")) n=1;
-        		else if(name.contains("三")) n=3;
-        		else if(name.contains("六")) n=6;
-        		else if(name.contains("十二")) n=12;
-        		
         		tmp = df.format(dbResult1.getMonthlyEndTime());
         		String dbMonthlyEndTime1 = Long.toString(df.parse(tmp).getTime());
+        		int n = 0; //包月的月数
+        		if(name.contains("天")){
+        			n = Integer.valueOf(name.replace("天",""));
+        			dataVerifyManager.add(new ExpressionVerify((Long.valueOf(dbMonthlyEndTime)-Long.valueOf(dbMonthlyEndTime1)==86400000l*n)?true:false).setVerifyContent("验证续费后包月到期时间"));
+        		}
+        		
+        		if(name.contains("一个月")) n=1;
+        		else if(name.contains("三个月")) n=3;
+        		else if(name.contains("六个月")) n=6;
+        		else if(name.contains("十二个月")) n=12;      		
         		dataVerifyManager.add(new ExpressionVerify((Long.valueOf(dbMonthlyEndTime)-Long.valueOf(dbMonthlyEndTime1)==2592000000l*n)?true:false).setVerifyContent("验证续费后包月到期时间"));
         	}
         	
@@ -87,10 +92,10 @@ public class BuyMonthlyAuthority extends FixtureBase{
         	String device = paramMap.get("deviceType");
         	MasterAccount masterAccount2 = MasterAccountDB.getUserMasterAccount(custId);
         	if(device.equals("Android")||device.equals("android")){
-        		dataVerifyManager.add(new ExpressionVerify((masterAccount1.getMasterAccountMoney()-masterAccount2.getMasterAccountMoney())==strategy.getAndroid()?true:false).setVerifyContent("验证android包月后账户金额"));
+        		dataVerifyManager.add(new ExpressionVerify((masterAccount1.getMasterAccountMoney()-masterAccount2.getMasterAccountMoney())==strategy.getNewPrice()?true:false).setVerifyContent("验证android包月后账户金额"));
         		dataVerifyManager.add(new ExpressionVerify(masterAccount1.getMasterAccountMoneyIos()==masterAccount2.getMasterAccountMoneyIos()?true:false).setVerifyContent("验证ios包月后账户金额"));
         	}else{
-        		dataVerifyManager.add(new ExpressionVerify((masterAccount1.getMasterAccountMoneyIos()-masterAccount2.getMasterAccountMoneyIos())==strategy.getIos()?true:false).setVerifyContent("验证ios包月后账户金额"));
+        		dataVerifyManager.add(new ExpressionVerify((masterAccount1.getMasterAccountMoneyIos()-masterAccount2.getMasterAccountMoneyIos())==strategy.getNewPrice()?true:false).setVerifyContent("验证ios包月后账户金额"));
         		dataVerifyManager.add(new ExpressionVerify(masterAccount1.getMasterAccountMoney()==masterAccount2.getMasterAccountMoney()?true:false).setVerifyContent("验证android包月后账户金额"));
         	}
         }

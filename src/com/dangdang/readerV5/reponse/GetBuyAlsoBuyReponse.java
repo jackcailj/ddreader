@@ -3,13 +3,12 @@ package com.dangdang.readerV5.reponse;
 import java.util.List;
 
 public class GetBuyAlsoBuyReponse {
-
-	List<BuyMediaList> mediaList;
+	List<MediaList> mediaList;
 	String total;
-	public List<BuyMediaList> getMediaList() {
+	public List<MediaList> getMediaList() {
 		return mediaList;
 	}
-	public void setMediaList(List<BuyMediaList> mediaList) {
+	public void setMediaList(List<MediaList> mediaList) {
 		this.mediaList = mediaList;
 	}
 	public String getTotal() {

@@ -63,7 +63,7 @@ public class GetDigestDetail  extends FixtureBase {
 		ReponseV2<DigestDetailData> reponseResult = getResult();
 		if(reponseResult.getStatus().getCode() == 0){
 			DigestDetail detail = reponseResult.getData().getDigestDetail();
-			String sql = "select is_paper_book, media_id,card_title from media_digest where id="+digestId+" and is_show=1";
+			String sql = "select is_paper_book, media_id,card_title,is_support_reward from media_digest where id="+digestId+" and is_show=1";
 			Map<String,Object>  map1 = DbUtil.selectOne(Config.YCDBConfig, sql);
 			dataVerifyManager.add(new ValueVerify<String>(detail.getMediaId(), map1.get("media_id").toString()));
 			dataVerifyManager.add(new ValueVerify<String>(detail.getCardTitle(), map1.get("card_title").toString()));
@@ -124,7 +124,12 @@ public class GetDigestDetail  extends FixtureBase {
 				if(e.getMessage().contains("没有频道")){
 					dataVerifyManager.add(new ValueVerify(reponseResult.getData().getChannel().getChannelTitle(), null, false));
 				}
-			}		
+			}
+			
+			//验证是否支持打赏  1:打赏 0:不打赏（支持打赏类型 1:翻篇儿; 2:抢先读; 3:频道; ;5:攻略）
+			
+			
+			
 			//验证isPraise
 			try{
 				sql = "SELECT * from praise_info where target_id="+digestId+" and user_id="+login.getCustId();

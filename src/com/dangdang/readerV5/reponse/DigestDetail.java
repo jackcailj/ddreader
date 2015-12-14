@@ -12,7 +12,14 @@ public class DigestDetail extends DigestList{
 	int topCnt;
 	int clickCnt;
 	int isPraise;
+	int isSupportReward;
 	
+	public int getIsSupportReward() {
+		return isSupportReward;
+	}
+	public void setIsSupportReward(int isSupportReward) {
+		this.isSupportReward = isSupportReward;
+	}
 	public String getAlreayMark(){
 		return alreayMark;
 	}

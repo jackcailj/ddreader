@@ -169,12 +169,7 @@ public class BookStoreTestEvnSQL extends BookStoreCommSQL{
 		return sale_id;
 	}
 	
-	//模拟后台，删除xx栏目下所有数据
-	public static void delColumnAllData(String columnCode) throws Exception{
-		String delSQL = "DELETE FROM `media_column_content` WHERE column_code='" +columnCode + "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, delSQL);
-		refreshCache();
-	}
+
 	
 	//随机返回xx栏目下一条数据
 	public static int getRand(String columnCode) throws Exception{
@@ -203,61 +198,7 @@ public class BookStoreTestEvnSQL extends BookStoreCommSQL{
 	}
 	
 	
-	//模拟后台，下架某本书
-	public static int setShelfStatusWithColumncode(String columncode) throws Exception{
-		int sale_id = getRand(columncode);
-		String updateSQL = "UPDATE `media_sale` SET shelf_status=0 WHERE sale_id= "+ sale_id;
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		refreshCache();
-		return sale_id;
-	}
-	
-	//模拟后台，上架某本书
-	public static int setShelfStatusWithSaleid(int saleid) throws Exception{
-		String updateSQL = "UPDATE `media_sale` SET shelf_status=1 WHERE sale_id= "+ saleid;
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		refreshCache();
-		return saleid;
-	}
-	
-	//模拟后台，设置书为强制有效
-	public static int setEffective(String columnCode) throws Exception{
-		setNormal(columnCode);
-		int sale_id = getRand(columnCode);
-		String updateSQL = "UPDATE media_column_content SET status=1 WHERE sale_id="+ sale_id +" and column_code='" +columnCode+ "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		refreshCache();
-		return sale_id;
-	}
 
-	//模拟后台，设置书为强制无效
-	public static int setInvalidWithColumncode(String columncode) throws Exception{
-		int sale_id = getRand(columncode);
-		String updateSQL = "UPDATE media_column_content SET status=0 WHERE sale_id="+ sale_id +" and column_code='" +columncode+ "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		refreshCache();
-		return sale_id;
-	}
-	
-	//模拟后台，设置书为正常显示
-	public static void setNormal(String columncode) throws Exception{
-		String updateSQL = "UPDATE media_column_content SET status=2 WHERE column_code='" +columncode+ "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		refreshCache();
-	}
-	
-	//模拟后台，设置书的有效期
-	public static int setEffectiveWithColumncode(String columncode) throws Exception{
-		int sale_id = getRand(columncode);
-		String updateSQL = "UPDATE media_column_content " +
-				"SET end_date=DATE_ADD(now(),INTERVAL 2 MINUTE) " +
-				"WHERE sale_id="+ sale_id +" and column_code='" +columncode+ "'";
-		DbUtil.executeUpdate(Config.YCDBConfig, updateSQL);
-		refreshCache();
-		Thread.sleep(12000);
-		return sale_id;
-	}
-	
 	//返回最高排序值
 	public static int setSortWithColumncode(String columncode) throws Exception{
 		//setNormal(columncode);

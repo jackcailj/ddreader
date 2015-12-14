@@ -6,6 +6,7 @@ import java.util.Map;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.ChannelOwner;
+import com.dangdang.ucenter.meta.LoginRecord;
 
 /**
  * 
@@ -44,6 +45,19 @@ public class ChannelOwnerDb {
     		return infos.get(n).get("cust_id").toString();
     	}
     }
+    
+	//根据custId获取登录记录信息
+	public static ChannelOwner getChannelOwner(String custId) throws Exception{
+		String selectSQL = "SELECT * FROM `channel_owner` WHERE cust_id="+custId;
+		List<ChannelOwner> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, ChannelOwner.class);
+		ChannelOwner owner = null;
+		try{
+			owner = infos.get(0);
+		}catch(Exception e){
+			System.out.println("在表channel_owner中未搜索到记录custId="+custId);
+		}
+		return owner;
+	}
     
     public static void main(String[] args){
     	try {

@@ -17,7 +17,6 @@ import com.dangdang.enumeration.ChannelId;
 /**
  * 
  * @author guohaiying
- *
  */
 public class GetChannelIdParse implements IParamParse{
 
@@ -42,8 +41,10 @@ public class GetChannelIdParse implements IParamParse{
 			}else if(cId.equals(ChannelId.IfAllowMonthly.toString())){ 
 				if(flag.equals("0")) //不支持包月的频道
 					cIdValue = ChannelMonthlyStrategyDb.getNoMonthlyStrategyChannel();
-				else if(flag.equals("1")) //支持包月的频道
+				else if(flag.equals("1")) //支持包月的频道，channelMonthlyStrategyId没有达到用户的最大包月次数  
 					cIdValue = ChannelMonthlyStrategyDb.getMonthlyStrategyChannel();
+				else if(flag.equals("2")) //支持包月的频道，channelMonthlyStrategyId达到用户的最大包月次数
+					//cIdValue = 
 				paramMap.put(key, cIdValue);
 			}else if(cId.equals(ChannelId.IfAlreadyMonthly.toString())&&flag.equals("0")){ //支持包月，0未包月的频道(注意验证到期时间)
 				custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));

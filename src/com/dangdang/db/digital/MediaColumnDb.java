@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
+import com.dangdang.digital.meta.MediaColumn;
 
 /**
  * @author guohaiying
@@ -51,15 +52,16 @@ public class MediaColumnDb {
 
 	//获取频道栏目基本信息
 	//ChannelColumn.java used
-    public static String getColumnName(String columnCode) throws Exception {          
+    public static MediaColumn getMediaColumn(String columnCode) throws Exception {          
     	String selectSQL = "SELECT name FROM media_column WHERE column_code='"+columnCode+"'";
-		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
-		return infos.get(0).get("name").toString();
+		List<MediaColumn> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, MediaColumn.class);
+		if(infos.size()==0) return null;
+		else return infos.get(0);
     }
     
 
 	public static void main(String[] args) throws Exception{
-		String s = MediaColumnDb.getColumnName("all_rec_pdzbtj");
-		System.out.println(s);
+		//String s = MediaColumnDb.getColumnName("all_rec_pdzbtj");
+		//System.out.println(s);
 	}
 }

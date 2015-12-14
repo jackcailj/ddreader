@@ -44,8 +44,14 @@ public class ChannelDb {
     //Channel.java used
     public static Channel getChannel(String channelId) throws Exception { 
     	String selectSQL = "SELECT * FROM `channel` WHERE channel_id="+channelId;
-    	List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Channel.class);	
-        return infos.get(0);
+    	List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Channel.class); 
+    	Channel channel=null;
+    	try{
+    		channel= infos.get(0);
+    	}catch(Exception e){
+    		System.out.println("在表channel中未搜索到频道： "+channelId);
+    	}
+		return channel;
     }
 	
 	//获取某栏目下的频道列表
@@ -247,9 +253,11 @@ public class ChannelDb {
 	
 	//Recommendarticle.java used
 	public static List<Channel> getRelatedChannel(String channelId, int num) throws Exception{
+		List<String> list = CommentTargetCountDb.getRelatedChannel(channelId);
+		if(list.size()==0) return null;
 		String selectSQL = "SELECT * FROM `channel` " +
 				" WHERE  shelf_status=1 " +
-				" AND channel_id IN "+SqlUtil.getListToString(CommentTargetCountDb.getRelatedChannel(channelId))+
+				" AND channel_id IN "+SqlUtil.getListToString(list)+
 				" ORDER BY sub_number DESC LIMIT "+num;
 		List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, Channel.class);
 		return infos;
@@ -274,15 +282,7 @@ public class ChannelDb {
 	}
     
     public static void main(String[] args) throws Exception{
-//    	List<BookList> list = new ArrayList<BookList>();
-    	//ChannelSQL.getChannelColumn("all_interface_test");
-    //	String s = ChannelSQL.getChannelIsSub("50098052");
-   	  // System.out.println(s);
-//    	System.out.println(list.size());
-//    	BookList b = list.get(0);
-//    	System.out.println(b.getBooklist_id());
-    	ConfigCore.setEnvironment(TestEnvironment.ONLINE);
-    	String s = ChannelDb.getCustIdByChannelId("1169");
+    	Channel s = ChannelDb.getChannel("1169");
     	System.out.println(s);
     }
 	

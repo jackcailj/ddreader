@@ -19,7 +19,7 @@ public class ChannelMonthlyStrategyDb {
 	//根据频道Id获取 频道的包月策略
 	//IChannelApiDubbo.java used
 	public static List<ChannelMonthlyStrategy> getChannelMonthlyStrategy(String channelId) throws Exception{	
-		String selectSQL = "SELECT id, type*1 as type, name, android, ios,original_price,channel_id " +
+		String selectSQL = "SELECT id, type*1 as type, name, android, ios,original_price,channel_id,platform,new_price,max_times,strategy_days " +
 			"FROM `channel_monthly_strategy` " +
 			"WHERE channel_id="+channelId+" ORDER BY id";
 		List<ChannelMonthlyStrategy> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL,ChannelMonthlyStrategy.class);		
@@ -31,7 +31,7 @@ public class ChannelMonthlyStrategyDb {
 	//IChannelApiDubbo.java used
 	public static ChannelMonthlyStrategy getChannelMonthlyStrategy(String channelId, String strategyId) throws Exception{	
 		int _strategyId = Integer.valueOf(strategyId);
-		String selectSQL = "SELECT id, type*1 as type, name, android, ios,original_price,channel_id " +
+		String selectSQL = "SELECT id, type*1 as type, name, android, ios,original_price,channel_id ,platform,new_price,max_times,strategy_days" +
 			" FROM `channel_monthly_strategy` " +
 			" WHERE channel_id="+channelId +
 			" AND id = "+_strategyId;
@@ -48,9 +48,9 @@ public class ChannelMonthlyStrategyDb {
 				"FROM `channel_monthly_strategy`" +
 				"WHERE channel_id IN(SELECT channel_id " +
 				"FROM channel " +
-				"WHERE shelf_status =1 AND is_completed=1 AND is_allow_monthly=1) LIMIT 1";
+				"WHERE shelf_status =1 AND is_completed=1 AND is_allow_monthly=1)";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
-		return infos.get(0).get("channel_id").toString();
+		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
 	}
 	
 	//随机获取一个没有配置包月策略的频道
@@ -61,12 +61,10 @@ public class ChannelMonthlyStrategyDb {
 				"FROM channel " +
 				"WHERE shelf_status =1 AND is_completed=1 AND is_allow_monthly=0 AND channel_id NOT IN(" +
 				"SELECT channel_id " +
-				"FROM channel_monthly_strategy) LIMIT 1";
+				"FROM channel_monthly_strategy)";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);		
 		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
 	}
-	
-
 	
 	//获取支持包月且已下线的频道
 	//GetChannelIdParse.java used
@@ -81,8 +79,12 @@ public class ChannelMonthlyStrategyDb {
 	
 		
 	public static void main(String[] args) throws Exception{
-		String s= ChannelMonthlyStrategyDb.getMonthlyAndOfflineChannel();
-		System.out.println(s);
+		ChannelMonthlyStrategy aa = ChannelMonthlyStrategyDb.getChannelMonthlyStrategy("17", "238");
+		String name = aa.getName();
+		if(name.contains("天"))
+			name = name.replace("天", "");
+		System.out.println(Integer.valueOf(name));
+		
 	}
 
 }

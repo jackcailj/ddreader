@@ -27,12 +27,13 @@ public class CommentTargetCountDb {
 	}
 	
 	//获取频道  频道文章推荐接口
-	public static List<CommentTargetCount> get2(String id) throws Exception{
+	//type文章类型  3:频道; 5:攻略
+	public static List<CommentTargetCount> get2(String id, int type) throws Exception{
 		String selectSQL = "SELECT a.* " +
 				" FROM `comment_target_count` a,tag_relation b " +
 				" WHERE a.target_id=b.source_id " +
 				" AND a.target_source=4000 " +
-				" AND a.target_id IN " +SqlUtil.getListToString(MediaDigestDb.getDigest(3))+
+				" AND a.target_id IN " +SqlUtil.getListToString(MediaDigestDb.getDigest(type))+
 				" AND b.tag_id IN " +SqlUtil.getListToString(TagRelationDb.getTargets(5000,id))+
 				" AND b.recommend_status=0"+
 				" ORDER BY praise_count DESC ";// +
@@ -76,6 +77,20 @@ public class CommentTargetCountDb {
 			list.add(infos.get(i).get("source_id").toString());
 		}
 		return list;
+	}
+	
+	//根据targetId和targetSource获取记录
+	public static CommentTargetCount getCommentTargetCount(String targetId, String targetSource) throws Exception{
+		String selectSQL = "SELECT * FROM `comment_target_count` WHERE target_id="+targetId+" AND target_source="+targetSource;
+		List<CommentTargetCount> infos = DbUtil.selectList(Config.BSAECOMMENT, selectSQL, CommentTargetCount.class);
+		CommentTargetCount count = null;
+		try{
+			count = infos.get(0);
+		}catch(Exception e){
+			System.out.println("targetId："+targetId+" targetSource："+targetSource+"记录为空");
+		}
+		return count;
+	
 	}
 	
 

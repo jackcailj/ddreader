@@ -40,7 +40,7 @@ public class ChannelColumn extends FixtureBase{
         	String columnType = paramMap.get("columnType");
         	//验证 name 
         	String actualName = jsonResult.getData().getName();
-        	String expectedName = MediaColumnDb.getColumnName(columnType);
+        	String expectedName = MediaColumnDb.getMediaColumn(columnType).getName();
         	dataVerifyManager.add(new ValueVerify<String>(actualName.replace("•",""), expectedName.replace("?","")).setVerifyContent("验证栏目name"));   	       	      	
         	
         	//验证 channelId title subNumber icon description

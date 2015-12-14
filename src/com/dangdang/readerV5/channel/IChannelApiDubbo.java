@@ -37,7 +37,8 @@ public class IChannelApiDubbo extends FixtureBase{
 	public Channel getChannel(String channelId){
 		this.channelId = channelId;
 		Long _channelId = Long.valueOf(channelId);
-		channel = iChannelApi.getChannel(_channelId);
+		channel =iChannelApi.getChannel(_channelId);
+		//channel = iChannelApi.getChannel(_channelId, null, 1).listId;
 		if(channel==null) 
 			return null;
 		else 
@@ -58,7 +59,10 @@ public class IChannelApiDubbo extends FixtureBase{
 					dataVerifyManager.add(new ValueVerify<Long>(strategy.get(i).getAndroid(), list.get(i).getAndroid()).setVerifyContent("验证Android"));
 					dataVerifyManager.add(new ValueVerify<Long>(strategy.get(i).getIos(), list.get(i).getIos()).setVerifyContent("验证Ios"));
 					dataVerifyManager.add(new ValueVerify<Long>(strategy.get(i).getOriginalPrice(), list.get(i).getOriginalPrice()).setVerifyContent("验证OriginalPrice"));
-					
+					//dataVerifyManager.add(new ValueVerify<Integer>(strategy.get(i).getPlatform(), list.get(i).getPlatform()).setVerifyContent("验证Platform"));
+					//dataVerifyManager.add(new ValueVerify<Long>(strategy.get(i).getNewPrice(), list.get(i).getNewPrice()).setVerifyContent("验证NewPrice"));
+					//dataVerifyManager.add(new ValueVerify<Integer>(strategy.get(i).getMaxTimes(), list.get(i).getMaxTimes()).setVerifyContent("验证MaxTimes"));
+					//dataVerifyManager.add(new ValueVerify<Integer>(strategy.get(i).getStrategyDays(), list.get(i).getStrategyDays()).setVerifyContent("验证StrategyDays"));
 				}
 			}
 			log.info("verifyResult()验证结果："+ dataVerifyManager.dataVerify());
@@ -88,6 +92,10 @@ public class IChannelApiDubbo extends FixtureBase{
 		System.out.println("aaaaaachannel "+ c.getChannelMonthlyStrategies().get(0).getIos());
 		System.out.println("aaaaaachannel "+ c.getChannelMonthlyStrategies().get(0).getOriginalPrice());
 		System.out.println("aaaaaachannel "+ c.getChannelMonthlyStrategies().get(0).getChannelId());
+		System.out.println("aaaaaachannel "+ c.getChannelMonthlyStrategies().get(0).getPlatform());
+		System.out.println("aaaaaachannel "+ c.getChannelMonthlyStrategies().get(0).getNewPrice());
+		System.out.println("aaaaaachannel "+ c.getChannelMonthlyStrategies().get(0).getMaxTimes());
+		System.out.println("aaaaaachannel "+ c.getChannelMonthlyStrategies().get(0).getStrategyDays());
 		boolean b = false;
 		try {
 			b = ic.verifyResult();
