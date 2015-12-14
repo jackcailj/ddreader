@@ -23,6 +23,28 @@ public class MediaChapterDb {
         List<MediaChapter> chapters = DbUtil.selectList(Config.YCDBConfig,selectString,MediaChapter.class);
         return chapters;
     }
+    
+    public static MediaChapter getEndChapter(String mediaId, GetChapterEnum status, String startId) throws Exception {
+        String selectString="select * from media_chapter where media_id="+mediaId;
+        if(status==GetChapterEnum.FREE_LAST){
+            selectString+=" and is_free=1 and id>"+startId+" ORDER BY id desc limit 1";
+        }
+        else if(status==GetChapterEnum.FU_FEI_LAST){
+            selectString += " and is_free=0 and id>"+startId+"  ORDER BY id desc limit 1";
+        }
+        else if(status==GetChapterEnum.FREE){
+            selectString += " and is_free=1 and id>"+startId+"  limit 1";
+        }
+        else if(status==GetChapterEnum.FU_FEI){
+            selectString += " and is_free=0 and id>"+startId+" limit 1";
+        }
+        else{
+            throw new Exception(status+"没有处理");
+        }
+
+        MediaChapter chapters = DbUtil.selectOne(Config.YCDBConfig,selectString,MediaChapter.class);
+        return chapters;
+    }
 
     public static MediaChapter getBookChapter(String mediaId, GetChapterEnum status) throws Exception {
         String selectString="select * from media_chapter where media_id="+mediaId;
@@ -33,7 +55,7 @@ public class MediaChapterDb {
             selectString += " and is_free=0  ORDER BY id desc limit 1";
         }
         else if(status==GetChapterEnum.FREE){
-            selectString += " and is_free=1 ORDER BY  limit 1";
+            selectString += " and is_free=1 limit 1";
         }
         else if(status==GetChapterEnum.FU_FEI){
             selectString += " and is_free=0   limit 1";

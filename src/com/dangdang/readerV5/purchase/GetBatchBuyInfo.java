@@ -15,27 +15,17 @@ import com.dangdang.readerV5.reponse.BuyInfoData;
 
 public class GetBatchBuyInfo extends FixtureBase{
 	ReponseV2<BuyInfoData>   reponseResult;
-	static String chapterId = null;
+	String chapterId = null;
 	 
 	public ReponseV2<BuyInfoData> getResult(){
 		return reponseResult=JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<BuyInfoData>>(){});
 	}
 	
 	@Override
-	public void setParameters(Map<String, String> params) throws Exception {
-		super.setParameters(params);
-		if(chapterId==null){
-			List<MediaChapter> chapters = MediaChapterDb.GetMediaChapter();
-			chapterId = chapters.get((new Random()).nextInt(chapters.size())).getId().toString();
-			paramMap.put("chapterId", chapterId);
-		}	
-		
-	}
-	
-	@Override
 	public void dataVerify(String expectedCode) throws Exception {
 		reponseResult = getResult();
 		if(reponseResult.getStatus().getCode() == 0){	
+			chapterId = paramMap.get("chapterId").toString();
 			List<MediaChapter> ch = MediaChapterDb.GetBookChapterLast(chapterId);
 			String endId = Long.toString(ch.get(Integer.parseInt(paramMap.get("chapterCount").toString())-1).getId());
 			long price = MediaChapterDb.GetSumOfChapters(chapterId, endId);
