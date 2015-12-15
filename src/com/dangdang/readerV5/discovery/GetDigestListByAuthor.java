@@ -17,7 +17,7 @@ public class GetDigestListByAuthor extends GetDigestListBySign{
 	public void setParameters(Map<String, String> params) throws Exception {
 		parseParameters(params);
 		Date date = new Date();
-		String sql = "SELECT author_id FROM `media_digest_author` ORDER BY rand() limit 1";
+		String sql = "SELECT author_id FROM `media_digest_author` limit 1";
 		authorId = DbUtil.selectOne(Config.YCDBConfig, sql).get("author_id").toString();
 		if(paramMap.get("authorId")!=null&&paramMap.get("authorId").equals("FromDB")){
 			paramMap.put("authorId", authorId);

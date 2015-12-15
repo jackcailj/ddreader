@@ -31,7 +31,7 @@ public class GetDigestListBySign  extends FixtureBase {
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);
 		Date date = new Date();
-		String sql = "SELECT sign_id FROM `media_digest_lable` ORDER BY rand() limit 1";
+		String sql = "SELECT sign_id FROM `media_digest_lable` limit 1";
 		signId = DbUtil.selectOne(Config.YCDBConfig, sql).get("sign_id").toString();
 		if(paramMap.get("signId")!=null&&paramMap.get("signId").equals("FromDB")){
 			paramMap.put("signId", signId);

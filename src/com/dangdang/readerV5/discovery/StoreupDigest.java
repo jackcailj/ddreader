@@ -33,7 +33,7 @@ public class StoreupDigest extends FixtureBase{
 	
 	String digestId;
 	public void setParameters(Map<String, String> params) throws Exception {
-		String sql = "SELECT id FROM `media_digest` ORDER BY rand() limit 1";
+		String sql = "SELECT id FROM `media_digest` limit 1";
 		digestId = DbUtil.selectOne(Config.YCDBConfig, sql).get("id").toString();
 		if(params.get("digestIds").equals("FromDB")){
 			params.put("digestIds", digestId);

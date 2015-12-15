@@ -17,7 +17,7 @@ public class GetDigestListByMood extends GetDigestListBySign{
 	public void setParameters(Map<String, String> params) throws Exception {
 		parseParameters(params);
 		Date date = new Date();
-		String sql = "SELECT mood FROM `media_digest` where mood is not null ORDER BY rand() limit 1";
+		String sql = "SELECT mood FROM `media_digest` where mood is not null limit 1";
 		mood = DbUtil.selectOne(Config.YCDBConfig, sql).get("mood").toString();
 		if(paramMap.get("mood")!=null&&paramMap.get("mood").equals("FromDB")){
 			paramMap.put("mood", mood);

@@ -48,7 +48,7 @@ public class DelComment extends FixtureBase{
 			String sql = "select target_id, comment_id from comment where is_delete=0 and status=1 "
 					   + "and target_source="+params.get("targetSource")+
 					   " and target_id in (select id from digital.media_digest where is_show=1 and is_del=0)"
-					   + " ORDER BY RAND() limit 1";
+					   + " limit 1";
 			Map<String, Object> map = DbUtil.selectOne(Config.BSAECOMMENT, sql);
 			targetId = map.get("target_id").toString();
 			params.put("targetId",targetId);

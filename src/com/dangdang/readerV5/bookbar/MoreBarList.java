@@ -30,8 +30,7 @@ public class MoreBarList extends FixtureBase {
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
 		if(params.get("barModuleId")!=null&&params.get("barModuleId").toString().equalsIgnoreCase("FromDB")){
-			String sql = "select * from bar_module where status=1 and (type=1 or type=3) order by rand() limit 1";
-			//TODO remove order by rand, will do other updates
+			String sql = "select * from bar_module where status=1 and (type=1 or type=3) limit 1";
 			BarModule bModule = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, BarModule.class);
 			moduleId = bModule.getBarModuleId().toString();
 			params.put("barModuleId", moduleId);
