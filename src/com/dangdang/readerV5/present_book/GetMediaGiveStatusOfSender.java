@@ -61,7 +61,7 @@ public class GetMediaGiveStatusOfSender extends FixtureBase{
                 Media media= MediaDb.getMedia(detail.getMediaId().toString());
                 MediaInfoPacket mediaInfoPacket=new MediaInfoPacket();
                 mediaInfoPacket.setAuthorPenname(media.getAuthorPenname());
-                mediaInfoPacket.setDescs(media.getDescs());
+                //mediaInfoPacket.setDescs(media.getDescs());
                 mediaInfoPacket.setMediaId(media.getMediaId());
                 mediaInfoPacket.setSaleId(media.getSaleId());
                 mediaInfoPacket.setTitle(media.getTitle());

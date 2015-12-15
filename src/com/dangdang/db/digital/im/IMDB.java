@@ -31,7 +31,7 @@ public class IMDB {
                 "        m.title,\n" +
                 "        m.sale_id as saleId,\n" +
                 "        m.media_id as mediaId,\n" +
-                "        m.descs as 'desc',\n" +
+                //"        m.descs as 'desc',\n" +
                 "        UNIX_TIMESTAMP(mgd.get_date)*1000 as getDate \n" +
                 "    from\n" +
                 "        media_give_detail mgd \n" +
