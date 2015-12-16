@@ -5,10 +5,11 @@ import com.dangdang.digital.meta.Media;
 /**
  * Created by cailianjie on 2015-8-3.
  */
-public class UserBookMedia extends Media{
+public class UserBookMedia {
+    Long mediaId;
     short isHide;
     String relationType;
-    Integer authorityType;
+    short authorityType;
 
     public short getIsHide() {
         return isHide;
@@ -26,11 +27,19 @@ public class UserBookMedia extends Media{
         this.relationType = relationType;
     }
 
-    public Integer getAuthorityType() {
+    public short getAuthorityType() {
         return authorityType;
     }
 
-    public void setAuthorityType(Integer authorityType) {
+    public void setAuthorityType(short authorityType) {
         this.authorityType = authorityType;
+    }
+
+    public Long getMediaId() {
+        return mediaId;
+    }
+
+    public void setMediaId(Long mediaId) {
+        mediaId = mediaId;
     }
 }
