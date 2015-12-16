@@ -42,7 +42,7 @@ public class UserAttendActivityReward extends FixtureBase{
 	    }
 	    if(paramMap.get("attachAccountActivityId").equalsIgnoreCase("FromDB")){
 	    	String sql = "SELECT * FROM attach_account_activity where channel_id=39000 "
-		    		   + "and activity_status=1 and item_type='"+itemType+"' order by rand() limit 1";
+		    		   + "and activity_status=1 and item_type='"+itemType+"' limit 1";
 		    Map<String,Object> map = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql);
 		    id = map.get("attach_account_activity_id").toString();
 		    code = map.get("activity_code").toString();

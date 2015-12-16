@@ -24,7 +24,7 @@ public class GetTagContentList extends FixtureBase {
 	public void setParameters(Map<String, String> params) throws Exception {
 		super.setParameters(params);	
 		sbuStr = null;
-		String sql = "SELECT * from tag_relation where target_source in (1000,4000,5000,6000) and recommend_status=1 order by rand() limit 3";
+		String sql = "SELECT * from tag_relation where target_source in (1000,4000,5000,6000) and recommend_status=1 limit 3";
 		if(paramMap.get("tagIds")!=null&&paramMap.get("tagIds").equalsIgnoreCase("One")){
 			String tagId = DbUtil.selectList(Config.BSAECOMMENT, sql).get(0).get("tag_id").toString();	
 			paramMap.put("tagIds",tagId);
