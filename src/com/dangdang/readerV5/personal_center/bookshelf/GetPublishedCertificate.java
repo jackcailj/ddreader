@@ -24,6 +24,7 @@ public class GetPublishedCertificate extends FixtureBase{
         paramMap.put("refAction",refAction);
         paramMap.put("key","MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAIJmES+jLfd54XNtju0wqJ4izofemTchm6x1PkpJCtR/FYEXYS2oxba32tjHcyhp0nl96ooe9TzA7WSeT4B6vNcCAwEAAQ==");
 
+
     }
 
 

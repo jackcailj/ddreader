@@ -63,7 +63,7 @@ public class CloudSyncSql {
     获取笔记数量
      */
     public static Integer getPersonalNoteCount(String custId) throws Exception {
-        String selectString="select count(*) as count from cloud_book_note where cust_id="+custId+" and status=1";
+        String selectString="select count(*) as count from cloud_book_note where cust_id="+custId+" and status in(1,2)";
         Map<String,Object> result= DbUtil.selectOne(Config.BSAECOMMENT, selectString);
         return Integer.parseInt(result.get("count").toString());
     }

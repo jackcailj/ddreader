@@ -6,7 +6,9 @@ import com.dangdang.digital.meta.Media;
  * Created by cailianjie on 2015-8-3.
  */
 public class UserBookMedia {
+
     Long mediaId;
+    Long saleId;
     short isHide;
     String relationType;
     short authorityType;
@@ -40,6 +42,14 @@ public class UserBookMedia {
     }
 
     public void setMediaId(Long mediaId) {
-        mediaId = mediaId;
+        this.mediaId = mediaId;
+    }
+
+    public Long getSaleId() {
+        return saleId;
+    }
+
+    public void setSaleId(Long saleId) {
+        this.saleId = saleId;
     }
 }

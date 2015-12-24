@@ -13,7 +13,7 @@ public class DownloadMediaWhole extends FixtureBase{
     @Override
     protected void parseParam() throws Exception {
         //获取证书
-        GetPublishedCertificate getPublishedCertificate = new GetPublishedCertificate(login,paramMap.get("mediaId"),paramMap.get("isFull"),"");
+        GetPublishedCertificate getPublishedCertificate = new GetPublishedCertificate(login,paramMap.get("mediaId"),paramMap.get("isFull"),"browse");
         getPublishedCertificate.doWork();
     }
 }
