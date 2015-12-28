@@ -86,19 +86,7 @@ public class MyBarList extends FixtureBase {
 				}
 				
 			}
-			List<Map<String,String>> list1 = new ArrayList<Map<String,String>>();
-			List<Map<String,String>> list2 = new ArrayList<Map<String,String>>();
-			for(int i=0; i<barSize; i++){
-				Map<String,String> map1 = new HashMap<String,String>();
-				Map<String,String> map2 = new HashMap<String,String>();
-				map1.put("barId", barList.get(i).getBarId().toString());
-				map1.put("barName", barList.get(i).getBarName().toString());
-				map2.put("barId", reponseResult.getData().getBarList().get(i).getBarId().toString());
-				map2.put("barName", reponseResult.getData().getBarList().get(i).getBarName().toString());
-				list1.add(map1);
-				list2.add(map2);
-			}
-			dataVerifyManager.add(new ListVerify(list1, list2,false));
+
 			super.dataVerify();
 		}
 		else{

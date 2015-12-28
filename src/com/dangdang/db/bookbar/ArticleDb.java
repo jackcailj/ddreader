@@ -18,7 +18,7 @@ public class ArticleDb {
 	 */
 	public static List<Article> getArticle(String show, String del, String type, String custId) throws Exception{
 		String sql = "select * from article where is_show="+show+" and is_del="+del+" and type="+type+
-				      (custId.equals("null")?"":" and cust_id="+custId);
+				      (custId.equals("null")?"":" and cust_id="+custId)+ " limit 2";
 		List<Article> article = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Article.class);
 		return article;
 	}

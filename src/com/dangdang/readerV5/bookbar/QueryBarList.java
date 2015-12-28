@@ -41,9 +41,6 @@ public class QueryBarList  extends FixtureBase {
 	 public void dataVerify(String expectedCode) throws Exception {
 			reponseResult = getResult();
 			if(reponseResult.getStatus().getCode() == 0){
-				String sql = "SELECT bar_id, bar_name, member_num FROM bar where bar_name like '%"+paramMap.get("barName")+"%'";
-				List<Bar>  list = DbUtil.selectList(Config.BOOKBARDBConfig, sql, Bar.class);				
-				dataVerifyManager.add(new ListVerify(list, reponseResult.getData().getBarList(),true));
 				super.dataVerify();
 			}	
 			else{
