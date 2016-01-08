@@ -65,7 +65,7 @@ public class QueryArticleInfo  extends FixtureBase{
 			list1.add(digest.get("bar_id").toString());
 			list1.add(userInfo!=null?userInfo.get("cust_nickname").toString().split("@")[0]:null);
 			list1.add(mediaDigestId);
-			list1.add(!(digest.get("title")==null||digest.get("title").toString().isEmpty())?digest.get("title").toString():null);
+			list1.add(!(digest.get("title")==null)?digest.get("title").toString():null);
 			
 			try{
 				CommentTargetCount count = DbUtil.selectOne(Config.BSAECOMMENT, 
