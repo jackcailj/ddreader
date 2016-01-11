@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-10 10:06:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="DefaultImage" table="default_image" catalog="bookbar">
+        <id name="defaultImageId" type="java.lang.Long">
+            <column name="default_image_id" />
+            <generator class="identity" />
+        </id>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>&#192;&#224;&#208;&#205;&#163;&#168;1.&#176;&#201;&#177;&#179;&#190;&#176;&#205;&#188;&#198;&#172;
+                2.&#181;&#177;&#181;&#177;&#182;&#193;&#202;&#233;&#211;&#195;&#187;&#167;&#177;&#179;&#190;&#176;&#205;&#183;&#207;&#241;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="imgUrl" type="string">
+            <column name="img_url" length="128" not-null="true">
+                <comment>&#205;&#188;&#198;&#172;&#181;&#216;&#214;&#183;</comment>
+            </column>
+        </property>
+        <property name="sort" type="java.lang.Integer">
+            <column name="sort">
+                <comment>&#197;&#197;&#208;&#242;</comment>
+            </column>
+        </property>
+        <property name="status" type="byte">
+            <column name="status" not-null="true">
+                <comment>&#215;&#180;&#204;&#172;&#163;&#168;1.&#207;&#212;&#202;&#190; 2.&#198;&#193;&#177;&#206;&#163;&#169;</comment>
+            </column>
+        </property>
+        <property name="creator" type="java.lang.Long">
+            <column name="creator">
+                <comment>&#180;&#180;&#189;&#168;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19">
+                <comment>&#180;&#180;&#189;&#168;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedUser" type="java.lang.Long">
+            <column name="last_modified_user">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#211;&#195;&#187;&#167;</comment>
+            </column>
+        </property>
+        <property name="lastModifiedDate" type="timestamp">
+            <column name="last_modified_date" length="19">
+                <comment>&#215;&#238;&#186;&#243;&#208;&#222;&#184;&#196;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

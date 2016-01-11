@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-10 10:06:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="ArticleItems" table="article_items" catalog="bookbar">
+        <id name="articleItemsId" type="java.lang.Long">
+            <column name="article_items_id" />
+            <generator class="identity" />
+        </id>
+        <property name="mediaDigestId" type="long">
+            <column name="media_digest_id" not-null="true">
+                <comment>&#204;&#249;&#215;&#211;ID</comment>
+            </column>
+        </property>
+        <property name="imageUrl" type="string">
+            <column name="image_url" length="100">
+                <comment>&#205;&#188;&#198;&#172;url</comment>
+            </column>
+        </property>
+        <property name="itemDesc" type="string">
+            <column name="item_desc" length="100">
+                <comment>&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="voteCount" type="java.lang.Integer">
+            <column name="vote_count">
+                <comment>&#198;&#177;&#202;&#253;</comment>
+            </column>
+        </property>
+        <property name="versionNo" type="java.lang.Integer">
+            <column name="version_no">
+                <comment>&#188;&#199;&#194;&#188;&#176;&#230;&#177;&#190;&#186;&#197;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
