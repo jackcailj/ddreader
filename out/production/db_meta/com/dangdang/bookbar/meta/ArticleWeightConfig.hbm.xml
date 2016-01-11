@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-10 10:06:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="ArticleWeightConfig" table="article_weight_config" catalog="bookbar">
+        <id name="articleWeightConfigId" type="java.lang.Long">
+            <column name="article_weight_config_id" />
+            <generator class="identity" />
+        </id>
+        <property name="configCode" type="string">
+            <column name="config_code" length="32" not-null="true">
+                <comment>&#197;&#228;&#214;&#195;&#207;&#238;CODE</comment>
+            </column>
+        </property>
+        <property name="configDesc" type="string">
+            <column name="config_desc" length="128">
+                <comment>&#197;&#228;&#214;&#195;&#195;&#232;&#202;&#246;</comment>
+            </column>
+        </property>
+        <property name="weight" type="big_decimal">
+            <column name="weight" precision="10" not-null="true">
+                <comment>&#200;&#168;&#214;&#216;&#183;&#214;&#202;&#253;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - @10.255.223.243" uuid="586824df-3492-4fdb-95b0-bd46c9d854ed">
-      <secret-storage>master_key</secret-storage>
-      <user-name>cmsuser</user-name>
-      <schema-pattern>digital.*</schema-pattern>
-      <default-schemas>account.* digital.* ecmst.* read_1.* ucenter.*</default-schemas>
-    </data-source>
-    <data-source name="SQL Server - @10.255.254.185" uuid="ae88ce93-c49a-4bd7-8844-cc35967ca175">
-      <secret-storage>master_key</secret-storage>
-      <first-sync>true</first-sync>
-      <user-name>writeuser</user-name>
-      <schema-pattern>Cart0.*</schema-pattern>
-      <default-schemas>Cart0.*</default-schemas>
-    </data-source>
+    <data-source name="MySQL - @10.255.223.243" uuid="586824df-3492-4fdb-95b0-bd46c9d854ed" />
+    <data-source name="SQL Server - @10.255.254.185" uuid="ae88ce93-c49a-4bd7-8844-cc35967ca175" />
   </component>
 </project>

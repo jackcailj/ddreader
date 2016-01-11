@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-10 10:06:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="Recommend" table="recommend" catalog="bookbar">
+        <id name="recommendId" type="java.lang.Long">
+            <column name="recommend_id" />
+            <generator class="identity" />
+        </id>
+        <property name="barId" type="long">
+            <column name="bar_id" not-null="true">
+                <comment>bar&#177;&#237;&#214;&#247;&#188;&#252;ID</comment>
+            </column>
+        </property>
+        <property name="recommendDate" type="date">
+            <column name="recommend_date" length="10" not-null="true">
+                <comment>&#187;&#241;&#181;&#195;&#205;&#198;&#188;&#246;&#202;&#253;&#190;&#221;&#202;&#199;&#196;&#196;&#204;&#236;&#181;&#196;</comment>
+            </column>
+        </property>
+        <property name="sourceId" type="long">
+            <column name="source_id" not-null="true">
+                <comment>
+                &#178;&#187;&#205;&#172;&#192;&#224;&#208;&#205;&#214;&#247;&#188;&#252;ID(&#191;&#201;&#196;&#220;&#206;&#170;barId&#187;&#242;&#213;&#223;&#204;&#251;&#215;&#211;Id)</comment>
+            </column>
+        </property>
+        <property name="type" type="byte">
+            <column name="type" not-null="true">
+                <comment>&#205;&#198;&#188;&#246;&#192;&#224;&#208;&#205;(1. &#205;&#198;&#188;&#246;&#176;&#201;
+                2.&#204;&#251;&#215;&#211;&#207;&#234;&#199;&#233;&#210;&#179;&#205;&#198;&#188;&#246; 3.
+                &#202;&#233;&#179;&#199;&#202;&#215;&#210;&#179;,&#200;&#200;&#195;&#197;&#202;&#233;&#176;&#201;)</comment>
+            </column>
+        </property>
+        <property name="sort" type="int">
+            <column name="sort" not-null="true">
+                <comment>&#197;&#197;&#208;&#242;&#183;&#189;&#202;&#189;(1 2 3 4 5 ...&#177;&#237;&#202;&#190;&#197;&#197;&#193;&#208;&#206;&#187;&#214;&#195;; 0
+                &#196;&#172;&#200;&#207;&#206;&#170;&#203;&#230;&#187;&#250;&#209;&#161;&#212;&#241;)</comment>
+            </column>
+        </property>
+        <property name="source" type="byte">
+            <column name="source" not-null="true">
+                <comment>&#184;&#195;&#204;&#245;&#188;&#199;&#194;&#188;&#181;&#196;&#192;&#180;&#212;&#180;(1
+                cms&#186;&#243;&#204;&#168;&#200;&#203;&#185;&#164;&#205;&#198;&#188;&#246;2
+                &#179;&#204;&#208;&#242;&#188;&#198;&#203;&#227;&#179;&#246;&#192;&#180;&#181;&#196;&#205;&#198;&#188;&#246;)</comment>
+            </column>
+        </property>
+        <property name="isDelete" type="byte">
+            <column name="is_delete" not-null="true">
+                <comment>&#202;&#199;&#183;&#241;&#201;&#190;&#179;&#253;:0,&#206;&#180;&#201;&#190;&#179;&#253; ;1 &#210;&#209;&#190;&#173;&#201;&#190;&#179;&#253;</comment>
+            </column>
+        </property>
+        <property name="createDate" type="timestamp">
+            <column name="create_date" length="19" not-null="true">
+                <comment>&#180;&#180;&#189;&#168;&#188;&#199;&#194;&#188;&#181;&#196;&#200;&#213;&#198;&#218;.</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>
