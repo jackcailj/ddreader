@@ -78,11 +78,11 @@ public class BuyMonthlyAuthority extends FixtureBase{
         			dataVerifyManager.add(new ExpressionVerify((Long.valueOf(dbMonthlyEndTime)-Long.valueOf(dbMonthlyEndTime1)==86400000l*n)?true:false).setVerifyContent("验证续费后包月到期时间"));
         		}
         		
-        		if(name.contains("一个月")) n=1;
-        		else if(name.contains("三个月")) n=3;
-        		else if(name.contains("六个月")) n=6;
-        		else if(name.contains("十二个月")) n=12;      		
-        		dataVerifyManager.add(new ExpressionVerify((Long.valueOf(dbMonthlyEndTime)-Long.valueOf(dbMonthlyEndTime1)==2592000000l*n)?true:false).setVerifyContent("验证续费后包月到期时间"));
+        		//if(name.contains("一个月")) n=1;
+        		//else if(name.contains("三个月")) n=3;
+        		//else if(name.contains("六个月")) n=6;
+        		//else if(name.contains("十二个月")) n=12;      		
+        		//dataVerifyManager.add(new ExpressionVerify((Long.valueOf(dbMonthlyEndTime)-Long.valueOf(dbMonthlyEndTime1)==2592000000l*n)?true:false).setVerifyContent("验证续费后包月到期时间"));
         	}
         	
         	//3.验证isAutomaticallyRenew字段参数值与数据库值一致
