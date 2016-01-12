@@ -73,9 +73,12 @@ public class QueryBarInfo extends FixtureBase{
 			if(userBaseInfo!=null){
 				BarCommon common = new BarCommon();
 				String cust = userBaseInfo.getPubCustId();
-				int level = common.getBarOwnerLevel(cust);
+				//int level = common.getBarOwnerLevel(cust);
+				//改成从数据表取bar_owner_level值来验证
+				String level = BarCommon.getBarOwnerLevelFromDb(cust);
 				dataVerifyManager.add(new ValueVerify<Integer>(
-						reponseResult.getData().getBar().getUserBaseInfo().getBarOwnerLevel(), level,false));
+						reponseResult.getData().getBar().getUserBaseInfo().getBarOwnerLevel(),
+						Integer.parseInt(level),false));
 			}			
 			super.dataVerify();
 		}	

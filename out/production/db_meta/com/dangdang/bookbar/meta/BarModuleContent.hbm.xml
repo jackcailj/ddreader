@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-11-25 14:46:42 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2015-12-10 10:06:39 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="meta.BarModuleContent" table="bar_module_content" catalog="bookbar">
+    <class name="BarModuleContent" table="bar_module_content" catalog="bookbar">
         <id name="barModuleContentId" type="java.lang.Long">
             <column name="bar_module_content_id" />
             <generator class="identity" />
@@ -28,6 +28,9 @@
             <column name="content_type">
                 <comment>&#196;&#218;&#200;&#221;&#192;&#224;&#208;&#205;&#163;&#168;1.&#176;&#201; 2.&#204;&#251;&#215;&#211; 3.&#181;&#165;&#198;&#183;&#163;&#169;</comment>
             </column>
+        </property>
+        <property name="dataSource" type="byte">
+            <column name="data_source" not-null="true" />
         </property>
         <property name="beginDate" type="timestamp">
             <column name="begin_date" length="19">

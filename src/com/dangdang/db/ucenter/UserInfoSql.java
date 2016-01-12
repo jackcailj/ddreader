@@ -49,9 +49,15 @@ public class UserInfoSql {
     }
 
     public  static LoginRecord getUserInfoByCustId(String custid) throws Exception {
-        String selectSql="select lr_id,cust_id,cust_nickname,cust_img,device_no,device_type,login_token,create_date,introduct,login_platform,login_client,gender*1 as gender,bind_phone_num, display_id from login_record where cust_id="+custid;
-        LoginRecord result = DbUtil.selectOne(Config.UCENTERDBConfig,selectSql,LoginRecord.class);
-        return result;
+        try{
+        	 String selectSql="select lr_id,cust_id,cust_nickname,cust_img,device_no,device_type,login_token,create_date,introduct,login_platform,login_client,gender*1 as gender,bind_phone_num, display_id from login_record where cust_id="+custid;
+             LoginRecord result = DbUtil.selectOne(Config.UCENTERDBConfig,selectSql,LoginRecord.class);
+             return result;
+        }
+        catch(Exception e){
+        	//第三方用户登录时，login_record里没有改用户的信息
+        	return null;
+        }
     }
 
 

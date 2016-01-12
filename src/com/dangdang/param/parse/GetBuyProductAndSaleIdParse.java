@@ -51,11 +51,11 @@ public class GetBuyProductAndSaleIdParse implements IParamParse{
                 mediaMap.put("productId", getUserBookList.getReponseResult().getData().getMediaList().get(i).getMediaId().toString());
                 mediaMap.put("saleId", getUserBookList.getReponseResult().getData().getMediaList().get(i).getSaleId().toString());
                 mediaIds.add(mediaMap);
-                medias.add(getUserBookList.getReponseResult().getData().getMediaList().get(i));
+                //medias.add(getUserBookList.getReponseResult().getData().getMediaList().get(i));
             }
 
             paramMap.put(key, JSONObject.toJSONString(mediaIds));
-            VariableStore.add(VarKey.MEDIAS, medias);
+            //VariableStore.add(VarKey.MEDIAS, medias);
 
         }
         else{

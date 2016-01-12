@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-11-25 14:46:42 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2015-12-10 10:06:39 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="meta.BarRelation" table="bar_relation" catalog="bookbar">
+    <class name="BarRelation" table="bar_relation" catalog="bookbar">
         <id name="barRelationId" type="java.lang.Long">
             <column name="bar_relation_id" />
             <generator class="identity" />
@@ -15,7 +15,8 @@
         </property>
         <property name="relationType" type="byte">
             <column name="relation_type" not-null="true">
-                <comment>&#185;&#216;&#207;&#181;&#192;&#224;&#208;&#205;(1-&#202;&#233; 2-&#215;&#247;&#213;&#223;)</comment>
+                <comment>&#185;&#216;&#207;&#181;&#192;&#224;&#208;&#205;(1-&#181;&#231;&#215;&#211;&#202;&#233; 2-&#215;&#212;&#211;&#170;&#214;&#189;&#202;&#233;
+                3-&#215;&#247;&#213;&#223;)</comment>
             </column>
         </property>
         <property name="objectId" type="long">

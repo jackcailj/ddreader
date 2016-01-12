@@ -39,7 +39,7 @@ public class MediaDigestDb {
     public static List<MediaDigest> getMyCreateMediaDigest(String custId,int pageSize) throws Exception {
         String selectString="select id,author,media_id,media_chapter_id,media_name,bar_id,first_catetory_id,first_catetory_name,content,type*1 as type,column_id,column_name,stars,review_cnt,collect_cnt,share_cnt," +
                 "click_cnt,top_cnt,card_title,card_remark,card_type*1 as card_type,pic1_path,small_pic1_path,small_pic2_path,small_pic3_path,show_start_date,create_date,title,"+
-                "is_show,is_del,sign_ids,day_or_night,mood,weight,operator,sort_page,is_paper_book from media_digest where creator_cust_id ="+custId+" and is_del=0 and is_show=1 and type in (3,4) ORDER BY id DESC limit "+pageSize ;
+                "is_show,is_del,sign_ids,day_or_night,mood,weight,operator,sort_page,is_paper_book from media_digest where creator_cust_id ="+custId+" and is_del=0 and is_show=1 and type in (3,4,5) ORDER BY id DESC limit "+pageSize ;
         List<MediaDigest> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString,MediaDigest.class);
         return mediaDigests;
     }

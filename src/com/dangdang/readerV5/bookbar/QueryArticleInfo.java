@@ -17,6 +17,7 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.Article;
 import com.dangdang.readerV5.reponse.ArticleInfo;
+import com.dangdang.readerV5.reponse.UserBaseInfo;
 
 /**
  * 帖子详情接口
@@ -64,7 +65,7 @@ public class QueryArticleInfo  extends FixtureBase{
 			list1.add(digest.get("bar_id").toString());
 			list1.add(userInfo!=null?userInfo.get("cust_nickname").toString().split("@")[0]:null);
 			list1.add(mediaDigestId);
-			list1.add(!(digest.get("title")==null||digest.get("title").toString().isEmpty())?digest.get("title").toString():null);
+			list1.add(!(digest.get("title")==null)?digest.get("title").toString():null);
 			
 			try{
 				CommentTargetCount count = DbUtil.selectOne(Config.BSAECOMMENT, 
@@ -103,9 +104,11 @@ public class QueryArticleInfo  extends FixtureBase{
 			//在这儿用getBarOwnerLevel方法验证，是为了验证规则的正确性，其他接口是从数据表取bar_owner_level值来验证的。
 			BarCommon common = new BarCommon();
 			String custId = article.getUserBaseInfo().getPubCustId();
-			int level = common.getBarOwnerLevel(custId);
+			//int level = common.getBarOwnerLevel(custId);
+			//改成从数据表取bar_owner_level值来验证的
+			String level = BarCommon.getBarOwnerLevelFromDb(custId);
 			dataVerifyManager.add(new ValueVerify<Integer>(
-					article.getUserBaseInfo().getBarOwnerLevel(), level,false));
+					article.getUserBaseInfo().getBarOwnerLevel(), Integer.parseInt(level),false));
 			//验证投票贴信息
 			String type = digest.get("type").toString();
 			if(type.equals("31")||type.equals("32")){

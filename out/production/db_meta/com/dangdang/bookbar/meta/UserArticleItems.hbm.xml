@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-12-10 10:06:39 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="UserArticleItems" table="user_article_items" catalog="bookbar">
+        <id name="userArticleItemsId" type="java.lang.Long">
+            <column name="user_article_items_id" />
+            <generator class="identity" />
+        </id>
+        <property name="mediaDigestId" type="long">
+            <column name="media_digest_id" not-null="true">
+                <comment>&#204;&#251;&#215;&#211;ID</comment>
+            </column>
+        </property>
+        <property name="articleItemsId" type="long">
+            <column name="article_items_id" not-null="true">
+                <comment>&#205;&#182;&#198;&#177;&#209;&#161;&#207;&#238;ID</comment>
+            </column>
+        </property>
+        <property name="custId" type="long">
+            <column name="cust_id" not-null="true">
+                <comment>&#211;&#195;&#187;&#167;ID</comment>
+            </column>
+        </property>
+        <property name="voteTime" type="timestamp">
+            <column name="vote_time" length="19" not-null="true">
+                <comment>&#205;&#182;&#198;&#177;&#202;&#177;&#188;&#228;</comment>
+            </column>
+        </property>
+    </class>
+</hibernate-mapping>

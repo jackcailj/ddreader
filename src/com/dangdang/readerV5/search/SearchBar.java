@@ -37,9 +37,14 @@ public class SearchBar extends FixtureBase {
         		if(memberNum==0)
         			dataVerifyManager.add(new ValueVerify<String>(actualList.get(i).getBarOwner(), "吧主宝座空缺").setVerifyContent("验证BarOwner"));
         		else{
-        			long custID = expectedList.get(i).getCustId();
-        			LoginRecord loginRecord = LoginRecordDb.getLoginRecord(String.valueOf(custID));
-        			dataVerifyManager.add(new ValueVerify<String>(actualList.get(i).getBarOwner(), loginRecord.getCustNickname()).setVerifyContent("验证BarOwner"));
+        			//long custID = expectedList.get(0).getCustId();
+					BarMember barOwner = BarMemberDb.getBarOwner(actualList.get(i).getBarId());
+					if(barOwner==null) {
+						dataVerifyManager.add(new ValueVerify<String>(actualList.get(i).getBarOwner(), "吧主宝座空缺").setVerifyContent("验证BarOwner"));
+					}else{
+						LoginRecord loginRecord = LoginRecordDb.getLoginRecord(String.valueOf(barOwner.getCustId()));
+						dataVerifyManager.add(new ValueVerify<String>(actualList.get(i).getBarOwner(), loginRecord.getCustNickname()).setVerifyContent("验证BarOwner"));
+					}
         		}
         	}
         }

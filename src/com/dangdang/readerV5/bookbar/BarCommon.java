@@ -45,15 +45,20 @@ public class BarCommon {
 	public static String getBarOwnerLevelFromDb(String encryCustId) throws Exception{
 		String cust = DesUtils.decryptCustId(encryCustId).toString();
 		String sql = "select bar_owner_level from login_record where cust_id="+cust;
-		Object object = DbUtil.selectOne(Config.UCENTERDBConfig, sql).get("bar_owner_level");
-		String level = object==null?"0":object.toString();
-		return level;
+		try{
+			Object object = DbUtil.selectOne(Config.UCENTERDBConfig, sql).get("bar_owner_level");
+			String level = object==null?"0":object.toString();
+			return level;
+		}
+		catch(Exception e){
+			return "0";
+		}
 	}
 	
 	public static void main(String[] args){
 		BarCommon common = new BarCommon();
 		try {
-			int l = common.getBarOwnerLevel("ROo2JOyksqNms6CjJdqf7w==");
+			int l = common.getBarOwnerLevel("Bopt2qraLEQ+d1qurgQD6w==");
 			System.out.println("l is "+l);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

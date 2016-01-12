@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-10-29 11:51:07 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2015-12-3 19:03:53 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
     <class name="com.dangdang.digital.meta.ChannelMonthlyStrategy" table="channel_monthly_strategy" catalog="digital">
         <id name="id" type="java.lang.Long">
@@ -34,6 +34,26 @@
         <property name="channelId" type="long">
             <column name="channel_id" not-null="true">
                 <comment>&#198;&#181;&#181;&#192;ID</comment>
+            </column>
+        </property>
+        <property name="platform" type="java.lang.Integer">
+            <column name="platform">
+                <comment>&#178;&#223;&#194;&#212;&#198;&#189;&#204;&#168;&#192;&#224;&#208;&#205;0-&#205;&#168;&#185;&#253;1-android,2-ios</comment>
+            </column>
+        </property>
+        <property name="newPrice" type="java.lang.Long">
+            <column name="new_price">
+                <comment>&#181;&#177;&#199;&#176;&#188;&#219;&#184;&#241;</comment>
+            </column>
+        </property>
+        <property name="maxTimes" type="java.lang.Integer">
+            <column name="max_times">
+                <comment>&#178;&#223;&#194;&#212;&#180;&#206;&#202;&#253;&#201;&#207;&#207;&#222;</comment>
+            </column>
+        </property>
+        <property name="strategyDays" type="java.lang.Integer">
+            <column name="strategy_days">
+                <comment>&#178;&#223;&#194;&#212;&#202;&#177;&#179;&#164;,&#181;&#165;&#206;&#187;&#204;&#236;</comment>
             </column>
         </property>
     </class>

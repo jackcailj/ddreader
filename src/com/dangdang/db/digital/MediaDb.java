@@ -78,7 +78,7 @@ public class MediaDb {
             return new ArrayList<Media>();
         }
 
-        String selectString="SELECT * from media where product_id in ("+StringUtils.join(ProductIds,",")+") GROUP BY product_id";
+        String selectString="SELECT * from media where media_id in ("+StringUtils.join(ProductIds,",")+") GROUP BY media_id";
         List<Media> medias = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return medias;
     }

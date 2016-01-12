@@ -26,7 +26,7 @@ public class LoginRecordDb {
 	
 	//根据custId获取登录记录信息
 	public static LoginRecord getLoginRecord(String custId) throws Exception{
-		String selectSQL = "SELECT * FROM `login_record` WHERE cust_id="+custId;
+		String selectSQL = "SELECT lr_id,cust_id,cust_nickname,cust_img,device_no,device_type,login_token,create_date,introduct,login_platform,login_client,gender*1 as gender,bind_phone_num, display_id FROM `login_record` WHERE cust_id="+custId;
 		List<LoginRecord> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL, LoginRecord.class);
 		LoginRecord loginRecord = null;
 		try{

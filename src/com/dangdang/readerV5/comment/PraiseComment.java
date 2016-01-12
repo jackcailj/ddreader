@@ -26,14 +26,14 @@ public class PraiseComment extends FixtureBase{
 			sql = "select target_id from comment where "
 					   + ((Config.getEnvironment()== TestEnvironment.TESTING)?"is_delete=0 and ":"")+"status=1 "
 					   + "and target_source="+paramMap.get("targetSource")+ " and target_id not in "
-					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+")";			
+					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+") limit 10";			
 			
 		}
 		if(paramMap.get("targetId")!=null&&paramMap.get("targetId").equalsIgnoreCase("repeat")){
 			sql = "select target_id from comment where "
 					   + ((Config.getEnvironment()== TestEnvironment.TESTING)?"is_delete=0 and ":"")+"status=1 "
 					   + "and target_source="+paramMap.get("targetSource")+ " and target_id in "
-					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+")";
+					   + "(SELECT target_id from praise_info where user_id="+login.getCustId()+") limit 10";
 		}
 		if(sql!=null){
 			List<Map<String,Object>> list = DbUtil.selectList(Config.BSAECOMMENT, sql);

@@ -1,9 +1,9 @@
 <?xml version="1.0"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
-<!-- Generated 2015-11-25 14:46:42 by Hibernate Tools 3.4.0.CR1 -->
+<!-- Generated 2015-12-10 10:06:39 by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="meta.BarProductInfo" table="bar_product_info" catalog="bookbar">
+    <class name="BarProductInfo" table="bar_product_info" catalog="bookbar">
         <id name="barProductInfoId" type="java.lang.Long">
             <column name="bar_product_info_id" />
             <generator class="identity" />

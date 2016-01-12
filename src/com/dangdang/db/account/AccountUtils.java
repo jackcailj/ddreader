@@ -43,7 +43,7 @@ public class AccountUtils {
 
      */
     public  static List<AttachAccountItems> getAttachLingDangDetail(String custid,TestDevice device) throws Exception {
-        return DbUtil.selectList(Config.ACCOUNTDBConfig,"select * from attach_account_items where cust_id="+custid+" AND is_show=1 and (`status`=1 or (`status`!=1 and effective_date>=DATE_FORMAT(NOW(),'%Y-%m-%d'))) and consume_source='"+device+"'  order by effective_date,attach_account_items_id DESC ",AttachAccountItems.class);
+        return DbUtil.selectList(Config.ACCOUNTDBConfig,"select * from attach_account_items where cust_id="+custid+" AND is_show=1  and consume_source='"+device+"'  order by effective_date_msec ASC,attach_account_items_id DESC ",AttachAccountItems.class);
     }
 
 

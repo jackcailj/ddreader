@@ -19,6 +19,19 @@ public class BarMemberDb {
 		List<BarMember> members = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarMember.class);
 		return members;
 	}
+
+	/*
+	获取吧主信息
+	 */
+	public static BarMember getBarOwner(String barId) throws Exception {
+		String sql = "select * from bar_member where member_status in (3) and bar_id="+barId;
+		List<BarMember> members = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarMember.class);
+		if(members.size()==0){
+			return null;
+		}
+
+		return members.get(0);
+	}
 	
 	/**
 	 * 查找某个吧里特定的用户成员
