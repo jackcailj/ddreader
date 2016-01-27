@@ -49,7 +49,7 @@ public class MediaGiveDb {
     */
     public static List<MediaGiveDetail> getMediaPacketDetailInfo(String packetId) throws Exception {
 
-        String selectString="select * from media_give_detail where packet_id='"+packetId+"';";
+        String selectString="select * from media_give_detail where packet_id='"+packetId+"'; order by status";
         return DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, MediaGiveDetail.class);
 
     }

@@ -20,6 +20,23 @@ public class BarMemberDb {
 		return members;
 	}
 
+
+	/**
+	 * 查找某个吧里所有成员
+	 * @param
+	 *     barId: 吧Id
+	 */
+	public static List<BarMember> getBarRemember(String barId,Integer pageNo) throws Exception{
+		//member_status（1 成员，2 申请吧主， 3 吧主）
+		String sql = "select * from bar_member where member_status in (1,2,3) and bar_id="+barId
+				+"  order by member_status desc, bar_member_id ASC limit "+pageNo*50+",51" ;
+		List<BarMember> members = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarMember.class);
+		if(members.size()==0 && pageNo>=1){
+			members=getBarRemember(barId,pageNo-1);
+		}
+		return members;
+	}
+
 	/*
 	获取吧主信息
 	 */

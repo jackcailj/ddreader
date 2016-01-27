@@ -35,8 +35,11 @@ public class QueryBarMember  extends FixtureBase {
 	public void dataVerify(String expectedCode) throws Exception {
 			reponseResult = getResult();
 			if(reponseResult.getStatus().getCode() == 0){
+
+				Integer pageNo = paramMap.get("pageNo")==null?0:Math.abs(Integer.parseInt(paramMap.get("pageNo")));
+
 				List<BarMembers> responseList = reponseResult.getData().getBarMembers();
-				List<BarMember> lists = BarMemberDb.getBarRemember(paramMap.get("barId"));
+				List<BarMember> lists = BarMemberDb.getBarRemember(paramMap.get("barId"),pageNo);
 				
 				List<BarMembers> memberList = new ArrayList<BarMembers>();
 				for(int i=0; i<lists.size(); i++){	
@@ -45,7 +48,9 @@ public class QueryBarMember  extends FixtureBase {
      				String custId = Long.toString(lists.get(i).getCustId());					
 					member.setBarMemberId(lists.get(i).getBarMemberId().toString());
 					member.setMemberStatus(Integer.toString(lists.get(i).getMemberStatus()));
-					LoginRecord record = UserInfoSql.getUserInfoByCustId(custId);
+
+                    //delete by cailj
+				/*	LoginRecord record = UserInfoSql.getUserInfoByCustId(custId);
 					if(record!=null){
 						userBaseInfo.setCustImg(record.getCustImg());
 						//判断nickName是不是手机号，如果是手机号将中间四位设置成*
@@ -59,7 +64,7 @@ public class QueryBarMember  extends FixtureBase {
 							nickName = nickName.split("@")[0];
 						}
 						userBaseInfo.setNickName(nickName);
-					}
+					}*/
 					
 					//5.3 验证吧主头衔		
 					String level = BarCommon.getBarOwnerLevelFromDb(responseList.get(i).getUserBaseInfo().getPubCustId());
@@ -68,13 +73,14 @@ public class QueryBarMember  extends FixtureBase {
 					memberList.add(member);
 				}
 
-				if(lists.size() < 1000){
+				//delete by cailj,此逻辑已经不存在
+			/*	if(lists.size() < 1000){
 					Assert.assertEquals(responseList.size(), lists.size(),"接口返回的成员数量不等于数据库中查询到的成员数量");
 				}
 				else{
 					//接口请求，一页默认返回1000个吧成员
 					Assert.assertEquals(responseList.size(), 1000,"接口返回的成员数量不等于1000");
-				}
+				}*/
 				dataVerifyManager.add(new ListVerify(responseList,memberList,true));
 				super.dataVerify();
 			}	

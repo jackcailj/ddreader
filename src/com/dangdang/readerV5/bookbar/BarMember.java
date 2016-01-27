@@ -5,13 +5,16 @@ import java.util.Random;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.BaseComment.meta.CloudExperienceInfo;
 import com.dangdang.account.meta.AttachAccount;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.bookbar.meta.Bar;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.dataverify.RecordVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.enumeration.ExperienceEnum;
 import com.dangdang.enumeration.GradeExpRelationMap;
 import com.dangdang.readerV5.reponse.Data;
 
@@ -66,23 +69,43 @@ public class BarMember extends FixtureBase {
 	@Override
 	public void dataVerify(String expectedCode) throws Exception {
 		ReponseV2<Data> reponseResult = getResult();
-		if(reponseResult.getStatus().getCode() == 0){	
-			String sql = "select * from bar where bar_id="+barId;
+		if(reponseResult.getStatus().getCode() == 0) {
+			String sql = "select * from bar where bar_id=" + barId;
 			Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
-			if(paramMap.get("actionType").equals("1")){
+			if (paramMap.get("actionType").equals("1")) {
 				//加入吧，成员数量加1
 				//加入吧，加经验和积分各5分
 				experience = 5;
 				integral = 5;
-				numberNum = numberNum+1;	
+				numberNum = numberNum + 1;
 				//积分累积到一定数量，就有升级奖励积分
 				account_experience = account_experience + experience;
-				account_experience = account_experience + (geMap.get(account_experience)==null?0:geMap.get(account_experience));
+				account_experience = account_experience + (geMap.get(account_experience) == null ? 0 : geMap.get(account_experience));
 				account_integral = account_integral + integral;
+
+				//增加阅历信息 add by cailj
+				CloudExperienceInfo cloudExperienceInfo = new CloudExperienceInfo();
+				cloudExperienceInfo.setProductId(Long.parseLong(barId));
+				cloudExperienceInfo.setCustId(Long.parseLong(login.getCustId()));
+				cloudExperienceInfo.setDeviceType(Config.getDevice().toString());
+				cloudExperienceInfo.setType(Short.parseShort(ExperienceEnum.JOIN_BAR.toString()));
+
+				dataVerifyManager.add(new RecordVerify(Config.BSAECOMMENT, cloudExperienceInfo));
+
 			}
-			else{				
+			/*else if(paramMap.get("actionType").equals("3")){
+				//增加阅历信息 add by cailj
+				CloudExperienceInfo cloudExperienceInfo = new CloudExperienceInfo();
+				cloudExperienceInfo.setProductId(Long.parseLong(barId));
+				cloudExperienceInfo.setCustId(Long.parseLong(login.getCustId()));
+				cloudExperienceInfo.setDeviceType(Config.getDevice().toString());
+				cloudExperienceInfo.setType(Short.parseShort(ExperienceEnum.SHENQING_BAR_OWNER.toString()));
+
+				dataVerifyManager.add( new RecordVerify(Config.BSAECOMMENT,cloudExperienceInfo));
+			}*/
+			else if (paramMap.get("actionType").equals("2")) {
 				//退出吧，成员数量减1		
-				numberNum = numberNum-1;	
+				numberNum = numberNum - 1;
 				//5.2版本中，退出吧，扣减积分，5.2之前的版本，不扣减
 				//退出吧，减经验和积分各5分
 				experience = -5;
@@ -90,13 +113,18 @@ public class BarMember extends FixtureBase {
 				account_experience = account_experience + experience;
 				account_integral = account_integral + integral;
 			}
-			sql = "SELECT * FROM `attach_account` where cust_id="+login.getCustId();
-			AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);
-			dataVerifyManager.add(new ValueVerify<Integer>(bar.getMemberNum(),numberNum, false));
-			dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountExperience(),
-                    account_experience,false));
-            dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountIntegral(),
-                    account_integral, false));
+			if (!paramMap.get("actionType").equals("3")) {
+				sql = "SELECT * FROM `attach_account` where cust_id=" + login.getCustId();
+
+                AttachAccount account = DbUtil.selectOne(Config.ACCOUNTDBConfig, sql, AttachAccount.class);
+                dataVerifyManager.add(new ValueVerify<Integer>(bar.getMemberNum(), numberNum, false));
+                dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountExperience(),
+                        account_experience, false));
+                dataVerifyManager.add(new ValueVerify<Integer>(account.getAccountIntegral(),
+                        account_integral, false));
+			}
+
+
 			super.dataVerify();
 		}
 		else{

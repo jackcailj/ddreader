@@ -3,8 +3,10 @@ package com.dangdang.readerV5.personal_center.cloud_sync_read;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CloudReadingProgress;
+import com.dangdang.BaseComment.meta.CloudReadingTime;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.db.comment.CloudReadingTimeDb;
 import com.dangdang.db.comment.CloudSyncSql;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
@@ -39,7 +41,13 @@ public class GetBookCloudSyncReadProgressInfo extends FixtureBase{
                 progresses.setProgressId(null);
                 dataVerifyManager.add(new ValueVerify<CloudReadingProgress>(reponseResult.getData().getBookReadingProgress(), progresses, true));
 
-                dataVerifyManager.add(new ValueVerify<Long>(reponseResult.getData().getTotalReadingTime(), progresses.getReadingTime()));
+                CloudReadingTime readingTime =CloudReadingTimeDb.getReadingTime(login.getCustId());
+                if(readingTime!=null) {
+                    dataVerifyManager.add(new ValueVerify<Long>(reponseResult.getData().getTotalReadingTime(), readingTime.getTotalReadingTime()));
+                }
+                else{
+                    dataVerifyManager.add(new ValueVerify<Long>(reponseResult.getData().getTotalReadingTime(), (long)0));
+                }
             }
         }
         else{

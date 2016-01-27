@@ -287,7 +287,7 @@ public class FixtureBase extends InterfaceBase{
             }
 
             //
-            if(name.startsWith("status")){
+            if(name.replaceAll(" ","").equals("statuscode")){
                 paramMap.put(EXPECTED,value);
                 exceptStatusCode=value;
             }

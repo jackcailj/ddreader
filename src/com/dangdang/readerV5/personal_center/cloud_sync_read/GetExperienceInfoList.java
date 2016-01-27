@@ -5,6 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.BaseComment.meta.CloudExperienceInfo;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.db.comment.CloudExperienceInfoDb;
 import com.dangdang.db.comment.CloudSyncSql;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
@@ -40,6 +41,13 @@ public class GetExperienceInfoList extends FixtureBase{
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){
 
+            //boolean isIncrement = StringUtils.isEmpty(paramMap.get("isIncrement"))?false:Boolean.parseBoolean(paramMap.get("isIncrement"));
+            Long lastRecordTime = StringUtils.isEmpty(paramMap.get("recordTime"))?null:Long.parseLong(paramMap.get("recordTime"));
+            List<CloudExperienceInfoEx> experienceInfos = CloudExperienceInfoDb.getCloudExperienceInfo(login.getCustId(),null,Integer.parseInt(paramMap.get("pageSize")),lastRecordTime);
+            for(CloudExperienceInfoEx cloudExperienceInfoEx: experienceInfos){
+                cloudExperienceInfoEx.setDeviceType(null);
+            }
+            dataVerifyManager.add(new ListVerify(reponseResult.getData().getExperienceInfoList(),experienceInfos,true));
            /* Integer pageSize=Integer.parseInt(paramMap.get("pageSize"));
             List<CloudExperienceInfo> cloudExperienceInfos= CloudSyncSql.getExperienceInfos(login.getCustId(),
                     pageSize + 1,

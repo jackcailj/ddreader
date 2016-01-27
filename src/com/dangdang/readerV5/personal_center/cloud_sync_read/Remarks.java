@@ -8,6 +8,8 @@ public class Remarks {
     Long productId;
     Long startTime;
 
+
+
     public String getBookName() {
         return bookName;
     }

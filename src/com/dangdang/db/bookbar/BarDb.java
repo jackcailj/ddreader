@@ -37,4 +37,15 @@ public class BarDb {
 		}		
 	}
 
+
+	/*
+	获取没有吧主的bar信息
+	 */
+	public static Bar getNotHaveOwnerBar() throws Exception{
+		String sql = "SELECT * from bar where bar_id not in(select bar_id from bar_member where member_status=3) limit 1";
+		Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
+		return bar;
+	}
+
+
 }

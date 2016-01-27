@@ -53,7 +53,14 @@ public class GetExperienceItemList extends FixtureBase{
             expect.setCurrentGrade(attachAccount.getAccountGrade());
             expect.setAccountExperienceTotal(attachAccount.getAccountExperience());
             expect.setPreGrade(attachAccount.getAccountGrade()-1);
-            expect.setNextGrade(attachAccount.getAccountGrade()+1);
+
+            //最大等级为50级
+            if(attachAccount.getAccountGrade()<50) {
+                expect.setNextGrade(attachAccount.getAccountGrade() + 1);
+            }
+            else{
+                expect.setNextGrade(attachAccount.getAccountGrade());
+            }
 
 
             AccountGradeExperienceRelation currentGrade = AccountGradeExperienceRelationDb.getAccountGradeExperience(expect.getCurrentGrade());

@@ -54,7 +54,7 @@ public class CloudSyncSql {
    获取一个人笔记列表
     */
     public static List<CloudBookNote> getCloudBookNotes(String custId,String productId) throws Exception {
-        String selectString="select * from cloud_book_note where cust_id="+custId+" and product_id="+productId+" and status=1";
+        String selectString="select * from cloud_book_note where cust_id="+custId+" and product_id="+productId+"";
         List<CloudBookNote> cloudBookNotes = DbUtil.selectList(Config.BSAECOMMENT,selectString,CloudBookNote.class);
         return cloudBookNotes;
     }

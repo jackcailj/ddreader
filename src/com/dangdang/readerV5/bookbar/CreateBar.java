@@ -7,12 +7,15 @@ import java.util.Random;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
+import com.dangdang.BaseComment.meta.CloudExperienceInfo;
 import com.dangdang.account.meta.AttachAccount;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.ddframework.dataverify.RecordVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.enumeration.ExperienceEnum;
 import com.dangdang.readerV5.reponse.CreateBarResponse;
 
 /**
@@ -114,6 +117,16 @@ public class CreateBar  extends FixtureBase {
 				list2.add(Integer.toString(account.getAccountIntegral()));
 			}
 			dataVerifyManager.add(new ValueVerify<List<String>>(list2, list1));
+
+			//验证增加阅历信息，add by cailj
+			CloudExperienceInfo cloudExperienceInfo = new CloudExperienceInfo();
+			cloudExperienceInfo.setProductId(Long.parseLong(barId));
+			cloudExperienceInfo.setCustId(Long.parseLong(login.getCustId()));
+			cloudExperienceInfo.setDeviceType(Config.getDevice().toString());
+			cloudExperienceInfo.setType(Short.parseShort(ExperienceEnum.CREATE_BAR.toString()));
+
+			dataVerifyManager.add(new RecordVerify(Config.BSAECOMMENT,cloudExperienceInfo));
+
 			super.dataVerify();
 		}	
 		else{

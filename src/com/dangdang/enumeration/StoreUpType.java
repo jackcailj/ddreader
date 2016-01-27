@@ -8,7 +8,8 @@ public enum StoreUpType {
     DISCOVER("discover"),
     DIGEST("digest"),
     ARTICLE("article"),
-    POST("post");
+    POST("post"),
+    GONGLV("gonglv");
 
     String content="";
     StoreUpType(String type){
@@ -24,6 +25,9 @@ public enum StoreUpType {
         }
         else if(content.equals("post")){
             return "4";
+        }
+        else if(content.equals("gonglv")){
+            return "5";
         }
 
         return "";

@@ -5,12 +5,19 @@ import com.alibaba.fastjson.TypeReference;
 import com.dangdang.account.meta.AccountIntegralItems;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.autotest.config.Config;
+import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.RecordExVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.db.digital.SignDb;
+import com.dangdang.digital.meta.SigninDetail;
+import com.dangdang.digital.meta.SigninMain;
 import com.dangdang.readerV5.reponse.SigninReponse;
+
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by cailianjie on 2015-8-3.
@@ -61,6 +68,7 @@ public class Signin extends FixtureBase{
 
             attachAccountInfo.getReponseAttachResult().getData().setAccountTotal(attachAccountInfo.getReponseAttachResult().getData().getAccountTotal()+prize);
 
+
         }
 
 
@@ -91,6 +99,28 @@ public class Signin extends FixtureBase{
             dataVerifyManager.add(new ValueVerify<Long>(afterAttachAccountInfo.getReponseAttachResult().getData().getAccountTotal(),attachAccountInfo.getReponseAttachResult().getData().getAccountTotal())
                     .setVerifyContent("验证副账户金额是否正确"));
 
+
+            int signCount= SignDb.getSigninCountPerDay();
+            dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getTotalNum(),signCount).setVerifyContent("验证每日签到总数是否一致"));
+
+            List<SigninDetail> signinDetails = SignDb.getSigninDetail(login.getCustId());
+            List<String> sidninDates=new ArrayList<String>();
+            for(SigninDetail signinDetail : signinDetails){
+                SimpleDateFormat sdp =new SimpleDateFormat("yyyyMMdd");
+                sidninDates.add(sdp.format(signinDetail.getSigninTime()));
+            }
+
+            dataVerifyManager.add(new ListVerify(reponseResult.getData().getSigninCalendar(),sidninDates,false).setVerifyContent("验证签到记录是否一致"));
+
+
+            SigninMain signinMain= SignDb.getSignRecord(login.getCustId());
+
+            dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getContinueDays(),signinMain.getContinueDays()).setVerifyContent("验证连续签到天数是否一致"));
+
+            int lessPersonCount=SignDb.getContinuDaysLessCount(signinMain.getContinueDays().toString());
+
+            String expectTips="连续签到"+signinMain.getContinueDays().toString()+"天,击败了"+lessPersonCount+"个小伙伴!";
+            dataVerifyManager.add(new ValueVerify<String>(reponseResult.getData().getSigninInfo(),expectTips).setVerifyContent("验证SigninInfo是否一致"));
         }
         else{
             //dataVerifyManager.add(new ValueVerify<Object>(reponseResult.getData().getPrizeValue(),null), VerifyResult.SUCCESS);

@@ -30,6 +30,10 @@ public class Config extends ConfigCore{
     public static String AUTHORITYConfig="";
 	public static String BSAECOMMENT="";
 
+	public static String redis="";
+
+	public static Integer REDIS_PORT=6379;
+
 	protected static RunLevel runLevel=RunLevel.ALL;
 
 	
@@ -151,4 +155,11 @@ public class Config extends ConfigCore{
 		System.out.print(Config.BaseUrl);
 	}
 
+	public static String getRedis() {
+		return redis;
+	}
+
+	public static void setRedis(String redis) {
+		Config.redis = redis;
+	}
 }
