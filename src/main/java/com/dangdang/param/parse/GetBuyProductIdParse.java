@@ -1,8 +1,11 @@
 package com.dangdang.param.parse;
 
 import com.dangdang.common.functional.login.ILogin;
+import com.dangdang.common.functional.login.LoginInfo;
+import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.ddframework.util.Util;
 import com.dangdang.enumeration.BuyBookStatus;
 import com.dangdang.enumeration.VarKey;
 import com.dangdang.readerV5.personal_center.bookshelf.GetUserBookList;
@@ -37,10 +40,28 @@ public class GetBuyProductIdParse implements IParamParse{
             ReponseV2<GetUserBookListReponse> reponse =getUserBookList.getReponseResult();
 
 
+            //检查参数是否有用户名密码
+            List<String> userBookIDList=null;
+            if(params.length>2){
+                String userParam = params[2].trim();
+                String[] userInfo=userParam.split("\\\\");
+                LoginInfo loginInfo = new LoginInfo();
+                loginInfo.setUserName(userInfo[0]);
+                loginInfo.setPassWord(userInfo[1]);
+                ILogin login =LoginManager.getLogin(loginInfo);
+
+                GetUserBookList  userBookList = new GetUserBookList(login);
+                userBookList.doWork();
+
+                userBookIDList = Util.getFields(userBookList.getReponseResult().getData().getMediaList(),"mediaId");
+            }
+
             List<String> mediaIds=new ArrayList<String>();
             for(UserBookMedia userBookMedia:reponse.getData().getMediaList()){
                 if(buyBookStatus.getBookStatusString().contains(userBookMedia.getRelationType())
-                        && userBookMedia.getAuthorityType()==buyBookStatus.getAuthorifyType()){
+                        && userBookMedia.getAuthorityType()==buyBookStatus.getAuthorifyType()
+                        &&(userBookIDList==null || (userBookIDList!=null && !userBookIDList.contains(userBookMedia.getMediaId().toString())))
+                        ){
                     mediaIds.add(userBookMedia.getMediaId().toString());
                 }
 
@@ -48,6 +69,8 @@ public class GetBuyProductIdParse implements IParamParse{
                     break;
                 }
             }
+
+
 
             paramMap.put(key,StringUtils.join(mediaIds,","));
 

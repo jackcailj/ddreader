@@ -76,4 +76,15 @@ public class LoginManager {
         LoginInfo loginInfo = JSONObject.parseObject(JSONObject.toJSONString(param),LoginInfo.class);
         return getLogin(loginInfo);
     }
+
+    /*
+    清除某个登录信息
+     */
+    public static void remove(ILogin login) throws Exception {
+        if(login!=null) {
+            loginManager.remove(login.getLoginInfo().getUserName());
+            loginManager_custID.remove(login.getCustId());
+            loginManager_pubID.remove(login.getPubId());
+        }
+    }
 }

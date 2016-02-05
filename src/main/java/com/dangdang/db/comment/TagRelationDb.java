@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.dangdang.BaseComment.meta.TagRelation;
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
+import com.dangdang.enumeration.TagContentType;
 
 /**
  * @author guohaiying
@@ -26,7 +28,19 @@ public class TagRelationDb {
         }
         return list;
     }
-    
-    
+
+    /*
+    获取某种tag下推荐内容
+    参数：
+        tagIds：标签id，多个用，分隔
+        tagContentType：推荐内容，1000,书吧;4000:频道;5000:文章;6000:书
+     */
+    public static List<TagRelation> getTagRelation(String tagIds, TagContentType tagContentType) throws Exception {
+        String selectSql = "SELECT * from tag_relation where tag_id in ("+tagIds+") and recommend_status=1 and target_source="+tagContentType.toString();
+
+        List<TagRelation> tagRelations = DbUtil.selectList(Config.BSAECOMMENT,selectSql,TagRelation.class);
+
+        return tagRelations;
+    }
     
 }

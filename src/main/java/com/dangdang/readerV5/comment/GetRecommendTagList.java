@@ -25,7 +25,7 @@ public class GetRecommendTagList extends FixtureBase {
 			String sql = "SELECT * FROM `tag_info` where is_recommend=1";	
 			List<TagInfo> tagList = DbUtil.selectList(Config.BSAECOMMENT, sql, TagInfo.class);
 			dataVerifyManager.add(new ValueVerify<Integer>(tagList.size(), reponseResult.getData().getTagInfoVoList().size(),false));			
-			dataVerifyManager.add(new ListVerify(tagList, reponseResult.getData().getTagInfoVoList(), true));
+			dataVerifyManager.add(new ListVerify(reponseResult.getData().getTagInfoVoList(),tagList, true));
 			super.dataVerify();
 		}	
 		else{

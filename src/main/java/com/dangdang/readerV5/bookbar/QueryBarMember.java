@@ -39,7 +39,7 @@ public class QueryBarMember  extends FixtureBase {
 				Integer pageNo = paramMap.get("pageNo")==null?0:Math.abs(Integer.parseInt(paramMap.get("pageNo")));
 
 				List<BarMembers> responseList = reponseResult.getData().getBarMembers();
-				List<BarMember> lists = BarMemberDb.getBarRemember(paramMap.get("barId"),pageNo);
+				List<BarMember> lists = BarMemberDb.getBarRemember(paramMap.get("barId"),pageNo>0?pageNo-1:0);
 				
 				List<BarMembers> memberList = new ArrayList<BarMembers>();
 				for(int i=0; i<lists.size(); i++){	

@@ -55,6 +55,9 @@ public class QueryTagDetail extends FixtureBase {
 					BarContent content = new BarContent();
 					sql = "select * from bar where bar_id ="+list.get(i).getContentId();
 					Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
+					if(bar.getBarStatus()==4){//下架吧不返回
+						continue;
+					}
 					content.setArticleNum(bar.getArticleNum().toString());
 					content.setBarDesc(bar.getBarDesc());
 					content.setBarId(bar.getBarId().toString());

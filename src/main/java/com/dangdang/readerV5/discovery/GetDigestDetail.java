@@ -65,8 +65,8 @@ public class GetDigestDetail  extends FixtureBase {
 			DigestDetail detail = reponseResult.getData().getDigestDetail();
 			String sql = "select is_paper_book, media_id,card_title,is_support_reward from media_digest where id="+digestId+" and is_show=1";
 			Map<String,Object>  map1 = DbUtil.selectOne(Config.YCDBConfig, sql);
-			dataVerifyManager.add(new ValueVerify<String>(detail.getMediaId(), map1.get("media_id").toString()));
-			dataVerifyManager.add(new ValueVerify<String>(detail.getCardTitle(), map1.get("card_title").toString()));
+			dataVerifyManager.add(new ValueVerify<String>(detail.getMediaId(), map1.get("media_id").toString()).setVerifyContent("验证MediaId"));
+			dataVerifyManager.add(new ValueVerify<String>(detail.getCardTitle(), map1.get("card_title").toString()).setVerifyContent("验证card_title"));
 			
 			//验证ebookInfo			
 			try{
@@ -99,11 +99,11 @@ public class GetDigestDetail  extends FixtureBase {
 				list2.add(detail.getEbookInfo().getProductId());
 				//list2.add(detail.getEbookInfo().getBookImgUrl());
 				//list2.add(detail.getEbookInfo().getEditorRecommend());
-				dataVerifyManager.add(new ListVerify(list2, list1, false));				
+				dataVerifyManager.add(new ListVerify(list2, list1, false).setVerifyContent("验证ebookInfo"));
 			}
 			catch(Exception e){
 				if(e.getMessage().contains("没有关联书")){
-					dataVerifyManager.add(new ValueVerify(detail.getEbookInfo().getProductId(), null, false));
+					dataVerifyManager.add(new ValueVerify(detail.getEbookInfo().getProductId(), null, false).setVerifyContent("验证ebookInfo"));
 				}
 			}			
 						
@@ -117,12 +117,12 @@ public class GetDigestDetail  extends FixtureBase {
 					channel.setChannelDesc(map3.get("description").toString());
 					channel.setChannelIcon(map3.get("icon").toString());
 					channel.setChannelTitle(map3.get("title").toString());
-					dataVerifyManager.add(new ValueVerify(reponseResult.getData().getChannel(), channel, true));
+					dataVerifyManager.add(new ValueVerify(reponseResult.getData().getChannel(), channel, true).setVerifyContent("验证频道信息"));
 				}	
 			}
 			catch(Exception e){
 				if(e.getMessage().contains("没有频道")){
-					dataVerifyManager.add(new ValueVerify(reponseResult.getData().getChannel().getChannelTitle(), null, false));
+					dataVerifyManager.add(new ValueVerify(reponseResult.getData().getChannel().getChannelTitle(), null, false).setVerifyContent("验证频道信息"));
 				}
 			}
 			
@@ -134,10 +134,10 @@ public class GetDigestDetail  extends FixtureBase {
 			try{
 				sql = "SELECT * from praise_info where target_id="+digestId+" and user_id="+login.getCustId();
 				DbUtil.selectOne(Config.BSAECOMMENT, sql);
-				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getDigestDetail().getIsPraise(), 1, false));				
+				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getDigestDetail().getIsPraise(), 1, false).setVerifyContent("验证isPraise"));
 			}
 			catch(Exception e){
-				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getDigestDetail().getIsPraise(), 0, false));
+				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getDigestDetail().getIsPraise(), 0, false).setVerifyContent("验证isPraise"));
 			}
 			
 			//验证订阅信息
@@ -145,10 +145,10 @@ public class GetDigestDetail  extends FixtureBase {
 				sql = "SELECT * from channel_sub_user where channel_id="+channelId+" and cust_id="+login.getCustId();
 				Map<String,Object> map4 = DbUtil.selectOne(Config.YCDBConfig, sql);
 				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getSubscribe(), 
-						                                       Integer.parseInt(map4.get("type").toString()),false));
+						                                       Integer.parseInt(map4.get("type").toString()),false).setVerifyContent("验证订阅信息"));
 			}
 			catch(Exception e){
-				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getSubscribe(), 0, false));
+				dataVerifyManager.add(new ValueVerify<Integer>(reponseResult.getData().getSubscribe(), 0, false).setVerifyContent("验证订阅信息"));
 			}
 			
 			//点赞数量，评论数量，阅读数量
@@ -168,12 +168,12 @@ public class GetDigestDetail  extends FixtureBase {
 				e.printStackTrace();
 			}	
 			dataVerifyManager.add(new ValueVerify<Integer>(
-		              reponseResult.getData().getDigestDetail().getTopCnt(), topCnt, false));	
+		              reponseResult.getData().getDigestDetail().getTopCnt(), topCnt, false).setVerifyContent("验证点赞数量"));
             dataVerifyManager.add(new ValueVerify<Integer>(
-                    reponseResult.getData().getDigestDetail().getReviewCnt(), reviewCnt, false));
+                    reponseResult.getData().getDigestDetail().getReviewCnt(), reviewCnt, false).setVerifyContent("验证评论数量"));
             //每访问一次，阅读量+1。本次浏览，把新的浏览数更新到库里了。
             dataVerifyManager.add(new ValueVerify<Integer>(
-                    reponseResult.getData().getDigestDetail().getClickCnt(), browseCnt, false));	
+                    reponseResult.getData().getDigestDetail().getClickCnt(), browseCnt, false).setVerifyContent("验证阅读数量"));
 
 			super.dataVerify();
 		}	

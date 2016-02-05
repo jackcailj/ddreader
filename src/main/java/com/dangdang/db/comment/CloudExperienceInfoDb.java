@@ -41,7 +41,7 @@ public class CloudExperienceInfoDb {
      */
     public static List<CloudExperienceInfoEx> getCloudExperienceInfo(String custId, String typeList, int PageSize,Long lastRecordTime) throws Exception {
 
-        String selectString="select experience_id as id,cust_id as custId,product_id as productId,record_time as recordTime,type,remarks,device_type as deviceType from cloud_experience_info where cust_id="+custId +(lastRecordTime==null?"":" and record_time>"+lastRecordTime)+ (StringUtils.isEmpty(typeList)?"":" and type in("+typeList+")") +"  ORDER BY record_time  limit "+PageSize ;
+        String selectString="select experience_id as id,cust_id as custId,product_id as productId,record_time as recordTime,type,remarks,device_type as deviceType from cloud_experience_info where cust_id="+custId +((lastRecordTime==null || lastRecordTime==0)?"":" and record_time<"+lastRecordTime)+ (StringUtils.isEmpty(typeList)?"":" and type in("+typeList+")") +"  ORDER BY record_time desc limit "+PageSize ;
         List<CloudExperienceInfoEx> cloudReadingProgresses = DbUtil.selectList(Config.BSAECOMMENT,selectString,CloudExperienceInfoEx.class);
 
         return cloudReadingProgresses;

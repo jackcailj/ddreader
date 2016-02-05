@@ -15,7 +15,9 @@ import com.dangdang.readerV5.reponse.GetExperienceInfoListReponse;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by cailianjie on 2015-9-22.
@@ -43,8 +45,17 @@ public class GetExperienceInfoList extends FixtureBase{
 
             //boolean isIncrement = StringUtils.isEmpty(paramMap.get("isIncrement"))?false:Boolean.parseBoolean(paramMap.get("isIncrement"));
             Long lastRecordTime = StringUtils.isEmpty(paramMap.get("recordTime"))?null:Long.parseLong(paramMap.get("recordTime"));
-            List<CloudExperienceInfoEx> experienceInfos = CloudExperienceInfoDb.getCloudExperienceInfo(login.getCustId(),null,Integer.parseInt(paramMap.get("pageSize")),lastRecordTime);
-            for(CloudExperienceInfoEx cloudExperienceInfoEx: experienceInfos){
+            List<CloudExperienceInfoEx> experienceInfos = CloudExperienceInfoDb.getCloudExperienceInfo(login.getCustId(),null,Integer.parseInt(paramMap.get("pageSize"))*3,lastRecordTime);
+
+            List<Long> recordTimeMap =new ArrayList<Long>();
+            for(int i=0;i<experienceInfos.size();i++) {
+                CloudExperienceInfoEx cloudExperienceInfoEx=experienceInfos.get(i);
+                if(recordTimeMap.contains(cloudExperienceInfoEx.getRecordTime())){
+                    //重复数据，删除
+                    experienceInfos.remove(i);
+                    continue;
+                }
+                recordTimeMap.add(cloudExperienceInfoEx.getRecordTime());
                 cloudExperienceInfoEx.setDeviceType(null);
             }
             dataVerifyManager.add(new ListVerify(reponseResult.getData().getExperienceInfoList(),experienceInfos,true));

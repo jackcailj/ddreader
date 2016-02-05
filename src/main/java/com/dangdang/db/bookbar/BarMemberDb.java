@@ -29,11 +29,9 @@ public class BarMemberDb {
 	public static List<BarMember> getBarRemember(String barId,Integer pageNo) throws Exception{
 		//member_status（1 成员，2 申请吧主， 3 吧主）
 		String sql = "select * from bar_member where member_status in (1,2,3) and bar_id="+barId
-				+"  order by member_status desc, bar_member_id ASC limit "+pageNo*50+",51" ;
+				+"  order by member_status desc, bar_member_id ASC limit "+(pageNo==0?0+",51":pageNo*50+1+",50") ;
 		List<BarMember> members = DbUtil.selectList(Config.BOOKBARDBConfig, sql, BarMember.class);
-		if(members.size()==0 && pageNo>=1){
-			members=getBarRemember(barId,pageNo-1);
-		}
+
 		return members;
 	}
 

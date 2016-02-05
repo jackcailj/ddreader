@@ -1,6 +1,8 @@
 package com.dangdang.readerV5.personal_center;
 
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.common.functional.login.LoginManager;
+import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.param.parse.ParseParamUtil;
 
 /**
@@ -16,4 +18,12 @@ public class LoginOutV2 extends FixtureBase {
         setLogin(ParseParamUtil.parseLogin(paramMap));
     }
 
+    @Override
+    protected void dataVerify() throws Exception {
+        if(reponseV2Base.getStatus().getCode()==0){
+            //退出成功后，需要将缓存中登录信息清除
+            LoginManager.remove(login);
+        }
+        super.dataVerify();
+    }
 }

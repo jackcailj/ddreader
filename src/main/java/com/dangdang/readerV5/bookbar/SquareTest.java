@@ -107,8 +107,8 @@ public class SquareTest extends FixtureBase{
 					Bar bar = DbUtil.selectOne(Config.BOOKBARDBConfig, sql, Bar.class);
 					BarContent bContentOfDB = new BarContent();
 					bContentOfDB.setArticleNum(bar.getArticleNum().toString());
-					bContentOfDB.setBarDesc(bar.getBarDesc().toString().isEmpty()?
-							defaultDesc:bar.getBarDesc().toString());
+					/*bContentOfDB.setBarDesc(bar.getBarDesc().toString().isEmpty()?
+							defaultDesc:bar.getBarDesc().toString());*/
 					bContentOfDB.setBarId(bar.getBarId().toString());					
 					if(bar.getBarImgUrl()!=null){
 						String str = reponseResult.getData().getSquareInfo().get(h).getBarContent().get(j).getBarImgUrl();
@@ -118,10 +118,10 @@ public class SquareTest extends FixtureBase{
 						bContentOfDB.setBarImgUrl(str!=null?bar.getBarImgUrl().toString():null);
 					}
 					bContentOfDB.setBarName(bar.getBarName().toString());
-					bContentOfDB.setMemberNum(bar.getMemberNum().toString());
-					if(bCotentList.get(j).getRecommendReason()!=null&&!(bCotentList.get(j).getRecommendReason().isEmpty())){
+					//bContentOfDB.setMemberNum(bar.getMemberNum().toString());
+					/*if(bCotentList.get(j).getRecommendReason()!=null&&!(bCotentList.get(j).getRecommendReason().isEmpty())){
 						bContentOfDB.setRecommendReason(bCotentList.get(j).getRecommendReason().toString());
-					}
+					}*/
 					bContentListOfDB.add(bContentOfDB);	
 				}
 			}
