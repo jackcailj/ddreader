@@ -1,58 +1,196 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <eclipse-userlibraries>
-  <library name="com.alibaba:dubbo:2.5.3">
-    <archive path="E:/work/github/ddreader/lib/dubbo-2.5.3.jar" />
-    <archive path="E:/work/github/ddreader/lib/spring-2.5.6.SEC03.jar" />
-    <archive path="E:/work/github/ddreader/lib/netty-3.2.5.Final.jar" />
-    <archive path="E:/work/github/ddreader/lib/mina-core-1.1.7.jar" />
-    <archive path="E:/work/github/ddreader/lib/slf4j-api-1.6.2.jar" />
-    <archive path="E:/work/github/ddreader/lib/grizzly-core-2.1.4.jar" />
-    <archive path="E:/work/github/ddreader/lib/grizzly-framework-2.1.4.jar" />
-    <archive path="E:/work/github/ddreader/lib/gmbal-api-only-3.0.0-b023.jar" />
-    <archive path="E:/work/github/ddreader/lib/management-api-3.0.0-b012.jar" />
-    <archive path="E:/work/github/ddreader/lib/grizzly-portunif-2.1.4.jar" />
-    <archive path="E:/work/github/ddreader/lib/grizzly-rcm-2.1.4.jar" />
-    <archive path="E:/work/github/ddreader/lib/xstream-1.4.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/xmlpull-1.1.3.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/xpp3_min-1.1.4c.jar" />
-    <archive path="E:/work/github/ddreader/lib/bsf-api-3.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/zookeeper-3.3.3.jar" />
-    <archive path="E:/work/github/ddreader/lib/jline-0.9.94.jar" />
-    <archive path="E:/work/github/ddreader/lib/junit-3.8.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/zkclient-0.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/curator-framework-1.1.10.jar" />
-    <archive path="E:/work/github/ddreader/lib/curator-client-1.1.10.jar" />
-    <archive path="E:/work/github/ddreader/lib/guava-11.0.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/jsr305-1.3.9.jar" />
-    <archive path="E:/work/github/ddreader/lib/xmemcached-1.3.6.jar" />
-    <archive path="E:/work/github/ddreader/lib/cxf-rt-frontend-simple-2.6.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/cxf-api-2.6.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/woodstox-core-asl-4.1.2.jar" />
-    <archive path="E:/work/github/ddreader/lib/stax2-api-3.1.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/xmlschema-core-2.0.2.jar" />
-    <archive path="E:/work/github/ddreader/lib/geronimo-javamail_1.4_spec-1.7.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/wsdl4j-1.6.2.jar" />
-    <archive path="E:/work/github/ddreader/lib/cxf-rt-core-2.6.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/jaxb-impl-2.1.13.jar" />
-    <archive path="E:/work/github/ddreader/lib/cxf-rt-bindings-soap-2.6.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/cxf-rt-databinding-jaxb-2.6.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/cxf-rt-transports-http-2.6.1.jar" />
-    <archive path="E:/work/github/ddreader/lib/libthrift-0.8.0.jar" />
-    <archive path="E:/work/github/ddreader/lib/hessian-4.0.7.jar" />
-    <archive path="E:/work/github/ddreader/lib/servlet-api-2.5.jar" />
-    <archive path="E:/work/github/ddreader/lib/jetty-6.1.26.jar" />
-    <archive path="E:/work/github/ddreader/lib/jetty-util-6.1.26.jar" />
-    <archive path="E:/work/github/ddreader/lib/servlet-api-2.5-20081211.jar" />
-    <archive path="E:/work/github/ddreader/lib/jedis-2.0.0.jar" />
-    <archive path="E:/work/github/ddreader/lib/commons-pool-1.5.5.jar" />
-    <archive path="E:/work/github/ddreader/lib/validation-api-1.0.0.GA.jar" />
-    <archive path="E:/work/github/ddreader/lib/hibernate-validator-4.2.0.Final.jar" />
-    <archive path="E:/work/github/ddreader/lib/cache-api-0.4.jar" />
-    <archive path="E:/work/github/ddreader/lib/logback-classic-1.0.6.jar" />
-    <archive path="E:/work/github/ddreader/lib/logback-core-1.0.6.jar" />
+  <library name="Maven: antlr:antlr:2.7.7">
+    <archive path="C:/Users/cailianjie/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar" />
   </library>
-  <library name="sqljdbc4-4.0.2206.100">
-    <archive path="E:/work/github/ddreader/lib/sqljdbc4-4.0.2206.100.jar" />
+  <library name="Maven: c3p0:c3p0:0.9.1.2">
+    <archive path="C:/Users/cailianjie/.m2/repository/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar" />
+  </library>
+  <library name="Maven: com.alibaba:dubbo:2.5.3">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/alibaba/dubbo/2.5.3/dubbo-2.5.3.jar" />
+  </library>
+  <library name="Maven: com.alibaba:fastjson:1.1.18">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/alibaba/fastjson/1.1.18/fastjson-1.1.18.jar" />
+  </library>
+  <library name="Maven: com.alibaba:fastjson:1.2.5">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/alibaba/fastjson/1.2.5/fastjson-1.2.5.jar" />
+  </library>
+  <library name="Maven: com.almworks.sqlite4java:sqlite4java:0.282">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/almworks/sqlite4java/sqlite4java/0.282/sqlite4java-0.282.jar" />
+  </library>
+  <library name="Maven: com.beust:jcommander:1.27">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/beust/jcommander/1.27/jcommander-1.27.jar" />
+  </library>
+  <library name="Maven: com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:1.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/google/android/apps/common/testing/accessibility/framework/accessibility-test-framework/1.0/accessibility-test-framework-1.0.jar" />
+  </library>
+  <library name="Maven: com.google.code.gson:gson:2.2.4">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/google/code/gson/gson/2.2.4/gson-2.2.4.jar" />
+  </library>
+  <library name="Maven: com.googlecode.java-diff-utils:diffutils:1.3.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/googlecode/java-diff-utils/diffutils/1.3.0/diffutils-1.3.0.jar" />
+  </library>
+  <library name="Maven: com.ibm.icu:icu4j:53.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/ibm/icu/icu4j/53.1/icu4j-53.1.jar" />
+  </library>
+  <library name="Maven: com.ximpleware:vtd-xml:2.11">
+    <archive path="C:/Users/cailianjie/.m2/repository/com/ximpleware/vtd-xml/2.11/vtd-xml-2.11.jar" />
+  </library>
+  <library name="Maven: commons-codec:commons-codec:1.6">
+    <archive path="C:/Users/cailianjie/.m2/repository/commons-codec/commons-codec/1.6/commons-codec-1.6.jar" />
+  </library>
+  <library name="Maven: commons-collections:commons-collections:3.2.2">
+    <archive path="C:/Users/cailianjie/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar" />
+  </library>
+  <library name="Maven: commons-lang:commons-lang:2.6">
+    <archive path="C:/Users/cailianjie/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" />
+  </library>
+  <library name="Maven: commons-logging:commons-logging:1.1.3">
+    <archive path="C:/Users/cailianjie/.m2/repository/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar" />
+  </library>
+  <library name="Maven: commons-net:commons-net:3.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/commons-net/commons-net/3.1/commons-net-3.1.jar" />
+  </library>
+  <library name="Maven: dom4j:dom4j:1.6.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" />
+  </library>
+  <library name="Maven: junit:junit:4.10">
+    <archive path="C:/Users/cailianjie/.m2/repository/junit/junit/4.10/junit-4.10.jar" />
+  </library>
+  <library name="Maven: junit:junit:4.8.2">
+    <archive path="C:/Users/cailianjie/.m2/repository/junit/junit/4.8.2/junit-4.8.2.jar" />
+  </library>
+  <library name="Maven: log4j:log4j:1.2.16">
+    <archive path="C:/Users/cailianjie/.m2/repository/log4j/log4j/1.2.16/log4j-1.2.16.jar" />
+  </library>
+  <library name="Maven: mysql:mysql-connector-java:5.1.38">
+    <archive path="C:/Users/cailianjie/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar" />
+  </library>
+  <library name="Maven: net.sourceforge.jexcelapi:jxl:2.6.12">
+    <archive path="C:/Users/cailianjie/.m2/repository/net/sourceforge/jexcelapi/jxl/2.6.12/jxl-2.6.12.jar" />
+  </library>
+  <library name="Maven: org.apache.ant:ant:1.8.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/ant/ant/1.8.0/ant-1.8.0.jar" />
+  </library>
+  <library name="Maven: org.apache.ant:ant-launcher:1.8.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/ant/ant-launcher/1.8.0/ant-launcher-1.8.0.jar" />
+  </library>
+  <library name="Maven: org.apache.commons:commons-lang3:3.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/commons/commons-lang3/3.1/commons-lang3-3.1.jar" />
+  </library>
+  <library name="Maven: org.apache.httpcomponents:httpclient:4.3.6">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/httpcomponents/httpclient/4.3.6/httpclient-4.3.6.jar" />
+  </library>
+  <library name="Maven: org.apache.httpcomponents:httpcore:4.3.3">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/httpcomponents/httpcore/4.3.3/httpcore-4.3.3.jar" />
+  </library>
+  <library name="Maven: org.apache.httpcomponents:httpmime:4.3.6">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/httpcomponents/httpmime/4.3.6/httpmime-4.3.6.jar" />
+  </library>
+  <library name="Maven: org.apache.ibatis:ibatis-core:3.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/ibatis/ibatis-core/3.0/ibatis-core-3.0.jar" />
+  </library>
+  <library name="Maven: org.apache.maven:maven-ant-tasks:2.1.3">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/maven/maven-ant-tasks/2.1.3/maven-ant-tasks-2.1.3.jar" />
+  </library>
+  <library name="Maven: org.apache.velocity:velocity:1.7">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/apache/velocity/velocity/1.7/velocity-1.7.jar" />
+  </library>
+  <library name="Maven: org.beanshell:bsh:2.0b4">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/beanshell/bsh/2.0b4/bsh-2.0b4.jar" />
+  </library>
+  <library name="Maven: org.bouncycastle:bcprov-jdk16:1.46">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/bouncycastle/bcprov-jdk16/1.46/bcprov-jdk16-1.46.jar" />
+  </library>
+  <library name="Maven: org.fitnesse:fitnesse:20151230">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/fitnesse/fitnesse/20151230/fitnesse-20151230.jar" />
+  </library>
+  <library name="Maven: org.hamcrest:hamcrest-core:1.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar" />
+  </library>
+  <library name="Maven: org.hibernate.common:hibernate-commons-annotations:4.0.5.Final">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.5.Final/hibernate-commons-annotations-4.0.5.Final.jar" />
+  </library>
+  <library name="Maven: org.hibernate:hibernate-core:4.3.8.Final">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/hibernate/hibernate-core/4.3.8.Final/hibernate-core-4.3.8.Final.jar" />
+  </library>
+  <library name="Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar" />
+  </library>
+  <library name="Maven: org.htmlparser:htmllexer:2.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/htmlparser/htmllexer/2.1/htmllexer-2.1.jar" />
+  </library>
+  <library name="Maven: org.htmlparser:htmlparser:2.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/htmlparser/htmlparser/2.1/htmlparser-2.1.jar" />
+  </library>
+  <library name="Maven: org.javassist:javassist:3.15.0-GA">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/javassist/javassist/3.15.0-GA/javassist-3.15.0-GA.jar" />
+  </library>
+  <library name="Maven: org.javassist:javassist:3.18.1-GA">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar" />
+  </library>
+  <library name="Maven: org.jboss:jandex:1.1.0.Final">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar" />
+  </library>
+  <library name="Maven: org.jboss.logging:jboss-logging:3.1.3.GA">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar" />
+  </library>
+  <library name="Maven: org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar" />
+  </library>
+  <library name="Maven: org.jboss.netty:netty:3.2.5.Final">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/jboss/netty/netty/3.2.5.Final/netty-3.2.5.Final.jar" />
+  </library>
+  <library name="Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar" />
+  </library>
+  <library name="Maven: org.json:json:20140107">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/json/json/20140107/json-20140107.jar" />
+  </library>
+  <library name="Maven: org.mongodb:mongo-java-driver:3.2.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/mongodb/mongo-java-driver/3.2.1/mongo-java-driver-3.2.1.jar" />
+  </library>
+  <library name="Maven: org.ow2.asm:asm:5.0.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/ow2/asm/asm/5.0.1/asm-5.0.1.jar" />
+  </library>
+  <library name="Maven: org.ow2.asm:asm-analysis:5.0.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/ow2/asm/asm-analysis/5.0.1/asm-analysis-5.0.1.jar" />
+  </library>
+  <library name="Maven: org.ow2.asm:asm-commons:5.0.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/ow2/asm/asm-commons/5.0.1/asm-commons-5.0.1.jar" />
+  </library>
+  <library name="Maven: org.ow2.asm:asm-tree:5.0.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/ow2/asm/asm-tree/5.0.1/asm-tree-5.0.1.jar" />
+  </library>
+  <library name="Maven: org.ow2.asm:asm-util:5.0.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/ow2/asm/asm-util/5.0.1/asm-util-5.0.1.jar" />
+  </library>
+  <library name="Maven: org.robolectric:robolectric:3.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/robolectric/robolectric/3.0/robolectric-3.0.jar" />
+  </library>
+  <library name="Maven: org.robolectric:robolectric-annotations:3.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/robolectric/robolectric-annotations/3.0/robolectric-annotations-3.0.jar" />
+  </library>
+  <library name="Maven: org.robolectric:robolectric-resources:3.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/robolectric/robolectric-resources/3.0/robolectric-resources-3.0.jar" />
+  </library>
+  <library name="Maven: org.robolectric:robolectric-utils:3.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/robolectric/robolectric-utils/3.0/robolectric-utils-3.0.jar" />
+  </library>
+  <library name="Maven: org.robolectric:shadows-core:3.0">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/robolectric/shadows-core/3.0/shadows-core-3.0.jar" />
+  </library>
+  <library name="Maven: org.springframework:spring:2.5.6.SEC03">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/springframework/spring/2.5.6.SEC03/spring-2.5.6.SEC03.jar" />
+  </library>
+  <library name="Maven: org.testng:testng:6.8.1">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/testng/testng/6.8.1/testng-6.8.1.jar" />
+  </library>
+  <library name="Maven: org.yaml:snakeyaml:1.6">
+    <archive path="C:/Users/cailianjie/.m2/repository/org/yaml/snakeyaml/1.6/snakeyaml-1.6.jar" />
+  </library>
+  <library name="Maven: xml-apis:xml-apis:1.0.b2">
+    <archive path="C:/Users/cailianjie/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" />
   </library>
   <library name="groovy-2.4.3">
     <archive path="C:/Program Files (x86)/Groovy/Groovy-2.4.3/lib/abeilleformbuilder-3.0.jar" />

@@ -1,116 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="lib/antlr-2.7.7.jar"/>
-	<classpathentry kind="lib" path="lib/c3p0-0.9.2.1.jar"/>
-	<classpathentry kind="lib" path="lib/commons-codec-1.6.jar"/>
-	<classpathentry kind="lib" path="lib/commons-lang3-3.3.2.jar"/>
-	<classpathentry kind="lib" path="lib/commons-logging-1.1.3.jar"/>
-	<classpathentry kind="lib" path="lib/dom4j-1.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/fluent-hc-4.3.6.jar"/>
-	<classpathentry kind="lib" path="lib/gson-1.7.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-c3p0-4.3.8.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-commons-annotations-4.0.5.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-core-4.3.8.Final.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/httpclient-4.3.6.jar"/>
-	<classpathentry kind="lib" path="lib/httpclient-cache-4.3.6.jar"/>
-	<classpathentry kind="lib" path="lib/httpcore-4.3.3.jar"/>
-	<classpathentry kind="lib" path="lib/httpmime-4.3.6.jar"/>
-	<classpathentry kind="lib" path="lib/jakarta-oro-2.0.8.jar"/>
-	<classpathentry kind="lib" path="lib/jandex-1.1.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/javassist-3.18.1-GA.jar"/>
-	<classpathentry kind="lib" path="lib/jboss-logging-3.1.3.GA.jar"/>
-	<classpathentry kind="lib" path="lib/jboss-logging-annotations-1.2.0.Beta1.jar"/>
-	<classpathentry kind="lib" path="lib/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/jorphan.jar"/>
-	<classpathentry kind="lib" path="lib/jxl.jar"/>
-	<classpathentry kind="lib" path="lib/log4j-1.2.17.jar"/>
-	<classpathentry kind="lib" path="lib/logkit-2.0.jar"/>
-	<classpathentry kind="lib" path="lib/mybatis-3.0.6.jar"/>
-	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.34-bin.jar"/>
-	<classpathentry kind="lib" path="lib/mchange-commons-java-0.2.3.4.jar"/>
-	<classpathentry kind="con" path="org.testng.TESTNG_CONTAINER"/>
-	<classpathentry kind="lib" path="lib/org.apache.commons.collections_3.2.0.v2013030210310.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/ddframework"/>
-	<classpathentry kind="lib" path="lib/fitnesse-standalone.jar"/>
-	<classpathentry kind="lib" path="lib/Groovy.jar"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.alibaba:dubbo:2.5.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.springframework:spring:2.5.6.SEC03"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.javassist:javassist:3.15.0-GA"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.jboss.netty:netty:3.2.5.Final"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.commons:commons-lang3:3.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: antlr:antlr:2.7.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: dom4j:dom4j:1.6.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: xml-apis:xml-apis:1.0.b2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.alibaba:fastjson:1.2.5"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.httpcomponents:httpclient:4.3.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.httpcomponents:httpcore:4.3.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: commons-logging:commons-logging:1.1.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: commons-codec:commons-codec:1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.httpcomponents:httpmime:4.3.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.robolectric:robolectric:3.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: junit:junit:4.8.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.robolectric:robolectric-annotations:3.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.robolectric:robolectric-resources:3.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.robolectric:robolectric-utils:3.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework:1.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.robolectric:shadows-core:3.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.ibm.icu:icu4j:53.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.almworks.sqlite4java:sqlite4java:0.282"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.bouncycastle:bcprov-jdk16:1.46"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.ow2.asm:asm:5.0.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.ow2.asm:asm-commons:5.0.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.ow2.asm:asm-tree:5.0.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.ow2.asm:asm-util:5.0.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.ow2.asm:asm-analysis:5.0.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.ximpleware:vtd-xml:2.11"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.maven:maven-ant-tasks:2.1.3"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.ant:ant:1.8.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.ant:ant-launcher:1.8.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.testng:testng:6.8.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.beanshell:bsh:2.0b4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.beust:jcommander:1.27"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.yaml:snakeyaml:1.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: log4j:log4j:1.2.16"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.hibernate:hibernate-core:4.3.8.Final"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.jboss.logging:jboss-logging:3.1.3.GA"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.jboss.logging:jboss-logging-annotations:1.2.0.Beta1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.Final"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.hibernate.common:hibernate-commons-annotations:4.0.5.Final"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.Final"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.jboss:jandex:1.1.0.Final"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: mysql:mysql-connector-java:5.1.38"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/ddFramework"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: commons-net:commons-net:3.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: net.sourceforge.jexcelapi:jxl:2.6.12"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.google.code.gson:gson:2.2.4"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.ibatis:ibatis-core:3.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.mongodb:mongo-java-driver:3.2.1"/>
+	<classpathentry kind="lib" path="/ddFramework/lib/javacommon-1.0.42.jar"/>
 	<classpathentry combineaccessrules="false" kind="src" path="/db_meta"/>
-	<classpathentry kind="lib" path="lib/fastjson-1.2.5.jar"/>
-	<classpathentry kind="lib" path="lib/aopalliance-1.0.jar"/>
-	<classpathentry kind="lib" path="lib/bsf-api-3.1.jar"/>
-	<classpathentry kind="lib" path="lib/cache-api-0.4.jar"/>
-	<classpathentry kind="lib" path="lib/commons-pool-1.5.5.jar"/>
-	<classpathentry kind="lib" path="lib/curator-client-1.1.10.jar"/>
-	<classpathentry kind="lib" path="lib/curator-framework-1.1.10.jar"/>
-	<classpathentry kind="lib" path="lib/cxf-api-2.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/cxf-rt-bindings-soap-2.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/cxf-rt-core-2.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/cxf-rt-databinding-jaxb-2.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/cxf-rt-frontend-simple-2.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/cxf-rt-transports-http-2.6.1.jar"/>
-	<classpathentry kind="lib" path="lib/dubbo-2.5.3.jar"/>
-	<classpathentry kind="lib" path="lib/easemobchat_2.2.1.jar"/>
-	<classpathentry kind="lib" path="lib/geronimo-javamail_1.4_spec-1.7.1.jar"/>
-	<classpathentry kind="lib" path="lib/gmbal-api-only-3.0.0-b023.jar"/>
-	<classpathentry kind="lib" path="lib/grizzly-core-2.1.4.jar"/>
-	<classpathentry kind="lib" path="lib/grizzly-framework-2.1.4.jar"/>
-	<classpathentry kind="lib" path="lib/grizzly-portunif-2.1.4.jar"/>
-	<classpathentry kind="lib" path="lib/grizzly-rcm-2.1.4.jar"/>
-	<classpathentry kind="lib" path="lib/guava-11.0.1.jar"/>
-	<classpathentry kind="lib" path="lib/hessian-4.0.7.jar"/>
-	<classpathentry kind="lib" path="lib/hibernate-validator-4.2.0.Final.jar"/>
-	<classpathentry kind="lib" path="lib/im-api.jar"/>
-	<classpathentry kind="lib" path="lib/java-gearman-service-0.6.6.jar"/>
-	<classpathentry kind="lib" path="lib/jaxb-impl-2.1.13.jar"/>
-	<classpathentry kind="lib" path="lib/jedis-2.0.0.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-6.1.26.jar"/>
-	<classpathentry kind="lib" path="lib/jetty-util-6.1.26.jar"/>
-	<classpathentry kind="lib" path="lib/jline-0.9.94.jar"/>
-	<classpathentry kind="lib" path="lib/jsr305-1.3.9.jar"/>
-	<classpathentry kind="lib" path="lib/junit-3.8.1.jar"/>
-	<classpathentry kind="lib" path="lib/libthrift-0.8.0.jar"/>
-	<classpathentry kind="lib" path="lib/logback-classic-1.0.6.jar"/>
-	<classpathentry kind="lib" path="lib/logback-core-1.0.6.jar"/>
-	<classpathentry kind="lib" path="lib/management-api-3.0.0-b012.jar"/>
-	<classpathentry kind="lib" path="lib/mina-core-1.1.7.jar"/>
-	<classpathentry kind="lib" path="lib/mybatis-spring-1.0.2.jar"/>
-	<classpathentry kind="lib" path="lib/netty-3.2.5.Final.jar"/>
-	<classpathentry kind="lib" path="lib/servlet-api-2.5-20081211.jar"/>
-	<classpathentry kind="lib" path="lib/servlet-api-2.5.jar"/>
-	<classpathentry kind="lib" path="lib/slf4j-api-1.6.2.jar"/>
-	<classpathentry kind="lib" path="lib/spring-2.5.6.SEC03.jar"/>
-	<classpathentry kind="lib" path="lib/spring-aop-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-aspects-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-beans-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-context-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-context-support-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-core-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-expression-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-instrument-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-instrument-tomcat-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-jdbc-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-jms-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-messaging-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-orm-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-oxm-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-test-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/spring-tx-4.1.6.RELEASE.jar"/>
-	<classpathentry kind="lib" path="lib/sqljdbc4-4.0.2206.100.jar"/>
-	<classpathentry kind="lib" path="lib/stax2-api-3.1.1.jar"/>
-	<classpathentry kind="lib" path="lib/validation-api-1.0.0.GA.jar"/>
-	<classpathentry kind="lib" path="lib/woodstox-core-asl-4.1.2.jar"/>
-	<classpathentry kind="lib" path="lib/wsdl4j-1.6.2.jar"/>
-	<classpathentry kind="lib" path="lib/xmemcached-1.3.6.jar"/>
-	<classpathentry kind="lib" path="lib/xmlpull-1.1.3.1.jar"/>
-	<classpathentry kind="lib" path="lib/xmlschema-core-2.0.2.jar"/>
-	<classpathentry kind="lib" path="lib/xpp3_min-1.1.4c.jar"/>
-	<classpathentry kind="lib" path="lib/xstream-1.4.1.jar"/>
-	<classpathentry kind="lib" path="lib/zkclient-0.1.jar"/>
-	<classpathentry kind="lib" path="lib/zookeeper-3.3.3.jar"/>
-	<classpathentry kind="lib" path="lib/media-soa-api-2.0.1-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="lib/media-soa-client-2.0.1-SNAPSHOT.jar"/>
-	<classpathentry kind="lib" path="lib/media-ucenter-api-1.0.1-SNAPSHOT.jar"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.fitnesse:fitnesse:20151230"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.htmlparser:htmlparser:2.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.htmlparser:htmllexer:2.1"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.apache.velocity:velocity:1.7"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: commons-lang:commons-lang:2.6"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: org.json:json:20140107"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: com.googlecode.java-diff-utils:diffutils:1.3.0"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: commons-collections:commons-collections:3.2.2"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Maven: c3p0:c3p0:0.9.1.2"/>
+	<classpathentry kind="lib" path="lib/media-ucenter-api-1.0.1-20151113.033616-6.jar"/>
+	<classpathentry kind="lib" path="lib/media-soa-api-2.0.6-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

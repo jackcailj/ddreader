@@ -18,7 +18,32 @@
       <profile default="true" name="Default" enabled="false">
         <processorPath useClasspath="true" />
       </profile>
+      <profile default="false" name="Annotation profile for ddreader" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ddreader" />
+      </profile>
+      <profile default="false" name="Annotation profile for ddFramework" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="ddFramework" />
+      </profile>
+      <profile default="false" name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target\generated-test-sources\test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="true" />
+        <module name="db_meta" />
+      </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="1.7" />
+    <bytecodeTargetLevel target="1.7">
+      <module name="db_meta" target="1.5" />
+      <module name="ddFramework" target="1.7" />
+      <module name="ddreader" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
