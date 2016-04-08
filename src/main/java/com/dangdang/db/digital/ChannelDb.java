@@ -13,6 +13,7 @@ import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.Channel;
 import com.dangdang.digital.meta.ChannelOwner;
+import com.dangdang.enumeration.ChannelOwnerStatus;
 import com.dangdang.readerV5.reponse.BookList;
 import com.dangdang.readerV5.reponse.ChannelBookList;
 
@@ -32,6 +33,24 @@ public class ChannelDb {
     	else
     		return infos.get(0).get("channel_id").toString();
 	}
+
+
+    //根据custId获取频道id  如果没有返回null
+    //add by cailj
+
+    public static Channel getChannelIdByCustId(String custId,int channelShelfStatus ) throws Exception{
+        String selectSQL = "SELECT * FROM channel " +
+                "WHERE is_completed=1 AND shelf_status="+channelShelfStatus+" AND cust_id="+custId;
+        List<Channel> channels = DbUtil.selectList(Config.YCDBConfig, selectSQL,Channel.class);
+        if(channels.size()>1){
+            throw new Exception("一个用户拥有多个Channel，应只拥有1个");
+        }else if( channels.size()==1){
+            return channels.get(0);
+        }
+
+        return null;
+
+    }
 	
 	//根据channelId获取custId
 	public static String getCustIdByChannelId(String channelId) throws Exception{
@@ -94,7 +113,7 @@ public class ChannelDb {
 				"WHERE shelf_status=1 " +
 				"AND is_completed=1 " +
 				"AND is_allow_monthly=1 " +
-				"AND channel_id NOT IN "+ SqlUtil.getListToString(userMonthlyChannelList);
+				(userMonthlyChannelList.size()==0?"" :"AND channel_id NOT IN "+ SqlUtil.getListToString(userMonthlyChannelList));
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
 	}
@@ -280,6 +299,7 @@ public class ChannelDb {
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
 		return infos.get(SqlUtil.getRandNum(infos)).get("channel_id").toString();
 	}
+
     
     public static void main(String[] args) throws Exception{
     	Channel s = ChannelDb.getChannel("1169");

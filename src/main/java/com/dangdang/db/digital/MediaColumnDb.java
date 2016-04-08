@@ -53,7 +53,7 @@ public class MediaColumnDb {
 	//获取频道栏目基本信息
 	//ChannelColumn.java used
     public static MediaColumn getMediaColumn(String columnCode) throws Exception {          
-    	String selectSQL = "SELECT name FROM media_column WHERE column_code='"+columnCode+"'";
+    	String selectSQL = "SELECT * FROM media_column WHERE column_code='"+columnCode+"'";
 		List<MediaColumn> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, MediaColumn.class);
 		if(infos.size()==0) return null;
 		else return infos.get(0);

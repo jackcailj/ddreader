@@ -16,9 +16,9 @@ public class AuthorityDb {
     /*
     获取购买的书籍
      */
-    public static List<MediaAuthority> getUserEbook(String custId,int num) throws Exception {
+    public static List<MediaAuthority> getUserEbook(String custId,Long lastTime,int num) throws Exception {
         Integer nCustId=Integer.parseInt(custId);
-        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +"  and authority_type !=3  limit  "+num;
+        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +"  and authority_type !=3  "+(lastTime==null?"": " and UNIX_TIMESTAMP(creation_date) >"+lastTime)+" limit  "+num;
         List<MediaAuthority> mediaAuthorities = DbUtil.selectList(Config.AUTHORITYConfig,selectString,MediaAuthority.class);
         return mediaAuthorities;
     }

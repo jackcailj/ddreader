@@ -61,10 +61,10 @@ public class Signin extends FixtureBase{
 
             //验证铃铛获取正确
             masterAccountInfo = new GetAccountInfo(login,true);
-            masterAccountInfo.doWorkAndVerify();
+            masterAccountInfo.doWork();
 
             attachAccountInfo = new GetAccountInfo(login,false);
-            attachAccountInfo.doWorkAndVerify();
+            attachAccountInfo.doWork();
 
             attachAccountInfo.getReponseAttachResult().getData().setAccountTotal(attachAccountInfo.getReponseAttachResult().getData().getAccountTotal()+prize);
 
@@ -77,14 +77,16 @@ public class Signin extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
 
+        Thread.sleep(60000);
+
         GetAccountInfo afterMasterAccountInfo=null;
         GetAccountInfo afterAttachAccountInfo=null;
         if(login!=null) {
             afterMasterAccountInfo = new GetAccountInfo(login, true);
-            afterMasterAccountInfo.doWorkAndVerify();
+            afterMasterAccountInfo.doWork();
 
             afterAttachAccountInfo = new GetAccountInfo(login,false);
-            afterAttachAccountInfo.doWorkAndVerify();
+            afterAttachAccountInfo.doWork();
 
         }
 

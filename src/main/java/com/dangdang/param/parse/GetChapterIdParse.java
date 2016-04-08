@@ -23,8 +23,8 @@ public class GetChapterIdParse implements IParamParse{
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
         GetChapterEnum status = GetChapterEnum.valueOf(param);
 
-        Media media = MediaDb.getMedia(BookType.YUANCHUANG, BookStatus.VALID);
-        MediaChapter mediaChapter = MediaChapterDb.getBookChapter(media.getMediaId().toString(),status);
+        //Media media = MediaDb.getMedia(BookType.YUANCHUANG, BookStatus.VALID);
+        MediaChapter mediaChapter = MediaChapterDb.getBookChapter(status);
 
         paramMap.put(key,mediaChapter.getId().toString());
     }

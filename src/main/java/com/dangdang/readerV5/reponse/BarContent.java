@@ -1,5 +1,7 @@
 package com.dangdang.readerV5.reponse;
 
+import com.dangdang.ddframework.dataverify.verify_annotation.NotNull;
+
 public class BarContent {
 	String articleNum;
 	String barDesc;
@@ -8,6 +10,7 @@ public class BarContent {
 	String barName;
 	String memberNum;
 	String recommendReason;
+	String isActivity;
 	
 	public String getArticleNum(){
 		return articleNum;
@@ -53,4 +56,11 @@ public class BarContent {
 		this.recommendReason = recommendReason;
 	}
 
+    public String getIsActivity() {
+        return isActivity;
+    }
+
+    public void setIsActivity(String isActivity) {
+        this.isActivity = isActivity;
+    }
 }

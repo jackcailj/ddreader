@@ -9,6 +9,8 @@ import com.dangdang.db.digital.RefreshCache;
 import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.Channel;
 import com.dangdang.digital.meta.MediaColumnContent;
+import com.dangdang.digital.meta.MediaDigest;
+import com.dangdang.digital.meta.MediaTagLink;
 
 /**
  * 
@@ -20,7 +22,7 @@ public class MediaColumnContentDb {
 	//获取频道栏目下频道列表 
 	//MediaColumn.class used
     public static List<Channel> getChannelList(String columnCode, int num) throws Exception {       
-    	String selectSQL = "SELECT channel.channel_id,channel.owner_id,channel.title,channel.description,channel.icon,channel.sub_number" +
+    	String selectSQL = "SELECT channel.*" +
     			" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
 				" where column_code ='"+columnCode+"'"+
 				" and channel.shelf_status=1"+
@@ -59,6 +61,42 @@ public class MediaColumnContentDb {
        		" and  now() between start_date and end_date";  
 		List<MediaColumnContent>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, MediaColumnContent.class);	
 		return infos;	
+    }
+
+
+	//获取某个栏目下的所有内容
+	public static List<MediaColumnContent> getMediaColumnContent(String columnCode) throws Exception{
+		String selectSQL = "SELECT mcc.*" +
+				" from media_column_content mcc left join channel on mcc.sale_id= channel.channel_id"+
+				" where mcc.column_code ='"+columnCode+"'"+
+				" and channel.shelf_status=1"+
+				" and  mcc.status in(1,2)"+
+				" and  now() between start_date and end_date";
+		List<MediaColumnContent>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, MediaColumnContent.class);
+		return infos;
+	}
+
+
+    //获取某个栏目下的标签
+    public static List<MediaTagLink> getMediaColumnTagLinkList(String columnCode) throws Exception{
+        String selectSQL ="SELECT mtl.* from media_tag_link mtl \n" +
+                "left join media_column_content  mcc on mtl.id=mcc.sale_id\n" +
+                "where mcc.`status` in(1,2) and mcc.column_code = '"+columnCode+"' and NOW() BETWEEN mcc.start_date and mcc.end_date order by mcc.`status` asc, mcc.order_value desc ";
+        List<MediaTagLink>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, MediaTagLink.class);
+        return infos;
+    }
+
+
+    //获取某个栏目下的文章
+    public static List<MediaDigest> getMediaColumnDigestList(String columnCode,int limitNum) throws Exception{
+        String selectSQL ="SELECT md.id,md.author,md.media_id,md.media_chapter_id,md.media_name,md.bar_id,md.first_catetory_id,md.first_catetory_name,md.content,type*1 as type,md.column_id,md.column_name,md.stars,md.review_cnt,md.collect_cnt,md.share_cnt," +
+                "md.click_cnt,md.top_cnt,md.card_title,md.card_remark,md.card_type*1 as card_type,md.pic1_path,md.small_pic1_path,md.small_pic2_path,md.small_pic3_path,md.show_start_date,md.create_date,md.title," +
+                "md.is_show*1 as is_show,md.is_del*1 as is_del,md.sign_ids,md.day_or_night,md.mood*1,md.weight,md.operator,md.sort_page,md.is_paper_book*1 as is_paper_book  from media_digest md " +
+                "left join media_column_content  mcc on md.id=mcc.sale_id\n" +
+                "where mcc.`status` in(1,2) and mcc.column_code = '"+columnCode+"' and NOW() BETWEEN mcc.start_date and mcc.end_date order by mcc.`status` asc, mcc.order_value desc limit "+limitNum;
+
+        List<MediaDigest>  infos = DbUtil.selectList(Config.YCDBConfig, selectSQL, MediaDigest.class);
+        return infos;
     }
 
     

@@ -53,7 +53,9 @@ public class GetUserBookList extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){
-            List<MediaAuthority> mediaAuthorities= AuthorityDb.getUserEbook(login.getCustId(), StringUtils.isBlank(paramMap.get("pageSize"))?100:Integer.parseInt(paramMap.get("pageSize")));
+
+            Long lastTime = StringUtils.isBlank(paramMap.get("lastRequestTime"))?null:Long.parseLong(paramMap.get("lastRequestTime"));
+            List<MediaAuthority> mediaAuthorities= AuthorityDb.getUserEbook(login.getCustId(),lastTime, StringUtils.isBlank(paramMap.get("pageSize"))?100:Integer.parseInt(paramMap.get("pageSize")));
 
             if(reponseResult.getData().getMediaList()!=null) {
                 List<String> productIds = Util.getFields(mediaAuthorities, "productId");

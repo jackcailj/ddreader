@@ -3,11 +3,13 @@ package com.dangdang.readerV5.personal_center;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.db.digital.MediaBoughtDb;
 import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
-import com.dangdang.db.digital.MediaBought;
+import com.dangdang.ddframework.util.Util;
+import com.dangdang.digital.meta.MediaBought;
 import com.dangdang.digital.meta.MediaBoughtDetail;
 import com.dangdang.param.parse.ParseParamUtil;
 import com.dangdang.readerV5.reponse.GetMyBoughtDetailListReponse;
@@ -42,7 +44,12 @@ public class GetMyBoughtDetailList extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if( reponseResult.getStatus().getCode()==0){
-            List<MediaBoughtDetail> boughtDetailList= MediaBought.getBoughtDetailList(paramMap.get("boughtId"),
+
+            List<MediaBought> boughts = MediaBoughtDb.getBoughtIds(login.getCustId(),paramMap.get("boughtId"));
+
+            List<String> boughtIds = Util.getFields(boughts,"boughtId");
+
+            List<MediaBoughtDetail> boughtDetailList= MediaBoughtDb.getBoughtDetailList(boughtIds,
                     paramMap.get("start")==null?0:Integer.parseInt(paramMap.get("start"))
                     ,paramMap.get("end")==null?100000:Integer.parseInt(paramMap.get("end")));
 
