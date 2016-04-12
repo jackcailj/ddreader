@@ -321,7 +321,7 @@ public class FixtureBase extends InterfaceBase{
 	public String get(String columnName) throws Exception {
 		if(columnName.startsWith("data")){
 
-            String result="耗时:"+elapsedTime+"秒\r\n";
+            String result="";//"耗时:"+elapsedTime+"秒\r\n";
 			if(getDataVerifyResult()){
                 result+= "通过";
 			}
@@ -352,6 +352,9 @@ public class FixtureBase extends InterfaceBase{
 				return reponseV2Base.getStatus().getCode().toString();
 			}
         }
+		else if(columnName.equals("耗时")){
+			return elapsedTime+"秒";
+		}
 
 
 
