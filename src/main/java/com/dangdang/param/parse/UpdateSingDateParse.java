@@ -34,7 +34,7 @@ public class UpdateSingDateParse implements IParamParse{
             SignDb.upadteSignDate(((ILogin)VariableStore.get(VarKey.LOGIN)).getCustId(),firstDay,lastDay);
 
             //清楚redis
-            //TelnetUtil.clearRedis(Config.getRedis(),Config.REDIS_PORT,"6");
+            TelnetUtil.clearRedis(Config.getRedis(),Config.REDIS_PORT,"6");
         }
         else {
             throw new Exception("GetCustIdByName异常，用户名为空");

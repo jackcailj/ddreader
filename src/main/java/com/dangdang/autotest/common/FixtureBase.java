@@ -321,12 +321,12 @@ public class FixtureBase extends InterfaceBase{
 	public String get(String columnName) throws Exception {
 		if(columnName.startsWith("data")){
 
-            String result="";
+            String result="耗时:"+elapsedTime+"秒\r\n";
 			if(getDataVerifyResult()){
-                result= "通过";
+                result+= "通过";
 			}
 			else {
-                result= "数据验证失败";
+                result+= "数据验证失败";
 			}
 
 
@@ -338,6 +338,9 @@ public class FixtureBase extends InterfaceBase{
                     result+="  status code【"+reponseV2Base.getStatus().getCode()+"】 与期望【"+exceptStatusCode+"】不符";
                 }
             }
+
+
+
 
             return result;
 		}
