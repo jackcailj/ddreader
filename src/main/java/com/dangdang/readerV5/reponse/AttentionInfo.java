@@ -1,6 +1,7 @@
 package com.dangdang.readerV5.reponse;
 
-import com.sun.javafx.beans.annotations.NonNull;
+
+import com.dangdang.ddframework.dataverify.verify_annotation.NotNull;
 
 import javax.persistence.criteria.CriteriaBuilder;
 
@@ -8,44 +9,44 @@ import javax.persistence.criteria.CriteriaBuilder;
  * Created by cailianjie on 2016-3-24.
  */
 public class AttentionInfo {
-    @NonNull
+    @NotNull
     Integer barOwnerLevel;
 
-    @NonNull
+    @NotNull
     Integer channelId;
-    @NonNull
+    @NotNull
     Integer channelOwner;
-    @NonNull
+    @NotNull
     String channelTitle;
-    @NonNull
+    @NotNull
     Integer  commentCount;
-    @NonNull
+    @NotNull
     Long createDateLong;
-    @NonNull
+    @NotNull
     String custImg;
-    @NonNull
+    @NotNull
     String custNickName;
-    @NonNull
+    @NotNull
     Integer digestId;
-    @NonNull
+    @NotNull
     String from;
-    @NonNull
+    @NotNull
     Integer indexNum;
-    @NonNull
+    @NotNull
     Integer isPraise;
-    @NonNull
+    @NotNull
     Integer makeType;
-    @NonNull
+    @NotNull
     String pic1Path;
-    @NonNull
+    @NotNull
     Integer praiseCount;
-    @NonNull
+    @NotNull
     String pubCustId;
-    @NonNull
+    @NotNull
     String remark;
-    @NonNull
+    @NotNull
     String title;
-    @NonNull
+    @NotNull
     Integer type;
 
     public Integer getBarOwnerLevel() {

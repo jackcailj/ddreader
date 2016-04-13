@@ -9,7 +9,8 @@
         <property name="hibernate.connection.url">jdbc:mysql://10.255.223.241:3306/digital</property>
         <property name="hibernate.connection.username">cmsuser</property>
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
-     
+
+        <property name="hibernate.connection.provider_class">org.hibernate.c3p0.internal.C3P0ConnectionProvider</property>
       <property name="hibernate.c3p0.max_size">100</property>  
     <property name="hibernate.c3p0.min_size">5</property>  
     <property name="hibernate.c3p0.timeout">50000</property>  
@@ -20,7 +21,7 @@
     <!-- 是否验证，检查连接 -->  
     <property name="hibernate.c3p0.validate">false</property> 
     
-     <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>   
+     <!--<property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>-->
      <property name="hibernate.show_sql">true</property><!-- 配置显示sql语句 -->
   	 <property name="format_sql">true</property><!-- 让输出的sql语句格式化 -->
      

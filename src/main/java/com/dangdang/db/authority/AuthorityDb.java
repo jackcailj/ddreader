@@ -25,6 +25,17 @@ public class AuthorityDb {
 
 
     /*
+    获取用户购买的有权限书籍，不包括赠出书籍
+     */
+    public static List<MediaAuthority> getUserEbooks(String custId) throws Exception {
+        Integer nCustId=Integer.parseInt(custId);
+        String selectString = "select * from media_authority_"+nCustId%32+" where cust_id =  "+custId +"  and authority_type !=3 and relation_type!=9999 ";
+        List<MediaAuthority> mediaAuthorities = DbUtil.selectList(Config.AUTHORITYConfig,selectString,MediaAuthority.class);
+        return mediaAuthorities;
+    }
+
+
+    /*
     获取购买所有书籍、字体
      */
     public static List<MediaAuthority> getMediaAuthority(String custId) throws Exception {
