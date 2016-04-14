@@ -108,5 +108,17 @@ public class RecivedOrCancelPrize extends FixtureBase {
 	public ReponseV2<Data> getResult(){
 		return JSONObject.parseObject(result.toString(), new TypeReference<ReponseV2<Data>>(){});
 	}
+	
+	public static void main(String[] args){
+		String deviceSerialNo="860671020032683";
+		String timestamp="1456919114699";
+		String strategyId="97";
+		//String key="";
+		String source = deviceSerialNo+timestamp+strategyId;
+		String key = SignUtils.encryptPrizeByMd5(deviceSerialNo, timestamp, strategyId);
+		//sign = SignUtils.createBindPermissionSign(source, key);
+		System.out.println(key);
+		
+	}
 
 }

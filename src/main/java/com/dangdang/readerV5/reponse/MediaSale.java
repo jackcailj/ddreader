@@ -6,7 +6,6 @@ public class MediaSale {
 
 	String isStore;
 	List<EbookMediaList> mediaList;
-	String price;
 	String saleId;
 	String type;
 	public String getIsStore() {
@@ -20,12 +19,6 @@ public class MediaSale {
 	}
 	public void setMediaList(List<EbookMediaList> mediaList) {
 		this.mediaList = mediaList;
-	}
-	public String getPrice() {
-		return price;
-	}
-	public void setPrice(String price) {
-		this.price = price;
 	}
 	public String getSaleId() {
 		return saleId;
