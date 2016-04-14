@@ -67,6 +67,31 @@ public class MediaChapterDb {
         MediaChapter chapters = DbUtil.selectOne(Config.YCDBConfig,selectString,MediaChapter.class);
         return chapters;
     }
+
+
+    public static MediaChapter getBookChapter(GetChapterEnum status) throws Exception {
+        String selectString="select * from      ";
+        if(status==GetChapterEnum.FREE_LAST){
+            selectString+="  (select * from media_chapter  where    is_free=1   limit 1000) as a  ORDER BY a.media_id,a.id desc limit 1";
+        }
+        else if(status==GetChapterEnum.FU_FEI_LAST){
+            selectString += "  (select * from media_chapter  where    is_free=0   limit 1000) as a  ORDER BY a.media_id,a.id desc limit 1";
+        }
+        else if(status==GetChapterEnum.FREE){
+            selectString += " (select * from media_chapter  where    is_free=1   limit 1000) as a  limit 1";
+        }
+        else if(status==GetChapterEnum.FU_FEI){
+            selectString += "  (select * from media_chapter  where    is_free=0   limit 1000) as a    limit 1";
+        }
+        else{
+            throw new Exception(status+"没有处理");
+        }
+
+        MediaChapter chapters = DbUtil.selectOne(Config.YCDBConfig,selectString,MediaChapter.class);
+        return chapters;
+    }
+
+
     /*
            获取章节startChapterId<id<endChapterId的剩余付费章节应付的钱数
     */

@@ -5,6 +5,7 @@ import com.dangdang.common.functional.login.LoginInfo;
 import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.common.functional.login.ddLogin;
 import com.dangdang.db.ucenter.UserInfoSql;
+import com.dangdang.ddframework.core.VariableStore;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;
@@ -35,6 +36,7 @@ public class GetPubIdByNameParse implements  IParamParse{
 
             //String pubId= UserInfoSql.getPubIdByName(param);
             paramMap.put(key,login.getPubId());
+            VariableStore.add(login.getPubId(),login.getCustId());
         }
         else {
             throw new Exception("GetPubIdByName，用户名为空");

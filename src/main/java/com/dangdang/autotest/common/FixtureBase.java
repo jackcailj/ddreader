@@ -321,12 +321,12 @@ public class FixtureBase extends InterfaceBase{
 	public String get(String columnName) throws Exception {
 		if(columnName.startsWith("data")){
 
-            String result="";
+            String result="";//"耗时:"+elapsedTime+"秒\r\n";
 			if(getDataVerifyResult()){
-                result= "通过";
+                result+= "通过";
 			}
 			else {
-                result= "数据验证失败";
+                result+= "数据验证失败";
 			}
 
 
@@ -339,6 +339,9 @@ public class FixtureBase extends InterfaceBase{
                 }
             }
 
+
+
+
             return result;
 		}
         else if( columnName.contains("status")){
@@ -349,6 +352,9 @@ public class FixtureBase extends InterfaceBase{
 				return reponseV2Base.getStatus().getCode().toString();
 			}
         }
+		else if(columnName.equals("耗时")){
+			return elapsedTime+"秒";
+		}
 
 
 

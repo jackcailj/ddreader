@@ -26,7 +26,7 @@ public enum BookType {
         }
 
         if(content.equals("原创")){
-            return " doc_type ='yc' and (m.promotion_id is null or m.promotion_id=0) ";
+            return " doc_type ='yc' and (m.promotion_id is null or m.promotion_id=0)  ";
         }
 
         if(content.equals("字体")){
@@ -42,7 +42,7 @@ public enum BookType {
         }
 
         if(content.equals("原创免费")){
-            return " doc_type is ='yc' and m.promotion_id =3 ";
+            return " doc_type is ='yc' and (m.promotion_id =3 )";
         }
 
         return "";

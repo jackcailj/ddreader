@@ -3,12 +3,14 @@ package com.dangdang.readerV5.channel;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.List;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.account.meta.MasterAccount;
 import com.dangdang.authority.meta.MediaMonthlyAuthority;
 import com.dangdang.autotest.common.FixtureBase;
+import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.db.account.MasterAccountDB;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
 import com.dangdang.db.digital.ChannelMonthlyStrategyDb;
@@ -18,6 +20,7 @@ import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.meta.ChannelMonthlyStrategy;
 import com.dangdang.readerV5.reponse.BuyMonthlyAuthorityResponse;
+import com.dangdang.readerV5.reponse.MonthlyStrategy;
 
 /**
  * 购买频道包月权限
@@ -31,7 +34,18 @@ public class BuyMonthlyAuthority extends FixtureBase{
 	String strategyId;
 	MediaMonthlyAuthority dbResult1;
 	MasterAccount masterAccount1;
-	
+
+
+	public BuyMonthlyAuthority(ILogin login, String channelId, Boolean isAutomaticallyRenew) throws Exception {
+		paramMap.put("token",login.getToken());
+		paramMap.put("cId",channelId);
+		paramMap.put("isAutomaticallyRenew",isAutomaticallyRenew?"1":"0");
+
+		List<ChannelMonthlyStrategy> channelMonthlyStrategies = ChannelMonthlyStrategyDb.getChannelMonthlyStrategy(channelId);
+		paramMap.put("channelMonthlyStrategyId",channelMonthlyStrategies.get(0).getId().toString());
+	}
+
+
     @Override
 	protected void genrateVerifyData() throws Exception {
     	custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));

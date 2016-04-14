@@ -54,7 +54,7 @@ public class MediaDigestDb {
         List<MediaDigest> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString,MediaDigest.class);
         return mediaDigests;
     }
-    
+
     /*
               获取某个文章或帖子信息
      */
@@ -65,7 +65,19 @@ public class MediaDigestDb {
         MediaDigest mediaDigests = DbUtil.selectOne(Config.YCDBConfig,selectString,MediaDigest.class);
         return mediaDigests;
     }
-    
+
+
+    /*
+              根据帖子id获取帖子列表
+     */
+    public static List<MediaDigest> getMediaDigests(List<String> postIds) throws Exception {
+        String selectString="select id,author,media_id,media_chapter_id,media_name,bar_id,first_catetory_id,first_catetory_name,content,type*1 as type,column_id,column_name,stars,review_cnt,collect_cnt,share_cnt," +
+                                "click_cnt,top_cnt,card_title,card_remark,card_type*1 as card_type,pic1_path,small_pic1_path,small_pic2_path,small_pic3_path,show_start_date,create_date,title," +
+                                "is_show,is_del,sign_ids,day_or_night,mood,weight,operator,sort_page,is_paper_book,creator_cust_id from media_digest where is_del=0 and is_show=1 and id in("+StringUtils.join(postIds,",")+")";
+        List<MediaDigest> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString,MediaDigest.class);
+        return mediaDigests;
+    }
+
     /*
     获取某个文章或帖子信息
 */
@@ -75,14 +87,14 @@ public class MediaDigestDb {
     	MediaDigest mediaDigests = DbUtil.selectOne(Config.YCDBConfig,selectString,MediaDigest.class);
     	return mediaDigests;
     }
-    
+
     /**
      * 当前时间到上次更新时间之间的翻篇儿新增文章条数
      * 当前时间到上次更新时间之间的抢先读新增文章条数
      * @param
      *       type: 文章类型，1. 翻篇儿  2 抢先读
-     *       time： 当前时间 
-     * */    
+     *       time： 当前时间
+     * */
     public static  List<MediaDigest> getNewDigest(String type, String time) throws Exception{
     	String selectString="select id,author,media_id,media_chapter_id,media_name,bar_id,first_catetory_id,first_catetory_name,content,type*1 as type,column_id,column_name,stars,review_cnt,collect_cnt,share_cnt," +
                 "click_cnt,top_cnt,card_title,card_remark,card_type*1 as card_type,pic1_path,small_pic1_path,small_pic2_path,small_pic3_path,show_start_date,create_date,title,"+
@@ -91,13 +103,13 @@ public class MediaDigestDb {
         List<MediaDigest> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString, MediaDigest.class);
         return mediaDigests;
     }
-    
+
     /**
      * 获取要对其发表评论的目标主体
      * @param
      *       type: 文章类型，1. 翻篇儿  2 抢先读
-     *       time： 当前时间 
-     * */    
+     *       time： 当前时间
+     * */
     public static  List<MediaDigest> getTargetId(String type) throws Exception{
     	String selectString="select id,author,media_id,media_chapter_id,media_name,bar_id,first_catetory_id,first_catetory_name,content,type*1 as type,column_id,column_name,stars,review_cnt,collect_cnt,share_cnt," +
                 "click_cnt,top_cnt,card_title,card_remark,card_type*1 as card_type,pic1_path,small_pic1_path,small_pic2_path,small_pic3_path,show_start_date,create_date,title,"+
@@ -106,8 +118,8 @@ public class MediaDigestDb {
         List<MediaDigest> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString, MediaDigest.class);
         return mediaDigests;
     }
-    
-    
+
+
     //获取频道中的文章
     //type: 类型 1:翻篇儿; 2:抢先读; 3:频道; 4:贴子;5:攻略
     //SELECT * FROM `media_digest` WHERE id IN (SELECT  digest_id FROM `channel_articles_digest` WHERE is_publish=1 AND channel_id IS NOT NULL AND `status` IN (0, 1, 2) ORDER BY articles_id);
@@ -120,9 +132,9 @@ public class MediaDigestDb {
         	ids.add(infos.get(i).get("id").toString());
         }
         return ids;
-        
+
     }
-    
+
 	//选取有效地type类型的文章
     //CommentTargetCountDb.java used
     //类型 3:频道; 5:攻略
@@ -145,38 +157,110 @@ public class MediaDigestDb {
 		}
 		return list;
 	}
-    
+
     //攻略
     //SELECT * FROM `comment_target_count` WHERE target_source=7000 ORDER BY browse_count DESC
-    
+
     //获取用户的某个攻略/文章
     //type: 类型 3:频道; 5:攻略
     public static String getUserDigestId(String custId, String type) throws Exception{
     	int _type = Integer.valueOf(type);
     	String selectString = "SELECT id FROM `media_digest` " +
-    			"WHERE type ="+_type+" AND id IN " + 
+    			"WHERE type ="+_type+" AND id IN " +
     			SqlUtil.getListToString(ChannelArticlesDigestDb.getUserChannelDigest(custId));
     	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig,selectString);
 		int n = (int) (Math.random()*(infos.size()-1));
-    	return infos.get(n).get("id").toString();  	
+    	return infos.get(n).get("id").toString();
     }
     /**
      * 获取书友圈的文章
      * @param
      *       custId:用户id
      *       limit： 取几条记录
-     *       date： create date时间 
-     * */    
+     *       date： create date时间
+     * */
     public static  List<Map<String, Object>> getDigestOfBookFriend(String custId, String limit, String date) throws Exception{
     	DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    	
+
     	String selectString = "SELECT id,title,type*1 as type FROM media_digest "
-    			            + "where creator_cust_id in "
+    			            + "where (creator_cust_id in "
     			            + "(select passive_user_id from ucenter.book_firend bf1 where bf1.active_user_id="+custId
-    			            + " UNION select active_user_id from ucenter.book_firend bf2 where  bf2.passive_user_id="+custId+") "
-    			            + "and is_show=1 and is_del=0 and create_date"+date+" and show_start_date<'"+df.format(new Date())
-  			                +"' ORDER BY create_date DESC limit "+limit;
+    			            + " UNION select active_user_id from ucenter.book_firend bf2 where  bf2.passive_user_id="+custId+") or creator_cust_id= "+custId+")"
+    			            + " and is_show=1 and is_del=0 and create_date"+date+" and show_start_date<'"+df.format(new Date())
+  			                +"' and make_type!=1 ORDER BY create_date DESC limit "+limit;
     	List<Map<String, Object>> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString);
+        return mediaDigests;
+    }
+
+
+    /**
+     * 获取书友圈的文章
+     * @param
+     *       custId:用户id
+     *       limit： 取几条记录
+     *       date： create date时间
+     * */
+    public static  List<Map<String, Object>> getAttendDigestList(String custId, String limit, String date) throws Exception{
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String selectString = " SELECT * FROM media_digest md" +
+                "\t\t\t\tLEFT JOIN  (select digest_id from channel_sub_user  csu\n" +
+                "LEFT JOIN channel_articles_digest cad on csu.channel_id=cad.channel_id where cust_id="+custId+") as subDigest on md.id=subDigest.digest_id\n" +
+                "\t\t\t\tLEFT JOIN (\n" +
+                "                select\n" +
+                "                    passive_user_id \n" +
+                "                from\n" +
+                "                    ucenter.book_firend bf1 \n" +
+                "                where\n" +
+                "                    bf1.active_user_id= \n" +custId+
+                "                UNION\n" +
+                "                select\n" +
+                "                    active_user_id \n" +
+                "                from\n" +
+                "                    ucenter.book_firend bf2 \n" +
+                "                where\n" +
+                "                    bf2.passive_user_id=\n" +custId+
+                "            ) as attentUser on md.creator_cust_id=attentUser.passive_user_id\n" +
+                "    where\n" +
+                "        \n" +
+                "    (subDigest.digest_id is not null or attentUser.passive_user_id is not null or md.creator_cust_id=" +custId +")"+
+                "    \n" +
+                "    and is_show=1 \n" +
+                "    and is_del=0 \n" +
+                "    and create_date" +date+
+                "    and show_start_date<NOW() \n" +
+                "    and make_type!=1 \n" +
+                "ORDER BY\n" +
+                "    create_date DESC limit "+limit;
+        List<Map<String, Object>> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString);
+        return mediaDigests;
+    }
+
+    /**
+     * 获取书友圈的文章
+     * @param
+     *       custId:用户id
+     *       limit： 取几条记录
+     *       date： create date时间
+     * */
+    public static  List<MediaDigest> getAttendDigestList(String custId, List<String> attendUserList, String limit, String date) throws Exception{
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        String selectString = " SELECT md.* FROM media_digest md" +
+                " left join channel_articles_digest cad on md.id=cad.digest_id"+
+                " left join channel_articles ca on cad.articles_id=ca.id"+
+                "    where\n" +
+                "        \n" +
+                "    (md.creator_cust_id=" +custId +" or md.creator_cust_id in ("+StringUtils.join(attendUserList,",")+"))"+
+                "    and ca.is_publish=1 \n" +
+                "    and is_show=1 \n" +
+                "    and md.is_del=0 \n" +
+                "    and md.create_date" +date+
+                //"    and show_start_date<NOW() \n" +
+                "    and md.make_type!=1 \n" +
+                "ORDER BY\n" +
+                "    md.create_date DESC limit "+limit;
+        List<MediaDigest> mediaDigests = DbUtil.selectList(Config.YCDBConfig,selectString,MediaDigest.class);
         return mediaDigests;
     }
 
@@ -194,7 +278,7 @@ public class MediaDigestDb {
         List<MediaDigest> mediaDigest = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, MediaDigest.class);
         return mediaDigest;
     }
-    
+
     //获取支持或不支持打赏的频道文章或攻略
     //type 3：频道 5：攻略
     //isSupportReward 1：支持打赏  0：不支持打赏
@@ -211,7 +295,7 @@ public class MediaDigestDb {
     	}
     	return degistIds.get(SqlUtil.getRandNum(degistIds));
     }
-    
+
     public static void main(String[] args){
     	String s;
 		try {
@@ -221,7 +305,7 @@ public class MediaDigestDb {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-    	
+
     }
 
 }

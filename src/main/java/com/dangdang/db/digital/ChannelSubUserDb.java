@@ -6,6 +6,8 @@ import java.util.Map;
 
 import com.dangdang.config.Config;
 import com.dangdang.ddframework.dbutil.DbUtil;
+import com.dangdang.digital.meta.Channel;
+
 
 /**
  * 
@@ -30,6 +32,22 @@ public class ChannelSubUserDb {
 			list.add(infos.get(i).get("channel_id").toString());
 		}
 		return list;
+	}
+
+
+	//获取用户订阅的所有频道
+	public static List<Channel> getUserSubChannels(String custId) throws Exception{
+		String selectSQL = "SELECT channel.* "+
+				" FROM channel "+
+				" WHERE channel.is_completed=1"+
+				" AND channel.is_completed=1"+
+				" AND channel.channel_id IN(" +
+				" SELECT channel_id " +
+				" FROM `channel_sub_user` " +
+				" WHERE type=1 AND cust_id="+ custId +")";
+		List<Channel> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL,Channel.class);
+
+		return infos;
 	}
 
 	//获取用户订阅过的一个频道

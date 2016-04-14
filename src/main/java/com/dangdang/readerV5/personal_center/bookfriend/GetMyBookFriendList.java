@@ -38,7 +38,7 @@ public class GetMyBookFriendList extends FixtureBase{
     @Override
     protected void dataVerify() throws Exception {
         if(reponseResult.getStatus().getCode()==0){
-            List<BookFirend> myfriends = UserInfoSql.getMyBookFriends(login.getCustId());
+            List<BookFirend> myfriends = UserInfoSql.getAllMyBookFriends(login.getCustId());
             List<BookFriendInfo> bookFriendInfos = new ArrayList<BookFriendInfo>();
             for(BookFirend firend: myfriends){
                 //主动关注

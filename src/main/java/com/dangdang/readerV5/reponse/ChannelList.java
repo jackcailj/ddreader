@@ -1,5 +1,8 @@
 package com.dangdang.readerV5.reponse;
 
+
+import com.dangdang.ddframework.dataverify.verify_annotation.NotNull;
+
 public class ChannelList {
 	String channelId;
 	String description;

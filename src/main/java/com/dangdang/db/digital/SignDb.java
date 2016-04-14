@@ -7,6 +7,7 @@ import com.dangdang.digital.meta.SigninMain;
 import org.omg.CORBA.OBJ_ADAPTER;
 
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -19,6 +20,19 @@ public class SignDb {
     public  static  void upadteSignDate(String custId,int firstdaydiff,int lastdatediff) throws Exception {
         //SigninMain signinMain = getSignRecord(custId);
         String updateString="UPDATE signin_main SET first_signin_time=DATE_SUB(NOW(),INTERVAL "+firstdaydiff+" day),last_signin_time=DATE_SUB(NOW(),INTERVAL "+lastdatediff+" day) where cust_id="+custId;
+        DbUtil.executeUpdate(Config.YCDBConfig,updateString);
+
+        deleteSignDetailData(custId);
+    }
+
+    public static  void deleteSignDetailData(String custId) throws Exception {
+
+        SigninMain signinMain =getSignRecord(custId);
+
+        SimpleDateFormat sdf =new SimpleDateFormat("yyyy-MM-dd");
+        String curDate=sdf.format(signinMain.getLastSigninTime());
+
+        String updateString="delete from signin_detail where signin_main_id="+signinMain.getId()+" and signin_time>'"+curDate+"'";
         DbUtil.executeUpdate(Config.YCDBConfig,updateString);
     }
 
