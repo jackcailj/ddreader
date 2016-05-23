@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
 
+import com.dangdang.db.ucenter.UserDeviceDb;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
 import com.dangdang.enumeration.RunLevel;
 import org.apache.commons.lang3.StringUtils;
@@ -15,6 +16,7 @@ import org.testng.Assert;
 
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.ddframework.core.InterfaceBase;
+import com.dangdang.ddframework.core.TestEnvironment;
 import com.dangdang.ddframework.core.VariableStore;
 import com.dangdang.ddframework.drivers.HttpDriver;
 import com.dangdang.param.model.ParseResult;
@@ -188,14 +190,7 @@ public class FixtureBase extends InterfaceBase{
 		}
 		else 
 			return "fail";
-	}
-	
-	/**
-	 * 
-	 */
-	public void jsonToClass(){
-		
-	}
+	}	
 
     public ReponseV2Base getReponseStatus(){
         return reponseV2Base;
@@ -212,20 +207,12 @@ public class FixtureBase extends InterfaceBase{
     }
 
     /*
-    add by cailj   2015-6-18
-    添加解析参数方法，方便使用
+     * add by cailj   2015-6-18
+     * 添加解析参数方法，方便使用
      */
     @Override
     protected void beforeParseParam() throws Exception {
-        //Ilogin登录时不需要设置login，否则会死循环
-        if(!(this instanceof ILogin)) {
-            setLogin(ParseParamUtil.parseLogin(paramMap));
-        }
-
-		//增加action字段
-        if(paramMap.get("action")==null) {
-            addAction(lowerFirst(this.getClass().getSimpleName()));
-        }
+    	addAction(lowerFirst(this.getClass().getSimpleName()));
 
 		//解析参数
         ParseParamUtil.parseOperateParam(paramMap);
@@ -236,12 +223,29 @@ public class FixtureBase extends InterfaceBase{
 				paramMap.put(entry.getKey(),entry.getValue());
 			}
 		}
+		
+		 String env = Config.getEnvironment().toString();
+	     System.out.println("env: " + env   +  env.equals(TestEnvironment.ONLINE.toString())+ "  " + env.equals(TestEnvironment.STAGING.toString()));
+	     //增加action字段
+	     if((env.equals(TestEnvironment.ONLINE.toString())||env.equals(TestEnvironment.STAGING.toString()))) {
+	    	 if(paramMap.get("userName")!=null&&!paramMap.get("userName").equals("")){
+	    		 System.out.println("aaaa");
+	    		 paramMap.put("token", UserDeviceDb.getTokenByUserName(paramMap.get("userName"),paramMap.get("deviceType")));
+	    	 }
+	     }else{
+	    	 //Ilogin登录时不需要设置login，否则会死循环
+	    	 if(!(this instanceof ILogin)) {
+	    		 setLogin(ParseParamUtil.parseLogin(paramMap));
+	    	 }
+	     }
+		
+
         //paramMap.putAll(Config.getCommonParam());
     }
 
     /*
-    add by cailj   2015-6-18
-    想参数中添加action
+     * add by cailj   2015-6-18
+     *  想参数中添加action
      */
     public void addAction(String actionName){
         paramMap.put("action", actionName);
@@ -285,8 +289,6 @@ public class FixtureBase extends InterfaceBase{
             if(value.startsWith("\"") && value.endsWith("\"")){
                 value =value.substring(1,value.length()-1);
             }
-
-            //
             if(name.replaceAll(" ","").equals("statuscode")){
                 paramMap.put(EXPECTED,value);
                 exceptStatusCode=value;
@@ -300,27 +302,14 @@ public class FixtureBase extends InterfaceBase{
             else {
 				paramMap.put(name, value);
             }
-
-
         }
 	}
 
     /*
-    使首字母小写。
-     */
-    public  String lowerFirst(String name) {
-        name = name.substring(0, 1).toLowerCase() + name.substring(1);
-        return  name;
-
-
-    }
-
-    /*
-    返回ddt上的带？的值
+     * 返回ddt上的带？的值
      */
 	public String get(String columnName) throws Exception {
 		if(columnName.startsWith("data")){
-
             String result="";//"耗时:"+elapsedTime+"秒\r\n";
 			if(getDataVerifyResult()){
                 result+= "通过";
@@ -328,8 +317,6 @@ public class FixtureBase extends InterfaceBase{
 			else {
                 result+= "数据验证失败";
 			}
-
-
             if(reponseV2Base==null){//处理下载书籍这种不能返回statusCode的情况，如果httpCode为200，就认为成功。
 
             }
@@ -338,13 +325,9 @@ public class FixtureBase extends InterfaceBase{
                     result+="  status code【"+reponseV2Base.getStatus().getCode()+"】 与期望【"+exceptStatusCode+"】不符";
                 }
             }
-
-
-
-
             return result;
 		}
-        else if( columnName.contains("status")){
+        else if(columnName.contains("status")){
 			if(reponseV2Base==null){//处理下载书籍这种不能返回statusCode的情况，如果httpCode为200，就认为成功。
 				return "0";
 			}
@@ -355,19 +338,15 @@ public class FixtureBase extends InterfaceBase{
 		else if(columnName.equals("耗时")){
 			return elapsedTime+"秒";
 		}
-
-
-
         throw  new Exception("没有["+columnName+"]数据");
 	}
 
 	/*
-    执行DynamicDecisionTable的每一行
+	 * 执行DynamicDecisionTable的每一行
      */
 	public void execute() throws Exception {
-		//add by guohaiying
-
 		Interval();
+		
 		//wiki上控制执行哪个环境下的用例 
 		String env = Config.getEnvironment().toString();
 		if(getEnviroment() == null || getEnviroment().equals("all")||getEnviroment().equals("")){
@@ -377,18 +356,14 @@ public class FixtureBase extends InterfaceBase{
 				return;
 			}	
 		}
-
         handleParam();
-
 		if(CheckIsRun()) {
 			doWorkAndVerify();
 		}
-
 	}
 
-
 	/*
-	解析每个用例执行间隔，用来应对防刷机制
+	 * 解析每个用例执行间隔，用来应对防刷机制
 	 */
 	public void parseInterval(String columnName){
 		Matcher matcher = Pattern.compile("interval#(\\d+)").matcher(columnName);
@@ -396,14 +371,13 @@ public class FixtureBase extends InterfaceBase{
 			interval=Integer.parseInt(matcher.group(1));
 		}
 	}
-
 	public void Interval() throws InterruptedException {
 		Thread.sleep(interval*1000);
 	}
 
 	/*
-    每次执行前清除上次运行的数据
-    */
+	 * 每次执行前清除上次运行的数据
+     */
     public void reset(){
 		reponseV2Base=null;
         dataVerifyManager.clear();
@@ -415,6 +389,14 @@ public class FixtureBase extends InterfaceBase{
         result=null;
 		VariableStore.clear();
 		dataVerifyResult=true;
+    }
+    
+    /*
+    使首字母小写。
+     */
+    public  String lowerFirst(String name) {
+        name = name.substring(0, 1).toLowerCase() + name.substring(1);
+        return  name;
 
 
     }
