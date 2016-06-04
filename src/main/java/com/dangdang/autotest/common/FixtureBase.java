@@ -1,5 +1,7 @@
 package com.dangdang.autotest.common;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -7,6 +9,10 @@ import java.util.regex.Pattern;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.config.Config;
 
+import com.dangdang.ddframework.core.VariableType;
+import com.dangdang.ddframework.fitnesse.CommandFactory;
+import com.dangdang.ddframework.fitnesse.FitnesseKey;
+import com.dangdang.ddframework.fitnesse.ICommand;
 import com.dangdang.ddframework.reponse.ReponseV2Base;
 import com.dangdang.enumeration.RunLevel;
 import org.apache.commons.lang3.StringUtils;
@@ -31,6 +37,8 @@ public class FixtureBase extends InterfaceBase{
 	protected boolean verifyResult = true;
 	protected ILogin login = null;
     protected String exceptStatusCode;
+
+	protected List<ICommand> commandList = new ArrayList<>();
 
 	protected static Integer interval=0;
 
@@ -149,8 +157,17 @@ public class FixtureBase extends InterfaceBase{
         verifyResult(expectedCode);
 
 	}
-	
-	public void dataVerified(String expectedCode) throws Exception {
+
+    @Override
+    protected void dataVerify() throws Exception {
+        super.dataVerify();
+
+        for(ICommand command:commandList){
+            command.execute(this);
+        }
+    }
+
+    public void dataVerified(String expectedCode) throws Exception {
 		if(CheckIsRun()){
 			doRequest();
 			dataVerify(expectedCode);
@@ -207,8 +224,8 @@ public class FixtureBase extends InterfaceBase{
         try {
             reponseV2Base = JSONObject.parseObject(result.toString(), ReponseV2Base.class);
         }catch (Exception e){
-            logger.error("解析结果错误:"+e);
-        }
+			logger.error("解析结果错误:"+e);
+		}
     }
 
     /*
@@ -279,7 +296,7 @@ public class FixtureBase extends InterfaceBase{
 	 * @param name
 	 * @param value
 	 */
-	public void set(String name, String value){
+	public void set(String name, String value) throws Exception {
         if(!name.contains("?")) {
             //字符串被以双引号开头及结尾，表示为字符串，作为参数时需去掉，主要用来处理 邮箱、url传递过程中为链接形式问题
             if(value.startsWith("\"") && value.endsWith("\"")){
@@ -297,11 +314,17 @@ public class FixtureBase extends InterfaceBase{
 			else if(name.startsWith("interval")){
 				parseInterval(name);
 			}
+			else if(name.equals("method")){
+				if(value.trim().equals("post")) {
+					bPost = true;
+				}
+			}
+			else if(name.equals("script")){
+				commandList.add(CommandFactory.createCommand(FitnesseKey.valueOf(name.toUpperCase()),value));
+			}
             else {
 				paramMap.put(name, value);
             }
-
-
         }
 	}
 
@@ -413,8 +436,9 @@ public class FixtureBase extends InterfaceBase{
         originalParamMap.clear();
         login=null;
         result=null;
-		VariableStore.clear();
+//		VariableStore.clear(VariableType.CASE);
 		dataVerifyResult=true;
+		bPost =false;
 
 
     }
