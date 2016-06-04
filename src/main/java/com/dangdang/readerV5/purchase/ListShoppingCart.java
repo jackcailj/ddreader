@@ -33,14 +33,11 @@ public class ListShoppingCart extends FixtureBase{
         addAction("listShoppingCart");
     }
 
-    public  ListShoppingCart(String cartId){
+    public  ListShoppingCart(String cartId) {
         paramMap.put("cartId", cartId);
         addAction("listShoppingCart");
     }
-    
-    public String getReponseResult1(){
-    	return result.toString();
-    }
+
 
     @Override
     public void doWork() throws Exception {
@@ -48,8 +45,8 @@ public class ListShoppingCart extends FixtureBase{
         super.doWork();
         reponseResult = JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<ListShoppingCartReponse>>(){});
     }
-
-    public ReponseV2<ListShoppingCartReponse> getReponseResult() {
+    
+    public ReponseV2<ListShoppingCartReponse> getReponseResult() throws Exception {
         return reponseResult;
     }
 
