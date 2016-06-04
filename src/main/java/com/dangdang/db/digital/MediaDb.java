@@ -155,13 +155,23 @@ public class MediaDb {
     public static List<Media> getMedias2(BookType bookType,BookStatus bookStatus,int number) throws Exception {
         String shelfStatus=bookStatus==BookStatus.VALID?"1":"0";
         String selectString="select m.media_id,m.sale_id,m.product_id from media m left join media_sale ms on m.sale_id=ms.sale_id left join media_resfile mr on m.media_id=mr.MEDIA_ID  where ms.shelf_status="+shelfStatus+" and m.shelf_status="+shelfStatus+" and "+bookType.getMediaSqlFilter()+"   limit "+number;
+        System.out.println(selectString);
+        
         List<Media> medias = DbUtil.selectList(com.dangdang.config.Config.YCDBConfig, selectString, Media.class);
         return medias;
     }
 
     public static void main(String[] args){
     	try {
-			MediaDb.getMedia(BookType.EBOOK, BookStatus.VALID);
+    		String s="";
+			List<Media> list = MediaDb.getMedias(BookType.YUANCHUANG, BookStatus.VALID, 1000);
+			for(int i=0; i<list.size(); i++){				
+				s+=list.get(i).getMediaId()+",";
+			}
+			System.out.println(s);
+			
+			//System.currentTimeMillis()
+			//System.out.println("update: " + list.get(1).getLastUpdateChapter());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -21,6 +21,9 @@ public class SearchMedia extends FixtureBase {
     @Override
     protected void dataVerify() throws Exception {
         if(reponseV2Base.getStatus().getCode()==0){
+        	if(paramMap.get("enable_hl")!=null||paramMap.get("enable_hl").equals("1")){
+        		//验证高亮
+        	}
         	
         }
     }

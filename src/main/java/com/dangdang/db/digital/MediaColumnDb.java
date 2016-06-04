@@ -59,6 +59,15 @@ public class MediaColumnDb {
 		else return infos.get(0);
     }
     
+    public static String getRecordNum(String columnCode) throws Exception{
+    	String selectSQL = "SELECT count(1) FROM `media_column` WHERE column_code='"+columnCode+"'";
+    	Map<String, Object> infos = DbUtil.selectOne(Config.YCDBConfig, selectSQL);
+    	return infos.get("count(1)").toString();
+    	
+    }
+    
+
+    
 
 	public static void main(String[] args) throws Exception{
 		//String s = MediaColumnDb.getColumnName("all_rec_pdzbtj");

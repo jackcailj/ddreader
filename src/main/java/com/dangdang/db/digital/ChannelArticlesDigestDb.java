@@ -87,4 +87,10 @@ public class ChannelArticlesDigestDb {
         return articlesDigests;
     }
 	
+	public static String getRecordNum(String articleId) throws Exception{
+		String selectSQL = "SELECT count(1) FROM `channel_articles_digest` WHERE articles_id="+articleId;
+		Map<String, Object> infos = DbUtil.selectOne(Config.YCDBConfig, selectSQL);
+		return infos.get("count(1)").toString();
+	}
+	
 }

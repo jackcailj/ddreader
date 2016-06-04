@@ -2,7 +2,6 @@ package com.dangdang.readerV5.reponse;
 
 public class EbookMediaList {
 
-	String authorId;
 	String authorPenname;
 	String canBorrow;
 	String category;
@@ -14,30 +13,26 @@ public class EbookMediaList {
 	String fileSize;
 	String freeBook;
 	String freeFileSize;
+	String isbn;	
 	String isChannelMonth;
 	String isChapterAuthority;
 	String isStore;
 	String isSupportDevice;
 	String isWholeAuthority;
-	String isbn;
 	String mediaId;
 	String mediaType;
+	String originalPrice;
 	String paperMediaPrice;
 	String paperMediaProductId;
 	String price;
-	//String publishDate;
+	String promotionPrice;
+	String publishDate;
 	String publisher;
 	String saleId;
-	//String score;
+	String score;
 	String shelfStatus;
 	String title;
 	String wordCnt;
-	public String getAuthorId() {
-		return authorId;
-	}
-	public void setAuthorId(String authorId) {
-		this.authorId = authorId;
-	}
 	public String getAuthorPenname() {
 		return authorPenname;
 	}
@@ -104,6 +99,12 @@ public class EbookMediaList {
 	public void setFreeFileSize(String freeFileSize) {
 		this.freeFileSize = freeFileSize;
 	}
+	public String getIsbn() {
+		return isbn;
+	}
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
 	public String getIsChannelMonth() {
 		return isChannelMonth;
 	}
@@ -134,13 +135,7 @@ public class EbookMediaList {
 	public void setIsWholeAuthority(String isWholeAuthority) {
 		this.isWholeAuthority = isWholeAuthority;
 	}
-	public String getIsbn() {
-		return isbn;
-	}
-	public void setIsbn(String isbn) {
-		this.isbn = isbn;
-	}
-	public String getMeidaId() {
+	public String getMediaId() {
 		return mediaId;
 	}
 	public void setMediaId(String mediaId) {
@@ -151,6 +146,12 @@ public class EbookMediaList {
 	}
 	public void setMediaType(String mediaType) {
 		this.mediaType = mediaType;
+	}
+	public String getOriginalPrice() {
+		return originalPrice;
+	}
+	public void setOriginalPrice(String originalPrice) {
+		this.originalPrice = originalPrice;
 	}
 	public String getPaperMediaPrice() {
 		return paperMediaPrice;
@@ -170,12 +171,18 @@ public class EbookMediaList {
 	public void setPrice(String price) {
 		this.price = price;
 	}
-//	public String getPublishDate() {
-//		return publishDate;
-//	}
-//	public void setPublishDate(String publishDate) {
-//		this.publishDate = publishDate;
-//	}
+	public String getPromotionPrice() {
+		return promotionPrice;
+	}
+	public void setPromotionPrice(String promotionPrice) {
+		this.promotionPrice = promotionPrice;
+	}
+	public String getPublishDate() {
+		return publishDate;
+	}
+	public void setPublishDate(String publishDate) {
+		this.publishDate = publishDate;
+	}
 	public String getPublisher() {
 		return publisher;
 	}
@@ -188,12 +195,12 @@ public class EbookMediaList {
 	public void setSaleId(String saleId) {
 		this.saleId = saleId;
 	}
-//	public String getScore() {
-//		return score;
-//	}
-//	public void setScore(String score) {
-//		this.score = score;
-//	}
+	public String getScore() {
+		return score;
+	}
+	public void setScore(String score) {
+		this.score = score;
+	}
 	public String getShelfStatus() {
 		return shelfStatus;
 	}
@@ -212,4 +219,6 @@ public class EbookMediaList {
 	public void setWordCnt(String wordCnt) {
 		this.wordCnt = wordCnt;
 	}
+
+	
 }
