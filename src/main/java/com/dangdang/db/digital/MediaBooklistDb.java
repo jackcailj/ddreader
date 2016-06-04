@@ -9,9 +9,10 @@ import com.dangdang.digital.meta.MediaBooklist;
 
 /**
  * @author guohaiying
+ * @date 2016年4月15日 下午5:22:04
  */
 public class MediaBooklistDb {
-	
+		
     //随机获取一个有效的书单
     //BookList.java used
     public static String getRandChannel() throws Exception { 
@@ -52,7 +53,6 @@ public class MediaBooklistDb {
     	List<Map<String, Object>> infos = DbUtil.selectList(Config.YCDBConfig, selectSQL);
     	return infos.get(0).get("booklist_id").toString();
     }
-
 
 
 

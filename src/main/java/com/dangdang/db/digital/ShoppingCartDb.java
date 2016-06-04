@@ -17,9 +17,8 @@ public class ShoppingCartDb {
     根据custid获取shoppingCart
      */
     public static ShoppingCart getShoppingCart(String custId) throws Exception {
-        String selectString="select * from shopping_cart where cust_id="+custId;
+        String selectString="select * from shopping_cart where cust_id="+custId + " and status=1";
         ShoppingCart shoppingCart = DbUtil.selectOne(Config.YCDBConfig,selectString,ShoppingCart.class);
-
         return shoppingCart;
     }
 

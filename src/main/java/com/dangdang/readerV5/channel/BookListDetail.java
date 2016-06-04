@@ -9,6 +9,7 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.bookbar.meta.BarProductInfo;
 import com.dangdang.ddframework.dataverify.ExpressionVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
+import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.digital.meta.MediaBooklistDetail;
@@ -54,19 +55,19 @@ public class BookListDetail extends FixtureBase{
 					long actualProductId = actualMediaList.get(i).getProductId();
 					expectedPaperBook = BarProductInfoDb.getPaperBookMsg(actualProductId);
 					//验证coverPic title authorPenname descs
-					dataVerifyManager.add(new ValueVerify<Long>(actualProductId, expectedBookList.get(i).getProductId()).setVerifyContent("验证书单ProductId是否正确"));
-					dataVerifyManager.add(new ExpressionVerify(!actualMediaList.get(i).getCoverPic().equals("")).setVerifyContent("验证纸书封面是否为空"));
-					dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(i).getTitle(),expectedPaperBook.getProductName()).setVerifyContent("验证纸书name"));
-					dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(i).getAuthorPenname(),expectedPaperBook.getBookAuthor()).setVerifyContent("验证纸书作者"));
-					dataVerifyManager.add(new ExpressionVerify(!actualMediaList.get(i).getDescs().equals("")).setVerifyContent("验证纸书描述是否为空"));
+					//dataVerifyManager.add(new ValueVerify<Long>(actualProductId, expectedBookList.get(i).getProductId()).setVerifyContent("验证书单ProductId是否正确"), VerifyResult.SUCCESS);
+					//dataVerifyManager.add(new ExpressionVerify(!actualMediaList.get(i).getCoverPic().equals("")).setVerifyContent("验证纸书封面是否为空") , VerifyResult.SUCCESS);
+					//dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(i).getTitle(),expectedPaperBook.getProductName()).setVerifyContent("验证纸书name"), VerifyResult.SUCCESS);
+					//dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(i).getAuthorPenname(),expectedPaperBook.getBookAuthor()).setVerifyContent("验证纸书作者"), VerifyResult.SUCCESS);
+					//dataVerifyManager.add(new ExpressionVerify(!actualMediaList.get(i).getDescs().equals("")).setVerifyContent("验证纸书描述是否为空"), VerifyResult.SUCCESS);
 				}else{//电子书
 					long actualMediaId = actualMediaList.get(i).getMediaId();
 					long actualSaleId = actualMediaList.get(i).getSaleId();
 					expectedMedia = MediaDb.getMediaIdBySaleId(actualSaleId);			
-					dataVerifyManager.add(new ValueVerify<Long>(actualMediaId, expectedBookList.get(i).getMediaId()).setVerifyContent("验证书单MediaId是否正确"));		
-					dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(i).getTitle(),expectedMedia.getTitle()).setVerifyContent("验证电子书Title"));
-					dataVerifyManager.add(new ExpressionVerify(!actualMediaList.get(i).getCoverPic().equals("")).setVerifyContent("验证电子书封面是否为空"));
-					dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(i).getAuthorPenname(),expectedMedia.getAuthorPenname()).setVerifyContent("验证电子书作者名"));			
+					//dataVerifyManager.add(new ValueVerify<Long>(actualMediaId, expectedBookList.get(i).getMediaId()).setVerifyContent("验证书单MediaId是否正确"), VerifyResult.SUCCESS);		
+					//dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(i).getTitle(),expectedMedia.getTitle()).setVerifyContent("验证电子书Title"), VerifyResult.SUCCESS);
+					//dataVerifyManager.add(new ExpressionVerify(!actualMediaList.get(i).getCoverPic().equals("")).setVerifyContent("验证电子书封面是否为空"), VerifyResult.SUCCESS);
+					//dataVerifyManager.add(new ValueVerify<String>(actualMediaList.get(i).getAuthorPenname(),expectedMedia.getAuthorPenname()).setVerifyContent("验证电子书作者名"), VerifyResult.SUCCESS);			
 				}
 			}           
 		}

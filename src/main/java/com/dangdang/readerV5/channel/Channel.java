@@ -48,7 +48,7 @@ public class Channel extends FixtureBase{
         	actualChannel = jsonResult.getData().getChannel();
         	String actualChannelId = actualChannel.getChannelId().toString();
         	
-        	//验证icon title subNumber description ShelfStatus IsAllowMonthly
+        	//验证icon title subNumber description IsAllowMonthly
         	dataVerifyManager.add(new ValueVerify<String>(actualChannel.getIcon(), expectedChannel.getIcon()).setVerifyContent("验证Icon"));
         	dataVerifyManager.add(new ValueVerify<String>(actualChannel.getTitle(), expectedChannel.getTitle()).setVerifyContent("验证Title"));
         	dataVerifyManager.add(new ExpressionVerify(Math.abs(actualChannel.getSubNumber()-expectedChannel.getSubNumber())<10?true:false).setVerifyContent("验证SubNumber"));

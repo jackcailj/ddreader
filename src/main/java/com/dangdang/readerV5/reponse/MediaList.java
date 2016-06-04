@@ -1,5 +1,7 @@
 package com.dangdang.readerV5.reponse;
 
+import java.util.List;
+
 public class MediaList {
 	Integer authorId;
 	String authorPenname;
@@ -10,12 +12,15 @@ public class MediaList {
 	Integer commentNumber; //评论数
 	String coverPic;
 	String descs;
+	String editorRecommend;
 	Integer isFull;
 	Integer isStore;
 	Integer lowestPrice;
 	String mediaId;
 	Integer mediaType;
 	Float originalPrice;
+	String paperBookId;
+	String paperBookPrice;
 	String price;
 	Integer priceUnit;
 	String recommandWords;
@@ -39,7 +44,39 @@ public class MediaList {
 	String stockQuantity;
 	String stockStatus;
 	String supportSevenDays;
+	String promotionPrice;
+	List<PromotionList> promotionList;
 	
+	public String getPromotionPrice() {
+		return promotionPrice;
+	}
+	public void setPromotionPrice(String promotionPrice) {
+		this.promotionPrice = promotionPrice;
+	}
+	public String getEditorRecommend() {
+		return editorRecommend;
+	}
+	public void setEditorRecommend(String editorRecommend) {
+		this.editorRecommend = editorRecommend;
+	}
+	public String getPaperBookId() {
+		return paperBookId;
+	}
+	public void setPaperBookId(String paperBookId) {
+		this.paperBookId = paperBookId;
+	}
+	public String getPaperBookPrice() {
+		return paperBookPrice;
+	}
+	public void setPaperBookPrice(String paperBookPrice) {
+		this.paperBookPrice = paperBookPrice;
+	}
+	public List<PromotionList> getPromotionList() {
+		return promotionList;
+	}
+	public void setPromotionList(List<PromotionList> promotionList) {
+		this.promotionList = promotionList;
+	}
 	public Integer getBookReviewCount() {
 		return bookReviewCount;
 	}

@@ -224,14 +224,12 @@ public class FixtureBase extends InterfaceBase{
 			}
 		}
 		
-		 String env = Config.getEnvironment().toString();
-	     System.out.println("env: " + env   +  env.equals(TestEnvironment.ONLINE.toString())+ "  " + env.equals(TestEnvironment.STAGING.toString()));
+		 String env = Config.getEnvironment().toString();	   
 	     //增加action字段
 	     if((env.equals(TestEnvironment.ONLINE.toString())||env.equals(TestEnvironment.STAGING.toString()))) {
-	    	 if(paramMap.get("userName")!=null&&!paramMap.get("userName").equals("")){
-	    		 System.out.println("aaaa");
-	    		 paramMap.put("token", UserDeviceDb.getTokenByUserName(paramMap.get("userName"),paramMap.get("deviceType")));
-	    	 }
+	    	 if(paramMap.get("userName")!=null&&!paramMap.get("userName").equals("")&&paramMap.get("userName")!=""){
+	    		 paramMap.put("token", UserDeviceDb.getTokenByUserName(paramMap.get("userName")));
+	    	 }                       //UserDeviceDb.getTokenByUserName(paramMap.get("userName"),paramMap.get("deviceType")
 	     }else{
 	    	 //Ilogin登录时不需要设置login，否则会死循环
 	    	 if(!(this instanceof ILogin)) {

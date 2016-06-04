@@ -5,11 +5,22 @@ import com.dangdang.ddframework.dbutil.DbUtil;
 import com.dangdang.digital.meta.MediaBooklistDetail;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author guohaiying
  */
 public class MediaBookListDetailDb {
+	
+	//获取书单下书数量
+	public static String getCount(String booklistId) throws Exception{
+		String selectSQL = "SELECT count(1) FROM `media_booklist_detail` " +
+				"WHERE booklist_id="+booklistId+" " +
+						"and on_shelf_status=1";
+		Map<String, Object> infos = DbUtil.selectOne(Config.YCDBConfig, selectSQL);
+		return infos.get("count(1)").toString();		
+	}
+	
 	
 	//根据channelId获取书单下的书
 	public static List<MediaBooklistDetail> getMediaIdList(String channelId) throws Exception{

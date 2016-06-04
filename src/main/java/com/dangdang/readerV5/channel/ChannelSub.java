@@ -9,6 +9,7 @@ import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.db.digital.ChannelSubUserDb;
 import com.dangdang.db.ucenter.UserDeviceDb;
 import com.dangdang.ddframework.dataverify.ValueVerify;
+import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.readerV5.reponse.ChannelsubReponse;
 
@@ -48,11 +49,11 @@ public class ChannelSub extends FixtureBase{
         	String cId = paramMap.get("cId");
            	String custId = UserDeviceDb.getCustIdByToken(paramMap.get("token"));
         	String sub = ChannelSubUserDb.isSub(custId, cId, op);
-        	dataVerifyManager.add(new ValueVerify<String>("1", sub).setVerifyContent("验证订阅/取消订阅是否成功"));
+        	dataVerifyManager.add(new ValueVerify<String>("1", sub).setVerifyContent("验证订阅/取消订阅是否成功"), VerifyResult.SUCCESS);
 
 			//验证json与表channel中的值
 			int actual = jsonResult.getData().getSubNumber();
-			dataVerifyManager.add(new ValueVerify<Integer>(actual, ChannelSubUserDb.getChannelSub(cId)).setVerifyContent("验证json与表channel中的值"));
+			dataVerifyManager.add(new ValueVerify<Integer>(actual, ChannelSubUserDb.getChannelSub(cId)).setVerifyContent("验证json与表channel中的值"), VerifyResult.SUCCESS);
        
         }
         super.dataVerify();

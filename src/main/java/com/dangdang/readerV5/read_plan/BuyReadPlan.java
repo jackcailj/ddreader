@@ -22,7 +22,7 @@ public class BuyReadPlan extends FixtureBase {
 
     GetAccountInfo master;
     Long planPrice=0l;
-    List<MediaAuthority> planMedias=new ArrayList<>();
+    List<MediaAuthority> planMedias=new ArrayList();
 
 
     public BuyReadPlan(){}
@@ -39,7 +39,7 @@ public class BuyReadPlan extends FixtureBase {
             Long planId =Long.parseLong(paramMap.get("planId"));
             Long custId=Long.parseLong(login.getCustId());
 
-            List<PlanOrderDetail> orderDetails = new ArrayList<>();
+            List<PlanOrderDetail> orderDetails = new ArrayList();
 
             if(StringUtils.isNotBlank(paramMap.get("planId"))){
                 //  获取计划价格

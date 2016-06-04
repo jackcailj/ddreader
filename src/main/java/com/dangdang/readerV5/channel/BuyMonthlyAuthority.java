@@ -20,7 +20,6 @@ import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.digital.meta.ChannelMonthlyStrategy;
 import com.dangdang.readerV5.reponse.BuyMonthlyAuthorityResponse;
-import com.dangdang.readerV5.reponse.MonthlyStrategy;
 
 /**
  * 购买频道包月权限
@@ -36,14 +35,14 @@ public class BuyMonthlyAuthority extends FixtureBase{
 	MasterAccount masterAccount1;
 
 
-	public BuyMonthlyAuthority(ILogin login, String channelId, Boolean isAutomaticallyRenew) throws Exception {
-		paramMap.put("token",login.getToken());
-		paramMap.put("cId",channelId);
-		paramMap.put("isAutomaticallyRenew",isAutomaticallyRenew?"1":"0");
-
-		List<ChannelMonthlyStrategy> channelMonthlyStrategies = ChannelMonthlyStrategyDb.getChannelMonthlyStrategy(channelId);
-		paramMap.put("channelMonthlyStrategyId",channelMonthlyStrategies.get(0).getId().toString());
-	}
+//	public BuyMonthlyAuthority(ILogin login, String channelId, Boolean isAutomaticallyRenew) throws Exception {
+//		paramMap.put("token",login.getToken());
+//		paramMap.put("cId",channelId);
+//		paramMap.put("isAutomaticallyRenew",isAutomaticallyRenew?"1":"0");
+//
+//		List<ChannelMonthlyStrategy> channelMonthlyStrategies = ChannelMonthlyStrategyDb.getChannelMonthlyStrategy(channelId);
+//		paramMap.put("channelMonthlyStrategyId",channelMonthlyStrategies.get(0).getId().toString());
+//	}
 
 
     @Override
