@@ -38,7 +38,7 @@ public class ListShoppingCart extends FixtureBase{
         addAction("listShoppingCart");
     }
     
-    public String getReponseResult(){
+    public String getReponseResult1(){
     	return result.toString();
     }
 
@@ -47,6 +47,10 @@ public class ListShoppingCart extends FixtureBase{
     	userName= paramMap.get("userName");
         super.doWork();
         reponseResult = JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<ListShoppingCartReponse>>(){});
+    }
+
+    public ReponseV2<ListShoppingCartReponse> getReponseResult() {
+        return reponseResult;
     }
 
     @Override
