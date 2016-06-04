@@ -37,6 +37,10 @@ public class ListShoppingCart extends FixtureBase{
         paramMap.put("cartId", cartId);
         addAction("listShoppingCart");
     }
+    
+    public String getReponseResult(){
+    	return result.toString();
+    }
 
     @Override
     public void doWork() throws Exception {
