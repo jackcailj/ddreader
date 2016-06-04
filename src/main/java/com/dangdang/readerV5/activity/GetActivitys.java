@@ -1,6 +1,5 @@
-package com.dangdang.readerV5.personal_center;
+package com.dangdang.readerV5.activity;
 
-import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
@@ -44,8 +43,7 @@ public class GetActivitys extends FixtureBase{
 	    }
 	    else{
 	    	itemType = "IOS";
-	    }
-	    
+	    }	    
 	}
 	
 	@Override

@@ -54,7 +54,7 @@ public class HomePageDetail extends FixtureBase{
             List<ChannelArticlesDigest> recommentArticle= ChannelArticlesDigestDb.getHomeArticle(date,login==null?null:login.getCustId(),isFilter,pageSize);
 
             List<String> expectDigestIds = Util.getFields(recommentArticle, "digestId");
-            List<String> returnDigestIds = new ArrayList<>();
+            List<String> returnDigestIds = new ArrayList();
 
             for (DigestInfo digestInfo : reponseResult.getData().getDigestList()) {
                 List ids = Util.getFields(JSONObject.toJSONString(digestInfo.getDigest()), "id");

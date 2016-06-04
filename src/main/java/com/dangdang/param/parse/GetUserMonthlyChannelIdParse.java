@@ -40,8 +40,8 @@ public class GetUserMonthlyChannelIdParse implements IParamParse{
                 //获取有包月权限但没有包月的频道
                 String channelId = ChannelDb.getMonthlyChannel(custId);
 
-                BuyMonthlyAuthority buyMonthlyAuthority = new BuyMonthlyAuthority(login,channelId,false);
-                buyMonthlyAuthority.doWorkAndVerify();
+ //               BuyMonthlyAuthority buyMonthlyAuthority = new BuyMonthlyAuthority(login,channelId,false);
+  //              buyMonthlyAuthority.doWorkAndVerify();
 
                 paramMap.put(key,channelId);
             }

@@ -18,6 +18,34 @@ import com.dangdang.ddframework.dbutil.DbUtil;
  */
 public class UserDeviceDb {
 	
+	//根据userName和deviceType获取最新的token
+	public static String getTokenByUserName(String userName, String deviceType) throws Exception{
+		String selectSQL = "SELECT LOGIN_TOKEN " +
+				"FROM `user_device` " +
+				"WHERE USERNAME='"+userName+"' AND DEVICE_TYPE='"+deviceType+"' " +
+				"ORDER BY LAST_LOGIN_TIME DESC " +
+				"LIMIT 1";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
+		if(infos.size()==0)
+			return null;
+		else
+			return infos.get(0).get("LOGIN_TOKEN").toString();
+	}
+	
+	//根据userName和deviceType获取最新的token
+	public static String getTokenByUserName(String userName) throws Exception{
+		String selectSQL = "SELECT LOGIN_TOKEN " +
+				"FROM `user_device` " +
+				"WHERE USERNAME='"+userName+
+				"ORDER BY LAST_LOGIN_TIME DESC " +
+				"LIMIT 1";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
+		if(infos.size()==0)
+			return null;
+		else
+			return infos.get(0).get("LOGIN_TOKEN").toString();
+	}
+	
 	//根据custId和deviceType获取最新的token
 	//IMediaApiDubbo.java used
 	public static String getToken(String custId, String deviceType) throws Exception{
@@ -25,7 +53,7 @@ public class UserDeviceDb {
 		String selectSQL = "SELECT LOGIN_TOKEN " +
 				"FROM `user_device` " +
 				"WHERE CUST_ID="+_custId+" AND DEVICE_TYPE='"+deviceType+"' " +
-				"ORDER BY LOGIN_TOKEN DESC " +
+				"ORDER BY LAST_LOGIN_TIME DESC " +
 				"LIMIT 1";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
 		return infos.get(0).get("LOGIN_TOKEN").toString();
@@ -69,7 +97,7 @@ public class UserDeviceDb {
 				" WHERE LOGIN_TOKEN IS NOT NULL " +
 				" AND DEVICE_TYPE='"+deviceType+
 				"' AND CUST_ID NOT IN "+SqlUtil.getListToString(custIds)+
-				" ORDER BY LOGIN_TOKEN DESC " +
+				" ORDER BY LAST_LOGIN_TIME DESC " +
 				" LIMIT 1 ";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
 		int n= (int)Math.random()*(infos.size()-1);
@@ -85,7 +113,7 @@ public class UserDeviceDb {
 				" WHERE LOGIN_TOKEN IS NOT NULL " +
 				" AND DEVICE_TYPE='"+deviceType+
 				"' AND CUST_ID IN "+SqlUtil.getListToString(custIds)+
-				" ORDER BY LOGIN_TOKEN DESC " +
+				" ORDER BY LAST_LOGIN_TIME DESC " +
 				" LIMIT 1 ";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
 		int n= (int)Math.random()*(infos.size()-1);
@@ -105,7 +133,7 @@ public class UserDeviceDb {
 				" WHERE LOGIN_TOKEN IS NOT NULL " +
 				" AND DEVICE_TYPE='"+deviceType+
 				"' AND CUST_ID IN "+SqlUtil.getListToString(custIds)+
-				" ORDER BY LOGIN_TOKEN DESC " +
+				" ORDER BY LAST_LOGIN_TIME DESC " +
 				" LIMIT 1 ";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
 		int n= (int)Math.random()*(infos.size()-1);
@@ -142,11 +170,28 @@ public class UserDeviceDb {
 		return infos.get(n).get("LOGIN_TOKEN").toString();
 	}
 	
+	public static List<String> getDeviceNo() throws Exception{
+		String selectSQL = "select distinct(DEVICE_NO) from user_device  where DEVICE_TYPE='Android' limit 1000";
+		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
+		List list = new ArrayList<String>();
+		for(int i=0;i<infos.size();i++){
+			list.add(infos.get(i).get("DEVICE_NO").toString());
+		}
+		return list;
+	}
+	
 	public static void main(String[] args){
 		try {
-			String s=UserDeviceDb.getCustIdByToken("Android");
+//			List list = new ArrayList<String>();
+//			list=UserDeviceDb.getDeviceNo();
+//			String s="";
+//			for(int i=0;i<list.size();i++){
+//				s+=list.get(i)+",";
+//			}		
+			String s = UserDeviceDb.getCustIdByName("cailj_ddtest@126.com");
 			System.out.println(s);
 		} catch (Exception e) {
+			
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

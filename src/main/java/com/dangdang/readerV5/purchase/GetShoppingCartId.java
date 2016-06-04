@@ -15,7 +15,6 @@ import com.dangdang.readerV5.reponse.GetShoppingCartIdReponse;
  * Created by cailianjie on 2015-7-14.
  */
 public class GetShoppingCartId extends FixtureBase{
-
     ReponseV2<GetShoppingCartIdReponse> reponseResult;
 
     public GetShoppingCartId(){addAction("getShoppingCartId");}
@@ -33,7 +32,6 @@ public class GetShoppingCartId extends FixtureBase{
     @Override
     public void doWork() throws Exception {
         super.doWork();
-
         reponseResult= JSONObject.parseObject(result.toString(),new TypeReference<ReponseV2<GetShoppingCartIdReponse>>(){});
     }
 
@@ -51,12 +49,22 @@ public class GetShoppingCartId extends FixtureBase{
             else{
                 dataVerifyManager.add(new ValueVerify<String>(reponseResult.getData().getCartId(), null).setVerifyContent("验证购物车ID正确"), VerifyResult.FAILED);
             }
-
         }
         else{
             dataVerifyManager.add(new ValueVerify<String>(reponseResult.getData().getCartId(), null),VerifyResult.SUCCESS);
         }
-
         super.dataVerify();
     }
+  
+	//设置用户名到 paramMap参数中
+	public void setUserName(String userName) throws Exception {
+		paramMap.put("userName", userName);
+		super.beforeParseParam();
+	}
+	
+	//设置用户名到 paramMap参数中
+	public void setToken(String token) throws Exception {
+		paramMap.put("token", token);
+		super.beforeParseParam();
+	}
 }

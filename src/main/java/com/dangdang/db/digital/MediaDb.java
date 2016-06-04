@@ -164,7 +164,7 @@ public class MediaDb {
     public static void main(String[] args){
     	try {
     		String s="";
-			List<Media> list = MediaDb.getMedias(BookType.YUANCHUANG, BookStatus.VALID, 1000);
+			List<Media> list = MediaDb.getCanBorrowMedia(BookType.EBOOK, BookStatus.VALID, 1000);
 			for(int i=0; i<list.size(); i++){				
 				s+=list.get(i).getMediaId()+",";
 			}

@@ -1,6 +1,9 @@
 package com.dangdang.db;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -30,21 +33,28 @@ public class SqlUtil {
 	public static int getRandNum(List arg){
 		return (int)(Math.random()*(arg.size()-1));
 	}
+		
+//	public static String getMillisecond(Date time) throws ParseException{
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+//		long millionSecond = sdf.parse(time).getTime();
+//		return String.valueOf(millionSecond);
+//	}
 	
-	public static void main(String[] args){
-		List<String> list = new ArrayList<String>();
-		list.add("aa");
-		list.add("bb");
-		list.add("cc");
-		list.add("dd");
-		list.add("ee");
-		list.add("ff");
-		try {
-			String s=SqlUtil.getRandValue(list);
-			System.out.println(s);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public static void main(String[] args) throws ParseException{
+
+//		List<String> list = new ArrayList<String>();
+//		list.add("aa");
+//		list.add("bb");
+//		list.add("cc");
+//		list.add("dd");
+//		list.add("ee");
+//		list.add("ff");
+//		try {
+//			String s=SqlUtil.getRandValue(list);
+//			System.out.println(s);
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 }

@@ -28,18 +28,18 @@ public class AddComment extends FixtureBase{
 			//来源：1000:书吧 2000：翻篇 3000：抢先读 4000：频道_(必填) 7000 攻略_
 			String source = paramMap.get("targetSource");
 			String type = null;
-			switch(source){
-			case "1000":type="4";
-				        break;
-			case "2000":type="1";
-				        break;
-			case "3000":type="2";
-				        break;
-			case "4000":type="3";
-			            break;
-			case "7000":type="5";
-			            break;
-			}				
+//			switch(source){
+//			case "1000":type="4";
+//				        break;
+//			case "2000":type="1";
+//				        break;
+//			case "3000":type="2";
+//				        break;
+//			case "4000":type="3";
+//			            break;
+//			case "7000":type="5";
+//			            break;
+//			}				
 			String targetId = MediaDigestDb.getTargetId(type).get((new Random()).nextInt(10)).getId().toString();;
 			paramMap.put("targetId",targetId);
 		}
