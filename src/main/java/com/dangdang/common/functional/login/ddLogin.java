@@ -41,6 +41,10 @@ public class ddLogin extends FixtureBase implements ILogin{
 		paramMap.putAll(Config.getCommonParam());
 	}
 
+    public void setReponseResult(ReponseV2<LoginReponse> reponseResult) {
+        this.reponseResult = reponseResult;
+    }
+
     @Override
     protected void parseParam() throws Exception {
         //为了兼容cailj_ddtest@126.com账户线上线下密码不一致问题。

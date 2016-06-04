@@ -4,6 +4,7 @@ import com.dangdang.authority.meta.MediaAuthority;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
 import com.dangdang.db.authority.AuthorityDb;
+import com.dangdang.db.digital.PlanDb;
 import com.dangdang.db.digital.PlanDetailDb;
 import com.dangdang.ddframework.dataverify.*;
 import com.dangdang.ddframework.util.Util;
@@ -43,7 +44,7 @@ public class BuyReadPlan extends FixtureBase {
 
             if(StringUtils.isNotBlank(paramMap.get("planId"))){
                 //  获取计划价格
-                List<PlanDetailInfo> details = PlanDetailDb.getPlanDetails(paramMap.get("planId"));
+                List<PlanDetailInfo> details = PlanDetailDb.getPlanDetails(paramMap.get("planId"),false,false);
                 //检查书籍是否有权限
                 List<MediaAuthority> mediaAuthorities = AuthorityDb.getUserEbooks(login.getCustId());
                 List<String> mediaIds = Util.getFields(mediaAuthorities,"productId");
@@ -70,17 +71,20 @@ public class BuyReadPlan extends FixtureBase {
                         orderDetail.setTrainingPrice(detail.getSalePrice());
 
                         orderDetails.add(orderDetail);
-                        dataVerifyManager.add(new RecordExVerify(Config.YCDBConfig,orderDetail,"pod_id"," from plan_order_detail ").setVerifyContent("验证plan_order_detail数据正确"));
+                        //dataVerifyManager.add(new RecordExVerify(Config.YCDBConfig,orderDetail,"pod_id"," from plan_order_detail ").setVerifyContent("验证plan_order_detail数据正确"));
                     }
                 }
             }
+
+            Plan plan = PlanDb.getPlan(paramMap.get("planId"));
+            planPrice=((Double) (planPrice*plan.getDiscount())).longValue();
 
             PlanOrder planOrder = new PlanOrder();
             planOrder.setCustId(custId);
             planOrder.setPlanId(planId);
             planOrder.setTotalPrice(planPrice);
 
-            dataVerifyManager.add( new RecordExVerify(Config.YCDBConfig,planOrder,"po_id"," from plan_order").setVerifyContent("验证plan_order数据正确"));
+            dataVerifyManager.add( new RecordExVerify(Config.YCDBConfig,planOrder,"po_id"," from plan_order",orderDetails,"order_no").setVerifyContent("验证plan_order数据正确"));
 
 
         }

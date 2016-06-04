@@ -1,21 +1,18 @@
 package com.dangdang.param.parse;
 
-import com.alibaba.dubbo.common.utils.CollectionUtils;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
 import com.dangdang.db.digital.ChannelDb;
 import com.dangdang.db.digital.MediaBookListDetailDb;
-import com.dangdang.db.digital.MediaBooklistDb;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.digital.meta.MediaBooklistDetail;
 import com.dangdang.enumeration.BookStatus;
 import com.dangdang.enumeration.ChannelId;
 import com.dangdang.enumeration.VarKey;
 import com.dangdang.readerV5.channel.BuyMonthlyAuthority;
-import com.dangdang.readerV5.reponse.ChannelBookList;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.persistence.criteria.CriteriaBuilder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;

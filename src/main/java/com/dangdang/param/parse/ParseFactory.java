@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 
 
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.core.VariableType;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
 
@@ -66,18 +67,21 @@ public class ParseFactory {
 			}
 
             //变量赋值
-			Matcher matcher = Pattern.compile("^\\$(.*?)=").matcher(entry.getValue());
+			Matcher matcher = Pattern.compile(VariableType.regexExpressionString()).matcher(entry.getValue());
 			String varName="";
+			VariableType variableType=null;
 			if(matcher.find()){
-				varName=matcher.group(1).trim();
+				variableType = VariableType.getVariableType(matcher.group(1).trim());
+				varName=matcher.group(2).trim();
 			}
             else{
                 //查找变量，并使用
-                matcher = Pattern.compile("^\\$(.*?)$").matcher(entry.getValue());
+                matcher = Pattern.compile(VariableType.regexVarString()).matcher(entry.getValue());
                 if(matcher.find()){
-                    varName=matcher.group(1).trim();
-                    entry.setValue(VariableStore.getGlobalVar(varName).toString());
-
+                    varName=matcher.group(2).trim();
+					variableType = VariableType.getVariableType(matcher.group(1).trim());
+                    //entry.setValue(VariableStore.getGlobalVar(varName).toString());
+ 					entry.setValue(VariableStore.get(variableType,varName).toString());
                     continue;
                 }
             }
@@ -101,7 +105,8 @@ public class ParseFactory {
 
                 //如果存在变量，将值存起来
 				if(StringUtils.isNotBlank(varName)){
-                    VariableStore.addGlobalVar(varName,entry.getValue());
+                    //VariableStore.addGlobalVar(varName,entry.getValue());
+					VariableStore.add(variableType,varName,entry.getValue());
 				}
 			}
 		}

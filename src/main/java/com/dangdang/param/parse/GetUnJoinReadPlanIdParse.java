@@ -3,6 +3,7 @@ package com.dangdang.param.parse;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.db.digital.PlanDb;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.digital.meta.Plan;
 import com.dangdang.enumeration.ReadPlanFeeStatus;
 import com.dangdang.enumeration.ReadPlanLifeStatus;
@@ -27,13 +28,15 @@ public class GetUnJoinReadPlanIdParse implements IParamParse {
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
         String[] params = ParamParse.parseParam(param);
 
+/*
         ReadPlanFeeStatus feeStatus = ReadPlanFeeStatus.valueOf(params[0]);
         ReadPlanStatus planStatus = ReadPlanStatus.valueOf(params[1]);
         ReadPlanLifeStatus lifeStatus = ReadPlanLifeStatus.valueOf(params[2]);
+*/
 
         ILogin login = (ILogin) VariableStore.get(VarKey.LOGIN);
 
-        List<Plan> unJoinedPlans = PlanDb.getUnJoinPlans(login.getCustId(),planStatus,feeStatus,lifeStatus);
+        List<Plan> unJoinedPlans = PlanDb.getUnJoinPlans(login.getCustId());
         Random random = new Random();
         int randomIndex = random.nextInt(unJoinedPlans.size());
 

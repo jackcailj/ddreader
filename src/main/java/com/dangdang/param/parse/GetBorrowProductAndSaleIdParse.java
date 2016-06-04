@@ -5,6 +5,7 @@ import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.db.authority.BorrowAuthorityDb;
 import com.dangdang.db.digital.MediaDb;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.enumeration.BorrowBookStatus;
 import com.dangdang.enumeration.VarKey;

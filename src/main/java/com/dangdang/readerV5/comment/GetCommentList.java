@@ -64,6 +64,9 @@ public class GetCommentList extends FixtureBase{
 						   +" and comment_parent_id="+comment.get(i).getCommentId();
 				List<Comment> subComment = DbUtil.selectList(Config.BSAECOMMENT, sql, Comment.class);			
 				int subComCount = subComment.size();
+				if(l>reponseResult.getData().getCommentList().size()-1){
+					break;
+				}
 				List<com.dangdang.readerV5.reponse.Comment> commentList = reponseResult.getData().getCommentList().get(l);
 				//验证回复
 				for(int h=0,j=0; j<subComment.size(); j++,h++){

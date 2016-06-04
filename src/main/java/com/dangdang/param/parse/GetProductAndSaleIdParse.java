@@ -3,6 +3,7 @@ package com.dangdang.param.parse;
 import com.alibaba.fastjson.JSONObject;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.enumeration.BookStatus;
 import com.dangdang.enumeration.BookType;
 import com.dangdang.db.digital.MediaDb;

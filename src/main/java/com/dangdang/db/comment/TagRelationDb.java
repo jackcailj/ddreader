@@ -42,5 +42,20 @@ public class TagRelationDb {
 
         return tagRelations;
     }
+
+
+    /*
+    获取某种tag下推荐内容
+    参数：
+        tagIds：标签id，多个用，分隔
+        tagContentType：推荐内容，1000,书吧;4000:频道;5000:文章;6000:书
+     */
+    public static List<TagRelation> getTagRelation(TagContentType tagContentType,int num) throws Exception {
+        String selectSql = "SELECT * from tag_relation where  recommend_status=1 and target_source="+tagContentType.toString() +(num==-1?"":" limit "+num);
+
+        List<TagRelation> tagRelations = DbUtil.selectList(Config.BSAECOMMENT,selectSql,TagRelation.class);
+
+        return tagRelations;
+    }
     
 }

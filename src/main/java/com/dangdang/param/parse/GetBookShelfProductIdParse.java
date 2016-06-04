@@ -2,6 +2,7 @@ package com.dangdang.param.parse;
 
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.enumeration.VarKey;
 import com.dangdang.readerV5.personal_center.bookshelf.GetUserBookList;
 import org.apache.commons.lang3.StringUtils;
@@ -26,7 +27,7 @@ public class GetBookShelfProductIdParse implements IParamParse {
     public void parse(Map<String, String> paramMap, String key, String param) throws Exception {
         int number=1;
 
-        String[] splitString =ParamParse.parseParam(param);
+        String[] splitString = ParamParse.parseParam(param);
 
 
 

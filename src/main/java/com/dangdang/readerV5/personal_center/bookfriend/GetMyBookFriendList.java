@@ -51,7 +51,7 @@ public class GetMyBookFriendList extends FixtureBase{
                    // bookFriendInfo.setCustImg(loginRecord.getCustImg());
                    // bookFriendInfo.setIntroduct(loginRecord.getIntroduct());
 
-                    bookFriendInfo.setCreateDate(firend.getCreateDate().getTime());
+                    //bookFriendInfo.setCreateDate(firend.getCreateDate().getTime());
                     bookFriendInfo.setCreateDateLong(firend.getCreateDate().getTime());
                     bookFriendInfo.setRelationShip(firend.getRelationShip());
                     if(firend.getRelationShip()==0) {

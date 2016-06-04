@@ -4,9 +4,9 @@ import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.db.authority.MediaMonthlyAuthorityDb;
 import com.dangdang.db.digital.ChannelDb;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.enumeration.ChannelId;
 import com.dangdang.enumeration.VarKey;
-import com.dangdang.param.model.ParamBase;
 import com.dangdang.readerV5.channel.BuyMonthlyAuthority;
 
 import java.util.List;

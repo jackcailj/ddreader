@@ -24,7 +24,7 @@ public class Recommendarticle extends FixtureBase{
 	String id="";
     
 	@Override
-	public void set(String name, String value){
+	public void set(String name, String value) throws Exception {
 		super.set(name, value);
 		id = paramMap.get("id");
 	}

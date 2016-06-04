@@ -4,13 +4,13 @@ import com.dangdang.authority.meta.BorrowAuthority;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.db.authority.BorrowAuthorityDb;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.ddframework.util.Util;
 import com.dangdang.enumeration.BookStatus;
 import com.dangdang.enumeration.BookType;
 import com.dangdang.db.digital.MediaDb;
 import com.dangdang.digital.meta.Media;
 import com.dangdang.enumeration.VarKey;
-import com.dangdang.readerV5.personal_center.GetBorrowAuthorityList;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;

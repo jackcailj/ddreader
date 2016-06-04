@@ -1,12 +1,10 @@
 package com.dangdang.param.parse;
 
-import java.util.List;
 import java.util.Map;
 
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import org.apache.commons.lang3.StringUtils;
 import com.dangdang.digital.meta.Media;
-import com.dangdang.digital.meta.MediaBooklistDetail;
-import com.dangdang.db.digital.MediaBookListDetailDb;
 import com.dangdang.db.digital.MediaDb;
 import com.dangdang.enumeration.BookStatus;
 import com.dangdang.enumeration.BookType;

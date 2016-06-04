@@ -51,7 +51,7 @@ public class GetDepositShowView extends FixtureBase{
             //操作成功，验证数据正确
             PlatForm fromPaltform;
             if(StringUtils.isBlank(paramMap.get("fromPaltform"))){
-                fromPaltform= PlatForm.YC_ANDROID;
+                fromPaltform= PlatForm.DDREADER_ANDROID;
             }
             else {
                 fromPaltform=PlatForm.getPlatForm(paramMap.get("fromPaltform"));

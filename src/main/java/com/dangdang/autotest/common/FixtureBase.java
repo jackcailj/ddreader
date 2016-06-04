@@ -11,10 +11,10 @@ import com.dangdang.config.Config;
 
 import com.dangdang.ddframework.core.VariableType;
 import com.dangdang.db.ucenter.UserDeviceDb;
-<<<<<<< .mineimport com.dangdang.ddframework.fitnesse.CommandFactory;
+import com.dangdang.ddframework.fitnesse.CommandFactory;
 import com.dangdang.ddframework.fitnesse.FitnesseKey;
 import com.dangdang.ddframework.fitnesse.ICommand;
-=======>>>>>>> .theirsimport com.dangdang.ddframework.reponse.ReponseV2Base;
+import com.dangdang.ddframework.reponse.ReponseV2Base;
 import com.dangdang.enumeration.RunLevel;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.log4j.Logger;
@@ -414,8 +414,8 @@ public class FixtureBase extends InterfaceBase{
         result=null;
 //		VariableStore.clear(VariableType.CASE);
 		dataVerifyResult=true;
-<<<<<<< .mine		bPost =false;
-=======    }
+		bPost =false;
+    }
     
     /*
     使首字母小写。
@@ -423,7 +423,6 @@ public class FixtureBase extends InterfaceBase{
     public  String lowerFirst(String name) {
         name = name.substring(0, 1).toLowerCase() + name.substring(1);
         return  name;
->>>>>>> .theirs
 
     }
 

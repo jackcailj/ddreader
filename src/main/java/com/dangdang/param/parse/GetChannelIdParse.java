@@ -2,6 +2,8 @@ package com.dangdang.param.parse;
 
 import java.util.List;
 import java.util.Map;
+
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import org.apache.commons.lang3.StringUtils;
 
 import com.dangdang.authority.meta.MediaMonthlyAuthority;

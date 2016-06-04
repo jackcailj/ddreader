@@ -4,6 +4,7 @@ import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.LoginInfo;
 import com.dangdang.common.functional.login.LoginManager;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.ddframework.reponse.ReponseV2;
 import com.dangdang.ddframework.util.Util;
 import com.dangdang.enumeration.BuyBookStatus;

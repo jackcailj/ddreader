@@ -3,6 +3,7 @@ package com.dangdang.param.parse;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.db.digital.CustomerSubscribeDb;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import com.dangdang.digital.meta.MediaCustomerSubscription;
 import com.dangdang.enumeration.VarKey;
 import org.apache.commons.lang3.StringUtils;

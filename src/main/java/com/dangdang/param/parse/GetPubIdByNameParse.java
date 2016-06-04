@@ -3,9 +3,8 @@ package com.dangdang.param.parse;
 import com.dangdang.common.functional.login.ILogin;
 import com.dangdang.common.functional.login.LoginInfo;
 import com.dangdang.common.functional.login.LoginManager;
-import com.dangdang.common.functional.login.ddLogin;
-import com.dangdang.db.ucenter.UserInfoSql;
 import com.dangdang.ddframework.core.VariableStore;
+import com.dangdang.ddframework.fitnesse.ParamParse;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.Map;

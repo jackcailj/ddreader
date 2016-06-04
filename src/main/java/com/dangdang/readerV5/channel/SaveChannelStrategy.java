@@ -21,7 +21,7 @@ public class SaveChannelStrategy extends FixtureBase{
 	String custId;
 	
 	@Override
-	public void set(String name, String value){
+	public void set(String name, String value) throws Exception {
 		super.set(name, value);
 		String title = "AutoTest"+ Math.random();
 		String content = "<body class=\"bodyContent\"><link rel=\"stylesheet\" href=\"http://e.dangdang.com/media/h5/fenxiang/raiders/radiersmodel.css\"><div class=\"raiderwrap\" data-channelid=\"\">" +
