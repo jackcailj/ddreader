@@ -58,7 +58,7 @@ public class CloudExperienceInfoDb {
      */
     public static CloudExperienceInfoEx getFirstCloudExperienceInfo(String custId) throws Exception {
 
-        String selectString="select experience_id as id,cust_id as custId,product_id as productId,record_time as recordTime,type,remarks,device_type as deviceType from cloud_experience_info where cust_id="+custId+"    ORDER BY record_time ASC  limit 1" ;
+        String selectString="select experience_id as id,cust_id as custId,product_id as productId,record_time as recordTime,type,remarks,device_type as deviceType from cloud_experience_info where cust_id="+custId+"   order by  if(LENGTH(record_time)<=10,record_time*1000,record_time) asc  limit 1" ;
         List<CloudExperienceInfoEx> cloudReadingProgresses = DbUtil.selectList(Config.BSAECOMMENT,selectString,CloudExperienceInfoEx.class);
         if(cloudReadingProgresses.size()==0){
             return null;

@@ -6,13 +6,13 @@ import com.dangdang.digital.meta.PlanDetail;
  * Created by cailianjie on 2016-4-13.
  */
 public class PlanDetailInfo extends PlanDetail {
-    Long salePrice;
+    Double salePrice;
 
-    public Long getSalePrice() {
+    public Double getSalePrice() {
         return salePrice;
     }
 
-    public void setSalePrice(Long salePrice) {
+    public void setSalePrice(Double salePrice) {
         this.salePrice = salePrice;
     }
 }

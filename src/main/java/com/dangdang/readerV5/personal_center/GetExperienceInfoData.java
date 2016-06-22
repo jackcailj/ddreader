@@ -66,8 +66,8 @@ public class GetExperienceInfoData extends FixtureBase{
             CloudExperienceInfoEx firstExperienceInfo = CloudExperienceInfoDb.getFirstCloudExperienceInfo(login.getCustId());
             if(firstExperienceInfo!=null) {
                 Date now = new Date();
-                Date firstExperienceDate = new Date(firstExperienceInfo.getRecordTime());
-                long datediff = (now.getTime() - firstExperienceDate.getTime()) / 1000;
+               // Date firstExperienceDate = new Date(firstExperienceInfo.getRecordTime());
+                long datediff = (now.getTime() - firstExperienceInfo.getRecordTime()) / 1000;
                 Long dayDiff = datediff / (24 * 3600);
                 getExperienceInfoDataReponse.getExperienceData().setReadingDays(dayDiff.intValue());
             }

@@ -36,9 +36,9 @@ public class UserDeviceDb {
 	public static String getTokenByUserName(String userName) throws Exception{
 		String selectSQL = "SELECT LOGIN_TOKEN " +
 				"FROM `user_device` " +
-				"WHERE USERNAME='"+userName+
-				"ORDER BY LAST_LOGIN_TIME DESC " +
-				"LIMIT 1";
+				"WHERE USERNAME='"+userName+"' "+
+				" ORDER BY LAST_LOGIN_TIME DESC " +
+				" LIMIT 1";
 		List<Map<String, Object>> infos = DbUtil.selectList(Config.UCENTERDBConfig, selectSQL);
 		if(infos.size()==0)
 			return null;

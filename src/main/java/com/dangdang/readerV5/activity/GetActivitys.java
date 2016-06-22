@@ -28,7 +28,9 @@ public class GetActivitys extends FixtureBase{
 	String deviceType;
 	String itemType;
 	SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-	
+
+	public  GetActivitys(){}
+
 	@Override
 	public void setParameters(Map<String, String> params) throws Exception {
 		versionNo = params.get("clientVersionNo").toString();

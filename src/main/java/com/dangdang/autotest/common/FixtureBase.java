@@ -231,6 +231,10 @@ public class FixtureBase extends InterfaceBase{
     protected void beforeParseParam() throws Exception {
     	addAction(lowerFirst(this.getClass().getSimpleName()));
 
+		if(!(this instanceof ILogin)) {
+			setLogin(ParseParamUtil.parseLogin(paramMap));
+		}
+
 		//解析参数
         ParseParamUtil.parseOperateParam(paramMap);
 
@@ -241,8 +245,10 @@ public class FixtureBase extends InterfaceBase{
 			}
 		}
 		
-		 String env = Config.getEnvironment().toString();	   
-	     //增加action字段
+		// String env = Config.getEnvironment().toString();
+
+
+	     /*//增加action字段
 	     if((env.equals(TestEnvironment.ONLINE.toString())||env.equals(TestEnvironment.STAGING.toString()))) {
 	    	 if(paramMap.get("userName")!=null&&!paramMap.get("userName").equals("")&&paramMap.get("userName")!=""){
 	    		 paramMap.put("token", UserDeviceDb.getTokenByUserName(paramMap.get("userName")));
@@ -252,7 +258,7 @@ public class FixtureBase extends InterfaceBase{
 	    	 if(!(this instanceof ILogin)) {
 	    		 setLogin(ParseParamUtil.parseLogin(paramMap));
 	    	 }
-	     }
+	     }*/
 		
 
         //paramMap.putAll(Config.getCommonParam());

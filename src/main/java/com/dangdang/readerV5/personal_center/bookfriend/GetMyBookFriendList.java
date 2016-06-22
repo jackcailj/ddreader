@@ -7,6 +7,7 @@ import com.dangdang.ddframework.dataverify.ListVerify;
 import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.dataverify.VerifyResult;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.ddframework.util.DesUtils;
 import com.dangdang.readerV5.reponse.BookFriendInfo;
 import com.dangdang.readerV5.reponse.GetMyBookFriendListReponse;
 import com.dangdang.db.ucenter.UserInfoSql;
@@ -42,7 +43,7 @@ public class GetMyBookFriendList extends FixtureBase{
             List<BookFriendInfo> bookFriendInfos = new ArrayList<BookFriendInfo>();
             for(BookFirend firend: myfriends){
                 //主动关注
-                if(!login.getCustId().equals(""+firend.getActiveUserId())) {
+                if(login.getCustId().equals(""+firend.getActiveUserId())) {
                     //LoginRecord loginRecord = UserInfoSql.getUserInfoByCustId(""+firend.getActiveUserId());
                     BookFriendInfo bookFriendInfo = new BookFriendInfo();
 
@@ -54,6 +55,7 @@ public class GetMyBookFriendList extends FixtureBase{
                     //bookFriendInfo.setCreateDate(firend.getCreateDate().getTime());
                     bookFriendInfo.setCreateDateLong(firend.getCreateDate().getTime());
                     bookFriendInfo.setRelationShip(firend.getRelationShip());
+                    bookFriendInfo.setPubCustId(DesUtils.encryptCustId(firend.getPassiveUserId()));
                     if(firend.getRelationShip()==0) {
                         bookFriendInfo.setRelationShip(1);
                     }
@@ -62,7 +64,7 @@ public class GetMyBookFriendList extends FixtureBase{
                 }
 
                 //被动关注
-                if(!login.getCustId().equals(""+firend.getPassiveUserId())) {
+                else{
                     //LoginRecord loginRecord = UserInfoSql.getUserInfoByCustId(""+firend.getPassiveUserId());
                     BookFriendInfo bookFriendInfo = new BookFriendInfo();
 
@@ -74,6 +76,7 @@ public class GetMyBookFriendList extends FixtureBase{
                     bookFriendInfo.setCreateDate(firend.getCreateDate().getTime());
                     bookFriendInfo.setCreateDateLong(firend.getCreateDate().getTime());
                     bookFriendInfo.setRelationShip(firend.getRelationShip());
+                    bookFriendInfo.setPubCustId(DesUtils.encryptCustId(firend.getActiveUserId()));
 
                     bookFriendInfos.add(bookFriendInfo);
                 }

@@ -8,6 +8,7 @@ import com.dangdang.config.Config;
 import com.dangdang.db.SqlUtil;
 import com.dangdang.db.digital.MediaDigestDb;
 import com.dangdang.ddframework.dbutil.DbUtil;
+import org.apache.commons.lang3.StringUtils;
 
 public class BrowseInfoDb {
 	
@@ -33,15 +34,15 @@ public class BrowseInfoDb {
 			selectSQL = "SELECT a.target_id " +
 				" FROM `browse_info` a, tag_relation b" +
 				" where a.target_id=b.source_id " +
-				" and a.target_id in "+SqlUtil.getListToString(MediaDigestDb.getDigest(type))+
-				" and b.tag_id IN " +SqlUtil.getListToString(tags)+
+				" and a.target_id in ("+StringUtils.join(MediaDigestDb.getDigest(type))+")"+
+				" and b.tag_id IN (" +StringUtils.join(tags)+")"+
 				" and a.last_modified_date between '"+before2Date+" 00:00:00' and '"+currentDate+" 00:00:00'  " +
 				" group by a.target_id " +
 				" order by count(a.target_id) desc limit "+num;
 		else 
 			selectSQL = "SELECT target_id " +
 			" FROM `browse_info` " +
-			" where target_id in "+SqlUtil.getListToString(MediaDigestDb.getDigest(type))+
+			" where target_id in ("+ StringUtils.join(MediaDigestDb.getDigest(type),",")+")"+
 			" and last_modified_date between '"+before2Date+" 00:00:00' and '"+currentDate+" 00:00:00'  " +
 			" group by target_id " +
 			" order by count(target_id) desc limit "+num;

@@ -4,10 +4,15 @@ import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.TypeReference;
 import com.dangdang.autotest.common.FixtureBase;
 import com.dangdang.config.Config;
+import com.dangdang.db.digital.MediaDb;
 import com.dangdang.db.digital.MediaTrainingDb;
 import com.dangdang.ddframework.dataverify.RecordExVerify;
 import com.dangdang.ddframework.dataverify.RecordVerify;
+import com.dangdang.ddframework.dataverify.ValueVerify;
 import com.dangdang.ddframework.reponse.ReponseV2;
+import com.dangdang.ddframework.util.Util;
+import com.dangdang.digital.meta.Media;
+import com.dangdang.digital.meta.MediaTraining;
 import com.dangdang.digital.meta.Plan;
 import com.dangdang.digital.meta.PlanDetail;
 import com.dangdang.readerV5.reponse.CreatePlanReponse;
@@ -18,7 +23,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /**
@@ -78,11 +85,30 @@ public class CreatePlan extends FixtureBase{
             readPlanInfo.setName(paramMap.get("name"));
             readPlanInfo.setDesc(paramMap.get("desc"));
 
-            String mtIds= paramMap.get("mtIds");
-
+            String mtIdstr= paramMap.get("mtIds");
+            String[] mtIds = mtIdstr.split(",");
             List<String> mtIdList = new ArrayList<String>();
-            mtIdList.addAll(mtids.)
-            MediaTrainingDb.getTrainings();
+            CollectionUtils.addAll(mtIdList,mtIds);
+
+            List<MediaTraining> mediaTrainings= MediaTrainingDb.getTrainings(mtIdList,true,100);
+            List<String> mediaIds = Util.getFields(mediaTrainings,"mediaId");
+            List<Media> medias = MediaDb.getMedias(mediaIds);
+
+            Map<Long,Media> mediaMap = new HashMap<>();
+            for(Media media:medias){
+                mediaMap.put(media.getMediaId(),media);
+            }
+
+            long planPrice =0l;
+            for(MediaTraining training:mediaTrainings){
+                Media media = mediaMap.get(training.getMediaId());
+                planPrice+=media.getPrice()*training.getDiscount();
+            }
+
+            readPlanInfo.setPlanPrice(planPrice);
+            readPlanInfo.setTrainings(mediaTrainings);
+
+            dataVerifyManager.add(new ValueVerify<ReadPlanInfo>(reponseResult.getData().getPlan(),readPlanInfo));
         }
         super.dataVerify();
     }

@@ -56,7 +56,7 @@ public class TagInfoDb {
 				break;
 			}
 		}
-		String selectString ="select * from tag_info where "+filter+ " order by last_modified_time desc "+  (num==-1?"":" limit "+ num);
+		String selectString ="select * from tag_info where "+filter+ " order by sales_num desc,last_modified_time desc "+  (num==-1?"":" limit "+ num);
 
 		List<TagInfo> tagInfos = DbUtil.selectList(Config.BSAECOMMENT,selectString,TagInfo.class);
 

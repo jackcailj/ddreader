@@ -70,9 +70,10 @@ public class QueryTagDetail extends FixtureBase {
 					content.setBarName(bar.getBarName());
 					content.setMemberNum(Integer.toString(bar.getMemberNum()));
 					content.setRecommendReason(list.get(i).getRecommendReason().isEmpty()?null:list.get(i).getRecommendReason());
+					//content.setIsActivity();
 					barList.add(content);
 				}
-				dataVerifyManager.add(new ListVerify(barList, reponseResult.getData().getBarList(), true));
+				dataVerifyManager.add(new ListVerify(reponseResult.getData().getBarList(), barList, true));
 			}
 			else{
 				logger.info("size is 0");

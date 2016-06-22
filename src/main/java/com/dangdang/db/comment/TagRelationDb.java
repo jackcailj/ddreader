@@ -36,7 +36,22 @@ public class TagRelationDb {
         tagContentType：推荐内容，1000,书吧;4000:频道;5000:文章;6000:书
      */
     public static List<TagRelation> getTagRelation(String tagIds, TagContentType tagContentType) throws Exception {
-        String selectSql = "SELECT * from tag_relation where tag_id in ("+tagIds+") and recommend_status=1 and target_source="+tagContentType.toString();
+        String selectSql = "SELECT * from tag_relation where tag_id in ("+tagIds+") and recommend_status=1 and target_source="+tagContentType.toString() +" order by sales_num desc, last_modified_time desc limit 0,9";
+
+        List<TagRelation> tagRelations = DbUtil.selectList(Config.BSAECOMMENT,selectSql,TagRelation.class);
+
+        return tagRelations;
+    }
+
+
+    /*
+   获取某种tag下推荐内容
+   参数：
+       tagIds：标签id，多个用，分隔
+       tagContentType：推荐内容，1000,书吧;4000:频道;5000:文章;6000:书
+    */
+    public static List<TagRelation> getTagRelation(String tagIds, TagContentType tagContentType,int pageNo,int paegSize) throws Exception {
+        String selectSql = "SELECT * from tag_relation where tag_id in ("+tagIds+") and recommend_status=1 and target_source="+tagContentType.toString() +" order by sales_num desc, last_modified_time desc limit "+pageNo+","+(pageNo+1)*paegSize;
 
         List<TagRelation> tagRelations = DbUtil.selectList(Config.BSAECOMMENT,selectSql,TagRelation.class);
 

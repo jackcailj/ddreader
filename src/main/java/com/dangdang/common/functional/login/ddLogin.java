@@ -103,4 +103,8 @@ public class ddLogin extends FixtureBase implements ILogin{
         }
         return reponseResult;
     }
+
+    public void setLoginInfo(LoginInfo loginInfo) {
+        this.loginInfo = loginInfo;
+    }
 }
