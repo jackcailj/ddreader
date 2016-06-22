@@ -54,7 +54,7 @@ public class BuyReadPlan extends FixtureBase {
 
                 for(PlanDetailInfo detail:details){
                     if(!mediaIds.contains(detail.getMediaId().toString())){
-                        planPrice+=detail.getSalePrice();
+                        planPrice+=Math.round(detail.getSalePrice()*100);
 
                         MediaAuthority authority = new MediaAuthority();
                         authority.setProductId(detail.getMediaId());
@@ -68,7 +68,7 @@ public class BuyReadPlan extends FixtureBase {
                         orderDetail.setPlanId(planId);
                         orderDetail.setCustId(custId);
                         orderDetail.setTrainingId(detail.getTrainingId());
-                        orderDetail.setTrainingPrice(detail.getSalePrice());
+                        orderDetail.setTrainingPrice(Math.round(detail.getSalePrice()*100));
 
                         orderDetails.add(orderDetail);
                         //dataVerifyManager.add(new RecordExVerify(Config.YCDBConfig,orderDetail,"pod_id"," from plan_order_detail ").setVerifyContent("验证plan_order_detail数据正确"));
